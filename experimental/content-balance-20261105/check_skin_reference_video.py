@@ -4,11 +4,15 @@ import sys,json,subprocess,re
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 import numpy as np
 from PIL import Image
-from check_skin_reference import OUT,ROOT,mask,load,Y
+from check_skin_reference import ROOT,mask,load,Y
 from candidate_pipeline import baseline
 from reference_color_app import media,skin
 from reference_color_app.lut import apply_mapping
-from skin_reference import match_skin,_apply_fixed
+from skin_reference import match_skin,apply_frame
+from person_gate import segment
+
+OUT=ROOT/'outputs/content-balance-20261105/skin-external-audit/continuous-video'
+OUT.mkdir(parents=True,exist_ok=True)
 
 def main():
  video=ROOT/'outputs/content-balance-20261105/baseline-adapter/with-audio.mp4'
@@ -22,12 +26,12 @@ def main():
  session=skin.SkinSession();records=[]
  for index,path in enumerate(sorted(frames.glob('input-*.png')),1):
   a=media.decode_image(path);graded=apply_mapping(a,mp,.8)
-  m,gray,diag=skin._predict(a)
-  if diag['skin_detected']:
+  m,gray,diag=skin._predict(a);_,_,face=segment(a)
+  if diag['skin_detected'] and face['person_detected']:
    m,state=session._temporal(m,gray);session._previous_gray=gray.copy();session._previous_mask=m.copy()
    full=np.clip(skin._cv.resize(m,(a.shape[1],a.shape[0])),0,1)
   else:session.reset();full=np.zeros(a.shape[:2]);state='no_skin'
-  corrected=_apply_fixed(graded,full,delta);change=corrected.astype(float)-graded
+  corrected=apply_frame(graded,full,delta,face_eligible=face['person_detected']);change=corrected.astype(float)-graded
   Image.fromarray(corrected).save(frames/f'output-{index:04d}.png')
   assert np.array_equal(corrected[full==0],graded[full==0])
   records.append(dict(frame=index,max_luminance_delta=float(np.abs(change@Y).max()),max_rgb_delta=float(np.abs(change).max()),state=state))

@@ -1,0 +1,4068 @@
+{
+  "protocol": "skin_external_protocol.md",
+  "summary": {
+    "control_count": 60,
+    "valid_skin_cases": 60,
+    "improved": 31,
+    "worsened": 8,
+    "small_change": 21,
+    "max_luminance_change": 0.484,
+    "background_exact": true,
+    "errors": []
+  },
+  "controlled": [
+    {
+      "file": "obama.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 9.454288340521813,
+        "skin_rgb_p95": 16.0,
+        "skin_chroma_mae": 1.9686652996771077,
+        "whole_rgb_mae": 5.634456380208333
+      },
+      "after": {
+        "skin_rgb_mae": 9.457493695349878,
+        "skin_rgb_p95": 15.0,
+        "skin_chroma_mae": 1.0527599165665,
+        "whole_rgb_mae": 5.633086140950521
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.5069031676457563,
+          0.607216891748867,
+          0.8256818567480373
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0032053548280650546,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 22173,
+          "before_rgb_mae": 9.522662697875795,
+          "after_rgb_mae": 9.500157849636945
+        },
+        {
+          "pixels": 3714,
+          "before_rgb_mae": 9.007987793932866,
+          "after_rgb_mae": 9.119816908993
+        },
+        {
+          "pixels": 2399,
+          "before_rgb_mae": 9.513269417812978,
+          "after_rgb_mae": 9.585938585521745
+        }
+      ]
+    },
+    {
+      "file": "obama.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 14.930990596054585,
+        "skin_rgb_p95": 29.0,
+        "skin_chroma_mae": 2.771774434938368,
+        "whole_rgb_mae": 12.279843139648438
+      },
+      "after": {
+        "skin_rgb_mae": 14.748403214782343,
+        "skin_rgb_p95": 28.0,
+        "skin_chroma_mae": 2.362989830069057,
+        "whole_rgb_mae": 12.264072672526042
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          1.2513374692066002,
+          -0.33129699947029057,
+          -1.576127759680972
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.18258738127224206,
+      "background_exact": true,
+      "max_luminance_change": 0.185,
+      "skin_components_not_identities": [
+        {
+          "pixels": 22173,
+          "before_rgb_mae": 15.023436912761767,
+          "after_rgb_mae": 14.857754927163667
+        },
+        {
+          "pixels": 3714,
+          "before_rgb_mae": 14.33782085801472,
+          "after_rgb_mae": 14.12448393466164
+        },
+        {
+          "pixels": 2399,
+          "before_rgb_mae": 14.994858969014867,
+          "after_rgb_mae": 14.70362651104627
+        }
+      ]
+    },
+    {
+      "file": "obama.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 19.781093120271514,
+        "skin_rgb_p95": 37.0,
+        "skin_chroma_mae": 5.137199816163473,
+        "whole_rgb_mae": 11.929842122395833
+      },
+      "after": {
+        "skin_rgb_mae": 20.004513422423344,
+        "skin_rgb_p95": 35.0,
+        "skin_chroma_mae": 2.9127617667161614,
+        "whole_rgb_mae": 11.948745727539062
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.449986516317068,
+          1.1601860819458931,
+          3.0747082304992865
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.22342030215182973,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 22173,
+          "before_rgb_mae": 19.845653121664487,
+          "after_rgb_mae": 20.056991235586825
+        },
+        {
+          "pixels": 3714,
+          "before_rgb_mae": 19.108957099264046,
+          "after_rgb_mae": 19.353257942918685
+        },
+        {
+          "pixels": 2399,
+          "before_rgb_mae": 20.2249548422954,
+          "after_rgb_mae": 20.527719883284703
+        }
+      ]
+    },
+    {
+      "file": "obama.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 9.074878031535034,
+        "skin_rgb_p95": 21.0,
+        "skin_chroma_mae": 6.5538890617266485,
+        "whole_rgb_mae": 4.32755126953125
+      },
+      "after": {
+        "skin_rgb_mae": 8.799747813995145,
+        "skin_rgb_p95": 17.0,
+        "skin_chroma_mae": 3.4906384430460298,
+        "whole_rgb_mae": 4.298866780598958
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.937436870870899,
+          1.0680036110889253,
+          4.827855304225485
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.2751302175398891,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 22173,
+          "before_rgb_mae": 9.060960026458606,
+          "after_rgb_mae": 8.836242276642764
+        },
+        {
+          "pixels": 3714,
+          "before_rgb_mae": 9.05851732184527,
+          "after_rgb_mae": 8.668730928020103
+        },
+        {
+          "pixels": 2399,
+          "before_rgb_mae": 9.228845352230096,
+          "after_rgb_mae": 8.665277198832847
+        }
+      ]
+    },
+    {
+      "file": "obama.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 2.5829856937472013,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 1.4643199934007405,
+        "whole_rgb_mae": 6.412611897786459
+      },
+      "after": {
+        "skin_rgb_mae": 2.433276768248132,
+        "skin_rgb_p95": 6.0,
+        "skin_chroma_mae": 1.36793876829527,
+        "whole_rgb_mae": 6.399319458007812
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -0.7863701067980529,
+          0.49158045618128554,
+          -0.4687111039109233
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.14970892549906933,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 22173,
+          "before_rgb_mae": 2.7381199356574815,
+          "after_rgb_mae": 2.5789924683173227
+        },
+        {
+          "pixels": 3714,
+          "before_rgb_mae": 2.004846526655897,
+          "after_rgb_mae": 1.909352001436008
+        },
+        {
+          "pixels": 2399,
+          "before_rgb_mae": 2.044185077115465,
+          "after_rgb_mae": 1.8975962206474921
+        }
+      ]
+    },
+    {
+      "file": "obama2.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 7.110847972853557,
+        "skin_rgb_p95": 18.0,
+        "skin_chroma_mae": 2.8372427509337483,
+        "whole_rgb_mae": 4.415027756986028
+      },
+      "after": {
+        "skin_rgb_mae": 7.151426248630306,
+        "skin_rgb_p95": 16.0,
+        "skin_chroma_mae": 1.9316872857092364,
+        "whole_rgb_mae": 4.42015500249501
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.931638436251795,
+          0.7672764129931675,
+          1.1155143685266395
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.040578275776748995,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 28291,
+          "before_rgb_mae": 7.110847972853557,
+          "after_rgb_mae": 7.151426248630306
+        }
+      ]
+    },
+    {
+      "file": "obama2.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 11.60238238309003,
+        "skin_rgb_p95": 30.0,
+        "skin_chroma_mae": 3.0554504494951287,
+        "whole_rgb_mae": 12.048152133233533
+      },
+      "after": {
+        "skin_rgb_mae": 11.664875755540631,
+        "skin_rgb_p95": 30.0,
+        "skin_chroma_mae": 3.3314884827919364,
+        "whole_rgb_mae": 12.05692989021956
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          1.207061902378971,
+          -0.4230613355287023,
+          -0.9874956566318183
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.062493372450601825,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 28291,
+          "before_rgb_mae": 11.60238238309003,
+          "after_rgb_mae": 11.664875755540631
+        }
+      ]
+    },
+    {
+      "file": "obama2.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 12.703121133929518,
+        "skin_rgb_p95": 33.0,
+        "skin_chroma_mae": 5.088107501796802,
+        "whole_rgb_mae": 11.466136477045907
+      },
+      "after": {
+        "skin_rgb_mae": 12.571524513096037,
+        "skin_rgb_p95": 30.0,
+        "skin_chroma_mae": 3.1973431597799067,
+        "whole_rgb_mae": 11.446361963572855
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.4782263032631136,
+          1.2815395568320085,
+          2.523911796627088
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.13159662083348067,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 28291,
+          "before_rgb_mae": 12.703121133929518,
+          "after_rgb_mae": 12.571524513096037
+        }
+      ]
+    },
+    {
+      "file": "obama2.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 13.066110541632792,
+        "skin_rgb_p95": 30.0,
+        "skin_chroma_mae": 5.445497625864528,
+        "whole_rgb_mae": 12.12092377744511
+      },
+      "after": {
+        "skin_rgb_mae": 12.559471209925418,
+        "skin_rgb_p95": 28.0,
+        "skin_chroma_mae": 3.384240158825539,
+        "whole_rgb_mae": 12.048637100798404
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.4688197072835543,
+          1.0911153367393442,
+          3.4797578053694806
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.5066393317073743,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 28291,
+          "before_rgb_mae": 13.066110541632792,
+          "after_rgb_mae": 12.559471209925418
+        }
+      ]
+    },
+    {
+      "file": "obama2.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 3.4774309851189424,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 1.566943303524089,
+        "whole_rgb_mae": 5.986528505489022
+      },
+      "after": {
+        "skin_rgb_mae": 3.4870689147314224,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 1.2180778692870526,
+        "whole_rgb_mae": 5.98891747754491
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.0118944681255435,
+          0.5333858930823467,
+          -0.09246555499820275
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.00963792961248,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 28291,
+          "before_rgb_mae": 3.4774309851189424,
+          "after_rgb_mae": 3.4870689147314224
+        }
+      ]
+    },
+    {
+      "file": "biden.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 4.32794425087108,
+        "skin_rgb_p95": 6.0,
+        "skin_chroma_mae": 0.5868695005807207,
+        "whole_rgb_mae": 2.7871878693853427
+      },
+      "after": {
+        "skin_rgb_mae": 4.32794425087108,
+        "skin_rgb_p95": 6.0,
+        "skin_chroma_mae": 0.5868695005807207,
+        "whole_rgb_mae": 2.7871878693853427
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          0.08921087108009829,
+          -0.03678216027870729,
+          -0.0445870383275917
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 5681,
+          "before_rgb_mae": 4.360206536407909,
+          "after_rgb_mae": 4.360206536407909
+        },
+        {
+          "pixels": 331,
+          "before_rgb_mae": 4.452165156092649,
+          "after_rgb_mae": 4.452165156092649
+        },
+        {
+          "pixels": 119,
+          "before_rgb_mae": 4.03921568627451,
+          "after_rgb_mae": 4.03921568627451
+        },
+        {
+          "pixels": 1032,
+          "before_rgb_mae": 4.160206718346253,
+          "after_rgb_mae": 4.160206718346253
+        }
+      ]
+    },
+    {
+      "file": "biden.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 5.279581881533101,
+        "skin_rgb_p95": 11.0,
+        "skin_chroma_mae": 2.3937607897793263,
+        "whole_rgb_mae": 6.753529476950354
+      },
+      "after": {
+        "skin_rgb_mae": 5.159349593495935,
+        "skin_rgb_p95": 11.0,
+        "skin_chroma_mae": 1.731989593495935,
+        "whole_rgb_mae": 6.747297946217494
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          1.4524367458995506,
+          -0.477817199146374,
+          -1.3491218519749033
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.12023228803716624,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 5681,
+          "before_rgb_mae": 5.109135715543038,
+          "after_rgb_mae": 4.981223962917327
+        },
+        {
+          "pixels": 331,
+          "before_rgb_mae": 4.685800604229607,
+          "after_rgb_mae": 4.516616314199395
+        },
+        {
+          "pixels": 119,
+          "before_rgb_mae": 4.064425770308123,
+          "after_rgb_mae": 3.5322128851540615
+        },
+        {
+          "pixels": 1032,
+          "before_rgb_mae": 6.448320413436693,
+          "after_rgb_mae": 6.432170542635659
+        }
+      ]
+    },
+    {
+      "file": "biden.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 4.9598606271777,
+        "skin_rgb_p95": 11.0,
+        "skin_chroma_mae": 2.131132078977932,
+        "whole_rgb_mae": 7.50760195035461
+      },
+      "after": {
+        "skin_rgb_mae": 4.711823461091754,
+        "skin_rgb_p95": 10.0,
+        "skin_chroma_mae": 1.208336817653891,
+        "whole_rgb_mae": 7.495973699763593
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.543667510591499,
+          0.5210153369384303,
+          1.3659700252986688
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.24803716608594595,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 5681,
+          "before_rgb_mae": 4.85495511353635,
+          "after_rgb_mae": 4.577128439828669
+        },
+        {
+          "pixels": 331,
+          "before_rgb_mae": 4.2265861027190335,
+          "after_rgb_mae": 3.9375629405840886
+        },
+        {
+          "pixels": 119,
+          "before_rgb_mae": 3.8823529411764706,
+          "after_rgb_mae": 3.288515406162465
+        },
+        {
+          "pixels": 1032,
+          "before_rgb_mae": 5.810077519379845,
+          "after_rgb_mae": 5.776162790697675
+        }
+      ]
+    },
+    {
+      "file": "biden.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 7.7596283391405345,
+        "skin_rgb_p95": 12.0,
+        "skin_chroma_mae": 6.316728083623692,
+        "whole_rgb_mae": 2.971948877068558
+      },
+      "after": {
+        "skin_rgb_mae": 4.814262485481998,
+        "skin_rgb_p95": 9.0,
+        "skin_chroma_mae": 3.3174878513356565,
+        "whole_rgb_mae": 2.838925827423168
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -5.231179656070413,
+          2.084248302354293,
+          2.988324242835727
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -2.9453658536585365,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 5681,
+          "before_rgb_mae": 7.827612509534706,
+          "after_rgb_mae": 4.851551956815115
+        },
+        {
+          "pixels": 331,
+          "before_rgb_mae": 8.201409869083585,
+          "after_rgb_mae": 5.004028197381672
+        },
+        {
+          "pixels": 119,
+          "before_rgb_mae": 7.697478991596639,
+          "after_rgb_mae": 4.439775910364146
+        },
+        {
+          "pixels": 1032,
+          "before_rgb_mae": 7.313953488372093,
+          "after_rgb_mae": 4.604328165374677
+        }
+      ]
+    },
+    {
+      "file": "biden.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 25.948339140534262,
+        "skin_rgb_p95": 43.0,
+        "skin_chroma_mae": 10.148668710801394,
+        "whole_rgb_mae": 13.759184766548463
+      },
+      "after": {
+        "skin_rgb_mae": 24.766596980255517,
+        "skin_rgb_p95": 37.0,
+        "skin_chroma_mae": 5.37951475029036,
+        "whole_rgb_mae": 13.701689937943263
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          6.260776414763173,
+          -1.7964652619066834,
+          -7.170588063813211
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -1.1817421602787448,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 5681,
+          "before_rgb_mae": 25.200786246552838,
+          "after_rgb_mae": 23.961391773748755
+        },
+        {
+          "pixels": 331,
+          "before_rgb_mae": 25.90332326283988,
+          "after_rgb_mae": 24.971802618328297
+        },
+        {
+          "pixels": 119,
+          "before_rgb_mae": 20.761904761904763,
+          "after_rgb_mae": 19.84313725490196
+        },
+        {
+          "pixels": 1032,
+          "before_rgb_mae": 30.545865633074936,
+          "after_rgb_mae": 29.565891472868216
+        }
+      ]
+    },
+    {
+      "file": "alex-lacamoire.png",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 3.86671707306828,
+        "skin_rgb_p95": 9.0,
+        "skin_chroma_mae": 0.6610456072921268,
+        "whole_rgb_mae": 4.166341426427865
+      },
+      "after": {
+        "skin_rgb_mae": 3.86671707306828,
+        "skin_rgb_p95": 9.0,
+        "skin_chroma_mae": 0.6610456072921268,
+        "whole_rgb_mae": 4.166341426427865
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          -0.28791268666156355,
+          0.06299462856792104,
+          0.4307723363365117
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 31742,
+          "before_rgb_mae": 3.86671707306828,
+          "after_rgb_mae": 3.86671707306828
+        }
+      ]
+    },
+    {
+      "file": "alex-lacamoire.png",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 9.931762333816394,
+        "skin_rgb_p95": 19.0,
+        "skin_chroma_mae": 2.7855884632348307,
+        "whole_rgb_mae": 13.58527878874948
+      },
+      "after": {
+        "skin_rgb_mae": 9.748451053283768,
+        "skin_rgb_p95": 20.0,
+        "skin_chroma_mae": 2.6199972906559137,
+        "whole_rgb_mae": 13.550591817514286
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.9662739268007758,
+          -0.24779356202433878,
+          -1.258430554425738
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.18331128053262624,
+      "background_exact": true,
+      "max_luminance_change": 0.185,
+      "skin_components_not_identities": [
+        {
+          "pixels": 31742,
+          "before_rgb_mae": 9.931762333816394,
+          "after_rgb_mae": 9.748451053283768
+        }
+      ]
+    },
+    {
+      "file": "alex-lacamoire.png",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 4.987051855585659,
+        "skin_rgb_p95": 10.0,
+        "skin_chroma_mae": 3.591410014071787,
+        "whole_rgb_mae": 4.4933834562462085
+      },
+      "after": {
+        "skin_rgb_mae": 4.066714972801546,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 2.5972203809883854,
+        "whole_rgb_mae": 4.315590779938065
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -2.195950534573191,
+          0.638020123852364,
+          2.474310501199973
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.9203368827841132,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 31742,
+          "before_rgb_mae": 4.987051855585659,
+          "after_rgb_mae": 4.066714972801546
+        }
+      ]
+    },
+    {
+      "file": "alex-lacamoire.png",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 10.678953227059836,
+        "skin_rgb_p95": 18.0,
+        "skin_chroma_mae": 4.744130017012161,
+        "whole_rgb_mae": 13.415000558694889
+      },
+      "after": {
+        "skin_rgb_mae": 9.751013378699096,
+        "skin_rgb_p95": 17.0,
+        "skin_chroma_mae": 2.9571010963392355,
+        "whole_rgb_mae": 13.23653345784248
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.25309236292299,
+          1.1324008293798036,
+          2.7013625409526494
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.9279398483607402,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 31742,
+          "before_rgb_mae": 10.678953227059836,
+          "after_rgb_mae": 9.751013378699096
+        }
+      ]
+    },
+    {
+      "file": "alex-lacamoire.png",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 5.827526095814169,
+        "skin_rgb_p95": 11.0,
+        "skin_chroma_mae": 1.4478815239535423,
+        "whole_rgb_mae": 4.590564441464738
+      },
+      "after": {
+        "skin_rgb_mae": 5.827526095814169,
+        "skin_rgb_p95": 11.0,
+        "skin_chroma_mae": 1.4478815239535423,
+        "whole_rgb_mae": 4.590564441464738
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          0.356568582367359,
+          -0.151201559254317,
+          -0.15665518285604563
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 31742,
+          "before_rgb_mae": 5.827526095814169,
+          "after_rgb_mae": 5.827526095814169
+        }
+      ]
+    },
+    {
+      "file": "lin-manuel-miranda.png",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 9.237832758442869,
+        "skin_rgb_p95": 18.0,
+        "skin_chroma_mae": 1.0088915309657782,
+        "whole_rgb_mae": 3.817751423860911
+      },
+      "after": {
+        "skin_rgb_mae": 8.914156056977184,
+        "skin_rgb_p95": 18.0,
+        "skin_chroma_mae": 0.7255373067623183,
+        "whole_rgb_mae": 3.738342138788969
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -0.6268104866899513,
+          0.22810511327774563,
+          0.4694617019810199
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.3236767014656845,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 76939,
+          "before_rgb_mae": 8.624243448272875,
+          "after_rgb_mae": 8.301100005632167
+        },
+        {
+          "pixels": 10324,
+          "before_rgb_mae": 13.810570838176417,
+          "after_rgb_mae": 13.48292005682552
+        }
+      ]
+    },
+    {
+      "file": "lin-manuel-miranda.png",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 14.901397690506476,
+        "skin_rgb_p95": 34.0,
+        "skin_chroma_mae": 2.9203300864436628,
+        "whole_rgb_mae": 12.349002360611511
+      },
+      "after": {
+        "skin_rgb_mae": 14.94114725981611,
+        "skin_rgb_p95": 34.0,
+        "skin_chroma_mae": 2.6800791209714694,
+        "whole_rgb_mae": 12.359928619604316
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          1.2652028522973087,
+          -0.35881716915721107,
+          -1.4707892503586937
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.03974956930963458,
+      "background_exact": true,
+      "max_luminance_change": 0.185,
+      "skin_components_not_identities": [
+        {
+          "pixels": 76939,
+          "before_rgb_mae": 13.920803060433157,
+          "after_rgb_mae": 13.965279853736943
+        },
+        {
+          "pixels": 10324,
+          "before_rgb_mae": 22.20922123208059,
+          "after_rgb_mae": 22.2137414438848
+        }
+      ]
+    },
+    {
+      "file": "lin-manuel-miranda.png",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 8.704869188544974,
+        "skin_rgb_p95": 21.0,
+        "skin_chroma_mae": 3.734437420976435,
+        "whole_rgb_mae": 3.893006220023981
+      },
+      "after": {
+        "skin_rgb_mae": 9.367631947866412,
+        "skin_rgb_p95": 19.0,
+        "skin_chroma_mae": 2.212221766384378,
+        "whole_rgb_mae": 4.0571586480815345
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -2.2694670435599074,
+          0.6360755578849617,
+          2.677142925843751
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.6627627593214385,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 76939,
+          "before_rgb_mae": 8.167171395521127,
+          "after_rgb_mae": 8.832780947677165
+        },
+        {
+          "pixels": 10324,
+          "before_rgb_mae": 12.712030220844634,
+          "after_rgb_mae": 13.35357742477076
+        }
+      ]
+    },
+    {
+      "file": "lin-manuel-miranda.png",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 13.983666235021333,
+        "skin_rgb_p95": 33.0,
+        "skin_chroma_mae": 4.295314764944287,
+        "whole_rgb_mae": 11.589886840527578
+      },
+      "after": {
+        "skin_rgb_mae": 14.118438895446333,
+        "skin_rgb_p95": 32.0,
+        "skin_chroma_mae": 2.4772400559229,
+        "whole_rgb_mae": 11.621969611810552
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -2.767029875734096,
+          0.8963714503708267,
+          2.64185869716939
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.1347726604249999,
+      "background_exact": true,
+      "max_luminance_change": 0.484,
+      "skin_components_not_identities": [
+        {
+          "pixels": 76939,
+          "before_rgb_mae": 12.900787203715497,
+          "after_rgb_mae": 13.023130878574802
+        },
+        {
+          "pixels": 10324,
+          "before_rgb_mae": 22.053758233242927,
+          "after_rgb_mae": 22.281157174221878
+        }
+      ]
+    },
+    {
+      "file": "lin-manuel-miranda.png",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 3.75273216216113,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 1.4019073070297072,
+        "whole_rgb_mae": 5.310874737709832
+      },
+      "after": {
+        "skin_rgb_mae": 3.75273216216113,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 1.4019073070297072,
+        "whole_rgb_mae": 5.310874737709832
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          -0.16284044888588411,
+          0.09416289001121303,
+          -0.05775721246143739
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 76939,
+          "before_rgb_mae": 3.503307815282237,
+          "after_rgb_mae": 3.503307815282237
+        },
+        {
+          "pixels": 10324,
+          "before_rgb_mae": 5.6115523698824745,
+          "after_rgb_mae": 5.6115523698824745
+        }
+      ]
+    },
+    {
+      "file": "two_people.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 1.8318629446983064,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 1.5860530697190425,
+        "whole_rgb_mae": 4.174391899379432
+      },
+      "after": {
+        "skin_rgb_mae": 1.3139543651691323,
+        "skin_rgb_p95": 4.0,
+        "skin_chroma_mae": 0.9759286069764288,
+        "whole_rgb_mae": 4.123334995567376
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -0.9338654707504865,
+          0.25585990589497865,
+          1.131894833280807
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.517908579529174,
+      "background_exact": true,
+      "max_luminance_change": 0.185,
+      "skin_components_not_identities": [
+        {
+          "pixels": 9393,
+          "before_rgb_mae": 1.9602895773448312,
+          "after_rgb_mae": 1.407679477625182
+        },
+        {
+          "pixels": 9750,
+          "before_rgb_mae": 1.8244444444444445,
+          "after_rgb_mae": 1.311965811965812
+        },
+        {
+          "pixels": 761,
+          "before_rgb_mae": 1.6092860271572493,
+          "after_rgb_mae": 1.3324572930354797
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 2.1948051948051948,
+          "after_rgb_mae": 2.0952380952380953
+        },
+        {
+          "pixels": 1186,
+          "before_rgb_mae": 1.302417088251827,
+          "after_rgb_mae": 0.6835300730747611
+        },
+        {
+          "pixels": 682,
+          "before_rgb_mae": 1.403225806451613,
+          "after_rgb_mae": 0.9721407624633431
+        },
+        {
+          "pixels": 177,
+          "before_rgb_mae": 1.265536723163842,
+          "after_rgb_mae": 1.231638418079096
+        }
+      ]
+    },
+    {
+      "file": "two_people.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 4.833536925605875,
+        "skin_rgb_p95": 13.0,
+        "skin_chroma_mae": 0.9300548040235868,
+        "whole_rgb_mae": 11.223087045656028
+      },
+      "after": {
+        "skin_rgb_mae": 4.833536925605875,
+        "skin_rgb_p95": 13.0,
+        "skin_chroma_mae": 0.9300548040235868,
+        "whole_rgb_mae": 11.223087045656028
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          0.19035621351755694,
+          -0.14154664466432898,
+          0.22957344365095977
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 9393,
+          "before_rgb_mae": 4.718442812023138,
+          "after_rgb_mae": 4.718442812023138
+        },
+        {
+          "pixels": 9750,
+          "before_rgb_mae": 5.144717948717949,
+          "after_rgb_mae": 5.144717948717949
+        },
+        {
+          "pixels": 761,
+          "before_rgb_mae": 3.9399912395970214,
+          "after_rgb_mae": 3.9399912395970214
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 5.428571428571429,
+          "after_rgb_mae": 5.428571428571429
+        },
+        {
+          "pixels": 1186,
+          "before_rgb_mae": 3.842327150084317,
+          "after_rgb_mae": 3.842327150084317
+        },
+        {
+          "pixels": 682,
+          "before_rgb_mae": 2.6881720430107525,
+          "after_rgb_mae": 2.6881720430107525
+        },
+        {
+          "pixels": 177,
+          "before_rgb_mae": 12.03201506591337,
+          "after_rgb_mae": 12.03201506591337
+        }
+      ]
+    },
+    {
+      "file": "two_people.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 3.0369783890572926,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 2.3174964786077306,
+        "whole_rgb_mae": 5.124793605939717
+      },
+      "after": {
+        "skin_rgb_mae": 2.859536412854967,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 1.6966910223348262,
+        "whole_rgb_mae": 5.105841367464539
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.4960525455506275,
+          0.49466291334949375,
+          1.3767770261665078
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.1774419762023256,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 9393,
+          "before_rgb_mae": 3.128393484509741,
+          "after_rgb_mae": 3.0096525781610417
+        },
+        {
+          "pixels": 9750,
+          "before_rgb_mae": 2.981128205128205,
+          "after_rgb_mae": 2.7857094017094015
+        },
+        {
+          "pixels": 761,
+          "before_rgb_mae": 3.3561103810775297,
+          "after_rgb_mae": 3.1362242663162507
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 4.311688311688312,
+          "after_rgb_mae": 3.9913419913419914
+        },
+        {
+          "pixels": 1186,
+          "before_rgb_mae": 2.569139966273187,
+          "after_rgb_mae": 2.101461495222035
+        },
+        {
+          "pixels": 682,
+          "before_rgb_mae": 3.2653958944281527,
+          "after_rgb_mae": 2.9643206256109482
+        },
+        {
+          "pixels": 177,
+          "before_rgb_mae": 1.0357815442561205,
+          "after_rgb_mae": 1.4613935969868173
+        }
+      ]
+    },
+    {
+      "file": "two_people.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 5.858646639219412,
+        "skin_rgb_p95": 12.0,
+        "skin_chroma_mae": 6.110596465034912,
+        "whole_rgb_mae": 4.149818539450354
+      },
+      "after": {
+        "skin_rgb_mae": 3.126453422612315,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 3.252983848346378,
+        "whole_rgb_mae": 3.8868475731382977
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -4.725451230861504,
+          1.906045738066375,
+          2.579483068259485
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -2.732193216607097,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 9393,
+          "before_rgb_mae": 5.790375811774726,
+          "after_rgb_mae": 3.2158344866744737
+        },
+        {
+          "pixels": 9750,
+          "before_rgb_mae": 5.942632478632478,
+          "after_rgb_mae": 3.052
+        },
+        {
+          "pixels": 761,
+          "before_rgb_mae": 6.107314936487079,
+          "after_rgb_mae": 3.3070521243977224
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 5.536796536796537,
+          "after_rgb_mae": 3.4567099567099566
+        },
+        {
+          "pixels": 1186,
+          "before_rgb_mae": 5.646149522203485,
+          "after_rgb_mae": 2.716132658797077
+        },
+        {
+          "pixels": 682,
+          "before_rgb_mae": 6.722873900293255,
+          "after_rgb_mae": 3.6143695014662756
+        },
+        {
+          "pixels": 177,
+          "before_rgb_mae": 2.160075329566855,
+          "after_rgb_mae": 2.2900188323917137
+        }
+      ]
+    },
+    {
+      "file": "two_people.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 6.572184771298014,
+        "skin_rgb_p95": 10.0,
+        "skin_chroma_mae": 1.1436782940475652,
+        "whole_rgb_mae": 7.8758602061170215
+      },
+      "after": {
+        "skin_rgb_mae": 6.257506522493176,
+        "skin_rgb_p95": 9.0,
+        "skin_chroma_mae": 0.9238246995128869,
+        "whole_rgb_mae": 7.84555352393617
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.07551523193215459,
+          -0.19087294919656017,
+          0.7847663757084717
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.31467824880483786,
+      "background_exact": true,
+      "max_luminance_change": 0.114,
+      "skin_components_not_identities": [
+        {
+          "pixels": 9393,
+          "before_rgb_mae": 6.813549096845168,
+          "after_rgb_mae": 6.499591894673339
+        },
+        {
+          "pixels": 9750,
+          "before_rgb_mae": 6.439965811965812,
+          "after_rgb_mae": 6.124649572649573
+        },
+        {
+          "pixels": 761,
+          "before_rgb_mae": 6.616294349540079,
+          "after_rgb_mae": 6.297853701270259
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 6.725108225108225,
+          "after_rgb_mae": 6.396103896103896
+        },
+        {
+          "pixels": 1186,
+          "before_rgb_mae": 6.120011242270938,
+          "after_rgb_mae": 5.787802136031479
+        },
+        {
+          "pixels": 682,
+          "before_rgb_mae": 6.718475073313783,
+          "after_rgb_mae": 6.385141739980449
+        },
+        {
+          "pixels": 177,
+          "before_rgb_mae": 3.190207156308851,
+          "after_rgb_mae": 3.0903954802259888
+        }
+      ]
+    },
+    {
+      "file": "2007_007763.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 6.436482801090877,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 0.6328671593208418,
+        "whole_rgb_mae": 5.881685333333333
+      },
+      "after": {
+        "skin_rgb_mae": 6.436482801090877,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 0.6328671593208418,
+        "whole_rgb_mae": 5.881685333333333
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          -0.2591891000262798,
+          0.08615267880716715,
+          0.23619226708907348
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2307,
+          "before_rgb_mae": 6.458459760150268,
+          "after_rgb_mae": 6.458459760150268
+        },
+        {
+          "pixels": 1668,
+          "before_rgb_mae": 6.412869704236611,
+          "after_rgb_mae": 6.412869704236611
+        },
+        {
+          "pixels": 1085,
+          "before_rgb_mae": 6.137634408602151,
+          "after_rgb_mae": 6.137634408602151
+        },
+        {
+          "pixels": 774,
+          "before_rgb_mae": 6.649870801033591,
+          "after_rgb_mae": 6.649870801033591
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 6.48051948051948,
+          "after_rgb_mae": 6.48051948051948
+        },
+        {
+          "pixels": 313,
+          "before_rgb_mae": 6.420660276890309,
+          "after_rgb_mae": 6.420660276890309
+        },
+        {
+          "pixels": 1185,
+          "before_rgb_mae": 6.418284106891702,
+          "after_rgb_mae": 6.418284106891702
+        },
+        {
+          "pixels": 571,
+          "before_rgb_mae": 6.281961471103328,
+          "after_rgb_mae": 6.281961471103328
+        },
+        {
+          "pixels": 186,
+          "before_rgb_mae": 5.962365591397849,
+          "after_rgb_mae": 5.962365591397849
+        },
+        {
+          "pixels": 883,
+          "before_rgb_mae": 6.4990562476406195,
+          "after_rgb_mae": 6.4990562476406195
+        },
+        {
+          "pixels": 1958,
+          "before_rgb_mae": 6.442288049029622,
+          "after_rgb_mae": 6.442288049029622
+        },
+        {
+          "pixels": 1266,
+          "before_rgb_mae": 6.495787256450764,
+          "after_rgb_mae": 6.495787256450764
+        },
+        {
+          "pixels": 40,
+          "before_rgb_mae": 6.2,
+          "after_rgb_mae": 6.2
+        },
+        {
+          "pixels": 623,
+          "before_rgb_mae": 6.593900481540931,
+          "after_rgb_mae": 6.593900481540931
+        },
+        {
+          "pixels": 362,
+          "before_rgb_mae": 6.306629834254144,
+          "after_rgb_mae": 6.306629834254144
+        },
+        {
+          "pixels": 937,
+          "before_rgb_mae": 6.540377090003558,
+          "after_rgb_mae": 6.540377090003558
+        },
+        {
+          "pixels": 344,
+          "before_rgb_mae": 6.437015503875969,
+          "after_rgb_mae": 6.437015503875969
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 6.562666666666667,
+          "after_rgb_mae": 6.562666666666667
+        }
+      ]
+    },
+    {
+      "file": "2007_007763.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 9.609571566816223,
+        "skin_rgb_p95": 14.0,
+        "skin_chroma_mae": 1.9017066728248437,
+        "whole_rgb_mae": 10.89472
+      },
+      "after": {
+        "skin_rgb_mae": 9.598574821852731,
+        "skin_rgb_p95": 14.0,
+        "skin_chroma_mae": 1.673618302982317,
+        "whole_rgb_mae": 10.890750222222222
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.9566034484230173,
+          -0.3524791284467579,
+          -0.6940279182483895
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.010996744963492233,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2307,
+          "before_rgb_mae": 9.822424505129316,
+          "after_rgb_mae": 9.82184655396619
+        },
+        {
+          "pixels": 1668,
+          "before_rgb_mae": 10.679456434852119,
+          "after_rgb_mae": 10.678257394084731
+        },
+        {
+          "pixels": 1085,
+          "before_rgb_mae": 11.759447004608296,
+          "after_rgb_mae": 11.759447004608296
+        },
+        {
+          "pixels": 774,
+          "before_rgb_mae": 9.85615848406546,
+          "after_rgb_mae": 9.855297157622738
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 11.021645021645021,
+          "after_rgb_mae": 11.021645021645021
+        },
+        {
+          "pixels": 313,
+          "before_rgb_mae": 11.247071352502662,
+          "after_rgb_mae": 11.247071352502662
+        },
+        {
+          "pixels": 1185,
+          "before_rgb_mae": 10.421097046413502,
+          "after_rgb_mae": 10.421097046413502
+        },
+        {
+          "pixels": 571,
+          "before_rgb_mae": 11.528312901342673,
+          "after_rgb_mae": 11.528312901342673
+        },
+        {
+          "pixels": 186,
+          "before_rgb_mae": 11.455197132616487,
+          "after_rgb_mae": 11.455197132616487
+        },
+        {
+          "pixels": 883,
+          "before_rgb_mae": 9.847489618724047,
+          "after_rgb_mae": 9.846734616836542
+        },
+        {
+          "pixels": 1958,
+          "before_rgb_mae": 7.114402451481103,
+          "after_rgb_mae": 7.034729315628192
+        },
+        {
+          "pixels": 1266,
+          "before_rgb_mae": 8.069510268562402,
+          "after_rgb_mae": 8.069510268562402
+        },
+        {
+          "pixels": 40,
+          "before_rgb_mae": 11.358333333333333,
+          "after_rgb_mae": 11.358333333333333
+        },
+        {
+          "pixels": 623,
+          "before_rgb_mae": 8.5008025682183,
+          "after_rgb_mae": 8.5008025682183
+        },
+        {
+          "pixels": 362,
+          "before_rgb_mae": 11.75598526703499,
+          "after_rgb_mae": 11.75598526703499
+        },
+        {
+          "pixels": 937,
+          "before_rgb_mae": 9.487015297047314,
+          "after_rgb_mae": 9.487015297047314
+        },
+        {
+          "pixels": 344,
+          "before_rgb_mae": 10.498062015503876,
+          "after_rgb_mae": 10.498062015503876
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 6.306666666666667,
+          "after_rgb_mae": 6.294666666666667
+        }
+      ]
+    },
+    {
+      "file": "2007_007763.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 3.158792997272807,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 2.582396740564793,
+        "whole_rgb_mae": 3.750465777777778
+      },
+      "after": {
+        "skin_rgb_mae": 2.148038180698513,
+        "skin_rgb_p95": 4.0,
+        "skin_chroma_mae": 1.2020148675991909,
+        "whole_rgb_mae": 3.664311111111111
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.7266560380177083,
+          0.5492890444131615,
+          1.70032882716884
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -1.010754816574294,
+      "background_exact": true,
+      "max_luminance_change": 0.484,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2307,
+          "before_rgb_mae": 3.0560612628232913,
+          "after_rgb_mae": 1.8387516254876464
+        },
+        {
+          "pixels": 1668,
+          "before_rgb_mae": 2.9800159872102316,
+          "after_rgb_mae": 2.0459632294164667
+        },
+        {
+          "pixels": 1085,
+          "before_rgb_mae": 3.0043010752688173,
+          "after_rgb_mae": 2.385867895545315
+        },
+        {
+          "pixels": 774,
+          "before_rgb_mae": 2.959517657192076,
+          "after_rgb_mae": 2.3975021533161067
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 2.8722943722943723,
+          "after_rgb_mae": 2.24025974025974
+        },
+        {
+          "pixels": 313,
+          "before_rgb_mae": 2.9456869009584663,
+          "after_rgb_mae": 2.2651757188498403
+        },
+        {
+          "pixels": 1185,
+          "before_rgb_mae": 2.922081575246132,
+          "after_rgb_mae": 2.0168776371308015
+        },
+        {
+          "pixels": 571,
+          "before_rgb_mae": 2.989492119089317,
+          "after_rgb_mae": 2.398131932282545
+        },
+        {
+          "pixels": 186,
+          "before_rgb_mae": 2.971326164874552,
+          "after_rgb_mae": 2.327956989247312
+        },
+        {
+          "pixels": 883,
+          "before_rgb_mae": 3.0015100037750093,
+          "after_rgb_mae": 1.8316345790864477
+        },
+        {
+          "pixels": 1958,
+          "before_rgb_mae": 3.823799795709908,
+          "after_rgb_mae": 2.6128702757916242
+        },
+        {
+          "pixels": 1266,
+          "before_rgb_mae": 3.3375460768825698,
+          "after_rgb_mae": 1.9776197998946814
+        },
+        {
+          "pixels": 40,
+          "before_rgb_mae": 2.908333333333333,
+          "after_rgb_mae": 2.3833333333333333
+        },
+        {
+          "pixels": 623,
+          "before_rgb_mae": 3.2033172819689675,
+          "after_rgb_mae": 1.8047084002140181
+        },
+        {
+          "pixels": 362,
+          "before_rgb_mae": 2.958563535911602,
+          "after_rgb_mae": 2.585635359116022
+        },
+        {
+          "pixels": 937,
+          "before_rgb_mae": 3.037709000355745,
+          "after_rgb_mae": 1.9341871220206333
+        },
+        {
+          "pixels": 344,
+          "before_rgb_mae": 2.998062015503876,
+          "after_rgb_mae": 2.328488372093023
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 3.5866666666666664,
+          "after_rgb_mae": 2.4086666666666665
+        }
+      ]
+    },
+    {
+      "file": "2007_007763.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 8.741796428257237,
+        "skin_rgb_p95": 17.0,
+        "skin_chroma_mae": 6.364776942025159,
+        "whole_rgb_mae": 6.098744888888889
+      },
+      "after": {
+        "skin_rgb_mae": 6.94222310196182,
+        "skin_rgb_p95": 13.0,
+        "skin_chroma_mae": 3.4718606492478234,
+        "whole_rgb_mae": 5.936723555555556
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -4.327985238139362,
+          1.4623304672788877,
+          3.821750893962629
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -1.799573326295417,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2307,
+          "before_rgb_mae": 9.306025140875596,
+          "after_rgb_mae": 7.400520156046814
+        },
+        {
+          "pixels": 1668,
+          "before_rgb_mae": 8.600719424460431,
+          "after_rgb_mae": 6.715827338129497
+        },
+        {
+          "pixels": 1085,
+          "before_rgb_mae": 8.065745007680492,
+          "after_rgb_mae": 6.3321044546850995
+        },
+        {
+          "pixels": 774,
+          "before_rgb_mae": 6.706287683031869,
+          "after_rgb_mae": 6.360895779500431
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 8.4004329004329,
+          "after_rgb_mae": 6.694805194805195
+        },
+        {
+          "pixels": 313,
+          "before_rgb_mae": 8.725239616613418,
+          "after_rgb_mae": 6.625133120340788
+        },
+        {
+          "pixels": 1185,
+          "before_rgb_mae": 8.29395218002813,
+          "after_rgb_mae": 6.7414908579465544
+        },
+        {
+          "pixels": 571,
+          "before_rgb_mae": 8.160537069468768,
+          "after_rgb_mae": 6.4576765907764155
+        },
+        {
+          "pixels": 186,
+          "before_rgb_mae": 7.743727598566308,
+          "after_rgb_mae": 6.308243727598566
+        },
+        {
+          "pixels": 883,
+          "before_rgb_mae": 9.191015477538693,
+          "after_rgb_mae": 7.223480558701397
+        },
+        {
+          "pixels": 1958,
+          "before_rgb_mae": 9.71297242083759,
+          "after_rgb_mae": 7.249063670411985
+        },
+        {
+          "pixels": 1266,
+          "before_rgb_mae": 9.416271721958926,
+          "after_rgb_mae": 7.320168509741969
+        },
+        {
+          "pixels": 40,
+          "before_rgb_mae": 8.25,
+          "after_rgb_mae": 6.183333333333334
+        },
+        {
+          "pixels": 623,
+          "before_rgb_mae": 8.89673622257892,
+          "after_rgb_mae": 6.851257356875334
+        },
+        {
+          "pixels": 362,
+          "before_rgb_mae": 8.186924493554327,
+          "after_rgb_mae": 6.654696132596685
+        },
+        {
+          "pixels": 937,
+          "before_rgb_mae": 8.853077196727144,
+          "after_rgb_mae": 7.31803628601921
+        },
+        {
+          "pixels": 344,
+          "before_rgb_mae": 7.25,
+          "after_rgb_mae": 6.371124031007752
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 8.200666666666667,
+          "after_rgb_mae": 6.762
+        }
+      ]
+    },
+    {
+      "file": "2007_007763.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 2.3104161168294186,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 1.676485858185977,
+        "whole_rgb_mae": 4.820995555555555
+      },
+      "after": {
+        "skin_rgb_mae": 1.9912905779889152,
+        "skin_rgb_p95": 4.0,
+        "skin_chroma_mae": 1.2442823744171727,
+        "whole_rgb_mae": 4.796448
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.9241727214773849,
+          -0.3049325724047254,
+          -0.8537914361379801
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.31912553884050343,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2307,
+          "before_rgb_mae": 2.536338679381592,
+          "after_rgb_mae": 2.0786013581852334
+        },
+        {
+          "pixels": 1668,
+          "before_rgb_mae": 2.1918465227817747,
+          "after_rgb_mae": 1.8733013589128698
+        },
+        {
+          "pixels": 1085,
+          "before_rgb_mae": 2.2623655913978493,
+          "after_rgb_mae": 2.0608294930875575
+        },
+        {
+          "pixels": 774,
+          "before_rgb_mae": 1.2665805340223946,
+          "after_rgb_mae": 1.7015503875968991
+        },
+        {
+          "pixels": 154,
+          "before_rgb_mae": 1.7813852813852813,
+          "after_rgb_mae": 1.5043290043290043
+        },
+        {
+          "pixels": 313,
+          "before_rgb_mae": 2.02555910543131,
+          "after_rgb_mae": 1.706070287539936
+        },
+        {
+          "pixels": 1185,
+          "before_rgb_mae": 1.9938115330520394,
+          "after_rgb_mae": 1.740646976090014
+        },
+        {
+          "pixels": 571,
+          "before_rgb_mae": 2.0297723292469354,
+          "after_rgb_mae": 1.8242848803269118
+        },
+        {
+          "pixels": 186,
+          "before_rgb_mae": 2.46415770609319,
+          "after_rgb_mae": 2.252688172043011
+        },
+        {
+          "pixels": 883,
+          "before_rgb_mae": 2.452623631559079,
+          "after_rgb_mae": 1.974707436768592
+        },
+        {
+          "pixels": 1958,
+          "before_rgb_mae": 2.8323118828736806,
+          "after_rgb_mae": 2.4016002723867893
+        },
+        {
+          "pixels": 1266,
+          "before_rgb_mae": 2.606898367561875,
+          "after_rgb_mae": 2.111901000526593
+        },
+        {
+          "pixels": 40,
+          "before_rgb_mae": 2.075,
+          "after_rgb_mae": 1.8916666666666666
+        },
+        {
+          "pixels": 623,
+          "before_rgb_mae": 2.397538790797218,
+          "after_rgb_mae": 1.880684858212948
+        },
+        {
+          "pixels": 362,
+          "before_rgb_mae": 1.802025782688766,
+          "after_rgb_mae": 1.6860036832412524
+        },
+        {
+          "pixels": 937,
+          "before_rgb_mae": 2.1963713980789756,
+          "after_rgb_mae": 1.782995375311277
+        },
+        {
+          "pixels": 344,
+          "before_rgb_mae": 1.6036821705426356,
+          "after_rgb_mae": 1.557170542635659
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 2.671333333333333,
+          "after_rgb_mae": 2.4686666666666666
+        }
+      ]
+    },
+    {
+      "file": "2008_001322.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 7.861044257253644,
+        "skin_rgb_p95": 13.0,
+        "skin_chroma_mae": 2.7351472623345368,
+        "whole_rgb_mae": 3.483941333333333
+      },
+      "after": {
+        "skin_rgb_mae": 8.177263003075277,
+        "skin_rgb_p95": 13.0,
+        "skin_chroma_mae": 2.802129529348843,
+        "whole_rgb_mae": 3.518327111111111
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.6313901173283405,
+          -0.462397487966169,
+          0.7249270206583063
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.316218745821633,
+      "background_exact": true,
+      "max_luminance_change": 0.413,
+      "skin_components_not_identities": [
+        {
+          "pixels": 7219,
+          "before_rgb_mae": 7.482984716258023,
+          "after_rgb_mae": 7.852657339428361
+        },
+        {
+          "pixels": 7410,
+          "before_rgb_mae": 7.915879442195232,
+          "after_rgb_mae": 8.180656770130454
+        },
+        {
+          "pixels": 4844,
+          "before_rgb_mae": 8.287916322598404,
+          "after_rgb_mae": 8.572804844481144
+        },
+        {
+          "pixels": 471,
+          "before_rgb_mae": 8.402689313517339,
+          "after_rgb_mae": 9.031139419674451
+        }
+      ]
+    },
+    {
+      "file": "2008_001322.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 16.839500601684716,
+        "skin_rgb_p95": 35.0,
+        "skin_chroma_mae": 8.437671981548336,
+        "whole_rgb_mae": 11.298311111111111
+      },
+      "after": {
+        "skin_rgb_mae": 16.913524535365692,
+        "skin_rgb_p95": 35.0,
+        "skin_chroma_mae": 8.544945146409948,
+        "whole_rgb_mae": 11.307768888888889
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          6.103272119940797,
+          -2.398286135004991,
+          -3.6586351106507813
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.07402393368097648,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 7219,
+          "before_rgb_mae": 15.6441335365009,
+          "after_rgb_mae": 15.691508519185483
+        },
+        {
+          "pixels": 7410,
+          "before_rgb_mae": 17.219568151147097,
+          "after_rgb_mae": 17.33850652271705
+        },
+        {
+          "pixels": 4844,
+          "before_rgb_mae": 17.99325626204239,
+          "after_rgb_mae": 18.042045141756123
+        },
+        {
+          "pixels": 471,
+          "before_rgb_mae": 17.315640481245577,
+          "after_rgb_mae": 17.35102618542109
+        }
+      ]
+    },
+    {
+      "file": "2008_001322.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 14.078737130632437,
+        "skin_rgb_p95": 25.0,
+        "skin_chroma_mae": 4.94639968578687,
+        "whole_rgb_mae": 5.550819555555556
+      },
+      "after": {
+        "skin_rgb_mae": 14.745453937692204,
+        "skin_rgb_p95": 23.0,
+        "skin_chroma_mae": 3.1478351216740204,
+        "whole_rgb_mae": 5.626008888888889
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -2.4761300370757002,
+          0.47126047707195795,
+          4.067833167051163
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.6667168070597675,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 7219,
+          "before_rgb_mae": 13.818165027473796,
+          "after_rgb_mae": 14.48510874082283
+        },
+        {
+          "pixels": 7410,
+          "before_rgb_mae": 14.115969410706253,
+          "after_rgb_mae": 14.778992352676564
+        },
+        {
+          "pixels": 4844,
+          "before_rgb_mae": 14.508188824662813,
+          "after_rgb_mae": 15.182837875034407
+        },
+        {
+          "pixels": 471,
+          "before_rgb_mae": 13.070063694267516,
+          "after_rgb_mae": 13.709837225760793
+        }
+      ]
+    },
+    {
+      "file": "2008_001322.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 25.676243481748898,
+        "skin_rgb_p95": 39.0,
+        "skin_chroma_mae": 5.723599578820697,
+        "whole_rgb_mae": 13.306218666666666
+      },
+      "after": {
+        "skin_rgb_mae": 25.865573606097072,
+        "skin_rgb_p95": 39.0,
+        "skin_chroma_mae": 5.547766780318224,
+        "whole_rgb_mae": 13.327893333333334
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.26535361468484275,
+          -0.4334033329336373,
+          1.535675663510828
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.18933012434817442,
+      "background_exact": true,
+      "max_luminance_change": 0.228,
+      "skin_components_not_identities": [
+        {
+          "pixels": 7219,
+          "before_rgb_mae": 25.331994274368565,
+          "after_rgb_mae": 25.57791937941543
+        },
+        {
+          "pixels": 7410,
+          "before_rgb_mae": 25.12415654520918,
+          "after_rgb_mae": 25.26995051731894
+        },
+        {
+          "pixels": 4844,
+          "before_rgb_mae": 26.783581062482796,
+          "after_rgb_mae": 26.940338563170933
+        },
+        {
+          "pixels": 471,
+          "before_rgb_mae": 28.249823071479124,
+          "after_rgb_mae": 28.59164897381458
+        }
+      ]
+    },
+    {
+      "file": "2008_001322.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 1.9836542318491777,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 1.0282333868164193,
+        "whole_rgb_mae": 4.388012444444445
+      },
+      "after": {
+        "skin_rgb_mae": 1.9836542318491777,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 1.0282333868164193,
+        "whole_rgb_mae": 4.388012444444445
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          0.21445461160889323,
+          -0.2048030047150542,
+          0.4920827622520072
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 7219,
+          "before_rgb_mae": 2.3171722768619847,
+          "after_rgb_mae": 2.3171722768619847
+        },
+        {
+          "pixels": 7410,
+          "before_rgb_mae": 1.690238416554206,
+          "after_rgb_mae": 1.690238416554206
+        },
+        {
+          "pixels": 4844,
+          "before_rgb_mae": 1.8960225708780623,
+          "after_rgb_mae": 1.8960225708780623
+        },
+        {
+          "pixels": 471,
+          "before_rgb_mae": 2.3892427459306442,
+          "after_rgb_mae": 2.3892427459306442
+        }
+      ]
+    },
+    {
+      "file": "2008_001009.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 5.68604099244876,
+        "skin_rgb_p95": 8.0,
+        "skin_chroma_mae": 0.756896396979504,
+        "whole_rgb_mae": 3.9560860339506174
+      },
+      "after": {
+        "skin_rgb_mae": 5.364854368932039,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 0.6337464077669905,
+        "whole_rgb_mae": 3.927368827160494
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -0.3551904854366654,
+          0.07218815533986511,
+          0.559890420712307
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.3211866235167209,
+      "background_exact": true,
+      "max_luminance_change": 0.114,
+      "skin_components_not_identities": [
+        {
+          "pixels": 4410,
+          "before_rgb_mae": 5.584958427815571,
+          "after_rgb_mae": 5.267195767195767
+        },
+        {
+          "pixels": 9692,
+          "before_rgb_mae": 5.7672994909891315,
+          "after_rgb_mae": 5.443320951987894
+        },
+        {
+          "pixels": 1348,
+          "before_rgb_mae": 5.432492581602374,
+          "after_rgb_mae": 5.120178041543027
+        }
+      ]
+    },
+    {
+      "file": "2008_001009.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 11.945307443365696,
+        "skin_rgb_p95": 16.0,
+        "skin_chroma_mae": 1.497556569579288,
+        "whole_rgb_mae": 10.42132523148148
+      },
+      "after": {
+        "skin_rgb_mae": 11.90975188781014,
+        "skin_rgb_p95": 16.0,
+        "skin_chroma_mae": 1.1506397842502698,
+        "whole_rgb_mae": 10.417218364197531
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.7645822708814052,
+          -0.2905698563010235,
+          -0.509171871446112
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.035555555555555785,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 4410,
+          "before_rgb_mae": 12.89848828420257,
+          "after_rgb_mae": 12.853212396069539
+        },
+        {
+          "pixels": 9692,
+          "before_rgb_mae": 11.255468427569129,
+          "after_rgb_mae": 11.227060118310634
+        },
+        {
+          "pixels": 1348,
+          "before_rgb_mae": 13.786844708209694,
+          "after_rgb_mae": 13.73170128585559
+        }
+      ]
+    },
+    {
+      "file": "2008_001009.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 10.523991370010787,
+        "skin_rgb_p95": 15.0,
+        "skin_chroma_mae": 2.4308044444444445,
+        "whole_rgb_mae": 10.278566743827161
+      },
+      "after": {
+        "skin_rgb_mae": 10.214153182308522,
+        "skin_rgb_p95": 15.0,
+        "skin_chroma_mae": 1.2379378640776701,
+        "whole_rgb_mae": 10.250935570987654
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.6327741466870211,
+          0.5293365613692638,
+          1.5568325292586334
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.30983818770226534,
+      "background_exact": true,
+      "max_luminance_change": 0.484,
+      "skin_components_not_identities": [
+        {
+          "pixels": 4410,
+          "before_rgb_mae": 11.821541950113378,
+          "after_rgb_mae": 11.52713529856387
+        },
+        {
+          "pixels": 9692,
+          "before_rgb_mae": 9.604484798459211,
+          "after_rgb_mae": 9.282672994909891
+        },
+        {
+          "pixels": 1348,
+          "before_rgb_mae": 12.890207715133531,
+          "after_rgb_mae": 12.61597428288823
+        }
+      ]
+    },
+    {
+      "file": "2008_001009.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 8.170097087378641,
+        "skin_rgb_p95": 15.0,
+        "skin_chroma_mae": 6.051435533980583,
+        "whole_rgb_mae": 3.9828028549382717
+      },
+      "after": {
+        "skin_rgb_mae": 6.080711974110033,
+        "skin_rgb_p95": 12.0,
+        "skin_chroma_mae": 3.472477065803668,
+        "whole_rgb_mae": 3.794189814814815
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -4.418069190329028,
+          1.643317064538023,
+          3.126101500218253
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -2.0893851132686088,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 4410,
+          "before_rgb_mae": 6.915495086923658,
+          "after_rgb_mae": 5.310959939531368
+        },
+        {
+          "pixels": 9692,
+          "before_rgb_mae": 9.03920759389187,
+          "after_rgb_mae": 6.579103040308158
+        },
+        {
+          "pixels": 1348,
+          "before_rgb_mae": 6.025717111770525,
+          "after_rgb_mae": 5.015578635014837
+        }
+      ]
+    },
+    {
+      "file": "2008_001009.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 11.65596548004315,
+        "skin_rgb_p95": 21.0,
+        "skin_chroma_mae": 1.5381412729234087,
+        "whole_rgb_mae": 11.702754629629629
+      },
+      "after": {
+        "skin_rgb_mae": 11.653074433656958,
+        "skin_rgb_p95": 20.0,
+        "skin_chroma_mae": 1.1925160302049622,
+        "whole_rgb_mae": 11.702054398148148
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.9130786299126878,
+          -0.3625623586214326,
+          -0.5279509283596546
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.0028910463861926416,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 4410,
+          "before_rgb_mae": 9.354119425547998,
+          "after_rgb_mae": 9.361602418745276
+        },
+        {
+          "pixels": 9692,
+          "before_rgb_mae": 13.31053102214885,
+          "after_rgb_mae": 13.297393038932453
+        },
+        {
+          "pixels": 1348,
+          "before_rgb_mae": 7.290306627101879,
+          "after_rgb_mae": 7.327151335311573
+        }
+      ]
+    },
+    {
+      "file": "2008_002079.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 8.80453039981074,
+        "skin_rgb_p95": 16.0,
+        "skin_chroma_mae": 0.8846933108587661,
+        "whole_rgb_mae": 5.4589564444444445
+      },
+      "after": {
+        "skin_rgb_mae": 8.80453039981074,
+        "skin_rgb_p95": 16.0,
+        "skin_chroma_mae": 0.8846933108587661,
+        "whole_rgb_mae": 5.4589564444444445
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          -0.2339154985806342,
+          0.10156179027678824,
+          0.09056108055355594
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1437,
+          "before_rgb_mae": 6.29065182092322,
+          "after_rgb_mae": 6.29065182092322
+        },
+        {
+          "pixels": 991,
+          "before_rgb_mae": 4.317860746720484,
+          "after_rgb_mae": 4.317860746720484
+        },
+        {
+          "pixels": 727,
+          "before_rgb_mae": 6.25171939477304,
+          "after_rgb_mae": 6.25171939477304
+        },
+        {
+          "pixels": 4414,
+          "before_rgb_mae": 9.504380003020692,
+          "after_rgb_mae": 9.504380003020692
+        },
+        {
+          "pixels": 2421,
+          "before_rgb_mae": 12.732617375740052,
+          "after_rgb_mae": 12.732617375740052
+        },
+        {
+          "pixels": 478,
+          "before_rgb_mae": 8.47629009762901,
+          "after_rgb_mae": 8.47629009762901
+        },
+        {
+          "pixels": 146,
+          "before_rgb_mae": 2.780821917808219,
+          "after_rgb_mae": 2.780821917808219
+        },
+        {
+          "pixels": 260,
+          "before_rgb_mae": 6.751282051282051,
+          "after_rgb_mae": 6.751282051282051
+        },
+        {
+          "pixels": 65,
+          "before_rgb_mae": 5.835897435897436,
+          "after_rgb_mae": 5.835897435897436
+        },
+        {
+          "pixels": 163,
+          "before_rgb_mae": 9.445807770961146,
+          "after_rgb_mae": 9.445807770961146
+        },
+        {
+          "pixels": 170,
+          "before_rgb_mae": 2.7705882352941176,
+          "after_rgb_mae": 2.7705882352941176
+        }
+      ]
+    },
+    {
+      "file": "2008_002079.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 11.837000236574402,
+        "skin_rgb_p95": 29.0,
+        "skin_chroma_mae": 3.923790040217648,
+        "whole_rgb_mae": 10.336362666666666
+      },
+      "after": {
+        "skin_rgb_mae": 11.399160160870593,
+        "skin_rgb_p95": 29.0,
+        "skin_chroma_mae": 2.874417051100071,
+        "whole_rgb_mae": 10.310849777777777
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          2.356766614393699,
+          -0.7003673877613767,
+          -2.5750663253312354
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.437840075703809,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1437,
+          "before_rgb_mae": 6.623985154256553,
+          "after_rgb_mae": 6.059614938529344
+        },
+        {
+          "pixels": 991,
+          "before_rgb_mae": 3.5539858728557014,
+          "after_rgb_mae": 3.2536158762193073
+        },
+        {
+          "pixels": 727,
+          "before_rgb_mae": 6.729023383768913,
+          "after_rgb_mae": 6.198991288399816
+        },
+        {
+          "pixels": 4414,
+          "before_rgb_mae": 13.278809847455067,
+          "after_rgb_mae": 12.731460504455521
+        },
+        {
+          "pixels": 2421,
+          "before_rgb_mae": 18.842076277020514,
+          "after_rgb_mae": 18.549772821148284
+        },
+        {
+          "pixels": 478,
+          "before_rgb_mae": 11.642259414225942,
+          "after_rgb_mae": 11.08647140864714
+        },
+        {
+          "pixels": 146,
+          "before_rgb_mae": 3.6552511415525113,
+          "after_rgb_mae": 4.146118721461187
+        },
+        {
+          "pixels": 260,
+          "before_rgb_mae": 7.515384615384615,
+          "after_rgb_mae": 6.891025641025641
+        },
+        {
+          "pixels": 65,
+          "before_rgb_mae": 4.4512820512820515,
+          "after_rgb_mae": 4.082051282051282
+        },
+        {
+          "pixels": 163,
+          "before_rgb_mae": 13.826175869120654,
+          "after_rgb_mae": 13.445807770961146
+        },
+        {
+          "pixels": 170,
+          "before_rgb_mae": 3.9352941176470586,
+          "after_rgb_mae": 4.6686274509803924
+        }
+      ]
+    },
+    {
+      "file": "2008_002079.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 19.917524248876273,
+        "skin_rgb_p95": 40.0,
+        "skin_chroma_mae": 4.463521025550035,
+        "whole_rgb_mae": 11.299873777777778
+      },
+      "after": {
+        "skin_rgb_mae": 20.497663827773835,
+        "skin_rgb_p95": 39.0,
+        "skin_chroma_mae": 2.7623111249112844,
+        "whole_rgb_mae": 11.333619555555556
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -2.441552652574549,
+          0.6420647580284871,
+          3.0976511417299237
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.5801395788975618,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1437,
+          "before_rgb_mae": 13.295523080491765,
+          "after_rgb_mae": 13.882393876130829
+        },
+        {
+          "pixels": 991,
+          "before_rgb_mae": 7.441305079044736,
+          "after_rgb_mae": 7.752774974772956
+        },
+        {
+          "pixels": 727,
+          "before_rgb_mae": 13.287024300779459,
+          "after_rgb_mae": 13.860614397065566
+        },
+        {
+          "pixels": 4414,
+          "before_rgb_mae": 22.4100589034889,
+          "after_rgb_mae": 23.060640386648544
+        },
+        {
+          "pixels": 2421,
+          "before_rgb_mae": 29.1737574005232,
+          "after_rgb_mae": 29.832163018036624
+        },
+        {
+          "pixels": 478,
+          "before_rgb_mae": 19.602510460251047,
+          "after_rgb_mae": 20.267085076708508
+        },
+        {
+          "pixels": 146,
+          "before_rgb_mae": 4.264840182648402,
+          "after_rgb_mae": 3.8926940639269407
+        },
+        {
+          "pixels": 260,
+          "before_rgb_mae": 14.715384615384615,
+          "after_rgb_mae": 15.376923076923077
+        },
+        {
+          "pixels": 65,
+          "before_rgb_mae": 11.764102564102565,
+          "after_rgb_mae": 12.430769230769231
+        },
+        {
+          "pixels": 163,
+          "before_rgb_mae": 21.15950920245399,
+          "after_rgb_mae": 21.75869120654397
+        },
+        {
+          "pixels": 170,
+          "before_rgb_mae": 4.650980392156863,
+          "after_rgb_mae": 4.229411764705882
+        }
+      ]
+    },
+    {
+      "file": "2008_002079.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 9.165454222853088,
+        "skin_rgb_p95": 23.0,
+        "skin_chroma_mae": 6.749198485923824,
+        "whole_rgb_mae": 4.567399111111111
+      },
+      "after": {
+        "skin_rgb_mae": 8.698604211024367,
+        "skin_rgb_p95": 19.0,
+        "skin_chroma_mae": 3.9132085107641355,
+        "whole_rgb_mae": 4.527276444444444
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -4.487281370929452,
+          1.4870285950624984,
+          4.112380215847068
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.4668500118287202,
+      "background_exact": true,
+      "max_luminance_change": 0.484,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1437,
+          "before_rgb_mae": 7.751797726745535,
+          "after_rgb_mae": 6.430758524704245
+        },
+        {
+          "pixels": 991,
+          "before_rgb_mae": 6.120080726538849,
+          "after_rgb_mae": 4.997309115371679
+        },
+        {
+          "pixels": 727,
+          "before_rgb_mae": 7.703805593764328,
+          "after_rgb_mae": 6.298945437872535
+        },
+        {
+          "pixels": 4414,
+          "before_rgb_mae": 9.313094698686,
+          "after_rgb_mae": 9.120752152242863
+        },
+        {
+          "pixels": 2421,
+          "before_rgb_mae": 12.232135481206113,
+          "after_rgb_mae": 12.486300426820874
+        },
+        {
+          "pixels": 478,
+          "before_rgb_mae": 8.096931659693166,
+          "after_rgb_mae": 8.40934449093445
+        },
+        {
+          "pixels": 146,
+          "before_rgb_mae": 4.621004566210046,
+          "after_rgb_mae": 2.997716894977169
+        },
+        {
+          "pixels": 260,
+          "before_rgb_mae": 7.82051282051282,
+          "after_rgb_mae": 6.462820512820513
+        },
+        {
+          "pixels": 65,
+          "before_rgb_mae": 8.743589743589743,
+          "after_rgb_mae": 6.430769230769231
+        },
+        {
+          "pixels": 163,
+          "before_rgb_mae": 9.233128834355828,
+          "after_rgb_mae": 9.149284253578733
+        },
+        {
+          "pixels": 170,
+          "before_rgb_mae": 6.672549019607843,
+          "after_rgb_mae": 4.368627450980392
+        }
+      ]
+    },
+    {
+      "file": "2008_002079.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 3.3261178140525196,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 1.3946695942748997,
+        "whole_rgb_mae": 6.155256888888889
+      },
+      "after": {
+        "skin_rgb_mae": 3.5576058670451856,
+        "skin_rgb_p95": 7.0,
+        "skin_chroma_mae": 1.198159007570381,
+        "whole_rgb_mae": 6.171434666666666
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.4976598376476211,
+          -0.07768760225830107,
+          -0.9052427099218843
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.23148805299266595,
+      "background_exact": true,
+      "max_luminance_change": 0.114,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1437,
+          "before_rgb_mae": 4.061934585942937,
+          "after_rgb_mae": 4.3945720250521925
+        },
+        {
+          "pixels": 991,
+          "before_rgb_mae": 4.229397914564413,
+          "after_rgb_mae": 4.562731247897746
+        },
+        {
+          "pixels": 727,
+          "before_rgb_mae": 3.877120586886749,
+          "after_rgb_mae": 4.207702888583219
+        },
+        {
+          "pixels": 4414,
+          "before_rgb_mae": 3.1500528621054222,
+          "after_rgb_mae": 3.400317172632533
+        },
+        {
+          "pixels": 2421,
+          "before_rgb_mae": 2.3409059617238057,
+          "after_rgb_mae": 2.3541236403689934
+        },
+        {
+          "pixels": 478,
+          "before_rgb_mae": 3.9748953974895396,
+          "after_rgb_mae": 4.308228730822873
+        },
+        {
+          "pixels": 146,
+          "before_rgb_mae": 3.509132420091324,
+          "after_rgb_mae": 3.8378995433789953
+        },
+        {
+          "pixels": 260,
+          "before_rgb_mae": 3.8282051282051284,
+          "after_rgb_mae": 4.161538461538462
+        },
+        {
+          "pixels": 65,
+          "before_rgb_mae": 4.2615384615384615,
+          "after_rgb_mae": 4.5948717948717945
+        },
+        {
+          "pixels": 163,
+          "before_rgb_mae": 3.719836400817996,
+          "after_rgb_mae": 4.03680981595092
+        },
+        {
+          "pixels": 170,
+          "before_rgb_mae": 4.601960784313725,
+          "after_rgb_mae": 4.935294117647059
+        }
+      ]
+    },
+    {
+      "file": "2008_002470.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 3.569288086174779,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 0.5859872303663516,
+        "whole_rgb_mae": 3.3511927710843374
+      },
+      "after": {
+        "skin_rgb_mae": 3.569288086174779,
+        "skin_rgb_p95": 5.0,
+        "skin_chroma_mae": 0.5859872303663516,
+        "whole_rgb_mae": 3.3511927710843374
+      },
+      "diagnostics": {
+        "applied": false,
+        "delta_rgb": [
+          -0.19406361869273425,
+          0.048140965416713755,
+          0.2611076779785382
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.0,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2256,
+          "before_rgb_mae": 3.960401891252955,
+          "after_rgb_mae": 3.960401891252955
+        },
+        {
+          "pixels": 1598,
+          "before_rgb_mae": 3.7820191906549856,
+          "after_rgb_mae": 3.7820191906549856
+        },
+        {
+          "pixels": 1394,
+          "before_rgb_mae": 3.9323290291726445,
+          "after_rgb_mae": 3.9323290291726445
+        },
+        {
+          "pixels": 1852,
+          "before_rgb_mae": 3.5219582433405328,
+          "after_rgb_mae": 3.5219582433405328
+        },
+        {
+          "pixels": 2803,
+          "before_rgb_mae": 2.932096563206089,
+          "after_rgb_mae": 2.932096563206089
+        },
+        {
+          "pixels": 946,
+          "before_rgb_mae": 3.4901338971106415,
+          "after_rgb_mae": 3.4901338971106415
+        },
+        {
+          "pixels": 255,
+          "before_rgb_mae": 3.3973856209150326,
+          "after_rgb_mae": 3.3973856209150326
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 4.016,
+          "after_rgb_mae": 4.016
+        },
+        {
+          "pixels": 155,
+          "before_rgb_mae": 3.5913978494623655,
+          "after_rgb_mae": 3.5913978494623655
+        },
+        {
+          "pixels": 37,
+          "before_rgb_mae": 3.630630630630631,
+          "after_rgb_mae": 3.630630630630631
+        },
+        {
+          "pixels": 515,
+          "before_rgb_mae": 3.6297734627831715,
+          "after_rgb_mae": 3.6297734627831715
+        }
+      ]
+    },
+    {
+      "file": "2008_002470.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 7.778002753705353,
+        "skin_rgb_p95": 14.0,
+        "skin_chroma_mae": 2.254367403687805,
+        "whole_rgb_mae": 11.737600401606425
+      },
+      "after": {
+        "skin_rgb_mae": 7.7044086282767745,
+        "skin_rgb_p95": 13.0,
+        "skin_chroma_mae": 1.8046213655138899,
+        "whole_rgb_mae": 11.730909638554216
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          1.3546610832260892,
+          -0.4946818586912718,
+          -1.00583695467175
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.07359412542857857,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2256,
+          "before_rgb_mae": 9.1753841607565,
+          "after_rgb_mae": 9.147310874704491
+        },
+        {
+          "pixels": 1598,
+          "before_rgb_mae": 8.214643304130163,
+          "after_rgb_mae": 8.197955778055903
+        },
+        {
+          "pixels": 1394,
+          "before_rgb_mae": 8.762314681970349,
+          "after_rgb_mae": 8.757054041128647
+        },
+        {
+          "pixels": 1852,
+          "before_rgb_mae": 7.296076313894888,
+          "after_rgb_mae": 7.244600431965443
+        },
+        {
+          "pixels": 2803,
+          "before_rgb_mae": 6.059460102271376,
+          "after_rgb_mae": 5.8335117136401475
+        },
+        {
+          "pixels": 946,
+          "before_rgb_mae": 7.063424947145878,
+          "after_rgb_mae": 6.987315010570825
+        },
+        {
+          "pixels": 255,
+          "before_rgb_mae": 8.803921568627452,
+          "after_rgb_mae": 8.803921568627452
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 9.82,
+          "after_rgb_mae": 9.82
+        },
+        {
+          "pixels": 155,
+          "before_rgb_mae": 7.350537634408602,
+          "after_rgb_mae": 7.320430107526882
+        },
+        {
+          "pixels": 37,
+          "before_rgb_mae": 7.612612612612613,
+          "after_rgb_mae": 7.612612612612613
+        },
+        {
+          "pixels": 515,
+          "before_rgb_mae": 7.710032362459547,
+          "after_rgb_mae": 7.7009708737864075
+        }
+      ]
+    },
+    {
+      "file": "2008_002470.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 5.870089900380659,
+        "skin_rgb_p95": 11.0,
+        "skin_chroma_mae": 3.079835533597905,
+        "whole_rgb_mae": 10.447343373493975
+      },
+      "after": {
+        "skin_rgb_mae": 5.112496962824978,
+        "skin_rgb_p95": 10.0,
+        "skin_chroma_mae": 1.6457759239761347,
+        "whole_rgb_mae": 10.388395582329318
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -1.9299793773496408,
+          0.5699064815114703,
+          2.1274449928126824
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.7575929375556809,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2256,
+          "before_rgb_mae": 6.825206855791962,
+          "after_rgb_mae": 6.268026004728132
+        },
+        {
+          "pixels": 1598,
+          "before_rgb_mae": 6.075511055486024,
+          "after_rgb_mae": 5.415102211097205
+        },
+        {
+          "pixels": 1394,
+          "before_rgb_mae": 6.396221903395505,
+          "after_rgb_mae": 5.784313725490196
+        },
+        {
+          "pixels": 1852,
+          "before_rgb_mae": 5.52735781137509,
+          "after_rgb_mae": 4.726061915046796
+        },
+        {
+          "pixels": 2803,
+          "before_rgb_mae": 5.219407777381377,
+          "after_rgb_mae": 4.1457961707694135
+        },
+        {
+          "pixels": 946,
+          "before_rgb_mae": 5.480267794221283,
+          "after_rgb_mae": 4.601832276250881
+        },
+        {
+          "pixels": 255,
+          "before_rgb_mae": 4.4222222222222225,
+          "after_rgb_mae": 3.726797385620915
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 6.286666666666667,
+          "after_rgb_mae": 5.9
+        },
+        {
+          "pixels": 155,
+          "before_rgb_mae": 5.621505376344086,
+          "after_rgb_mae": 4.733333333333333
+        },
+        {
+          "pixels": 37,
+          "before_rgb_mae": 5.36936936936937,
+          "after_rgb_mae": 4.828828828828829
+        },
+        {
+          "pixels": 515,
+          "before_rgb_mae": 5.563754045307443,
+          "after_rgb_mae": 4.948867313915858
+        }
+      ]
+    },
+    {
+      "file": "2008_002470.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 7.228638535676683,
+        "skin_rgb_p95": 14.0,
+        "skin_chroma_mae": 5.952156043303366,
+        "whole_rgb_mae": 3.675082329317269
+      },
+      "after": {
+        "skin_rgb_mae": 4.895035231230258,
+        "skin_rgb_p95": 10.0,
+        "skin_chroma_mae": 3.258201830404147,
+        "whole_rgb_mae": 3.4864497991967873
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.9105820568813163,
+          1.2623243737028216,
+          3.7568388389863774
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -2.3336033044464246,
+      "background_exact": true,
+      "max_luminance_change": 0.484,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2256,
+          "before_rgb_mae": 7.537234042553192,
+          "after_rgb_mae": 5.2064125295508275
+        },
+        {
+          "pixels": 1598,
+          "before_rgb_mae": 6.700876095118899,
+          "after_rgb_mae": 4.724864413850646
+        },
+        {
+          "pixels": 1394,
+          "before_rgb_mae": 8.359158297465328,
+          "after_rgb_mae": 5.683405069344811
+        },
+        {
+          "pixels": 1852,
+          "before_rgb_mae": 6.68304535637149,
+          "after_rgb_mae": 4.517458603311735
+        },
+        {
+          "pixels": 2803,
+          "before_rgb_mae": 7.181353311927697,
+          "after_rgb_mae": 4.608514686645261
+        },
+        {
+          "pixels": 946,
+          "before_rgb_mae": 7.1849894291754755,
+          "after_rgb_mae": 4.679351656095842
+        },
+        {
+          "pixels": 255,
+          "before_rgb_mae": 5.990849673202614,
+          "after_rgb_mae": 4.802614379084967
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 7.545333333333334,
+          "after_rgb_mae": 5.389333333333333
+        },
+        {
+          "pixels": 155,
+          "before_rgb_mae": 8.10752688172043,
+          "after_rgb_mae": 5.402150537634409
+        },
+        {
+          "pixels": 37,
+          "before_rgb_mae": 7.576576576576577,
+          "after_rgb_mae": 5.198198198198198
+        },
+        {
+          "pixels": 515,
+          "before_rgb_mae": 6.726860841423949,
+          "after_rgb_mae": 4.585760517799352
+        }
+      ]
+    },
+    {
+      "file": "2008_002470.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 9.973704813584947,
+        "skin_rgb_p95": 15.0,
+        "skin_chroma_mae": 1.7897248994357602,
+        "whole_rgb_mae": 7.816813253012048
+      },
+      "after": {
+        "skin_rgb_mae": 9.972516940687347,
+        "skin_rgb_p95": 14.0,
+        "skin_chroma_mae": 1.2858752463486407,
+        "whole_rgb_mae": 7.8156285140562245
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          1.126242763744818,
+          -0.40141759346280015,
+          -0.8869689385680193
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.0011878728975993624,
+      "background_exact": true,
+      "max_luminance_change": 0.299,
+      "skin_components_not_identities": [
+        {
+          "pixels": 2256,
+          "before_rgb_mae": 8.696956264775414,
+          "after_rgb_mae": 8.69281914893617
+        },
+        {
+          "pixels": 1598,
+          "before_rgb_mae": 9.831038798498122,
+          "after_rgb_mae": 9.83145598664998
+        },
+        {
+          "pixels": 1394,
+          "before_rgb_mae": 8.934241989478718,
+          "after_rgb_mae": 8.932329029172644
+        },
+        {
+          "pixels": 1852,
+          "before_rgb_mae": 10.353851691864651,
+          "after_rgb_mae": 10.353851691864651
+        },
+        {
+          "pixels": 2803,
+          "before_rgb_mae": 11.021881317635867,
+          "after_rgb_mae": 11.021881317635867
+        },
+        {
+          "pixels": 946,
+          "before_rgb_mae": 10.286116983791402,
+          "after_rgb_mae": 10.286116983791402
+        },
+        {
+          "pixels": 255,
+          "before_rgb_mae": 13.06797385620915,
+          "after_rgb_mae": 13.06797385620915
+        },
+        {
+          "pixels": 500,
+          "before_rgb_mae": 9.601333333333333,
+          "after_rgb_mae": 9.594666666666667
+        },
+        {
+          "pixels": 155,
+          "before_rgb_mae": 9.948387096774194,
+          "after_rgb_mae": 9.948387096774194
+        },
+        {
+          "pixels": 37,
+          "before_rgb_mae": 9.963963963963964,
+          "after_rgb_mae": 9.963963963963964
+        },
+        {
+          "pixels": 515,
+          "before_rgb_mae": 10.015533980582525,
+          "after_rgb_mae": 10.015533980582525
+        }
+      ]
+    },
+    {
+      "file": "2008_007676.jpg",
+      "style": "identity",
+      "before": {
+        "skin_rgb_mae": 32.631040303861575,
+        "skin_rgb_p95": 36.0,
+        "skin_chroma_mae": 1.1008311528451855,
+        "whole_rgb_mae": 16.301566866267464
+      },
+      "after": {
+        "skin_rgb_mae": 32.298468969074584,
+        "skin_rgb_p95": 35.0,
+        "skin_chroma_mae": 0.8819946425640666,
+        "whole_rgb_mae": 16.24434131736527
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.4569379791801573,
+          -0.35787878947718355,
+          0.6443016986707324
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.33257133478699075,
+      "background_exact": true,
+      "max_luminance_change": 0.114,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1312,
+          "before_rgb_mae": 32.27286585365854,
+          "after_rgb_mae": 31.940040650406505
+        },
+        {
+          "pixels": 1205,
+          "before_rgb_mae": 33.51894882434301,
+          "after_rgb_mae": 33.185615491009685
+        },
+        {
+          "pixels": 2314,
+          "before_rgb_mae": 33.26879861711323,
+          "after_rgb_mae": 32.93546528377989
+        },
+        {
+          "pixels": 1497,
+          "before_rgb_mae": 32.46849254063683,
+          "after_rgb_mae": 32.135159207303495
+        },
+        {
+          "pixels": 4169,
+          "before_rgb_mae": 33.14024146477972,
+          "after_rgb_mae": 32.80714799712161
+        },
+        {
+          "pixels": 2481,
+          "before_rgb_mae": 33.76340185409109,
+          "after_rgb_mae": 33.43006852075776
+        },
+        {
+          "pixels": 1841,
+          "before_rgb_mae": 32.735469853340575,
+          "after_rgb_mae": 32.40249864204237
+        },
+        {
+          "pixels": 2243,
+          "before_rgb_mae": 30.330955565462922,
+          "after_rgb_mae": 30.00445831475702
+        },
+        {
+          "pixels": 10888,
+          "before_rgb_mae": 32.44761817291207,
+          "after_rgb_mae": 32.11465221650747
+        },
+        {
+          "pixels": 475,
+          "before_rgb_mae": 33.039298245614034,
+          "after_rgb_mae": 32.7059649122807
+        }
+      ]
+    },
+    {
+      "file": "2008_007676.jpg",
+      "style": "warm",
+      "before": {
+        "skin_rgb_mae": 32.756430095425664,
+        "skin_rgb_p95": 41.0,
+        "skin_chroma_mae": 4.477208271787296,
+        "whole_rgb_mae": 17.0664750499002
+      },
+      "after": {
+        "skin_rgb_mae": 32.756430095425664,
+        "skin_rgb_p95": 38.0,
+        "skin_chroma_mae": 2.5946761857869682,
+        "whole_rgb_mae": 17.07035129740519
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          3.1916871158852835,
+          -1.142292857015578,
+          -2.4893731630016056
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": 0.0,
+      "background_exact": true,
+      "max_luminance_change": 0.40199999999999997,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1312,
+          "before_rgb_mae": 32.861280487804876,
+          "after_rgb_mae": 32.861280487804876
+        },
+        {
+          "pixels": 1205,
+          "before_rgb_mae": 33.96984785615491,
+          "after_rgb_mae": 33.96984785615491
+        },
+        {
+          "pixels": 2314,
+          "before_rgb_mae": 33.40420628061077,
+          "after_rgb_mae": 33.40420628061077
+        },
+        {
+          "pixels": 1497,
+          "before_rgb_mae": 33.29191716766867,
+          "after_rgb_mae": 33.29191716766867
+        },
+        {
+          "pixels": 4169,
+          "before_rgb_mae": 33.35068361717438,
+          "after_rgb_mae": 33.35068361717438
+        },
+        {
+          "pixels": 2481,
+          "before_rgb_mae": 33.76192395539433,
+          "after_rgb_mae": 33.76192395539433
+        },
+        {
+          "pixels": 1841,
+          "before_rgb_mae": 33.20188303458266,
+          "after_rgb_mae": 33.20188303458266
+        },
+        {
+          "pixels": 2243,
+          "before_rgb_mae": 31.31802645266756,
+          "after_rgb_mae": 31.31802645266756
+        },
+        {
+          "pixels": 10888,
+          "before_rgb_mae": 32.129286064168504,
+          "after_rgb_mae": 32.129286064168504
+        },
+        {
+          "pixels": 475,
+          "before_rgb_mae": 33.51578947368421,
+          "after_rgb_mae": 33.51578947368421
+        }
+      ]
+    },
+    {
+      "file": "2008_007676.jpg",
+      "style": "cool",
+      "before": {
+        "skin_rgb_mae": 28.976694567536516,
+        "skin_rgb_p95": 38.0,
+        "skin_chroma_mae": 4.673804822864645,
+        "whole_rgb_mae": 15.512385229540918
+      },
+      "after": {
+        "skin_rgb_mae": 28.321528217392324,
+        "skin_rgb_p95": 34.0,
+        "skin_chroma_mae": 2.799333907763007,
+        "whole_rgb_mae": 15.388043912175648
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -2.451545293385772,
+          0.4533684043701429,
+          4.09548060839267
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.6551663501441922,
+      "background_exact": true,
+      "max_luminance_change": 0.25599999999999995,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1312,
+          "before_rgb_mae": 28.98780487804878,
+          "after_rgb_mae": 28.333079268292682
+        },
+        {
+          "pixels": 1205,
+          "before_rgb_mae": 29.84066390041494,
+          "after_rgb_mae": 29.187828492392807
+        },
+        {
+          "pixels": 2314,
+          "before_rgb_mae": 29.627628925381735,
+          "after_rgb_mae": 28.968452895419187
+        },
+        {
+          "pixels": 1497,
+          "before_rgb_mae": 29.10688042752171,
+          "after_rgb_mae": 28.453128479180585
+        },
+        {
+          "pixels": 4169,
+          "before_rgb_mae": 29.576876948908613,
+          "after_rgb_mae": 28.924762133205405
+        },
+        {
+          "pixels": 2481,
+          "before_rgb_mae": 29.768104259035336,
+          "after_rgb_mae": 29.10802095929061
+        },
+        {
+          "pixels": 1841,
+          "before_rgb_mae": 29.302190838312512,
+          "after_rgb_mae": 28.646025710664492
+        },
+        {
+          "pixels": 2243,
+          "before_rgb_mae": 27.42428295437658,
+          "after_rgb_mae": 26.7755981572299
+        },
+        {
+          "pixels": 10888,
+          "before_rgb_mae": 28.558504775900072,
+          "after_rgb_mae": 27.902124663237814
+        },
+        {
+          "pixels": 475,
+          "before_rgb_mae": 29.416842105263157,
+          "after_rgb_mae": 28.766315789473683
+        }
+      ]
+    },
+    {
+      "file": "2008_007676.jpg",
+      "style": "desaturate",
+      "before": {
+        "skin_rgb_mae": 33.07358561346744,
+        "skin_rgb_p95": 43.0,
+        "skin_chroma_mae": 5.382976905582519,
+        "whole_rgb_mae": 16.74821357285429
+      },
+      "after": {
+        "skin_rgb_mae": 32.43997796065743,
+        "skin_rgb_p95": 39.0,
+        "skin_chroma_mae": 3.005329628848093,
+        "whole_rgb_mae": 16.62980638722555
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.35644146721091,
+          0.9816118471417781,
+          3.7488582844161
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -0.6336076528100136,
+      "background_exact": true,
+      "max_luminance_change": 0.37,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1312,
+          "before_rgb_mae": 32.92530487804878,
+          "after_rgb_mae": 32.28709349593496
+        },
+        {
+          "pixels": 1205,
+          "before_rgb_mae": 34.11590594744122,
+          "after_rgb_mae": 33.48713692946058
+        },
+        {
+          "pixels": 2314,
+          "before_rgb_mae": 33.77974647075771,
+          "after_rgb_mae": 33.13742437337943
+        },
+        {
+          "pixels": 1497,
+          "before_rgb_mae": 33.13916722333556,
+          "after_rgb_mae": 32.50924070362948
+        },
+        {
+          "pixels": 4169,
+          "before_rgb_mae": 33.747021667865994,
+          "after_rgb_mae": 33.12576956904134
+        },
+        {
+          "pixels": 2481,
+          "before_rgb_mae": 33.868601370415156,
+          "after_rgb_mae": 33.22746204487438
+        },
+        {
+          "pixels": 1841,
+          "before_rgb_mae": 33.25620133985153,
+          "after_rgb_mae": 32.62067716820569
+        },
+        {
+          "pixels": 2243,
+          "before_rgb_mae": 31.87368108188438,
+          "after_rgb_mae": 31.243572596225295
+        },
+        {
+          "pixels": 10888,
+          "before_rgb_mae": 32.55127969630174,
+          "after_rgb_mae": 31.914554249326475
+        },
+        {
+          "pixels": 475,
+          "before_rgb_mae": 34.047017543859646,
+          "after_rgb_mae": 33.43228070175439
+        }
+      ]
+    },
+    {
+      "file": "2008_007676.jpg",
+      "style": "contrast",
+      "before": {
+        "skin_rgb_mae": 10.411244753933085,
+        "skin_rgb_p95": 25.0,
+        "skin_chroma_mae": 7.045990492602753,
+        "whole_rgb_mae": 9.902624750499003
+      },
+      "after": {
+        "skin_rgb_mae": 9.167100419685353,
+        "skin_rgb_p95": 20.0,
+        "skin_chroma_mae": 3.498470305502802,
+        "whole_rgb_mae": 9.664634730538921
+      },
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          4.800281738813537,
+          -1.6363901117714459,
+          -4.164238985044122
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "rgb_mae_change": -1.244144334247732,
+      "background_exact": true,
+      "max_luminance_change": 0.434,
+      "skin_components_not_identities": [
+        {
+          "pixels": 1312,
+          "before_rgb_mae": 9.489583333333334,
+          "after_rgb_mae": 7.102388211382114
+        },
+        {
+          "pixels": 1205,
+          "before_rgb_mae": 8.628769017980636,
+          "after_rgb_mae": 6.433195020746888
+        },
+        {
+          "pixels": 2314,
+          "before_rgb_mae": 8.348890809564967,
+          "after_rgb_mae": 6.757274560645347
+        },
+        {
+          "pixels": 1497,
+          "before_rgb_mae": 10.840347361389446,
+          "after_rgb_mae": 8.5666889334224
+        },
+        {
+          "pixels": 4169,
+          "before_rgb_mae": 8.74206444391141,
+          "after_rgb_mae": 6.96889741744623
+        },
+        {
+          "pixels": 2481,
+          "before_rgb_mae": 9.250167943033723,
+          "after_rgb_mae": 8.41999193873438
+        },
+        {
+          "pixels": 1841,
+          "before_rgb_mae": 9.77367372804635,
+          "after_rgb_mae": 7.980264349085642
+        },
+        {
+          "pixels": 2243,
+          "before_rgb_mae": 14.910536483875761,
+          "after_rgb_mae": 13.34462773071779
+        },
+        {
+          "pixels": 10888,
+          "before_rgb_mae": 11.228569679157482,
+          "after_rgb_mae": 10.725783737447955
+        },
+        {
+          "pixels": 475,
+          "before_rgb_mae": 9.4,
+          "after_rgb_mae": 7.784561403508772
+        }
+      ]
+    }
+  ],
+  "natural": [
+    {
+      "case": 0,
+      "target": "obama.jpg",
+      "reference": "biden.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          3.720935260197267,
+          -2.992730800334334,
+          5.650643306998957
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.39228922526041665,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 1,
+      "target": "biden.jpg",
+      "reference": "obama.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -4.456406730881675,
+          3.44115337260195,
+          -6.030626466527776
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.209906914893617,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 2,
+      "target": "alex-lacamoire.png",
+      "reference": "lin-manuel-miranda.png",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -0.7237011884179676,
+          0.4238672029734296,
+          -0.284415726381825
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.06399849950515596,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 3,
+      "target": "lin-manuel-miranda.png",
+      "reference": "alex-lacamoire.png",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.9378437173685885,
+          -0.5813349655572733,
+          0.5335820463859591
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.24468113009592327,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 4,
+      "target": "two_people.jpg",
+      "reference": "obama2.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.5147681269236448,
+          1.2914554174608601,
+          -8.0
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.33019725177304965,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 5,
+      "target": "obama2.jpg",
+      "reference": "two_people.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -0.19900402617836177,
+          -1.4522960752513436,
+          8.0
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.40948571606786427,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 6,
+      "target": "2007_007763.jpg",
+      "reference": "2008_001322.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          4.724201015453501,
+          -2.332137016067664,
+          -0.3822076771030307
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.22226666666666667,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 7,
+      "target": "2008_001322.jpg",
+      "reference": "2007_007763.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          -3.8298351916848574,
+          1.8575030727961295,
+          0.48040718054430265
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.22494044444444444,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 8,
+      "target": "2008_002470.jpg",
+      "reference": "2008_007676.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.19115222479332772,
+          -0.3423092106596348,
+          1.2612367670532443
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.029100401606425703,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    },
+    {
+      "case": 9,
+      "target": "2008_007676.jpg",
+      "reference": "2008_002470.jpg",
+      "diagnostics": {
+        "applied": true,
+        "delta_rgb": [
+          0.5819112006266245,
+          -0.12025033684853526,
+          -0.9070570285701649
+        ],
+        "max_rgb_delta": 8,
+        "reference_pull": 0.5,
+        "spatial": true,
+        "luminance": "graded luminance preserved before 8bit rounding"
+      },
+      "change_mae": 0.11741117764471058,
+      "note": "No objective quality score for unmatched people; author visual review required"
+    }
+  ],
+  "settings": {
+    "pull": 0.5,
+    "max_rgb_delta": 8
+  },
+  "product_changed": false,
+  "elapsed_seconds": 100.5
+}

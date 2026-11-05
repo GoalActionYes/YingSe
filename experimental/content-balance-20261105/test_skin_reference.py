@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from skin_reference import match_skin
+from skin_reference import match_skin,apply_frame
 
 class ReferenceSkinTests(unittest.TestCase):
  def setUp(self):
@@ -27,5 +27,10 @@ class ReferenceSkinTests(unittest.TestCase):
    np.testing.assert_array_equal(out,self.a)
  def test_invalid_mask_rejected(self):
   with self.assertRaises(ValueError):match_skin(self.a,self.b,self.m,np.full((20,20),np.nan))
+ def test_video_frame_without_face_is_exact_fallback(self):
+  out=apply_frame(self.a,self.m,np.array([4.,-2.,0.]),face_eligible=False)
+  np.testing.assert_array_equal(out,self.a)
+ def test_frame_requires_explicit_boolean_evidence(self):
+  with self.assertRaises(ValueError):apply_frame(self.a,self.m,np.zeros(3),face_eligible='false')
 
 if __name__=='__main__':unittest.main()

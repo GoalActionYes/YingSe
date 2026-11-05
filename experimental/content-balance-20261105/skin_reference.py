@@ -5,6 +5,12 @@ Not Jianying logic; not original skin protection; no CUBE representation.
 """
 import numpy as np
 
+def apply_frame(graded,mask,delta,*,face_eligible):
+ """Caller must confirm eligibility on THIS original frame, not only frame 0."""
+ if type(face_eligible) is not bool:raise ValueError('Explicit boolean face evidence required')
+ if not face_eligible:return graded.copy()
+ return _apply_fixed(graded,mask,delta)
+
 def match_skin(graded,reference,target_mask,reference_mask):
  masks=[]
  for rgb,m in ((graded,target_mask),(reference,reference_mask)):
