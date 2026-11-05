@@ -1,4 +1,6 @@
 'use strict';
+const controls=window.manualControls;
+let manualVersion=0,manualTimer=null;
 const $ = id => document.getElementById(id);
 const state = {target:null, reference:null, mapping:null, generation:0, analyzing:false, uploading:0, job:null, exportStale:false, uploadVersion:{target:0,reference:0}, previewRunning:false, previewNext:null, saveTimer:null, saveVersion:0, saveNext:null, saveRunning:false};
 const status = (message, type='') => { $('status').textContent=message; $('status').className='status '+type; };
@@ -35,7 +37,7 @@ function setButtons() {
   $('video-demo').disabled=waiting;
   $('format').querySelector('[value="png"]').disabled=state.target?.kind==='video';
   $('format').querySelector('[value="mp4"]').disabled=state.target?.kind!=='video';
-  const note=$('format').value==='mp4'?'原尺寸视频（奇数边补齐偶数）；H.264 / AAC 有损编码，保留首条可用音轨。':$('format').value==='cube'?'.cube 包含当前启用状态和强度，供支持 3D LUT 的软件使用。':'PNG 保留原分辨率；预览显示会缩放。';
+  const note=$('format').value==='mp4'?'原尺寸视频（奇数边补齐偶数）；H.264 / AAC 有损编码，保留首条可用音轨。':$('format').value==='cube'?'.cube 包含克隆强度与基础 / HSL / 曲线微调，供支持 3D LUT 的软件使用。':'PNG 保留原分辨率；预览显示会缩放。';
   $('export-note').textContent=note+(state.target?.kind!=='video'?' 导入视频后可导出 MP4。':'')+(state.target?.metadata?.precision_conversion?' 输入为10位 SDR，先转为8位调色，MP4输出为8位。':'');
 }
 function invalidate(message='素材已更改，等待分析。') {
@@ -116,7 +118,7 @@ async function analyze(){
 $('analyze').addEventListener('click',analyze);
 function requestPreview() {
   if(!state.mapping)return;
-  state.previewNext={mapping:state.mapping,strength:effectiveStrength(),generation:state.generation};
+  state.previewNext={mapping:state.mapping,strength:effectiveStrength(),generation:state.generation,adjustments:controls.snapshot(),manualVersion};
   $('preview-state').textContent='预览更新中';renderPreview();
 }
 async function renderPreview() {
@@ -125,12 +127,12 @@ async function renderPreview() {
   while(state.previewNext){
     const request=state.previewNext;state.previewNext=null;
     try {
-      const result=await api('/api/preview',{mapping_id:request.mapping,strength:request.strength});
-      if(request.generation!==state.generation || request.mapping!==state.mapping || request.strength!==effectiveStrength())continue;
+      const result=await api('/api/preview',{mapping_id:request.mapping,strength:request.strength,adjustments:request.adjustments});
+      if(request.generation!==state.generation || request.mapping!==state.mapping || request.strength!==effectiveStrength() || request.manualVersion!==manualVersion)continue;
       image('before',result.before);image('after',result.after);$('before-placeholder').hidden=true;$('after-placeholder').hidden=true;
-      actualTime(result.metadata);$('preview-state').textContent=$('clone-enabled').checked?`强度 ${Math.round(result.strength*100)}`:'色彩克隆已关闭';
-      status(!$('clone-enabled').checked?'色彩克隆已关闭 · 预览和导出使用原色，保留已设置的强度。':result.strength===0?'原画预览 · 强度为 0，导出将使用原画颜色。':'预览已更新 · 导出使用相同映射与当前强度。');
-    } catch(error) {if(request.generation===state.generation){status(error.message,'error');$('preview-state').textContent='预览失败';clearImage('after');$('after-placeholder').hidden=false;}}
+      actualTime(result.metadata);$('preview-state').textContent=controls.count()?`微调 ${controls.count()} 项 · 克隆 ${Math.round(result.strength*100)}`:($('clone-enabled').checked?`强度 ${Math.round(result.strength*100)}`:'色彩克隆已关闭');
+      status(controls.count()?'预览已更新 · 克隆与手动微调一起作用于图片、视频和 CUBE 导出。':!$('clone-enabled').checked?'克隆与微调均未生效 · 当前输出为原色。':result.strength===0?'原画预览 · 无生效调整。':'预览已更新 · 导出使用相同映射与当前强度。');
+    } catch(error) {if(request.generation===state.generation && request.manualVersion===manualVersion){status(error.message,'error');$('preview-state').textContent='预览失败';clearImage('after');$('after-placeholder').hidden=false;}}
   }
   state.previewRunning=false;
 }
@@ -142,7 +144,7 @@ $('clone-enabled').addEventListener('change',()=>{invalidateExport();setButtons(
 $('reset').addEventListener('click',()=>{$('strength').value=0;strengthChanged();});
 function scheduleSave(){
   clearTimeout(state.saveTimer); if(!state.mapping)return;
-  state.saveNext={generation:state.generation,version:++state.saveVersion,body:{mapping_id:state.mapping,strength:Number($('strength').value)/100,output_settings:{kind:$('format').value,clone_enabled:$('clone-enabled').checked}}};
+  state.saveNext={generation:state.generation,version:++state.saveVersion,body:{mapping_id:state.mapping,strength:Number($('strength').value)/100,output_settings:{kind:$('format').value,clone_enabled:$('clone-enabled').checked,adjustments:controls.snapshot()}}};
   $('save-state').textContent='等待保存最新项目…';
   state.saveTimer=setTimeout(()=>{state.saveTimer=null;drainSaves();},350);
 }
@@ -163,29 +165,29 @@ async function drainSaves(){
 }
 $('format').addEventListener('change',()=>{invalidateExport();setButtons();scheduleSave();});
 $('export').addEventListener('click',async()=>{
-  const gen=state.generation, mapping=state.mapping, strength=effectiveStrength(), kind=$('format').value;
+  const gen=state.generation, mapping=state.mapping, strength=effectiveStrength(), kind=$('format').value, manualCount=controls.count();
   state.job='starting';state.exportStale=false;setButtons();$('job-area').hidden=false;$('result-links').hidden=true;$('progress').style.width='0%';$('job-status').textContent='正在创建导出任务…';
   try {
-    const job=await api('/api/export',{mapping_id:mapping,media_id:state.target.id,strength,kind});
-    state.job=job.id;$('cancel').hidden=false;pollJob(job.id,gen,strength,mapping,kind);
+    const job=await api('/api/export',{mapping_id:mapping,media_id:state.target.id,strength,kind,adjustments:controls.snapshot()});
+    state.job=job.id;$('cancel').hidden=false;pollJob(job.id,gen,strength,mapping,kind,manualCount);
   }catch(error){state.job=null;$('job-status').textContent='导出失败：'+error.message;status(error.message,'error');setButtons();}
 });
-async function pollJob(id,generation,strength,mapping,kind){
+async function pollJob(id,generation,strength,mapping,kind,manualCount){
   try{
     const job=await api('/api/jobs/'+id);
     if(state.job!==id)return;
     $('progress').style.width=Math.round(job.progress*100)+'%';
     const percent=Math.round(job.progress*100);
     const stale=state.exportStale || generation!==state.generation || mapping!==state.mapping || strength!==effectiveStrength() || kind!==$('format').value;
-    $('job-status').textContent=`${job.status==='queued'?'等待导出':job.status==='running'?'正在导出':'导出'} · ${job.kind.toUpperCase()} · 强度 ${Math.round(strength*100)}%${job.status==='running'?' · '+percent+'%':''}${stale?'（先前设置，可取消）':''}`;
+    $('job-status').textContent=`${job.status==='queued'?'等待导出':job.status==='running'?'正在导出':'导出'} · ${job.kind.toUpperCase()} · 克隆 ${Math.round(strength*100)}% · 微调 ${manualCount} 项${job.status==='running'?' · '+percent+'%':''}${stale?'（先前设置，可取消）':''}`;
     if(job.status==='done'){
-      $('job-status').textContent=`导出完成 · ${job.kind.toUpperCase()} · 强度 ${Math.round(strength*100)}%`;
+      $('job-status').textContent=`导出完成 · ${job.kind.toUpperCase()} · 克隆 ${Math.round(strength*100)}% · 微调 ${manualCount} 项`;
       if(!stale && job.kind===kind){$('result-link').href=job.result_url;$('report-link').href=job.report_url;$('result-links').hidden=false;}else{$('job-status').textContent='先前设置的导出已结束（设置已更改，请按当前设置重新导出）';$('result-links').hidden=true;}
     }else if(job.status==='error'){$('job-status').textContent='导出失败：'+job.error;status('导出未完成：'+job.error,'error');}
     else if(job.status==='cancelled')$('job-status').textContent='导出已取消 · 未发布完成文件';
-    else {setTimeout(()=>pollJob(id,generation,strength,mapping,kind),500);return;}
+    else {setTimeout(()=>pollJob(id,generation,strength,mapping,kind,manualCount),500);return;}
     state.job=null;$('cancel').hidden=true;setButtons();
-  }catch(error){$('job-status').textContent=error.message+' 将继续检查任务状态。';setTimeout(()=>pollJob(id,generation,strength,mapping,kind),1800);}
+  }catch(error){$('job-status').textContent=error.message+' 将继续检查任务状态。';setTimeout(()=>pollJob(id,generation,strength,mapping,kind,manualCount),1800);}
 }
 $('cancel').addEventListener('click',async()=>{if(!state.job || state.job==='starting')return;$('cancel').disabled=true;try{await api('/api/jobs/'+state.job+'/cancel',{});}catch(error){status(error.message,'error');}finally{$('cancel').disabled=false;}});
 async function loadDemo(kind){
@@ -196,14 +198,18 @@ async function loadDemo(kind){
 $('demo').addEventListener('click',()=>loadDemo('image'));
 $('video-demo').addEventListener('click',()=>loadDemo('video'));
 async function restore(){
-  const gen=state.generation;
+  const gen=state.generation, restoreManualVersion=manualVersion;
   try{
     const project=await api('/api/projects/latest');if(gen!==state.generation || state.target || state.reference)return;
     showMedia('target',project.target);showMedia('reference',project.reference);$('frame-time').value=project.analysis_time;
     state.mapping=project.mapping_id;$('strength').value=Math.round(project.strength*100);$('format').value=project.output_settings.kind;
-    $('clone-enabled').checked=project.output_settings.clone_enabled!==false;syncStrength();
+    $('clone-enabled').checked=project.output_settings.clone_enabled!==false;
+    if(manualVersion===restoreManualVersion)controls.restore(project.output_settings.adjustments);
+    else scheduleSave();
+    syncStrength();
     $('diagnostics').href='/api/diagnostics/'+state.mapping;$('diagnostics').hidden=false;setButtons();requestPreview();
     await Promise.all([showFrame('target'),showFrame('reference')]);if(gen===state.generation)$('save-state').textContent='已恢复上次项目 · 映射缓存有效';
   }catch(error){if(gen===state.generation && !state.target){$('save-state').textContent='尚无可恢复的有效项目';if(!error.message.includes('不存在'))status('上次项目无法恢复，请重新导入与分析。','error');}}
 }
+window.addEventListener('manual-change',()=>{++manualVersion;invalidateExport();scheduleSave();clearTimeout(manualTimer);manualTimer=setTimeout(requestPreview,160);});
 setButtons();restore();

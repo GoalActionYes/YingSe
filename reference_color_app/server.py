@@ -18,6 +18,7 @@ from . import media, pipeline
 from .lut import apply_mapping
 from .storage import Store, _json
 from .jobs import JobManager
+from .adjustments import normalize, compose
 
 MAX_UPLOAD = 512 * 1024 * 1024
 MAX_JSON = 65536
@@ -138,7 +139,7 @@ class Handler(BaseHTTPRequestHandler):
         path = parsed.path
         store, manager = self.server.store, self.server.manager
         if method == 'GET':
-            static = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'application/javascript; charset=utf-8'), '/styles.css': ('styles.css', 'text/css; charset=utf-8')}
+            static = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'application/javascript; charset=utf-8'), '/adjustments.js': ('adjustments.js', 'application/javascript; charset=utf-8'), '/styles.css': ('styles.css', 'text/css; charset=utf-8')}
             if path in static:
                 name, mime = static[path]
                 return self.send_bytes((WEB / name).read_bytes(), mime)
@@ -212,18 +213,19 @@ class Handler(BaseHTTPRequestHandler):
             metadata = record['diagnostics']['inputs']['target']['metadata']
             return self.json(dict(mapping_id=record['id'], analysis_time=record['analysis_time'], metadata=public_metadata(metadata)))
         if path == '/api/preview':
-            data = self.body(('mapping_id', 'strength'))
+            data = self.body(('mapping_id', 'strength'), ('adjustments',))
             identifier = self.identifier(data['mapping_id']); strength = self.number(data['strength'], 1)
             mapping = store.get_mapping(identifier); record = store.get_mapping_record(identifier)
             rgb, metadata = frame(store.get_media(record['target_id']), record['analysis_time'])
-            after = apply_mapping(rgb, mapping, strength)
+            effective, effective_strength = compose(mapping, strength, data.get('adjustments'))
+            after = apply_mapping(rgb, effective, effective_strength)
             return self.json(dict(mapping_id=identifier, strength=strength, before=png(rgb), after=png(after), metadata=public_metadata(metadata)))
         if path == '/api/export':
-            data = self.body(('mapping_id', 'media_id', 'strength', 'kind'))
+            data = self.body(('mapping_id', 'media_id', 'strength', 'kind'), ('adjustments',))
             if not isinstance(data['kind'], str): raise RequestError(400, '导出格式无效')
             with self.server.operation_lock:
                 if self.server.stopping: raise RequestError(409, '服务正在关闭')
-                identifier = manager.start_export(self.identifier(data['mapping_id']), self.identifier(data['media_id']), self.number(data['strength'], 1), data['kind'])
+                identifier = manager.start_export(self.identifier(data['mapping_id']), self.identifier(data['media_id']), self.number(data['strength'], 1), data['kind'], data.get('adjustments'))
             return self.json(self.job_public(manager.get_job(identifier)), 202)
         parts = path.strip('/').split('/')
         if len(parts) == 4 and parts[:2] == ['api', 'jobs'] and parts[3] == 'cancel':
@@ -233,10 +235,11 @@ class Handler(BaseHTTPRequestHandler):
             data = self.body(('mapping_id', 'strength', 'output_settings'))
             settings = data['output_settings']
             if (not isinstance(settings, dict) or 'kind' not in settings
-                    or set(settings) - {'kind', 'clone_enabled'}
+                    or set(settings) - {'kind', 'clone_enabled', 'adjustments'}
                     or settings['kind'] not in ('png', 'mp4', 'cube')
                     or ('clone_enabled' in settings and not isinstance(settings['clone_enabled'], bool))):
                 raise RequestError(400, '输出设置无效')
+            if 'adjustments' in settings: settings['adjustments'] = normalize(settings['adjustments'])
             project = store.save_project(self.identifier(data['mapping_id']), self.number(data['strength'], 1), settings)
             _json(store.root / 'latest-project.json', dict(project_id=project['id']))
             return self.json(dict(project_id=project['id']), 201)

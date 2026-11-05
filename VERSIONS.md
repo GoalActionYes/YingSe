@@ -2,12 +2,12 @@
 
 ## 当前推荐
 
-开发从 `main` 开始。当前功能里程碑为 [feature/aligned-reference-20261105](https://github.com/GoalActionYes/YingSe/tree/feature/aligned-reference-20261105)，功能提交 `cb79e4a`；后续交接文档不另算算法版本。
+开发从 `main` 开始。当前功能里程碑为 `feature/manual-controls-20261106`，主开发版新增基础／HSL／曲线手动调色。[操作说明](docs/MANUAL_COLOR_CONTROLS.md)。肤色实验副本暂未同步这些控件。
 
 | 要做什么 | 选择 |
 | --- | --- |
 | 修改主程序 | `main` 的 `reference_color_app/` |
-| 复现当前功能代码 | 检出 `feature/aligned-reference-20261105`；新手安装指南在当前 `main` |
+| 复现当前功能代码 | 检出 `feature/manual-controls-20261106`；按源码启动指南准备依赖 |
 | 开发可选肤色保护 | `main` 的 `experimental/skin-protection-20261019/`，独立副本 |
 | 比较早期八预设 | `snapshot/preset-prototype` 或当前 `prototype/` |
 | 研究未上线算法 | `research/*` 与研究目录，先读最新审计 |
@@ -20,7 +20,8 @@
 
 | 标签 | 内容 | 定位 |
 | --- | --- | --- |
-| `feature/aligned-reference-20261105` | 条件同画面 RGB 拟合、LUT 与真实导出验证 | 当前功能基线，有限条件通过 |
+| `feature/manual-controls-20261106` | 主版基础 11 项、八色 HSL、RGB 曲线及组合导出 | 当前用户控件版本；自主实现 |
+| `feature/aligned-reference-20261105` | 条件同画面 RGB 拟合、LUT 与真实导出验证 | 匹配算法基线，有限条件通过 |
 | `fix/exact-identity-20261105` | 解码同图恒等保护 | 已被当前功能基线包含 |
 | `snapshot/reference-color-stable` | 基础参考调色、桌面源码与测试 | 历史基础快照，不含后续修复 |
 | `snapshot/skin-protection` | 默认关闭的目标肤色保护 | 历史实验快照，后续源码在 main 持续修复 |

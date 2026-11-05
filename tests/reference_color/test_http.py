@@ -208,12 +208,40 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(self.request('GET',f"/api/jobs/{job['id']}/result")[0],400)
         self.post('/api/stop',{'token':'wrong'},403)
 
+    def test_manual_adjustments_preview_save_and_png(self):
+        state={'basic':{'brightness':30,'temperature':20},'hsl':{'blue':[5,-10,0]},'curves':{'rgb':[[0,0],[.5,.6],[1,1]]}}
+        code,_,raw=self.request('POST','/api/preview',dict(mapping_id=self.mapping,strength=0,adjustments=state))
+        self.assertEqual(code,200,raw);preview=json.loads(raw)
+        before=np.array(Image.open(io.BytesIO(base64.b64decode(preview['before'].split(',')[1]))))
+        after=np.array(Image.open(io.BytesIO(base64.b64decode(preview['after'].split(',')[1]))))
+        self.assertGreater(np.abs(after.astype(float)-before).mean(),5)
+        code,_,raw=self.request('POST','/api/projects',dict(mapping_id=self.mapping,strength=0,output_settings={'kind':'png','clone_enabled':False,'adjustments':state}))
+        self.assertEqual(code,201,raw)
+        code,_,raw=self.request('GET','/api/projects/latest');self.assertEqual(code,200,raw)
+        self.assertEqual(json.loads(raw)['output_settings']['adjustments']['basic']['brightness'],30)
+        code,_,raw=self.request('POST','/api/export',dict(mapping_id=self.mapping,media_id=self.target['id'],strength=0,kind='png',adjustments=state))
+        self.assertEqual(code,202,raw);identifier=json.loads(raw)['id']
+        for _ in range(200):
+            job=self.server.manager.get_job(identifier)
+            if job['status'] not in ('queued','running'):break
+            time.sleep(.05)
+        self.assertEqual(job['status'],'done',job)
+        actual=np.array(Image.open(self.server.manager.result_file(identifier)))
+        np.testing.assert_array_equal(after,actual)
+        self.assertEqual(job['adjustments']['basic']['brightness'],30)
+        self.assertEqual(job['manual_algorithm_version'],1)
+        self.assertEqual(len(job['effective_mapping_sha256']),64)
+        self.assertEqual(job['diagnostics']['manual_algorithm_version'],1)
+        code,_,raw=self.request('POST','/api/preview',dict(mapping_id=self.mapping,strength=.8,adjustments={'basic':{'brightness':True}}))
+        self.assertEqual(code,400,raw)
+
     def test_cli_ready_file_health_and_token_stop(self):
         ready=self.root/'ready.json'
         # Windows venv python.exe is a redirector: Popen.pid can be its parent,
         # not the interpreter running the server. Announce the interpreter PID
         # and still exercise the module entry point and real CLI arguments.
-        entry="import os,runpy; print(os.getpid(),flush=True); runpy.run_module('reference_color_app.server',run_name='__main__')"
+        source_root=str(Path(__file__).resolve().parents[2])
+        entry="import os,runpy,sys; sys.path.insert(0,"+repr(source_root)+"); print(os.getpid(),flush=True); runpy.run_module('reference_color_app.server',run_name='__main__')"
         process=subprocess.Popen([sys.executable,'-c',entry,'--port','0','--data-dir',str(self.root/'cli-data'),'--ready-file',str(ready)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         try:
             deadline=time.monotonic()+20

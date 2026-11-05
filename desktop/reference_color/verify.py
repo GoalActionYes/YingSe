@@ -27,11 +27,15 @@ def main():
     audit=json.loads((root/'data/runtime-check.json').read_text(encoding='utf8'))
     for key in ('python','numpy','pillow','ffmpeg'): assert Path(audit[key]).resolve().is_relative_to(root)
     results=[]
+    assert b'manualControls' in api('/adjustments.js')
+    adjustments={'basic':{'temperature':20,'brightness':10},'hsl':{'green':[0,-20,0]},'curves':{'rgb':[[0,0],[.5,.55],[1,1]]}}
     for mode,kinds in (('image',('png','cube')),('video',('mp4',))):
         demo=api('/api/demo',{'kind':mode});target=demo['target']['id']
         mapping=api('/api/analyze',dict(target_id=target,reference_id=demo['reference']['id'],time_seconds=0))['mapping_id']
         for kind in kinds:
-            job=api('/api/export',dict(mapping_id=mapping,media_id=target,strength=.8,kind=kind))
+            preview=api('/api/preview',dict(mapping_id=mapping,strength=.8,adjustments=adjustments))
+            assert preview['after'].startswith('data:image/png;base64,')
+            job=api('/api/export',dict(mapping_id=mapping,media_id=target,strength=.8,kind=kind,adjustments=adjustments))
             for _ in range(600):
                 job=api('/api/jobs/'+job['id'])
                 if job['status'] in ('done','error','cancelled'): break
@@ -48,7 +52,9 @@ def main():
                 decoded=subprocess.run([audit['ffmpeg'],'-v','error','-i',str(output),'-frames:v','1','-f','image2pipe','-c:v','png','pipe:1'],capture_output=True,timeout=30)
                 assert decoded.returncode==0 and decoded.stdout.startswith(b'\x89PNG'),decoded.stderr
             if kind=='cube': assert b'LUT_3D_SIZE' in result
-            results.append(dict(kind=kind,bytes=len(result),sha256=hashlib.sha256(result).hexdigest()))
+            report=api(job['report_url']);assert report['manual_algorithm_version']==1
+            assert report['adjustments']['basic']['temperature']==20
+            results.append(dict(kind=kind,bytes=len(result),sha256=hashlib.sha256(result).hexdigest(),manual_adjustments=True))
     launch('--stop');assert not (root/'data/session.json').exists()
     # A stale ready pointing at a real app but with incorrect identity is rejected.
     launch('--check'); fresh=json.loads((root/'data/session.json').read_text(encoding='utf8'));url=fresh['url']

@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | 界面布局与交互 | `reference_color_app/web/index.html`、`app.js`、`styles.css` | 参考图更换、强度、原图比较、导出仍可用；附截图 |
 | 调色入口 | `pipeline.py`、`aligned_reference.py`、`calibration.py` | 同图不变、接受与拒绝路径、受控前后对照 |
+| 用户手动微调 | `adjustments.py`、`web/adjustments.js` | 中性兼容、HSL／曲线边界、预览与三格式导出一致 |
 | 恢复公式 | `features.py`、`matrices.py`、`parameters.py`、`lut.py` | 保留证据对应关系；改常数需给出依据与回归记录 |
 | 图片／视频导入 | `media.py` | 位深、色彩信息、错误提示；不能把 HDR 当 SDR |
 | 导出与状态 | `jobs.py`、`storage.py`、`server.py` | PNG／MP4／CUBE、取消、失败恢复、缓存失效 |

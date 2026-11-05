@@ -15,12 +15,14 @@
 
 ## 当前该用哪个版本
 
-新开发从main开始。当前功能里程碑是 [feature/aligned-reference-20261105](https://github.com/GoalActionYes/YingSe/tree/feature/aligned-reference-20261105)，功能提交cb79e4a；后续文档整理不改变这个功能版本。
+新开发从 main 开始。当前功能里程碑为 `feature/manual-controls-20261106`：在已有参考图匹配基础上，增加基础调色、HSL 和 RGB 曲线。[使用方法与界面](docs/MANUAL_COLOR_CONTROLS.md) · [验证记录](docs/research/2026-11-06-manual-controls/README.md)
+
+先前匹配算法基线为 [feature/aligned-reference-20261105](https://github.com/GoalActionYes/YingSe/tree/feature/aligned-reference-20261105)，提交 cb79e4a。本批主要增加用户微调空间，不宣称参考风格匹配本身普遍改善。
 
 | 版本 | 源码 | 建议 |
 | --- | --- | --- |
 | 主开发版 | [reference_color_app](reference_color_app) | 默认从这里改 |
-| 肤色保护实验版 | [experimental/skin-protection-20261019](experimental/skin-protection-20261019) | 独立副本；保护默认关闭，核心需同步验证 |
+| 肤色保护实验版 | [experimental/skin-protection-20261019](experimental/skin-protection-20261019) | 独立副本；保护默认关闭，本批手动控件未同步 |
 | 算法研究 | [experimental/content-balance-20261105](experimental/content-balance-20261105) | 包含失败试验，不能整个当成已上线功能 |
 | 八预设原型 | [prototype](prototype) | 历史比较，不是当前主程序 |
 

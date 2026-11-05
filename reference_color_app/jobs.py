@@ -4,6 +4,8 @@ from PIL import Image
 from . import media
 from .storage import _json
 from .lut import apply_mapping, cube_text, _strength
+from .adjustments import normalize, compose
+from .pipeline import layer_sha256
 
 class JobManager:
     def __init__(self,store):
@@ -23,15 +25,16 @@ class JobManager:
     def active_jobs(self):
         with self.lock: return [copy.deepcopy(j) for j in self.jobs.values() if j['status'] in ('queued','running')]
     def has_active_jobs(self): return bool(self.active_jobs())
-    def start_export(self,mapping_id,media_id,strength,kind):
+    def start_export(self,mapping_id,media_id,strength,kind,adjustments=None):
         if kind not in ('png','mp4','cube'): raise ValueError('Unknown export kind')
         strength=float(_strength(strength)); record=self.store.get_mapping_record(mapping_id)
         if record['target_id']!=media_id: raise ValueError('Mapping belongs to a different source ID')
         mapping=self.store.get_mapping(mapping_id); source=self.store.get_media(media_id)
         if kind=='png' and source['kind']!='image' or kind=='mp4' and source['kind']!='video': raise ValueError('Export kind does not match media')
+        adjustments=normalize(adjustments)
         identifier=uuid.uuid4().hex
         with self.lock:
-            self.jobs[identifier]=dict(id=identifier,status='queued',kind=kind,mapping_id=mapping_id,media_id=media_id,strength=strength,error=None,settings={},progress=0.0,diagnostics=record['diagnostics'])
+            self.jobs[identifier]=dict(id=identifier,status='queued',kind=kind,mapping_id=mapping_id,media_id=media_id,strength=strength,adjustments=adjustments,error=None,settings={},progress=0.0,diagnostics=record['diagnostics'])
             self._persist(self.jobs[identifier])
         threading.Thread(target=self._run,args=(identifier,mapping,source),daemon=True).start(); return identifier
     def get_job(self,job_id):
@@ -70,16 +73,21 @@ class JobManager:
                 job=self.jobs[identifier]
                 if job['status']=='cancelled': return
                 job['status']='running'; job['duration_seconds']=source['metadata'].get('duration_seconds'); self._persist(job)
+            mapping,effective_strength=compose(mapping,job['strength'],job['adjustments'])
+            with self.lock:
+                job.update(diagnostics=mapping.diagnostics,manual_algorithm_version=1,
+                           effective_mapping_sha256=layer_sha256(mapping.layers),effective_strength=effective_strength)
+                self._persist(job)
             directory.mkdir(exist_ok=True); kind=job['kind']; partial=directory/('partial.'+kind)
             if kind=='png':
-                rgb=media.decode_image(source['path']); Image.fromarray(apply_mapping(rgb,mapping,job['strength'])).save(partial,format='PNG')
+                rgb=media.decode_image(source['path']); Image.fromarray(apply_mapping(rgb,mapping,effective_strength)).save(partial,format='PNG')
                 settings=dict(width=rgb.shape[1],height=rgb.shape[0],format='RGB PNG',lossless=True)
             elif kind=='cube':
-                partial.write_text(cube_text(mapping,job['strength']),encoding='ascii'); settings=dict(size=64,combined_final_strength=True)
+                partial.write_text(cube_text(mapping,effective_strength),encoding='ascii'); settings=dict(size=64,combined_final_strength=True)
             else:
                 job['settings']=dict(codec='libx264',crf=18,audio='first optional audio track; AAC',fps='source timestamps; passthrough',padding='ceil(width/2)*2, ceil(height/2)*2',color='SDR BT709 limited YUV420P; explicit RGB conversion',encoding_loss='Lossy H264/AAC; separate from mapping fidelity',input_component_bit_depths=source['metadata'].get('component_bit_depths'),working_precision_bits=8,precision_conversion=source['metadata'].get('precision_conversion',False))
                 with self.lock: self._persist(job)
-                (directory/'grade.cube').write_text(cube_text(mapping,job['strength']),encoding='ascii')
+                (directory/'grade.cube').write_text(cube_text(mapping,effective_strength),encoding='ascii')
                 filters='format=rgb24,lut3d=file=grade.cube:interp=trilinear,pad=ceil(iw/2)*2:ceil(ih/2)*2,scale=in_range=full:out_range=tv:out_color_matrix=bt709,format=yuv420p'
                 args=[str(media.ffmpeg_path()),'-hide_banner','-nostdin','-y','-progress','progress.txt','-i',source['path'],'-map','0:v:0','-map','0:a:0?','-vf',filters,'-fps_mode','passthrough','-c:v','libx264','-crf','18','-c:a','aac','-colorspace','bt709','-color_primaries','bt709','-color_trc','bt709','-color_range','tv','-movflags','+faststart',str(partial)]
                 with (directory/'ffmpeg.log').open('wb') as log:
