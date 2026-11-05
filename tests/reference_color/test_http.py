@@ -210,12 +210,16 @@ class HttpTests(unittest.TestCase):
 
     def test_cli_ready_file_health_and_token_stop(self):
         ready=self.root/'ready.json'
-        process=subprocess.Popen([sys.executable,'-m','reference_color_app.server','--port','0','--data-dir',str(self.root/'cli-data'),'--ready-file',str(ready)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+        # Windows venv python.exe is a redirector: Popen.pid can be its parent,
+        # not the interpreter running the server. Announce the interpreter PID
+        # and still exercise the module entry point and real CLI arguments.
+        entry="import os,runpy; print(os.getpid(),flush=True); runpy.run_module('reference_color_app.server',run_name='__main__')"
+        process=subprocess.Popen([sys.executable,'-c',entry,'--port','0','--data-dir',str(self.root/'cli-data'),'--ready-file',str(ready)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         try:
             deadline=time.monotonic()+20
             while not ready.exists() and time.monotonic()<deadline:time.sleep(.05)
             self.assertTrue(ready.exists()); data=json.loads(ready.read_text(encoding='utf-8'))
-            self.assertEqual(data['pid'],process.pid);port=int(data['url'].rsplit(':',1)[1])
+            self.assertEqual(data['pid'],int(process.stdout.readline()));port=int(data['url'].rsplit(':',1)[1])
             self.assertEqual(json.loads(self.request('GET','/api/health',port=port)[2])['app'],'reference-color-app')
             self.assertEqual(self.request('POST','/api/stop',{'token':data['token']},port=port)[0],200)
             self.assertEqual(process.wait(timeout=10),0)

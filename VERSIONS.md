@@ -1,34 +1,54 @@
-# 映色版本索引
+# 版本索引
 
-最新阶段：feature/aligned-reference-20261105，有条件的同构图颜色拟合，77项基础与97项肤色测试、图像/视频/导出验证；不同内容仍回退原算法，部分压缩和缩放被拒绝。
+## 当前推荐
 
-最新修复：fix/exact-identity-20261105，精确解码同图返回恒等映射，基础与肤色版均已打包；普通参考路径不变。相近图漂移和全面明暗校准仍未修复。发布证据在docs/research/2026-11-05-identity-fix。
+开发从 `main` 开始。当前功能里程碑为 [feature/aligned-reference-20261105](https://github.com/GoalActionYes/YingSe/tree/feature/aligned-reference-20261105)，功能提交 `cb79e4a`；后续交接文档不另算算法版本。
 
-2026年11月5日开始纳入Git。此前没有可恢复的原始Git历史，以下是按现有文件导入的阶段快照，提交时间为导入时间；阶段开发日期以研发日志为准。
+| 要做什么 | 选择 |
+| --- | --- |
+| 修改主程序 | `main` 的 `reference_color_app/` |
+| 复现当前功能代码 | 检出 `feature/aligned-reference-20261105`；新手安装指南在当前 `main` |
+| 开发可选肤色保护 | `main` 的 `experimental/skin-protection-20261019/`，独立副本 |
+| 比较早期八预设 | `snapshot/preset-prototype` 或当前 `prototype/` |
+| 研究未上线算法 | `research/*` 与研究目录，先读最新审计 |
 
-| 标签 | 版本内容 | 状态 |
+当前同画面拟合是在精确同图保护之后增加的路径；旧同图修复记录中的“相近图未修复”描述的是该历史阶段，不能代替当前状态。[改动记录](CHANGELOG.md) · [功能边界](docs/PROJECT_STATUS.md)
+
+## 里程碑与历史标签
+
+下表按阅读顺序排列。研究状态描述对应阶段；后续审计可能推翻早期乐观结论。
+
+| 标签 | 内容 | 定位 |
 | --- | --- | --- |
-| snapshot/preset-prototype | prototype目录的预设风格与权重搜索 | 早期比较基线 |
-| snapshot/reference-color-stable | reference_color_app及测试、桌面源码 | 已有参考调色稳定源码 |
-| snapshot/skin-protection | experimental/skin-protection-20261019 | 独立可选肤色保护实验 |
-| research/regional-match | work/region-match-probe | 未证明整体收益，不接入 |
-| research/content-balance-v1 | experimental/content-balance-20261105 | 研究候选，重复试验有反例 |
-| research/content-balance-v2 | 全像素加权统计与12项测试 | 重复对照改善，独立自然素材和视频待验收 |
-| research/reference-composition-v3 | 参考贡献适配、稳定矩计算与18项测试 | 新增三组受控占比通过；自然风格质量及非人物误识别待验证，不接入默认App |
-| research/visible-face-v4 | 可见面部适用条件与25项测试 | 限定样例误触发回退通过；覆盖率与自然风格质量待验证，不接入默认App |
-| research/reference-skin-residual-v1 | 参考肤色局部色度协调、33项测试与短视频原型 | 六组合成控制误差下降35%至49%，30fps90帧通过；自然质量及产品接入未验收 |
-| snapshot/research-journal | 研发复盘与策略文档 | 历史记录和后续计划 |
+| `feature/aligned-reference-20261105` | 条件同画面 RGB 拟合、LUT 与真实导出验证 | 当前功能基线，有限条件通过 |
+| `fix/exact-identity-20261105` | 解码同图恒等保护 | 已被当前功能基线包含 |
+| `snapshot/reference-color-stable` | 基础参考调色、桌面源码与测试 | 历史基础快照，不含后续修复 |
+| `snapshot/skin-protection` | 默认关闭的目标肤色保护 | 历史实验快照，后续源码在 main 持续修复 |
+| `snapshot/preset-prototype` | 八预设风格与权重搜索 | 早期比较基线 |
+| `research/regional-match` | 分区迁移探针 | 未证明整体收益，不接入 |
+| `research/content-balance-v1` | 初始内容占比适配 | 有重复试验反例 |
+| `research/content-balance-v2` | 全像素加权统计 | 阶段数值检查，不代表产品验收 |
+| `research/reference-composition-v3` | 参考贡献与稳定矩 | 研究候选，未默认接入 |
+| `research/visible-face-v4` | 可见面部条件与回退 | 研究候选，未默认接入 |
+| `research/reference-skin-residual-v1` | 学习参考肤色的局部协调、视频探针 | 后续审计收益有限，未默认接入 |
+| `snapshot/research-journal` | 研发复盘和策略 | 历史资料 |
 
-标签对应累计源码快照，不代表每个阶段都已经通过完整产品验收。可用git show 标签:文件路径查看旧文件。需要实际切换时先保存修改，或使用git worktree add建立另一个检出目录，避免覆盖正在使用的素材和服务。
+2026 年 11 月 5 日开始补入 Git。此前无可恢复的原始 Git 历史，早期阶段标签是按现有文件导入的累计快照，提交时间是导入时间。不要据此宣称这些日期前已经有版本管理。
 
-## 协作约定
+## 查看旧版本与新改动
 
-main保存已整理源码；新功能从main创建codex/功能名分支。稳定交付后添加新的有说明标签；失败研究保留结果，不能冒称稳定发布。既有标签不挪动、不强推覆盖。
+GitHub 仓库顶部的分支／标签选择器可浏览对应源码；[提交历史](https://github.com/GoalActionYes/YingSe/commits/main/) 查看每次差异。[当前里程碑以来的修改](https://github.com/GoalActionYes/YingSe/compare/feature/aligned-reference-20261105...main) 可以查看后续交接整理。
 
-仓库保存源码、测试、依赖版本和简要证据，不保存私人媒体、项目数据、剪映DLL、逆向工具、便携Python、模型本体或历史ZIP。完整体验包仍留在原讨论目录。只有源码克隆时需要另行准备依赖、合法模型和测试资料；不能当作已包含便携运行时的体验包。
+本机仅查看旧文件可执行 `git show 标签:文件路径`。需要运行旧版时，先保存当前修改，使用单独工作区，例如：
 
-## GitHub远程
+```powershell
+git worktree add --detach ..\YingSe-baseline feature/aligned-reference-20261105
+```
 
-已按用户提供的地址配置origin：https://github.com/GoalActionYes/YingSe.git。本机通过Git Credential Manager官方浏览器流程认证，密码或令牌不写入源码。后续使用git push origin main和git push origin --tags同步；不强推，不重写既有标签。实际上传核验见讨论/12-Git版本管理/版本管理核验.json。
+它创建独立源码目录；依赖、模型与测试媒体仍需另行准备。不要直接在正在运行服务的目录切换历史版本。团队提交和标签规则见 [协作指南](CONTRIBUTING.md)。
 
-离线备份在讨论/12-Git版本管理/映色源码历史.bundle，使用git clone 映色源码历史.bundle 映色源码恢复可恢复历史和标签。该文件不是GitHub上传凭据。
+## 源码与安装包
+
+Git 标签标识源码，不自动生成安装包。GitHub 目前没有便携 ZIP 发布；负责人本机包也不能用 Git clone 获得。完整体验包应注明源码标签、版本说明、依赖与 SHA-256，再独立分发。
+
+负责人本机的 `讨论/12-Git版本管理/映色源码历史.bundle` 是离线历史备份，不随 GitHub 源码提供，也不证明已上传。远程最新内容以 GitHub 页面与提交 SHA 为准。
