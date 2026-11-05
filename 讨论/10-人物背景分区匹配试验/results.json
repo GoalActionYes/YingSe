@@ -1,0 +1,111 @@
+{
+  "probe_only": true,
+  "product_ui_added": false,
+  "inputs": {
+    "video": "outputs\\skin-protection-validation-20261019\\video-agent\\official-person-motion-3s.mp4",
+    "reference": "controlled same-content tint; plus official different-content reference"
+  },
+  "model_sha256": "c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0",
+  "person_classes": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "person_info": {
+    "person_detected": true,
+    "person_fraction": 0.3696967230902778
+  },
+  "reference_info": {
+    "person_detected": true,
+    "person_fraction": 0.3690456814236111
+  },
+  "feature_policy": "Masked histogram and <=512 deterministic regional samples; modified statistics, not native semantics",
+  "strength": 0.8,
+  "controlled_reference_mae": {
+    "person": {
+      "global_mae": 10.30951237088638,
+      "regional_mae": 9.31743133957883
+    },
+    "background": {
+      "global_mae": 4.206711927638266,
+      "regional_mae": 5.8907247570071934
+    }
+  },
+  "video": {
+    "codec": "libx264",
+    "crf": 18,
+    "audio": "first optional audio track; AAC; no shortest truncation",
+    "fps": 30,
+    "frames": 90,
+    "verified_frames": 90,
+    "video_duration_seconds": 3.0,
+    "input_duration_seconds": 3.0,
+    "output_duration_seconds": 3.0,
+    "output_metadata": {
+      "kind": "video",
+      "width": 640,
+      "height": 360,
+      "duration_seconds": 3.0,
+      "has_audio": false,
+      "pixel_format": "yuv420p",
+      "component_bit_depths": [
+        8,
+        8,
+        8
+      ],
+      "working_precision_bits": 8,
+      "precision_conversion": false,
+      "precision_note": "8位 SDR 视频处理",
+      "video_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown, progressive), 640x360, 479 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+      "hdr_unsupported": false,
+      "color_management": "FFmpeg normal SDR RGB decoding; native/profile equivalence unvalidated"
+    },
+    "source_display_width": 640,
+    "source_display_height": 360,
+    "width": 640,
+    "height": 360,
+    "padding": "right/bottom black padding to even dimensions",
+    "frame_rate_conversion": "input timeline sampled to fixed 30fps; VFR timestamps not preserved",
+    "working_precision_bits": 8,
+    "input_component_bit_depths": [
+      8,
+      8,
+      8
+    ],
+    "precision_conversion": false,
+    "color": "SDR BT709 limited YUV420P; RGB8 working frames",
+    "encoding_loss": "Lossy H264/AAC; separate from mapping fidelity",
+    "skin": {
+      "enabled": true,
+      "per_frame_original_rgb": true,
+      "temporal": true,
+      "detected_frames": 90,
+      "last_frame": {
+        "skin_detected": true,
+        "person_detected": true,
+        "person_fraction": 0.3646918402777778,
+        "temporal_state": "motion_aligned",
+        "algorithm": "experimental masked feature statistics, two fixed maps, moving person alpha"
+      }
+    },
+    "elapsed_seconds": 23.93699999999808
+  },
+  "video_elapsed_seconds": 26.23400000000038,
+  "assertions": {
+    "zero_strength_exact": true,
+    "no_reference_person_explicit_fallback": true,
+    "regional_statistics_ignore_unselected_pixels": true,
+    "video_frames_verified": true,
+    "all_child_processes_exited": true
+  },
+  "limitations": [
+    "Single official person clip, composited background",
+    "No multi-shot, broad skin tones or fast occlusion acceptance",
+    "Person region includes hair and clothes; reference clothing colors can bias the map",
+    "Whole background is one region, sky/trees not distinguished",
+    "Fixed maps from first target frame; moving masks, no automatic shot-wise reanalysis",
+    "No new app UI or distribution created"
+  ],
+  "total_seconds": 31.6720000000023
+}
