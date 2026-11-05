@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>映色 · 风格调色</title><link rel="stylesheet" href="/styles.css"></head>
+<body><main>
+<header><div><h1>映色 <span>参考图驱动的风格调色</span></h1><p>选一种风格，再把它调成你想要的样子。</p></div><span class="version">V0.2 / 本机运行</span></header>
+<div class="layout"><aside>
+<section class="card"><h2>参考风格</h2><img id="referenceImage" class="reference" src="/demo/reference-v2.png" alt="参考图"><label class="upload">选择参考图片<input id="referenceFile" type="file" accept=".png,.jpg,.jpeg,.webp,.bmp"></label><p class="note" id="referenceName">内置青橙参考 · 合成色卡</p><button id="recommend" class="primary full">根据参考图推荐风格</button><p class="note">使用颜色统计推荐，尚未训练AI模型。重新推荐会重置基础调整。</p></section>
+<section class="card"><h2>待处理素材</h2><label class="upload">选择图片或短视频<input id="sourceFile" type="file" accept=".png,.jpg,.jpeg,.webp,.bmp,.mp4,.mov,.mkv,.webm,.avi"></label><p id="sourceName" class="note">内置合成色卡</p><div class="toolbar"><button id="demoImage">示例图片</button><button id="demoVideo" disabled>示例视频</button></div><p class="note">请选择SDR素材，单文件≤300MB。视频预览显示首帧，导出后可播放完整结果。</p></section>
+<section class="card"><h2>基础调整</h2><div id="adjustments"></div><button id="resetAdjustments" class="full">重置基础调整</button><p class="note">各项0为中性，独立于滤镜强度。曝光−3～+3 EV；其他参数−100～+100。极端值会损失明暗细节。</p></section>
+<p id="engine" class="note">正在检查视频引擎…</p>
+</aside><article>
+<section class="card"><div class="section-heading"><h2>画面对比</h2><button id="resetAll">恢复全部原色</button></div><div class="stage"><div><p class="caption">原始素材 / 视频首帧</p><img id="before" src="/demo/source.png" alt="原始素材"></div><div><p class="caption" id="activeStyle">当前效果：原色</p><img id="after" src="/demo/source.png" alt="调色结果"></div></div><p id="metrics" class="note">可以直接选择下方滤镜，也可以根据左侧参考图自动推荐。</p></section>
+<section class="card"><div class="section-heading"><h2>风格滤镜</h2><button id="original" aria-pressed="true">不使用滤镜</button></div><div id="styles" class="styles" aria-label="风格滤镜库"><p class="note">正在生成当前素材的风格缩略图…</p></div>
+<label class="range strength"><div><span>滤镜强度</span><output id="strengthValue">100%</output></div><input id="strength" type="range" min="0" max="100" step="1" value="100" aria-label="滤镜强度"></label><p class="note">0%不应用滤镜，100%完整应用所选风格。基础调整独立生效。缩略图展示100%风格，不含基础调整。</p>
+<details id="advanced"><summary>高级：混合多种风格</summary><p class="note">这里的数值是相对配比，会归一化；“原色”不参与混合。滤镜强度单独控制与原图的混合。</p><div id="sliders" class="sliders"></div></details></section>
+<section class="card"><h2>导出</h2><div class="toolbar"><button id="cube">下载 .cube LUT</button><button id="image">下载预览 PNG</button><button id="export" class="primary" disabled>导出调色视频 MP4</button><button id="cancel" hidden>取消导出</button></div><p class="note">所有导出均包含当前滤镜、强度与基础调整。PNG为最长边不超过1280像素的预览图。MP4使用原视频尺寸，奇数边补齐，并保留第一条音轨。</p><div id="status" class="status" role="status">正在加载原型…</div><div id="downloads"></div><video id="resultVideo" controls></video></section>
+</article></div><footer>风格为本项目编写的颜色映射，并非训练模型或商业LUT复刻。赛博朋克不生成霓虹灯，复古胶片不添加颗粒。尚未实现语义肤色保护、HDR / Log与专业色彩管理。素材仅在本机处理。</footer>
+</main><script src="/app.js"></script></body></html>
