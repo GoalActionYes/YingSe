@@ -6,6 +6,7 @@ import numpy as np
 from .contracts import Mapping
 from .features import extract_features
 from .lut import build_mapping
+from .calibration import calibrate
 from .matrices import solve_matrices
 from .parameters import solve_parameters
 from .media import decode_image, decode_frame, probe_media
@@ -37,7 +38,7 @@ def algorithm_fingerprint():
     """Stable SHA256 of named algorithm sources and curve data, never paths."""
     digest=hashlib.sha256();base=Path(__file__).parent
     for name in ('contracts.py','features.py','matrices.py','parameters.py','lut.py',
-                 'media.py','pipeline.py','curve_tables.json'):
+                 'media.py','pipeline.py','calibration.py','curve_tables.json'):
         raw=(base/name).read_bytes()
         digest.update(name.encode('ascii')+b'\0'+len(raw).to_bytes(8,'big')+raw)
     return digest.hexdigest()
@@ -57,6 +58,11 @@ def analyze(target_path,reference_path,time_seconds=0.0) -> Mapping:
     reference_rgb=decode_image(reference_path)
     source=extract_features(source_rgb,0);reference=extract_features(reference_rgb,1)
     mapping=build_mapping(source,reference)
+    if np.array_equal(source_rgb,reference_rgb):
+        raw_hash=layer_sha256(mapping.layers)
+        mapping=calibrate(mapping,mapping)
+        mapping.diagnostics['neutral_calibration'].update(raw_layer_sha256=raw_hash,
+            neutral_layer_sha256=raw_hash,scope='Exact decoded RGB equality only; unequal images use recovered path unchanged')
     matrices=solve_matrices(source.values,reference.values)
     parameters,solver=solve_parameters(source.values,reference.values)
     diagnostics=dict(mapping.diagnostics)

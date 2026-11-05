@@ -177,6 +177,29 @@ class PipelineTests(unittest.TestCase):
             analyze(p,ref)
         self.assertEqual(seen,[((77,113,3),0),((77,113,3),1)])
 
+    def test_same_pixels_different_files_preserve_original_at_all_strengths(self):
+        from reference_color_app.lut import apply_mapping
+        a=self.image();b=self.image('same-pixels.bmp')
+        rgb=decode_image(a);mapping=analyze(a,b)
+        for strength in (0,.25,.5,.8,.80002,1):
+            np.testing.assert_array_equal(apply_mapping(rgb,mapping,strength),rgb)
+
+    def test_video_frame_as_reference_is_identity(self):
+        from reference_color_app.lut import apply_mapping
+        video=self.video();frame,_=decode_frame(video,1.25)
+        reference=self.root/'frame.png';Image.fromarray(frame).save(reference)
+        mapping=analyze(video,reference,1.25)
+        np.testing.assert_array_equal(apply_mapping(frame,mapping,1),frame)
+
+    def test_different_reference_preserves_recovered_mapping(self):
+        from reference_color_app.features import extract_features
+        from reference_color_app.lut import build_mapping
+        p=self.image();rgb=decode_image(p)
+        reference=self.root/'warmer.png';Image.fromarray(np.minimum(rgb.astype(int)+[5,0,0],255).astype(np.uint8)).save(reference)
+        actual=analyze(p,reference)
+        expected=build_mapping(extract_features(rgb,0),extract_features(decode_image(reference),1))
+        np.testing.assert_array_equal(actual.layers,expected.layers)
+
     def test_video_chain_actual_frame_and_repeat(self):
         p=self.video();ref=self.image()
         a=analyze(p,ref,1.25);b=analyze(p,ref,1.25)
