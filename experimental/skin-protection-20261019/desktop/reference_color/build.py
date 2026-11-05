@@ -25,7 +25,7 @@ def main():
         if source.is_dir(): shutil.copytree(source,sites/name,ignore=ignored)
         else: copy(source,sites/name)
     (runtime/'python312._pth').write_text('..\n.\nLib\nDLLs\nLib/site-packages\nimport site\n',encoding='ascii')
-    appfiles=('__init__.py','contracts.py','features.py','jobs.py','lut.py','matrices.py','media.py','parameters.py','pipeline.py','calibration.py','server.py','storage.py','curve_tables.json','web/index.html','web/app.js','web/styles.css','demo/source.png','demo/reference.png','demo/source-motion.mp4','demo/README.md')
+    appfiles=('__init__.py','contracts.py','features.py','jobs.py','lut.py','matrices.py','media.py','parameters.py','pipeline.py','calibration.py','aligned_reference.py','server.py','storage.py','curve_tables.json','web/index.html','web/app.js','web/styles.css','demo/source.png','demo/reference.png','demo/source-motion.mp4','demo/README.md')
     for name in appfiles: copy(ROOT/'reference_color_app'/name,package/'reference_color_app'/name)
     for name in ('skin-target.png','skin-reference.png','SKIN-SAMPLES.md'):
         copy(ROOT/'reference_color_app/demo'/name,package/'reference_color_app/demo'/name)

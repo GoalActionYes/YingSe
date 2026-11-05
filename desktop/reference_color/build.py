@@ -22,7 +22,7 @@ def main():
     for pattern in ('numpy','numpy.libs','numpy-*.dist-info','PIL','pillow-*.dist-info'):
         for source in (python/'Lib/site-packages').glob(pattern): shutil.copytree(source,sites/source.name,ignore=ignored)
     (runtime/'python312._pth').write_text('.\nLib\nDLLs\nLib/site-packages\nimport site\n',encoding='ascii')
-    appfiles=('__init__.py','contracts.py','features.py','jobs.py','lut.py','matrices.py','media.py','parameters.py','pipeline.py','calibration.py','server.py','storage.py','curve_tables.json','web/index.html','web/app.js','web/styles.css','demo/source.png','demo/reference.png','demo/source-motion.mp4','demo/README.md')
+    appfiles=('__init__.py','contracts.py','features.py','jobs.py','lut.py','matrices.py','media.py','parameters.py','pipeline.py','calibration.py','aligned_reference.py','server.py','storage.py','curve_tables.json','web/index.html','web/app.js','web/styles.css','demo/source.png','demo/reference.png','demo/source-motion.mp4','demo/README.md')
     for name in appfiles: copy(ROOT/'reference_color_app'/name,package/'reference_color_app'/name)
     for name in ('boot.py','Launcher.cs','build.py','verify.py','README.md'): copy(Path(__file__).parent/name,package/'desktop/reference_color'/name)
     copy(Path(__file__).parent/'README.md',package/'README.md')

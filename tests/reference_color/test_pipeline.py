@@ -195,10 +195,18 @@ class PipelineTests(unittest.TestCase):
         from reference_color_app.features import extract_features
         from reference_color_app.lut import build_mapping
         p=self.image();rgb=decode_image(p)
-        reference=self.root/'warmer.png';Image.fromarray(np.minimum(rgb.astype(int)+[5,0,0],255).astype(np.uint8)).save(reference)
+        reference=self.root/'different.png';Image.fromarray(np.roll(rgb,17,axis=1)).save(reference)
         actual=analyze(p,reference)
         expected=build_mapping(extract_features(rgb,0),extract_features(decode_image(reference),1))
         np.testing.assert_array_equal(actual.layers,expected.layers)
+
+    def test_aligned_near_reference_does_not_jump_to_large_grade(self):
+        from reference_color_app.lut import apply_mapping
+        p=self.image();rgb=decode_image(p);near=np.minimum(rgb.astype(int)+1,255).astype(np.uint8)
+        reference=self.root/'near.png';Image.fromarray(near).save(reference)
+        mapping=analyze(p,reference)
+        self.assertLess(np.abs(apply_mapping(rgb,mapping,1).astype(float)-near).mean(),.1)
+        self.assertTrue(mapping.diagnostics['aligned_reference']['accepted'])
 
     def test_video_chain_actual_frame_and_repeat(self):
         p=self.video();ref=self.image()
