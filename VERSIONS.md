@@ -19,8 +19,8 @@ main保存已整理源码；新功能从main创建feature/功能名分支。稳�
 
 仓库保存源码、测试、依赖版本和简要证据，不保存私人媒体、项目数据、剪映DLL、逆向工具、便携Python、模型本体或历史ZIP。完整体验包仍留在原讨论目录。只有源码克隆时需要另行准备依赖、合法模型和测试资料；不能当作已包含便携运行时的体验包。
 
-## GitHub上传状态
+## GitHub远程
 
-本地已建Git库；截至本次整理未配置远程、未上传。连接能识别账号GoalActionYes，但仓库列表为空，当前没有仓库创建API；浏览器创建入口也未能打开。需提供一个可写仓库地址。建议建立私有空仓库yingse-color，不勾选初始化README，再配置origin并推送main和标签。不要把访问令牌写进地址或源码。
+已按用户提供的地址配置origin：https://github.com/GoalActionYes/YingSe.git。本机通过Git Credential Manager官方浏览器流程认证，密码或令牌不写入源码。后续使用git push origin main和git push origin --tags同步；不强推，不重写既有标签。实际上传核验见讨论/12-Git版本管理/版本管理核验.json。
 
 离线备份在讨论/12-Git版本管理/映色源码历史.bundle，使用git clone 映色源码历史.bundle 映色源码恢复可恢复历史和标签。该文件不是GitHub上传凭据。
