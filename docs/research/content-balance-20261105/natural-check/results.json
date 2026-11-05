@@ -1,0 +1,87 @@
+{
+  "photos": [
+    {
+      "file": "portrait.jpg",
+      "target_mask": {
+        "person_detected": true,
+        "person_fraction": 0.5027439024390243
+      },
+      "reference_mask": {
+        "person_detected": true,
+        "person_fraction": 0.5024390243902439
+      },
+      "results": [
+        {
+          "amount": 0,
+          "mae_vs_100_percent_control_reference": 13.652534993489583,
+          "any_channel_at_boundary_fraction": 0.1776763916015625
+        },
+        {
+          "amount": 0.5,
+          "mae_vs_100_percent_control_reference": 13.650418090820313,
+          "any_channel_at_boundary_fraction": 0.1777099609375
+        }
+      ]
+    },
+    {
+      "file": "pose.jpg",
+      "target_mask": {
+        "person_detected": true,
+        "person_fraction": 0.06490428545321637
+      },
+      "reference_mask": {
+        "person_detected": true,
+        "person_fraction": 0.06508132309941521
+      },
+      "results": [
+        {
+          "amount": 0,
+          "mae_vs_100_percent_control_reference": 8.05225287861046,
+          "any_channel_at_boundary_fraction": 0.24436841334894613
+        },
+        {
+          "amount": 0.5,
+          "mae_vs_100_percent_control_reference": 8.550164666276347,
+          "any_channel_at_boundary_fraction": 0.29937792740046837
+        }
+      ]
+    },
+    {
+      "file": "skin-target.png",
+      "target_mask": {
+        "person_detected": true,
+        "person_fraction": 0.3545549516268225
+      },
+      "reference_mask": {
+        "person_detected": true,
+        "person_fraction": 0.3380217717149389
+      },
+      "results": [
+        {
+          "amount": 0,
+          "mae_vs_100_percent_control_reference": 10.689614276269639,
+          "any_channel_at_boundary_fraction": 0.24528758951687385
+        },
+        {
+          "amount": 0.5,
+          "mae_vs_100_percent_control_reference": 11.28578782419113,
+          "any_channel_at_boundary_fraction": 0.24901209707944102
+        }
+      ]
+    }
+  ],
+  "cross_content_pairs": 3,
+  "video": {
+    "frames": 75,
+    "seconds": 3.0,
+    "mode": "One fixed combined global cube; source 25fps preserved",
+    "audio_tested": false
+  },
+  "limits": [
+    "portrait and pose are newly added; third photo was already used",
+    "Controlled references are generated from source using model masks, not independent style truth",
+    "No aesthetic blind review; clipping fraction alone is not a quality verdict",
+    "No new App UI or default behavior change; no camera footage benchmark"
+  ],
+  "elapsed_seconds": 17.281000000002678
+}
