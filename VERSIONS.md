@@ -9,6 +9,7 @@
 | snapshot/skin-protection | experimental/skin-protection-20261019 | 独立可选肤色保护实验 |
 | research/regional-match | work/region-match-probe | 未证明整体收益，不接入 |
 | research/content-balance-v1 | experimental/content-balance-20261105 | 研究候选，重复试验有反例 |
+| research/content-balance-v2 | 全像素加权统计与12项测试 | 重复对照改善，独立自然素材和视频待验收 |
 | snapshot/research-journal | 研发复盘与策略文档 | 历史记录和后续计划 |
 
 标签对应累计源码快照，不代表每个阶段都已经通过完整产品验收。可用git show 标签:文件路径查看旧文件。需要实际切换时先保存修改，或使用git worktree add建立另一个检出目录，避免覆盖正在使用的素材和服务。
