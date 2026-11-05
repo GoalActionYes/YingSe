@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-05",
+  "status": "baseline only; no improved method implemented",
+  "question": "How much does a fixed target output change when reference foreground/background pixel occupancy changes?",
+  "setup": "Same two pixel pools; deterministic sampling; 320x320 shuffled atlases; fixed target and strength 0.8",
+  "caveats": [
+    "Pixel atlases are not natural photos",
+    "Finite sampling varies across ratios",
+    "Does not establish photographic failure rate or aesthetic quality",
+    "Original person mask is a model prediction, not human ground truth",
+    "No comparison to Jianying or other apps"
+  ],
+  "records": [
+    {
+      "person_pool_share": 0.1,
+      "output_mean_rgb": [
+        73.64801215277778,
+        115.24196180555556,
+        140.3133420138889
+      ],
+      "mae_vs_50_percent": 28.510711805555555
+    },
+    {
+      "person_pool_share": 0.3,
+      "output_mean_rgb": [
+        92.14697048611112,
+        124.1256857638889,
+        139.84515625
+      ],
+      "mae_vs_50_percent": 19.70738136574074
+    },
+    {
+      "person_pool_share": 0.5,
+      "output_mean_rgb": [
+        124.444140625,
+        140.5541189236111,
+        142.44384982638888
+      ],
+      "mae_vs_50_percent": 0.0
+    },
+    {
+      "person_pool_share": 0.7,
+      "output_mean_rgb": [
+        127.29975260416667,
+        127.40739583333334,
+        118.44778645833334
+      ],
+      "mae_vs_50_percent": 15.435423900462963
+    },
+    {
+      "person_pool_share": 0.9,
+      "output_mean_rgb": [
+        140.53446614583333,
+        130.5349826388889,
+        113.20063368055555
+      ],
+      "mae_vs_50_percent": 20.66025607638889
+    }
+  ],
+  "elapsed_seconds": 2.438000000001921
+}
