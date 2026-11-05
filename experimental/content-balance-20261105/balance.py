@@ -7,14 +7,15 @@ import numpy as np
 
 VERSION='capped-contribution-sampling-v1'
 
-def balanced_share(p,amount):
+def balanced_share(p,amount,*,goal=.5):
  if isinstance(amount,(bool,np.bool_)) or not np.isfinite(amount) or amount not in (0,.25,.5):
   raise ValueError('Research amount must be 0, .25 or .5')
  if not np.isfinite(p) or not 0<=p<=1:raise ValueError('Invalid region share')
+ if isinstance(goal,(bool,np.bool_)) or not np.isfinite(goal) or not 0<=goal<=1:raise ValueError('Invalid goal share')
  if amount==0:return p
  # Each group's contribution relative to original occupancy stays within [1/2,2].
  lower=max(.5*p,1-2*(1-p));upper=min(2*p,1-.5*(1-p))
- return float(np.clip(p+amount*(.5-p),lower,upper))
+ return float(np.clip(p+amount*(goal-p),lower,upper))
 
 def sample_atlas(rgb,mask,amount,side=320):
  balanced_share(.5,amount)

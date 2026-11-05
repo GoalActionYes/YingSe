@@ -32,5 +32,11 @@ class DenseTests(unittest.TestCase):
   for mode in (True,2):
    with self.assertRaises(ValueError):extract_dense(self.rgb,mode,self.mask,.5)
   with self.assertRaises(ValueError):extract_dense(self.rgb,0,np.ones((2,2)),.5)
+ def test_constant_chroma_has_exactly_zero_covariance(self):
+  # Summing weights times a constant must not invent variance (~1e-28).
+  rgb=np.tile(np.array([90,140,170],np.uint8),(40,50,1))
+  for mode in (0,1):
+   packet=extract_dense(rgb,mode,self.mask,.5)
+   np.testing.assert_array_equal(packet.values[:12],np.zeros(12))
 
 if __name__=='__main__':unittest.main()
