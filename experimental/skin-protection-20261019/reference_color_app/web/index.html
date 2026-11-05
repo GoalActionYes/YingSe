@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>映色 · 肤色保护实验版</title><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body>
+<header class="topbar"><a class="brand" href="/" aria-label="映色首页"><span class="brand-icon">映</span><span>映色</span></a><span class="project-title">肤色保护实验版</span><span id="save-state">项目将在分析后自动保存</span><button class="primary" id="top-export" disabled>导出 ↗</button></header>
+<main class="workspace">
+<aside class="panel inputs"><div class="panel-heading"><h1>素材</h1><span>本机处理</span></div><div class="input-body">
+<div class="section-label">目标素材</div>
+<label class="upload" id="target-drop"><input id="target-file" type="file" accept="image/*,video/*"><img id="target-thumb" alt="目标素材缩略图" hidden><span class="upload-symbol">＋</span><strong id="target-name">导入图片或视频</strong><small id="target-meta">点击选择本机素材</small><span class="upload-link">选择素材</span></label>
+<div class="demo-actions"><button class="secondary" id="demo">图片示例</button><button class="secondary" id="video-demo">视频示例</button></div>
+<p class="support">支持8位图片和8/10位 SDR 视频，10位视频转为8位处理。单个文件 ≤ 512 MB。</p><div class="media-help"><span>使用步骤</span><p>导入目标素材，在右侧选择参考图。颜色映射生成后，即可调整强度并导出。</p></div>
+</div></aside>
+<section class="panel stage"><div class="panel-heading"><h2>播放器</h2><span id="preview-state" class="badge">等待素材</span></div>
+<div class="preview-toolbar" aria-label="预览显示方式"><button id="view-result" class="view-button active" aria-pressed="true">调色结果</button><button id="view-original" class="view-button" aria-pressed="false">原始画面</button><button id="view-compare" class="view-button" aria-pressed="false">同帧对比</button></div>
+<div class="comparison" id="comparison" data-view="result"><figure class="before-figure"><figcaption>原始画面</figcaption><div class="image-well"><img id="before" alt="调色前原始画面" hidden><div class="placeholder" id="before-placeholder"><span>▧</span><p>导入图片或视频</p><small>在左侧选择目标素材</small></div></div></figure><figure class="after-figure"><figcaption>调色结果</figcaption><div class="image-well"><img id="after" alt="当前色彩克隆结果" hidden><div class="placeholder" id="after-placeholder"><span>▧</span><p>导入图片或视频，开始调色</p><small>在右侧选择参考图，自动分析色彩</small></div></div></figure></div>
+<div class="frame-strip" id="frame-control" hidden><label for="frame-time">分析帧时间</label><div class="time-row"><input id="frame-time" type="number" min="0" step="0.01" value="0" aria-label="分析帧时间，秒"><span>秒</span><button id="frame-load" class="secondary">应用此帧</button></div><small id="actual-time">选择视频画面作为调色分析依据</small></div>
+<div class="status" id="status" role="status" aria-live="polite">选择目标素材与参考图，自动生成颜色映射。</div>
+</section>
+<aside class="panel adjustments"><div class="panel-heading"><h2>调整</h2></div><div class="tabs"><span class="selected">基础</span></div>
+<section class="clone-section"><div class="clone-heading"><label class="check-label"><input type="checkbox" id="clone-enabled" checked><span>色彩克隆</span></label><span class="section-caret" aria-hidden="true">⌃</span></div>
+<label class="reference-picker" id="reference-drop"><span class="section-label">选择本地参考图片</span><span class="reference-tile"><input id="reference-file" type="file" accept="image/*"><img id="reference-thumb" alt="参考图，点击更换" hidden><span class="upload-symbol">＋</span><span class="reference-edit" aria-hidden="true">更换</span></span></label>
+<strong id="reference-name" class="reference-name">尚未选择参考图</strong><small id="reference-meta" class="reference-meta">选定后自动分析</small>
+<div class="strength-row"><label for="strength">强度</label><input type="range" id="strength" min="0" max="100" value="80" disabled><input type="number" id="strength-number" min="0" max="100" step="1" value="80" disabled aria-label="色彩克隆强度，0 到 100"></div>
+<div class="clone-actions"><button class="quiet" id="reset" disabled>恢复原画 · 强度 0</button><button class="quiet" id="analyze" disabled>重新分析</button></div>
+<p class="panel-note">关闭色彩克隆可查看并导出原色，已设置的强度会保留。</p>
+<div class="skin-section"><label class="check-label"><input type="checkbox" id="skin-enabled" aria-describedby="skin-note"><span>人物肤色保护</span><small class="experiment-tag">实验</small></label><p class="panel-note" id="skin-note">开启后识别目标画面的脸部与身体皮肤，减少调色偏色。默认关闭；衣物和背景照常调色。</p></div></section>
+<section class="export-area" id="export-area" tabindex="-1"><div class="export-heading"><h2>导出</h2><a id="diagnostics" hidden>分析记录 ↗</a></div><label for="format" class="section-label">格式</label><div class="export-row"><select id="format"><option value="png">PNG · 原尺寸图片</option><option value="mp4">MP4 · 视频</option><option value="cube">.cube · 颜色映射</option></select><button class="secondary" id="export" disabled>导出文件</button><button class="quiet" id="cancel" hidden>取消导出</button></div><div id="job-area" hidden><div class="progress-track"><div id="progress"></div></div><p id="job-status"></p><div class="result-links" id="result-links" hidden><a id="result-link" class="result-button">下载完成文件 ↓</a><a id="report-link">导出记录 ↗</a></div></div><p class="export-note" id="export-note">图片保留原分辨率；.cube 包含当前强度。</p></section>
+<p class="implementation-note">本地独立实现 · 算法一致性仍在验证<br>暂不支持 HDR / Log 专业色彩管理</p>
+</aside>
+</main><footer><span>映色 · 肤色保护实验版</span><span>素材在本机处理</span></footer>
+</body></html>
