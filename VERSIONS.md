@@ -2,6 +2,8 @@
 
 ## 当前推荐
 
+最新体验修复为 `fix/smooth-preview-20261106`，版本 1.1.1；功能范围仍为下述手动调色，新增预览调度与有界帧复用。开发使用最新 main。
+
 开发从 `main` 开始。当前功能里程碑为 `feature/manual-controls-20261106`，主开发版新增基础／HSL／曲线手动调色。[操作说明](docs/MANUAL_COLOR_CONTROLS.md)。肤色实验副本暂未同步这些控件。
 
 | 要做什么 | 选择 |

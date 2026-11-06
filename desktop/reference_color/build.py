@@ -22,7 +22,7 @@ def main():
     for pattern in ('numpy','numpy.libs','numpy-*.dist-info','PIL','pillow-*.dist-info'):
         for source in (python/'Lib/site-packages').glob(pattern): shutil.copytree(source,sites/source.name,ignore=ignored)
     (runtime/'python312._pth').write_text('.\nLib\nDLLs\nLib/site-packages\nimport site\n',encoding='ascii')
-    appfiles=('__init__.py','contracts.py','features.py','jobs.py','lut.py','matrices.py','media.py','parameters.py','pipeline.py','calibration.py','aligned_reference.py','adjustments.py','server.py','storage.py','curve_tables.json','web/index.html','web/app.js','web/adjustments.js','web/styles.css','demo/source.png','demo/reference.png','demo/source-motion.mp4','demo/README.md')
+    appfiles=('__init__.py','contracts.py','features.py','jobs.py','lut.py','matrices.py','media.py','parameters.py','pipeline.py','calibration.py','aligned_reference.py','preview.py','adjustments.py','server.py','storage.py','curve_tables.json','web/index.html','web/app.js','web/adjustments.js','web/styles.css','demo/source.png','demo/reference.png','demo/source-motion.mp4','demo/README.md')
     for name in appfiles: copy(ROOT/'reference_color_app'/name,package/'reference_color_app'/name)
     for name in ('boot.py','Launcher.cs','build.py','verify.py','README.md'): copy(Path(__file__).parent/name,package/'desktop/reference_color'/name)
     copy(Path(__file__).parent/'README.md',package/'README.md')
@@ -38,7 +38,7 @@ def main():
     subprocess.run([str(compiler),'/nologo','/target:winexe','/optimize+','/reference:System.Windows.Forms.dll','/win32icon:'+str(package/'desktop/reference_color/yingse.ico'),'/out:'+str(package/'映色参考调色.exe'),str(package/'desktop/reference_color/Launcher.cs')],check=True)
     copy(package/'映色参考调色.exe',package/'ReferenceColor.exe')
     files=[dict(path=p.relative_to(package).as_posix(),bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(package.rglob('*')) if p.is_file()]
-    (package/'package-manifest.json').write_text(json.dumps(dict(version='1.1-manual-controls',files=files),ensure_ascii=False,indent=2),encoding='utf8')
+    (package/'package-manifest.json').write_text(json.dumps(dict(version='1.1.1-smooth-preview',files=files),ensure_ascii=False,indent=2),encoding='utf8')
     archive=package.with_suffix('.zip')
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as output:
         for p in sorted(package.rglob('*')):

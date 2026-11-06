@@ -208,6 +208,21 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(self.request('GET',f"/api/jobs/{job['id']}/result")[0],400)
         self.post('/api/stop',{'token':'wrong'},403)
 
+    def test_preview_reuses_verified_frame(self):
+        from reference_color_app.preview import PreviewFrames
+        from reference_color_app.server import frame
+        self.server.preview_frames=PreviewFrames()
+        with patch('reference_color_app.server.frame',wraps=frame) as decode:
+            replies=[]
+            for strength in (0,.5):
+                code,_,raw=self.request('POST','/api/preview',dict(mapping_id=self.mapping,strength=strength))
+                self.assertEqual(code,200,raw);replies.append(json.loads(raw))
+            self.assertEqual(decode.call_count,1)
+        self.assertEqual(replies[0]['before'],replies[1]['before'])
+        with patch.object(self.server.store,'get_media',side_effect=ValueError('Owned media changed')):
+            code,_,_=self.request('POST','/api/preview',dict(mapping_id=self.mapping,strength=.5))
+            self.assertEqual(code,400)
+
     def test_manual_adjustments_preview_save_and_png(self):
         state={'basic':{'brightness':30,'temperature':20},'hsl':{'blue':[5,-10,0]},'curves':{'rgb':[[0,0],[.5,.6],[1,1]]}}
         code,_,raw=self.request('POST','/api/preview',dict(mapping_id=self.mapping,strength=0,adjustments=state))

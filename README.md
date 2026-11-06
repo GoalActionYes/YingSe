@@ -15,6 +15,8 @@
 
 ## 当前该用哪个版本
 
+最新体验修复为 `fix/smooth-preview-20261106`（1.1.1）：连续调节反馈、预览帧复用及失败保留画面。[验证记录](docs/research/2026-11-06-smooth-preview.md)
+
 新开发从 main 开始。当前功能里程碑为 `feature/manual-controls-20261106`：在已有参考图匹配基础上，增加基础调色、HSL 和 RGB 曲线。[使用方法与界面](docs/MANUAL_COLOR_CONTROLS.md) · [验证记录](docs/research/2026-11-06-manual-controls/README.md)
 
 先前匹配算法基线为 [feature/aligned-reference-20261105](https://github.com/GoalActionYes/YingSe/tree/feature/aligned-reference-20261105)，提交 cb79e4a。本批主要增加用户微调空间，不宣称参考风格匹配本身普遍改善。

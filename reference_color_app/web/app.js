@@ -116,6 +116,10 @@ async function analyze(){
   finally{if(gen===state.generation){state.analyzing=false;setButtons();}}
 }
 $('analyze').addEventListener('click',analyze);
+function schedulePreview() {
+  if(manualTimer!==null)return;
+  manualTimer=setTimeout(()=>{manualTimer=null;requestPreview();},120);
+}
 function requestPreview() {
   if(!state.mapping)return;
   state.previewNext={mapping:state.mapping,strength:effectiveStrength(),generation:state.generation,adjustments:controls.snapshot(),manualVersion};
@@ -132,11 +136,11 @@ async function renderPreview() {
       image('before',result.before);image('after',result.after);$('before-placeholder').hidden=true;$('after-placeholder').hidden=true;
       actualTime(result.metadata);$('preview-state').textContent=controls.count()?`微调 ${controls.count()} 项 · 克隆 ${Math.round(result.strength*100)}`:($('clone-enabled').checked?`强度 ${Math.round(result.strength*100)}`:'色彩克隆已关闭');
       status(controls.count()?'预览已更新 · 克隆与手动微调一起作用于图片、视频和 CUBE 导出。':!$('clone-enabled').checked?'克隆与微调均未生效 · 当前输出为原色。':result.strength===0?'原画预览 · 无生效调整。':'预览已更新 · 导出使用相同映射与当前强度。');
-    } catch(error) {if(request.generation===state.generation && request.manualVersion===manualVersion){status(error.message,'error');$('preview-state').textContent='预览失败';clearImage('after');$('after-placeholder').hidden=false;}}
+    } catch(error) {if(request.generation===state.generation && request.mapping===state.mapping && request.strength===effectiveStrength() && request.manualVersion===manualVersion){status('预览未更新，保留上次画面。'+error.message,'error');$('preview-state').textContent='预览未更新';}}
   }
   state.previewRunning=false;
 }
-function strengthChanged(){ syncStrength();invalidateExport();requestPreview();scheduleSave(); }
+function strengthChanged(){ syncStrength();invalidateExport();schedulePreview();scheduleSave(); }
 $('strength').addEventListener('input',strengthChanged);
 $('strength-number').addEventListener('input',()=>{const value=$('strength-number').value;if(value.trim()==='' || !Number.isFinite(Number(value)))return;$('strength').value=String(Math.max(0,Math.min(100,Math.round(Number(value)))));strengthChanged();});
 $('strength-number').addEventListener('change',syncStrength);
@@ -211,5 +215,5 @@ async function restore(){
     await Promise.all([showFrame('target'),showFrame('reference')]);if(gen===state.generation)$('save-state').textContent='已恢复上次项目 · 映射缓存有效';
   }catch(error){if(gen===state.generation && !state.target){$('save-state').textContent='尚无可恢复的有效项目';if(!error.message.includes('不存在'))status('上次项目无法恢复，请重新导入与分析。','error');}}
 }
-window.addEventListener('manual-change',()=>{++manualVersion;invalidateExport();scheduleSave();clearTimeout(manualTimer);manualTimer=setTimeout(requestPreview,160);});
+window.addEventListener('manual-change',()=>{++manualVersion;invalidateExport();scheduleSave();schedulePreview();});
 setButtons();restore();

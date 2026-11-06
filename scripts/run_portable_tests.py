@@ -8,7 +8,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / 'tests/reference_color')]
 
 
 def main():
-    names = ['test_adjustments', 'test_aligned_reference', 'test_calibration', 'test_pipeline',
+    names = ['test_preview_cache', 'test_adjustments', 'test_aligned_reference', 'test_calibration', 'test_pipeline',
              'test_parameters', 'test_matrices', 'test_http', 'test_jobs',
              'test_lut.LUTTests']
     print('Source checks exclude test_evidence, test_features and test_lut.FrozenGPUChecks: external native/GPU fixtures.', flush=True)

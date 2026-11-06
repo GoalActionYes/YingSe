@@ -19,6 +19,7 @@ from .lut import apply_mapping
 from .storage import Store, _json
 from .jobs import JobManager
 from .adjustments import normalize, compose
+from .preview import PreviewFrames
 
 MAX_UPLOAD = 512 * 1024 * 1024
 MAX_JSON = 65536
@@ -216,10 +217,12 @@ class Handler(BaseHTTPRequestHandler):
             data = self.body(('mapping_id', 'strength'), ('adjustments',))
             identifier = self.identifier(data['mapping_id']); strength = self.number(data['strength'], 1)
             mapping = store.get_mapping(identifier); record = store.get_mapping_record(identifier)
-            rgb, metadata = frame(store.get_media(record['target_id']), record['analysis_time'])
+            source = store.get_media(record['target_id'])  # Integrity check remains before cache access.
+            key = (source['id'], source['sha256'], record['analysis_time'])
+            rgb, metadata, before = self.server.preview_frames.get(key, lambda: frame(source, record['analysis_time']), png)
             effective, effective_strength = compose(mapping, strength, data.get('adjustments'))
             after = apply_mapping(rgb, effective, effective_strength)
-            return self.json(dict(mapping_id=identifier, strength=strength, before=png(rgb), after=png(after), metadata=public_metadata(metadata)))
+            return self.json(dict(mapping_id=identifier, strength=strength, before=before, after=png(after), metadata=public_metadata(metadata)))
         if path == '/api/export':
             data = self.body(('mapping_id', 'media_id', 'strength', 'kind'), ('adjustments',))
             if not isinstance(data['kind'], str): raise RequestError(400, '导出格式无效')
@@ -296,6 +299,7 @@ def make_server(data_root: Path, port=0, token=None) -> ThreadingHTTPServer:
     server.daemon_threads = True
     server.store = Store(data_root)
     server.manager = JobManager(server.store)
+    server.preview_frames = PreviewFrames()
     server.token = token or secrets.token_urlsafe(32)
     server.operation_lock = threading.RLock()
     server.stopping = False
