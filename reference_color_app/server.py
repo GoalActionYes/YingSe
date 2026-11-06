@@ -143,7 +143,7 @@ class Handler(BaseHTTPRequestHandler):
         path = parsed.path
         store, manager = self.server.store, self.server.manager
         if method == 'GET':
-            static = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'application/javascript; charset=utf-8'), '/adjustments.js': ('adjustments.js', 'application/javascript; charset=utf-8'), '/styles.css': ('styles.css', 'text/css; charset=utf-8')}
+            static = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'application/javascript; charset=utf-8'), '/history.js': ('history.js', 'application/javascript; charset=utf-8'), '/adjustments.js': ('adjustments.js', 'application/javascript; charset=utf-8'), '/styles.css': ('styles.css', 'text/css; charset=utf-8')}
             if path in static:
                 name, mime = static[path]
                 return self.send_bytes((WEB / name).read_bytes(), mime)

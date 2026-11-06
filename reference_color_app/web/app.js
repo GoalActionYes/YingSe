@@ -41,7 +41,7 @@ function setButtons() {
   $('export-note').textContent=note+(state.target?.kind!=='video'?' 导入视频后可导出 MP4。':'')+(state.target?.metadata?.precision_conversion?' 输入为10位 SDR，先转为8位调色，MP4输出为8位。':'');
 }
 function invalidate(message='素材已更改，等待分析。') {
-  ++state.generation; ++pickVersion; controls.clearSample(); state.mapping=null; state.analyzing=false; state.previewNext=null;
+  ++state.generation; ++pickVersion; controls.clearSample();controls.resetHistory(); state.mapping=null; state.analyzing=false; state.previewNext=null;
   clearTimeout(state.saveTimer); state.saveTimer=null; state.saveNext=null; ++state.saveVersion;
   clearImage('after'); $('after-placeholder').hidden=false;
   if(!$('before').hidden){image('after',$('before').src);$('after-placeholder').hidden=true;}

@@ -16,20 +16,28 @@ window.manualControls = (() => {
   const fresh=()=>({version:1,basic:{enabled:true,...Object.fromEntries(basic.map(([k])=>[k,0]))},hsl:{enabled:true,...Object.fromEntries(colors.map(k=>[k,[0,0,0]]))},curves:{enabled:true,...Object.fromEntries(['rgb','r','g','b'].map(k=>[k,[[0,0],[1,1]]]))}});
   let state=fresh(),selectedColor='red',selectedChannel='rgb',selectedPoint=null,dragging=false,picking=false,sample=null;
   const snapshot=()=>JSON.parse(JSON.stringify(state));
-  const changed=()=>{sample=null;$('curve-sample-info').textContent='参数已改变，请重新点击画面取色。';drawCurve();updateSummary();window.dispatchEvent(new Event('manual-change'));};
+  const history=createHistory(state);
+  let pointerGesture=false;
+  const beginPointer=()=>{history.begin();pointerGesture=true;};
+  const endPointer=()=>{if(pointerGesture){history.end();pointerGesture=false;}};
+  document.addEventListener('pointerup',endPointer,true);document.addEventListener('pointercancel',endPointer,true);
+  const changed=(record=true)=>{if(record)history.record(snapshot());sample=null;$('curve-sample-info').textContent='参数已改变，请重新点击画面取色。';drawCurve();updateSummary();window.dispatchEvent(new Event('manual-change'));};
   function count(){
     let n=state.basic.enabled?basic.filter(([k])=>state.basic[k]!==0).length:0;
     if(state.hsl.enabled)n+=colors.filter(k=>state.hsl[k].some(v=>v!==0)).length;
     if(state.curves.enabled)n+=['rgb','r','g','b'].filter(k=>JSON.stringify(state.curves[k])!=='[[0,0],[1,1]]').length;
     return n;
   }
-  function updateSummary(){ $('manual-summary').textContent=count()?`手动微调 · ${count()} 项生效`:'手动微调 · 默认原值'; }
+  function updateSummary(){ $('manual-undo').disabled=!history.canUndo();$('manual-redo').disabled=!history.canRedo();$('manual-summary').textContent=count()?`手动微调 · ${count()} 项生效`:'手动微调 · 默认原值'; }
   function row(id,label,left,right,read,write){
     const node=document.createElement('div');node.className='adjust-row';
     node.innerHTML=`<label for="${id}">${label}</label><input id="${id}" type="range" min="-100" max="100" step="1" value="0" aria-valuetext="0"><input id="${id}-number" type="number" min="-100" max="100" step="1" value="0" aria-label="${label}数值"><button type="button" class="row-reset" aria-label="重置${label}" title="重置${label}">↶</button><div class="range-hints"><span>${left}</span><span>${right}</span></div>`;
     const range=node.querySelector('input[type=range]'),number=node.querySelector('input[type=number]');
     const sync=()=>{range.value=read();number.value=read();range.setAttribute('aria-valuetext',String(read()));};
     const set=value=>{write(value);sync();changed();};
+    range.addEventListener('pointerdown',beginPointer);range.addEventListener('lostpointercapture',endPointer);
+    range.addEventListener('change',()=>history.end());
+    number.addEventListener('focus',()=>history.begin());number.addEventListener('blur',()=>{if(!pointerGesture)history.end();});
     range.addEventListener('input',()=>set(Number(range.value)));
     number.addEventListener('input',()=>{if(number.value!==''&&Number.isFinite(number.valueAsNumber))set(Math.max(-100,Math.min(100,Math.round(number.valueAsNumber))));});
     number.addEventListener('change',sync);number.addEventListener('blur',sync);
@@ -104,18 +112,21 @@ window.manualControls = (() => {
     points[selectedPoint]=[x,Math.max(0,Math.min(1,y))];drawCurve();changed();
   }
   svg.addEventListener('pointerdown',e=>{
-    if(!state.curves.enabled||e.button!==0)return;e.preventDefault();const [x,y]=position(e),points=state.curves[selectedChannel];
+    if(!state.curves.enabled||e.button!==0)return;e.preventDefault();beginPointer();const [x,y]=position(e),points=state.curves[selectedChannel];
     let nearest=-1,best=.065;
     points.forEach(([px,py],i)=>{const d=Math.hypot(px-x,py-y);if(d<best){best=d;nearest=i;}});
     if(nearest<0){if(points.length>=16||points.some(p=>Math.abs(p[0]-x)<.004))return;points.push([x,y]);points.sort((a,b)=>a[0]-b[0]);nearest=points.findIndex(p=>p[0]===x);changed();}
     selectedPoint=nearest;dragging=true;svg.setPointerCapture(e.pointerId);drawCurve();
   });
   svg.addEventListener('pointermove',e=>{if(dragging)movePoint(...position(e));});
-  const end=()=>{dragging=false;};svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);svg.addEventListener('lostpointercapture',end);
+  const end=()=>{dragging=false;endPointer();};svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);svg.addEventListener('lostpointercapture',end);
   $('curve-x').addEventListener('change',()=>{if(Number.isFinite($('curve-x').valueAsNumber))movePoint($('curve-x').valueAsNumber,state.curves[selectedChannel][selectedPoint][1]);});
   $('curve-y').addEventListener('change',()=>{if(Number.isFinite($('curve-y').valueAsNumber))movePoint(state.curves[selectedChannel][selectedPoint][0],$('curve-y').valueAsNumber);});
   $('curve-delete').addEventListener('click',()=>{if(selectedPoint>0&&selectedPoint<state.curves[selectedChannel].length-1){state.curves[selectedChannel].splice(selectedPoint,1);selectedPoint=null;drawCurve();changed();}});
   $('curve-channel-reset').addEventListener('click',()=>{state.curves[selectedChannel]=[[0,0],[1,1]];selectedPoint=null;drawCurve();changed();});
+  function travel(direction){dragging=false;pointerGesture=false;state=history[direction]();selectedPoint=null;sync();changed(false);}
+  $('manual-undo').addEventListener('click',()=>travel('undo'));$('manual-redo').addEventListener('click',()=>travel('redo'));
+  document.addEventListener('keydown',e=>{if(!(e.ctrlKey||e.metaKey)||e.altKey||e.target.closest('input[type=number],input[type=text],input[type=search],input:not([type]),textarea,[contenteditable=true]'))return;const key=e.key.toLowerCase();if(key==='z'||key==='y'){e.preventDefault();travel(key==='y'||e.shiftKey?'redo':'undo');}});
   $('manual-reset').addEventListener('click',()=>{state=fresh();selectedPoint=null;sync();changed();});
   $('curve-pick').addEventListener('click',()=>{picking=!picking;document.body.classList.toggle('curve-picking',picking);$('curve-pick').setAttribute('aria-pressed',String(picking));$('curve-sample-info').textContent=picking?'请点击画面内像素；黑边不参与取色。':'取色已关闭，标记不改变曲线。';});
   for(const id of ['before','after'])$(id).addEventListener('click',e=>{
@@ -124,5 +135,5 @@ window.manualControls = (() => {
     window.dispatchEvent(new CustomEvent('curve-pick',{detail:point}));
   });
   sync();
-  return {snapshot,count,clearSample(){sample=null;$('curve-sample-info').textContent='点击取色后，在画面内选择像素；仅定位，不改曲线。';drawCurve();},setSample(value){sample=value;$('curve-sample-info').textContent=`原图像素 (${value.pixel.join(', ')}) · 曲线输入 RGB ${value.rgb.map(v=>Math.round(v*255)).join(' / ')} · 仅定位`;drawCurve();},restore(value){const defaults=fresh();state=defaults;if(value){for(const group of ['basic','hsl','curves'])if(value[group])Object.assign(state[group],JSON.parse(JSON.stringify(value[group])));}selectedPoint=null;sync();}};
+  return {snapshot,count,resetHistory(){history.reset(snapshot());updateSummary();},clearSample(){sample=null;$('curve-sample-info').textContent='点击取色后，在画面内选择像素；仅定位，不改曲线。';drawCurve();},setSample(value){sample=value;$('curve-sample-info').textContent=`原图像素 (${value.pixel.join(', ')}) · 曲线输入 RGB ${value.rgb.map(v=>Math.round(v*255)).join(' / ')} · 仅定位`;drawCurve();},restore(value){const defaults=fresh();state=defaults;if(value){for(const group of ['basic','hsl','curves'])if(value[group])Object.assign(state[group],JSON.parse(JSON.stringify(value[group])));}selectedPoint=null;history.reset(snapshot());sync();}};
 })();

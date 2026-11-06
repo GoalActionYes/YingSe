@@ -1,5 +1,7 @@
 # 当前可交接状态
 
+最新版本为 `feature/adjustment-history-20261107`（1.3），包含 1.2 交互预览与曲线取色，以及手动微调撤销／重做。下述匹配算法基础不变。[本轮评估](research/2026-11-07-usability-review.md)
+
 当前用户控件版本：`feature/manual-controls-20261106`，新增基础／HSL／RGB 曲线和一致导出；匹配算法基线仍为 `feature/aligned-reference-20261105`，提交 `cb79e4a`。[控件指南](MANUAL_COLOR_CONTROLS.md)。人物与背景分区研发已按用户决定暂停。
 
 ## 做到了什么

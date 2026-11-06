@@ -15,7 +15,9 @@
 
 ## 当前该用哪个版本
 
-当前版本为 `feature/interactive-preview-picker-20261107`（1.2）：解决大图全尺寸预览计算的主要耗时，新增曲线画面取色。[实测与边界](docs/research/2026-11-07-interactive-preview-picker.md)
+当前使用版本为 `feature/adjustment-history-20261107`（1.3）：在基础／HSL／曲线微调中增加撤销、重做与手势合并。[使用评估与边界](docs/research/2026-11-07-usability-review.md)
+
+此前 1.2 `feature/interactive-preview-picker-20261107` 已解决大图全尺寸预览计算的主要耗时，新增曲线画面取色。[实测与边界](docs/research/2026-11-07-interactive-preview-picker.md)
 
 此前体验修复为 `fix/smooth-preview-20261106`（1.1.1）：连续调节反馈、预览帧复用及失败保留画面。[验证记录](docs/research/2026-11-06-smooth-preview.md)
 

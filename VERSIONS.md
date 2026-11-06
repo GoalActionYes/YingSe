@@ -2,7 +2,9 @@
 
 ## 当前推荐
 
-当前为 `feature/interactive-preview-picker-20261107`（1.2），包含交互缩略预览和曲线取色定位，原尺寸导出不变。下面的 1.1.1 是历史阶段修复。
+当前为 `feature/adjustment-history-20261107`（1.3），增加手动微调撤销与重做；开发使用最新 main。
+
+此前 `feature/interactive-preview-picker-20261107`（1.2）包含交互缩略预览和曲线取色定位，原尺寸导出不变。下面的 1.1.1 是历史阶段修复。
 
 此前体验修复为 `fix/smooth-preview-20261106`，版本 1.1.1；功能范围仍为下述手动调色，新增预览调度与有界帧复用。开发使用最新 main。
 
