@@ -208,6 +208,31 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(self.request('GET',f"/api/jobs/{job['id']}/result")[0],400)
         self.post('/api/stop',{'token':'wrong'},403)
 
+    def test_curve_sample_and_interactive_preview(self):
+        body=dict(mapping_id=self.mapping,strength=0)
+        code,_,raw=self.request('POST','/api/curve-sample',dict(body,x=0,y=0))
+        self.assertEqual(code,200,raw);value=json.loads(raw)
+        self.assertEqual(value['pixel'],[0,0])
+        np.testing.assert_allclose(value['rgb'],self.rgb[0,0]/255,atol=1e-6)
+        settings={'curves':{'rgb':[[0,0],[.5,.8],[1,1]]}}
+        code,_,raw=self.request('POST','/api/curve-sample',dict(body,x=.5,y=.5,adjustments=settings))
+        self.assertEqual(code,200,raw);value=json.loads(raw)
+        np.testing.assert_allclose(value['channels'],np.interp(value['rgb'],[0,.5,1],[0,.8,1]),atol=1e-6)
+        for coordinates in [dict(x=-.1,y=0),dict(x=0,y=2),dict(x=True,y=0)]:
+            self.assertEqual(self.request('POST','/api/curve-sample',dict(body,**coordinates))[0],400)
+        self.assertEqual(self.request('POST','/api/preview',dict(body,interactive='true'))[0],400)
+        from reference_color_app.preview import PreviewFrames
+        self.server.preview_frames=PreviewFrames()
+        with patch('reference_color_app.server.frame',return_value=(np.zeros((2000,3000,3),np.uint8),{})):
+            code,_,raw=self.request('POST','/api/preview',dict(body,interactive=True))
+            self.assertEqual(code,200,raw)
+            encoded=json.loads(raw)['after'].split(',')[1]
+            with Image.open(io.BytesIO(base64.b64decode(encoded))) as rendered:
+                self.assertEqual(rendered.size,(960,640))
+        self.server.preview_frames=PreviewFrames()
+        code,_,raw=self.request('POST','/api/preview',dict(body,interactive=True))
+        self.assertEqual(code,200,raw)
+
     def test_preview_reuses_verified_frame(self):
         from reference_color_app.preview import PreviewFrames
         from reference_color_app.server import frame

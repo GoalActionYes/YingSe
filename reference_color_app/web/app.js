@@ -1,6 +1,6 @@
 'use strict';
 const controls=window.manualControls;
-let manualVersion=0,manualTimer=null;
+let manualVersion=0,manualTimer=null,pickVersion=0;
 const $ = id => document.getElementById(id);
 const state = {target:null, reference:null, mapping:null, generation:0, analyzing:false, uploading:0, job:null, exportStale:false, uploadVersion:{target:0,reference:0}, previewRunning:false, previewNext:null, saveTimer:null, saveVersion:0, saveNext:null, saveRunning:false};
 const status = (message, type='') => { $('status').textContent=message; $('status').className='status '+type; };
@@ -41,7 +41,7 @@ function setButtons() {
   $('export-note').textContent=note+(state.target?.kind!=='video'?' 导入视频后可导出 MP4。':'')+(state.target?.metadata?.precision_conversion?' 输入为10位 SDR，先转为8位调色，MP4输出为8位。':'');
 }
 function invalidate(message='素材已更改，等待分析。') {
-  ++state.generation; state.mapping=null; state.analyzing=false; state.previewNext=null;
+  ++state.generation; ++pickVersion; controls.clearSample(); state.mapping=null; state.analyzing=false; state.previewNext=null;
   clearTimeout(state.saveTimer); state.saveTimer=null; state.saveNext=null; ++state.saveVersion;
   clearImage('after'); $('after-placeholder').hidden=false;
   if(!$('before').hidden){image('after',$('before').src);$('after-placeholder').hidden=true;}
@@ -131,7 +131,7 @@ async function renderPreview() {
   while(state.previewNext){
     const request=state.previewNext;state.previewNext=null;
     try {
-      const result=await api('/api/preview',{mapping_id:request.mapping,strength:request.strength,adjustments:request.adjustments});
+      const result=await api('/api/preview',{mapping_id:request.mapping,strength:request.strength,adjustments:request.adjustments,interactive:true});
       if(request.generation!==state.generation || request.mapping!==state.mapping || request.strength!==effectiveStrength() || request.manualVersion!==manualVersion)continue;
       image('before',result.before);image('after',result.after);$('before-placeholder').hidden=true;$('after-placeholder').hidden=true;
       actualTime(result.metadata);$('preview-state').textContent=controls.count()?`微调 ${controls.count()} 项 · 克隆 ${Math.round(result.strength*100)}`:($('clone-enabled').checked?`强度 ${Math.round(result.strength*100)}`:'色彩克隆已关闭');
@@ -140,11 +140,11 @@ async function renderPreview() {
   }
   state.previewRunning=false;
 }
-function strengthChanged(){ syncStrength();invalidateExport();schedulePreview();scheduleSave(); }
+function strengthChanged(){ controls.clearSample();syncStrength();invalidateExport();schedulePreview();scheduleSave(); }
 $('strength').addEventListener('input',strengthChanged);
 $('strength-number').addEventListener('input',()=>{const value=$('strength-number').value;if(value.trim()==='' || !Number.isFinite(Number(value)))return;$('strength').value=String(Math.max(0,Math.min(100,Math.round(Number(value)))));strengthChanged();});
 $('strength-number').addEventListener('change',syncStrength);
-$('clone-enabled').addEventListener('change',()=>{invalidateExport();setButtons();requestPreview();scheduleSave();});
+$('clone-enabled').addEventListener('change',()=>{controls.clearSample();invalidateExport();setButtons();requestPreview();scheduleSave();});
 $('reset').addEventListener('click',()=>{$('strength').value=0;strengthChanged();});
 function scheduleSave(){
   clearTimeout(state.saveTimer); if(!state.mapping)return;
@@ -217,3 +217,12 @@ async function restore(){
 }
 window.addEventListener('manual-change',()=>{++manualVersion;invalidateExport();scheduleSave();schedulePreview();});
 setButtons();restore();
+
+window.addEventListener('curve-pick',async event=>{
+  if(!state.mapping)return;
+  const generation=state.generation,version=manualVersion,mapping=state.mapping,pick=++pickVersion,strength=effectiveStrength();
+  try{
+    const result=await api('/api/curve-sample',{mapping_id:mapping,strength,adjustments:controls.snapshot(),...event.detail});
+    if(pick===pickVersion&&strength===effectiveStrength()&&generation===state.generation&&version===manualVersion&&mapping===state.mapping)controls.setSample(result);
+  }catch(error){if(pick===pickVersion&&strength===effectiveStrength()&&mapping===state.mapping&&generation===state.generation&&version===manualVersion)status('取色失败：'+error.message,'error');}
+});

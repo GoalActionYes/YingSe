@@ -38,7 +38,7 @@ def main():
     subprocess.run([str(compiler),'/nologo','/target:winexe','/optimize+','/reference:System.Windows.Forms.dll','/win32icon:'+str(package/'desktop/reference_color/yingse.ico'),'/out:'+str(package/'映色参考调色.exe'),str(package/'desktop/reference_color/Launcher.cs')],check=True)
     copy(package/'映色参考调色.exe',package/'ReferenceColor.exe')
     files=[dict(path=p.relative_to(package).as_posix(),bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(package.rglob('*')) if p.is_file()]
-    (package/'package-manifest.json').write_text(json.dumps(dict(version='1.1.1-smooth-preview',files=files),ensure_ascii=False,indent=2),encoding='utf8')
+    (package/'package-manifest.json').write_text(json.dumps(dict(version='1.2-interactive-preview-picker',files=files),ensure_ascii=False,indent=2),encoding='utf8')
     archive=package.with_suffix('.zip')
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as output:
         for p in sorted(package.rglob('*')):

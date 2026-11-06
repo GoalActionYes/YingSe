@@ -5,3 +5,5 @@
 @media(min-width:1001px){.workspace{grid-template-columns:220px minmax(260px,1fr) 350px}}@media(min-width:1500px){.workspace{grid-template-columns:260px minmax(280px,1fr) 380px}}@media(max-width:1000px) and (min-width:741px){.workspace{grid-template-columns:170px minmax(200px,1fr) 320px}}@media(max-width:740px) and (min-width:541px){.workspace{grid-template-columns:minmax(0,1fr) 310px}}
 
 @media(min-width:741px){body{height:100dvh;overflow:hidden;display:flex;flex-direction:column}.topbar,footer{flex-shrink:0}.workspace{flex:1;min-height:0;height:0;align-items:stretch}.workspace>.panel{min-height:0}.adjustments,.inputs{overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}.stage{min-height:0}.comparison{min-height:0}.image-well{min-height:0}.adjustments>.panel-heading{position:sticky;top:0;z-index:4;background:#252525}.adjustments>.tabs{top:41px}.adjustments>.manual-overview{position:sticky;top:101px;z-index:3;background:#252525}.export-area{scroll-margin-top:150px}}
+
+.curve-picking .image-well img{cursor:crosshair}#curve-pick[aria-pressed=true]{background:#00b9c2;color:#11292c}

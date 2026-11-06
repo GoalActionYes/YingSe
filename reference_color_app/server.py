@@ -20,6 +20,9 @@ from .storage import Store, _json
 from .jobs import JobManager
 from .adjustments import normalize, compose
 from .preview import PreviewFrames
+from .adjustments import transform
+from .lut import _compose, _layers
+import numpy as np
 
 MAX_UPLOAD = 512 * 1024 * 1024
 MAX_JSON = 65536
@@ -213,13 +216,36 @@ class Handler(BaseHTTPRequestHandler):
             record = store.analyze(target, reference, self.number(data.get('time_seconds', 0)))
             metadata = record['diagnostics']['inputs']['target']['metadata']
             return self.json(dict(mapping_id=record['id'], analysis_time=record['analysis_time'], metadata=public_metadata(metadata)))
+        if path == '/api/curve-sample':
+            data = self.body(('mapping_id','strength','x','y'),('adjustments',))
+            mapping = store.get_mapping(self.identifier(data['mapping_id']))
+            record = store.get_mapping_record(data['mapping_id'])
+            source = store.get_media(record['target_id'])
+            x=self.number(data['x'],1); y=self.number(data['y'],1)
+            rgb,_=frame(source,record['analysis_time'])
+            px=min(rgb.shape[1]-1,int(x*rgb.shape[1]));py=min(rgb.shape[0]-1,int(y*rgb.shape[0]))
+            settings=normalize(data.get('adjustments'));settings['curves']['enabled']=False
+            value=_compose(_layers(mapping),rgb[py:py+1,px:px+1].astype(np.float32)/255,self.number(data['strength'],1))
+            value=transform(value,settings)[0,0]
+            original=normalize(data.get('adjustments'))['curves']
+            points=np.asarray(original['rgb'])
+            channels=np.interp(value,points[:,0],points[:,1]) if original['enabled'] else value
+            return self.json(dict(rgb=value.tolist(),channels=channels.tolist(),pixel=[px,py]))
         if path == '/api/preview':
-            data = self.body(('mapping_id', 'strength'), ('adjustments',))
+            data = self.body(('mapping_id', 'strength'), ('adjustments','interactive'))
+            interactive=data.get('interactive',False)
+            if type(interactive) is not bool: raise RequestError(400,'交互预览标记无效')
             identifier = self.identifier(data['mapping_id']); strength = self.number(data['strength'], 1)
             mapping = store.get_mapping(identifier); record = store.get_mapping_record(identifier)
             source = store.get_media(record['target_id'])  # Integrity check remains before cache access.
-            key = (source['id'], source['sha256'], record['analysis_time'])
-            rgb, metadata, before = self.server.preview_frames.get(key, lambda: frame(source, record['analysis_time']), png)
+            key = (source['id'], source['sha256'], record['analysis_time'],interactive)
+            def load_preview():
+                rgb,metadata=frame(source,record['analysis_time'])
+                if interactive:
+                    image=Image.fromarray(rgb);image.thumbnail((960,640),Image.Resampling.BILINEAR)
+                    rgb=np.array(image)
+                return rgb,metadata
+            rgb, metadata, before = self.server.preview_frames.get(key, load_preview, png)
             effective, effective_strength = compose(mapping, strength, data.get('adjustments'))
             after = apply_mapping(rgb, effective, effective_strength)
             return self.json(dict(mapping_id=identifier, strength=strength, before=before, after=png(after), metadata=public_metadata(metadata)))
