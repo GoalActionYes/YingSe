@@ -31,5 +31,16 @@ class GPUMapChecks(unittest.TestCase):
         output=PreparedMapping(first,second).apply(rgb)
         np.testing.assert_allclose(output[0,0],[126,100,50],atol=1)
 
+    def test_float_cube_compilation_uses_rgb_axes(self):
+        import torch
+        from model_provider import compile_luts
+        coords=torch.linspace(0,1,17)
+        z,y,x=torch.meshgrid(coords,coords,coords,indexing='ij')
+        identity=torch.stack([x,y,z])[None]
+        modified=identity.clone();modified[:,0]*=.5;modified[:,2]+=.1
+        mapping=compile_luts(identity,modified,{})
+        np.testing.assert_allclose(mapping.layers[1,63,0,0],[.5,0,.1],atol=1e-6)
+        np.testing.assert_allclose(mapping.layers[1,0,0,63],[0,0,1],atol=1e-6)
+
 
 if __name__=='__main__':unittest.main()

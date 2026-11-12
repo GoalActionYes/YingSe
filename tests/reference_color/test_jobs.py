@@ -92,12 +92,19 @@ class JobTests(unittest.TestCase):
   # Controlled real long-lived FFmpeg replaces only encoding launch; source mapping remains valid.
   video=dict(self.a,kind='video',metadata=dict(duration_seconds=60))
   m=JobManager(self.s)
-  with patch.object(self.s,'get_mapping',return_value=identity()), patch.object(self.s,'get_media',return_value=video), patch.object(jobs.subprocess,'Popen',side_effect=child):
+  # Process exit does not mean the worker has closed ffmpeg.log yet. Waiting
+  # for the worker prevents Windows TemporaryDirectory cleanup from racing it.
+  finished=threading.Event(); original_run=m._run
+  def tracked_run(*args):
+   try: return original_run(*args)
+   finally: finished.set()
+  with patch.object(self.s,'get_mapping',return_value=identity()), patch.object(self.s,'get_media',return_value=video), patch.object(jobs.subprocess,'Popen',side_effect=child), patch.object(m,'_run',side_effect=tracked_run):
    j=m.start_export(r['id'],self.a['id'],1,'mp4'); self.assertTrue(launched.wait(10))
    deadline=time.monotonic()+5
    while time.monotonic()<deadline and m.get_job(j)['progress']==0: time.sleep(.05)
    self.assertGreater(m.get_job(j)['progress'],0); self.assertTrue(m.has_active_jobs()); m.cancel_job(j)
    process_holder[0].wait(timeout=5)
+   self.assertTrue(finished.wait(5))
   self.assertEqual(m.get_job(j)['status'],'cancelled'); self.assertFalse(m.has_active_jobs())
   with self.assertRaises(ValueError): m.result_file(j,'report')
 
