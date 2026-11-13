@@ -1,0 +1,199 @@
+{
+  "scope": "Actual enhanced workbench HTTP/GPU/export/process acceptance; browser layout and gestures still unverified",
+  "product_integrated_in_separate_research_workbench": true,
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "variant": "multiref-temporal-v1",
+  "tests": {
+    "count": 159,
+    "passed": true
+  },
+  "current_build_verified": true,
+  "current_title_and_preview_disclaimer_verified": true,
+  "full_strength_png_and_both_videos_hash_preserved_after_finish_fix": true,
+  "http": {
+    "results_sha256": "8a1580e4330130c9d1b5887fc38804b3170916070d53fb4ffc2218bebfdf6325",
+    "variant": "multiref-temporal-v1",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "rgba_gray_http": true,
+    "analysis_seconds": 1.500447999977041,
+    "preview_seconds": [
+      0.2963066000083927,
+      0.2389158000005409,
+      0.12557289999676868,
+      0.12934129999484867,
+      0.14556410000659525,
+      0.142196500004502
+    ],
+    "png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "matches_server_renderer": true,
+      "sha256": "2c874ee9aba2c4cb309a7338287b0c8d0903f9499f247d1f7fa5497760c70041"
+    },
+    "cube_rejection": {
+      "error": "\u5c40\u90e8\u8c03\u8272\u65e0\u6cd5\u5b8c\u6574\u5bfc\u51fa\u4e3a\u666e\u901aCUBE\uff0c\u8bf7\u9009\u62e9PNG\u6216MP4"
+    },
+    "video": {
+      "wall_seconds": 5.188952199998312,
+      "output_frames": 90,
+      "fps": 30,
+      "dimensions": [
+        640,
+        360
+      ],
+      "duration": 3.0,
+      "sha256": "56b7860ad678193943309b5888d31c7c4808dff50f3185e33a3b80e5796a2e22",
+      "temporal_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6874189814814815
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8979470486111112
+        },
+        {
+          "frame": 60,
+          "lossy_encoded_mae": 1.8434071180555556
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8419126157407408
+        }
+      ]
+    },
+    "video_single_frame_preview_vs_temporal_mae": 0.4023683449074074,
+    "audio_export": {
+      "has_audio": true,
+      "duration": 3.02,
+      "sha256": "fb1cacb81bbd86279364e25b2faa9f81abcd991268bc9e64c41a8339d64dd448",
+      "half_strength_manual_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6635590277777779
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8648075810185185
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8485141782407408
+        }
+      ]
+    },
+    "active_export_stop_rejected": true,
+    "cancel_running_export": true,
+    "source_sha256": {
+      "spatial_build.py": "bf518a6bc64428797b8c92884a9c551929687085bf1b83f764eab42886c6c7a1",
+      "spatial_jobs.py": "80107c3942f7986acdf6655e5a179711d645452a3ca0ab358a778f19b908d799",
+      "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+      "spatial_store.py": "5e012a4f233822e6df6fdbedc506281ad924a502a55c8b4a8f914b76b37369ad",
+      "spatial_workbench.py": "34d400f402d6c807461658a916417b2959d96dc12c8d4f560bae5f5ceb59a4f0",
+      "temporal_grid.py": "97d0dc43291ac52771df3a85f02c0b9bf059a375ad6595dd2a0d55c6d57e8ab9",
+      "verify_spatial_workbench.py": "293336b65eb01973dbbeb5c30595ccc72afb3845f80f594a9c2ab8dbdaaafe68"
+    },
+    "passed": true,
+    "scope": "Actual HTTP workflows including audio and running cancellation; no visual browser acceptance"
+  },
+  "native_4k": {
+    "results_sha256": "395aaf9c9b7eab37600edd4965d3c801ed00ee199269e1594eccdbd162504060",
+    "variant": "multiref-temporal-v1",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "full_source_analysis_seconds": 2.10864120000042,
+    "preview_before_export_seconds": [
+      1.193070599983912,
+      0.32159239999600686,
+      0.272492299991427,
+      0.28619030001573265,
+      0.2591119999997318
+    ],
+    "source_sha256": "1f4350aabf4382a0c4325a6439dfe984a6d6f3a965a6bec08f26ed5d08c10eec",
+    "clip_metadata": {
+      "kind": "video",
+      "width": 2160,
+      "height": 3840,
+      "pixel_format": "yuv420p",
+      "component_bit_depths": [
+        8,
+        8,
+        8
+      ],
+      "working_precision_bits": 8,
+      "precision_conversion": false,
+      "precision_note": "8\u4f4d SDR \u89c6\u9891\u5904\u7406",
+      "duration_seconds": 2.04,
+      "has_audio": true,
+      "video_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 2160x3840 [SAR 1:1 DAR 9:16], 38022 kb/s, 50 fps, 50 tbr, 12800 tbn (default)",
+      "hdr_unsupported": false,
+      "dimension_convention": "coded stream dimensions; decoded PNG gives oriented display dimensions",
+      "color_management": "FFmpeg normal SDR RGB decoding; native/profile equivalence unvalidated"
+    },
+    "output_metadata": {
+      "kind": "video",
+      "width": 2160,
+      "height": 3840,
+      "pixel_format": "yuv420p",
+      "component_bit_depths": [
+        8,
+        8,
+        8
+      ],
+      "working_precision_bits": 8,
+      "precision_conversion": false,
+      "precision_note": "8\u4f4d SDR \u89c6\u9891\u5904\u7406",
+      "duration_seconds": 2.1,
+      "has_audio": true,
+      "video_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown, progressive), 2160x3840, 28964 kb/s, 30 fps, 30 tbr, 15360 tbn (default)",
+      "hdr_unsupported": false,
+      "dimension_convention": "coded stream dimensions; decoded PNG gives oriented display dimensions",
+      "color_management": "FFmpeg normal SDR RGB decoding; native/profile equivalence unvalidated"
+    },
+    "output_sha256": "1943d80e5b897bc1f00a37cd22c9f3eff2bcd709dc35209bd94b9c0605a3b594",
+    "output_decoded_frames": 63,
+    "input_cfr_frames": 63,
+    "preview_during_export_seconds": [
+      0.6933976000000257,
+      0.4279312000144273,
+      0.489724799990654
+    ],
+    "export_wall_seconds": 53.27016079999157,
+    "source_code_sha256": {
+      "spatial_jobs.py": "80107c3942f7986acdf6655e5a179711d645452a3ca0ab358a778f19b908d799",
+      "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+      "spatial_store.py": "5e012a4f233822e6df6fdbedc506281ad924a502a55c8b4a8f914b76b37369ad",
+      "spatial_workbench.py": "34d400f402d6c807461658a916417b2959d96dc12c8d4f560bae5f5ceb59a4f0",
+      "temporal_grid.py": "97d0dc43291ac52771df3a85f02c0b9bf059a375ad6595dd2a0d55c6d57e8ab9",
+      "verify_natural_http.py": "e4f34a14e697827c53f92e8b22d193d74f24c71b2a50bc193e08a1068e46ec98"
+    },
+    "scope": "Single natural 4K short export and full-source latency; no browser/AV perceptual acceptance",
+    "passed": true
+  },
+  "restart": {
+    "results_sha256": "a7a799c421583ee5a5b387d8a1c717e655ef37b48dd7e8eb9c5177e372c7cb27",
+    "restart_verified": true,
+    "concurrent_start_same_url": true,
+    "reuse_verified": true,
+    "project_and_adjustments_restored": true,
+    "preview_after_restart_exact": true,
+    "variant": "multiref-temporal-v1",
+    "demo_strength": 0.8,
+    "passed": true,
+    "scope": "Actual owned process restart and HTTP persistence, not visual browser acceptance"
+  },
+  "updated_engine": {
+    "results_sha256": "2a3f11bcfb243b10bbbee2f9655ed71f0ddf3ca9cdf41c6ca238f35389f0e38a",
+    "passed": true,
+    "stale_grid_reanalyzed": true,
+    "inputs_and_settings_preserved": true,
+    "png_preview_exact": true,
+    "variant": "multiref-temporal-v1",
+    "scope": "Real owned service update and HTTP restore; no visual browser acceptance"
+  },
+  "runtime_sources_frozen_and_current_verified": true,
+  "stable_reference_color_app_modified": false,
+  "metadata_policy": "No raw media metadata text, session tokens, or absolute private paths",
+  "windows_cmd_check_verified": true
+}

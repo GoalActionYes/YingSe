@@ -5,6 +5,7 @@ from unittest.mock import patch
 from urllib.error import HTTPError
 import launch_spatial_workbench as launcher
 import hashlib
+from pathlib import Path
 
 
 class Response:
@@ -26,6 +27,13 @@ class SpatialLauncherTests(unittest.TestCase):
         error=HTTPError('http://127.0.0.1:12345/api/stop',409,'Conflict',{},io.BytesIO(json.dumps({'error':'仍有导出任务'}).encode()))
         with patch.object(launcher,'urlopen',side_effect=error):
             with self.assertRaisesRegex(RuntimeError,'仍有导出任务'):launcher.stop_owned(dict(url='http://127.0.0.1:12345',token='test'))
+
+    def test_enhanced_reuse_requires_both_its_root_and_variant(self):
+        root=Path('isolated-enhanced');record=dict(url='http://127.0.0.1:12345',pid=80,token='test')
+        health=dict(app='spatial-reference-workbench',pid=80,variant='multiref-temporal-v1',instance=hashlib.sha256(str(root.resolve()).encode()).hexdigest(),build='new-build')
+        with patch.object(launcher,'saved_session',return_value=record):
+            with patch.object(launcher,'urlopen',return_value=Response(health)):self.assertEqual(launcher.probe(root,True)['build'],'new-build')
+            with patch.object(launcher,'urlopen',return_value=Response(dict(health,variant='app8'))):self.assertIsNone(launcher.probe(root,True))
 
 
 if __name__=='__main__':unittest.main()

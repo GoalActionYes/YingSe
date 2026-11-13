@@ -16,10 +16,10 @@ import torch
 from reference_color_app import media,pipeline
 from reference_color_app.storage import Store,VERSION,_id,_json
 from reference_color_app.contracts import Mapping
-from reference_color_app.adjustments import normalize,transform
+from reference_color_app.adjustments import normalize
 from reference_color_app.lut import _strength
 from learned_store import identity_cube
-from spatial_render import PreparedSpatial,CHECKPOINT_SHA
+from spatial_render import PreparedSpatial,CHECKPOINT_SHA,finish_spatial
 from triplet_color import to_srgb
 
 
@@ -136,8 +136,7 @@ class SpatialStore(Store):
                 with self.preview_lock:
                     self.preview_cache[key]=graded
                     while len(self.preview_cache)>2:self.preview_cache.popitem(last=False)
-        value=rgb.astype(np.float32)/255*(1-strength)+graded.astype(np.float32)/255*strength
-        return np.rint(transform(value,settings)*255).astype(np.uint8)
+        return finish_spatial(rgb,graded,strength,settings)
 
     def save_project(self,mapping_id,strength,output_settings=None):
         if output_settings and output_settings.get('kind')=='cube':raise ValueError('局部调色无法完整保存为普通CUBE，请导出图片或视频')

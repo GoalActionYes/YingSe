@@ -4,6 +4,8 @@
 
 2026-11-13 自适应研究进展、可运行版本与未通过候选统一见[研究版本与交接](docs/RESEARCH_PROGRESS.md)。独立工作台保留现有微调体验；局部研究版导出图片和视频，全局版保留CUBE。它们未替换下述1.3稳定版，完整内容感知目标仍在验证。
 
+本机最新研究入口是`00-从这里开始/13-打开自适应调色新版.cmd`：新模型与视频平滑已接入独立工作台，[体验与限制](docs/research/2026-11-13-multiref-workbench.md)。Git不包含研究环境或权重，其他电脑先按源码指南启动稳定开发版。
+
 ## 接手先看这里
 
 | 你想做什么 | 从哪里开始 |
@@ -17,7 +19,7 @@
 
 ## 当前该用哪个版本
 
-当前使用版本为 `feature/adjustment-history-20261107`（1.3）：在基础／HSL／曲线微调中增加撤销、重做与手势合并。[使用评估与边界](docs/research/2026-11-07-usability-review.md)
+稳定开发基线为 `feature/adjustment-history-20261107`（1.3）：在基础／HSL／曲线微调中增加撤销、重做与手势合并。[使用评估与边界](docs/research/2026-11-07-usability-review.md)
 
 此前 1.2 `feature/interactive-preview-picker-20261107` 已解决大图全尺寸预览计算的主要耗时，新增曲线画面取色。[实测与边界](docs/research/2026-11-07-interactive-preview-picker.md)
 

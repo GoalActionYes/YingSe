@@ -14,17 +14,18 @@ import numpy as np
 from PIL import Image
 from independent_coco import ROOT,digest
 from spatial_workbench import make_spatial_workbench
-from reference_color_app.adjustments import normalize
+from reference_color_app.adjustments import normalize,transform
 from reference_color_app.media import ffmpeg_path,probe_media
+from temporal_grid import TemporalGrid
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--run',default='verification-v4');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='verification-v4');parser.add_argument('--multiref',action='store_true');args=parser.parse_args()
     if not args.run or Path(args.run).name!=args.run or args.run in ('.','..'):raise ValueError('Run must be a single directory name')
     out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench'/args.run;out.mkdir(parents=True,exist_ok=False)
     frozen=out/'frozen-source';frozen.mkdir()
-    for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
-    server=make_spatial_workbench(out/'data');thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start();url=f'http://127.0.0.1:{server.server_port}';report={}
+    for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','spatial_render.py','spatial_build.py','temporal_grid.py','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
+    server=make_spatial_workbench(out/'data',enhanced=args.multiref);thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start();url=f'http://127.0.0.1:{server.server_port}';report={}
     def api(path,data=None):
         req=Request(url+path,data=None if data is None else json.dumps(data).encode(),headers={'Content-Type':'application/json'})
         with urlopen(req,timeout=120) as response:
@@ -48,6 +49,8 @@ def main():
         if job['status']!='done':raise ValueError(job)
         return job,api(job['result_url'])
     try:
+        health=api('/api/health');assert health['variant']==('multiref-temporal-v1' if args.multiref else 'app8')
+        report['variant']=health['variant'];report['checkpoint_sha256']=server.store.engine.checkpoint_sha
         html=api('/').decode();assert 'option value="cube"' not in html and '课程研究' in html
         data=ROOT/'outputs/adaptive-reference-20261113/tst100k/reserved-v2';records=json.loads((data/'results.json').read_text())
         item=next(r for r in records['cases'] if r['index']==67849)['triplet']
@@ -87,13 +90,45 @@ def main():
         decoded=subprocess.run([str(ffmpeg_path()),'-v','error','-i',str(video_path),'-an','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW)
         assert decoded.returncode==0 and len(decoded.stdout)//(640*360*3)==90
         report['video']=dict(wall_seconds=time.perf_counter()-start,output_frames=90,fps=30,dimensions=[640,360],duration=metadata['duration_seconds'],sha256=digest(video_path))
+        if args.multiref:
+            assert vj['settings']['temporal']==dict(alpha=.2,cut_threshold=.16)
+            decoded_source=subprocess.run([str(ffmpeg_path()),'-v','error','-i',str(ROOT/'outputs/skin-protection-validation-20261019/video-agent/official-person-motion-3s.mp4'),'-vf','fps=30','-an','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW)
+            assert decoded_source.returncode==0 and len(decoded_source.stdout)==90*640*360*3
+            frames=np.frombuffer(decoded_source.stdout,np.uint8).reshape(90,360,640,3)
+            exported_frames=np.frombuffer(decoded.stdout,np.uint8).reshape(90,360,640,3)
+            ref,_=server.store.decode(server.store.get_media(reference['id']));temporal=TemporalGrid();checks=[]
+            for index,frame in enumerate(frames):
+                prepared=temporal.smooth(server.store.engine.prepare(frame,ref),frame)
+                if index in [0,30,60,89]:
+                    expected=prepared.apply(frame);error=float(np.abs(expected.astype(float)-exported_frames[index].astype(float)).mean())
+                    assert error<5,('Temporal export diverged from sequential oracle',index,error)
+                    checks.append(dict(frame=index,lossy_encoded_mae=error))
+                    if index==30:
+                        static=server.store.render(vm['mapping_id'],frame,1)
+                        report['video_single_frame_preview_vs_temporal_mae']=float(np.abs(static.astype(float)-expected.astype(float)).mean())
+            report['video']['temporal_oracle_samples']=checks
         audio_path=out/'input-audio.mp4'
         tone=subprocess.run([str(ffmpeg_path()),'-v','error','-y','-i',str(ROOT/'outputs/skin-protection-validation-20261019/video-agent/official-person-motion-3s.mp4'),'-f','lavfi','-i','sine=frequency=440:duration=3','-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac',str(audio_path)],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW)
         assert tone.returncode==0 and probe_media(audio_path)['has_audio']
         audio=upload(audio_path);am=api('/api/analyze',dict(target_id=audio['id'],reference_id=reference['id']))
-        aj,bytes_audio=export(am['mapping_id'],audio['id'],.5,'mp4');audio_output=out/'audio-export.mp4';audio_output.write_bytes(bytes_audio)
+        video_settings=normalize();video_settings['basic']['brightness']=12;video_settings['basic']['contrast']=10
+        aj,bytes_audio=export(am['mapping_id'],audio['id'],.5,'mp4',video_settings);audio_output=out/'audio-export.mp4';audio_output.write_bytes(bytes_audio)
         audio_meta=probe_media(audio_output);assert audio_meta['has_audio'] and abs(audio_meta['duration_seconds']-3)<.1
         report['audio_export']=dict(has_audio=True,duration=audio_meta['duration_seconds'],sha256=digest(audio_output))
+        if args.multiref:
+            decoded_audio=subprocess.run([str(ffmpeg_path()),'-v','error','-i',str(audio_output),'-an','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW)
+            assert decoded_audio.returncode==0 and len(decoded_audio.stdout)==90*640*360*3
+            actual=np.frombuffer(decoded_audio.stdout,np.uint8).reshape(90,360,640,3);temporal=TemporalGrid();checks=[]
+            for index,frame in enumerate(frames):
+                prepared=temporal.smooth(server.store.engine.prepare(frame,ref),frame)
+                if index in [0,30,89]:
+                    full=prepared.apply(frame,1)
+                    mixed=frame.astype(np.float32)/255*.5+full.astype(np.float32)/255*.5
+                    expected=np.rint(transform(mixed,video_settings)*255).astype(np.uint8)
+                    error=float(np.abs(expected.astype(float)-actual[index].astype(float)).mean())
+                    assert error<5,('Half strength and manual settings diverged',index,error)
+                    checks.append(dict(frame=index,lossy_encoded_mae=error))
+            report['audio_export']['half_strength_manual_oracle_samples']=checks
         cancel=api('/api/export',dict(mapping_id=am['mapping_id'],media_id=audio['id'],strength=1,kind='mp4'))
         deadline=time.monotonic()+10
         while cancel['id'] not in server.manager.processes:

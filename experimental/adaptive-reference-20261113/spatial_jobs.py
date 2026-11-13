@@ -5,11 +5,23 @@ import numpy as np
 from PIL import Image
 from reference_color_app.jobs import JobManager
 from reference_color_app import media
-from reference_color_app.adjustments import transform
+from temporal_grid import TemporalGrid
+from spatial_render import finish_spatial
+
+
+def grade_video_frame(engine,rgb,reference,strength,adjustments,temporal=None):
+    if strength==0 or np.array_equal(rgb,reference):
+        graded=rgb
+        if temporal is not None:temporal.reset()
+    else:
+        prepared=engine.prepare(rgb,reference)
+        if temporal is not None:prepared=temporal.smooth(prepared,rgb)
+        graded=prepared.apply(rgb,1)
+    return finish_spatial(rgb,graded,strength,adjustments)
 
 
 class SpatialJobs(JobManager):
-    def __init__(self,store):super().__init__(store);self.encoders={}
+    def __init__(self,store,temporal=False):super().__init__(store);self.encoders={};self.temporal_enabled=temporal
 
     def start_export(self,mapping_id,media_id,strength,kind,adjustments=None):
         if kind=='cube':raise ValueError('局部调色无法完整导出为普通CUBE，请选择PNG或MP4')
@@ -55,7 +67,7 @@ class SpatialJobs(JobManager):
                     self.processes[identifier]=decoder
                     encoder=subprocess.Popen(encoder_args,stdin=subprocess.PIPE,stdout=subprocess.DEVNULL,stderr=log,creationflags=flags)
                     self.encoders[identifier]=encoder
-                count=0;frame_size=width*height*3
+                count=0;frame_size=width*height*3;temporal=TemporalGrid() if self.temporal_enabled else None
                 while True:
                     with self.lock:
                         if job['status']=='cancelled':return
@@ -68,9 +80,7 @@ class SpatialJobs(JobManager):
                     if len(raw)!=frame_size:raise ValueError('视频解码帧不完整')
                     rgb=np.frombuffer(raw,np.uint8).reshape(height,width,3)
                     with self.store.render_lock:
-                        if job['strength']==0 or np.array_equal(rgb,ref):graded=rgb
-                        else:graded=self.store.engine.prepare(rgb,ref).apply(rgb,job['strength'])
-                        output=np.rint(transform(graded.astype(np.float32)/255,job['adjustments'])*255).astype(np.uint8)
+                        output=grade_video_frame(self.store.engine,rgb,ref,job['strength'],job['adjustments'],temporal)
                     encoder.stdin.write(output.tobytes());count+=1
                     with self.lock:
                         job['progress']=min(.99,count/max(1,duration*30))
@@ -80,6 +90,7 @@ class SpatialJobs(JobManager):
                 if count==0:raise ValueError('视频未解码出任何帧')
                 settings=dict(width=width,height=height,frames=count,fps=30,frame_rate_policy='Resampled to constant 30fps',
                     algorithm='Recompute spatial grid per frame from constant reference',audio='First optional source audio track, AAC',
+                    temporal=dict(alpha=temporal.alpha,cut_threshold=temporal.cut_threshold) if temporal is not None else None,
                     encoding='Lossy H264 CRF18/YUV420p, SDR BT709 limited',output_metadata=media.probe_media(partial))
             with self.lock:
                 if job['status']=='cancelled':return

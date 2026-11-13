@@ -12,6 +12,8 @@ import torch.nn.functional as F
 from independent_coco import ROOT,digest
 from train_triplet_pilot import author_model
 from training_checks import finite_output
+from reference_color_app.adjustments import transform
+from reference_color_app.lut import _strength
 
 CHECKPOINT_SHA='d08f07a41d4056bad26b480fd1d942197839b4c3f6e0145e796687b8bef1ff14'
 
@@ -26,6 +28,16 @@ def checkpoint_for(profile):
 def validate_rgb(rgb):
     if not isinstance(rgb,np.ndarray) or rgb.dtype!=np.uint8 or rgb.ndim!=3 or rgb.shape[2]!=3 or min(rgb.shape[:2])<1:
         raise ValueError('Expected nonempty RGB8 image')
+
+
+def finish_spatial(rgb,graded,strength,adjustments=None):
+    validate_rgb(rgb);validate_rgb(graded)
+    if rgb.shape!=graded.shape:raise ValueError('Grade dimensions changed')
+    strength=float(_strength(strength))
+    if strength==0:value=rgb.astype(np.float32)/255
+    elif strength==1:value=graded.astype(np.float32)/255
+    else:value=rgb.astype(np.float32)/255*(1-strength)+graded.astype(np.float32)/255*strength
+    return np.rint(transform(value,adjustments)*255).astype(np.uint8)
 
 
 def coordinates(width,height,start,stop,z):

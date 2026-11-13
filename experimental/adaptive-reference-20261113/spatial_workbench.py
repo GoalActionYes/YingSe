@@ -24,7 +24,7 @@ from spatial_jobs import SpatialJobs
 from spatial_build import build_tag
 
 
-def assets():
+def assets(enhanced=False):
     html=(WEB/'index.html').read_text(encoding='utf-8')
     html=html.replace('<title>映色 · 参考图调色</title>','<title>映色 · 局部参考调色研究版</title>')
     html=html.replace('<option value="cube">.cube · 颜色映射</option>','')
@@ -45,6 +45,9 @@ def assets():
       await analyze();return;
     }
     """+restore_line)
+    if enhanced:
+        html=html.replace('局部参考调色研究版','自适应参考调色研究版').replace('局部参考调色（课程研究）','自适应参考调色（课程研究）')
+        html=html.replace('图片保留原尺寸；视频导出为30fps。局部效果请导出图片或视频。','图片保留原尺寸；视频以30fps导出并平滑色彩过渡，静帧预览可能略有差异。')
     return {'/':(html.encode(),'text/html; charset=utf-8'),'/app.js':(js.encode(),'application/javascript; charset=utf-8')}
 
 
@@ -54,7 +57,7 @@ class SpatialHandler(Handler):
         if method=='GET' and self.path in self.server.assets:
             body,mime=self.server.assets[self.path];return self.send_bytes(body,mime)
         if method=='GET' and self.path=='/api/health':
-            return self.json(dict(app='spatial-reference-workbench',version=1,pid=os.getpid(),build= self.server.build_tag,instance=hashlib.sha256(str(self.server.store.root).encode()).hexdigest(),active_exports=len(self.server.manager.active_jobs())))
+            return self.json(dict(app='spatial-reference-workbench',version=1,pid=os.getpid(),build=self.server.build_tag,variant=self.server.variant,instance=hashlib.sha256(str(self.server.store.root).encode()).hexdigest(),active_exports=len(self.server.manager.active_jobs())))
         parts=self.path.strip('/').split('/')
         if method=='GET' and len(parts)==3 and parts[:2]==['api','projects']:
             store=self.server.store
@@ -97,18 +100,19 @@ class SpatialHandler(Handler):
         return super().handle_route(method)
 
 
-def make_spatial_workbench(root,port=0,engine=None):
-    engine=engine if engine is not None else SpatialEngine()
+def make_spatial_workbench(root,port=0,engine=None,enhanced=False):
+    if type(enhanced)!=bool:raise ValueError('Expected explicit enhanced mode')
+    engine=engine if engine is not None else SpatialEngine('multiref-v1' if enhanced else 'app8')
     server=ThreadingHTTPServer(('127.0.0.1',port),SpatialHandler);server.daemon_threads=True
-    server.assets=assets();server.store=SpatialStore(root,engine);server.manager=SpatialJobs(server.store)
-    server.build_tag=build_tag()
+    server.assets=assets(enhanced);server.store=SpatialStore(root,engine);server.manager=SpatialJobs(server.store,temporal=enhanced)
+    server.build_tag=build_tag(enhanced);server.variant='multiref-temporal-v1' if enhanced else 'app8'
     server.preview_frames=PreviewFrames();server.token=secrets.token_urlsafe(32);server.operation_lock=threading.RLock();server.stopping=False
     return server
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--data-dir',type=Path,default=ROOT/'dev-data/spatial-reference');parser.add_argument('--port',type=int,default=0)
-    args=parser.parse_args();server=make_spatial_workbench(args.data_dir,args.port)
+    parser=argparse.ArgumentParser();parser.add_argument('--data-dir',type=Path);parser.add_argument('--port',type=int,default=0);parser.add_argument('--multiref',action='store_true')
+    args=parser.parse_args();directory=args.data_dir or ROOT/('dev-data/spatial-multiref' if args.multiref else 'dev-data/spatial-reference');server=make_spatial_workbench(directory,args.port,enhanced=args.multiref)
     url=f'http://127.0.0.1:{server.server_address[1]}'
     _json(server.store.root/'session.json',dict(url=url,pid=os.getpid(),token=server.token,app='spatial-reference-workbench'))
     print(url,flush=True)
