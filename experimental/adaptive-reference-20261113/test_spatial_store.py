@@ -11,6 +11,7 @@ import threading
 import io
 import struct
 import zipfile
+from unittest.mock import patch
 
 
 class FakeEngine:
@@ -105,6 +106,29 @@ class SpatialStoreTests(unittest.TestCase):
             rebuilt=store.analyze(source['id'],source['id'])
             self.assertFalse(rebuilt['cache_hit'])
             self.assertEqual(tuple(store.get_prepared(rebuilt['id']).grid.shape),(1,13,8,16,16))
+
+    def test_identity_reuses_probes_but_tracks_source_decoder_and_algorithm(self):
+        api=self.api()
+        from reference_color_app.storage import Store
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);decoder=root/'ffmpeg';decoder.write_bytes(b'decoder-one')
+            target={'id':'a'*32,'path':str(root/'target'),'sha256':'source-one','kind':'video'}
+            reference={'id':'b'*32,'path':str(root/'reference'),'sha256':'reference-one','kind':'image'}
+            store=api.SpatialStore(root/'data',FakeEngine(),identity_tag='probes')
+            with patch.object(api.media,'probe_media',side_effect=lambda path:{'kind':'video' if path==target['path'] else 'image','width':100,'metadata_text':'volatile-address'} ) as probe,patch.object(api.media,'ffmpeg_path',return_value=decoder):
+                expected,_=Store._identity(store,target,reference,0.)
+                expected['spatial_engine']='probes';probe.reset_mock()
+                first,key=store._identity(target,reference,0.);self.assertEqual(first,expected)
+                second,_=store._identity(target,reference,0.);self.assertEqual(first,second)
+                self.assertEqual(probe.call_count,2,'Unchanged verified sources were probed twice')
+                target=dict(target,sha256='source-two');store._identity(target,reference,0.)
+                self.assertEqual(probe.call_count,3)
+                decoder.write_bytes(b'decoder-two');changed,_=store._identity(target,reference,0.)
+                self.assertNotEqual(first['decoder']['ffmpeg_sha256'],changed['decoder']['ffmpeg_sha256'])
+                self.assertGreater(probe.call_count,3)
+                with patch.object(api.pipeline,'algorithm_fingerprint',return_value='new-code'):
+                    updated,_=store._identity(target,reference,0.)
+                    self.assertEqual(updated['codefingerprint'],'new-code')
 
 
 if __name__=='__main__':unittest.main()

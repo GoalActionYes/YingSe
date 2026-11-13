@@ -26,12 +26,30 @@ from triplet_color import to_srgb
 class SpatialStore(Store):
     def __init__(self,root,engine,identity_tag=None):
         super().__init__(root);self.engine=engine;self.render_lock=threading.RLock();self.preview_lock=threading.RLock();self.preview_cache=OrderedDict()
+        self.identity_lock=threading.RLock();self.probe_cache=OrderedDict()
         names=['spatial_render.py','spatial_store.py','triplet_color.py','training_checks.py']
         self.engine_tag=identity_tag or hashlib.sha256((CHECKPOINT_SHA+''.join(pipeline.file_sha256(Path(__file__).with_name(n)) for n in names)).encode()).hexdigest()
 
     def _identity(self,target,reference,time_seconds):
-        identity,_=super()._identity(target,reference,time_seconds)
-        identity.update(spatial_engine=self.engine_tag)
+        # Callers supply freshly SHA-verified owned media. Reuse only the
+        # metadata probe, keyed by those bytes and the current decoder/code.
+        fingerprint=pipeline.algorithm_fingerprint()
+        decoder_sha=pipeline.file_sha256(media.ffmpeg_path()) if target['kind']=='video' else None
+        decoder={}
+        for name,record in [('target',target),('reference',reference)]:
+            key=(str(Path(record['path']).resolve()),record['sha256'],record['kind'],decoder_sha if record['kind']=='video' else None,fingerprint)
+            with self.identity_lock:
+                metadata=self.probe_cache.get(key)
+                if metadata is not None:self.probe_cache.move_to_end(key)
+            if metadata is None:
+                metadata=media.probe_media(record['path']);metadata.pop('metadata_text',None)
+                with self.identity_lock:
+                    self.probe_cache[key]=copy.deepcopy(metadata)
+                    while len(self.probe_cache)>32:self.probe_cache.popitem(last=False)
+            decoder[name]=copy.deepcopy(metadata)
+        if decoder_sha is not None:decoder['ffmpeg_sha256']=decoder_sha
+        identity=dict(version=VERSION,target=target['sha256'],reference=reference['sha256'],time_seconds=time_seconds,
+            codefingerprint=fingerprint,decoder=decoder,spatial_engine=self.engine_tag)
         return identity,hashlib.sha256(json.dumps(identity,sort_keys=True,allow_nan=False).encode()).hexdigest()
 
     def decode(self,record,time_seconds=0.):
