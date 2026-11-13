@@ -16,6 +16,7 @@ class FakeProvider:
     def __init__(self):self.calls=0
     def compile(self,target,reference):
         self.calls+=1
+        self.last_inputs=(target.copy(),reference.copy())
         rgb=identity_cube(); final=np.clip(rgb+[.02,0,-.02],0,1).astype(np.float32)
         return Mapping(np.stack([.2*rgb+.8*final,final]),dict(engine='model',provider='test double'))
 
@@ -58,6 +59,22 @@ class StoreChecks(unittest.TestCase):
         record=self.store.analyze_engine(self.target['id'],self.reference['id'],0,'model')
         Path(self.target['path']).write_bytes(b'changed')
         with self.assertRaises(ValueError):self.store.get_mapping(record['id'])
+
+    def test_model_receives_original_rgb_not_preview_thumbnail(self):
+        rng=np.random.default_rng(125)
+        target=rng.integers(0,256,(720,1280,3),dtype=np.uint8)
+        reference=rng.integers(0,256,(810,1080,3),dtype=np.uint8)
+        Image.fromarray(target).save(self.root/'large-target.png')
+        Image.fromarray(reference).save(self.root/'large-reference.png')
+        t=self.store.add_media(self.root/'large-target.png')
+        r=self.store.add_media(self.root/'large-reference.png')
+        record=self.store.analyze_engine(t['id'],r['id'],0,'model')
+        a,b=self.provider.last_inputs
+        self.assertEqual(a.shape,target.shape)
+        self.assertEqual(b.shape,reference.shape)
+        np.testing.assert_array_equal(a,target)
+        np.testing.assert_array_equal(b,reference)
+        self.assertEqual(record['diagnostics']['inputs']['target']['original_dimensions'],[1280,720])
 
 
 if __name__=='__main__':unittest.main()

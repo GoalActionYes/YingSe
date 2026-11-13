@@ -8,7 +8,6 @@ from pathlib import Path
 import zipfile
 import zlib
 import numpy as np
-from PIL import Image
 from reference_color_app import media,pipeline
 from reference_color_app.contracts import Mapping
 from reference_color_app.storage import Store,VERSION,_id,_json
@@ -66,11 +65,10 @@ class LearnedStore(Store):
                     mapping=Mapping(np.stack([cube,cube]),dict(engine='model',exact_identity=True,
                                     reason='Decoded RGB equality bypasses the learned model'))
                 else:
-                    def small(x):
-                        image=Image.fromarray(x);image.thumbnail((640,640),Image.Resampling.BILINEAR)
-                        return np.array(image)
                     if self.provider is None:raise ValueError('模型尚未准备好')
-                    mapping=self.provider.compile(small(rgb),small(ref))
+                    # Input resampling changes this model's inferred grading.
+                    # Estimate from decoded originals; only previews may be reduced.
+                    mapping=self.provider.compile(rgb,ref)
                 layers=_layers(mapping)
                 diagnostics=dict(mapping.diagnostics,engine='model',
                     strength_policy='Existing two-layer strength response; not linear interpolation',

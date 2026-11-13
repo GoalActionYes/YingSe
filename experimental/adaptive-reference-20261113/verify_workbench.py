@@ -16,7 +16,7 @@ from reference_color_app import media
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--url',required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--url',required=True);parser.add_argument('--out',type=Path);args=parser.parse_args()
     url=args.url.rstrip('/')
     def raw(path,data=None,headers=None):
         request=Request(url+path,data=data,headers=headers or {},method='POST' if data is not None else 'GET')
@@ -34,7 +34,7 @@ def main():
             time.sleep(.1);job=api('/api/jobs/'+job['id'])
         assert job['status']=='done',job
         return raw(job['result_url']),json.loads(raw(job['report_url']))
-    out=ROOT/'outputs/adaptive-reference-20261113/workbench-verification';out.mkdir(parents=True,exist_ok=True)
+    out=args.out or ROOT/'outputs/adaptive-reference-20261113/workbench-verification';out.mkdir(parents=True,exist_ok=True)
     state=api('/api/engine-state');assert state['state']=='ready',state
     data=ROOT/'outputs/adaptive-reference-20261113/cross-scene'
     target=upload(data/'target-0.png');reference=upload(data/'reference-1-warm.png')
