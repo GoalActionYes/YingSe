@@ -21,10 +21,10 @@ from reference_color_app.server import png
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--run',default='preview-profile-v1');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='preview-profile-v1');parser.add_argument('--multiref',action='store_true');args=parser.parse_args()
     if Path(args.run).name!=args.run or args.run in ('','.','..'):raise ValueError('Expected directory name')
     out=ROOT/'outputs/adaptive-reference-20261113/natural-video'/args.run;out.mkdir(exist_ok=False)
-    root=ROOT/'outputs/adaptive-reference-20261113/natural-video/http-v2/data'
+    root=ROOT/'outputs/adaptive-reference-20261113/natural-video'/('http-multiref-v2' if args.multiref else 'http-v2')/'data'
     records=[json.loads(p.read_text(encoding='utf-8')) for p in (root/'mappings').glob('*.json')]
     record=next(r for r in records if json.loads((root/'media'/(r['target_id']+'.json')).read_text(encoding='utf-8'))['metadata']['duration_seconds']>10)
     store=SpatialStore(root,SimpleNamespace(device='cpu'),identity_tag=record['identity']['spatial_engine'])

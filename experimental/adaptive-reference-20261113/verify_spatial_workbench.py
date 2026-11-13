@@ -67,14 +67,23 @@ def main():
         mapping=api('/api/analyze',dict(target_id=target['id'],reference_id=reference['id']));mid=mapping['mapping_id'];report['analysis_seconds']=time.perf_counter()-start
         previews={};timings=[]
         for strength in [0.,.5,1.,.3,.6,.9]:
-            start=time.perf_counter();result=api('/api/preview',dict(mapping_id=mid,strength=strength,interactive=True));timings.append(time.perf_counter()-start);previews[strength]=decode(result['after'])
+            start=time.perf_counter();result=api('/api/preview',dict(mapping_id=mid,strength=strength,interactive=True,include_basis=args.multiref and strength==0));timings.append(time.perf_counter()-start);previews[strength]=decode(result['after'])
             if strength==0:before=decode(result['before'])
+            if args.multiref and strength==0:
+                basis=decode(result['basis']['full']);assert basis.shape==before.shape
         assert np.array_equal(previews[0.],before)
+        if args.multiref:
+            assert np.array_equal(basis,previews[1.])
+            report['verified_basis_matches_full_preview']=True
         expected=np.rint((before.astype(float)+previews[1.].astype(float))*.5).astype(np.uint8)
         assert np.abs(expected.astype(int)-previews[.5].astype(int)).max()<=1
         report['preview_seconds']=timings
         settings=normalize();settings['basic']['brightness']=20
         changed=api('/api/preview',dict(mapping_id=mid,strength=1,adjustments=settings,interactive=True));assert not np.array_equal(decode(changed['after']),previews[1.])
+        if args.multiref:
+            changed_basis=api('/api/preview',dict(mapping_id=mid,strength=1,adjustments=settings,interactive=True,include_basis=True))
+            assert changed_basis['after']==changed['after'] and np.array_equal(decode(changed_basis['basis']['full']),basis)
+            report['basis_is_independent_of_manual_adjustments']=True
         sample=api('/api/curve-sample',dict(mapping_id=mid,strength=.5,x=.5,y=.5,adjustments=settings));assert sample['pixel']==[960,540]
         api('/api/projects',dict(mapping_id=mid,strength=.5,output_settings=dict(kind='png',clone_enabled=True,adjustments=settings)))
         restored=api('/api/projects/latest');assert restored['mapping_id']==mid and restored['strength']==.5

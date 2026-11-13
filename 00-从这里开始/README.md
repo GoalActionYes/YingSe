@@ -35,4 +35,6 @@
 
 研究分支为`codex/adaptive-reference-research-20261113`，不要把Git GUI的“变更列表”当成整个项目目录。版本进展先读[交接入口](../docs/RESEARCH_PROGRESS.md)，新版范围读[工作台说明](../docs/research/2026-11-13-multiref-workbench.md)。
 
+准备给老师和同学汇报时，打开[阶段成果与方法](../docs/MILESTONES.md)：按阶段列出问题、方法、效果、验证和版本标记，避免只展示功能而说不清改进过程。
+
 Git克隆不包含EXE、便携运行时、研究权重或测试照片。13号依赖已准备好的本机研究环境，不能只克隆便宣称可直接运行；其他电脑先按[源码启动指南](../docs/GETTING_STARTED.md)运行稳定开发版，再单独准备研究环境及权重。所有模型研究限课程／非商业用途。

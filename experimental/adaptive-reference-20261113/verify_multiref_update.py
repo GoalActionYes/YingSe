@@ -1,5 +1,6 @@
 """Verify owned updated-engine restoration without changing user choices."""
 import json
+import argparse
 from pathlib import Path
 import subprocess
 import sys
@@ -8,7 +9,9 @@ from launch_spatial_workbench import ROOT,ENHANCED_DATA,probe
 
 
 def main():
-    out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench/update-multiref-v1';out.mkdir(exist_ok=False)
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='update-multiref-v1');args=parser.parse_args()
+    if not args.run or Path(args.run).name!=args.run or args.run in ('.','..'):raise ValueError('Expected a single output directory name')
+    out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench'/args.run;out.mkdir(exist_ok=False)
     record=probe(ENHANCED_DATA,True)
     if record is None:raise RuntimeError('Expected the identified enhanced service')
     def api(path,data=None):

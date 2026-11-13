@@ -1,0 +1,157 @@
+{
+  "scope": "Numeric parity, state/fallback tests and real GPU HTTP; actual browser Canvas and gesture latency not verified",
+  "python_research_tests": {
+    "count": 160,
+    "passed": true
+  },
+  "legacy_frontend_tests": {
+    "count": 22,
+    "passed": true,
+    "manual_controls_component_mocked": true
+  },
+  "numeric": {
+    "results_sha256": "bafd2bec0486e9007aa6fa580f3d7e551fbdb0507b87c6ded9246cc7bb0bb5b2",
+    "math": {
+      "max_rgb_code_error": 0,
+      "changed_values": 0,
+      "checked_values": 26476544,
+      "all_65536_channel_pairs": true,
+      "strengths": 101,
+      "numeric_blend_960x640_ms": [
+        3.1069999999999993,
+        3.1707000000000107,
+        3.2047999999999774,
+        4.4646000000000186,
+        5.319700000000012,
+        3.1613000000000113,
+        3.180499999999995,
+        3.1577000000000055
+      ],
+      "scope": "Node numeric arithmetic and timing; excludes browser image decode, canvas PNG encoding, layout and paint"
+    },
+    "passed": true,
+    "browser_visual_tested": false,
+    "state_tests": 9,
+    "fallback_tests": 13,
+    "harness_sha256": "90f4b8ef385bba8a714d84c40aa65b6abacc95786d4385c22b138e733d131449",
+    "source_sha256": {
+      "spatial_strength_preview.js": "3e12e7fb3479691b7d110f5f2f583b6ac81d0a442e99c6710c4b44079aa4396d",
+      "spatial_workbench.py": "2f35392141c7a452034bdf9972438e12c056692881d10aae397a0fdbc432d60c",
+      "verify_strength_preview.py": "34951f989c138ca8b3309b7ef87025811a54690339f660b990440361aaac83f6",
+      "verify_strength_math.cjs": "de4e622c2744a5fbaba1b8d86e90c8b89150e2683b968d8e4eb3d10a53e97504",
+      "test_strength_preview.cjs": "08171ffc8782249dca94cf451eb02ef6f0a00bd08814f856f4447c39e9d60595"
+    }
+  },
+  "checked_rgb_values": 19857408,
+  "http": {
+    "results_sha256": "d064785ed05db21c0c102814d8cfd7d79e014220af494a8eaaeaa502c9356c44",
+    "variant": "multiref-temporal-v1",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "rgba_gray_http": true,
+    "analysis_seconds": 1.2228255000081845,
+    "verified_basis_matches_full_preview": true,
+    "preview_seconds": [
+      0.4371600999729708,
+      0.11497709999093786,
+      0.10505939996801317,
+      0.11460229998920113,
+      0.13528170000063255,
+      0.10484280000673607
+    ],
+    "basis_is_independent_of_manual_adjustments": true,
+    "png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "matches_server_renderer": true,
+      "sha256": "2c874ee9aba2c4cb309a7338287b0c8d0903f9499f247d1f7fa5497760c70041"
+    },
+    "cube_rejection": {
+      "error": "\u5c40\u90e8\u8c03\u8272\u65e0\u6cd5\u5b8c\u6574\u5bfc\u51fa\u4e3a\u666e\u901aCUBE\uff0c\u8bf7\u9009\u62e9PNG\u6216MP4"
+    },
+    "video": {
+      "wall_seconds": 4.440275000000838,
+      "output_frames": 90,
+      "fps": 30,
+      "dimensions": [
+        640,
+        360
+      ],
+      "duration": 3.0,
+      "sha256": "56b7860ad678193943309b5888d31c7c4808dff50f3185e33a3b80e5796a2e22",
+      "temporal_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6874189814814815
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8979470486111112
+        },
+        {
+          "frame": 60,
+          "lossy_encoded_mae": 1.8434071180555556
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8419126157407408
+        }
+      ]
+    },
+    "video_single_frame_preview_vs_temporal_mae": 0.4023683449074074,
+    "audio_export": {
+      "has_audio": true,
+      "duration": 3.02,
+      "sha256": "fb1cacb81bbd86279364e25b2faa9f81abcd991268bc9e64c41a8339d64dd448",
+      "half_strength_manual_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6635590277777779
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8648075810185185
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8485141782407408
+        }
+      ]
+    },
+    "active_export_stop_rejected": true,
+    "cancel_running_export": true,
+    "source_sha256": {
+      "spatial_build.py": "d07e3e0178f08730d2237a952a8322311b1b94f6f6f22103fc669dae003d636a",
+      "spatial_jobs.py": "80107c3942f7986acdf6655e5a179711d645452a3ca0ab358a778f19b908d799",
+      "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+      "spatial_store.py": "5e012a4f233822e6df6fdbedc506281ad924a502a55c8b4a8f914b76b37369ad",
+      "spatial_workbench.py": "2f35392141c7a452034bdf9972438e12c056692881d10aae397a0fdbc432d60c",
+      "temporal_grid.py": "97d0dc43291ac52771df3a85f02c0b9bf059a375ad6595dd2a0d55c6d57e8ab9",
+      "verify_spatial_workbench.py": "d5e38a418f09899ce0b74b29598a1ecdba40d3d6158edc09b6b674d483cf055c"
+    },
+    "passed": true,
+    "scope": "Actual HTTP workflows including audio and running cancellation; no visual browser acceptance"
+  },
+  "updated_service": {
+    "results_sha256": "812060b04b951ae2a9f4e943ebdf8d9cad30065060272dc1c69d1aafd93b5f9f",
+    "passed": true,
+    "stale_grid_reanalyzed": false,
+    "inputs_and_settings_preserved": true,
+    "png_preview_exact": true,
+    "variant": "multiref-temporal-v1",
+    "scope": "Real owned service update and HTTP restore; no visual browser acceptance"
+  },
+  "outputs_unchanged": true,
+  "source_checks_preserved": true,
+  "backend_manual_adjustments_unchanged": true,
+  "current_build_and_served_scripts_verified": true,
+  "neutral_strength_only": true,
+  "browser_visual_tested": false,
+  "user_feedback": {
+    "date": "2026-11-13",
+    "text": "\u80fd\u8fde\u7eed\u66f4\u65b0\uff0c\u6bd4\u8f83\u8ddf\u624b",
+    "scope": "User-reported neutral-adjustment strength dragging, not an automated latency measurement"
+  },
+  "automated_browser_visual_tested": false
+}

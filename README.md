@@ -13,6 +13,7 @@
 | 第一次接手，跑起来 | [源码启动指南](docs/GETTING_STARTED.md) |
 | 当前版本、历史区别 | [版本索引](VERSIONS.md) |
 | 最近改了什么 | [改动记录](CHANGELOG.md) |
+| 汇报每阶段做了什么 | [阶段成果与方法](docs/MILESTONES.md) |
 | 找代码、分任务、提PR | [协作指南](CONTRIBUTING.md) |
 | 功能边界与待办 | [当前状态](docs/PROJECT_STATUS.md) |
 | 查算法证据与失败记录 | [技术资料索引](docs/README.md) |

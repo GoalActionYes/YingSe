@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
-const source = fs.readFileSync(path.resolve(__dirname, '../../reference_color_app/web/app.js'), 'utf8');
+const source = fs.readFileSync(process.env.YINGSE_APP_JS || path.resolve(__dirname, '../../reference_color_app/web/app.js'), 'utf8');
 const flush = () => new Promise(resolve => setImmediate(resolve));
 
 function workspace(options={}) {
@@ -18,8 +18,12 @@ function workspace(options={}) {
     return elements.get(id);
   }
   const saves=[], published=[], jobs=[], calls=[];
+  // This suite tests app/network lifecycle. The controls component is mocked;
+  // history, curve geometry and parameter math have their own tests.
+  let manualState={version:1};
+  const manualControls={snapshot:()=>structuredClone(manualState),restore:value=>{manualState=structuredClone(value||{version:1});},count:()=>0,clearSample(){},resetHistory(){},setSample(){}};
   const response=(data,ok=true)=>({ok,json:async()=>data});
-  const context=vm.createContext({document:{getElementById:element, createTextNode:text=>({textContent:text}),createElement:()=>({textContent:''})},console,
+  const context=vm.createContext({window:{manualControls,addEventListener(){}},document:{getElementById:element, createTextNode:text=>({textContent:text}),createElement:()=>({textContent:''})},console,
     setTimeout(callback){const id=++nextTimer;timers.set(id,callback);return id;},clearTimeout(id){timers.delete(id);},
     fetch:async(url,options)=>{
       calls.push({url,options});

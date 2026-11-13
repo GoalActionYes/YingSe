@@ -18,10 +18,32 @@ from reference_color_app.server import Handler,WEB,RequestError,png,public_metad
 from reference_color_app.preview import PreviewFrames
 from reference_color_app.storage import _json
 from reference_color_app.adjustments import normalize,transform
-from spatial_render import SpatialEngine
+from spatial_render import SpatialEngine,finish_spatial
 from spatial_store import SpatialStore
 from spatial_jobs import SpatialJobs
 from spatial_build import build_tag
+
+
+def strength_preview_script(js):
+    def once(old,new):
+        nonlocal js
+        if js.count(old)!=1:raise ValueError('强度预览脚本发生变化，需重新适配')
+        js=js.replace(old,new)
+    once('const status =',"""const fastStrength=window.SpatialStrengthPreview?new window.SpatialStrengthPreview({
+      target:$('after'),
+      current:()=>({mapping:state.mapping,generation:state.generation,strength:effectiveStrength(),neutral:controls.count()===0,version:manualVersion}),
+      onPaint:()=>{$('after-placeholder').hidden=true;$('preview-state').textContent=`强度 ${Math.round(effectiveStrength()*100)} · 预览中`;}
+    }):{clear(){},render(){return false;},needsBasis(){return false;},accept(){},serverApplied(){}};
+    const status =""")
+    once('++state.generation; ++pickVersion;','fastStrength.clear(); ++state.generation; ++pickVersion;')
+    once('function requestPreview() {','function requestPreview() {\n  fastStrength.render();')
+    once('function strengthChanged(){','function strengthChanged(){ fastStrength.render();')
+    once('interactive:true});','interactive:true,include_basis:fastStrength.needsBasis(request.mapping,request.generation)});')
+    check='      if(request.generation!==state.generation || request.mapping!==state.mapping || request.strength!==effectiveStrength() || request.manualVersion!==manualVersion)continue;'
+    once(check,"      if(result.basis && request.generation===state.generation && request.mapping===state.mapping)fastStrength.accept(request.mapping,request.generation,result.before,result.basis);\n"+check)
+    once("      image('before',result.before);image('after',result.after);","      fastStrength.serverApplied(); image('before',result.before);image('after',result.after);")
+    once('} catch(error) {if(request.generation', '} catch(error) {if(request.generation===state.generation && request.mapping===state.mapping)fastStrength.clear();if(request.generation')
+    return js
 
 
 def assets(enhanced=False):
@@ -48,7 +70,12 @@ def assets(enhanced=False):
     if enhanced:
         html=html.replace('局部参考调色研究版','自适应参考调色研究版').replace('局部参考调色（课程研究）','自适应参考调色（课程研究）')
         html=html.replace('图片保留原尺寸；视频导出为30fps。局部效果请导出图片或视频。','图片保留原尺寸；视频以30fps导出并平滑色彩过渡，静帧预览可能略有差异。')
-    return {'/':(html.encode(),'text/html; charset=utf-8'),'/app.js':(js.encode(),'application/javascript; charset=utf-8')}
+        if html.count('<script src="/app.js" defer></script>')!=1:raise ValueError('预览脚本入口发生变化')
+        html=html.replace('<script src="/app.js" defer></script>','<script src="/spatial-strength-preview.js" defer></script><script src="/app.js" defer></script>')
+        js=strength_preview_script(js)
+    result={'/':(html.encode(),'text/html; charset=utf-8'),'/app.js':(js.encode(),'application/javascript; charset=utf-8')}
+    if enhanced:result['/spatial-strength-preview.js']=(Path(__file__).with_name('spatial_strength_preview.js').read_bytes(),'application/javascript; charset=utf-8')
+    return result
 
 
 class SpatialHandler(Handler):
@@ -76,8 +103,8 @@ class SpatialHandler(Handler):
             rgb,meta=self.server.store.decode(source,self.number(data.get('time_seconds',0)))
             return self.json(dict(image=png(rgb),metadata=public_metadata(meta)))
         if method=='POST' and self.path=='/api/preview':
-            data=self.body(('mapping_id','strength'),('adjustments','interactive'));interactive=data.get('interactive',False)
-            if type(interactive)!=bool:raise RequestError(400,'交互预览标记无效')
+            data=self.body(('mapping_id','strength'),('adjustments','interactive','include_basis'));interactive=data.get('interactive',False);include_basis=data.get('include_basis',False)
+            if type(interactive)!=bool or type(include_basis)!=bool:raise RequestError(400,'交互预览标记无效')
             identifier=self.identifier(data['mapping_id']);strength=self.number(data['strength'],1);store=self.server.store
             record=store.get_mapping_record(identifier);source=store.get_media(record['target_id'])
             def load():
@@ -85,8 +112,13 @@ class SpatialHandler(Handler):
                 image.thumbnail((960,640) if interactive else (1440,960),Image.Resampling.BILINEAR)
                 return np.array(image),meta
             rgb,meta,before=self.server.preview_frames.get((source['id'],source['sha256'],record['analysis_time'],interactive),load,png)
-            after=store.render(identifier,rgb,strength,data.get('adjustments'),preview=True,verified_target=source)
-            return self.json(dict(mapping_id=identifier,strength=strength,before=before,after=png(after),metadata=public_metadata(meta),preview_renderer='spatial-cuda'))
+            if include_basis:
+                full=store.render(identifier,rgb,1,None,preview=True,verified_target=source)
+                after=finish_spatial(rgb,full,strength,data.get('adjustments'))
+            else:after=store.render(identifier,rgb,strength,data.get('adjustments'),preview=True,verified_target=source)
+            result=dict(mapping_id=identifier,strength=strength,before=before,after=png(after),metadata=public_metadata(meta),preview_renderer='spatial-cuda')
+            if include_basis:result['basis']=dict(version=1,width=rgb.shape[1],height=rgb.shape[0],full=png(full))
+            return self.json(result)
         if method=='POST' and self.path=='/api/curve-sample':
             data=self.body(('mapping_id','strength','x','y'),('adjustments',));store=self.server.store
             identifier=self.identifier(data['mapping_id']);record=store.get_mapping_record(identifier);source=store.get_media(record['target_id'])
