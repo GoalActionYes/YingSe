@@ -14,14 +14,17 @@ from reference_color_app.media import ffmpeg_path,probe_media
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--multiref',action='store_true');parser.add_argument('--temporal',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--multiref',action='store_true');parser.add_argument('--temporal',action='store_true');parser.add_argument('--relative-cuts',action='store_true');parser.add_argument('--run');args=parser.parse_args()
+    if args.run and (Path(args.run).name!=args.run or args.run in ('.','..')):raise ValueError('Expected directory name')
     if args.temporal and not args.multiref:parser.error('--temporal requires multiref candidate')
+    if args.relative_cuts and not args.temporal:parser.error('--relative-cuts requires --temporal')
     torch.set_num_threads(4);engine=SpatialEngine('multiref-v1' if args.multiref else 'app8')
-    out=ROOT/'outputs/adaptive-reference-20261113/spatial-render'/('video-multiref-temporal-v1' if args.temporal else 'video-multiref-v1' if args.multiref else 'video-v1');out.mkdir(parents=True,exist_ok=False)
+    out=ROOT/'outputs/adaptive-reference-20261113/spatial-render'/(args.run or ('video-multiref-relative-v1' if args.relative_cuts else 'video-multiref-temporal-v1' if args.temporal else 'video-multiref-v1' if args.multiref else 'video-v1'));out.mkdir(parents=True,exist_ok=False)
     for name in ['spatial_render.py','check_spatial_video.py']:(out/name).write_bytes(Path(__file__).with_name(name).read_bytes())
     if args.temporal:
         for name in ['temporal_grid.py','multiref-temporal-protocol.md']:(out/name).write_bytes(Path(__file__).with_name(name).read_bytes())
-    temporal=TemporalGrid() if args.temporal else None
+    if args.relative_cuts:(out/'scene-cut-protocol.md').write_bytes(Path(__file__).with_name('scene-cut-protocol.md').read_bytes())
+    temporal=TemporalGrid(relative_cut=args.relative_cuts) if args.temporal else None
     def prepare(frame):
         prepared=engine.prepare(frame,reference)
         return temporal.smooth(prepared,frame) if temporal is not None else prepared
@@ -73,7 +76,7 @@ def main():
         source_sha256={name:digest(Path(__file__).with_name(name)) for name in ['spatial_render.py','check_spatial_video.py']},
         input_sha256=digest(source),reference_sha256=digest(data/'srgb'/(item['reference']+'.png')),input_metadata=meta,
         checkpoint_sha256=initial.diagnostics['checkpoint_sha256'],
-        temporal_parameters=dict(alpha=temporal.alpha,cut_threshold=temporal.cut_threshold) if temporal is not None else None,hard_cut=cut,
+        temporal_parameters=temporal.settings() if temporal is not None else None,hard_cut=cut,
         known_pan=pan,known_pan_mean=float(np.mean([p['aligned_mae'] for p in pan])),illumination=illumination,
         illumination_policy='Raw frame difference includes intended brightness changes; not an optical-flow flicker metric',
         input_frames=75,output_decoded_frames=decoded_frames,repeat_frame_max_difference=repeat_max,

@@ -1,0 +1,301 @@
+{
+  "scope": "Controlled cuts of reused natural materials plus contrast stress; not semantic or general natural-cut acceptance",
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "python_tests": 162,
+  "scene_checks": {
+    "baseline-v1": {
+      "passed": true,
+      "boundaries": 10,
+      "passed_boundaries": 10,
+      "mean_code_range": [
+        0.0,
+        0.0
+      ],
+      "max_p95_code": 0.0,
+      "motion_controls": [
+        {
+          "source": 0,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        },
+        {
+          "source": 1,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        }
+      ],
+      "source_sha256": {
+        "check_scene_cuts.py": "7f7f851e19044a92400a50863b49f4262d8745e78e822195504fd74e9ac73b7a",
+        "scene-cut-protocol.md": "e2e1e25b3489d383c4133b67db649d6eea51da6e2f93d41e6e0c2802363c076b",
+        "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+        "temporal_grid.py": "97d0dc43291ac52771df3a85f02c0b9bf059a375ad6595dd2a0d55c6d57e8ab9"
+      }
+    },
+    "low-contrast-v1": {
+      "passed": false,
+      "boundaries": 10,
+      "passed_boundaries": 0,
+      "mean_code_range": [
+        7.955377604166666,
+        21.375082465277778
+      ],
+      "max_p95_code": 49.0,
+      "motion_controls": [
+        {
+          "source": 0,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        },
+        {
+          "source": 1,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        }
+      ],
+      "source_sha256": {
+        "check_scene_cuts.py": "2daf6badc88d8e5340457873b0a1034f8448ec62d728ff53e7a270d6db68de08",
+        "scene-cut-protocol.md": "83976a2915b8e2c176a0e80bf4a5f22061c8110402e44ccd5075fdabd03bfb35",
+        "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+        "temporal_grid.py": "97d0dc43291ac52771df3a85f02c0b9bf059a375ad6595dd2a0d55c6d57e8ab9"
+      }
+    },
+    "relative-low-contrast-v1": {
+      "passed": true,
+      "boundaries": 10,
+      "passed_boundaries": 10,
+      "mean_code_range": [
+        0.0,
+        0.0
+      ],
+      "max_p95_code": 0.0,
+      "motion_controls": [
+        {
+          "source": 0,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        },
+        {
+          "source": 1,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        }
+      ],
+      "source_sha256": {
+        "check_scene_cuts.py": "1c94a86a11fe66813dbeb3f747566790ec79e0d981a6bb10928a68420b471637",
+        "scene-cut-protocol.md": "73c05130031ad81e44c681d9f03bc276d735df28088720e3eb729a2d16a85f9c",
+        "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+        "temporal_grid.py": "c92db52e18dda2370281671e4a4d937016c821694964a1fd77be7c0e128ae8af"
+      }
+    },
+    "relative-normal-v1": {
+      "passed": true,
+      "boundaries": 10,
+      "passed_boundaries": 10,
+      "mean_code_range": [
+        0.0,
+        0.0
+      ],
+      "max_p95_code": 0.0,
+      "motion_controls": [
+        {
+          "source": 0,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        },
+        {
+          "source": 1,
+          "frames": 90,
+          "resets": [
+            {
+              "frame": 0,
+              "reason": "first_frame"
+            }
+          ]
+        }
+      ],
+      "source_sha256": {
+        "check_scene_cuts.py": "1c94a86a11fe66813dbeb3f747566790ec79e0d981a6bb10928a68420b471637",
+        "scene-cut-protocol.md": "73c05130031ad81e44c681d9f03bc276d735df28088720e3eb729a2d16a85f9c",
+        "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+        "temporal_grid.py": "c92db52e18dda2370281671e4a4d937016c821694964a1fd77be7c0e128ae8af"
+      }
+    }
+  },
+  "natural_motion": {
+    "frames": 907,
+    "same_output_sha_as_old_ema": true,
+    "sha256": "748a57b3c92b626ae0895b2fa9c1a19bba97853f0d9e8cfd52677810b8339229",
+    "summary": {
+      "input": {
+        "channel_std": [
+          0.8108079005283243,
+          1.110552602583479,
+          1.1151504565166612
+        ],
+        "mean_step": 0.08115976874981147,
+        "p95_step": 0.10535453216375146,
+        "max_step": 10.205360623781672
+      },
+      "legacy": {
+        "channel_std": [
+          0.830453265312561,
+          1.1552394824344623,
+          1.1094531354328068
+        ],
+        "mean_step": 0.08171820740224373,
+        "p95_step": 0.10936281676413748,
+        "max_step": 10.263084795321637
+      },
+      "dynamic": {
+        "channel_std": [
+          0.9307648795424625,
+          0.8190760123213217,
+          0.619679562341333
+        ],
+        "mean_step": 0.07728073940677059,
+        "p95_step": 0.15785209551656484,
+        "max_step": 5.626364522417153
+      }
+    },
+    "resets": [
+      {
+        "frame": 0,
+        "reason": "first_frame"
+      }
+    ],
+    "parameters": {
+      "alpha": 0.2,
+      "cut_threshold": 0.16,
+      "relative_cut": true,
+      "relative_threshold": 0.85,
+      "minimum_change": 0.03,
+      "contrast_floor": 0.03
+    }
+  },
+  "short_video": {
+    "smoke_passed": true,
+    "known_pan_mean": 0.6643240419238683,
+    "input_frames": 75,
+    "output_decoded_frames": 75,
+    "repeat_frame_max_difference": 0,
+    "output_sha256": "7ff97a72111ad57345d87d1350e894af64da9da183f2cc1082d8946baba60643",
+    "hard_cut": {
+      "reason": "scene_cut",
+      "max_rgb_delta": 0
+    }
+  },
+  "http": {
+    "passed": true,
+    "png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "matches_server_renderer": true,
+      "sha256": "2c874ee9aba2c4cb309a7338287b0c8d0903f9499f247d1f7fa5497760c70041"
+    },
+    "video": {
+      "wall_seconds": 4.274156200001016,
+      "output_frames": 90,
+      "fps": 30,
+      "dimensions": [
+        640,
+        360
+      ],
+      "duration": 3.0,
+      "sha256": "56b7860ad678193943309b5888d31c7c4808dff50f3185e33a3b80e5796a2e22",
+      "temporal_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6874189814814815
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8979470486111112
+        },
+        {
+          "frame": 60,
+          "lossy_encoded_mae": 1.8434071180555556
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8419126157407408
+        }
+      ]
+    },
+    "audio_export": {
+      "has_audio": true,
+      "duration": 3.02,
+      "sha256": "fb1cacb81bbd86279364e25b2faa9f81abcd991268bc9e64c41a8339d64dd448",
+      "half_strength_manual_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6635590277777779
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8648075810185185
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8485141782407408
+        }
+      ]
+    },
+    "active_export_stop_rejected": true,
+    "cancel_running_export": true,
+    "scope": "Actual HTTP workflows including audio and running cancellation; no visual browser acceptance",
+    "source_sha256": {
+      "spatial_build.py": "d07e3e0178f08730d2237a952a8322311b1b94f6f6f22103fc669dae003d636a",
+      "spatial_jobs.py": "b9f693c43a9f3dac44af0f5831a96fd134f810866f056852a6eaf335322cca0d",
+      "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+      "spatial_store.py": "5e012a4f233822e6df6fdbedc506281ad924a502a55c8b4a8f914b76b37369ad",
+      "spatial_workbench.py": "2f35392141c7a452034bdf9972438e12c056692881d10aae397a0fdbc432d60c",
+      "temporal_grid.py": "c92db52e18dda2370281671e4a4d937016c821694964a1fd77be7c0e128ae8af",
+      "verify_spatial_workbench.py": "51e1503f73d5f4c4a823d2ed4a9a389a801c9f97b47902cbefe13b91d6d133c0"
+    }
+  },
+  "owned_service_update": {
+    "passed": true,
+    "stale_grid_reanalyzed": false,
+    "inputs_and_settings_preserved": true,
+    "png_preview_exact": true,
+    "variant": "multiref-temporal-v1",
+    "scope": "Real owned service update and HTTP restore; no visual browser acceptance"
+  }
+}

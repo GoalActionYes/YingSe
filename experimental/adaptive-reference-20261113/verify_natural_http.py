@@ -64,7 +64,7 @@ def main():
         if input_frames.returncode:raise ValueError('Cannot count source CFR frames')
         expected_frames=sum(bool(line) and not line.startswith(b'#') for line in input_frames.stdout.splitlines())
         if frame_count!=expected_frames or frame_count!=job['settings']['frames']:raise ValueError('Export frame count mismatch')
-        if args.multiref and job['settings']['temporal']!=dict(alpha=.2,cut_threshold=.16):raise ValueError('Temporal export not enabled')
+        if args.multiref and job['settings']['temporal']!=dict(alpha=.2,cut_threshold=.16,relative_cut=True,relative_threshold=.85,minimum_change=.03,contrast_floor=.03):raise ValueError('Temporal export not enabled')
         report.update(source_sha256=digest(source),clip_metadata=probe_media(clip),output_metadata=meta,output_sha256=digest(path),
             output_decoded_frames=frame_count,input_cfr_frames=expected_frames,preview_during_export_seconds=in_export,export_wall_seconds=time.perf_counter()-start,
             source_code_sha256={p.name:digest(p) for p in frozen.iterdir()},

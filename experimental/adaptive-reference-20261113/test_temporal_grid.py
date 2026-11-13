@@ -37,5 +37,18 @@ class TemporalGridTests(unittest.TestCase):
         p=self.prepared(object(),float('nan'))
         with self.assertRaises(ValueError):TemporalGrid().smooth(p,np.zeros((32,32,3),np.uint8))
 
+    def test_low_contrast_scene_cut_resets_but_tiny_motion_is_smoothed(self):
+        engine=object();a=np.full((32,32,3),118,np.uint8);a[:16]=138
+        b=np.full_like(a,118);b[:,16:]=138
+        state=TemporalGrid(relative_cut=True);state.smooth(self.prepared(engine,0),a)
+        cut=state.smooth(self.prepared(engine,1),b)
+        self.assertLess(cut.diagnostics['temporal_scene_difference'],.16)
+        self.assertEqual(cut.diagnostics['temporal_reset_reason'],'scene_cut_relative')
+        self.assertTrue(bool((cut.grid==1).all()))
+        state.reset();state.smooth(self.prepared(engine,0),a)
+        small=state.smooth(self.prepared(engine,1),np.roll(a,1,axis=0))
+        self.assertIsNone(small.diagnostics['temporal_reset_reason'])
+        torch.testing.assert_close(small.grid,torch.full_like(small.grid,.2))
+
 
 if __name__=='__main__':unittest.main()

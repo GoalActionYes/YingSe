@@ -10,6 +10,16 @@ from test_spatial_store import FakeEngine
 
 
 class SpatialJobTests(unittest.TestCase):
+    def test_enhanced_video_gets_an_independent_relative_cut_state(self):
+        from spatial_jobs import SpatialJobs
+        from spatial_store import SpatialStore
+        with tempfile.TemporaryDirectory() as folder:
+            store=SpatialStore(Path(folder),FakeEngine(),identity_tag='test')
+            self.assertIsNone(SpatialJobs(store).temporal_state())
+            manager=SpatialJobs(store,temporal=True);first=manager.temporal_state();second=manager.temporal_state()
+            self.assertIsNot(first,second);self.assertTrue(first.relative_cut)
+            self.assertEqual(first.settings()['relative_threshold'],.85)
+
     def test_zero_png_export_and_cube_rejection(self):
         self.assertIsNotNone(importlib.util.find_spec('spatial_jobs'))
         api=importlib.import_module('spatial_jobs');from spatial_store import SpatialStore

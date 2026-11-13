@@ -100,12 +100,12 @@ def main():
         assert decoded.returncode==0 and len(decoded.stdout)//(640*360*3)==90
         report['video']=dict(wall_seconds=time.perf_counter()-start,output_frames=90,fps=30,dimensions=[640,360],duration=metadata['duration_seconds'],sha256=digest(video_path))
         if args.multiref:
-            assert vj['settings']['temporal']==dict(alpha=.2,cut_threshold=.16)
+            assert vj['settings']['temporal']==dict(alpha=.2,cut_threshold=.16,relative_cut=True,relative_threshold=.85,minimum_change=.03,contrast_floor=.03)
             decoded_source=subprocess.run([str(ffmpeg_path()),'-v','error','-i',str(ROOT/'outputs/skin-protection-validation-20261019/video-agent/official-person-motion-3s.mp4'),'-vf','fps=30','-an','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW)
             assert decoded_source.returncode==0 and len(decoded_source.stdout)==90*640*360*3
             frames=np.frombuffer(decoded_source.stdout,np.uint8).reshape(90,360,640,3)
             exported_frames=np.frombuffer(decoded.stdout,np.uint8).reshape(90,360,640,3)
-            ref,_=server.store.decode(server.store.get_media(reference['id']));temporal=TemporalGrid();checks=[]
+            ref,_=server.store.decode(server.store.get_media(reference['id']));temporal=TemporalGrid(relative_cut=True);checks=[]
             for index,frame in enumerate(frames):
                 prepared=temporal.smooth(server.store.engine.prepare(frame,ref),frame)
                 if index in [0,30,60,89]:
@@ -127,7 +127,7 @@ def main():
         if args.multiref:
             decoded_audio=subprocess.run([str(ffmpeg_path()),'-v','error','-i',str(audio_output),'-an','-f','rawvideo','-pix_fmt','rgb24','pipe:1'],capture_output=True,timeout=30,creationflags=subprocess.CREATE_NO_WINDOW)
             assert decoded_audio.returncode==0 and len(decoded_audio.stdout)==90*640*360*3
-            actual=np.frombuffer(decoded_audio.stdout,np.uint8).reshape(90,360,640,3);temporal=TemporalGrid();checks=[]
+            actual=np.frombuffer(decoded_audio.stdout,np.uint8).reshape(90,360,640,3);temporal=TemporalGrid(relative_cut=True);checks=[]
             for index,frame in enumerate(frames):
                 prepared=temporal.smooth(server.store.engine.prepare(frame,ref),frame)
                 if index in [0,30,89]:

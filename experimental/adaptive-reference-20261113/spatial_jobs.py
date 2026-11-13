@@ -23,6 +23,9 @@ def grade_video_frame(engine,rgb,reference,strength,adjustments,temporal=None):
 class SpatialJobs(JobManager):
     def __init__(self,store,temporal=False):super().__init__(store);self.encoders={};self.temporal_enabled=temporal
 
+    def temporal_state(self):
+        return TemporalGrid(relative_cut=True) if self.temporal_enabled else None
+
     def start_export(self,mapping_id,media_id,strength,kind,adjustments=None):
         if kind=='cube':raise ValueError('局部调色无法完整导出为普通CUBE，请选择PNG或MP4')
         self.store.get_prepared(mapping_id)
@@ -67,7 +70,7 @@ class SpatialJobs(JobManager):
                     self.processes[identifier]=decoder
                     encoder=subprocess.Popen(encoder_args,stdin=subprocess.PIPE,stdout=subprocess.DEVNULL,stderr=log,creationflags=flags)
                     self.encoders[identifier]=encoder
-                count=0;frame_size=width*height*3;temporal=TemporalGrid() if self.temporal_enabled else None
+                count=0;frame_size=width*height*3;temporal=self.temporal_state()
                 while True:
                     with self.lock:
                         if job['status']=='cancelled':return
@@ -90,7 +93,7 @@ class SpatialJobs(JobManager):
                 if count==0:raise ValueError('视频未解码出任何帧')
                 settings=dict(width=width,height=height,frames=count,fps=30,frame_rate_policy='Resampled to constant 30fps',
                     algorithm='Recompute spatial grid per frame from constant reference',audio='First optional source audio track, AAC',
-                    temporal=dict(alpha=temporal.alpha,cut_threshold=temporal.cut_threshold) if temporal is not None else None,
+                    temporal=temporal.settings() if temporal is not None else None,
                     encoding='Lossy H264 CRF18/YUV420p, SDR BT709 limited',output_metadata=media.probe_media(partial))
             with self.lock:
                 if job['status']=='cancelled':return
