@@ -1,0 +1,435 @@
+{
+  "native": {
+    "scope": "Numerical native renderer and upscaled-photo speed, not photographic/video/product acceptance",
+    "source_sha256": {
+      "check_spatial_render.py": "00d17af975d7be0f8895a4d85ad841bf3936d9f22cfec8fcf0ca01cf0a4cfb2a",
+      "spatial-render-protocol.md": "8c9e6adb3f74829aa42b713c2e6638828792af4789d72067ce5140dfad17940c",
+      "spatial_render.py": "ba72a06bc75c4ca1749d494321e07a801f76e67bbea74f22d62b8cbb12cbd164"
+    },
+    "checkpoint_sha256": "d08f07a41d4056bad26b480fd1d942197839b4c3f6e0145e796687b8bef1ff14",
+    "numerical": [
+      {
+        "name": "noise256",
+        "shape": [
+          256,
+          256,
+          3
+        ],
+        "max_float_error": {
+          "whole": 0.0,
+          "band17": 0.0,
+          "band128": 0.0
+        },
+        "direct_forward_max_error": 0.0,
+        "zero_exact": true,
+        "half_exact": true,
+        "quantized_max_error": 0
+      },
+      {
+        "name": "photo_rect",
+        "shape": [
+          279,
+          431,
+          3
+        ],
+        "max_float_error": {
+          "whole": 0.0,
+          "band17": 0.0,
+          "band128": 0.0
+        },
+        "direct_forward_max_error": null,
+        "zero_exact": true,
+        "half_exact": true,
+        "quantized_max_error": 0
+      },
+      {
+        "name": "extremes",
+        "shape": [
+          211,
+          337,
+          3
+        ],
+        "max_float_error": {
+          "whole": 0.0,
+          "band17": 0.0,
+          "band128": 0.0
+        },
+        "direct_forward_max_error": null,
+        "zero_exact": true,
+        "half_exact": true,
+        "quantized_max_error": 0
+      }
+    ],
+    "timing": [
+      {
+        "dimensions": [
+          1920,
+          1080
+        ],
+        "analysis_seconds": 0.018386100011412054,
+        "renders": [
+          {
+            "seconds": 0.12445329999900423,
+            "peak_allocated_bytes": 103821312
+          },
+          {
+            "seconds": 0.12227089999942109,
+            "peak_allocated_bytes": 103821312
+          }
+        ],
+        "sha256": "be2242dcae112f912a47733b9e7c49939820db55825e682b65a926e090d5b432",
+        "source_is_upscaled": true
+      },
+      {
+        "dimensions": [
+          3840,
+          2160
+        ],
+        "analysis_seconds": 0.06063750002067536,
+        "renders": [
+          {
+            "seconds": 0.5908792999980506,
+            "peak_allocated_bytes": 183906304
+          },
+          {
+            "seconds": 0.48530070000560954,
+            "peak_allocated_bytes": 183906304
+          }
+        ],
+        "sha256": "9c3c5edd59b631c6e9e3707dd96fe3508b042cc08a59c852e8b5447d73db7531",
+        "source_is_upscaled": true
+      }
+    ],
+    "float_max_gate": 2e-05,
+    "quantized_max_gate": 1,
+    "passed": true,
+    "product_integrated": false
+  },
+  "video": {
+    "scope": "Known motion/illumination diagnostics and 3s real-video smoke; not full natural-video quality or temporal acceptance",
+    "source_sha256": {
+      "spatial_render.py": "ba72a06bc75c4ca1749d494321e07a801f76e67bbea74f22d62b8cbb12cbd164",
+      "check_spatial_video.py": "063d1223b3ccf498bd43680599195cc98bc526a0129c53b2bd114863ae7515f0"
+    },
+    "input_sha256": "3687fd072b64bce70f3855c750efb0b219aaa9be5f59745a4927ad3f9a0847d9",
+    "reference_sha256": "822af4aaf8e5ce80a62a6933a64a9516127e5cf2a05acaf5cfafaf0ba5e6346a",
+    "input_metadata": {
+      "kind": "video",
+      "width": 640,
+      "height": 360,
+      "pixel_format": "yuv420p",
+      "component_bit_depths": [
+        8,
+        8,
+        8
+      ],
+      "working_precision_bits": 8,
+      "precision_conversion": false,
+      "precision_note": "8\u4f4d SDR \u89c6\u9891\u5904\u7406",
+      "duration_seconds": 3.0,
+      "has_audio": false,
+      "video_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 640x360, 450 kb/s, 25 fps, 25 tbr, 12800 tbn (default)",
+      "hdr_unsupported": false,
+      "metadata_text": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\\Projects\\\u521b\u65b0\u8054\u5408\u5927\u4f5c\u4e1a\\outputs\\skin-protection-validation-20261019\\video-agent\\official-person-motion-3s.mp4':\r\n  Metadata:\r\n    major_brand     : isom\r\n    minor_version   : 512\r\n    compatible_brands: isomiso2avc1mp41\r\n    encoder         : Lavf61.7.100\r\n  Duration: 00:00:03.00, start: 0.000000, bitrate: 454 kb/s\r\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 640x360, 450 kb/s, 25 fps, 25 tbr, 12800 tbn (default)\r\n      Metadata:\r\n        handler_name    : VideoHandler\r\n        vendor_id       : [0][0][0][0]\r\n        encoder         : Lavc61.19.100 libx264\r\nAt least one output file must be specified\r\n",
+      "dimension_convention": "coded stream dimensions; decoded PNG gives oriented display dimensions",
+      "color_management": "FFmpeg normal SDR RGB decoding; native/profile equivalence unvalidated"
+    },
+    "known_pan": [
+      {
+        "frame": 0,
+        "shift": 0,
+        "aligned_mae": 0.0,
+        "aligned_p95": 0.0
+      },
+      {
+        "frame": 1,
+        "shift": 3,
+        "aligned_mae": 0.5505401234567902,
+        "aligned_p95": 1.0
+      },
+      {
+        "frame": 2,
+        "shift": 6,
+        "aligned_mae": 1.0925925925925926,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 3,
+        "shift": 9,
+        "aligned_mae": 1.115931712962963,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 4,
+        "shift": 12,
+        "aligned_mae": 1.1273090277777778,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 5,
+        "shift": 15,
+        "aligned_mae": 1.1013773148148147,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 6,
+        "shift": 18,
+        "aligned_mae": 1.0496431327160494,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 7,
+        "shift": 21,
+        "aligned_mae": 0.8797087191358025,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 8,
+        "shift": 24,
+        "aligned_mae": 1.369560185185185,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 9,
+        "shift": 27,
+        "aligned_mae": 1.5830420524691358,
+        "aligned_p95": 5.0
+      },
+      {
+        "frame": 10,
+        "shift": 30,
+        "aligned_mae": 1.295858410493827,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 11,
+        "shift": 33,
+        "aligned_mae": 1.1018055555555555,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 12,
+        "shift": 36,
+        "aligned_mae": 0.8427141203703704,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 13,
+        "shift": 39,
+        "aligned_mae": 0.48552083333333335,
+        "aligned_p95": 2.0
+      },
+      {
+        "frame": 14,
+        "shift": 42,
+        "aligned_mae": 0.6091743827160494,
+        "aligned_p95": 2.0
+      },
+      {
+        "frame": 15,
+        "shift": 45,
+        "aligned_mae": 1.1287808641975308,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 16,
+        "shift": 48,
+        "aligned_mae": 1.270221836419753,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 17,
+        "shift": 51,
+        "aligned_mae": 1.2036805555555556,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 18,
+        "shift": 54,
+        "aligned_mae": 1.2194097222222222,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 19,
+        "shift": 57,
+        "aligned_mae": 1.0896412037037038,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 20,
+        "shift": 60,
+        "aligned_mae": 1.0445428240740742,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 21,
+        "shift": 63,
+        "aligned_mae": 1.2179340277777777,
+        "aligned_p95": 3.0
+      },
+      {
+        "frame": 22,
+        "shift": 66,
+        "aligned_mae": 1.5013850308641976,
+        "aligned_p95": 4.0
+      },
+      {
+        "frame": 23,
+        "shift": 69,
+        "aligned_mae": 1.4053202160493827,
+        "aligned_p95": 4.0
+      }
+    ],
+    "known_pan_mean": 1.0535706018518518,
+    "illumination": [
+      {
+        "frame": 1,
+        "input_change": 0.5597800925925925,
+        "output_change": 0.32483940972222225
+      },
+      {
+        "frame": 2,
+        "input_change": 0.5650217013888889,
+        "output_change": 0.4122005208333333
+      },
+      {
+        "frame": 3,
+        "input_change": 0.49352430555555554,
+        "output_change": 0.2832045717592593
+      },
+      {
+        "frame": 4,
+        "input_change": 0.4100810185185185,
+        "output_change": 0.33808738425925927
+      },
+      {
+        "frame": 5,
+        "input_change": 0.1655815972222222,
+        "output_change": 0.21899160879629628
+      },
+      {
+        "frame": 6,
+        "input_change": 0.04196759259259259,
+        "output_change": 0.07143952546296296
+      },
+      {
+        "frame": 7,
+        "input_change": 0.11998697916666666,
+        "output_change": 0.15277922453703704
+      },
+      {
+        "frame": 8,
+        "input_change": 0.24564814814814814,
+        "output_change": 0.24825231481481483
+      },
+      {
+        "frame": 9,
+        "input_change": 0.4128935185185185,
+        "output_change": 0.3022829861111111
+      },
+      {
+        "frame": 10,
+        "input_change": 0.5346035879629629,
+        "output_change": 0.4473668981481482
+      },
+      {
+        "frame": 11,
+        "input_change": 0.6391710069444444,
+        "output_change": 0.36701244212962963
+      },
+      {
+        "frame": 12,
+        "input_change": 0.5673234953703704,
+        "output_change": 0.5750607638888889
+      },
+      {
+        "frame": 13,
+        "input_change": 0.6392317708333334,
+        "output_change": 0.28543981481481484
+      },
+      {
+        "frame": 14,
+        "input_change": 0.5346918402777778,
+        "output_change": 0.36819733796296295
+      },
+      {
+        "frame": 15,
+        "input_change": 0.41300636574074073,
+        "output_change": 0.35466145833333335
+      },
+      {
+        "frame": 16,
+        "input_change": 0.24578559027777777,
+        "output_change": 0.35140190972222224
+      },
+      {
+        "frame": 17,
+        "input_change": 0.11998697916666666,
+        "output_change": 0.19363136574074075
+      },
+      {
+        "frame": 18,
+        "input_change": 0.04196759259259259,
+        "output_change": 0.08898871527777778
+      },
+      {
+        "frame": 19,
+        "input_change": 0.16565827546296297,
+        "output_change": 0.23194733796296296
+      },
+      {
+        "frame": 20,
+        "input_change": 0.4101417824074074,
+        "output_change": 0.2895052083333333
+      },
+      {
+        "frame": 21,
+        "input_change": 0.49363715277777775,
+        "output_change": 0.2713787615740741
+      },
+      {
+        "frame": 22,
+        "input_change": 0.5651707175925926,
+        "output_change": 0.31170283564814816
+      },
+      {
+        "frame": 23,
+        "input_change": 0.5597974537037037,
+        "output_change": 0.27559172453703706
+      }
+    ],
+    "illumination_policy": "Raw frame difference includes intended brightness changes; not an optical-flow flicker metric",
+    "input_frames": 75,
+    "output_decoded_frames": 75,
+    "repeat_frame_max_difference": 0,
+    "processing_seconds": {
+      "total": 2.9054242001730017,
+      "median": 0.0376700000197161,
+      "max": 0.05646720001823269
+    },
+    "output_metadata": {
+      "kind": "video",
+      "width": 640,
+      "height": 360,
+      "pixel_format": "yuv420p",
+      "component_bit_depths": [
+        8,
+        8,
+        8
+      ],
+      "working_precision_bits": 8,
+      "precision_conversion": false,
+      "precision_note": "8\u4f4d SDR \u89c6\u9891\u5904\u7406",
+      "duration_seconds": 3.0,
+      "has_audio": false,
+      "video_stream": "Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 640x360, 504 kb/s, 25 fps, 25 tbr, 12800 tbn (default)",
+      "hdr_unsupported": false,
+      "metadata_text": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'E:\\Projects\\\u521b\u65b0\u8054\u5408\u5927\u4f5c\u4e1a\\outputs\\adaptive-reference-20261113\\spatial-render\\video-v1\\person-motion.mp4':\r\n  Metadata:\r\n    major_brand     : isom\r\n    minor_version   : 512\r\n    compatible_brands: isomiso2avc1mp41\r\n    encoder         : Lavf61.7.100\r\n  Duration: 00:00:03.00, start: 0.000000, bitrate: 509 kb/s\r\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 640x360, 504 kb/s, 25 fps, 25 tbr, 12800 tbn (default)\r\n      Metadata:\r\n        handler_name    : VideoHandler\r\n        vendor_id       : [0][0][0][0]\r\n        encoder         : Lavc61.19.100 libx264\r\nAt least one output file must be specified\r\n",
+      "dimension_convention": "coded stream dimensions; decoded PNG gives oriented display dimensions",
+      "color_management": "FFmpeg normal SDR RGB decoding; native/profile equivalence unvalidated"
+    },
+    "output_sha256": "d12c17055ee335bb21201671ab1123e0c30ce6cdb6f278a227216988f4c776b3",
+    "smoke_passed": true,
+    "product_integrated": false
+  }
+}
