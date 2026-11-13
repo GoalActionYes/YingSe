@@ -1,0 +1,81 @@
+{
+  "scope": "Development joint-feature candidate rejected; no app integration or independent test",
+  "config": {
+    "seed": 20261114,
+    "lr": 1e-05,
+    "weight_decay": 0.0001,
+    "batch": 4,
+    "extra_epochs": 24,
+    "max_updates": 768,
+    "start_epoch": 8,
+    "evaluate_epochs": [
+      12,
+      16,
+      20,
+      24,
+      28,
+      32
+    ],
+    "gradient_weight": 0.1,
+    "gradient_clip": 1.0,
+    "optimizer_state": "reset AdamW"
+  },
+  "best_epoch": 16,
+  "best_validation_mean": 14.166499773661295,
+  "development_gate": {
+    "relative_improvement": 0.0070417575191472626,
+    "improved": 12,
+    "severe_regressions": 0,
+    "proceed_to_independent_evaluation": false,
+    "relative_improvement_vs_control": -0.0033679753884150454,
+    "improved_vs_control": 5,
+    "severe_vs_control": 0
+  },
+  "initial_equivalence_cases": 32,
+  "initial_max_float_delta": 0.0,
+  "initial_max_rgb8_delta": 0,
+  "ablation_means": {
+    "full_mae": 14.16649850209554,
+    "no_joint_mae": 14.081647555033367,
+    "response_mae": 0.4995981852213542
+  },
+  "counterexample": {
+    "marginal_histogram_delta": 0.0,
+    "joint_feature_delta": 0.24904391169548035,
+    "grid_delta": 0.0006036162376403809,
+    "output_changed_values": 4860,
+    "dark_a_minus_b_ycbcr": [
+      -4.14181049563922e-05,
+      3.33615971612744e-05,
+      5.754821359005291e-06
+    ],
+    "light_a_minus_b_ycbcr": [
+      1.408572461514268e-05,
+      6.85749837430194e-05,
+      -0.00018427541363053024
+    ],
+    "expected_direction_checks": [
+      true,
+      false,
+      false,
+      false
+    ],
+    "correct_directions": 1
+  },
+  "exact_reproduction": {
+    "passed": false,
+    "max_rgb8_delta": 1,
+    "changed_values": 94,
+    "repeat_feature_delta": 2.644956111907959e-07
+  },
+  "training_frozen_source_sha256": {
+    "joint-feature-protocol.md": "0b05e26d866e7cb93f154d2e56dabdc9baeef0c20b8f962b8b5c66d5fc78405e",
+    "joint_features.py": "de95da9629c2e77a634c89f8353d41b5eef615dc16162bf9c2cc7e35c5414ceb",
+    "training_checks.py": "798acc2cf8fe4e3981f2eb23e7820a6c82097d560da829fc6457d3e58223a06d",
+    "train_triplet_extension.py": "658a5b03ef19340a1344a2d4d93c43c165ceffdaf29cc72db21d6a945e77df84",
+    "train_triplet_pilot.py": "2fa48a713768998f2a178b3bb5656af96e90b62b34952a1397b3e6223660ec17",
+    "triplet-extension-protocol.md": "c3a2dd8db7fd92b21b71f00b6a2288d49891cbb2aadb95df7dc12b3a3a2f1fc7"
+  },
+  "diagnostic_script_sha256": "29f0a7241e78e79e2751859b9fee445a0c6dccec0123c84932e157b783d60360",
+  "frozen_training_sources_verified": true
+}

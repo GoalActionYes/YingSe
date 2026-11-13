@@ -1,5 +1,6 @@
 """Frozen continuation experiment on existing development data, never reserved."""
 import json
+import argparse
 from pathlib import Path
 import random
 import time
@@ -15,6 +16,7 @@ START_SHA='d08f07a41d4056bad26b480fd1d942197839b4c3f6e0145e796687b8bef1ff14'
 
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--joint',action='store_true');args=parser.parse_args()
     config=dict(seed=20261114,lr=1e-5,weight_decay=1e-4,batch=4,extra_epochs=24,max_updates=768,
         start_epoch=8,evaluate_epochs=[12,16,20,24,28,32],gradient_weight=.1,gradient_clip=1.,optimizer_state='reset AdamW')
     random.seed(config['seed']);np.random.seed(config['seed']);torch.manual_seed(config['seed']);torch.cuda.manual_seed_all(config['seed']);torch.set_num_threads(4)
@@ -26,10 +28,12 @@ def main():
     lookup={entry['original_path']:data/entry['prepared_path'] for entry in prep['files']}
     for entry in prep['files']:
         if digest(lookup[entry['original_path']])!=entry['sha256']:raise ValueError('Changed prepared file')
-    out=base/'training-v2';out.mkdir(exist_ok=False);frozen=out/'frozen-source';frozen.mkdir()
-    for name in ['train_triplet_extension.py','triplet-extension-protocol.md','train_triplet_pilot.py','training_checks.py']:
+    out=base/('training-joint-v1' if args.joint else 'training-v2');out.mkdir(exist_ok=False);frozen=out/'frozen-source';frozen.mkdir()
+    names=['train_triplet_extension.py','triplet-extension-protocol.md','train_triplet_pilot.py','training_checks.py']
+    if args.joint:names+=['joint_features.py','joint-feature-protocol.md']
+    for name in names:
         (frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
-    report=dict(config=config,start_checkpoint_sha256=START_SHA,cohort_sha256=digest(data/'cohort.json'),prepared_manifest_sha256=digest(prep_path),
+    report=dict(config=config,joint_features=args.joint,start_checkpoint_sha256=START_SHA,cohort_sha256=digest(data/'cohort.json'),prepared_manifest_sha256=digest(prep_path),
         source_sha256={p.name:digest(p) for p in frozen.iterdir()},scope='Development only; no reserved data, no app replacement',epochs=[],finished=False)
     (out/'frozen-config.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     model,api,author=author_model();state=torch.load(checkpoint,map_location='cpu',weights_only=True)
@@ -44,15 +48,34 @@ def main():
                 tensors.append(torch.from_numpy(rgb.copy()).permute(2,0,1).float()/255)
             samples[part].append((row,*tensors))
     if len(samples['train'])!=128 or len(samples['validation'])!=32:raise ValueError('Unexpected sample count')
+    oracle=[]
+    if args.joint:
+        from joint_features import enable_joint_input,joint_forward
+        model.eval()
+        with torch.inference_mode():
+            for row,c,s,gt in samples['validation']:
+                c,s=c[None].cuda(),s[None].cuda();hc=api['batch_histogram_1D'](api['srgb_to_ycbcr'](c));hs=api['batch_histogram_1D'](api['srgb_to_ycbcr'](s))
+                oracle.append(finite_output(model(c,hc,hs)[0],c.shape)[0].cpu())
+        enable_joint_input(model);torch.save(model.state_dict(),out/'epoch-8.pth')
+        report['initial_checkpoint_sha256']=digest(out/'epoch-8.pth')
+        report['initial_equivalence']=[]
     def forward(c,s):
+        if args.joint:return joint_forward(model,api,c,s)[0].clamp(0,1)
         hc=api['batch_histogram_1D'](api['srgb_to_ycbcr'](c));hs=api['batch_histogram_1D'](api['srgb_to_ycbcr'](s))
         return finite_output(model(c,hc,hs)[0],c.shape).clamp(0,1)
     def pixels(value):return np.rint(finite_output(value,(3,256,256)).detach().cpu().permute(1,2,0).numpy().clip(0,1)*255).astype(np.uint8)
     @torch.inference_mode()
     def evaluate(epoch):
         model.eval();folder=out/f'epoch-{epoch}';folder.mkdir();rows=[]
-        for row,c,s,gt in samples['validation']:
-            prediction=pixels(forward(c[None].cuda(),s[None].cuda())[0]);path=folder/f'{row["index"]}.png';Image.fromarray(prediction).save(path)
+        for index,(row,c,s,gt) in enumerate(samples['validation']):
+            if args.joint and epoch==8:
+                raw=joint_forward(model,api,c[None].cuda(),s[None].cuda())[0][0]
+                delta=float((raw.cpu()-oracle[index]).abs().max());prediction=pixels(raw)
+                reference=pixels(oracle[index]);byte_delta=int(np.abs(prediction.astype(int)-reference.astype(int)).max())
+                report['initial_equivalence'].append(dict(index=row['index'],max_float_delta=delta,max_rgb8_delta=byte_delta,changed_values=int(np.count_nonzero(prediction!=reference))))
+                if delta>1e-5 or byte_delta>1:raise ValueError('Joint input changed initial model beyond predefined tolerance')
+            else:prediction=pixels(forward(c[None].cuda(),s[None].cuda())[0])
+            path=folder/f'{row["index"]}.png';Image.fromarray(prediction).save(path)
             rows.append(dict(index=row['index'],mae=float(np.abs(prediction.astype(float)-pixels(gt)).mean()),sha256=digest(path)))
         result=dict(mean=float(np.mean([r['mae'] for r in rows])),cases=rows)
         (folder/'scores.json').write_text(json.dumps(result,indent=2),encoding='utf-8');return result
@@ -83,6 +106,17 @@ def main():
     severe=sum(r['mae']-previous[r['index']]>5 and r['mae']>previous[r['index']]*1.25 for r in selected['cases'])
     gate=dict(relative_improvement=1-best/baseline['mean'],improved=improved,severe_regressions=severe)
     gate['proceed_to_independent_evaluation']=gate['relative_improvement']>=.05 and improved>=20 and severe<=1
+    if args.joint:
+        control=json.loads((base/'training-v2/results.json').read_text(encoding='utf-8'))
+        if (control['config']!=config or control['cohort_sha256']!=report['cohort_sha256']
+                or control['prepared_manifest_sha256']!=report['prepared_manifest_sha256'] or control['start_checkpoint_sha256']!=START_SHA):raise ValueError('Mismatched continuation control')
+        control_scores=json.loads((base/f'training-v2/epoch-{control["best_epoch"]}/scores.json').read_text(encoding='utf-8'))
+        previous_control={r['index']:r['mae'] for r in control_scores['cases']}
+        if set(previous_control)!=set(previous):raise ValueError('Different control validation samples')
+        gate.update(relative_improvement_vs_control=1-best/control_scores['mean'],
+            improved_vs_control=sum(previous_control[r['index']]-r['mae']>.1 for r in selected['cases']),
+            severe_vs_control=sum(r['mae']-previous_control[r['index']]>5 and r['mae']>previous_control[r['index']]*1.25 for r in selected['cases']))
+        gate['proceed_to_independent_evaluation'] &= gate['relative_improvement_vs_control']>=.03 and gate['improved_vs_control']>=18 and gate['severe_vs_control']<=1
     report['development_gate']=gate;(out/'results.json').write_text(json.dumps(report,indent=2),encoding='utf-8');print(json.dumps(gate),flush=True)
 
 
