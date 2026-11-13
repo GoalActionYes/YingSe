@@ -1,5 +1,6 @@
 """Verify downloaded pilot and exact decoded-pixel leakage before training."""
 import hashlib
+import argparse
 import json
 import io
 from collections import defaultdict
@@ -10,7 +11,8 @@ from independent_coco import ROOT,digest
 
 
 def main():
-    out=ROOT/'outputs/adaptive-reference-20261113/tst100k/cohort-v1'
+    parser=argparse.ArgumentParser();parser.add_argument('--expanded',action='store_true');args=parser.parse_args()
+    out=ROOT/'outputs/adaptive-reference-20261113/tst100k'/('cohort-v2' if args.expanded else 'cohort-v1')
     cohort=json.loads((out/'cohort.json').read_text(encoding='utf-8'))
     manifest=json.loads((out/'inputs-manifest.json').read_text(encoding='utf-8'))
     if digest(out/'cohort.json')!=manifest['cohort_sha256']:raise ValueError('Cohort changed')

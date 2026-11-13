@@ -1,5 +1,6 @@
 """Make verified ICC-managed copies while preserving every original byte."""
 import json
+import argparse
 from collections import defaultdict
 import hashlib
 from PIL import Image
@@ -9,7 +10,8 @@ from triplet_color import to_srgb
 
 
 def main():
-    base=ROOT/'outputs/adaptive-reference-20261113/tst100k/cohort-v1'
+    parser=argparse.ArgumentParser();parser.add_argument('--expanded',action='store_true');args=parser.parse_args()
+    base=ROOT/'outputs/adaptive-reference-20261113/tst100k'/('cohort-v2' if args.expanded else 'cohort-v1')
     cohort=json.loads((base/'cohort.json').read_text(encoding='utf-8'));manifest=json.loads((base/'inputs-manifest.json').read_text(encoding='utf-8'))
     quality=json.loads((base/'quality.json').read_text(encoding='utf-8'))
     if any(quality[k] for k in ['invalid_pairs','cross_split_pixel_duplicates','cross_split_file_duplicates','reserved_paths_downloaded']):raise ValueError('Non-color data issue unresolved')

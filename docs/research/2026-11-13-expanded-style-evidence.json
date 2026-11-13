@@ -1,0 +1,157 @@
+{
+  "scope": "Expanded academic research; App unchanged; combined independent gate failed",
+  "cohort_sha256": "988889a59ec8c6591073a9d84f3cc20955d442e20cddf003f4dfcb622198862f",
+  "selected_counts": {
+    "train": 512,
+    "validation": 64,
+    "reserved": 32
+  },
+  "raw_quality_passed": false,
+  "raw_non_srgb_profile_count": 374,
+  "raw_other_issues": {
+    "invalid_pairs": 0,
+    "cross_split_pixel_duplicates": 0,
+    "cross_split_file_duplicates": 0,
+    "reserved_paths_downloaded": 0
+  },
+  "prepared_passed": true,
+  "prepared_files": 1721,
+  "control": {
+    "config": {
+      "seed": 20261115,
+      "lr": 1e-05,
+      "weight_decay": 0.0001,
+      "batch": 4,
+      "extra_epochs": 8,
+      "max_updates": 1024,
+      "start_epoch": 8,
+      "evaluate_epochs": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "gradient_weight": 0.1,
+      "gradient_clip": 1.0,
+      "optimizer_state": "reset AdamW"
+    },
+    "best_epoch": 16,
+    "best_validation_mean": 14.275169213612873,
+    "development_gate": {
+      "relative_improvement": 0.08054763986790758,
+      "improved": 45,
+      "severe_regressions": 2,
+      "proceed_to_independent_evaluation": true,
+      "added_validation": {
+        "baseline_mean": 16.784495989481606,
+        "selected_mean": 15.053537209828693,
+        "improved": 23
+      }
+    }
+  },
+  "joint": {
+    "best_epoch": 16,
+    "best_validation_mean": 14.20511245727539,
+    "development_gate": {
+      "relative_improvement": 0.08505994014216789,
+      "improved": 45,
+      "severe_regressions": 2,
+      "proceed_to_independent_evaluation": false,
+      "added_validation": {
+        "baseline_mean": 16.784495989481606,
+        "selected_mean": 15.002598126729328,
+        "improved": 23
+      },
+      "relative_improvement_vs_control": 0.004907595510018625,
+      "improved_vs_control": 25,
+      "severe_vs_control": 0
+    }
+  },
+  "new_reserved_summary": {
+    "input": {
+      "scored": 32,
+      "total": 32,
+      "failed": 0,
+      "mean": 20.438292185465492,
+      "median": 16.98369344075521,
+      "improved": 17,
+      "regressed": 15,
+      "severe": 9,
+      "gradient_mae": 2.672058265037786
+    },
+    "current": {
+      "scored": 32,
+      "total": 32,
+      "failed": 0,
+      "mean": 21.70876089731852,
+      "median": 20.33576202392578,
+      "improved": 0,
+      "regressed": 0,
+      "severe": 0,
+      "gradient_mae": 3.0949451720792487
+    },
+    "before": {
+      "scored": 32,
+      "total": 32,
+      "failed": 0,
+      "mean": 17.20508066813151,
+      "median": 17.008499145507812,
+      "improved": 22,
+      "regressed": 10,
+      "severe": 3,
+      "gradient_mae": 2.56937806372549
+    },
+    "candidate": {
+      "scored": 32,
+      "total": 32,
+      "failed": 0,
+      "mean": 15.682484467824299,
+      "median": 16.330533345540367,
+      "improved": 27,
+      "regressed": 5,
+      "severe": 3,
+      "gradient_mae": 2.359154316023284
+    }
+  },
+  "independent_gate": {
+    "scored": 32,
+    "total": 32,
+    "complete": true,
+    "no_exact_overlap": true,
+    "passed": false,
+    "primary": {
+      "baseline_mean": 17.20508066813151,
+      "candidate_mean": 15.682484467824299,
+      "relative_improvement": 0.08849689400919081,
+      "improved": 22,
+      "regressed": 9,
+      "severe": 0
+    },
+    "legacy_global": {
+      "baseline_mean": 21.70876089731852,
+      "candidate_mean": 15.682484467824299,
+      "relative_improvement": 0.2775965177376195,
+      "improved": 27,
+      "regressed": 5,
+      "severe": 3
+    }
+  },
+  "checkpoint_sha256": "17be34dfff3e778761c92e1442e75e8ce3bc2b0bb033543171eae40bc8e0b795",
+  "predictions_sha256": "b7215939e773dcc8bf7896b0c7e6cce53cd2127f10784662e4c4fbe06ab83010",
+  "predictions_snapshot_still_matches": true,
+  "all_prediction_file_hashes_match": true,
+  "frozen_evaluation_source_verified": true,
+  "all_predictions_before_gt_download": true,
+  "duplicates": [],
+  "reserved_now_consumed": true,
+  "product_integrated": false,
+  "frozen_training_sources_verified": {
+    "training-expanded-control-v1": true,
+    "training-expanded-joint-v1": true
+  },
+  "earliest_gt_file_modified_after_predictions": true
+}
