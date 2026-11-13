@@ -8,11 +8,12 @@ from pathlib import Path
 import numpy as np
 from PIL import Image,ImageCms
 from independent_coco import ROOT,digest
+from triplet_dataset_options import dataset_options
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--expanded',action='store_true');args=parser.parse_args()
-    out=ROOT/'outputs/adaptive-reference-20261113/tst100k'/('cohort-v2' if args.expanded else 'cohort-v1')
+    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group();mode.add_argument('--expanded',action='store_true');mode.add_argument('--multiref',action='store_true');args=parser.parse_args()
+    out=dataset_options(ROOT,args.expanded,args.multiref)['directory']
     cohort=json.loads((out/'cohort.json').read_text(encoding='utf-8'))
     manifest=json.loads((out/'inputs-manifest.json').read_text(encoding='utf-8'))
     if digest(out/'cohort.json')!=manifest['cohort_sha256']:raise ValueError('Cohort changed')

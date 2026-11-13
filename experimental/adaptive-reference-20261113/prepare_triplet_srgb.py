@@ -7,11 +7,12 @@ from PIL import Image
 import numpy as np
 from independent_coco import ROOT,digest
 from triplet_color import to_srgb
+from triplet_dataset_options import dataset_options
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--expanded',action='store_true');args=parser.parse_args()
-    base=ROOT/'outputs/adaptive-reference-20261113/tst100k'/('cohort-v2' if args.expanded else 'cohort-v1')
+    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group();mode.add_argument('--expanded',action='store_true');mode.add_argument('--multiref',action='store_true');args=parser.parse_args()
+    base=dataset_options(ROOT,args.expanded,args.multiref)['directory']
     cohort=json.loads((base/'cohort.json').read_text(encoding='utf-8'));manifest=json.loads((base/'inputs-manifest.json').read_text(encoding='utf-8'))
     quality=json.loads((base/'quality.json').read_text(encoding='utf-8'))
     if any(quality[k] for k in ['invalid_pairs','cross_split_pixel_duplicates','cross_split_file_duplicates','reserved_paths_downloaded']):raise ValueError('Non-color data issue unresolved')

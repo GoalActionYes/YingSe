@@ -11,7 +11,7 @@
 | 局部参考调色工作台 | 本机可操作研究版，使用固定第8轮模型；图片／视频，空间效果不导出普通CUBE | [使用与验证](research/2026-11-13-spatial-workbench.md) |
 | 扩大到512训练的模型 | 新32平均优于当前研究模型，但完整门槛失败，未接入 | [完整结果](research/2026-11-13-expanded-style-study.md) |
 | 条件色度与参考外观context | 未获足够额外收益，未接入 | [参考外观结果](research/2026-11-13-reference-context-study.md) |
-| 同目标多参考监督 | 已冻结1024训练／64开发配对元数据；字节准备与训练尚未执行 | [数据准备协议](../experimental/adaptive-reference-20261113/multiref-data-protocol.md) |
+| 同目标多参考监督 | 1024／64数据与两臂训练完成；普通监督通过开发门槛，待新独立检验；额外配对损失失败，均未接入 | [数据、结果与限制](research/2026-11-13-multiref-study.md) |
 
 ## 重要阶段提交
 
@@ -34,7 +34,7 @@
 
 普通UI／控件修改从[协作指南](../CONTRIBUTING.md)进入主程序。算法研究从[实验README](../experimental/adaptive-reference-20261113/README.md)进入，每项结果先读对应协议和范围。研究权重与本机`.tools`没有上传，不能只克隆仓库便宣称研究入口已经可运行；稳定版源码按启动指南准备依赖。
 
-目前本机Git没有GitHub凭据，连接器写入返回403；提交先保存在本地，不能把本地commit称为已推送。发布前只上传代码、文档及可公开摘要，不上传测试照片／视频、模型或会话记录。稳定`main`不由失败候选覆盖。
+2026-11-13已通过本机Git完成登录并推送研究分支`codex/adaptive-reference-research-20261113`，远端核对提交为`e7770e4`。此前连接器写入返回403，现由本机Git保留原始历史发布。后续提交是否已上传以远端分支为准。只上传代码、文档及可公开摘要，不上传测试照片／视频、模型或会话记录。稳定`main`不由失败候选覆盖。
 
 本机已安装Git Credential Manager时，可以在仓库终端执行`git credential-manager github login --username GoalActionYes --browser`完成浏览器登录；密码和Token不要发到聊天里。登录后由本地Git推送研究分支，保留原始提交历史：
 

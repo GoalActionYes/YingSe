@@ -1,0 +1,134 @@
+{
+  "scope": "Development only; no new independent evaluation, no App integration",
+  "product_integrated": false,
+  "multiref-control-v1": {
+    "config": {
+      "seed": 20261117,
+      "lr": 1e-05,
+      "weight_decay": 0.0001,
+      "batch": 4,
+      "epochs": 8,
+      "max_updates": 2048,
+      "gradient_weight": 0.1,
+      "delta_weight": 0.25,
+      "gradient_clip": 1.0
+    },
+    "best_epoch": 6,
+    "best_mean": 12.411279439926147,
+    "delta_mean": 15.123631318410236,
+    "gate": {
+      "relative_improvement": 0.12392381131209351,
+      "improved": 51,
+      "severe_regressions": 0,
+      "proceed_to_independent_evaluation": true,
+      "added_validation": {
+        "baseline_mean": 14.681240399678547,
+        "selected_mean": 13.075623512268066,
+        "improved": 25
+      },
+      "delta_improvement_vs_app": 0.07043929368609447
+    },
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "source_frozen_verified": true,
+    "initial_64_png_exact": true,
+    "results_sha256": "cff9b80f96eb484050f1c5c04a9120786da681d46cc4ff86174e3eac1949c2cd"
+  },
+  "multiref-paired-v1": {
+    "config": {
+      "seed": 20261117,
+      "lr": 1e-05,
+      "weight_decay": 0.0001,
+      "batch": 4,
+      "epochs": 8,
+      "max_updates": 2048,
+      "gradient_weight": 0.1,
+      "delta_weight": 0.25,
+      "gradient_clip": 1.0
+    },
+    "best_epoch": 7,
+    "best_mean": 12.422163565953571,
+    "delta_mean": 15.082140763600668,
+    "gate": {
+      "relative_improvement": 0.12315553244983302,
+      "improved": 51,
+      "severe_regressions": 0,
+      "proceed_to_independent_evaluation": false,
+      "added_validation": {
+        "baseline_mean": 14.681240399678547,
+        "selected_mean": 13.140825112660727,
+        "improved": 24
+      },
+      "relative_improvement_vs_control": -0.0008769543929862955,
+      "improved_vs_control": 24,
+      "severe_vs_control": 0,
+      "delta_improvement_vs_app": 0.07298947417000967,
+      "delta_improvement_vs_control": 0.002743425433748947,
+      "delta_groups_improved_vs_control": 16
+    },
+    "checkpoint_sha256": "3c2214409b0f73970c3c5cc17c582fecf6834e5e59a8f41b9e9f2ebaa1c9c43b",
+    "source_frozen_verified": true,
+    "initial_64_png_exact": true,
+    "results_sha256": "1b3797168f23343be05fc9fad5447303c8d76c5db0319b189e1e6712f009e5e1"
+  },
+  "data": {
+    "cohort_sha256": "124d8c670536719fc6f243b2d273849b70a89a164d8f84dbedc924b1d258862d",
+    "manifest_sha256": "e3e95aa8fa773bca44eb4a601557503a572ad360279fc03c37765139600aac36",
+    "quality_sha256": "def76de0a02baf70396f413888f8931d207a1d87a674bfead0394e51cd5dafa0",
+    "prepared_sha256": "b1bcb21c86a16aefe81aa3cd489836265b67b90c677247e42e67c5d5080fa04c",
+    "files": 2445,
+    "bytes": 1837123699,
+    "reused_files": 870,
+    "reused_bytes": 713902496,
+    "icc_name_not_srgb": 567,
+    "high_bit_tiff_files": 134,
+    "prepared_passed": true
+  },
+  "signal": {
+    "results_sha256": "8d63aeef9f9757be83cc59d2fdcea598691353d632dfe4eb158bd8f0c1efc420",
+    "gt_variation": {
+      "train": {
+        "groups": 256,
+        "comparisons": 768,
+        "mean": 25.653661780887177,
+        "minimum": 2.3787841796875,
+        "zero_change": 0,
+        "below_one_code": 0
+      },
+      "validation": {
+        "groups": 32,
+        "comparisons": 32,
+        "mean": 23.047526677449543,
+        "minimum": 3.333124796549479,
+        "zero_change": 0,
+        "below_one_code": 0
+      }
+    },
+    "models": {
+      "app_epoch8": {
+        "mean": 14.166895071665445,
+        "paired_means": {
+          "gt_change_mae": 23.047526677449543,
+          "prediction_change_mae": 19.82793172200521,
+          "delta_mae": 16.269654273986816
+        },
+        "original32_mean": 13.652549743652344,
+        "alternate32_mean": 14.681240399678547
+      },
+      "expanded_epoch16": {
+        "mean": 13.019761244455974,
+        "paired_means": {
+          "gt_change_mae": 23.047526677449543,
+          "prediction_change_mae": 18.62752183278402,
+          "delta_mae": 15.977036794026693
+        },
+        "original32_mean": 11.9509703318278,
+        "alternate32_mean": 14.088552157084147
+      }
+    }
+  },
+  "tests": {
+    "count": 148,
+    "passed": true,
+    "scope": "Research unit suite; does not establish model quality or video acceptance"
+  }
+}
