@@ -1,0 +1,226 @@
+{
+  "scope": "Reference appearance experiment rejected; multireference development metadata only, no new images downloaded",
+  "control": {
+    "config": {
+      "seed": 20261116,
+      "base_lr": 1e-05,
+      "new_head_lr": 0.0001,
+      "weight_decay": 0.0001,
+      "batch": 4,
+      "start_epoch": 16,
+      "epochs": 8,
+      "max_updates": 1024,
+      "gradient_weight": 0.1,
+      "gradient_clip": 1.0
+    },
+    "best_epoch": 24,
+    "best_validation_mean": 13.986823002497355,
+    "development_gate": {
+      "relative_improvement": 0.02019914487882568,
+      "improved": 40,
+      "severe_regressions": 0,
+      "proceed_to_independent_evaluation": false,
+      "added_validation": {
+        "baseline_mean": 15.053537209828693,
+        "selected_mean": 14.739387671152752,
+        "improved": 19
+      },
+      "current_app_development_gate": {
+        "relative_improvement": 0.09911979129939397,
+        "improved": 46,
+        "severe_regressions": 4,
+        "proceed_to_independent_evaluation": false,
+        "added_validation": {
+          "baseline_mean": 16.784495989481606,
+          "selected_mean": 14.739387671152752,
+          "improved": 23
+        }
+      }
+    }
+  },
+  "appearance": {
+    "best_epoch": 23,
+    "best_validation_mean": 13.991380055745443,
+    "development_gate": {
+      "relative_improvement": 0.019879915510690238,
+      "improved": 34,
+      "severe_regressions": 1,
+      "proceed_to_independent_evaluation": false,
+      "added_validation": {
+        "baseline_mean": 15.053537209828693,
+        "selected_mean": 14.671110947926838,
+        "improved": 20
+      },
+      "relative_improvement_vs_control": -0.00032581046083701715,
+      "improved_vs_control": 31,
+      "severe_vs_control": 0,
+      "current_app_development_gate": {
+        "relative_improvement": 0.09882627510343833,
+        "improved": 41,
+        "severe_regressions": 5,
+        "proceed_to_independent_evaluation": false,
+        "added_validation": {
+          "baseline_mean": 16.784495989481606,
+          "selected_mean": 14.671110947926838,
+          "improved": 21
+        }
+      }
+    }
+  },
+  "initial_equivalence": {
+    "cases": 64,
+    "max_float_delta": 0.0,
+    "max_rgb8_delta": 0
+  },
+  "diagnostics": {
+    "means": {
+      "full": 13.991380055745443,
+      "no_context": 13.996293147404987,
+      "zero_reference": 14.014249563217163,
+      "wrong_reference": 14.32351525624593
+    },
+    "mean_appearance_reference_response": 4.03015406926473,
+    "layout_controls": [
+      {
+        "index": 22927,
+        "full_response_mae": 5.503072102864583,
+        "no_context_response_mae": 0.0
+      },
+      {
+        "index": 66366,
+        "full_response_mae": 3.957427978515625,
+        "no_context_response_mae": 0.0
+      },
+      {
+        "index": 88391,
+        "full_response_mae": 6.1243743896484375,
+        "no_context_response_mae": 0.0
+      },
+      {
+        "index": 38571,
+        "full_response_mae": 2.759246826171875,
+        "no_context_response_mae": 0.0
+      }
+    ],
+    "exact_reproduction": true,
+    "maximum_reproduction_delta": 0
+  },
+  "metadata_audit": {
+    "scope": "Metadata only; distinct GT paths are not verified distinct visual styles; no causal shortcut claim",
+    "source_sha256": "6473ec59ace96eadd36fedc6d777e538f943ac6dffbf6da6d7d57c64018d4a12",
+    "index_sha256": "5e71ea9eb3255d0169f042d5fe4f9904f5ef9849024cba98fce74c5299159413",
+    "cohort_sha256": "988889a59ec8c6591073a9d84f3cc20955d442e20cddf003f4dfcb622198862f",
+    "known_reference_family_filter": true,
+    "groups": {
+      "train": {
+        "selected_triplets": 512,
+        "selected_unique_content": 512,
+        "selected_gt_path_counts": {
+          "1": 512
+        },
+        "available_gt_path_counts": {
+          "18": 15,
+          "13": 35,
+          "11": 35,
+          "26": 2,
+          "14": 31,
+          "12": 34,
+          "10": 37,
+          "4": 14,
+          "7": 21,
+          "2": 26,
+          "15": 27,
+          "9": 26,
+          "30": 1,
+          "16": 27,
+          "21": 6,
+          "1": 14,
+          "19": 10,
+          "20": 9,
+          "5": 23,
+          "8": 25,
+          "3": 29,
+          "6": 25,
+          "42": 1,
+          "23": 5,
+          "28": 1,
+          "29": 1,
+          "34": 2,
+          "48": 1,
+          "17": 13,
+          "32": 2,
+          "166": 1,
+          "98": 1,
+          "46": 1,
+          "31": 2,
+          "25": 3,
+          "22": 1,
+          "99": 1,
+          "47": 1,
+          "24": 1,
+          "75": 1,
+          "87": 1
+        },
+        "targets_with_at_least_2_gt_paths": 498,
+        "targets_with_at_least_4_gt_paths": 443,
+        "unresolved_reference_rows_excluded": 526
+      },
+      "validation": {
+        "selected_triplets": 64,
+        "selected_unique_content": 64,
+        "selected_gt_path_counts": {
+          "1": 64
+        },
+        "available_gt_path_counts": {
+          "5": 5,
+          "3": 11,
+          "1": 16,
+          "24": 1,
+          "6": 2,
+          "2": 14,
+          "50": 1,
+          "4": 5,
+          "8": 3,
+          "11": 1,
+          "17": 1,
+          "10": 1,
+          "7": 1,
+          "16": 1,
+          "20": 1
+        },
+        "targets_with_at_least_2_gt_paths": 48,
+        "targets_with_at_least_4_gt_paths": 23,
+        "unresolved_reference_rows_excluded": 128
+      }
+    }
+  },
+  "next_cohort": {
+    "selected_counts": {
+      "train": 1024,
+      "validation": 64,
+      "reserved": 0
+    },
+    "target_groups": {
+      "train": {
+        "eligible_groups": 443,
+        "selected_groups": 256,
+        "styles_per_group": 4
+      },
+      "validation": {
+        "eligible_groups": 48,
+        "selected_groups": 32,
+        "styles_per_group": 2
+      }
+    },
+    "disjoint_photo_families": true,
+    "consumed_evaluation_families_excluded": true,
+    "scope": "Development-only same-content variation; no new independent set allocated; no images read",
+    "limitation": "Distinct GT paths are not yet verified distinct visual styles; family is not subject/near-duplicate isolation"
+  },
+  "frozen_training_sources_verified": {
+    "context-control-v1": true,
+    "context-appearance-v1": true
+  },
+  "diagnostic_sources_verified": true,
+  "product_integrated": false
+}

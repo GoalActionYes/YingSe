@@ -1,0 +1,52 @@
+# 自适应调色研究：版本与交接
+
+主程序仍为1.3手动调色版本。以下是独立研究进展，不表示已经替换稳定程序或完整复刻剪映。模型、训练数据、环境和本机项目不随Git发布。
+
+## 先看当前状态
+
+| 部分 | 状态 | 入口或记录 |
+|---|---|---|
+| 稳定版基础／HSL／曲线及撤销 | 保留，优先在这里做常规产品开发 | [源码启动](GETTING_STARTED.md) |
+| 全局模型比较工作台 | 独立实验，可导出图片／视频／CUBE | [使用与边界](research/2026-11-13-workbench.md) |
+| 局部参考调色工作台 | 本机可操作研究版，使用固定第8轮模型；图片／视频，空间效果不导出普通CUBE | [使用与验证](research/2026-11-13-spatial-workbench.md) |
+| 扩大到512训练的模型 | 新32平均优于当前研究模型，但完整门槛失败，未接入 | [完整结果](research/2026-11-13-expanded-style-study.md) |
+| 条件色度与参考外观context | 未获足够额外收益，未接入 | [参考外观结果](research/2026-11-13-reference-context-study.md) |
+| 同目标多参考监督 | 已冻结1024训练／64开发配对元数据；字节准备与训练尚未执行 | [数据准备协议](../experimental/adaptive-reference-20261113/multiref-data-protocol.md) |
+
+## 重要阶段提交
+
+| 本地提交 | 具体变化 |
+|---|---|
+| `77a86e8` | 独立模型比较工作台与导出验证 |
+| `eb2c57d` | 修复模型输入先缩小导致输出变化的问题 |
+| `86578c3` | 三元组监督及第一批32保留对照 |
+| `f578453` | 原尺寸空间渲染和视频引擎 |
+| `a3c9135` | 局部工作台接入、图片／视频真实HTTP验证 |
+| `1b09b24` | 导出与缓存强度预览解锁、更新后工程恢复 |
+| `e0efca8` | 复用已校验元数据探测，明确参考特征的信息限制 |
+| `1e5b7b6` | 条件色度特征完整对照，未通过门槛 |
+| `e5877b0` | 512／64训练及新32保留验证，记录平均收益和失败 |
+| 本分支最新阶段 | 参考外观context对照与同目标多参考元数据准备 |
+
+完整顺序以`git log --oneline --reverse origin/main..HEAD`为准。实验失败也保留代码、预设门槛、测试范围和结论，避免下一位同学重复试错；不要把所有研究脚本视为已上线功能。
+
+## 如何接手
+
+普通UI／控件修改从[协作指南](../CONTRIBUTING.md)进入主程序。算法研究从[实验README](../experimental/adaptive-reference-20261113/README.md)进入，每项结果先读对应协议和范围。研究权重与本机`.tools`没有上传，不能只克隆仓库便宣称研究入口已经可运行；稳定版源码按启动指南准备依赖。
+
+目前本机Git没有GitHub凭据，连接器写入返回403；提交先保存在本地，不能把本地commit称为已推送。发布前只上传代码、文档及可公开摘要，不上传测试照片／视频、模型或会话记录。稳定`main`不由失败候选覆盖。
+
+本机已安装Git Credential Manager时，可以在仓库终端执行`git credential-manager github login --username GoalActionYes --browser`完成浏览器登录；密码和Token不要发到聊天里。登录后由本地Git推送研究分支，保留原始提交历史：
+
+```powershell
+git push -u origin codex/adaptive-reference-research-20261113
+```
+
+如果使用增量Git bundle，接收方先克隆GitHub仓库以取得基础提交，再在该仓库执行：
+
+```powershell
+git fetch "提交包路径.bundle" codex/adaptive-reference-research-20261113:codex/adaptive-reference-research-20261113
+git switch codex/adaptive-reference-research-20261113
+```
+
+bundle保存已提交历史，不包含未跟踪素材、运行环境或模型。它是离线交接文件，不等于GitHub已收到推送。
