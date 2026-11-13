@@ -1,0 +1,776 @@
+{
+  "scope": "Consumed development only, not semantic/video/product acceptance",
+  "model": {
+    "repository": "nvidia/segformer-b0-finetuned-ade-512-512",
+    "revision": "489d5cd81a0b59fab9b7ea758d3548ebe99677da",
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "a738172c9395b26f14e1981f6a95885085cc1239210446d752bf30ad6a9b8538",
+        "bytes": 3189
+      },
+      {
+        "path": "config.json",
+        "sha256": "209caa9091e4632f7c8883c11170cd08ad29af68b23c09590aa4a5befb1a2a7f",
+        "bytes": 6884
+      },
+      {
+        "path": "preprocessor_config.json",
+        "sha256": "8039d1d210abaa7117ad78e58cdfd6141a2ec72c03dae891b3cd76737e422c6c",
+        "bytes": 271
+      },
+      {
+        "path": "model.safetensors",
+        "sha256": "6ae39addd01de6b1b8bde2cf677d43a5cd733424b8d186de3f95d1c51fee23f9",
+        "bytes": 15036944
+      },
+      {
+        "path": "UPSTREAM-LICENSE",
+        "sha256": "f549820c06519e3105e5174a2fd7285224ffd2268a7f879a843b1a255fd04a61",
+        "bytes": 4065
+      }
+    ],
+    "scope": "Scene-label evidence for noncommercial research, not a grading model or product dependency"
+  },
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "cases": [
+    {
+      "index": 1,
+      "sha256": "88749ceadf6b329d218321fa8f4a92f286b3184b7767d442c13e1f3f34bced66",
+      "source_sha256": {
+        "target": "f56690e10e4f0fefe77cc2faf726216e1ff86c0cdb06f64dbe6828265876b063",
+        "reference": "a175e3062da5661e140f7a83663dfd876af820f919cbbe8942e9b6974732ea6c"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.14874565972222223,
+          "reference_support": 0.03473090277777778,
+          "raw_delta": [
+            0.31764705882352945,
+            0.25882352941176473,
+            0.20392156862745103
+          ],
+          "applied_relative_delta": [
+            0.12,
+            0.12,
+            0.12
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.8070746527777778,
+          "reference_support": 0.8884027777777778,
+          "raw_delta": [
+            -0.17254901960784313,
+            -0.1607843137254902,
+            -0.1411764705882353
+          ],
+          "applied_relative_delta": [
+            -0.12,
+            -0.12,
+            -0.12
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.4491624999791384,
+        0.025189500011038035
+      ],
+      "scores": {
+        "current": 7.458211898803711,
+        "regional": 11.544425964355469
+      }
+    },
+    {
+      "index": 2,
+      "sha256": "293db5df2bba36196c09062428aa541adcd8824aa5b91261e2ddca92eaa92649",
+      "source_sha256": {
+        "target": "dddda133c4ddfc5e1f11f44000a668ba0146fab16211f42d1d251dc7969046de",
+        "reference": "725dbee457802a6de84b2adc9f62e4ecfa5d3b8c48f541deeb4f59e7696b6c63"
+      },
+      "supported": [
+        {
+          "id": 1,
+          "name": "building",
+          "target_support": 0.7587717013888889,
+          "reference_support": 0.5970399305555556,
+          "raw_delta": [
+            -0.054901960784313725,
+            0.0,
+            0.00392156862745098
+          ]
+        }
+      ],
+      "applied": false,
+      "segmentation_seconds": [
+        0.026872399990679696,
+        0.025584999995771796
+      ],
+      "scores": {
+        "current": 6.418336391448975,
+        "regional": 6.418336391448975
+      }
+    },
+    {
+      "index": 3,
+      "sha256": "f48ad05adc8d36cc8d5c8147d9a19197ef67d9d3978182ead901a6bcfd270fe8",
+      "source_sha256": {
+        "target": "04af8eeed01bb1cba14a5b88503c2bac026f26bd7436ada4e6bfd08ea786f84b",
+        "reference": "7492adc751ee8bea9b9de040ac0231ed09ca45c305c6d92ffddce1b09e47d39d"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.1971657986111111,
+          "reference_support": 0.21880208333333334,
+          "raw_delta": [
+            0.10980392156862745,
+            0.03529411764705881,
+            0.0431372549019608
+          ],
+          "applied_relative_delta": [
+            0.09215686274509803,
+            0.01372549019607841,
+            -0.00784313725490196
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.7721484375,
+          "reference_support": 0.7758940972222222,
+          "raw_delta": [
+            -0.07450980392156861,
+            0.007843137254901988,
+            0.05882352941176472
+          ],
+          "applied_relative_delta": [
+            -0.09215686274509803,
+            -0.01372549019607841,
+            0.00784313725490196
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.022384499985491857,
+        0.025452899979427457
+      ],
+      "scores": {
+        "current": 38.659664154052734,
+        "regional": 41.065677642822266
+      }
+    },
+    {
+      "index": 4,
+      "sha256": "8c1add228e5f63b60d7045a7ddc245ed99356f0a6f4a02a69889fd9bb8d72523",
+      "source_sha256": {
+        "target": "a9f4c41b3aa0f83dc578765e8163202b04297a438dd0a85e783c1318b439b5a3",
+        "reference": "de72a6d9a26a10e7c47c8b329c80e98c482259f0b01d9c7083afb538a72fb04c"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.05710069444444445,
+          "reference_support": 0.33970052083333335,
+          "raw_delta": [
+            -0.14117647058823535,
+            -0.14901960784313728,
+            -0.10196078431372546
+          ],
+          "applied_relative_delta": [
+            -0.027450980392156876,
+            -0.03529411764705884,
+            -0.03529411764705881
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.4976215277777778,
+          "reference_support": 0.6172265625,
+          "raw_delta": [
+            -0.0862745098039216,
+            -0.0784313725490196,
+            -0.03137254901960784
+          ],
+          "applied_relative_delta": [
+            0.027450980392156876,
+            0.03529411764705884,
+            0.03529411764705881
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.026106699981028214,
+        0.03094759999657981
+      ],
+      "scores": {
+        "current": 20.328664779663086,
+        "regional": 18.465883255004883
+      }
+    },
+    {
+      "index": 5,
+      "sha256": "e1c90a4482c1ebbd6c095a38de18d15984304aabf31d8cc47af46490cc22aa17",
+      "source_sha256": {
+        "target": "433153d88b511966daabe368568ec500e545351f27e9a9b22ff4fa836e6d007f",
+        "reference": "257714f425c47f71b78a712d5e215c6be2480f0fe86bbb37a4b4c5925ecb9813"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.472421875,
+          "reference_support": 0.35587239583333335,
+          "raw_delta": [
+            -0.2627450980392157,
+            -0.15294117647058825,
+            -0.08235294117647057
+          ]
+        }
+      ],
+      "applied": false,
+      "segmentation_seconds": [
+        0.022817499993834645,
+        0.02432050000061281
+      ],
+      "scores": {
+        "current": 10.789905548095703,
+        "regional": 10.789905548095703
+      }
+    },
+    {
+      "index": 6,
+      "sha256": "8b8538ac501547a03392d7532f981276fb94ddabfd1254ed3f2383a93761c778",
+      "source_sha256": {
+        "target": "24b49971238ec6f4f7af4e841103c551fcddd6701db3e403e779b6fbbe85e1d2",
+        "reference": "0c5b46a157f62593e8be63b788c0a27ec9e78a16b0bb8873025433a4b949a733"
+      },
+      "supported": [],
+      "applied": false,
+      "segmentation_seconds": [
+        0.026592599984724075,
+        0.024159699998563156
+      ],
+      "scores": {
+        "current": 10.588748931884766,
+        "regional": 10.588748931884766
+      }
+    },
+    {
+      "index": 7,
+      "sha256": "93b6bcd75319b848964b44d226def3faf9753b49dc8ccb3bbd19f33199e61f7d",
+      "source_sha256": {
+        "target": "f5d53639ea4ea8a6d54ba33a069500478cce206d13b3418e5d45fa091797716f",
+        "reference": "e2729d2e124cc361be19f662f3bb77f479e3af9a9fa308afc4d90f3dc0fc786d"
+      },
+      "supported": [],
+      "applied": false,
+      "segmentation_seconds": [
+        0.022408799995901063,
+        0.022315200010780245
+      ],
+      "scores": {
+        "current": 28.790891647338867,
+        "regional": 28.790891647338867
+      }
+    },
+    {
+      "index": 8,
+      "sha256": "29a2d91760d75f82100dd2084b144706c6ad9f3d4bc0da2cd2b9ae963cb9a58a",
+      "source_sha256": {
+        "target": "dd3c6d01052fd3c02a1999832c3380746fb70f90e5dd83bdf8da84d604a1e6f0",
+        "reference": "bed502c84529217f16519d864216f13077261203d01a444fc018b2ca93bfc1cf"
+      },
+      "supported": [
+        {
+          "id": 1,
+          "name": "building",
+          "target_support": 0.08955295138888889,
+          "reference_support": 0.13032552083333335,
+          "raw_delta": [
+            0.1843137254901961,
+            0.1215686274509804,
+            0.003921568627451022
+          ],
+          "applied_relative_delta": [
+            0.12,
+            0.0784313725490196,
+            -0.01372549019607841
+          ]
+        },
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.3330034722222222,
+          "reference_support": 0.41717447916666667,
+          "raw_delta": [
+            -0.06274509803921569,
+            0.0039215686274509665,
+            0.03137254901960784
+          ],
+          "applied_relative_delta": [
+            -0.08823529411764706,
+            -0.03921568627450983,
+            0.01372549019607841
+          ]
+        },
+        {
+          "id": 13,
+          "name": "earth",
+          "target_support": 0.07244357638888889,
+          "reference_support": 0.21513454861111111,
+          "raw_delta": [
+            -0.04313725490196077,
+            -0.09411764705882353,
+            -0.05098039215686273
+          ],
+          "applied_relative_delta": [
+            -0.06862745098039215,
+            -0.12,
+            -0.06862745098039216
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.027395833333333335,
+          "reference_support": 0.020099826388888888,
+          "raw_delta": [
+            0.09411764705882353,
+            0.08235294117647063,
+            0.050980392156862786
+          ],
+          "applied_relative_delta": [
+            0.06862745098039215,
+            0.03921568627450983,
+            0.033333333333333354
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.025437200005399063,
+        0.02295740001136437
+      ],
+      "scores": {
+        "current": 22.007965087890625,
+        "regional": 23.041044235229492
+      }
+    },
+    {
+      "index": 9,
+      "sha256": "30c21f5d546ea0deb26cbfd03b28195923442ed8c701174d0f09c432e2d559d8",
+      "source_sha256": {
+        "target": "4146e11a4e2293288c78ecea475fa14fdb56636863b67c1a7791d214e7eb1bd3",
+        "reference": "6c8781b812a05cbf8259fa78023e7035bbe19e5d2c32b8580192720d3ed298e1"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.2804774305555556,
+          "reference_support": 0.3029340277777778,
+          "raw_delta": [
+            -0.16470588235294115,
+            -0.15294117647058825,
+            -0.15686274509803916
+          ],
+          "applied_relative_delta": [
+            -0.04509803921568625,
+            -0.02941176470588236,
+            -0.025490196078431338
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.10576822916666667,
+          "reference_support": 0.23046875,
+          "raw_delta": [
+            -0.07450980392156864,
+            -0.09411764705882353,
+            -0.10588235294117648
+          ],
+          "applied_relative_delta": [
+            0.04509803921568625,
+            0.02941176470588236,
+            0.025490196078431338
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.026994399988325313,
+        0.022615800000494346
+      ],
+      "scores": {
+        "current": 12.23952865600586,
+        "regional": 12.81184196472168
+      }
+    },
+    {
+      "index": 10,
+      "sha256": "f70b8be221cc30877d24c045092a0ddcccdda23cc6d94f6cffdff44ca79a7da3",
+      "source_sha256": {
+        "target": "c3bc83aba122394eeb9efa9efcbcbf0b4526e819a8d04ca68e57297d4d93eb1a",
+        "reference": "ce3fa0366dad2e04a8b9fe1147ecbc6f239970feeddf7cf9a822df63cacb5caa"
+      },
+      "supported": [
+        {
+          "id": 1,
+          "name": "building",
+          "target_support": 0.5512586805555556,
+          "reference_support": 0.36647135416666665,
+          "raw_delta": [
+            0.047058823529411764,
+            0.03529411764705882,
+            0.03137254901960784
+          ],
+          "applied_relative_delta": [
+            0.11372549019607843,
+            0.07647058823529412,
+            0.06274509803921566
+          ]
+        },
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.12602430555555555,
+          "reference_support": 0.3310590277777778,
+          "raw_delta": [
+            -0.1803921568627451,
+            -0.11764705882352941,
+            -0.09411764705882347
+          ],
+          "applied_relative_delta": [
+            -0.11372549019607843,
+            -0.07647058823529412,
+            -0.06274509803921566
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.023332999990088865,
+        0.027348399977199733
+      ],
+      "scores": {
+        "current": 18.482778549194336,
+        "regional": 13.799219131469727
+      }
+    },
+    {
+      "index": 11,
+      "sha256": "381d61cad3e602d860930376c2911266b2d82e31aca4fedafeb14f0e13bd5bdc",
+      "source_sha256": {
+        "target": "6d0036762928ea6c26aaaadc44c03398b783cdcd11e23dc34e729c7e88c3f769",
+        "reference": "9d3a221ec04be017adeac790bb2a5d2b93157f072451122933e2934a57bbe5a1"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.4109157986111111,
+          "reference_support": 0.14663628472222223,
+          "raw_delta": [
+            0.03529411764705882,
+            0.15294117647058825,
+            0.19215686274509802
+          ],
+          "applied_relative_delta": [
+            0.0,
+            0.07647058823529412,
+            0.11176470588235293
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.23967013888888888,
+          "reference_support": 0.3651953125,
+          "raw_delta": [
+            0.03529411764705882,
+            0.0,
+            -0.03137254901960784
+          ],
+          "applied_relative_delta": [
+            0.0,
+            -0.07647058823529412,
+            -0.11176470588235293
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.025315099977888167,
+        0.027779399999417365
+      ],
+      "scores": {
+        "current": 18.08786392211914,
+        "regional": 16.510478973388672
+      }
+    },
+    {
+      "index": 12,
+      "sha256": "a2338bca927e79c85eb50b53f55a1bfbcf857320a9ade987ea82b6850cfcf4ac",
+      "source_sha256": {
+        "target": "edd82d724251cdc55540a0f13ec86daf5645e3b41140105123748d131bd3c921",
+        "reference": "b51e7a20328cca36c0c944cf87ef76fc2689083a26f4f4389e0773699e5c1026"
+      },
+      "supported": [
+        {
+          "id": 2,
+          "name": "sky",
+          "target_support": 0.1936328125,
+          "reference_support": 0.03981770833333333,
+          "raw_delta": [
+            -0.2745098039215686,
+            -0.1960784313725491,
+            -0.14117647058823535
+          ],
+          "applied_relative_delta": [
+            -0.0941176470588235,
+            -0.05490196078431378,
+            -0.03137254901960787
+          ]
+        },
+        {
+          "id": 12,
+          "name": "person",
+          "target_support": 0.16657986111111112,
+          "reference_support": 0.03250434027777778,
+          "raw_delta": [
+            -0.10980392156862746,
+            -0.09411764705882354,
+            -0.07843137254901962
+          ],
+          "applied_relative_delta": [
+            0.07058823529411763,
+            0.04705882352941178,
+            0.03137254901960786
+          ]
+        },
+        {
+          "id": 16,
+          "name": "mountain",
+          "target_support": 0.1889626736111111,
+          "reference_support": 0.18062934027777777,
+          "raw_delta": [
+            -0.1803921568627451,
+            -0.14117647058823532,
+            -0.10980392156862748
+          ],
+          "applied_relative_delta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.025562499999068677,
+        0.023118199984310195
+      ],
+      "scores": {
+        "current": 32.0078125,
+        "regional": 32.4327507019043
+      }
+    },
+    {
+      "index": 13,
+      "sha256": "af4eb97ae54ecc3bfa741ce189857661cbce4db468e59c216c52ca68d5aa889a",
+      "source_sha256": {
+        "target": "57169d76b7ee8227f722757761692993c2f48aa617bdccb665bb0469f3f67526",
+        "reference": "a696eb9ec262c8b3baec4736b1950cee78914c9ee88690ba0dbbbc5897c4dabb"
+      },
+      "supported": [
+        {
+          "id": 0,
+          "name": "wall",
+          "target_support": 0.12203559027777777,
+          "reference_support": 0.06798177083333333,
+          "raw_delta": [
+            -0.4784313725490197,
+            -0.403921568627451,
+            -0.31764705882352945
+          ]
+        }
+      ],
+      "applied": false,
+      "segmentation_seconds": [
+        0.023892700002761558,
+        0.024334500019904226
+      ],
+      "scores": {
+        "current": 21.034894943237305,
+        "regional": 21.034894943237305
+      }
+    },
+    {
+      "index": 14,
+      "sha256": "cbcb1895c82e6319ac2ca430dda79fdfac5ef3004bf5b7fc7838d4efa5e491c3",
+      "source_sha256": {
+        "target": "c3ff0de76a696743784dbd6c3ce949ae17bb6e63f6cd3d6032946734b241780c",
+        "reference": "8de98f419df4a8d8b3fa5414247b1b3735ca89cd50ed81ea2e9dfb36c8af182b"
+      },
+      "supported": [
+        {
+          "id": 0,
+          "name": "wall",
+          "target_support": 0.04865451388888889,
+          "reference_support": 0.029895833333333333,
+          "raw_delta": [
+            0.4509803921568627,
+            0.615686274509804,
+            0.5843137254901961
+          ],
+          "applied_relative_delta": [
+            0.12,
+            0.12,
+            0.12
+          ]
+        },
+        {
+          "id": 12,
+          "name": "person",
+          "target_support": 0.11098090277777778,
+          "reference_support": 0.21167100694444443,
+          "raw_delta": [
+            -0.023529411764705882,
+            -0.047058823529411764,
+            -0.00784313725490196
+          ],
+          "applied_relative_delta": [
+            -0.047058823529411736,
+            -0.03137254901960784,
+            -0.023529411764705882
+          ]
+        },
+        {
+          "id": 18,
+          "name": "curtain",
+          "target_support": 0.1423220486111111,
+          "reference_support": 0.1348611111111111,
+          "raw_delta": [
+            0.023529411764705854,
+            -0.01568627450980392,
+            0.01568627450980392
+          ],
+          "applied_relative_delta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.025349100003950298,
+        0.02699050001683645
+      ],
+      "scores": {
+        "current": 15.585358619689941,
+        "regional": 15.3994722366333
+      }
+    },
+    {
+      "index": 15,
+      "sha256": "88f264b0dfa183c7041e45c902abbf105e50d07d29bad4821f282ab62a18c24d",
+      "source_sha256": {
+        "target": "bf2b26513cf077ba7c50649170beef5624aeceddefeb0715fdbe6b9c6148da51",
+        "reference": "bfa2892d40cb68b0269273e331a69e35279c77cfa66cec60404e6fe775bc76dc"
+      },
+      "supported": [
+        {
+          "id": 0,
+          "name": "wall",
+          "target_support": 0.19712239583333332,
+          "reference_support": 0.06559461805555555,
+          "raw_delta": [
+            0.019607843137254888,
+            0.03137254901960784,
+            0.02745098039215685
+          ],
+          "applied_relative_delta": [
+            -0.10196078431372552,
+            -0.12,
+            -0.12
+          ]
+        },
+        {
+          "id": 12,
+          "name": "person",
+          "target_support": 0.2086545138888889,
+          "reference_support": 0.07922743055555556,
+          "raw_delta": [
+            0.34901960784313724,
+            0.36470588235294116,
+            0.37254901960784315
+          ],
+          "applied_relative_delta": [
+            0.12,
+            0.12,
+            0.12
+          ]
+        },
+        {
+          "id": 15,
+          "name": "table",
+          "target_support": 0.04774305555555555,
+          "reference_support": 0.03608940972222222,
+          "raw_delta": [
+            0.1215686274509804,
+            0.1764705882352941,
+            0.15294117647058825
+          ],
+          "applied_relative_delta": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "applied": true,
+      "segmentation_seconds": [
+        0.02486269999644719,
+        0.024292699992656708
+      ],
+      "scores": {
+        "current": 5.528584957122803,
+        "regional": 8.779304504394531
+      }
+    }
+  ],
+  "source_sha256": {
+    "check_scene_regions.py": "4bf5d4ad1239f1454eafd90b3d589297e810d7370644e8675215152dce226ba9",
+    "prepare_scene_segmentation.py": "933163b845ac04e1e78be789fa075ead7e37a58b38f955b54f29efc5be48c63b",
+    "scene-region-protocol.md": "3a84975489d0b2c35f992c33510c7e0ad0c4cd0b4cdcb12f8878e2f39aac955a"
+  },
+  "summary": {
+    "count": 15,
+    "applied": 10,
+    "current_mean": 17.867280705769858,
+    "regional_mean": 18.098191738128662,
+    "improved": 4,
+    "regressed": 6,
+    "severe": 0
+  },
+  "predictions_sha256": "b48a7788dd73ba1d7bf40c4b9aaf3d99f0916a675f44257c323f20b5e3b20989",
+  "all_predictions_before_expert_read": true,
+  "product_integrated": false
+}

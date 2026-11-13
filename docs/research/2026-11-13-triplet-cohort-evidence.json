@@ -1,0 +1,1583 @@
+{
+  "dataset": "ToneStyle/TST100K",
+  "revision": "63bf13833b75407c862d608c3d81281d0a35b61f",
+  "index_sha256": "5e71ea9eb3255d0169f042d5fe4f9904f5ef9849024cba98fce74c5299159413",
+  "source_sha256": "a2a0f6e44d529bec060fb3c383cf2f02c2eb460f3f2d3ff167904ae6f75ab322",
+  "purpose": "Academic research pilot only, no product training/release",
+  "family_rule": "Content stem; style stem before final underscore. Verified every GT family against author content path, skip unresolved references. Never infer triplet pairing.",
+  "limitation": "Photo-family split is not a subject/scene-group annotation; related captures may still share subjects",
+  "audit_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "audit_families_forced_to_train": [
+    "00098",
+    "00348",
+    "04673",
+    "08745",
+    "10211",
+    "10763",
+    "12199",
+    "12615"
+  ],
+  "unresolved_reference_rows_excluded": 10137,
+  "available_unique_content_counts": {
+    "train": 7839,
+    "validation": 468,
+    "reserved": 405
+  },
+  "selected_counts": {
+    "train": 128,
+    "validation": 32,
+    "reserved": 32
+  },
+  "groups": {
+    "train": [
+      {
+        "index": 17232,
+        "content": "content_images/00/00862.png",
+        "reference": "style_images/003/02439_0317.png",
+        "gt": "style_images/001/00862_0317.png",
+        "content_family": "00862",
+        "reference_family": "02439"
+      },
+      {
+        "index": 10922,
+        "content": "content_images/00/06549.tif",
+        "reference": "style_images/006/05251_1433.png",
+        "gt": "style_images/007/06549_1433.png",
+        "content_family": "06549",
+        "reference_family": "05251"
+      },
+      {
+        "index": 92469,
+        "content": "content_images/01/12352.tif",
+        "reference": "style_images/005/04086_1395.png",
+        "gt": "style_images/013/12352_1530.png",
+        "content_family": "12352",
+        "reference_family": "04086"
+      },
+      {
+        "index": 38383,
+        "content": "content_images/00/10343.tif",
+        "reference": "style_images/011/10342_1455.png",
+        "gt": "style_images/011/10343_1455.png",
+        "content_family": "10343",
+        "reference_family": "10342"
+      },
+      {
+        "index": 69006,
+        "content": "content_images/00/02808.png",
+        "reference": "style_images/003/02348_1778.png",
+        "gt": "style_images/003/02808_1792.png",
+        "content_family": "02808",
+        "reference_family": "02348"
+      },
+      {
+        "index": 50721,
+        "content": "content_images/00/09035.tif",
+        "reference": "style_images/009/09036_0659.png",
+        "gt": "style_images/009/09035_0659.png",
+        "content_family": "09035",
+        "reference_family": "09036"
+      },
+      {
+        "index": 59891,
+        "content": "content_images/00/02164.png",
+        "reference": "style_images/001/01137_0963.png",
+        "gt": "style_images/002/02164_0964.png",
+        "content_family": "02164",
+        "reference_family": "01137"
+      },
+      {
+        "index": 59103,
+        "content": "content_images/00/07709.tif",
+        "reference": "style_images/013/12224_1310.png",
+        "gt": "style_images/008/07709_1313.png",
+        "content_family": "07709",
+        "reference_family": "12224"
+      },
+      {
+        "index": 33898,
+        "content": "content_images/00/00589.png",
+        "reference": "style_images/015/14051_0403.png",
+        "gt": "style_images/000/00589_0403.png",
+        "content_family": "00589",
+        "reference_family": "14051"
+      },
+      {
+        "index": 70260,
+        "content": "content_images/00/03738.tif",
+        "reference": "style_images/009/09090_1528.png",
+        "gt": "style_images/004/03738_1528.png",
+        "content_family": "03738",
+        "reference_family": "09090"
+      },
+      {
+        "index": 94822,
+        "content": "content_images/01/14696.jpg",
+        "reference": "style_images/016/14803_1055.png",
+        "gt": "style_images/015/14696_1055.png",
+        "content_family": "14696",
+        "reference_family": "14803"
+      },
+      {
+        "index": 67337,
+        "content": "content_images/00/09731.tif",
+        "reference": "style_images/010/09730_0808.png",
+        "gt": "style_images/010/09731_0808.png",
+        "content_family": "09731",
+        "reference_family": "09730"
+      },
+      {
+        "index": 92562,
+        "content": "content_images/00/03547.tif",
+        "reference": "style_images/004/03548_1748.png",
+        "gt": "style_images/004/03547_1748.png",
+        "content_family": "03547",
+        "reference_family": "03548"
+      },
+      {
+        "index": 85525,
+        "content": "content_images/00/04803.tif",
+        "reference": "style_images/014/13134_1620.png",
+        "gt": "style_images/005/04803_1620.png",
+        "content_family": "04803",
+        "reference_family": "13134"
+      },
+      {
+        "index": 62342,
+        "content": "content_images/00/07827.tif",
+        "reference": "style_images/014/13802_0513.png",
+        "gt": "style_images/008/07827_0513.png",
+        "content_family": "07827",
+        "reference_family": "13802"
+      },
+      {
+        "index": 95058,
+        "content": "content_images/01/14692.jpg",
+        "reference": "style_images/015/14718_1045.png",
+        "gt": "style_images/015/14692_1045.png",
+        "content_family": "14692",
+        "reference_family": "14718"
+      },
+      {
+        "index": 90531,
+        "content": "content_images/00/10398.tif",
+        "reference": "style_images/011/10399_0910.png",
+        "gt": "style_images/011/10398_0910.png",
+        "content_family": "10398",
+        "reference_family": "10399"
+      },
+      {
+        "index": 49452,
+        "content": "content_images/00/10516.tif",
+        "reference": "style_images/011/10520_0553.png",
+        "gt": "style_images/011/10516_0553.png",
+        "content_family": "10516",
+        "reference_family": "10520"
+      },
+      {
+        "index": 101637,
+        "content": "content_images/01/15061.jpg",
+        "reference": "style_images/016/15037_1056.png",
+        "gt": "style_images/016/15061_1056.png",
+        "content_family": "15061",
+        "reference_family": "15037"
+      },
+      {
+        "index": 102592,
+        "content": "content_images/01/14995.jpg",
+        "reference": "style_images/016/14799_1051.png",
+        "gt": "style_images/016/14995_1051.png",
+        "content_family": "14995",
+        "reference_family": "14799"
+      },
+      {
+        "index": 9234,
+        "content": "content_images/01/13472.tif",
+        "reference": "style_images/014/13473_2006.png",
+        "gt": "style_images/014/13472_2006.png",
+        "content_family": "13472",
+        "reference_family": "13473"
+      },
+      {
+        "index": 72248,
+        "content": "content_images/00/03356.png",
+        "reference": "style_images/003/02811_0572.png",
+        "gt": "style_images/004/03356_0923.png",
+        "content_family": "03356",
+        "reference_family": "02811"
+      },
+      {
+        "index": 93894,
+        "content": "content_images/01/15116.jpg",
+        "reference": "style_images/015/14718_1042.png",
+        "gt": "style_images/016/15116_1042.png",
+        "content_family": "15116",
+        "reference_family": "14718"
+      },
+      {
+        "index": 4311,
+        "content": "content_images/00/03278.png",
+        "reference": "style_images/013/12812_0081.png",
+        "gt": "style_images/004/03278_0082.png",
+        "content_family": "03278",
+        "reference_family": "12812"
+      },
+      {
+        "index": 40234,
+        "content": "content_images/00/02718.png",
+        "reference": "style_images/008/07560_2153.png",
+        "gt": "style_images/003/02718_2153.png",
+        "content_family": "02718",
+        "reference_family": "07560"
+      },
+      {
+        "index": 65664,
+        "content": "content_images/00/04389.tif",
+        "reference": "style_images/007/05902_0221.png",
+        "gt": "style_images/005/04389_0221.png",
+        "content_family": "04389",
+        "reference_family": "05902"
+      },
+      {
+        "index": 37826,
+        "content": "content_images/00/11474.tif",
+        "reference": "style_images/012/11475_1354.png",
+        "gt": "style_images/012/11474_1354.png",
+        "content_family": "11474",
+        "reference_family": "11475"
+      },
+      {
+        "index": 95204,
+        "content": "content_images/01/14720.jpg",
+        "reference": "style_images/016/14894_1042.png",
+        "gt": "style_images/015/14720_1042.png",
+        "content_family": "14720",
+        "reference_family": "14894"
+      },
+      {
+        "index": 105390,
+        "content": "content_images/01/14895.jpg",
+        "reference": "style_images/016/14912_1047.png",
+        "gt": "style_images/016/14895_1047.png",
+        "content_family": "14895",
+        "reference_family": "14912"
+      },
+      {
+        "index": 3000,
+        "content": "content_images/01/14327.tif",
+        "reference": "style_images/015/14329_0584.png",
+        "gt": "style_images/015/14327_0584.png",
+        "content_family": "14327",
+        "reference_family": "14329"
+      },
+      {
+        "index": 83352,
+        "content": "content_images/00/00041.png",
+        "reference": "style_images/001/00729_0623.png",
+        "gt": "style_images/000/00041_0623.png",
+        "content_family": "00041",
+        "reference_family": "00729"
+      },
+      {
+        "index": 43333,
+        "content": "content_images/00/04043.tif",
+        "reference": "style_images/006/05769_1228.png",
+        "gt": "style_images/005/04043_1228.png",
+        "content_family": "04043",
+        "reference_family": "05769"
+      },
+      {
+        "index": 75230,
+        "content": "content_images/00/08227.tif",
+        "reference": "style_images/007/06708_1395.png",
+        "gt": "style_images/009/08227_1395.png",
+        "content_family": "08227",
+        "reference_family": "06708"
+      },
+      {
+        "index": 44093,
+        "content": "content_images/01/11668.tif",
+        "reference": "style_images/013/12613_1273.png",
+        "gt": "style_images/012/11668_1273.png",
+        "content_family": "11668",
+        "reference_family": "12613"
+      },
+      {
+        "index": 101948,
+        "content": "content_images/01/14885.jpg",
+        "reference": "style_images/016/14949_1046.png",
+        "gt": "style_images/016/14885_1046.png",
+        "content_family": "14885",
+        "reference_family": "14949"
+      },
+      {
+        "index": 73795,
+        "content": "content_images/01/14363.tif",
+        "reference": "style_images/015/14362_0138.png",
+        "gt": "style_images/015/14363_0138.png",
+        "content_family": "14363",
+        "reference_family": "14362"
+      },
+      {
+        "index": 38093,
+        "content": "content_images/00/00524.png",
+        "reference": "style_images/001/00742_2087.png",
+        "gt": "style_images/000/00524_2089.png",
+        "content_family": "00524",
+        "reference_family": "00742"
+      },
+      {
+        "index": 61596,
+        "content": "content_images/01/14429.tif",
+        "reference": "style_images/005/04406_0729.png",
+        "gt": "style_images/015/14429_0729.png",
+        "content_family": "14429",
+        "reference_family": "04406"
+      },
+      {
+        "index": 48997,
+        "content": "content_images/00/01996.png",
+        "reference": "style_images/015/14630_0357.png",
+        "gt": "style_images/002/01996_0357.png",
+        "content_family": "01996",
+        "reference_family": "14630"
+      },
+      {
+        "index": 104738,
+        "content": "content_images/01/15026.jpg",
+        "reference": "style_images/016/15020_1000.png",
+        "gt": "style_images/016/15026_1000.png",
+        "content_family": "15026",
+        "reference_family": "15020"
+      },
+      {
+        "index": 3022,
+        "content": "content_images/00/05282.tif",
+        "reference": "style_images/001/00771_1432.png",
+        "gt": "style_images/006/05282_1432.png",
+        "content_family": "05282",
+        "reference_family": "00771"
+      },
+      {
+        "index": 2057,
+        "content": "content_images/00/07472.tif",
+        "reference": "style_images/004/03773_1327.png",
+        "gt": "style_images/008/07472_1327.png",
+        "content_family": "07472",
+        "reference_family": "03773"
+      },
+      {
+        "index": 105731,
+        "content": "content_images/01/14674.jpg",
+        "reference": "style_images/016/15110_1019.png",
+        "gt": "style_images/015/14674_1019.png",
+        "content_family": "14674",
+        "reference_family": "15110"
+      },
+      {
+        "index": 70294,
+        "content": "content_images/00/00449.png",
+        "reference": "style_images/012/11607_0855.png",
+        "gt": "style_images/000/00449_0855.png",
+        "content_family": "00449",
+        "reference_family": "11607"
+      },
+      {
+        "index": 8697,
+        "content": "content_images/00/06817.tif",
+        "reference": "style_images/014/12915_1680.png",
+        "gt": "style_images/007/06817_1680.png",
+        "content_family": "06817",
+        "reference_family": "12915"
+      },
+      {
+        "index": 70471,
+        "content": "content_images/00/07187.tif",
+        "reference": "style_images/013/12712_1413.png",
+        "gt": "style_images/008/07187_1413.png",
+        "content_family": "07187",
+        "reference_family": "12712"
+      },
+      {
+        "index": 81052,
+        "content": "content_images/00/09576.tif",
+        "reference": "style_images/010/09578_0268.png",
+        "gt": "style_images/010/09576_0752.png",
+        "content_family": "09576",
+        "reference_family": "09578"
+      },
+      {
+        "index": 77283,
+        "content": "content_images/00/01776.png",
+        "reference": "style_images/011/10483_2106.png",
+        "gt": "style_images/002/01776_2106.png",
+        "content_family": "01776",
+        "reference_family": "10483"
+      },
+      {
+        "index": 31589,
+        "content": "content_images/00/10106.tif",
+        "reference": "style_images/013/12841_1000.png",
+        "gt": "style_images/011/10106_1008.png",
+        "content_family": "10106",
+        "reference_family": "12841"
+      },
+      {
+        "index": 86678,
+        "content": "content_images/00/00577.png",
+        "reference": "style_images/014/13273_1772.png",
+        "gt": "style_images/000/00577_1771.png",
+        "content_family": "00577",
+        "reference_family": "13273"
+      },
+      {
+        "index": 69008,
+        "content": "content_images/00/00635.png",
+        "reference": "style_images/000/00349_0519.png",
+        "gt": "style_images/000/00635_0520.png",
+        "content_family": "00635",
+        "reference_family": "00349"
+      },
+      {
+        "index": 44993,
+        "content": "content_images/01/13620.tif",
+        "reference": "style_images/013/12447_0806.png",
+        "gt": "style_images/014/13620_0723.png",
+        "content_family": "13620",
+        "reference_family": "12447"
+      },
+      {
+        "index": 8149,
+        "content": "content_images/01/12832.tif",
+        "reference": "style_images/013/12831_0694.png",
+        "gt": "style_images/013/12832_0694.png",
+        "content_family": "12832",
+        "reference_family": "12831"
+      },
+      {
+        "index": 14676,
+        "content": "content_images/00/09755.tif",
+        "reference": "style_images/010/09754_1402.png",
+        "gt": "style_images/010/09755_1402.png",
+        "content_family": "09755",
+        "reference_family": "09754"
+      },
+      {
+        "index": 38612,
+        "content": "content_images/00/07527.tif",
+        "reference": "style_images/005/04491_0180.png",
+        "gt": "style_images/008/07527_0180.png",
+        "content_family": "07527",
+        "reference_family": "04491"
+      },
+      {
+        "index": 44317,
+        "content": "content_images/01/11683.tif",
+        "reference": "style_images/013/12639_1368.png",
+        "gt": "style_images/012/11683_0024.png",
+        "content_family": "11683",
+        "reference_family": "12639"
+      },
+      {
+        "index": 43091,
+        "content": "content_images/01/14627.tif",
+        "reference": "style_images/015/14629_0748.png",
+        "gt": "style_images/015/14627_0748.png",
+        "content_family": "14627",
+        "reference_family": "14629"
+      },
+      {
+        "index": 42631,
+        "content": "content_images/00/09902.tif",
+        "reference": "style_images/010/09903_0107.png",
+        "gt": "style_images/010/09902_0107.png",
+        "content_family": "09902",
+        "reference_family": "09903"
+      },
+      {
+        "index": 59574,
+        "content": "content_images/00/05367.tif",
+        "reference": "style_images/006/05369_1587.png",
+        "gt": "style_images/006/05367_1587.png",
+        "content_family": "05367",
+        "reference_family": "05369"
+      },
+      {
+        "index": 87403,
+        "content": "content_images/01/11712.tif",
+        "reference": "style_images/011/10989_0483.png",
+        "gt": "style_images/012/11712_0490.png",
+        "content_family": "11712",
+        "reference_family": "10989"
+      },
+      {
+        "index": 15757,
+        "content": "content_images/00/02240.png",
+        "reference": "style_images/015/14205_1364.png",
+        "gt": "style_images/002/02240_1364.png",
+        "content_family": "02240",
+        "reference_family": "14205"
+      },
+      {
+        "index": 93207,
+        "content": "content_images/00/00729.png",
+        "reference": "style_images/000/00572_0647.png",
+        "gt": "style_images/001/00729_0647.png",
+        "content_family": "00729",
+        "reference_family": "00572"
+      },
+      {
+        "index": 96586,
+        "content": "content_images/01/14803.jpg",
+        "reference": "style_images/016/15115_1039.png",
+        "gt": "style_images/016/14803_1039.png",
+        "content_family": "14803",
+        "reference_family": "15115"
+      },
+      {
+        "index": 52495,
+        "content": "content_images/00/09696.tif",
+        "reference": "style_images/010/09689_1999.png",
+        "gt": "style_images/010/09696_1999.png",
+        "content_family": "09696",
+        "reference_family": "09689"
+      },
+      {
+        "index": 79311,
+        "content": "content_images/00/11375.tif",
+        "reference": "style_images/007/06928_0578.png",
+        "gt": "style_images/012/11375_2088.png",
+        "content_family": "11375",
+        "reference_family": "06928"
+      },
+      {
+        "index": 79562,
+        "content": "content_images/00/04350.tif",
+        "reference": "style_images/011/10884_0913.png",
+        "gt": "style_images/005/04350_0914.png",
+        "content_family": "04350",
+        "reference_family": "10884"
+      },
+      {
+        "index": 57377,
+        "content": "content_images/00/10768.tif",
+        "reference": "style_images/011/10769_0057.png",
+        "gt": "style_images/011/10768_0057.png",
+        "content_family": "10768",
+        "reference_family": "10769"
+      },
+      {
+        "index": 16797,
+        "content": "content_images/00/11468.tif",
+        "reference": "style_images/012/11818_0953.png",
+        "gt": "style_images/012/11468_0953.png",
+        "content_family": "11468",
+        "reference_family": "11818"
+      },
+      {
+        "index": 86929,
+        "content": "content_images/00/00869.png",
+        "reference": "style_images/013/12010_1083.png",
+        "gt": "style_images/001/00869_1083.png",
+        "content_family": "00869",
+        "reference_family": "12010"
+      },
+      {
+        "index": 26578,
+        "content": "content_images/00/03224.png",
+        "reference": "style_images/004/03270_0426.png",
+        "gt": "style_images/004/03224_0426.png",
+        "content_family": "03224",
+        "reference_family": "03270"
+      },
+      {
+        "index": 89631,
+        "content": "content_images/00/02267.png",
+        "reference": "style_images/003/02823_2100.png",
+        "gt": "style_images/002/02267_2100.png",
+        "content_family": "02267",
+        "reference_family": "02823"
+      },
+      {
+        "index": 11117,
+        "content": "content_images/00/00704.png",
+        "reference": "style_images/000/00075_1969.png",
+        "gt": "style_images/000/00704_1969.png",
+        "content_family": "00704",
+        "reference_family": "00075"
+      },
+      {
+        "index": 75475,
+        "content": "content_images/00/03327.png",
+        "reference": "style_images/001/00945_2129.png",
+        "gt": "style_images/004/03327_2129.png",
+        "content_family": "03327",
+        "reference_family": "00945"
+      },
+      {
+        "index": 92013,
+        "content": "content_images/00/05022.tif",
+        "reference": "style_images/015/14159_0696.png",
+        "gt": "style_images/006/05022_0700.png",
+        "content_family": "05022",
+        "reference_family": "14159"
+      },
+      {
+        "index": 14503,
+        "content": "content_images/00/02884.png",
+        "reference": "style_images/003/02984_0084.png",
+        "gt": "style_images/003/02884_0084.png",
+        "content_family": "02884",
+        "reference_family": "02984"
+      },
+      {
+        "index": 61423,
+        "content": "content_images/00/04620.tif",
+        "reference": "style_images/005/04611_0467.png",
+        "gt": "style_images/005/04620_0467.png",
+        "content_family": "04620",
+        "reference_family": "04611"
+      },
+      {
+        "index": 29547,
+        "content": "content_images/00/04249.tif",
+        "reference": "style_images/000/00448_1409.png",
+        "gt": "style_images/005/04249_1408.png",
+        "content_family": "04249",
+        "reference_family": "00448"
+      },
+      {
+        "index": 48389,
+        "content": "content_images/00/00371.png",
+        "reference": "style_images/000/00321_0639.png",
+        "gt": "style_images/000/00371_0639.png",
+        "content_family": "00371",
+        "reference_family": "00321"
+      },
+      {
+        "index": 74275,
+        "content": "content_images/00/01352.png",
+        "reference": "style_images/006/05459_1495.png",
+        "gt": "style_images/001/01352_1495.png",
+        "content_family": "01352",
+        "reference_family": "05459"
+      },
+      {
+        "index": 83370,
+        "content": "content_images/00/00582.png",
+        "reference": "style_images/000/00589_1498.png",
+        "gt": "style_images/000/00582_1498.png",
+        "content_family": "00582",
+        "reference_family": "00589"
+      },
+      {
+        "index": 83341,
+        "content": "content_images/00/01447.png",
+        "reference": "style_images/004/03274_1134.png",
+        "gt": "style_images/001/01447_1134.png",
+        "content_family": "01447",
+        "reference_family": "03274"
+      },
+      {
+        "index": 53710,
+        "content": "content_images/00/09392.tif",
+        "reference": "style_images/000/00345_0273.png",
+        "gt": "style_images/010/09392_0273.png",
+        "content_family": "09392",
+        "reference_family": "00345"
+      },
+      {
+        "index": 6763,
+        "content": "content_images/00/01508.png",
+        "reference": "style_images/014/13045_0256.png",
+        "gt": "style_images/001/01508_0256.png",
+        "content_family": "01508",
+        "reference_family": "13045"
+      },
+      {
+        "index": 54391,
+        "content": "content_images/00/02024.png",
+        "reference": "style_images/001/01049_0629.png",
+        "gt": "style_images/002/02024_0629.png",
+        "content_family": "02024",
+        "reference_family": "01049"
+      },
+      {
+        "index": 1303,
+        "content": "content_images/00/06272.tif",
+        "reference": "style_images/005/04588_1793.png",
+        "gt": "style_images/007/06272_1782.png",
+        "content_family": "06272",
+        "reference_family": "04588"
+      },
+      {
+        "index": 63264,
+        "content": "content_images/01/14414.tif",
+        "reference": "style_images/012/11581_1388.png",
+        "gt": "style_images/015/14414_1387.png",
+        "content_family": "14414",
+        "reference_family": "11581"
+      },
+      {
+        "index": 90679,
+        "content": "content_images/00/06611.tif",
+        "reference": "style_images/009/08503_0544.png",
+        "gt": "style_images/007/06611_0544.png",
+        "content_family": "06611",
+        "reference_family": "08503"
+      },
+      {
+        "index": 60963,
+        "content": "content_images/00/02716.png",
+        "reference": "style_images/009/08977_1445.png",
+        "gt": "style_images/003/02716_1445.png",
+        "content_family": "02716",
+        "reference_family": "08977"
+      },
+      {
+        "index": 99784,
+        "content": "content_images/01/14797.jpg",
+        "reference": "style_images/016/14878_1052.png",
+        "gt": "style_images/016/14797_1052.png",
+        "content_family": "14797",
+        "reference_family": "14878"
+      },
+      {
+        "index": 25575,
+        "content": "content_images/00/00681.png",
+        "reference": "style_images/011/10150_1970.png",
+        "gt": "style_images/000/00681_1971.png",
+        "content_family": "00681",
+        "reference_family": "10150"
+      },
+      {
+        "index": 41836,
+        "content": "content_images/01/14238.tif",
+        "reference": "style_images/014/13806_0444.png",
+        "gt": "style_images/015/14238_0433.png",
+        "content_family": "14238",
+        "reference_family": "13806"
+      },
+      {
+        "index": 31406,
+        "content": "content_images/00/07844.tif",
+        "reference": "style_images/012/11199_1879.png",
+        "gt": "style_images/008/07844_1879.png",
+        "content_family": "07844",
+        "reference_family": "11199"
+      },
+      {
+        "index": 78,
+        "content": "content_images/00/00603.png",
+        "reference": "style_images/009/08231_0091.png",
+        "gt": "style_images/000/00603_0091.png",
+        "content_family": "00603",
+        "reference_family": "08231"
+      },
+      {
+        "index": 54420,
+        "content": "content_images/01/14397.tif",
+        "reference": "style_images/015/14404_0523.png",
+        "gt": "style_images/015/14397_0523.png",
+        "content_family": "14397",
+        "reference_family": "14404"
+      },
+      {
+        "index": 93992,
+        "content": "content_images/01/14709.jpg",
+        "reference": "style_images/016/14833_1046.png",
+        "gt": "style_images/015/14709_1046.png",
+        "content_family": "14709",
+        "reference_family": "14833"
+      },
+      {
+        "index": 104039,
+        "content": "content_images/01/14953.jpg",
+        "reference": "style_images/016/14876_1000.png",
+        "gt": "style_images/016/14953_1000.png",
+        "content_family": "14953",
+        "reference_family": "14876"
+      },
+      {
+        "index": 61517,
+        "content": "content_images/00/05755.tif",
+        "reference": "style_images/011/10583_0145.png",
+        "gt": "style_images/006/05755_0145.png",
+        "content_family": "05755",
+        "reference_family": "10583"
+      },
+      {
+        "index": 60477,
+        "content": "content_images/00/05154.tif",
+        "reference": "style_images/006/05157_1711.png",
+        "gt": "style_images/006/05154_1711.png",
+        "content_family": "05154",
+        "reference_family": "05157"
+      },
+      {
+        "index": 51689,
+        "content": "content_images/01/14290.tif",
+        "reference": "style_images/010/09397_1921.png",
+        "gt": "style_images/015/14290_1921.png",
+        "content_family": "14290",
+        "reference_family": "09397"
+      },
+      {
+        "index": 26694,
+        "content": "content_images/00/03389.png",
+        "reference": "style_images/014/13813_1718.png",
+        "gt": "style_images/004/03389_1718.png",
+        "content_family": "03389",
+        "reference_family": "13813"
+      },
+      {
+        "index": 21073,
+        "content": "content_images/01/13498.tif",
+        "reference": "style_images/011/10169_1771.png",
+        "gt": "style_images/014/13498_1772.png",
+        "content_family": "13498",
+        "reference_family": "10169"
+      },
+      {
+        "index": 96889,
+        "content": "content_images/01/15025.jpg",
+        "reference": "style_images/016/14946_1001.png",
+        "gt": "style_images/016/15025_1001.png",
+        "content_family": "15025",
+        "reference_family": "14946"
+      },
+      {
+        "index": 69152,
+        "content": "content_images/00/00470.png",
+        "reference": "style_images/007/06724_2023.png",
+        "gt": "style_images/000/00470_2023.png",
+        "content_family": "00470",
+        "reference_family": "06724"
+      },
+      {
+        "index": 39446,
+        "content": "content_images/00/03690.tif",
+        "reference": "style_images/004/03692_1668.png",
+        "gt": "style_images/004/03690_1668.png",
+        "content_family": "03690",
+        "reference_family": "03692"
+      },
+      {
+        "index": 64948,
+        "content": "content_images/00/01570.png",
+        "reference": "style_images/005/04676_1922.png",
+        "gt": "style_images/002/01570_1922.png",
+        "content_family": "01570",
+        "reference_family": "04676"
+      },
+      {
+        "index": 104085,
+        "content": "content_images/01/14770.jpg",
+        "reference": "style_images/015/14693_1047.png",
+        "gt": "style_images/015/14770_1047.png",
+        "content_family": "14770",
+        "reference_family": "14693"
+      },
+      {
+        "index": 95545,
+        "content": "content_images/01/14700.jpg",
+        "reference": "style_images/016/15064_1054.png",
+        "gt": "style_images/015/14700_1054.png",
+        "content_family": "14700",
+        "reference_family": "15064"
+      },
+      {
+        "index": 94159,
+        "content": "content_images/01/14970.jpg",
+        "reference": "style_images/016/14794_1053.png",
+        "gt": "style_images/016/14970_1053.png",
+        "content_family": "14970",
+        "reference_family": "14794"
+      },
+      {
+        "index": 67725,
+        "content": "content_images/01/12831.tif",
+        "reference": "style_images/013/12832_0355.png",
+        "gt": "style_images/013/12831_0355.png",
+        "content_family": "12831",
+        "reference_family": "12832"
+      },
+      {
+        "index": 10071,
+        "content": "content_images/00/02311.png",
+        "reference": "style_images/003/02384_0830.png",
+        "gt": "style_images/002/02311_0830.png",
+        "content_family": "02311",
+        "reference_family": "02384"
+      },
+      {
+        "index": 91405,
+        "content": "content_images/00/00813.png",
+        "reference": "style_images/009/08878_0670.png",
+        "gt": "style_images/001/00813_0669.png",
+        "content_family": "00813",
+        "reference_family": "08878"
+      },
+      {
+        "index": 38486,
+        "content": "content_images/01/13656.tif",
+        "reference": "style_images/014/13655_0336.png",
+        "gt": "style_images/014/13656_0336.png",
+        "content_family": "13656",
+        "reference_family": "13655"
+      },
+      {
+        "index": 59264,
+        "content": "content_images/01/11788.tif",
+        "reference": "style_images/012/11781_1020.png",
+        "gt": "style_images/012/11788_1020.png",
+        "content_family": "11788",
+        "reference_family": "11781"
+      },
+      {
+        "index": 32151,
+        "content": "content_images/00/03106.png",
+        "reference": "style_images/002/01809_1487.png",
+        "gt": "style_images/003/03106_1487.png",
+        "content_family": "03106",
+        "reference_family": "01809"
+      },
+      {
+        "index": 16981,
+        "content": "content_images/00/02777.png",
+        "reference": "style_images/002/02220_0482.png",
+        "gt": "style_images/003/02777_0482.png",
+        "content_family": "02777",
+        "reference_family": "02220"
+      },
+      {
+        "index": 96553,
+        "content": "content_images/01/15020.jpg",
+        "reference": "style_images/015/14725_1015.png",
+        "gt": "style_images/016/15020_1015.png",
+        "content_family": "15020",
+        "reference_family": "14725"
+      },
+      {
+        "index": 3778,
+        "content": "content_images/00/03044.png",
+        "reference": "style_images/013/11989_1572.png",
+        "gt": "style_images/003/03044_1534.png",
+        "content_family": "03044",
+        "reference_family": "11989"
+      },
+      {
+        "index": 64893,
+        "content": "content_images/01/14259.tif",
+        "reference": "style_images/010/09535_1024.png",
+        "gt": "style_images/015/14259_0567.png",
+        "content_family": "14259",
+        "reference_family": "09535"
+      },
+      {
+        "index": 13827,
+        "content": "content_images/00/05593.tif",
+        "reference": "style_images/006/05646_0021.png",
+        "gt": "style_images/006/05593_0021.png",
+        "content_family": "05593",
+        "reference_family": "05646"
+      },
+      {
+        "index": 14187,
+        "content": "content_images/00/05634.tif",
+        "reference": "style_images/015/14514_1641.png",
+        "gt": "style_images/006/05634_1641.png",
+        "content_family": "05634",
+        "reference_family": "14514"
+      },
+      {
+        "index": 16380,
+        "content": "content_images/00/06540.tif",
+        "reference": "style_images/014/13021_1502.png",
+        "gt": "style_images/007/06540_1502.png",
+        "content_family": "06540",
+        "reference_family": "13021"
+      },
+      {
+        "index": 50097,
+        "content": "content_images/00/04569.tif",
+        "reference": "style_images/005/04572_1963.png",
+        "gt": "style_images/005/04569_1963.png",
+        "content_family": "04569",
+        "reference_family": "04572"
+      },
+      {
+        "index": 68343,
+        "content": "content_images/00/11167.tif",
+        "reference": "style_images/004/03654_0135.png",
+        "gt": "style_images/012/11167_0135.png",
+        "content_family": "11167",
+        "reference_family": "03654"
+      },
+      {
+        "index": 100144,
+        "content": "content_images/01/14984.jpg",
+        "reference": "style_images/016/14898_1056.png",
+        "gt": "style_images/016/14984_1056.png",
+        "content_family": "14984",
+        "reference_family": "14898"
+      },
+      {
+        "index": 33285,
+        "content": "content_images/00/07227.tif",
+        "reference": "style_images/008/07228_2169.png",
+        "gt": "style_images/008/07227_2169.png",
+        "content_family": "07227",
+        "reference_family": "07228"
+      },
+      {
+        "index": 21879,
+        "content": "content_images/00/08509.tif",
+        "reference": "style_images/015/14189_1456.png",
+        "gt": "style_images/009/08509_1458.png",
+        "content_family": "08509",
+        "reference_family": "14189"
+      },
+      {
+        "index": 9495,
+        "content": "content_images/00/10806.tif",
+        "reference": "style_images/005/04287_0354.png",
+        "gt": "style_images/011/10806_0354.png",
+        "content_family": "10806",
+        "reference_family": "04287"
+      },
+      {
+        "index": 13294,
+        "content": "content_images/00/11286.tif",
+        "reference": "style_images/013/12843_0024.png",
+        "gt": "style_images/012/11286_1368.png",
+        "content_family": "11286",
+        "reference_family": "12843"
+      }
+    ],
+    "validation": [
+      {
+        "index": 22927,
+        "content": "content_images/01/11984.tif",
+        "reference": "style_images/012/11062_1791.png",
+        "gt": "style_images/012/11984_1779.png",
+        "content_family": "11984",
+        "reference_family": "11062"
+      },
+      {
+        "index": 66366,
+        "content": "content_images/00/01006.png",
+        "reference": "style_images/001/01485_0674.png",
+        "gt": "style_images/001/01006_0674.png",
+        "content_family": "01006",
+        "reference_family": "01485"
+      },
+      {
+        "index": 88391,
+        "content": "content_images/00/07746.tif",
+        "reference": "style_images/008/07745_0675.png",
+        "gt": "style_images/008/07746_0675.png",
+        "content_family": "07746",
+        "reference_family": "07745"
+      },
+      {
+        "index": 38571,
+        "content": "content_images/00/01849.png",
+        "reference": "style_images/003/02405_1424.png",
+        "gt": "style_images/002/01849_1424.png",
+        "content_family": "01849",
+        "reference_family": "02405"
+      },
+      {
+        "index": 39532,
+        "content": "content_images/00/00543.png",
+        "reference": "style_images/000/00259_0278.png",
+        "gt": "style_images/000/00543_0278.png",
+        "content_family": "00543",
+        "reference_family": "00259"
+      },
+      {
+        "index": 50960,
+        "content": "content_images/00/01275.png",
+        "reference": "style_images/003/03086_0082.png",
+        "gt": "style_images/001/01275_0081.png",
+        "content_family": "01275",
+        "reference_family": "03086"
+      },
+      {
+        "index": 23001,
+        "content": "content_images/00/01919.png",
+        "reference": "style_images/002/02254_0855.png",
+        "gt": "style_images/002/01919_0855.png",
+        "content_family": "01919",
+        "reference_family": "02254"
+      },
+      {
+        "index": 3026,
+        "content": "content_images/00/02400.png",
+        "reference": "style_images/001/01408_1646.png",
+        "gt": "style_images/003/02400_1646.png",
+        "content_family": "02400",
+        "reference_family": "01408"
+      },
+      {
+        "index": 10960,
+        "content": "content_images/00/06011.tif",
+        "reference": "style_images/012/11563_0816.png",
+        "gt": "style_images/007/06011_0816.png",
+        "content_family": "06011",
+        "reference_family": "11563"
+      },
+      {
+        "index": 25373,
+        "content": "content_images/01/12152.tif",
+        "reference": "style_images/013/12151_0528.png",
+        "gt": "style_images/013/12152_0528.png",
+        "content_family": "12152",
+        "reference_family": "12151"
+      },
+      {
+        "index": 41566,
+        "content": "content_images/00/01816.png",
+        "reference": "style_images/008/07929_1061.png",
+        "gt": "style_images/002/01816_0907.png",
+        "content_family": "01816",
+        "reference_family": "07929"
+      },
+      {
+        "index": 94719,
+        "content": "content_images/01/14874.jpg",
+        "reference": "style_images/016/14911_1056.png",
+        "gt": "style_images/016/14874_1056.png",
+        "content_family": "14874",
+        "reference_family": "14911"
+      },
+      {
+        "index": 106175,
+        "content": "content_images/01/14823.jpg",
+        "reference": "style_images/016/14800_1011.png",
+        "gt": "style_images/016/14823_1011.png",
+        "content_family": "14823",
+        "reference_family": "14800"
+      },
+      {
+        "index": 59779,
+        "content": "content_images/00/03286.png",
+        "reference": "style_images/001/00843_1482.png",
+        "gt": "style_images/004/03286_1482.png",
+        "content_family": "03286",
+        "reference_family": "00843"
+      },
+      {
+        "index": 104576,
+        "content": "content_images/01/14915.jpg",
+        "reference": "style_images/016/14811_1047.png",
+        "gt": "style_images/016/14915_1047.png",
+        "content_family": "14915",
+        "reference_family": "14811"
+      },
+      {
+        "index": 7390,
+        "content": "content_images/00/10318.tif",
+        "reference": "style_images/005/04196_0904.png",
+        "gt": "style_images/011/10318_0904.png",
+        "content_family": "10318",
+        "reference_family": "04196"
+      },
+      {
+        "index": 71564,
+        "content": "content_images/00/07705.tif",
+        "reference": "style_images/013/12341_2103.png",
+        "gt": "style_images/008/07705_2104.png",
+        "content_family": "07705",
+        "reference_family": "12341"
+      },
+      {
+        "index": 25598,
+        "content": "content_images/00/00471.png",
+        "reference": "style_images/009/08342_1106.png",
+        "gt": "style_images/000/00471_1106.png",
+        "content_family": "00471",
+        "reference_family": "08342"
+      },
+      {
+        "index": 6407,
+        "content": "content_images/00/05637.tif",
+        "reference": "style_images/006/05636_1090.png",
+        "gt": "style_images/006/05637_1090.png",
+        "content_family": "05637",
+        "reference_family": "05636"
+      },
+      {
+        "index": 3829,
+        "content": "content_images/00/01174.png",
+        "reference": "style_images/015/14324_1686.png",
+        "gt": "style_images/001/01174_1579.png",
+        "content_family": "01174",
+        "reference_family": "14324"
+      },
+      {
+        "index": 104361,
+        "content": "content_images/01/14934.jpg",
+        "reference": "style_images/016/14854_1000.png",
+        "gt": "style_images/016/14934_1000.png",
+        "content_family": "14934",
+        "reference_family": "14854"
+      },
+      {
+        "index": 45767,
+        "content": "content_images/00/00693.png",
+        "reference": "style_images/010/09170_0136.png",
+        "gt": "style_images/000/00693_0137.png",
+        "content_family": "00693",
+        "reference_family": "09170"
+      },
+      {
+        "index": 50092,
+        "content": "content_images/00/03282.png",
+        "reference": "style_images/002/02253_0873.png",
+        "gt": "style_images/004/03282_0873.png",
+        "content_family": "03282",
+        "reference_family": "02253"
+      },
+      {
+        "index": 84899,
+        "content": "content_images/01/12687.tif",
+        "reference": "style_images/013/12689_0393.png",
+        "gt": "style_images/013/12687_0393.png",
+        "content_family": "12687",
+        "reference_family": "12689"
+      },
+      {
+        "index": 87743,
+        "content": "content_images/01/13128.tif",
+        "reference": "style_images/010/09588_1795.png",
+        "gt": "style_images/014/13128_1795.png",
+        "content_family": "13128",
+        "reference_family": "09588"
+      },
+      {
+        "index": 41096,
+        "content": "content_images/00/08030.tif",
+        "reference": "style_images/014/13029_1088.png",
+        "gt": "style_images/008/08030_1088.png",
+        "content_family": "08030",
+        "reference_family": "13029"
+      },
+      {
+        "index": 25602,
+        "content": "content_images/00/07928.tif",
+        "reference": "style_images/008/07929_0857.png",
+        "gt": "style_images/008/07928_0857.png",
+        "content_family": "07928",
+        "reference_family": "07929"
+      },
+      {
+        "index": 38045,
+        "content": "content_images/01/13034.tif",
+        "reference": "style_images/012/11288_0898.png",
+        "gt": "style_images/014/13034_0898.png",
+        "content_family": "13034",
+        "reference_family": "11288"
+      },
+      {
+        "index": 62030,
+        "content": "content_images/00/04745.tif",
+        "reference": "style_images/005/04743_0707.png",
+        "gt": "style_images/005/04745_0707.png",
+        "content_family": "04745",
+        "reference_family": "04743"
+      },
+      {
+        "index": 40616,
+        "content": "content_images/01/12178.tif",
+        "reference": "style_images/009/08524_1185.png",
+        "gt": "style_images/013/12178_1130.png",
+        "content_family": "12178",
+        "reference_family": "08524"
+      },
+      {
+        "index": 87532,
+        "content": "content_images/00/00298.png",
+        "reference": "style_images/000/00679_0945.png",
+        "gt": "style_images/000/00298_0945.png",
+        "content_family": "00298",
+        "reference_family": "00679"
+      },
+      {
+        "index": 1355,
+        "content": "content_images/00/09786.tif",
+        "reference": "style_images/014/13503_1142.png",
+        "gt": "style_images/010/09786_1140.png",
+        "content_family": "09786",
+        "reference_family": "13503"
+      }
+    ],
+    "reserved": [
+      {
+        "index": 88538,
+        "content": "content_images/00/01189.png",
+        "reference": "style_images/004/03174_2004.png",
+        "gt": "style_images/001/01189_2004.png",
+        "content_family": "01189",
+        "reference_family": "03174"
+      },
+      {
+        "index": 14546,
+        "content": "content_images/01/11771.tif",
+        "reference": "style_images/013/12795_0425.png",
+        "gt": "style_images/012/11771_0421.png",
+        "content_family": "11771",
+        "reference_family": "12795"
+      },
+      {
+        "index": 86297,
+        "content": "content_images/00/02568.png",
+        "reference": "style_images/003/02745_1275.png",
+        "gt": "style_images/003/02568_1277.png",
+        "content_family": "02568",
+        "reference_family": "02745"
+      },
+      {
+        "index": 90721,
+        "content": "content_images/01/11949.tif",
+        "reference": "style_images/009/09077_0530.png",
+        "gt": "style_images/012/11949_0531.png",
+        "content_family": "11949",
+        "reference_family": "09077"
+      },
+      {
+        "index": 76301,
+        "content": "content_images/00/00396.png",
+        "reference": "style_images/013/12405_1463.png",
+        "gt": "style_images/000/00396_0708.png",
+        "content_family": "00396",
+        "reference_family": "12405"
+      },
+      {
+        "index": 88333,
+        "content": "content_images/00/00296.png",
+        "reference": "style_images/000/00492_0837.png",
+        "gt": "style_images/000/00296_0837.png",
+        "content_family": "00296",
+        "reference_family": "00492"
+      },
+      {
+        "index": 4054,
+        "content": "content_images/00/03496.tif",
+        "reference": "style_images/004/03495_0027.png",
+        "gt": "style_images/004/03496_0027.png",
+        "content_family": "03496",
+        "reference_family": "03495"
+      },
+      {
+        "index": 592,
+        "content": "content_images/00/03362.png",
+        "reference": "style_images/006/05257_2044.png",
+        "gt": "style_images/004/03362_2044.png",
+        "content_family": "03362",
+        "reference_family": "05257"
+      },
+      {
+        "index": 81892,
+        "content": "content_images/00/08388.tif",
+        "reference": "style_images/006/05606_1731.png",
+        "gt": "style_images/009/08388_1731.png",
+        "content_family": "08388",
+        "reference_family": "05606"
+      },
+      {
+        "index": 106912,
+        "content": "content_images/01/14783.jpg",
+        "reference": "style_images/015/14729_1047.png",
+        "gt": "style_images/016/14783_1047.png",
+        "content_family": "14783",
+        "reference_family": "14729"
+      },
+      {
+        "index": 106093,
+        "content": "content_images/01/14702.jpg",
+        "reference": "style_images/016/15043_1042.png",
+        "gt": "style_images/015/14702_1042.png",
+        "content_family": "14702",
+        "reference_family": "15043"
+      },
+      {
+        "index": 5650,
+        "content": "content_images/00/07407.tif",
+        "reference": "style_images/010/09140_0122.png",
+        "gt": "style_images/008/07407_0122.png",
+        "content_family": "07407",
+        "reference_family": "09140"
+      },
+      {
+        "index": 61545,
+        "content": "content_images/00/00527.png",
+        "reference": "style_images/014/13580_2069.png",
+        "gt": "style_images/000/00527_2070.png",
+        "content_family": "00527",
+        "reference_family": "13580"
+      },
+      {
+        "index": 7513,
+        "content": "content_images/00/03155.png",
+        "reference": "style_images/002/01787_1982.png",
+        "gt": "style_images/004/03155_1982.png",
+        "content_family": "03155",
+        "reference_family": "01787"
+      },
+      {
+        "index": 75780,
+        "content": "content_images/00/09042.tif",
+        "reference": "style_images/007/06266_0922.png",
+        "gt": "style_images/009/09042_0282.png",
+        "content_family": "09042",
+        "reference_family": "06266"
+      },
+      {
+        "index": 59473,
+        "content": "content_images/00/02861.png",
+        "reference": "style_images/014/13012_0234.png",
+        "gt": "style_images/003/02861_0234.png",
+        "content_family": "02861",
+        "reference_family": "13012"
+      },
+      {
+        "index": 83097,
+        "content": "content_images/00/01005.png",
+        "reference": "style_images/001/00914_1316.png",
+        "gt": "style_images/001/01005_1316.png",
+        "content_family": "01005",
+        "reference_family": "00914"
+      },
+      {
+        "index": 98564,
+        "content": "content_images/01/14990.jpg",
+        "reference": "style_images/015/14743_1039.png",
+        "gt": "style_images/016/14990_1039.png",
+        "content_family": "14990",
+        "reference_family": "14743"
+      },
+      {
+        "index": 55365,
+        "content": "content_images/00/10906.tif",
+        "reference": "style_images/015/14436_0578.png",
+        "gt": "style_images/011/10906_0339.png",
+        "content_family": "10906",
+        "reference_family": "14436"
+      },
+      {
+        "index": 16495,
+        "content": "content_images/00/02679.png",
+        "reference": "style_images/005/03982_1073.png",
+        "gt": "style_images/003/02679_1073.png",
+        "content_family": "02679",
+        "reference_family": "03982"
+      },
+      {
+        "index": 313,
+        "content": "content_images/00/04212.tif",
+        "reference": "style_images/005/04225_1878.png",
+        "gt": "style_images/005/04212_1878.png",
+        "content_family": "04212",
+        "reference_family": "04225"
+      },
+      {
+        "index": 70951,
+        "content": "content_images/00/01299.png",
+        "reference": "style_images/003/02599_1539.png",
+        "gt": "style_images/001/01299_1539.png",
+        "content_family": "01299",
+        "reference_family": "02599"
+      },
+      {
+        "index": 17992,
+        "content": "content_images/00/01281.png",
+        "reference": "style_images/001/01005_0607.png",
+        "gt": "style_images/001/01281_0607.png",
+        "content_family": "01281",
+        "reference_family": "01005"
+      },
+      {
+        "index": 27779,
+        "content": "content_images/00/01959.png",
+        "reference": "style_images/003/02877_0016.png",
+        "gt": "style_images/002/01959_0016.png",
+        "content_family": "01959",
+        "reference_family": "02877"
+      },
+      {
+        "index": 98734,
+        "content": "content_images/01/14743.jpg",
+        "reference": "style_images/016/15019_1012.png",
+        "gt": "style_images/015/14743_1012.png",
+        "content_family": "14743",
+        "reference_family": "15019"
+      },
+      {
+        "index": 67849,
+        "content": "content_images/00/01872.png",
+        "reference": "style_images/003/02930_2149.png",
+        "gt": "style_images/002/01872_2145.png",
+        "content_family": "01872",
+        "reference_family": "02930"
+      },
+      {
+        "index": 64647,
+        "content": "content_images/00/11277.tif",
+        "reference": "style_images/006/04940_0984.png",
+        "gt": "style_images/012/11277_1052.png",
+        "content_family": "11277",
+        "reference_family": "04940"
+      },
+      {
+        "index": 29703,
+        "content": "content_images/00/02745.png",
+        "reference": "style_images/002/01739_0847.png",
+        "gt": "style_images/003/02745_0847.png",
+        "content_family": "02745",
+        "reference_family": "01739"
+      },
+      {
+        "index": 62855,
+        "content": "content_images/00/08903.tif",
+        "reference": "style_images/009/08904_2080.png",
+        "gt": "style_images/009/08903_2080.png",
+        "content_family": "08903",
+        "reference_family": "08904"
+      },
+      {
+        "index": 41257,
+        "content": "content_images/01/12086.tif",
+        "reference": "style_images/013/12088_0187.png",
+        "gt": "style_images/013/12086_0187.png",
+        "content_family": "12086",
+        "reference_family": "12088"
+      },
+      {
+        "index": 77964,
+        "content": "content_images/00/02356.png",
+        "reference": "style_images/001/01080_0552.png",
+        "gt": "style_images/003/02356_0552.png",
+        "content_family": "02356",
+        "reference_family": "01080"
+      },
+      {
+        "index": 25838,
+        "content": "content_images/01/14510.tif",
+        "reference": "style_images/005/04881_0539.png",
+        "gt": "style_images/015/14510_0540.png",
+        "content_family": "14510",
+        "reference_family": "04881"
+      }
+    ]
+  },
+  "disjoint_photo_families": true,
+  "reserved_images_not_downloaded": true,
+  "training_started": false
+}

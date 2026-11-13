@@ -1,0 +1,199 @@
+{
+  "dataset": "ToneStyle/TST100K",
+  "revision": "63bf13833b75407c862d608c3d81281d0a35b61f",
+  "index_sha256": "5e71ea9eb3255d0169f042d5fe4f9904f5ef9849024cba98fce74c5299159413",
+  "total_triplets": 108808,
+  "selected_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "scope": "Four training-data audit samples only; not independent evaluation, not model training or product validation",
+  "source_sha256": "90990e1616b9f39480094df09b374fb4f476fe081c70f5680e68f207840a077e",
+  "license": "Non-commercial academic/research only; excludes commercial product development",
+  "assets": [
+    {
+      "path": "content_images/00/00098.png",
+      "sha256": "5f4dd6d665af39eb97a0e311e972f4b0dce76fa56a545cbc77eb3a88ab3e3f7d",
+      "bytes": 414974
+    },
+    {
+      "path": "content_images/00/04673.tif",
+      "sha256": "901f7b80f25416ad28907726c0975307edbee0bec04581d9ac8f9ec5a1577f7e",
+      "bytes": 1195064
+    },
+    {
+      "path": "content_images/01/12199.tif",
+      "sha256": "310b4518c685273cd030a3384e25a5095647cfe40688363c1b7ebdeaa7410c7c",
+      "bytes": 1198086
+    },
+    {
+      "path": "content_images/01/12615.tif",
+      "sha256": "286ca655540e506441a3f6077068914521a5b0a1a0131a4ff7442dfd149d4a66",
+      "bytes": 1191150
+    },
+    {
+      "path": "style_images/000/00098_0049.png",
+      "sha256": "de5345098f82c341f5839a46a5ada5ecd44f6258f92af1aef5b2b9411d4a43f1",
+      "bytes": 434184
+    },
+    {
+      "path": "style_images/000/00348_0049.png",
+      "sha256": "0a32249331d654467e03cc079b0383a467c79347a31f62ba2fd1011a9417c442",
+      "bytes": 429259
+    },
+    {
+      "path": "style_images/005/04673_1575.png",
+      "sha256": "4a457239b6b2f8eda8b5b65c919b7f470fe7522d1f3a5a865cd37c558877e7a6",
+      "bytes": 270659
+    },
+    {
+      "path": "style_images/009/08745_0917.png",
+      "sha256": "e68bb120ee0d4c85ee3ec5d461b6845c123ccf5b24d367a7de33ad83ee114035",
+      "bytes": 344763
+    },
+    {
+      "path": "style_images/011/10211_1575.png",
+      "sha256": "f7ba5618ed47fd09e25a4161e10e727ffd47f75d82af9852460dfa4bebbf1073",
+      "bytes": 281842
+    },
+    {
+      "path": "style_images/011/10763_0527.png",
+      "sha256": "0fcb3fcf5f26ad57eb3bd85d9a140585d049457d94362131d72ef27f16c39bc1",
+      "bytes": 189312
+    },
+    {
+      "path": "style_images/013/12199_0919.png",
+      "sha256": "f5d7e417b8538876c31781f2b174273924ccc0acd33ea832ad08a6ad69bc17d4",
+      "bytes": 338366
+    },
+    {
+      "path": "style_images/013/12615_0526.png",
+      "sha256": "1199b74e10e68b6d05663e4de17001d7265fac802fac906d7adbe2bc6c2c00c3",
+      "bytes": 173606
+    }
+  ],
+  "cases": [
+    {
+      "index": 0,
+      "triplet": {
+        "content": "content_images/01/12615.tif",
+        "reference": "style_images/011/10763_0527.png",
+        "gt": "style_images/013/12615_0526.png"
+      },
+      "modes": {
+        "content": "RGB",
+        "reference": "RGB",
+        "gt": "RGB"
+      },
+      "sizes": {
+        "content": [
+          540,
+          360
+        ],
+        "reference": [
+          360,
+          540
+        ],
+        "gt": [
+          540,
+          360
+        ]
+      },
+      "same_content_gt_shape": true,
+      "affine_oracle_mae": 4.361553507923208,
+      "input_to_gt_mae": 29.007570301783264
+    },
+    {
+      "index": 1,
+      "triplet": {
+        "content": "content_images/01/12199.tif",
+        "reference": "style_images/009/08745_0917.png",
+        "gt": "style_images/013/12199_0919.png"
+      },
+      "modes": {
+        "content": "RGB",
+        "reference": "RGB",
+        "gt": "RGB"
+      },
+      "sizes": {
+        "content": [
+          540,
+          360
+        ],
+        "reference": [
+          360,
+          540
+        ],
+        "gt": [
+          540,
+          360
+        ]
+      },
+      "same_content_gt_shape": true,
+      "affine_oracle_mae": 7.64452169733985,
+      "input_to_gt_mae": 15.635790466392319
+    },
+    {
+      "index": 2,
+      "triplet": {
+        "content": "content_images/00/04673.tif",
+        "reference": "style_images/011/10211_1575.png",
+        "gt": "style_images/005/04673_1575.png"
+      },
+      "modes": {
+        "content": "RGB",
+        "reference": "RGB",
+        "gt": "RGB"
+      },
+      "sizes": {
+        "content": [
+          540,
+          360
+        ],
+        "reference": [
+          360,
+          540
+        ],
+        "gt": [
+          540,
+          360
+        ]
+      },
+      "same_content_gt_shape": true,
+      "affine_oracle_mae": 4.3961809398886125,
+      "input_to_gt_mae": 25.43877229080933
+    },
+    {
+      "index": 3,
+      "triplet": {
+        "content": "content_images/00/00098.png",
+        "reference": "style_images/000/00348_0049.png",
+        "gt": "style_images/000/00098_0049.png"
+      },
+      "modes": {
+        "content": "RGB",
+        "reference": "RGB",
+        "gt": "RGB"
+      },
+      "sizes": {
+        "content": [
+          512,
+          512
+        ],
+        "reference": [
+          512,
+          512
+        ],
+        "gt": [
+          512,
+          512
+        ]
+      },
+      "same_content_gt_shape": true,
+      "affine_oracle_mae": 2.247567958158672,
+      "input_to_gt_mae": 5.538042704264323
+    }
+  ]
+}
