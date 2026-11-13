@@ -1,4 +1,5 @@
 """Selected-model ablations with true marginal reference histograms retained."""
+import argparse
 import json
 from pathlib import Path
 import numpy as np
@@ -13,8 +14,11 @@ from training_checks import finite_output
 
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--candidate',default='pairwise-context-v1');parser.add_argument('--control',default='pairwise-control-v1');parser.add_argument('--run',default='diagnostics-v1');args=parser.parse_args()
+    for name in [args.candidate,args.control,args.run]:
+        if not name or Path(name).name!=name or name in ('.','..'):raise ValueError('Expected single directory names')
     torch.set_num_threads(4);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
-    base=ROOT/'outputs/adaptive-reference-20261113/tst100k';run=base/'pairwise-context-v1';control_dir=base/'pairwise-control-v1';data=base/'cohort-multiref-v1'
+    base=ROOT/'outputs/adaptive-reference-20261113/tst100k';run=base/args.candidate;control_dir=base/args.control;data=base/'cohort-multiref-v1'
     record=json.loads((run/'results.json').read_text(encoding='utf-8'));control=json.loads((control_dir/'results.json').read_text(encoding='utf-8'))
     for result in [record,control]:
         if not result['finished'] or 'development_gate' not in result or 'selected_checkpoint_sha256' not in result or result['epochs'][-1]['updates']!=2048:raise ValueError('Incomplete training evidence')
@@ -30,8 +34,10 @@ def main():
     cohort_path=data/'cohort.json';prep_path=data/'srgb-v1/manifest.json';cohort=json.loads(cohort_path.read_text(encoding='utf-8'));prep=json.loads(prep_path.read_text(encoding='utf-8'))
     if not prep['passed'] or digest(cohort_path)!=record['cohort_sha256'] or digest(prep_path)!=record['prepared_manifest_sha256']:raise ValueError('Changed development data')
     scores=json.loads((run/f'epoch-{epoch}/scores.json').read_text(encoding='utf-8'));expected={r['index']:r['sha256'] for r in scores['cases']}
-    out=run/'diagnostics-v1';out.mkdir(exist_ok=False);frozen=out/'frozen-source';frozen.mkdir()
-    for name in ['check_pairwise_context.py','pairwise_context.py','pairwise-training-protocol.md','multiref_response.py','tone_response.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
+    protocol='tone-relations-protocol.md' if 'relations' in record else 'pairwise-training-protocol.md'
+    if digest(Path(__file__).with_name(protocol))!=record['source_sha256'][protocol]:raise ValueError('Training protocol changed')
+    out=run/args.run;out.mkdir(exist_ok=False);frozen=out/'frozen-source';frozen.mkdir()
+    for name in ['check_pairwise_context.py','pairwise_context.py',protocol,'multiref_response.py','tone_response.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
     report=dict(scope='Consumed development only; retained true marginal histograms, cyclic mismatch of joint reference features only; no semantic or independent acceptance',checkpoint_sha256=digest(checkpoint),
         matched_frozen_source=True,start_checkpoint_sha256=record['start_checkpoint_sha256'],control_checkpoint_sha256=control['selected_checkpoint_sha256'],
         anchor_scores_sha256=digest(anchor_path),control_scores_sha256=digest(control_scores_path),source_sha256={p.name:digest(p) for p in frozen.iterdir()},cases=[],layout_controls=[],finished=False)
@@ -70,7 +76,8 @@ def main():
             with Image.open(current) as im:a=np.array(im.convert('RGB'))
             with Image.open(matched) as im:b=np.array(im.convert('RGB'))
             canvas=Image.new('RGB',(768,825),'#222');draw=ImageDraw.Draw(canvas)
-            for j,(label,image) in enumerate([('Input',c),('Reference',s),('GT',gt),('Current 13',a),('Matched more steps',b),('Pairwise context',images['full']),('No pairwise head',images['no_pairwise']),('Zero joint reference',images['zero_reference']),('Wrong joint reference',images['wrong_reference'])]):
+            candidate_label='Tone relation training' if record.get('relations') else 'Pairwise context'
+            for j,(label,image) in enumerate([('Input',c),('Reference',s),('GT',gt),('Current 13',a),('Matched more steps',b),(candidate_label,images['full']),('No pairwise head',images['no_pairwise']),('Zero joint reference',images['zero_reference']),('Wrong joint reference',images['wrong_reference'])]):
                 x=j%3*256;y=j//3*275;draw.text((x+3,y+3),label,fill='white');canvas.paste(Image.fromarray(image),(x,y+19))
             canvas.save(out/f'{row["index"]}.jpg',quality=95)
             if i<4:
