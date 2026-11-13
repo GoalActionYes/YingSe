@@ -8,6 +8,8 @@ import os
 from collections import OrderedDict
 from pathlib import Path
 import threading
+import zipfile
+import zlib
 import numpy as np
 from PIL import Image,ImageOps,ImageCms
 import torch
@@ -23,7 +25,7 @@ from triplet_color import to_srgb
 
 class SpatialStore(Store):
     def __init__(self,root,engine,identity_tag=None):
-        super().__init__(root);self.engine=engine;self.render_lock=threading.RLock();self.preview_cache=OrderedDict()
+        super().__init__(root);self.engine=engine;self.render_lock=threading.RLock();self.preview_lock=threading.RLock();self.preview_cache=OrderedDict()
         names=['spatial_render.py','spatial_store.py','triplet_color.py','training_checks.py']
         self.engine_tag=identity_tag or hashlib.sha256((CHECKPOINT_SHA+''.join(pipeline.file_sha256(Path(__file__).with_name(n)) for n in names)).encode()).hexdigest()
 
@@ -57,7 +59,7 @@ class SpatialStore(Store):
             identity,key=self._identity(target,reference,time_seconds);cache_hit=False
             try:
                 self._load(key,identity);self._grid(key);cache_hit=True
-            except (ValueError,OSError,KeyError,EOFError):
+            except (ValueError,OSError,KeyError,EOFError,zipfile.BadZipFile,zlib.error):
                 rgb,meta=self.decode(target,time_seconds);ref,rmeta=self.decode(reference)
                 with self.render_lock:prepared=self.engine.prepare(rgb,ref)
                 grid=prepared.grid.detach().cpu().numpy().astype(np.float32)
@@ -85,25 +87,39 @@ class SpatialStore(Store):
             raise ValueError('局部调色缓存损坏，请重新分析')
         return grid
 
+    def _validated_grid(self,mapping_id,verified_target=None):
+        record=self.get_mapping_record(mapping_id)
+        target=verified_target if verified_target is not None else self.get_media(record['target_id'])
+        if target['id']!=record['target_id']:raise ValueError('Preview source does not match mapping')
+        reference=self.get_media(record['reference_id']);identity,key=self._identity(target,reference,record['analysis_time'])
+        if identity!=record['identity'] or key!=record['cache_key']:raise ValueError('调色模型或素材已更新，请重新分析')
+        self._load(key,identity)
+        return self._grid(key),record
+
     def get_prepared(self,mapping_id):
-        self.get_mapping(mapping_id);record=self.get_mapping_record(mapping_id);grid=self._grid(record['cache_key'])
+        grid,record=self._validated_grid(mapping_id)
         return PreparedSpatial(self.engine,torch.from_numpy(grid).to(self.engine.device),record['diagnostics']['analysis'])
 
-    def render(self,mapping_id,rgb,strength,adjustments=None,preview=False):
+    def render(self,mapping_id,rgb,strength,adjustments=None,preview=False,verified_target=None):
         strength=float(_strength(strength));settings=normalize(adjustments)
-        prepared=self.get_prepared(mapping_id);record=self.get_mapping_record(mapping_id)
+        grid,record=self._validated_grid(mapping_id,verified_target)
         key=(mapping_id,rgb.shape,hashlib.sha256(rgb.tobytes()).hexdigest())
-        with self.render_lock:
-            if strength==0 or record['diagnostics']['exact_identity']:graded=rgb
-            elif preview and key in self.preview_cache:
-                graded=self.preview_cache.pop(key);self.preview_cache[key]=graded
-            else:
+        graded=None
+        if strength==0 or record['diagnostics']['exact_identity']:graded=rgb
+        elif preview:
+            with self.preview_lock:
+                if key in self.preview_cache:
+                    graded=self.preview_cache.pop(key);self.preview_cache[key]=graded
+        if graded is None:
+            with self.render_lock:
+                prepared=PreparedSpatial(self.engine,torch.from_numpy(grid).to(self.engine.device),record['diagnostics']['analysis'])
                 graded=prepared.apply(rgb,1)
-                if preview:
+            if preview:
+                with self.preview_lock:
                     self.preview_cache[key]=graded
                     while len(self.preview_cache)>2:self.preview_cache.popitem(last=False)
-            value=rgb.astype(np.float32)/255*(1-strength)+graded.astype(np.float32)/255*strength
-            return np.rint(transform(value,settings)*255).astype(np.uint8)
+        value=rgb.astype(np.float32)/255*(1-strength)+graded.astype(np.float32)/255*strength
+        return np.rint(transform(value,settings)*255).astype(np.uint8)
 
     def save_project(self,mapping_id,strength,output_settings=None):
         if output_settings and output_settings.get('kind')=='cube':raise ValueError('局部调色无法完整保存为普通CUBE，请导出图片或视频')

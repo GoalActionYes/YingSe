@@ -6,6 +6,11 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 import torch
+import hashlib
+import threading
+import io
+import struct
+import zipfile
 
 
 class FakeEngine:
@@ -50,6 +55,56 @@ class SpatialStoreTests(unittest.TestCase):
                 if mode=='P':image.putpalette([v for i in range(256) for v in (i,255-i,70)])
                 path=root/(mode+'.png');image.save(path);record=store.add_media(path)
                 actual,_=store.decode(record);np.testing.assert_array_equal(actual,np.array(image.convert('RGB')))
+
+    def test_cached_strength_preview_does_not_wait_for_export_gpu_lock(self):
+        api=self.api()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);a=root/'a.png';b=root/'b.png';rgb=np.full((40,50,3),80,np.uint8)
+            Image.fromarray(rgb).save(a);Image.new('RGB',(40,50),(100,110,120)).save(b)
+            store=api.SpatialStore(root/'data',FakeEngine(),identity_tag='cache');x,y=store.add_media(a),store.add_media(b);m=store.analyze(x['id'],y['id'])
+            store.preview_cache[(m['id'],rgb.shape,hashlib.sha256(rgb.tobytes()).hexdigest())]=np.full_like(rgb,100)
+            values=[]
+            worker=threading.Thread(target=lambda:values.append(store.render(m['id'],rgb,.5,preview=True)))
+            with store.render_lock:
+                worker.start();worker.join(timeout=1)
+                finished=not worker.is_alive()
+            worker.join(timeout=5)
+            self.assertTrue(finished,'Cached preview waited for export GPU lock')
+            np.testing.assert_array_equal(values[0],np.full_like(rgb,90))
+
+    def test_cached_preview_still_rejects_corrupt_grid_and_changed_source(self):
+        api=self.api()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);a=root/'a.png';b=root/'b.png';rgb=np.full((40,50,3),80,np.uint8)
+            Image.fromarray(rgb).save(a);Image.new('RGB',(40,50),(100,110,120)).save(b)
+            store=api.SpatialStore(root/'data',FakeEngine(),identity_tag='integrity')
+            x,y=store.add_media(a),store.add_media(b);m=store.analyze(x['id'],y['id'])
+            store.preview_cache[(m['id'],rgb.shape,hashlib.sha256(rgb.tobytes()).hexdigest())]=np.full_like(rgb,100)
+            cache=store.root/'cache'/(m['cache_key']+'.npz');original=cache.read_bytes()
+            cache.write_bytes(b'corrupt cached grid')
+            with self.assertRaises((ValueError,OSError)):store.render(m['id'],rgb,.5,preview=True)
+            cache.write_bytes(original)
+            Image.new('RGB',(50,40),(81,81,81)).save(x['path'],format='PNG')
+            with self.assertRaises(ValueError):store.render(m['id'],rgb,.5,preview=True)
+
+    def test_analyze_rebuilds_valid_zip_with_corrupt_grid_crc(self):
+        api=self.api()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);a=root/'a.png';Image.new('RGB',(32,32),(20,70,100)).save(a)
+            store=api.SpatialStore(root/'data',FakeEngine(),identity_tag='crc');source=store.add_media(a)
+            mapping=store.analyze(source['id'],source['id']);cache=store.root/'cache'/(mapping['cache_key']+'.npz')
+            original=cache.read_bytes();buffer=io.BytesIO()
+            with zipfile.ZipFile(io.BytesIO(original)) as src,zipfile.ZipFile(buffer,'w',compression=zipfile.ZIP_STORED) as dst:
+                for name in src.namelist():dst.writestr(name,src.read(name))
+            raw=bytearray(buffer.getvalue())
+            with zipfile.ZipFile(io.BytesIO(raw)) as archive:offset=archive.getinfo('grid.npy').header_offset
+            name_length,extra_length=struct.unpack_from('<HH',raw,offset+26)
+            raw[offset+30+name_length+extra_length+140]^=1
+            cache.write_bytes(raw)
+            with self.assertRaises(zipfile.BadZipFile):store.get_prepared(mapping['id'])
+            rebuilt=store.analyze(source['id'],source['id'])
+            self.assertFalse(rebuilt['cache_hit'])
+            self.assertEqual(tuple(store.get_prepared(rebuilt['id']).grid.shape),(1,13,8,16,16))
 
 
 if __name__=='__main__':unittest.main()

@@ -1,5 +1,6 @@
 """Actual HTTP workflows in an isolated owned server/data directory."""
 import base64
+import argparse
 import io
 import json
 from pathlib import Path
@@ -18,7 +19,9 @@ from reference_color_app.media import ffmpeg_path,probe_media
 
 
 def main():
-    out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench/verification-v3';out.mkdir(parents=True,exist_ok=False)
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='verification-v4');args=parser.parse_args()
+    if not args.run or Path(args.run).name!=args.run or args.run in ('.','..'):raise ValueError('Run must be a single directory name')
+    out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench'/args.run;out.mkdir(parents=True,exist_ok=False)
     frozen=out/'frozen-source';frozen.mkdir()
     for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
     server=make_spatial_workbench(out/'data');thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start();url=f'http://127.0.0.1:{server.server_port}';report={}
