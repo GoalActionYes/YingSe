@@ -16,6 +16,13 @@ from training_checks import finite_output
 CHECKPOINT_SHA='d08f07a41d4056bad26b480fd1d942197839b4c3f6e0145e796687b8bef1ff14'
 
 
+def checkpoint_for(profile):
+    base=ROOT/'outputs/adaptive-reference-20261113/tst100k'
+    if profile=='app8':return base/'training-v1/epoch-8.pth',CHECKPOINT_SHA
+    if profile=='multiref-v1':return base/'multiref-control-v1/epoch-6.pth','d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9'
+    raise ValueError('Unknown spatial checkpoint profile')
+
+
 def validate_rgb(rgb):
     if not isinstance(rgb,np.ndarray) or rgb.dtype!=np.uint8 or rgb.ndim!=3 or rgb.shape[2]!=3 or min(rgb.shape[:2])<1:
         raise ValueError('Expected nonempty RGB8 image')
@@ -31,10 +38,10 @@ def coordinates(width,height,start,stop,z):
 
 
 class SpatialEngine:
-    def __init__(self):
+    def __init__(self,profile='app8'):
         torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
-        checkpoint=ROOT/'outputs/adaptive-reference-20261113/tst100k/training-v1/epoch-8.pth'
-        if digest(checkpoint)!=CHECKPOINT_SHA:raise ValueError('Frozen spatial checkpoint changed')
+        checkpoint,self.checkpoint_sha=checkpoint_for(profile)
+        if digest(checkpoint)!=self.checkpoint_sha:raise ValueError('Frozen spatial checkpoint changed')
         self.model,self.api,self.author=author_model()
         state=torch.load(checkpoint,map_location='cpu',weights_only=True)
         if any(not torch.isfinite(v).all() for v in state.values()):raise ValueError('Nonfinite checkpoint')
@@ -57,7 +64,7 @@ class SpatialEngine:
         grid=self.api['lowpass'](self.model.apply_grid(low,torch.cat([hc,hs],1)))
         finite_output(grid,(1,13,8,16,16));torch.cuda.synchronize(self.device)
         return PreparedSpatial(self,grid.detach().clone(),dict(analysis_seconds=time.perf_counter()-start,
-            analysis_size=[256,256],original_dimensions=[target.shape[1],target.shape[0]],checkpoint_sha256=CHECKPOINT_SHA))
+            analysis_size=[256,256],original_dimensions=[target.shape[1],target.shape[0]],checkpoint_sha256=self.checkpoint_sha))
 
 
 class PreparedSpatial:

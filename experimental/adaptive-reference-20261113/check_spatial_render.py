@@ -1,5 +1,6 @@
 """Author full-raster oracle, seams, strength and bounded native rendering."""
 import json
+import argparse
 from pathlib import Path
 import time
 import numpy as np
@@ -11,10 +12,11 @@ from training_checks import finite_output
 
 
 def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--multiref',action='store_true');args=parser.parse_args()
     torch.set_num_threads(4)
-    out=ROOT/'outputs/adaptive-reference-20261113/spatial-render/native-v1';out.mkdir(parents=True,exist_ok=False);frozen=out/'frozen-source';frozen.mkdir()
+    out=ROOT/'outputs/adaptive-reference-20261113/spatial-render'/('native-multiref-v1' if args.multiref else 'native-v1');out.mkdir(parents=True,exist_ok=False);frozen=out/'frozen-source';frozen.mkdir()
     for name in ['spatial_render.py','check_spatial_render.py','spatial-render-protocol.md']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
-    engine=SpatialEngine();rng=np.random.default_rng(384);rows=[]
+    engine=SpatialEngine('multiref-v1' if args.multiref else 'app8');rng=np.random.default_rng(384);rows=[]
     data=ROOT/'outputs/adaptive-reference-20261113/tst100k/reserved-v2'
     records=json.loads((data/'results.json').read_text(encoding='utf-8'));item=next(r for r in records['cases'] if r['index']==67849)['triplet']
     def load(relative):

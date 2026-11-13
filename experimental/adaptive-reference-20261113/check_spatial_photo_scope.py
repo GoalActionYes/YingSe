@@ -3,6 +3,7 @@
 No tuning, no new independent-test claim, and no subjective quality pass gate.
 """
 import hashlib
+import argparse
 import json
 from pathlib import Path
 import sys
@@ -17,12 +18,14 @@ from spatial_render import SpatialEngine
 
 
 def main():
-    out=ROOT/'outputs/adaptive-reference-20261113/tst100k/native-photo-v1';out.mkdir(exist_ok=False)
+    parser=argparse.ArgumentParser();parser.add_argument('--multiref',action='store_true');args=parser.parse_args()
+    out=ROOT/'outputs/adaptive-reference-20261113/tst100k'/('native-photo-multiref-v1' if args.multiref else 'native-photo-v1');out.mkdir(exist_ok=False)
+    for name in ['spatial_render.py','check_spatial_photo_scope.py']:(out/name).write_bytes(Path(__file__).with_name(name).read_bytes())
     base=ROOT/'outputs/adaptive-reference-20261113/tst100k/cohort-v1'
     cohort=json.loads((base/'cohort.json').read_text(encoding='utf-8'))
     manifest=json.loads((base/'srgb-v1/manifest.json').read_text(encoding='utf-8'))
     if digest(base/'cohort.json')!=manifest['cohort_sha256']:raise ValueError('Changed cohort')
-    lookup={e['original_path']:e for e in manifest['files']};engine=SpatialEngine();results=[];permutation=None
+    lookup={e['original_path']:e for e in manifest['files']};engine=SpatialEngine('multiref-v1' if args.multiref else 'app8');results=[];permutation=None
     def read(name):
         entry=lookup[name];path=base/entry['prepared_path']
         if digest(path)!=entry['sha256']:raise ValueError('Changed prepared photo')

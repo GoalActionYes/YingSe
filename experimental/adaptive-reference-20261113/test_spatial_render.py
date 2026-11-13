@@ -29,5 +29,13 @@ class SpatialRenderTests(unittest.TestCase):
             with self.assertRaises(ValueError):prepared.apply(rgb,strength)
         with self.assertRaises(ValueError):api.coordinates(4,10,9,12,torch.ones(1,3,4))
 
+    def test_candidate_is_explicit_and_default_checkpoint_stays_fixed(self):
+        api=self.api();default,sha=api.checkpoint_for('app8');candidate,new_sha=api.checkpoint_for('multiref-v1')
+        self.assertEqual(default.name,'epoch-8.pth');self.assertEqual(sha,api.CHECKPOINT_SHA)
+        self.assertEqual(candidate.name,'epoch-6.pth');self.assertEqual(new_sha,'d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9')
+        self.assertNotEqual(default,candidate)
+        for invalid in ['unknown','../outside.pth',None]:
+            with self.assertRaises(ValueError):api.checkpoint_for(invalid)
+
 
 if __name__=='__main__':unittest.main()

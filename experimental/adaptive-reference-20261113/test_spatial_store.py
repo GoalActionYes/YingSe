@@ -47,6 +47,17 @@ class SpatialStoreTests(unittest.TestCase):
             changed=api.SpatialStore(root/'data',FakeEngine(),identity_tag='two')
             with self.assertRaises(ValueError):changed.get_prepared(record['id'])
 
+    def test_different_checkpoint_profiles_cannot_reuse_cached_grid(self):
+        api=self.api()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);image=root/'source.png';Image.new('RGB',(32,32)).save(image)
+            first=FakeEngine();first.checkpoint_sha='old-fixed-checkpoint'
+            second=FakeEngine();second.checkpoint_sha='new-fixed-checkpoint'
+            store=api.SpatialStore(root/'data',first);a=store.add_media(image);record=store.analyze(a['id'],a['id'])
+            changed=api.SpatialStore(root/'data',second)
+            self.assertNotEqual(store.engine_tag,changed.engine_tag)
+            with self.assertRaises(ValueError):changed.get_prepared(record['id'])
+
     def test_supported_rgba_gray_and_palette_inputs_decode_to_rgb(self):
         api=self.api()
         with tempfile.TemporaryDirectory() as directory:

@@ -28,7 +28,7 @@ class SpatialStore(Store):
         super().__init__(root);self.engine=engine;self.render_lock=threading.RLock();self.preview_lock=threading.RLock();self.preview_cache=OrderedDict()
         self.identity_lock=threading.RLock();self.probe_cache=OrderedDict()
         names=['spatial_render.py','spatial_store.py','triplet_color.py','training_checks.py']
-        self.engine_tag=identity_tag or hashlib.sha256((CHECKPOINT_SHA+''.join(pipeline.file_sha256(Path(__file__).with_name(n)) for n in names)).encode()).hexdigest()
+        self.engine_tag=identity_tag or hashlib.sha256((getattr(engine,'checkpoint_sha',CHECKPOINT_SHA)+''.join(pipeline.file_sha256(Path(__file__).with_name(n)) for n in names)).encode()).hexdigest()
 
     def _identity(self,target,reference,time_seconds):
         # Callers supply freshly SHA-verified owned media. Reuse only the
