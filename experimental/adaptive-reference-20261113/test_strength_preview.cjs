@@ -1,6 +1,6 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {blendPixels,StrengthPreview}=require('./spatial_strength_preview.js');
+const {blendPixels,StrengthPreview,workerBasis}=require('./spatial_strength_preview.js');
 
 test('mixes opaque pixels with even rounding and rejects invalid input',()=>{
  const a=new Uint8ClampedArray([0,127,255,255]),b=new Uint8ClampedArray([255,128,0,255]);
@@ -36,6 +36,50 @@ test('basis decoding after an authoritative response never repaints that respons
  let release;const wait=new Promise(resolve=>release=resolve),r=rig(async uri=>{await wait;return decode(uri);});
  r.p.needsBasis('one',1);const pending=r.p.accept('one',1,'before',pair);r.p.serverApplied();release();await pending;r.flush();assert.equal(r.painted.length,0);
  r.state.strength=.9;r.p.render();r.flush();assert.deepEqual(r.painted[0],[180,90,0,255]);
+});
+
+test('manual worker coalesces changes, rejects stale output, and defers to final server frame',async()=>{
+ const r=rig(decode),sent=[];let worker;
+ r.p.workerFactory=()=>worker={postMessage(m){sent.push(m);},terminate(){this.stopped=true;}};
+ r.p.needsBasis('one',1);await r.p.accept('one',1,'before',pair);r.flush();
+ r.state.neutral=false;r.state.adjustments={basic:{brightness:12}};r.state.version++;
+ assert.equal(r.p.render(),true);r.flush();assert.equal(sent[0].type,'basis');const first=sent.at(-1);
+ r.state.version++;r.state.adjustments={basic:{brightness:35}};r.p.render();r.flush();assert.equal(sent.length,2);
+ const count=r.painted.length;
+ worker.onmessage({data:{type:'result',id:first.id,width:1,height:1,pixels:new Uint8ClampedArray([1,2,3,255])}});
+ assert.equal(r.painted.length,count);r.flush();const latest=sent.at(-1);assert.equal(latest.adjustments.basic.brightness,35);
+ worker.onmessage({data:{type:'result',id:latest.id,width:1,height:1,pixels:new Uint8ClampedArray([4,5,6,255])}});
+ assert.deepEqual(r.painted.at(-1),[4,5,6,255]);
+ r.state.version++;r.p.render();r.flush();const final=sent.at(-1);r.p.serverApplied();
+ worker.onmessage({data:{type:'result',id:final.id,width:1,height:1,pixels:new Uint8ClampedArray([9,9,9,255])}});
+ assert.deepEqual(r.painted.at(-1),[4,5,6,255]);
+ r.p.clear();assert.equal(worker.stopped,true);
+});
+
+test('manual worker failure keeps neutral preview working and falls back for adjustments',async()=>{
+ const r=rig(decode);let worker;
+ r.p.workerFactory=()=>worker={postMessage(){},terminate(){}};
+ r.p.needsBasis('one',1);await r.p.accept('one',1,'before',pair);r.flush();r.state.neutral=false;r.state.adjustments={};r.state.version++;
+ r.p.render();r.flush();worker.onerror({preventDefault(){}});assert.equal(r.p.render(),false);
+ r.state.neutral=true;r.state.strength=.9;assert.equal(r.p.render(),true);r.flush();assert.deepEqual(r.painted.at(-1),[180,90,0,255]);
+});
+
+test('replaced materials terminate pending manual work and ignore its late messages',async()=>{
+ const r=rig(decode);let old;
+ r.p.workerFactory=()=>old={postMessage(){},terminate(){this.stopped=true;}};
+ r.p.needsBasis('one',1);await r.p.accept('one',1,'before',pair);r.flush();r.state.neutral=false;r.state.adjustments={};r.state.version++;
+ r.p.render();r.flush();const count=r.painted.length;
+ r.state.mapping='two';r.state.generation++;r.p.clear();assert.equal(old.stopped,true);
+ old.onmessage({data:{type:'result',id:1,width:1,height:1,pixels:new Uint8ClampedArray([9,9,9,255])}});old.onmessageerror();
+ assert.equal(r.painted.length,count);assert.equal(r.p.manualFailed,false);
+});
+
+test('worker basis bounds landscape and portrait dimensions and keeps source byte samples',()=>{
+ for(const [width,height] of [[960,640],[426,640],[1440,1],[1,960]]){
+  const pixels=new Uint8ClampedArray(width*height*4);for(let i=0;i<pixels.length;i+=4)pixels.set([i%255,20,90,255],i);
+  const b=workerBasis({width,height,before:pixels,full:pixels});assert.ok(b.width<=480&&b.height<=320);assert.equal(b.before.length,b.width*b.height*4);
+  const sx=Math.floor(.5*width/b.width),sy=Math.floor(.5*height/b.height);assert.deepEqual([...b.before.subarray(0,4)],[...pixels.subarray((sy*width+sx)*4,(sy*width+sx)*4+4)]);
+ }
 });
 
 if(process.env.SPATIAL_APP_JS){

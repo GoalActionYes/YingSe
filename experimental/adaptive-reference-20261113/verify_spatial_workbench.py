@@ -24,7 +24,7 @@ def main():
     if not args.run or Path(args.run).name!=args.run or args.run in ('.','..'):raise ValueError('Run must be a single directory name')
     out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench'/args.run;out.mkdir(parents=True,exist_ok=False)
     frozen=out/'frozen-source';frozen.mkdir()
-    for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','spatial_render.py','spatial_build.py','temporal_grid.py','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
+    for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','spatial_render.py','spatial_build.py','temporal_grid.py','spatial_strength_preview.js','spatial_manual_preview.js','spatial_manual_worker.js','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
     server=make_spatial_workbench(out/'data',enhanced=args.multiref);thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start();url=f'http://127.0.0.1:{server.server_port}';report={}
     def api(path,data=None):
         req=Request(url+path,data=None if data is None else json.dumps(data).encode(),headers={'Content-Type':'application/json'})
@@ -52,6 +52,13 @@ def main():
         health=api('/api/health');assert health['variant']==('multiref-temporal-v1' if args.multiref else 'app8')
         report['variant']=health['variant'];report['checkpoint_sha256']=server.store.engine.checkpoint_sha
         html=api('/').decode();assert 'option value="cube"' not in html and '课程研究' in html
+        if args.multiref:
+            for asset in ['/spatial-strength-preview.js','/spatial-manual-preview.js','/spatial-manual-worker.js']:
+                with urlopen(url+asset,timeout=30) as response:
+                    assert response.headers.get_content_type()=='application/javascript'
+                    assert "script-src 'self'" in response.headers['Content-Security-Policy']
+                    assert response.read()==server.assets[asset][0]
+            report['worker_assets_served_with_self_script_policy']=True
         data=ROOT/'outputs/adaptive-reference-20261113/tst100k/reserved-v2';records=json.loads((data/'results.json').read_text())
         item=next(r for r in records['cases'] if r['index']==67849)['triplet']
         target_path=out/'target.png';ref_path=out/'reference.png'
@@ -65,6 +72,19 @@ def main():
         report['rgba_gray_http']=True
         start=time.perf_counter()
         mapping=api('/api/analyze',dict(target_id=target['id'],reference_id=reference['id']));mid=mapping['mapping_id'];report['analysis_seconds']=time.perf_counter()-start
+        if args.multiref:
+            manual_dir=out/'manual-oracles';manual_dir.mkdir();manual_cases=[]
+            samples=[('basic',dict(basic=dict(temperature=24,brightness=16,contrast=20))),
+                ('hsl',dict(hsl=dict(red=[12,20,-10],blue=[-8,-15,12]))),
+                ('curves',dict(curves=dict(rgb=[[0,0],[.25,.19],[.7,.8],[1,1]],b=[[0,.03],[1,1]])))]
+            combined=normalize(samples[0][1]);combined['hsl']=normalize(samples[1][1])['hsl'];combined['curves']=normalize(samples[2][1])['curves'];samples.append(('combined',combined))
+            for name,settings in samples:
+                for strength in [0,.37,1]:
+                    response=api('/api/preview',dict(mapping_id=mid,strength=strength,adjustments=settings,interactive=True,include_basis=True))
+                    prefix=name+'-'+str(strength);arrays={k:decode(response[k]) for k in ['before','after']};arrays['full']=decode(response['basis']['full'])
+                    for kind,array in arrays.items():np.concatenate([array,np.full((*array.shape[:2],1),255,np.uint8)],axis=2).tofile(manual_dir/(prefix+'-'+kind+'.rgba'))
+                    manual_cases.append(dict(prefix=prefix,strength=strength,settings=normalize(settings),width=arrays['before'].shape[1],height=arrays['before'].shape[0]))
+            (manual_dir/'cases.json').write_text(json.dumps(manual_cases),encoding='utf-8');report['real_gpu_http_manual_oracles']=len(manual_cases)
         previews={};timings=[]
         for strength in [0.,.5,1.,.3,.6,.9]:
             start=time.perf_counter();result=api('/api/preview',dict(mapping_id=mid,strength=strength,interactive=True,include_basis=args.multiref and strength==0));timings.append(time.perf_counter()-start);previews[strength]=decode(result['after'])

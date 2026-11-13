@@ -26,6 +26,10 @@ class EnhancedWorkbenchTests(unittest.TestCase):
                 self.assertNotEqual(old.build_tag,enhanced.build_tag)
                 self.assertEqual(enhanced.build_tag,build_tag(enhanced=True))
                 self.assertIn('自适应参考调色',enhanced.assets['/'][0].decode())
+                for asset in ['/spatial-manual-worker.js','/spatial-manual-preview.js']:
+                    self.assertIn(asset,enhanced.assets);self.assertNotIn(asset,old.assets)
+                self.assertIn('adjustments:controls.snapshot()',enhanced.assets['/app.js'][0].decode())
+                self.assertIn('manual-change\',()=>{ fastStrength.render();',enhanced.assets['/app.js'][0].decode())
                 self.assertNotEqual(old.store.root,enhanced.store.root)
             finally:old.server_close();enhanced.server_close()
 

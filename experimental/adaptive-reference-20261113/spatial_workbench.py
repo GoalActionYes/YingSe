@@ -31,13 +31,14 @@ def strength_preview_script(js):
         js=js.replace(old,new)
     once('const status =',"""const fastStrength=window.SpatialStrengthPreview?new window.SpatialStrengthPreview({
       target:$('after'),
-      current:()=>({mapping:state.mapping,generation:state.generation,strength:effectiveStrength(),neutral:controls.count()===0,version:manualVersion}),
-      onPaint:()=>{$('after-placeholder').hidden=true;$('preview-state').textContent=`强度 ${Math.round(effectiveStrength()*100)} · 预览中`;}
+      current:()=>({mapping:state.mapping,generation:state.generation,strength:effectiveStrength(),neutral:controls.count()===0,version:manualVersion,adjustments:controls.snapshot()}),
+      onPaint:()=>{$('after-placeholder').hidden=true;$('preview-state').textContent=controls.count()?`微调 ${controls.count()} 项 · 预览中`:`强度 ${Math.round(effectiveStrength()*100)} · 预览中`;}
     }):{clear(){},render(){return false;},needsBasis(){return false;},accept(){},serverApplied(){}};
     const status =""")
     once('++state.generation; ++pickVersion;','fastStrength.clear(); ++state.generation; ++pickVersion;')
     once('function requestPreview() {','function requestPreview() {\n  fastStrength.render();')
     once('function strengthChanged(){','function strengthChanged(){ fastStrength.render();')
+    once("window.addEventListener('manual-change',()=>{","window.addEventListener('manual-change',()=>{ fastStrength.render();")
     once('interactive:true});','interactive:true,include_basis:fastStrength.needsBasis(request.mapping,request.generation)});')
     check='      if(request.generation!==state.generation || request.mapping!==state.mapping || request.strength!==effectiveStrength() || request.manualVersion!==manualVersion)continue;'
     once(check,"      if(result.basis && request.generation===state.generation && request.mapping===state.mapping)fastStrength.accept(request.mapping,request.generation,result.before,result.basis);\n"+check)
@@ -74,7 +75,9 @@ def assets(enhanced=False):
         html=html.replace('<script src="/app.js" defer></script>','<script src="/spatial-strength-preview.js" defer></script><script src="/app.js" defer></script>')
         js=strength_preview_script(js)
     result={'/':(html.encode(),'text/html; charset=utf-8'),'/app.js':(js.encode(),'application/javascript; charset=utf-8')}
-    if enhanced:result['/spatial-strength-preview.js']=(Path(__file__).with_name('spatial_strength_preview.js').read_bytes(),'application/javascript; charset=utf-8')
+    if enhanced:
+        for name in ['strength-preview','manual-worker','manual-preview']:
+            result['/spatial-'+name+'.js']=(Path(__file__).with_name('spatial_'+name.replace('-','_')+'.js').read_bytes(),'application/javascript; charset=utf-8')
     return result
 
 
