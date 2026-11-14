@@ -1,5 +1,5 @@
 {
-  "scope": "Previously consumed natural32; 1developerAI,0humanraters; diagnostic not quality acceptance",
+  "scope": "Previously consumed natural32, current13 versus priorApp8; 1developerAI/0humans; NOT a legacy-global comparison or quality acceptance",
   "review": {
     "scope": "Single AI subjective diagnostic, 0 human raters; consumed samples, no acceptance gate passed",
     "summary": {
@@ -676,5 +676,182 @@
   "source_sha256": {
     "build_natural_review.py": "9d72d43b1729952d461e50e5d1b631c0c548bd37a5b11cb234c782a105da1881",
     "build_human_review.py": "549bcc2da22db1427c8f9849a169d53dc82f92730f19dab7bcb52c03023887fb"
+  },
+  "method_identity_correction": {
+    "candidate": "multiref_epoch6",
+    "before": "prior_app8_epoch8",
+    "current": "legacy_global_pipeline",
+    "verified_producer_sha256": "592e1793a03ffae6c2b02aae00a0b5560e3f33d6bedf155a5fb16dc800be6245",
+    "correction": "The reviewed panels used candidate versus before, hence current13 versus priorApp8, NOT legacy-global. Votes and panel pixels unchanged. Original raw vote labels preserved.",
+    "native_legacy_reproduction": {
+      "scope": "Reproduce historical legacy-global native analysis, then application to256 input; not same condition as analyzing already-resized256 target",
+      "cases": [
+        {
+          "index": 80441,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 32004,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 37184,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 67770,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 46837,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 64590,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 86427,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 6101,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 41812,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 85245,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 91772,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 48828,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 49515,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 25833,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 43898,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 38555,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 93208,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 4458,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 21840,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 47832,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 19797,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 55597,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 41329,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 20262,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 93056,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 35034,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 15276,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 30730,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 40671,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 52069,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 20932,
+          "max_rgb_error": 0
+        },
+        {
+          "index": 98904,
+          "max_rgb_error": 0
+        }
+      ],
+      "matched": 32,
+      "maximum": 0
+    }
+  },
+  "corrected_material_manifest": {
+    "scope": "Previously consumed natural32, anonymous contact sheets; no ground-truth panel, no new model inference or independent test",
+    "method_roles": {
+      "candidate": "multiref_epoch6",
+      "current": "legacy_global_pipeline",
+      "before": "prior_app8_epoch8"
+    },
+    "baseline_label": "before",
+    "baseline_role": "prior_app8_epoch8",
+    "dataset_sha256": "e6e6e962c8993f5f8320bbc967d6f63c4d38fdcaf7a08e66e799373bd7015931",
+    "generator_sha256": "bc15b1c149b9c2121a2676d9a0f808b4bbfb5c7e308fe9ab4a26592d8c210c9e",
+    "cases": 32,
+    "sheets": {
+      "sheet-1.png": "b5921acc33a6c2e35da797f3719d9281d6d4f72f75ba433e0cad3ca76e30bf63",
+      "sheet-2.png": "9064bbe3b1fe0bd03da7aaa6bff2a583b7cbb0d22410e423c5243c91b9018263",
+      "sheet-3.png": "dc66a7614f9c447d35b22078dccdb6895c1737847a55134556e03f22b2df634f",
+      "sheet-4.png": "00a0eec5b9a5239dce4c6f5fd978e16f73e04a5071608c7a7f4a2e62f2919aca",
+      "sheet-5.png": "8c8bb5d1beab4d5e47b27c42da66db8fff0337800ba09f5ec9bfce6bed82a5f6",
+      "sheet-6.png": "3dbfdbd6c916e818c267ddef78105c36d49558d52c3a695b9b36b15a1e6d0878",
+      "sheet-7.png": "d14fb379c2cedd9ce9a6b747670c2d485df8db1c7b0760cb4a27b2ee8a8a9ba3",
+      "sheet-8.png": "0761a02a3492b7a6a54165a0ec957ceddee9ebf6376454544a26e11b96ce7717"
+    }
+  },
+  "corrected_material_pixels_unchanged": true,
+  "corrected_page_sha256": "d45beec9bce524167b9a469266b12935cb67275652f9dacd4b011260f87f3927",
+  "corrected_page_automated_test": {
+    "passed": true,
+    "initial_votes": 0,
+    "partial_completed": 1,
+    "full_completed": 32,
+    "unsure_preserved": true,
+    "local_restore": true,
+    "errors": [],
+    "scope": "Automated form test only; zero human evaluation responses"
   }
 }

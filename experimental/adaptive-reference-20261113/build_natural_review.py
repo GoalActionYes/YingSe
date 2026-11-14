@@ -5,11 +5,20 @@ from PIL import Image,ImageDraw,ImageFont,ImageOps
 from independent_coco import ROOT,digest
 
 
+def method_roles(manifest):
+    # Roles come from the hash-verified producer, never colloquial filenames.
+    if manifest.get('before_control')!='Current App epoch8' or manifest.get('source_sha256',{}).get('check_triplet_reserved.py')!='592e1793a03ffae6c2b02aae00a0b5560e3f33d6bedf155a5fb16dc800be6245':
+        raise ValueError('Review frozen producer roles before building a comparison')
+    return dict(candidate='multiref_epoch6',current='legacy_global_pipeline',before='prior_app8_epoch8')
+
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);parser.add_argument('--current-outputs',type=Path);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);parser.add_argument('--current-outputs',type=Path);parser.add_argument('--baseline',choices=['current','before'],default='current');args=parser.parse_args()
     if not args.run or Path(args.run).name!=args.run or args.run in ('.','..'):raise ValueError('Expected single run name')
     base=ROOT/'outputs/adaptive-reference-20261113/tst100k/reserved-multiref-v1'
     manifest=json.loads((base/'results.json').read_text(encoding='utf-8'))
+    roles=method_roles(manifest)
+    if digest(base/'frozen-source/check_triplet_reserved.py')!=manifest['source_sha256']['check_triplet_reserved.py']:raise ValueError('Changed producer snapshot')
     out=ROOT/'outputs/adaptive-reference-20261113/natural-review'/args.run;out.mkdir(parents=True,exist_ok=False)
     font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',16);rng=random.Random(20261115)
     current={}
@@ -19,7 +28,7 @@ def main():
     for batch in range(8):
         canvas=Image.new('RGB',(1024,4*292),'#22252a');draw=ImageDraw.Draw(canvas)
         for position,row in enumerate(cases[batch*4:batch*4+4]):
-            alias=f'C{batch*4+position+1:02d}';methods=['candidate','before'];rng.shuffle(methods)
+            alias=f'C{batch*4+position+1:02d}';methods=['candidate',args.baseline];rng.shuffle(methods)
             paths=[base/row['outputs']['input']['path'],base/'srgb'/(row['triplet']['reference']+'.png')]+[base/row['outputs'][m]['path'] for m in methods]
             if args.current_outputs:
                 path=args.current_outputs/(str(row['index'])+'.png')
@@ -35,7 +44,7 @@ def main():
             key.append(dict(alias=alias,index=row['index'],A=methods[0],B=methods[1],input_sha256=[digest(p) for p in paths]))
         canvas.save(out/f'sheet-{batch+1}.png')
     (out/'private-key.json').write_text(json.dumps(key,indent=2),encoding='utf-8')
-    (out/'manifest.json').write_text(json.dumps(dict(scope='Previously consumed natural32, anonymous contact sheets; no ground-truth panel, no new model inference or independent test',dataset_sha256=digest(base/'results.json'),generator_sha256=digest(Path(__file__)),cases=32,sheets={p.name:digest(p) for p in out.glob('sheet-*.png')}),indent=2),encoding='utf-8')
+    (out/'manifest.json').write_text(json.dumps(dict(scope='Previously consumed natural32, anonymous contact sheets; no ground-truth panel, no new model inference or independent test',method_roles=roles,baseline_label=args.baseline,baseline_role=roles[args.baseline],dataset_sha256=digest(base/'results.json'),generator_sha256=digest(Path(__file__)),cases=32,sheets={p.name:digest(p) for p in out.glob('sheet-*.png')}),indent=2),encoding='utf-8')
     print(json.dumps(dict(cases=32,sheets=8,scope='Anonymous review materials generated; ratings not performed')))
 
 
