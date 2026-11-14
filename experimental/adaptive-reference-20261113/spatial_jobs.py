@@ -9,8 +9,14 @@ from temporal_grid import TemporalGrid
 from spatial_render import finish_spatial
 
 
-def grade_video_frame(engine,rgb,reference,strength,adjustments,temporal=None):
-    if strength==0 or np.array_equal(rgb,reference):
+def grade_video_frame(engine,rgb,reference,strength,adjustments,temporal=None,fixed_prepared=None):
+    if strength==0:
+        graded=rgb
+        if temporal is not None:temporal.reset()
+    elif fixed_prepared is not None:
+        graded=fixed_prepared.apply(rgb,1)
+        if temporal is not None:temporal.reset()
+    elif np.array_equal(rgb,reference):
         graded=rgb
         if temporal is not None:temporal.reset()
     else:
@@ -58,6 +64,9 @@ class SpatialJobs(JobManager):
                 Image.fromarray(output).save(partial,format='PNG')
                 settings=dict(width=rgb.shape[1],height=rgb.shape[0],format='RGB8 PNG',color='prepared sRGB',lossless=True)
             else:
+                from aligned_spatial import PreparedAligned
+                selected=self.store.get_prepared(job['mapping_id'])
+                fixed=selected if isinstance(selected,PreparedAligned) else None
                 first,_=self.store.decode(source,0);height,width=first.shape[:2]
                 reference=self.store.get_media(self.store.get_mapping_record(job['mapping_id'])['reference_id']);ref,_=self.store.decode(reference)
                 duration=source['metadata'].get('duration_seconds',0)
@@ -70,7 +79,7 @@ class SpatialJobs(JobManager):
                     self.processes[identifier]=decoder
                     encoder=subprocess.Popen(encoder_args,stdin=subprocess.PIPE,stdout=subprocess.DEVNULL,stderr=log,creationflags=flags)
                     self.encoders[identifier]=encoder
-                count=0;frame_size=width*height*3;temporal=self.temporal_state()
+                count=0;frame_size=width*height*3;temporal=self.temporal_state() if fixed is None else None
                 while True:
                     with self.lock:
                         if job['status']=='cancelled':return
@@ -83,7 +92,7 @@ class SpatialJobs(JobManager):
                     if len(raw)!=frame_size:raise ValueError('视频解码帧不完整')
                     rgb=np.frombuffer(raw,np.uint8).reshape(height,width,3)
                     with self.store.render_lock:
-                        output=grade_video_frame(self.store.engine,rgb,ref,job['strength'],job['adjustments'],temporal)
+                        output=grade_video_frame(self.store.engine,rgb,ref,job['strength'],job['adjustments'],temporal,fixed)
                     encoder.stdin.write(output.tobytes());count+=1
                     with self.lock:
                         job['progress']=min(.99,count/max(1,duration*30))
@@ -92,7 +101,7 @@ class SpatialJobs(JobManager):
                 if decoder.wait(timeout=30) or encoder.wait(timeout=120):raise ValueError('视频编解码失败，请查看导出记录')
                 if count==0:raise ValueError('视频未解码出任何帧')
                 settings=dict(width=width,height=height,frames=count,fps=30,frame_rate_policy='Resampled to constant 30fps',
-                    algorithm='Recompute spatial grid per frame from constant reference',audio='First optional source audio track, AAC',
+                    algorithm='Certified same-frame fixed affine LUT' if fixed is not None else 'Recompute spatial grid per frame from constant reference',audio='First optional source audio track, AAC',
                     temporal=temporal.settings() if temporal is not None else None,
                     encoding='Lossy H264 CRF18/YUV420p, SDR BT709 limited',output_metadata=media.probe_media(partial))
             with self.lock:

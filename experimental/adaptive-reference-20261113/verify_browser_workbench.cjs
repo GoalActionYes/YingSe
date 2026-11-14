@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const [url, fixtures, out, executablePath, modulePath] = process.argv.slice(2);
+const [url, fixtures, out, executablePath, modulePath, mode] = process.argv.slice(2);
 const {chromium} = require(modulePath);
 
 async function main() {
@@ -107,6 +107,10 @@ async function main() {
     await page.locator('#frame-time').fill('1');
     await page.click('#frame-load');
     await settled(); await decoded();
+    if(mode==='aligned'){
+      await page.setInputFiles('#reference-file',path.join(fixtures,'video-reference.png'));
+      await settled(); await decoded();
+    }
     report.video_import_and_frame_select=true;
     await page.screenshot({path:path.join(out,'video.png'),fullPage:true});
     report.mp4_export=await exportFile('mp4');

@@ -84,6 +84,7 @@ def main():
     parser.add_argument('--fixtures', required=True, type=Path)
     parser.add_argument('--browser-executable', required=True, type=Path)
     parser.add_argument('--playwright-module', required=True, type=Path)
+    parser.add_argument('--require-aligned', action='store_true')
     args = parser.parse_args()
     if not args.run or Path(args.run).name != args.run or args.run in ('.', '..'):
         raise ValueError('Run must be a single directory name')
@@ -110,6 +111,7 @@ def main():
             node, str(Path(__file__).with_suffix('.cjs')),
             f'http://127.0.0.1:{server.server_port}', str(fixtures), str(out),
             str(args.browser_executable.resolve()), str(args.playwright_module.resolve()),
+            'aligned' if args.require_aligned else 'ordinary',
         ]
         try:
             result = run_owned_browser(command)
@@ -124,6 +126,11 @@ def main():
             raise RuntimeError(f'Browser verification failed; inspect {out}/browser.stderr.log')
         report['browser'] = json.loads((out / 'browser-results.json').read_text(encoding='utf-8'))
         png_settings = report['browser']['png_export']['settings']
+        if args.require_aligned:
+            for kind in ('png_export','mp4_export'):
+                mapping=server.store.get_mapping_record(report['browser'][kind]['settings']['mapping_id'])
+                assert mapping['diagnostics']['certified_aligned']['accepted'], kind
+            report['certified_aligned_photo_and_video']=True
         source, _ = server.store.decode(server.store.get_media(png_settings['media_id']))
         expected = server.store.render(png_settings['mapping_id'], source,
                                        png_settings['strength'], png_settings['adjustments'])

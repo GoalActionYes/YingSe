@@ -21,13 +21,15 @@ from reference_color_app.lut import _strength
 from learned_store import identity_cube
 from spatial_render import PreparedSpatial,CHECKPOINT_SHA,finish_spatial
 from triplet_color import to_srgb
+from aligned_spatial import PreparedAligned
+from reference_color_app.aligned_reference import fit_aligned,make_mapping
 
 
 class SpatialStore(Store):
     def __init__(self,root,engine,identity_tag=None):
         super().__init__(root);self.engine=engine;self.render_lock=threading.RLock();self.preview_lock=threading.RLock();self.preview_cache=OrderedDict()
         self.identity_lock=threading.RLock();self.probe_cache=OrderedDict()
-        names=['spatial_render.py','spatial_store.py','triplet_color.py','training_checks.py']
+        names=['spatial_render.py','spatial_store.py','triplet_color.py','training_checks.py','aligned_spatial.py']
         self.engine_tag=identity_tag or hashlib.sha256((getattr(engine,'checkpoint_sha',CHECKPOINT_SHA)+''.join(pipeline.file_sha256(Path(__file__).with_name(n)) for n in names)).encode()).hexdigest()
 
     def _identity(self,target,reference,time_seconds):
@@ -82,12 +84,18 @@ class SpatialStore(Store):
                 with self.render_lock:prepared=self.engine.prepare(rgb,ref)
                 grid=prepared.grid.detach().cpu().numpy().astype(np.float32)
                 cube=identity_cube();layers=np.stack([cube,cube])
+                aligned=dict(accepted=False,reason='Not enabled for this profile')
+                if getattr(self.engine,'profile',None)=='multiref-v1' and not np.array_equal(rgb,ref):
+                    aligned=fit_aligned(rgb,ref)
+                    if aligned['accepted']:layers=make_mapping(aligned).layers
                 diagnostics=dict(engine='spatial',exact_identity=bool(np.array_equal(rgb,ref)),model_identity=self.engine_tag,
+                    certified_aligned=aligned,
                     grid_sha256=hashlib.sha256(grid.tobytes()).hexdigest(),grid_shape=list(grid.shape),
                     mapping_scope='Spatial bilateral grid; identity LUT is a project transport placeholder, never an export',
                     strength_policy='Linear original/graded blend; manual controls applied afterwards',
                     research_scope='Noncommercial academic prototype',analysis=prepared.diagnostics,
                     inputs=dict(target=dict(metadata=meta,sha256=target['sha256']),reference=dict(metadata=rmeta,sha256=reference['sha256'])))
+                if aligned['accepted']:diagnostics['mapping_scope']='Certified same-frame affine LUT; independent product policy, not recovered native logic'
                 temp=self.root/'cache'/('.'+_id()+'.npz')
                 try:
                     np.savez_compressed(temp,layers=layers,grid=grid);os.replace(temp,self.root/'cache'/(key+'.npz'))
@@ -116,6 +124,9 @@ class SpatialStore(Store):
 
     def get_prepared(self,mapping_id):
         grid,record=self._validated_grid(mapping_id)
+        if record['diagnostics'].get('certified_aligned',{}).get('accepted'):
+            mapping=self._load(record['cache_key'],record['identity'])
+            return PreparedAligned(self.engine,torch.from_numpy(grid).to(self.engine.device),record['diagnostics']['analysis'],mapping)
         return PreparedSpatial(self.engine,torch.from_numpy(grid).to(self.engine.device),record['diagnostics']['analysis'])
 
     def render(self,mapping_id,rgb,strength,adjustments=None,preview=False,verified_target=None):
@@ -130,7 +141,10 @@ class SpatialStore(Store):
                     graded=self.preview_cache.pop(key);self.preview_cache[key]=graded
         if graded is None:
             with self.render_lock:
-                prepared=PreparedSpatial(self.engine,torch.from_numpy(grid).to(self.engine.device),record['diagnostics']['analysis'])
+                if record['diagnostics'].get('certified_aligned',{}).get('accepted'):
+                    mapping=self._load(record['cache_key'],record['identity'])
+                    prepared=PreparedAligned(self.engine,grid,record['diagnostics']['analysis'],mapping)
+                else:prepared=PreparedSpatial(self.engine,torch.from_numpy(grid).to(self.engine.device),record['diagnostics']['analysis'])
                 graded=prepared.apply(rgb,1)
             if preview:
                 with self.preview_lock:

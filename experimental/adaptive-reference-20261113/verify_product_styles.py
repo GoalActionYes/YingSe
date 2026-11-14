@@ -15,6 +15,7 @@ from multiref_response import response_metrics
 from tone_response import tone_response
 from spatial_render import SpatialEngine
 from spatial_store import SpatialStore
+from aligned_spatial import PreparedAligned
 from spatial_jobs import grade_video_frame
 from temporal_grid import TemporalGrid
 from reference_color_app.pipeline import analyze, algorithm_fingerprint
@@ -86,7 +87,7 @@ def main():
     frozen = out / 'frozen-source'
     frozen.mkdir()
     for name in ('verify_product_styles.py', 'product-style-acceptance-protocol.md',
-                 'reference_feature_assay.py', 'spatial_render.py', 'spatial_store.py',
+                 'reference_feature_assay.py', 'spatial_render.py', 'spatial_store.py','aligned_spatial.py',
                  'spatial_jobs.py', 'temporal_grid.py', 'tone_response.py', 'multiref_response.py'):
         (frozen / name).write_bytes(Path(__file__).with_name(name).read_bytes())
     data = ROOT / 'outputs/adaptive-reference-20261113/tst100k/reserved-multiref-v1'
@@ -157,13 +158,17 @@ def main():
         ref_path = video_dir / (operation + '-reference.png')
         save(reference, ref_path)
         mapping = analyze(first, ref_path)
+        first_record=store.add_media(first);ref_record=store.add_media(ref_path)
+        product_record=store.analyze(first_record['id'],ref_record['id'])
+        selected_prepared=store.get_prepared(product_record['id'])
+        fixed=selected_prepared if isinstance(selected_prepared,PreparedAligned) else None
         temporal = TemporalGrid(relative_cut=True)
         outputs = dict(adaptive=[], global_=[], truth=[])
         rows = []
         for index, frame in enumerate(frames):
             truth = transform(frame, operation)
             start = time.perf_counter()
-            adaptive = grade_video_frame(engine, frame, reference, 1, None, temporal)
+            adaptive = grade_video_frame(engine, frame, reference, 1, None, temporal,fixed)
             seconds = time.perf_counter() - start
             baseline = apply_mapping(frame, mapping, 1)
             outputs['adaptive'].append(adaptive)
@@ -182,7 +187,8 @@ def main():
                                             temporal_residual_step_p95=float(np.quantile(steps, .95)))
         files = {name.rstrip('_'): encode(images, video_dir / (operation + '-' + name.rstrip('_') + '.mp4')) for name, images in outputs.items()}
         report['videos'].append(dict(operation=operation, frames=90, fps=30, source_sha256=digest(video),
-                                     reference_sha256=digest(ref_path), temporal=temporal.settings(),
+                                     certified_fixed_mapping=fixed is not None,
+                                     reference_sha256=digest(ref_path), temporal=temporal.settings() if fixed is None else None,
                                      rows=rows, summary=summary, files=files))
         print(json.dumps(dict(video=operation, summary=summary)), flush=True)
     report['image_summary'] = {operation: {name: float(np.mean([row['metrics'][name]['rgb_mae'] for row in report['images'] if row['operation']==operation]))

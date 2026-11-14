@@ -52,6 +52,7 @@ def coordinates(width,height,start,stop,z):
 class SpatialEngine:
     def __init__(self,profile='app8'):
         torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
+        self.profile=profile
         checkpoint,self.checkpoint_sha=checkpoint_for(profile)
         if digest(checkpoint)!=self.checkpoint_sha:raise ValueError('Frozen spatial checkpoint changed')
         self.model,self.api,self.author=author_model()
