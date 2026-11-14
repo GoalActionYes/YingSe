@@ -1,0 +1,9 @@
+# Consumed-development reference-response geometry
+
+After completed coverage-v2 trial/audit, use every32same-target pair in the unchanged64dev set. Use selected checkpoints only: current13,originalC10,old-data control1,expanded4. No reselecting checkpoints,training,fresh images,threshold tuning or product promotion.
+
+Recheck prepared GT and saved selected PNG hashes. Recompute the existing paired RGB/delta/gain/tone values first. Add descriptive float64 geometry for actual change a=prediction1-prediction0 and expected change e=GT1-GT0: gain=dot(a,e)/dot(e,e),amplitude=norm(a)/norm(e),cosine=dot(a,e)/(norm(a)norm(e)),orthogonal_ratio=norm(a-gain*e)/norm(e). Zero expected energy gives undefined normalized measures; zero actual energy gives zero gain/amplitude/orthogonal and undefined cosine. No semantic interpretation of vector alignment.
+
+Synthetic tests must distinguish exact/ignored/reversed/overscaled/orthogonal responses,zeroGT/invalidRGB. Report all32pairs and original18improve/11regress/3nearzero strata unchanged using the earlier±0.1delta-error rule. Within regression stratum report signed gain/orthogonal changes vsoriginalC10 and existing tone-direction errors. These are descriptions, not a causal test or model selection metric. Negative gain is an opposing projected component, not proof the whole image/style is inverted.
+
+Preserve fixed first2,worst/best delta changes and all11regression groups for optional private paired contact sheets. Every sample was consumed previously; no independent acceptance or natural-video claim. Any GT-based inference about possible improvements remains diagnostic and must not become an inference engine that secretly usesGT. Public summaries omit media,asset paths and vectors. Only consider a new hypothesis after examining the complete distribution and failures; do not launch another training recipe in this diagnostic.
