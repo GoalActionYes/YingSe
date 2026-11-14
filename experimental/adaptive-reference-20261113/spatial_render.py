@@ -84,6 +84,23 @@ class PreparedSpatial:
     def __init__(self,engine,grid,diagnostics):self.engine,self.grid,self.diagnostics=engine,grid,diagnostics
 
     @torch.inference_mode()
+    def byte_output(self,rgb,chunk_rows=128):
+        """Same full-strength RGB8 output, with quantization before host transfer."""
+        validate_rgb(rgb)
+        if type(chunk_rows)!=int or chunk_rows<1:raise ValueError('Positive integer band height required')
+        model=self.engine.model;height,width=rgb.shape[:2];output=np.empty(rgb.shape,np.uint8)
+        weights=F.softmax(model.sampler.L_weights,dim=1)
+        for start in range(0,height,chunk_rows):
+            stop=min(start+chunk_rows,height);c=self.engine.tensor(rgb[start:stop])
+            guide=model.sampler.pre_guide(c);z=(guide*weights).sum(1)
+            finite_output(z,(1,stop-start,width))
+            coords=coordinates(width,height,start,stop,z)
+            coeff=F.grid_sample(self.grid,coords,mode='bilinear',align_corners=False,padding_mode='border').squeeze(2)
+            raw=finite_output(model.apply_coeffs(coeff,c),c.shape)
+            output[start:stop]=raw[0].clamp(0,1).mul(255).round().to(torch.uint8).cpu().permute(1,2,0).numpy()
+        return output
+
+    @torch.inference_mode()
     def float_output(self,rgb,chunk_rows=128):
         validate_rgb(rgb)
         if type(chunk_rows)!=int or chunk_rows<1:raise ValueError('Positive integer band height required')
@@ -104,6 +121,7 @@ class PreparedSpatial:
         if isinstance(strength,(bool,np.bool_)) or not isinstance(strength,numbers.Real) or not np.isfinite(strength) or not 0<=strength<=1:
             raise ValueError('Strength must be a finite number within 0..1')
         if strength==0:return rgb.copy()
+        if strength==1:return self.byte_output(rgb,chunk_rows)
         graded=self.float_output(rgb,chunk_rows)
         blended=rgb.astype(np.float32)/255*(1-float(strength))+graded*float(strength)
         return np.rint(np.clip(blended,0,1)*255).astype(np.uint8)
