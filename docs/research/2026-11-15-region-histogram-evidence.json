@@ -1,0 +1,2128 @@
+{
+  "scope": "30 consumed controlled cases; not independent/natural/video acceptance",
+  "summary": {
+    "all": {
+      "count": 30,
+      "baseline_mean": 21.29235718248181,
+      "candidate_mean": 24.33550249041829,
+      "improved_gt_half": 6,
+      "regressed_gt_half": 12,
+      "severe": 6,
+      "applied": 20
+    },
+    "regional": {
+      "count": 8,
+      "baseline_mean": 21.7748641461373,
+      "candidate_mean": 26.333810515685805,
+      "improved_gt_half": 3,
+      "regressed_gt_half": 5,
+      "severe": 2,
+      "applied": 8
+    },
+    "negative": {
+      "count": 22,
+      "baseline_mean": 21.1169001047889,
+      "candidate_mean": 23.608845026684648,
+      "improved_gt_half": 3,
+      "regressed_gt_half": 7,
+      "severe": 4,
+      "applied": 12
+    },
+    "by_profile": {
+      "global_contrast": {
+        "count": 6,
+        "baseline_mean": 20.662310838894186,
+        "candidate_mean": 25.28783451751045,
+        "improved_gt_half": 0,
+        "regressed_gt_half": 3,
+        "severe": 2,
+        "applied": 4
+      },
+      "global_desaturate": {
+        "count": 6,
+        "baseline_mean": 20.210019449948074,
+        "candidate_mean": 22.216250902383365,
+        "improved_gt_half": 1,
+        "regressed_gt_half": 2,
+        "severe": 1,
+        "applied": 4
+      },
+      "identity": {
+        "count": 6,
+        "baseline_mean": 22.005075688394896,
+        "candidate_mean": 24.510451937627735,
+        "improved_gt_half": 2,
+        "regressed_gt_half": 2,
+        "severe": 1,
+        "applied": 4
+      },
+      "region_color_luminance": {
+        "count": 6,
+        "baseline_mean": 21.989819363431806,
+        "candidate_mean": 24.255674896708342,
+        "improved_gt_half": 2,
+        "regressed_gt_half": 2,
+        "severe": 1,
+        "applied": 4
+      },
+      "region_tone_saturation": {
+        "count": 6,
+        "baseline_mean": 21.594560571740075,
+        "candidate_mean": 25.40730019786155,
+        "improved_gt_half": 1,
+        "regressed_gt_half": 3,
+        "severe": 1,
+        "applied": 4
+      }
+    },
+    "passed_development_gate": false
+  },
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "source_sha256": {
+    "probe_region_histogram.py": "57f70c1fb566e3e2417c2a38c6d60e72c4d6ba9fcf622e0f7cedcbaa7dd42804",
+    "region-histogram-protocol.md": "91a815faf32cd9110dd4c2377a358feb9e6ef36bd458bf20718c7668ffa2488e",
+    "region_histogram.py": "7b53f0855710ba76cfd91b3253a34e79ba4cd6c51efe5789c036f27f2913659a",
+    "spatial_render.py": "8e6ecfba65c29988b357c823459251aa7b75c0ce5945c27f8a29a64040388564",
+    "test_region_histogram.py": "182cabe0cb66c28bde404a12587a85e7989885c6f56fcf8e23f19475fdbd263a",
+    "training_checks.py": "798acc2cf8fe4e3981f2eb23e7820a6c82097d560da829fc6457d3e58223a06d",
+    "train_triplet_pilot.py": "2fa48a713768998f2a178b3bb5656af96e90b62b34952a1397b3e6223660ec17"
+  },
+  "manifest_sha256": "bbd61c0b5efe4bdfa5c4d1b36dcabe8af474ea80c24bc36b44bac34e5607c7e2",
+  "jobs_sha256": "e8e39a44fb854c5bbe4d66c5d547b54dd06d9bf1cc5f11834de51d0bef526438",
+  "segmentation": {
+    "model": "DeepLabV3 MobileNetV3 Large COCO_WITH_VOC_LABELS_V1",
+    "official_url": "https://download.pytorch.org/models/deeplabv3_mobilenet_v3_large-fc3c493d.pth",
+    "sha256": "fc3c493d68e89cc31ef488c803d5d7dd2f3190fb570598faa49fef69be8e5e70",
+    "person_label": 15,
+    "torchvision_training": "COCO subset with VOC categories; evaluated on project-new val content"
+  },
+  "all_predictions_before_truth_read": true,
+  "source_and_weights_unchanged": true,
+  "training": false,
+  "product_integrated": false,
+  "results_sha256": "683d38666a535d3c90191c85ddffe40351a31ba061b27106f5c12c1109234365",
+  "predictions_sha256": "f9b11b059a4fe92ffd4890c881c902efaf1be3d95ffe0d7bfa9b7bb5fc920835",
+  "producer_audit": {
+    "passed": true,
+    "results_sha256": "683d38666a535d3c90191c85ddffe40351a31ba061b27106f5c12c1109234365",
+    "verifier_sha256": "a5ef18357b9e3f6c2e3b5d2df7f7d953e0f2a101040c421a722ab164bac97d37",
+    "cases": [
+      {
+        "index": 0,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 1,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 2,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 3,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 4,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 5,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 6,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 7,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 8,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 9,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 10,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 11,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 12,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 13,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 14,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 15,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 16,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 17,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 18,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 19,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 20,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 21,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 22,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 23,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 24,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 25,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 26,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 27,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 28,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      },
+      {
+        "index": 29,
+        "controlled_reference_exact": true,
+        "controlled_truth_exact": true,
+        "baseline_pixel_exact": true
+      }
+    ],
+    "segmentation": {
+      "785-target": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.24916359999770066
+      },
+      "3553-identity": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.03060859999823151
+      },
+      "3553-global_contrast": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01942859999689972
+      },
+      "3553-global_desaturate": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.019366200001968537
+      },
+      "3553-region_color_luminance": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.020574599999235943
+      },
+      "3553-region_tone_saturation": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01887900000292575
+      },
+      "9483-target": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.037861199998587836
+      },
+      "19432-identity": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017257799998333212
+      },
+      "19432-global_contrast": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.018059599999105558
+      },
+      "19432-global_desaturate": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017951199995877687
+      },
+      "19432-region_color_luminance": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017651099995418917
+      },
+      "19432-region_tone_saturation": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017958800002816133
+      },
+      "872-target": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.03646239999943646
+      },
+      "1268-identity": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.018674399994779378
+      },
+      "1268-global_contrast": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.019032899996091146
+      },
+      "1268-global_desaturate": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017665200000919867
+      },
+      "1268-region_color_luminance": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.020873699999356177
+      },
+      "1268-region_tone_saturation": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.018275499998708256
+      },
+      "8021-target": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01607720000174595
+      },
+      "8690-identity": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.016496700001880527
+      },
+      "8690-global_contrast": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017872099997475743
+      },
+      "8690-global_desaturate": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017726999998558313
+      },
+      "8690-region_color_luminance": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01735229999758303
+      },
+      "8690-region_tone_saturation": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.02081269999325741
+      },
+      "285-target": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.0373327999986941
+      },
+      "1993-identity": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.03819379999913508
+      },
+      "1993-global_contrast": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01881860000139568
+      },
+      "1993-global_desaturate": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01889649999793619
+      },
+      "1993-region_color_luminance": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.018222699996840674
+      },
+      "1993-region_tone_saturation": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.017900899998494424
+      },
+      "2149-target": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01856910000060452
+      },
+      "2592-identity": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.039675300002272706
+      },
+      "2592-global_contrast": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.020008300001791213
+      },
+      "2592-global_desaturate": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.018331499995838385
+      },
+      "2592-region_color_luminance": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.018981499997607898
+      },
+      "2592-region_tone_saturation": {
+        "maximum_probability_difference": 0.0,
+        "seconds": 0.01860659999510972
+      }
+    },
+    "maximum_all_one_histogram_difference": 0.0,
+    "segmentation_maximum_difference": 0.0,
+    "segmentation_cudnn_tf32": true,
+    "color_inference_cudnn_tf32": false,
+    "source_and_weights_unchanged": true,
+    "scope": "Post-prediction input/producer/cache/baseline audit, not a new candidate or human acceptance"
+  },
+  "cases": [
+    {
+      "index": 0,
+      "job": {
+        "group": "single",
+        "target": 785,
+        "reference": 3553,
+        "split": "development",
+        "profile": "identity",
+        "reference_file": "development\\references\\3553-identity.png",
+        "truth_file": "development\\truth\\785-identity.png"
+      },
+      "inputs_sha256": {
+        "target": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd",
+        "reference": "e69981d30b73607bec3eb849ebfa04af844b5895e891116b643879ab3de5ae71",
+        "target_mask": "78162e7e75ec56eb82e7866736498f26f505debc0fc743ea8f8929f72697040f",
+        "reference_mask": "7fc4d77e221f37f56776955bd4f4c1b1c4112411756353f6c40c147198906b1d"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "00-baseline.png",
+          "sha256": "da8701d5a8c7e9efdd4e5d4ec982bf70742b1d2d2487c69c9765ab04e425534b"
+        },
+        "candidate": {
+          "file": "00-candidate.png",
+          "sha256": "b107f4932e268ccef233c4139613c0be355200a49571fe30e270a4edb87b7d49"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.1080055981874466,
+        "reference_person_mass": 0.16287663578987122
+      },
+      "baseline_seconds": 0.5486181999949622,
+      "candidate_additional_seconds": 0.09443080000346527,
+      "change_from_baseline": 10.62682230392157,
+      "truth_sha256": "f56d1aa4085181964916f249bc964487b1155aad9b0f2f3297374f85e8349944",
+      "human_mask_sha256": "b35336f6806cf8cf45105731557fc854e11ac2dbd12eb59b23ee7968a596fdb1",
+      "scores": {
+        "baseline": {
+          "mae": 11.06494362745098,
+          "person_mae": 13.22580189345768,
+          "background_mae": 10.813931793684924,
+          "relation_mae": 18.306274426624118,
+          "boundary_mae": 13.034272375192318,
+          "endpoint_fraction": 0.0023504901960784315
+        },
+        "candidate": {
+          "mae": 9.147807598039215,
+          "person_mae": 15.1034336583298,
+          "background_mae": 8.455984056377176,
+          "relation_mae": 11.911560730390164,
+          "boundary_mae": 11.858692768847154,
+          "endpoint_fraction": 0.00011029411764705883
+        }
+      }
+    },
+    {
+      "index": 1,
+      "job": {
+        "group": "single",
+        "target": 785,
+        "reference": 3553,
+        "split": "development",
+        "profile": "global_contrast",
+        "reference_file": "development\\references\\3553-global_contrast.png",
+        "truth_file": "development\\truth\\785-global_contrast.png"
+      },
+      "inputs_sha256": {
+        "target": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd",
+        "reference": "ed806b606a5e14d34d61b56aab8809491f01d7fb4d1d689f928086f60d1c63e8",
+        "target_mask": "78162e7e75ec56eb82e7866736498f26f505debc0fc743ea8f8929f72697040f",
+        "reference_mask": "81773416cc293f478b246f27ec52cf70f834e3f18a07bf6e846b3c3418487d99"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "01-baseline.png",
+          "sha256": "2e24d162b29c9b7ec559f8b5ab98698c60592b6eb83367b4a565d04342643a00"
+        },
+        "candidate": {
+          "file": "01-candidate.png",
+          "sha256": "9f3ac72d1d5cf14e6294022cd659d58cb0aa44b60ea34b4afe55ed497347fd62"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.1080055981874466,
+        "reference_person_mass": 0.16421417891979218
+      },
+      "baseline_seconds": 0.024183400004403666,
+      "candidate_additional_seconds": 0.06297150000318652,
+      "change_from_baseline": 8.225240196078431,
+      "truth_sha256": "5009961c1b058b752f31861ec5cca330ad909dbbae51aafb0def1670fcb25104",
+      "human_mask_sha256": "b35336f6806cf8cf45105731557fc854e11ac2dbd12eb59b23ee7968a596fdb1",
+      "scores": {
+        "baseline": {
+          "mae": 9.650473039215687,
+          "person_mae": 12.447882812867975,
+          "background_mae": 9.325517456461435,
+          "relation_mae": 7.994872959027636,
+          "boundary_mae": 11.777707040161282,
+          "endpoint_fraction": 0.0045441176470588235
+        },
+        "candidate": {
+          "mae": 16.54432843137255,
+          "person_mae": 15.288870048513965,
+          "background_mae": 16.69016627546247,
+          "relation_mae": 16.647113925919957,
+          "boundary_mae": 17.323651122075443,
+          "endpoint_fraction": 0.0004031862745098039
+        }
+      }
+    },
+    {
+      "index": 2,
+      "job": {
+        "group": "single",
+        "target": 785,
+        "reference": 3553,
+        "split": "development",
+        "profile": "global_desaturate",
+        "reference_file": "development\\references\\3553-global_desaturate.png",
+        "truth_file": "development\\truth\\785-global_desaturate.png"
+      },
+      "inputs_sha256": {
+        "target": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd",
+        "reference": "eb155e39e1b77b6c904c3a972d0c0c76cdf3c5fe98d28717d2752d0b28e2cb2b",
+        "target_mask": "78162e7e75ec56eb82e7866736498f26f505debc0fc743ea8f8929f72697040f",
+        "reference_mask": "456786f5fff92a7c02767d48e9bb810dcc265c437f70e2725fc3996854058b20"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "02-baseline.png",
+          "sha256": "4d92041a6648d419d0ed59dd9538033a35a3b1d152ef6429d687a770ed5a048c"
+        },
+        "candidate": {
+          "file": "02-candidate.png",
+          "sha256": "834cf7e75bc4975626684d731b043410ad6b4ac6ea7de8a3164e504a27e82e74"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.1080055981874466,
+        "reference_person_mass": 0.1644667088985443
+      },
+      "baseline_seconds": 0.02385109999886481,
+      "candidate_additional_seconds": 0.0629421000048751,
+      "change_from_baseline": 9.19917156862745,
+      "truth_sha256": "fac51696293fc9ae784829cb3ee7885d5eb5a00d278f7ae6f2bafedeb3d19e4d",
+      "human_mask_sha256": "b35336f6806cf8cf45105731557fc854e11ac2dbd12eb59b23ee7968a596fdb1",
+      "scores": {
+        "baseline": {
+          "mae": 11.264598039215686,
+          "person_mae": 11.342765296029391,
+          "background_mae": 11.255517894172426,
+          "relation_mae": 18.38337900890349,
+          "boundary_mae": 12.371903018727783,
+          "endpoint_fraction": 0.0006887254901960784
+        },
+        "candidate": {
+          "mae": 7.325686274509804,
+          "person_mae": 10.114490603363008,
+          "background_mae": 7.001730326258829,
+          "relation_mae": 10.75132129926998,
+          "boundary_mae": 9.270491803278688,
+          "endpoint_fraction": 0.00011642156862745098
+        }
+      }
+    },
+    {
+      "index": 3,
+      "job": {
+        "group": "single",
+        "target": 785,
+        "reference": 3553,
+        "split": "development",
+        "profile": "region_color_luminance",
+        "reference_file": "development\\references\\3553-region_color_luminance.png",
+        "truth_file": "development\\truth\\785-region_color_luminance.png"
+      },
+      "inputs_sha256": {
+        "target": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd",
+        "reference": "a811de8d66e508876c875feb32e42716004f774a872019c2402223aedac36b04",
+        "target_mask": "78162e7e75ec56eb82e7866736498f26f505debc0fc743ea8f8929f72697040f",
+        "reference_mask": "a17ec53e0edf46a54fd83a33b520b701b70e7d6ef36903ab60090d121494938e"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "03-baseline.png",
+          "sha256": "e6793ab632f21d6dd930b973c9f511c85e5a2add37058728b77fd4e46f2f9de7"
+        },
+        "candidate": {
+          "file": "03-candidate.png",
+          "sha256": "9baf0c7f4ae9fddde0549cf18eeb02d162a6948c0ce390b2917fb7e40f893d7f"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.1080055981874466,
+        "reference_person_mass": 0.16724567115306854
+      },
+      "baseline_seconds": 0.0264134999961243,
+      "candidate_additional_seconds": 0.06983000000036554,
+      "change_from_baseline": 10.344158088235295,
+      "truth_sha256": "e889978473faa66219259a99887a24250f6b9aae8fc80e0d53057982d17f6d6f",
+      "human_mask_sha256": "b35336f6806cf8cf45105731557fc854e11ac2dbd12eb59b23ee7968a596fdb1",
+      "scores": {
+        "baseline": {
+          "mae": 9.411457107843137,
+          "person_mae": 13.674002637652489,
+          "background_mae": 8.916306922946452,
+          "relation_mae": 18.07211541899333,
+          "boundary_mae": 12.016207756379648,
+          "endpoint_fraction": 0.00289828431372549
+        },
+        "candidate": {
+          "mae": 8.04153431372549,
+          "person_mae": 13.113807639772032,
+          "background_mae": 7.452323698220158,
+          "relation_mae": 7.9830203911974325,
+          "boundary_mae": 12.577404636850762,
+          "endpoint_fraction": 6.862745098039216e-05
+        }
+      }
+    },
+    {
+      "index": 4,
+      "job": {
+        "group": "single",
+        "target": 785,
+        "reference": 3553,
+        "split": "development",
+        "profile": "region_tone_saturation",
+        "reference_file": "development\\references\\3553-region_tone_saturation.png",
+        "truth_file": "development\\truth\\785-region_tone_saturation.png"
+      },
+      "inputs_sha256": {
+        "target": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd",
+        "reference": "a58259c52ef1b00bb66e1ba3b285b137897faa002b40be2cc3f8603e9af57f41",
+        "target_mask": "78162e7e75ec56eb82e7866736498f26f505debc0fc743ea8f8929f72697040f",
+        "reference_mask": "9505160b4e2fa3733027bda4fd2ce485f9d57a0d6044f1a1e9360640f0451445"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "04-baseline.png",
+          "sha256": "25839dc421bd1d0590046de1ae1409a4b0788c759648946a21d3ce7371e66c8d"
+        },
+        "candidate": {
+          "file": "04-candidate.png",
+          "sha256": "4101624e69f5831d4d74367d5dc98ff09a5ba13c6d1fd5f15cc5169f083ac752"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.1080055981874466,
+        "reference_person_mass": 0.16296449303627014
+      },
+      "baseline_seconds": 0.02469960000598803,
+      "candidate_additional_seconds": 0.05790479999996023,
+      "change_from_baseline": 13.273075980392157,
+      "truth_sha256": "15006091d55e6ff27c5a39206bbf4d2b2d4a82797c89a5726e573b6de367468c",
+      "human_mask_sha256": "b35336f6806cf8cf45105731557fc854e11ac2dbd12eb59b23ee7968a596fdb1",
+      "scores": {
+        "baseline": {
+          "mae": 9.859463235294118,
+          "person_mae": 20.932586783476992,
+          "background_mae": 8.573175702662924,
+          "relation_mae": 21.870710396440767,
+          "boundary_mae": 13.1671706721842,
+          "endpoint_fraction": 0.004430147058823529
+        },
+        "candidate": {
+          "mae": 12.633215686274509,
+          "person_mae": 13.056603551410673,
+          "background_mae": 12.584033670917934,
+          "relation_mae": 9.803256152050361,
+          "boundary_mae": 14.350602153960422,
+          "endpoint_fraction": 7.965686274509804e-05
+        }
+      }
+    },
+    {
+      "index": 5,
+      "job": {
+        "group": "single",
+        "target": 9483,
+        "reference": 19432,
+        "split": "development",
+        "profile": "identity",
+        "reference_file": "development\\references\\19432-identity.png",
+        "truth_file": "development\\truth\\9483-identity.png"
+      },
+      "inputs_sha256": {
+        "target": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+        "reference": "55b762f8977a85d29f1055a5abbebbb7e3fe6c6c50cbd3b6c3be1dafa7235c94",
+        "target_mask": "ec1f9db1ed1f0bf33ef45ce2af5f261bb078f565820857a1ca2d6eedbeeb3dd4",
+        "reference_mask": "c4ecaa40496cd094c88654a284373de36f1b877176b666cbeb838a46d860f8f3"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "05-baseline.png",
+          "sha256": "41cb413b75921a396cdcf6bbd827518fb534e64a13a7a57282af41c3239bedb4"
+        },
+        "candidate": {
+          "file": "05-candidate.png",
+          "sha256": "3ecdda50070306c8bb8bff182086f8bcad7e9fd013affec644080043ec4f4b06"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.13665537536144257,
+        "reference_person_mass": 0.09702610969543457
+      },
+      "baseline_seconds": 0.026122999996005092,
+      "candidate_additional_seconds": 0.06730249999964144,
+      "change_from_baseline": 3.0095920138888888,
+      "truth_sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+      "human_mask_sha256": "ed5909ded5298a43f4138f8423723741f8abf61b66573191a8f45dfaf7882d77",
+      "scores": {
+        "baseline": {
+          "mae": 22.209814453125,
+          "person_mae": 16.277366364766472,
+          "background_mae": 23.03568444213701,
+          "relation_mae": 22.557801146831135,
+          "boundary_mae": 23.003173677904076,
+          "endpoint_fraction": 0.011578776041666667
+        },
+        "candidate": {
+          "mae": 21.305738932291668,
+          "person_mae": 17.7639140472385,
+          "background_mae": 21.79880466760612,
+          "relation_mae": 17.586404899225684,
+          "boundary_mae": 23.907445189287216,
+          "endpoint_fraction": 0.011127387152777777
+        }
+      }
+    },
+    {
+      "index": 6,
+      "job": {
+        "group": "single",
+        "target": 9483,
+        "reference": 19432,
+        "split": "development",
+        "profile": "global_contrast",
+        "reference_file": "development\\references\\19432-global_contrast.png",
+        "truth_file": "development\\truth\\9483-global_contrast.png"
+      },
+      "inputs_sha256": {
+        "target": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+        "reference": "f259e6928526043cf5d97720b1e8265e2c11564a518ecf1ed1cb67d7f93f47ce",
+        "target_mask": "ec1f9db1ed1f0bf33ef45ce2af5f261bb078f565820857a1ca2d6eedbeeb3dd4",
+        "reference_mask": "f8d0b3963639b7cec02b50a61d31496fbe5e067b1ed47aea6e1ca739ba58d03f"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "06-baseline.png",
+          "sha256": "842c868b33857082d655d1d721f3c9f607ae7ce843b8fe382dc6799a0765d708"
+        },
+        "candidate": {
+          "file": "06-candidate.png",
+          "sha256": "fd33ed3f210c6cedeced1168faf585623df31ff6c43e011b4b576939f245f2ca"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.13665537536144257,
+        "reference_person_mass": 0.09752891957759857
+      },
+      "baseline_seconds": 0.028125999997428153,
+      "candidate_additional_seconds": 0.07169820000126492,
+      "change_from_baseline": 3.2118901909722224,
+      "truth_sha256": "033520cd3769b4e65014c1d0be003a01253c73238f96a957fc3ea10abe2e7ae7",
+      "human_mask_sha256": "ed5909ded5298a43f4138f8423723741f8abf61b66573191a8f45dfaf7882d77",
+      "scores": {
+        "baseline": {
+          "mae": 15.094406467013888,
+          "person_mae": 6.933937133724028,
+          "background_mae": 16.230444510371086,
+          "relation_mae": 10.888926472034953,
+          "boundary_mae": 15.104083681466369,
+          "endpoint_fraction": 0.010718315972222222
+        },
+        "candidate": {
+          "mae": 14.836268446180556,
+          "person_mae": 10.399058781743918,
+          "background_mae": 15.453982793146926,
+          "relation_mae": 7.483234124628193,
+          "boundary_mae": 18.228278117814696,
+          "endpoint_fraction": 0.0120703125
+        }
+      }
+    },
+    {
+      "index": 7,
+      "job": {
+        "group": "single",
+        "target": 9483,
+        "reference": 19432,
+        "split": "development",
+        "profile": "global_desaturate",
+        "reference_file": "development\\references\\19432-global_desaturate.png",
+        "truth_file": "development\\truth\\9483-global_desaturate.png"
+      },
+      "inputs_sha256": {
+        "target": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+        "reference": "99cb944e34418df63cccfe9662d69ed2f8dc0d776af1d03a4ba931d13e4ce0a0",
+        "target_mask": "ec1f9db1ed1f0bf33ef45ce2af5f261bb078f565820857a1ca2d6eedbeeb3dd4",
+        "reference_mask": "55ee4e88515412dd02502e767e0c9cd815009535cb0d4f09b2d616f405ce7539"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "07-baseline.png",
+          "sha256": "2d22e91d1d898d74c366827fe5b398d77dfb8a92143d4cb05ce62c972eaf8c26"
+        },
+        "candidate": {
+          "file": "07-candidate.png",
+          "sha256": "60b87341921a54f2c9cb82eb6ae84e6e903bfc09903c06f60a1fd8225bfece7d"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.13665537536144257,
+        "reference_person_mass": 0.09619556367397308
+      },
+      "baseline_seconds": 0.03535099999862723,
+      "candidate_additional_seconds": 0.07549930000095628,
+      "change_from_baseline": 2.1605154079861113,
+      "truth_sha256": "0eddae822a252cb96063d2fe9629ea587d47229aab702a1acfe5cd3c1be46907",
+      "human_mask_sha256": "ed5909ded5298a43f4138f8423723741f8abf61b66573191a8f45dfaf7882d77",
+      "scores": {
+        "baseline": {
+          "mae": 20.605989583333333,
+          "person_mae": 14.94786893979755,
+          "background_mae": 21.393669806422903,
+          "relation_mae": 20.929276723072274,
+          "boundary_mae": 21.47754137115839,
+          "endpoint_fraction": 0.004720052083333333
+        },
+        "candidate": {
+          "mae": 21.09995551215278,
+          "person_mae": 17.233049191973006,
+          "background_mae": 21.63827659521867,
+          "relation_mae": 17.386503794454402,
+          "boundary_mae": 23.386152401308333,
+          "endpoint_fraction": 0.006553819444444445
+        }
+      }
+    },
+    {
+      "index": 8,
+      "job": {
+        "group": "single",
+        "target": 9483,
+        "reference": 19432,
+        "split": "development",
+        "profile": "region_color_luminance",
+        "reference_file": "development\\references\\19432-region_color_luminance.png",
+        "truth_file": "development\\truth\\9483-region_color_luminance.png"
+      },
+      "inputs_sha256": {
+        "target": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+        "reference": "22391a812f25f48dd986b3fd13483aff0819f692e10e00ee8821b90dee755b4d",
+        "target_mask": "ec1f9db1ed1f0bf33ef45ce2af5f261bb078f565820857a1ca2d6eedbeeb3dd4",
+        "reference_mask": "674acc4c2ff04bad2192792b61dd8661efbfd03375e04afc282f3e36aac49f5f"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "08-baseline.png",
+          "sha256": "8d5b173ea3053407ed073169dd40c3d4fb99ffaa6c39a9519a41ff13ab9fe330"
+        },
+        "candidate": {
+          "file": "08-candidate.png",
+          "sha256": "7d42ff16e80f5b805433471458c11b5dca4e0fc7b540da52777ba88fdefcc790"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.13665537536144257,
+        "reference_person_mass": 0.0979749858379364
+      },
+      "baseline_seconds": 0.030203299997083377,
+      "candidate_additional_seconds": 0.06663660000049276,
+      "change_from_baseline": 3.1942252604166668,
+      "truth_sha256": "f1b1b3b376fcc4b1dfc1bdc1dc51abc71ae29bf99c3f3fdf074df8b94868cf8a",
+      "human_mask_sha256": "ed5909ded5298a43f4138f8423723741f8abf61b66573191a8f45dfaf7882d77",
+      "scores": {
+        "baseline": {
+          "mae": 21.586596137152778,
+          "person_mae": 17.542594565796485,
+          "background_mae": 22.149571064797648,
+          "relation_mae": 22.54013130487212,
+          "boundary_mae": 22.65821432041193,
+          "endpoint_fraction": 0.006184895833333333
+        },
+        "candidate": {
+          "mae": 20.602032335069445,
+          "person_mae": 19.304120049724737,
+          "background_mae": 20.78271774333111,
+          "relation_mae": 16.990026043305868,
+          "boundary_mae": 24.03801936591211,
+          "endpoint_fraction": 0.009291449652777778
+        }
+      }
+    },
+    {
+      "index": 9,
+      "job": {
+        "group": "single",
+        "target": 9483,
+        "reference": 19432,
+        "split": "development",
+        "profile": "region_tone_saturation",
+        "reference_file": "development\\references\\19432-region_tone_saturation.png",
+        "truth_file": "development\\truth\\9483-region_tone_saturation.png"
+      },
+      "inputs_sha256": {
+        "target": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+        "reference": "855b94b528e9bc0ce851ba874c0e90fdae21f618345609723eb678eb89408b96",
+        "target_mask": "ec1f9db1ed1f0bf33ef45ce2af5f261bb078f565820857a1ca2d6eedbeeb3dd4",
+        "reference_mask": "661316a6031bc1c716f05eaaefb9b93d93e19bd93215b3a61f6138f083c13a30"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "09-baseline.png",
+          "sha256": "0357f6f3df6da9901b0fd7244c36c9243b5eb657a4bf2bc9b2e48c789ab39f7b"
+        },
+        "candidate": {
+          "file": "09-candidate.png",
+          "sha256": "ce237be187a2357ae515954fa06ead6a6ed423565b417bdd685395858d056767"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.13665537536144257,
+        "reference_person_mass": 0.09797353297472
+      },
+      "baseline_seconds": 0.02600660000462085,
+      "candidate_additional_seconds": 0.062310200002684724,
+      "change_from_baseline": 5.271647135416667,
+      "truth_sha256": "b3e2afab0b58d1a5b92643826d104a43754efe085f954d3d8f65f112dcf1d451",
+      "human_mask_sha256": "ed5909ded5298a43f4138f8423723741f8abf61b66573191a8f45dfaf7882d77",
+      "scores": {
+        "baseline": {
+          "mae": 17.246546223958333,
+          "person_mae": 19.673787959509855,
+          "background_mae": 16.9086442186457,
+          "relation_mae": 30.6783286333601,
+          "boundary_mae": 19.22199553094336,
+          "endpoint_fraction": 0.007927517361111112
+        },
+        "candidate": {
+          "mae": 15.564163411458333,
+          "person_mae": 19.136858462084888,
+          "background_mae": 15.066800168112932,
+          "relation_mae": 19.328002129874772,
+          "boundary_mae": 20.64862851776288,
+          "endpoint_fraction": 0.006838107638888889
+        }
+      }
+    },
+    {
+      "index": 10,
+      "job": {
+        "group": "multiple",
+        "target": 872,
+        "reference": 1268,
+        "split": "development",
+        "profile": "identity",
+        "reference_file": "development\\references\\1268-identity.png",
+        "truth_file": "development\\truth\\872-identity.png"
+      },
+      "inputs_sha256": {
+        "target": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7",
+        "reference": "b1afffecb3afc8fb6aa48d5972400f2b0544011d5a9c0c5fa5c57e148ee4d5b5",
+        "target_mask": "ed1b496d32b2385414f9f1ebe384f23549ab6922c7886779aa69df4a6441631d",
+        "reference_mask": "307fe5c8ffb362a3d8718cdd447aa2a98bd5f48ce8cf88d11ec5be1679b82c31"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "10-baseline.png",
+          "sha256": "0a0d13be9966d47e30464c58882a6e4c88a3537e4aa71a036e650a4ea9e4874b"
+        },
+        "candidate": {
+          "file": "10-candidate.png",
+          "sha256": "24fdb5ba738349f9b79869b159ac3c9ef1a4d06aa577cdd562a16e57b4320f2c"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.16742883622646332,
+        "reference_person_mass": 0.12795986235141754
+      },
+      "baseline_seconds": 0.03128819999983534,
+      "candidate_additional_seconds": 0.08355260000098497,
+      "change_from_baseline": 19.427580683038112,
+      "truth_sha256": "c7a5f1233d50dcda43bcc92bc41af53f0793572994003d6902e0514af055813d",
+      "human_mask_sha256": "c3837d081a42ef9e2036d73afb5656020b263bc211f7c76bac7026d1dc38918b",
+      "scores": {
+        "baseline": {
+          "mae": 12.007076959205582,
+          "person_mae": 8.705159299110711,
+          "background_mae": 12.770430169149543,
+          "relation_mae": 8.698694847582411,
+          "boundary_mae": 10.316706017027975,
+          "endpoint_fraction": 0.017029824208266237
+        },
+        "candidate": {
+          "mae": 24.37836067498658,
+          "person_mae": 67.22340287734437,
+          "background_mae": 14.473237694295836,
+          "relation_mae": 67.40997454828738,
+          "boundary_mae": 36.50936538599127,
+          "endpoint_fraction": 0.0012203099838969404
+        }
+      }
+    },
+    {
+      "index": 11,
+      "job": {
+        "group": "multiple",
+        "target": 872,
+        "reference": 1268,
+        "split": "development",
+        "profile": "global_contrast",
+        "reference_file": "development\\references\\1268-global_contrast.png",
+        "truth_file": "development\\truth\\872-global_contrast.png"
+      },
+      "inputs_sha256": {
+        "target": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7",
+        "reference": "f8ded2dfec77a108dd3ec00822bff3d09853e474c92f1ce20c12a9f11f2e76b6",
+        "target_mask": "ed1b496d32b2385414f9f1ebe384f23549ab6922c7886779aa69df4a6441631d",
+        "reference_mask": "70b39b40904d2af5f712bff9c3bd5f6e7d47bd3c7159156b03fe84dd03d8d2b2"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "11-baseline.png",
+          "sha256": "e681bd6bb7e2ee3791d9268fbe7cf8c7944d533fdb0b94655aee5174e76f5eae"
+        },
+        "candidate": {
+          "file": "11-candidate.png",
+          "sha256": "2d7d3651fd93bb4f431cf3475d8c0bfccf20f7c11bc03c015e93467f0230b759"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.16742883622646332,
+        "reference_person_mass": 0.13637793064117432
+      },
+      "baseline_seconds": 0.029523099998186808,
+      "candidate_additional_seconds": 0.07706869999674382,
+      "change_from_baseline": 19.739969974503488,
+      "truth_sha256": "a5b0b0e9619447185e212a0aedd3a6d93648239e706f7c4070ade5c367664ccd",
+      "human_mask_sha256": "c3837d081a42ef9e2036d73afb5656020b263bc211f7c76bac7026d1dc38918b",
+      "scores": {
+        "baseline": {
+          "mae": 10.989267981749865,
+          "person_mae": 7.069356416406491,
+          "background_mae": 11.895491995832442,
+          "relation_mae": 8.520330794663485,
+          "boundary_mae": 8.72158546183015,
+          "endpoint_fraction": 0.03202495974235105
+        },
+        "candidate": {
+          "mae": 24.313970242887816,
+          "person_mae": 74.75078052767691,
+          "background_mae": 12.653745793462223,
+          "relation_mae": 73.32933440867579,
+          "boundary_mae": 39.70291192673678,
+          "endpoint_fraction": 0.007215344873859366
+        }
+      }
+    },
+    {
+      "index": 12,
+      "job": {
+        "group": "multiple",
+        "target": 872,
+        "reference": 1268,
+        "split": "development",
+        "profile": "global_desaturate",
+        "reference_file": "development\\references\\1268-global_desaturate.png",
+        "truth_file": "development\\truth\\872-global_desaturate.png"
+      },
+      "inputs_sha256": {
+        "target": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7",
+        "reference": "3560ec7e8a261685c013707350dc6983e3913cc918cba50882b23debf04e2e69",
+        "target_mask": "ed1b496d32b2385414f9f1ebe384f23549ab6922c7886779aa69df4a6441631d",
+        "reference_mask": "826c31cec530d7091546fb267279484c736f4d4b5b5697f1992ca28ab30f5e66"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "12-baseline.png",
+          "sha256": "e01b97b2317029553d2eea412707f5820d9092e781dfd7dce1a68ea5b689235d"
+        },
+        "candidate": {
+          "file": "12-candidate.png",
+          "sha256": "18e5a00c1f1cbf0da5235f9e204b34accc427e6a09653b23e04bf4fc71390576"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.16742883622646332,
+        "reference_person_mass": 0.13058993220329285
+      },
+      "baseline_seconds": 0.025024399998073932,
+      "candidate_additional_seconds": 0.07636629999615252,
+      "change_from_baseline": 19.92865757514761,
+      "truth_sha256": "8cc0efb365e6b535d05c0a57966d9239e66003a602ebceeb5f0965e6d4eb8a6e",
+      "human_mask_sha256": "c3837d081a42ef9e2036d73afb5656020b263bc211f7c76bac7026d1dc38918b",
+      "scores": {
+        "baseline": {
+          "mae": 11.379547436929684,
+          "person_mae": 8.415745443013662,
+          "background_mae": 12.064733440516793,
+          "relation_mae": 9.117243137629822,
+          "boundary_mae": 9.513329040566646,
+          "endpoint_fraction": 0.01756239935587762
+        },
+        "candidate": {
+          "mae": 22.748380468330648,
+          "person_mae": 68.31398428671606,
+          "background_mae": 12.214304964824619,
+          "relation_mae": 66.92626684322902,
+          "boundary_mae": 36.94383630249696,
+          "endpoint_fraction": 0.0014199208266237253
+        }
+      }
+    },
+    {
+      "index": 13,
+      "job": {
+        "group": "multiple",
+        "target": 872,
+        "reference": 1268,
+        "split": "development",
+        "profile": "region_color_luminance",
+        "reference_file": "development\\references\\1268-region_color_luminance.png",
+        "truth_file": "development\\truth\\872-region_color_luminance.png"
+      },
+      "inputs_sha256": {
+        "target": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7",
+        "reference": "ecf4f192910f2cfc4ac6887c537f14e91339c2ab91d3b8a394ff08968d6271b3",
+        "target_mask": "ed1b496d32b2385414f9f1ebe384f23549ab6922c7886779aa69df4a6441631d",
+        "reference_mask": "a5668fee574c05dc83b66160ead78de32e2ed6c8f5f6d065e46a1e0c2733120f"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "13-baseline.png",
+          "sha256": "1abb9444298dfdb81fb4dab0393aa1c68fc8a24d2a2eecda618c553f7a8837cb"
+        },
+        "candidate": {
+          "file": "13-candidate.png",
+          "sha256": "1a5a94a10ee140b00dc02ff9f1e42472340533e2323c0f432be169e784c59cdd"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.16742883622646332,
+        "reference_person_mass": 0.12801256775856018
+      },
+      "baseline_seconds": 0.03200680000009015,
+      "candidate_additional_seconds": 0.08185050000611227,
+      "change_from_baseline": 19.234166163446055,
+      "truth_sha256": "040b37dc7994b9b7adcf0f18c29ccbe8c89d9022fccacf17c9384ea35ef25010",
+      "human_mask_sha256": "c3837d081a42ef9e2036d73afb5656020b263bc211f7c76bac7026d1dc38918b",
+      "scores": {
+        "baseline": {
+          "mae": 13.832908950617284,
+          "person_mae": 14.454541800104517,
+          "background_mae": 13.689196877842866,
+          "relation_mae": 19.21164823567403,
+          "boundary_mae": 12.215024683408457,
+          "endpoint_fraction": 0.014033145464304885
+        },
+        "candidate": {
+          "mae": 24.256569545088567,
+          "person_mae": 67.17205554587805,
+          "background_mae": 14.335161028176445,
+          "relation_mae": 65.50229914503394,
+          "boundary_mae": 36.85061171925306,
+          "endpoint_fraction": 0.0002818035426731079
+        }
+      }
+    },
+    {
+      "index": 14,
+      "job": {
+        "group": "multiple",
+        "target": 872,
+        "reference": 1268,
+        "split": "development",
+        "profile": "region_tone_saturation",
+        "reference_file": "development\\references\\1268-region_tone_saturation.png",
+        "truth_file": "development\\truth\\872-region_tone_saturation.png"
+      },
+      "inputs_sha256": {
+        "target": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7",
+        "reference": "5a7298396f49232eae000bcc0522c3e857ec67f62c8ddc61d45b8dcca978c9cf",
+        "target_mask": "ed1b496d32b2385414f9f1ebe384f23549ab6922c7886779aa69df4a6441631d",
+        "reference_mask": "cd8c16222ffa667ea95b3573b4da539e158c6977fb5d496d0cba9189f849fb7d"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "14-baseline.png",
+          "sha256": "74c3e2c394a52481862638c7a4bdece46f938c7dd2f7eb59b919669efecc0078"
+        },
+        "candidate": {
+          "file": "14-candidate.png",
+          "sha256": "98f355512b131ff7eaf226f874c94e3de17c06efd8c5c202e557d615e5c178a9"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.16742883622646332,
+        "reference_person_mass": 0.12622234225273132
+      },
+      "baseline_seconds": 0.029860100003133994,
+      "candidate_additional_seconds": 0.07695939999393886,
+      "change_from_baseline": 17.34945400563607,
+      "truth_sha256": "e2fa2bc1f3d3d95deffe8e0a517d3aa807d1a39d021aa01e1903d9b2d0e65667",
+      "human_mask_sha256": "c3837d081a42ef9e2036d73afb5656020b263bc211f7c76bac7026d1dc38918b",
+      "scores": {
+        "baseline": {
+          "mae": 11.454963432635534,
+          "person_mae": 9.266031524831723,
+          "background_mae": 11.961011241872178,
+          "relation_mae": 9.001264016208566,
+          "boundary_mae": 10.04762109179366,
+          "endpoint_fraction": 0.026975979602791196
+        },
+        "candidate": {
+          "mae": 25.411927167203434,
+          "person_mae": 75.42661253221492,
+          "background_mae": 13.849291587544002,
+          "relation_mae": 77.83382432915472,
+          "boundary_mae": 38.983987980253275,
+          "endpoint_fraction": 0.004951690821256039
+        }
+      }
+    },
+    {
+      "index": 15,
+      "job": {
+        "group": "multiple",
+        "target": 8021,
+        "reference": 8690,
+        "split": "development",
+        "profile": "identity",
+        "reference_file": "development\\references\\8690-identity.png",
+        "truth_file": "development\\truth\\8021-identity.png"
+      },
+      "inputs_sha256": {
+        "target": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+        "reference": "1306c8da5d20ba76ecdae68d58975639bf75b8d488f5203e80d3a50d4c7274ad",
+        "target_mask": "b63923054bf8a9fc8dd2e319db4ca3898c5d285b0c4fd62efc5ae415ec0916c2",
+        "reference_mask": "24a53a0153006a2a70882904a5c79b3bebc75327d194dfebed13841b011ff79c"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "15-baseline.png",
+          "sha256": "4fd4252267b748cd94d3a0001397797e66ae919b7bb4f3dc17b5e87573323b42"
+        },
+        "candidate": {
+          "file": "15-candidate.png",
+          "sha256": "194cc4a34ab12e14a6f33504133b407f86e62ec25f849bdd28bc1f2f0b79ea5e"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.3639475703239441,
+        "reference_person_mass": 0.2208835929632187
+      },
+      "baseline_seconds": 0.023742999997921288,
+      "candidate_additional_seconds": 0.07310489999508718,
+      "change_from_baseline": 12.164385850694444,
+      "truth_sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+      "human_mask_sha256": "2f92346f193156317ea2d38fc96e9e0fc6cdafbfbe6a4291e69d3fb5977497a5",
+      "scores": {
+        "baseline": {
+          "mae": 46.59575954861111,
+          "person_mae": 28.39704236329647,
+          "background_mae": 57.29852976147396,
+          "relation_mae": 28.892763630772468,
+          "boundary_mae": 47.031047214141864,
+          "endpoint_fraction": 0.01025607638888889
+        },
+        "candidate": {
+          "mae": 52.07794487847222,
+          "person_mae": 46.89264136237642,
+          "background_mae": 55.127451689947165,
+          "relation_mae": 10.628064667761924,
+          "boundary_mae": 50.56992615797718,
+          "endpoint_fraction": 0.009505208333333333
+        }
+      }
+    },
+    {
+      "index": 16,
+      "job": {
+        "group": "multiple",
+        "target": 8021,
+        "reference": 8690,
+        "split": "development",
+        "profile": "global_contrast",
+        "reference_file": "development\\references\\8690-global_contrast.png",
+        "truth_file": "development\\truth\\8021-global_contrast.png"
+      },
+      "inputs_sha256": {
+        "target": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+        "reference": "6ceb93fa7b5f103558bb68e3228e92f3ebb594ea8d1b0b7721f3487ee7f20abb",
+        "target_mask": "b63923054bf8a9fc8dd2e319db4ca3898c5d285b0c4fd62efc5ae415ec0916c2",
+        "reference_mask": "2dc7f5204a3e1da3da572634789698aec99d06c856c4eccee51ffa4feb4232f8"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "16-baseline.png",
+          "sha256": "ff6b9b3182c71ba06da879694b78ecc37e0424dfb2cd33e888af89ebfaf1f886"
+        },
+        "candidate": {
+          "file": "16-candidate.png",
+          "sha256": "fe61af036bba880cc2aa17bce4e1a7c64bd192603a5be5062a9a0c892f9f7bd1"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.3639475703239441,
+        "reference_person_mass": 0.22074854373931885
+      },
+      "baseline_seconds": 0.026654000001144595,
+      "candidate_additional_seconds": 0.06659879999642726,
+      "change_from_baseline": 12.584076605902778,
+      "truth_sha256": "bdb85d6478bef4206e7049ee9bd44dbfeaa051cd6fe951166bfa13303e028630",
+      "human_mask_sha256": "2f92346f193156317ea2d38fc96e9e0fc6cdafbfbe6a4291e69d3fb5977497a5",
+      "scores": {
+        "baseline": {
+          "mae": 44.094637586805554,
+          "person_mae": 25.2618536945553,
+          "background_mae": 55.17030607567627,
+          "relation_mae": 29.88804620013846,
+          "boundary_mae": 46.027597523681656,
+          "endpoint_fraction": 0.015230034722222223
+        },
+        "candidate": {
+          "mae": 51.88736002604167,
+          "person_mae": 47.045539518175374,
+          "background_mae": 54.73486250547118,
+          "relation_mae": 10.482036765102578,
+          "boundary_mae": 52.64790780935332,
+          "endpoint_fraction": 0.01424045138888889
+        }
+      }
+    },
+    {
+      "index": 17,
+      "job": {
+        "group": "multiple",
+        "target": 8021,
+        "reference": 8690,
+        "split": "development",
+        "profile": "global_desaturate",
+        "reference_file": "development\\references\\8690-global_desaturate.png",
+        "truth_file": "development\\truth\\8021-global_desaturate.png"
+      },
+      "inputs_sha256": {
+        "target": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+        "reference": "6f38510e8e8d8063370d0e388b9b80666d909790d2c9a2ec77015144cb5951bb",
+        "target_mask": "b63923054bf8a9fc8dd2e319db4ca3898c5d285b0c4fd62efc5ae415ec0916c2",
+        "reference_mask": "cdd954236015b68010cf2f600ecebfbbfd4faafe389149e4e3a2f6dde61e7fc9"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "17-baseline.png",
+          "sha256": "9c21b8d54039f778565bb33c240cea68b6d99cd04c9c286dfdf4a37f593b1955"
+        },
+        "candidate": {
+          "file": "17-candidate.png",
+          "sha256": "2a91126cb3650f5195f2ed22b489e1b761797eb961b546b595a51f30da52ab70"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.3639475703239441,
+        "reference_person_mass": 0.21597526967525482
+      },
+      "baseline_seconds": 0.021597599996312056,
+      "candidate_additional_seconds": 0.06993230000080075,
+      "change_from_baseline": 12.020081380208333,
+      "truth_sha256": "4b3095626cd35cda3eb38524c4e18fe1a9cf94eb1255d023cd4de1a31e9b599e",
+      "human_mask_sha256": "2f92346f193156317ea2d38fc96e9e0fc6cdafbfbe6a4291e69d3fb5977497a5",
+      "scores": {
+        "baseline": {
+          "mae": 48.36878255208333,
+          "person_mae": 30.347585309681616,
+          "background_mae": 58.96715226584229,
+          "relation_mae": 28.60849364067975,
+          "boundary_mae": 48.62471097188036,
+          "endpoint_fraction": 0.0008995225694444444
+        },
+        "candidate": {
+          "mae": 52.48228407118056,
+          "person_mae": 46.91946637131321,
+          "background_mae": 55.75380914470442,
+          "relation_mae": 8.819013141502277,
+          "boundary_mae": 50.49229879913478,
+          "endpoint_fraction": 0.0008344184027777778
+        }
+      }
+    },
+    {
+      "index": 18,
+      "job": {
+        "group": "multiple",
+        "target": 8021,
+        "reference": 8690,
+        "split": "development",
+        "profile": "region_color_luminance",
+        "reference_file": "development\\references\\8690-region_color_luminance.png",
+        "truth_file": "development\\truth\\8021-region_color_luminance.png"
+      },
+      "inputs_sha256": {
+        "target": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+        "reference": "999d9a97319c0b007d1058d95865916bcd39e52f65fcef2d1ebf2a05f4fd5fc0",
+        "target_mask": "b63923054bf8a9fc8dd2e319db4ca3898c5d285b0c4fd62efc5ae415ec0916c2",
+        "reference_mask": "86919ee9e87b8b9d33e8abea54c7c3ad805e2d9104386f938676ee5975531ed4"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "18-baseline.png",
+          "sha256": "75e01c657a5d8b4d55bdf4cfc962cd2a33e8954a68c99b59165fe5c6f82de770"
+        },
+        "candidate": {
+          "file": "18-candidate.png",
+          "sha256": "eb83a8adba9633e7219b6c57f4613d5277b209b9285096564fd2afa78627abd4"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.3639475703239441,
+        "reference_person_mass": 0.22088511288166046
+      },
+      "baseline_seconds": 0.025291900004958734,
+      "candidate_additional_seconds": 0.06594670000049518,
+      "change_from_baseline": 12.599581163194445,
+      "truth_sha256": "a0ac0a9f18031fd7b29124fe75fb5ddf58f7886cfb9b2a5722ba6a1336d56336",
+      "human_mask_sha256": "2f92346f193156317ea2d38fc96e9e0fc6cdafbfbe6a4291e69d3fb5977497a5",
+      "scores": {
+        "baseline": {
+          "mae": 47.05724066840278,
+          "person_mae": 28.440861916398564,
+          "background_mae": 58.005640050041876,
+          "relation_mae": 29.538912580912548,
+          "boundary_mae": 47.277485641828896,
+          "endpoint_fraction": 0.011737196180555555
+        },
+        "candidate": {
+          "mae": 52.58319986979166,
+          "person_mae": 45.982604032981136,
+          "background_mae": 56.46504823250861,
+          "relation_mae": 9.981591213040844,
+          "boundary_mae": 50.8503766689043,
+          "endpoint_fraction": 0.010584852430555555
+        }
+      }
+    },
+    {
+      "index": 19,
+      "job": {
+        "group": "multiple",
+        "target": 8021,
+        "reference": 8690,
+        "split": "development",
+        "profile": "region_tone_saturation",
+        "reference_file": "development\\references\\8690-region_tone_saturation.png",
+        "truth_file": "development\\truth\\8021-region_tone_saturation.png"
+      },
+      "inputs_sha256": {
+        "target": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+        "reference": "a4efea59977db332a5dd1c8dd352ed11e82601bcb3036a634d093060839b02fd",
+        "target_mask": "b63923054bf8a9fc8dd2e319db4ca3898c5d285b0c4fd62efc5ae415ec0916c2",
+        "reference_mask": "6005ac85bffe52f7ced84d2592752a4bd44c732e7ee5a5040070e31cc3fb6b6f"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "19-baseline.png",
+          "sha256": "ec8a833e273deb0d19c690a8d69d169a8f77257b793c3034e3c11473475c11eb"
+        },
+        "candidate": {
+          "file": "19-candidate.png",
+          "sha256": "47a3e9a95aa15bbf9b4fbd337b7d53c91626ed126a082b4b5537756be505e7d9"
+        }
+      },
+      "diagnostic": {
+        "applied": true,
+        "target_person_mass": 0.3639475703239441,
+        "reference_person_mass": 0.21521885693073273
+      },
+      "baseline_seconds": 0.026970500002789777,
+      "candidate_additional_seconds": 0.07153410000319127,
+      "change_from_baseline": 15.043024088541667,
+      "truth_sha256": "90e9019c091feead041b1ffb8515db87065db1d4d4252824d97d666e6c20af37",
+      "human_mask_sha256": "2f92346f193156317ea2d38fc96e9e0fc6cdafbfbe6a4291e69d3fb5977497a5",
+      "scores": {
+        "baseline": {
+          "mae": 43.749737413194445,
+          "person_mae": 19.887288080964353,
+          "background_mae": 57.78338106611248,
+          "relation_mae": 44.94163170014474,
+          "boundary_mae": 42.419128067427465,
+          "endpoint_fraction": 0.01607638888888889
+        },
+        "candidate": {
+          "mae": 51.577841796875,
+          "person_mae": 41.65082950956089,
+          "background_mae": 57.415974799849735,
+          "relation_mae": 15.482373206122212,
+          "boundary_mae": 50.01116953830089,
+          "endpoint_fraction": 0.010938585069444444
+        }
+      }
+    },
+    {
+      "index": 20,
+      "job": {
+        "group": "none",
+        "target": 285,
+        "reference": 1993,
+        "split": "development",
+        "profile": "identity",
+        "reference_file": "development\\references\\1993-identity.png",
+        "truth_file": "development\\truth\\285-identity.png"
+      },
+      "inputs_sha256": {
+        "target": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1",
+        "reference": "33f654bb14153bceaa888e9d39acfe6653871b3559016fe9be43e2cac496186e",
+        "target_mask": "37ea1eb370a79167fe16c8b9c0dbc4a5a00f9ec5bf5d2aa58920db3ee2b13780",
+        "reference_mask": "ef1dbe53d05cfc6b710124389a5fb163cde15cf3cbe7aead9a941f44a42417d3"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "20-baseline.png",
+          "sha256": "da4d167509f0a31975f97a6fb85ce4d67f638215662c6eff9bd884ec74063536"
+        },
+        "candidate": {
+          "file": "20-candidate.png",
+          "sha256": "da4d167509f0a31975f97a6fb85ce4d67f638215662c6eff9bd884ec74063536"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.027717800003301818,
+      "candidate_additional_seconds": 0.0014913999984855764,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "7b4f5145e91420e6c4267e811f761b872f2bd2d96d1632f53f9aaacd24459d32",
+      "human_mask_sha256": "348f59a70a0506c36a98b0ba8a86296914515a75d4d263c934a01467a786ca61",
+      "scores": {
+        "baseline": {
+          "mae": 14.812849296075086,
+          "person_mae": null,
+          "background_mae": 14.812849296075086,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 14.812849296075086,
+          "person_mae": null,
+          "background_mae": 14.812849296075086,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 21,
+      "job": {
+        "group": "none",
+        "target": 285,
+        "reference": 1993,
+        "split": "development",
+        "profile": "global_contrast",
+        "reference_file": "development\\references\\1993-global_contrast.png",
+        "truth_file": "development\\truth\\285-global_contrast.png"
+      },
+      "inputs_sha256": {
+        "target": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1",
+        "reference": "2ba9f49bf82e44f5f72b0a610edd1dc47c27492782c441e8fdf8198eee9b961b",
+        "target_mask": "37ea1eb370a79167fe16c8b9c0dbc4a5a00f9ec5bf5d2aa58920db3ee2b13780",
+        "reference_mask": "f199fd185d9c1638d9c82cda0f15ec506de2f686552d4e56bcfa5fc98b168343"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "21-baseline.png",
+          "sha256": "48a395d3e2b0d11c22750aba22395d6c759bfbe9308a16e679ebd093a20c7b52"
+        },
+        "candidate": {
+          "file": "21-candidate.png",
+          "sha256": "48a395d3e2b0d11c22750aba22395d6c759bfbe9308a16e679ebd093a20c7b52"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.038059799997427035,
+      "candidate_additional_seconds": 0.001519099998404272,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "ecd8d8dfb9a59a319bbe37f1f8ce8fea99b087dc77210ae1a0e7a61fd1de9312",
+      "human_mask_sha256": "348f59a70a0506c36a98b0ba8a86296914515a75d4d263c934a01467a786ca61",
+      "scores": {
+        "baseline": {
+          "mae": 16.240329031569967,
+          "person_mae": null,
+          "background_mae": 16.240329031569967,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 6.22155858930603e-06
+        },
+        "candidate": {
+          "mae": 16.240329031569967,
+          "person_mae": null,
+          "background_mae": 16.240329031569967,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 6.22155858930603e-06
+        }
+      }
+    },
+    {
+      "index": 22,
+      "job": {
+        "group": "none",
+        "target": 285,
+        "reference": 1993,
+        "split": "development",
+        "profile": "global_desaturate",
+        "reference_file": "development\\references\\1993-global_desaturate.png",
+        "truth_file": "development\\truth\\285-global_desaturate.png"
+      },
+      "inputs_sha256": {
+        "target": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1",
+        "reference": "a6935eb4607d21da7e1aa480054af6bed21ad93a08d5cf7fe52eab704407fe84",
+        "target_mask": "37ea1eb370a79167fe16c8b9c0dbc4a5a00f9ec5bf5d2aa58920db3ee2b13780",
+        "reference_mask": "988af1b73d2a865b6df83de6c0dff86bab886df9086b86b60a587e86c2bef8d7"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "22-baseline.png",
+          "sha256": "40cfc4a72432676738521a9b86074a4a042bd4c6b6aefa07ba4413ca12b103e8"
+        },
+        "candidate": {
+          "file": "22-candidate.png",
+          "sha256": "40cfc4a72432676738521a9b86074a4a042bd4c6b6aefa07ba4413ca12b103e8"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.030682399999932386,
+      "candidate_additional_seconds": 0.0016280999989248812,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "bb64d271a697fc24eb8002fefd0d41506b200c65ecffe4e5b8ecd0f25cbef7ab",
+      "human_mask_sha256": "348f59a70a0506c36a98b0ba8a86296914515a75d4d263c934a01467a786ca61",
+      "scores": {
+        "baseline": {
+          "mae": 8.85198289960182,
+          "person_mae": null,
+          "background_mae": 8.85198289960182,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 8.85198289960182,
+          "person_mae": null,
+          "background_mae": 8.85198289960182,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 23,
+      "job": {
+        "group": "none",
+        "target": 285,
+        "reference": 1993,
+        "split": "development",
+        "profile": "region_color_luminance",
+        "reference_file": "development\\references\\1993-region_color_luminance.png",
+        "truth_file": "development\\truth\\285-region_color_luminance.png"
+      },
+      "inputs_sha256": {
+        "target": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1",
+        "reference": "d33b9637c3d34e25b71394560de6aa46134c2c4fc79fb3b1142e31aa605f5f68",
+        "target_mask": "37ea1eb370a79167fe16c8b9c0dbc4a5a00f9ec5bf5d2aa58920db3ee2b13780",
+        "reference_mask": "6ed1eba0f0b4d61f9bc11f378ca230f1299a4e5c44ebb6e055695692ab45ccc7"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "23-baseline.png",
+          "sha256": "ef3c06fbc366ae368a2f1ac734dfb922dc001b959bd43633bcb0403cd6517bb3"
+        },
+        "candidate": {
+          "file": "23-candidate.png",
+          "sha256": "ef3c06fbc366ae368a2f1ac734dfb922dc001b959bd43633bcb0403cd6517bb3"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.03251319999981206,
+      "candidate_additional_seconds": 0.0016666000010445714,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "7bbc33a1edf93a44b384fde1291ffb25661e6cd071e1f63ea3ca90d97d13c5bb",
+      "human_mask_sha256": "348f59a70a0506c36a98b0ba8a86296914515a75d4d263c934a01467a786ca61",
+      "scores": {
+        "baseline": {
+          "mae": 14.967237272468715,
+          "person_mae": null,
+          "background_mae": 14.967237272468715,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 14.967237272468715,
+          "person_mae": null,
+          "background_mae": 14.967237272468715,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 24,
+      "job": {
+        "group": "none",
+        "target": 285,
+        "reference": 1993,
+        "split": "development",
+        "profile": "region_tone_saturation",
+        "reference_file": "development\\references\\1993-region_tone_saturation.png",
+        "truth_file": "development\\truth\\285-region_tone_saturation.png"
+      },
+      "inputs_sha256": {
+        "target": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1",
+        "reference": "6551425dca4a421cd127674be762b9b0c2481b875bc69686d31b78f3ea085c2c",
+        "target_mask": "37ea1eb370a79167fe16c8b9c0dbc4a5a00f9ec5bf5d2aa58920db3ee2b13780",
+        "reference_mask": "58ec0118a35ce37780ee519736060b1c1a01d28b3f4ce8fbcd4e49e872e0c5b6"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "24-baseline.png",
+          "sha256": "99a637150d9da09e44e2c7786339e343a5f44f4d62b6c59dd66bd11736661156"
+        },
+        "candidate": {
+          "file": "24-candidate.png",
+          "sha256": "99a637150d9da09e44e2c7786339e343a5f44f4d62b6c59dd66bd11736661156"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.029218800002126954,
+      "candidate_additional_seconds": 0.0016420000029029325,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "1878942add26e3d8792835a56c78107ac5d5d9669ef51ca44239d298749dd9da",
+      "human_mask_sha256": "348f59a70a0506c36a98b0ba8a86296914515a75d4d263c934a01467a786ca61",
+      "scores": {
+        "baseline": {
+          "mae": 17.70922923777019,
+          "person_mae": null,
+          "background_mae": 17.70922923777019,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 7.999146757679181e-06
+        },
+        "candidate": {
+          "mae": 17.70922923777019,
+          "person_mae": null,
+          "background_mae": 17.70922923777019,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 7.999146757679181e-06
+        }
+      }
+    },
+    {
+      "index": 25,
+      "job": {
+        "group": "none",
+        "target": 2149,
+        "reference": 2592,
+        "split": "development",
+        "profile": "identity",
+        "reference_file": "development\\references\\2592-identity.png",
+        "truth_file": "development\\truth\\2149-identity.png"
+      },
+      "inputs_sha256": {
+        "target": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+        "reference": "8c56e725ddc2d4d0102aab90db6e85879c683d23fb6fd7479c8d4f79895a4377",
+        "target_mask": "7d50a9b143985fde49dd5d6a5c871fe5ac411d21a8094ca7092a97f6320d168b",
+        "reference_mask": "53877e9655698b2dad727bb4193af16a3bcc63042d4f6fb91875341dcc02ab6e"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "25-baseline.png",
+          "sha256": "c991d48a79ca008bd27471b6214a4415faa2b3e3d5afe28c3375c812cfd6bac3"
+        },
+        "candidate": {
+          "file": "25-candidate.png",
+          "sha256": "c991d48a79ca008bd27471b6214a4415faa2b3e3d5afe28c3375c812cfd6bac3"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.02438879999681376,
+      "candidate_additional_seconds": 0.0010610000026645139,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+      "human_mask_sha256": "fce689cbddb3ca0dc66bfcc39c895eae185148c988701670dd19790a1b2ed632",
+      "scores": {
+        "baseline": {
+          "mae": 25.340010245901638,
+          "person_mae": null,
+          "background_mae": 25.340010245901638,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 25.340010245901638,
+          "person_mae": null,
+          "background_mae": 25.340010245901638,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 26,
+      "job": {
+        "group": "none",
+        "target": 2149,
+        "reference": 2592,
+        "split": "development",
+        "profile": "global_contrast",
+        "reference_file": "development\\references\\2592-global_contrast.png",
+        "truth_file": "development\\truth\\2149-global_contrast.png"
+      },
+      "inputs_sha256": {
+        "target": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+        "reference": "2633d3146f8f1de1b49173639ed5a9acb0101b618d8354e038ac1eedc5c164ff",
+        "target_mask": "7d50a9b143985fde49dd5d6a5c871fe5ac411d21a8094ca7092a97f6320d168b",
+        "reference_mask": "e268b3d09077257e5db670acf673dfc7d56da6db5f2e8140a1b147bfb6557867"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "26-baseline.png",
+          "sha256": "7945fbb4ee66ebc27f290e033daf63d03d4e85a4758f1e4f8a699db1fb1bd7ad"
+        },
+        "candidate": {
+          "file": "26-candidate.png",
+          "sha256": "7945fbb4ee66ebc27f290e033daf63d03d4e85a4758f1e4f8a699db1fb1bd7ad"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.022412799997255206,
+      "candidate_additional_seconds": 0.0010024000002886169,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "ce9ead8c92df5860ca2a58d4fbe2e56d2220ec0f64888b843906f81549caae55",
+      "human_mask_sha256": "fce689cbddb3ca0dc66bfcc39c895eae185148c988701670dd19790a1b2ed632",
+      "scores": {
+        "baseline": {
+          "mae": 27.90475092701015,
+          "person_mae": null,
+          "background_mae": 27.90475092701015,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 27.90475092701015,
+          "person_mae": null,
+          "background_mae": 27.90475092701015,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 27,
+      "job": {
+        "group": "none",
+        "target": 2149,
+        "reference": 2592,
+        "split": "development",
+        "profile": "global_desaturate",
+        "reference_file": "development\\references\\2592-global_desaturate.png",
+        "truth_file": "development\\truth\\2149-global_desaturate.png"
+      },
+      "inputs_sha256": {
+        "target": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+        "reference": "781a3805d5c8e5813afce31212ba354cd53c74462b32f2a1d47a54124cda32da",
+        "target_mask": "7d50a9b143985fde49dd5d6a5c871fe5ac411d21a8094ca7092a97f6320d168b",
+        "reference_mask": "ad94d1f53d66d05e581c90c14cff09466848566f8948930cc74f411e92d2466a"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "27-baseline.png",
+          "sha256": "f4064287a88ee40c60841e770780187ae716af518604bae66ad3a1d606e2dc48"
+        },
+        "candidate": {
+          "file": "27-candidate.png",
+          "sha256": "f4064287a88ee40c60841e770780187ae716af518604bae66ad3a1d606e2dc48"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.023451199995179195,
+      "candidate_additional_seconds": 0.0009844000014709309,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "da6f90904ebc3a4d9c72fbd563f793551aefbc2a24c1069ed169a11b363b6c0d",
+      "human_mask_sha256": "fce689cbddb3ca0dc66bfcc39c895eae185148c988701670dd19790a1b2ed632",
+      "scores": {
+        "baseline": {
+          "mae": 20.78921618852459,
+          "person_mae": null,
+          "background_mae": 20.78921618852459,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 20.78921618852459,
+          "person_mae": null,
+          "background_mae": 20.78921618852459,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 28,
+      "job": {
+        "group": "none",
+        "target": 2149,
+        "reference": 2592,
+        "split": "development",
+        "profile": "region_color_luminance",
+        "reference_file": "development\\references\\2592-region_color_luminance.png",
+        "truth_file": "development\\truth\\2149-region_color_luminance.png"
+      },
+      "inputs_sha256": {
+        "target": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+        "reference": "f4840bee3cfde4e0d724b016158fc1b0d70b5416acde6bbf24b102ed7bfd1d03",
+        "target_mask": "7d50a9b143985fde49dd5d6a5c871fe5ac411d21a8094ca7092a97f6320d168b",
+        "reference_mask": "a034b21b0979ad1cf034e5de0315fa36bf5ef613793b8b26affb5934b1ac0048"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "28-baseline.png",
+          "sha256": "cec01db9c1d66fee9197560e30033d7b7aa202c69f469272bf8ac90c805bf7e6"
+        },
+        "candidate": {
+          "file": "28-candidate.png",
+          "sha256": "cec01db9c1d66fee9197560e30033d7b7aa202c69f469272bf8ac90c805bf7e6"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.029776900002616458,
+      "candidate_additional_seconds": 0.0009981000039260834,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "03b6c4c207ad8566813daa37b48a8f0b97d0313eeed4dfef6caf6bcd82153f1b",
+      "human_mask_sha256": "fce689cbddb3ca0dc66bfcc39c895eae185148c988701670dd19790a1b2ed632",
+      "scores": {
+        "baseline": {
+          "mae": 25.083476044106167,
+          "person_mae": null,
+          "background_mae": 25.083476044106167,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 25.083476044106167,
+          "person_mae": null,
+          "background_mae": 25.083476044106167,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    },
+    {
+      "index": 29,
+      "job": {
+        "group": "none",
+        "target": 2149,
+        "reference": 2592,
+        "split": "development",
+        "profile": "region_tone_saturation",
+        "reference_file": "development\\references\\2592-region_tone_saturation.png",
+        "truth_file": "development\\truth\\2149-region_tone_saturation.png"
+      },
+      "inputs_sha256": {
+        "target": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+        "reference": "2daaa9effad2d0c8dfe0a03334ae3565d6ec6e7ff4594457bf13f9dbd136a56c",
+        "target_mask": "7d50a9b143985fde49dd5d6a5c871fe5ac411d21a8094ca7092a97f6320d168b",
+        "reference_mask": "75fad09c99bce4c529e0b25f029e8ecafd53c130b16929eae109ce21323a4c5f"
+      },
+      "outputs": {
+        "baseline": {
+          "file": "29-baseline.png",
+          "sha256": "12d89aae168e36baaa2a60338c2701c311dc9e056f6081d2cbc5a3ca7f8225d6"
+        },
+        "candidate": {
+          "file": "29-candidate.png",
+          "sha256": "12d89aae168e36baaa2a60338c2701c311dc9e056f6081d2cbc5a3ca7f8225d6"
+        }
+      },
+      "diagnostic": {
+        "applied": false,
+        "reason": "Insufficient reliable two-region support"
+      },
+      "baseline_seconds": 0.027625299997453112,
+      "candidate_additional_seconds": 0.0011467999938759021,
+      "change_from_baseline": 0.0,
+      "truth_sha256": "242bf330c825b3b410685985c2f8ec925ec2de6dea901984ddf6826d686bb77b",
+      "human_mask_sha256": "fce689cbddb3ca0dc66bfcc39c895eae185148c988701670dd19790a1b2ed632",
+      "scores": {
+        "baseline": {
+          "mae": 29.547423887587822,
+          "person_mae": null,
+          "background_mae": 29.547423887587822,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        },
+        "candidate": {
+          "mae": 29.547423887587822,
+          "person_mae": null,
+          "background_mae": 29.547423887587822,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0
+        }
+      }
+    }
+  ],
+  "human_reviewers": 0,
+  "visual_review": "One developer reviewed all6 full5-case sheets nonblind after numeric scoring; no image selection by score",
+  "decision": "Rejected; no thresholds/strengths retuned, no product/model changes",
+  "independent_code_review": {
+    "tests_passed": 5,
+    "output_hashes_verified": 60,
+    "case_scores_recomputed": 30,
+    "producer_audit_rerun": true,
+    "all_candidate_inferences_rerun": false,
+    "visual_sheets_reviewed": false,
+    "recommendation": "Retain failed diagnostic; stop fixed recipe; no material conditioning/scoring/gate/GT-use defect found"
+  }
+}
