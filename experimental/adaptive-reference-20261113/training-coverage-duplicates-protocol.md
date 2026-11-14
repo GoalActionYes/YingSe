@@ -1,0 +1,15 @@
+# Expanded real-pair integrity and duplicate screening
+
+Freeze before decoding new cohort-training-coverage-v1 images. Selection and bytes identities remain those in the two earlier protocols. No new holdout allocation, GT quality scoring, or model training here.
+
+Original byte size/SHA256 must match frozen pinned remote Git/LFS identity. Preserve originals. Apply existing triplet_color.to_srgb into separate RGB8 ICC-tagged PNGs; preserve preparation metadata and round-trip pixel equality. Require minimum16pixels, supported RGB/orientation and same content/GT dimensions for every pair. This quantizes high-bit TIFF under existing Pillow policy and is not a high-bit product pipeline.
+
+Compare every expanded training asset against all consumed development and reserved assets: validation roles in cohort-v1/v2/multiref-v1 (including noncurrent dev), plus all96 assets in each reserved-v2, reserved-expanded-v1 and reserved-multiref-v1 completed results. Verify each registered prepared-byte hash before use. Different heldout folders referring to the same original path must agree in prepared pixels. Grouping and scores are not reselected using any of these images. Reserved-v1 was an empty pre-execution snapshot, not the completed first reserved run; that run is reserved-v2.
+
+Exact duplicates: full original SHA and full prepared RGB shape+pixel SHA. Flag any training/heldout crossing, regardless of content/reference/GT role or family. Within training repeated references/content are intentional and reported, not cross-split leakage. Cross-role heldout repeats also intentional.
+
+Perceptual screen: grayscale using Pillow L, resize32x32 bilinear, apply orthonormal DCT-II matrix in NumPy. Select low8x8, discard DC, threshold the remaining63 coefficients by their median into63 bits. Flag Hamming distance≤6 for any train/heldout pair. No fitted threshold, semantic embedding, histogram or quality score. Contrast/offset invariance is approximate; style, crop, rotation and burst similarity can evade this screen. Test synthetic resize/positive-affine luminance variants, unrelated structure and finite/flat inputs before use. Never claim exhaustive subject/scene/pretraining independence.
+
+Persist exact/perceptual flags and deterministic contact sheets privately. Before training manually inspect ALL flagged pairs in deterministic order; classify same capture/near duplicate, visibly different, or uncertain, with reason. A confirmed or uncertain crossing stops this frozen cohort experiment; do not silently remove/replace groups, change threshold or compare candidate quality. If clearly different flags are accepted, keep their pretraining review ledger and limitations. No flags plus source-family isolation remains a limited screen, not proof of global independence.
+
+Input/GT style differences are only measured after all preparation checks; no filtering based on desired strength, aesthetics or model error. All original/converted images, path records, fingerprints and contact sheets stay private. Public report includes counts, source/manifest hashes, review outcomes and limitations, no raw media or fingerprints.

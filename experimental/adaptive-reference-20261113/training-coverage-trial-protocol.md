@@ -1,0 +1,17 @@
+# Equal-update real training coverage comparison
+
+Freeze before decoding/scoring new training GT for model quality. Use only the frozen expanded4096train/64dev cohort after byte,ICC,pairing,exact/perceptual checks pass, including any pretraining duplicate review. Preparation remains distinct from model evaluation. No new independent images allocated.
+
+Question: does broader real author-paired supervision improve reference-conditioned color and tone transfer over continued training on the original1024pairs? Neither feature retrieval scores nor training loss can answer this.
+
+Both arms use raw C10 architecture/forward with its joint histogram and source/reference mean appearance context. No feature normalization,G64,tokens,contrastive/paired loss,augmentation or extra controls. Initialize EVERY tensor in both arms from completed original appearance-pairwise-replica-v1 epoch7, SHA256abd4757eff1c5133101732c1f04a051ce29400358282baacf7a43030a5584e38; resultsSHA3655c1120a7d854269304810c3be144e281d871a4cd6d1cd62c2236e2b7d093c. This prior failed complete promotion gates and is only a common research warm start, not product baseline. Preserve current13 checkpoint SHA d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9 for all original gates.
+
+Per arm reset random/NumPy/Torch/CUDA seed20261124 and fresh AdamW,lr1e-5 for original parameters,1e-4 for existing pairwise/reference adapters,weight_decay1e-4. Batch4 contains two same-target pairs using existing grouped_batches; RGB L1+0.1gradient L1,gradient_clip1.0,256x256 bilinear RGB8 inputs,TF32 off. Existing matrix/metrics stay unchanged.
+
+Eight equal-update blocks,1024updates each,total8192updates/arm. Old-data control traverses1024rows four complete grouped passes/block; expanded arm traverses4096rows once/block. Repeats and broader unique samples are the intended treatment, not extra updates. Persist every index order digest/exposure count. Neither model uses reserved pixels for training. Complete initial states and initial raw/grid/RGB/full64 scores must match original C10 before creating each optimizer. Dev prepared pixels must match old preparation exactly.
+
+Evaluate block0 and every completed block1..8. Select earliest minimum dev RGB MAE only, never pick via tone,severe cases,second-reference counts or a subset. Retain all checkpoints,PNGs and full64RGB/32paired/tone tables. Original current13 scores remain separate from common epoch0C10.
+
+Candidate must pass unchanged response_development_gate(current13,candidate,matched_old_data_control) AND unchanged gate against originalC10. This prevents a worse continuation control from turning old gains into a new contribution. Same existing requirements on RGB means/improvement counts/severe cases/second-reference mean/counts,delta and dark-light chroma relationship; brightness/contrast/saturation proxy nonregression. No reduced thresholds,more seeds or size/step sweeps after results.
+
+On any failure,no product integration,new independent allocation or rescue tuning. Audit saved checkpoints/full source/order/RGB/paired/tone from bytes,all selected native outputs and fixed first2/all severe/best/worst visual examples. A passing dev result only permits a separately frozen fresh-image/original-size/natural-video/runtime/UI acceptance study. App/simple input flow remains unchanged; no CUBE claim for spatial results. Publish only a coherent completed milestone with actual evidence; media,weights,features,private paths and runtime/session artifacts stay outside Git.

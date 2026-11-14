@@ -1,0 +1,15 @@
+# Training coverage preparation, metadata first
+
+Purpose: determine whether broader real paired training is feasible, before further model changes. Current model, descriptor, loss and UI stay unchanged. This preparation is not a quality improvement claim and does not allocate new independent evaluation.
+
+Pinned index: TST100K revision63bf13833b75407c862d608c3d81281d0a35b61f, triplet.json SHA2565e71ea9eb3255d0169f042d5fe4f9904f5ef9849024cba98fce74c5299159413. Author triplets alone define reference/GT correspondence. Filename suffixes and directory IDs are not verified style labels or source-dataset annotations.
+
+Retain all1024 existing multiref train rows, their four references and group/style identities. Expand256 to1024 target families, four distinct GT/reference paths per group,4096 triplets. Keep the original64 development rows exactly, no new development or reserved selection. Insufficient groups stops preparation, never lowers counts. Old training source snapshots remain unchanged.
+
+Use the existing SHA256('yingse-tst-v1:'+family) partition rule, including the original four-row audited families forced to train. Validate the full index GT/content family convention and unique content-stem-to-path identity. Exclude every content/reference family appearing in any validation/reserved partition of cohort-v1, cohort-v2, cohort-multiref-v1 and cohort-multiref-reserved-v1. This includes development rows not retained in the64 current pairs. Unknown reference families, self-references and nontrain sources are ineligible.
+
+Candidate ordering: existing deterministic SHA256(sorted-key JSON author row) order, original index as tie-breaker. For each new target take the first four rows with distinct reference and GT paths; take the first768 complete new groups by that order. Preserve old groups before new ones, emit style-major rows with styles0..3. Do not inspect pixels, GT scores or filename-style meaning to choose groups.
+
+The metadata artifact records predecessor/index/source hashes, group counts, exclusion counts and exact rows privately. Public summaries contain counts, hashes and limitations, no images, original asset paths or feature vectors. Family isolation does not establish scene/subject/pretraining independence. After downloading, exact pixel and perceptual/near-duplicate checks against all consumed development/reserved assets are required before training. A collision pauses the study for a predeclared rule, not a result-conditioned replacement. No pixels are downloaded by this tool.
+
+Subsequent training must freeze its own protocol before reading new GT scores. Compare raw C10 architecture on old vs expanded data from identical complete initialization, optimizer and equal update budgets; extra data must not mean extra updates. Preserve full existing RGB/response/tone/severe-regression gates against both current13 and matched old-data continuation. A failed prior candidate is not a product baseline. No normalization, token, encoder, loss or seed sweep is bundled into the data comparison. Original-size/video/runtime acceptance follows only a passing development candidate.
