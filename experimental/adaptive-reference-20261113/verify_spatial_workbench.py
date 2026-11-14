@@ -24,7 +24,7 @@ def main():
     if not args.run or Path(args.run).name!=args.run or args.run in ('.','..'):raise ValueError('Run must be a single directory name')
     out=ROOT/'outputs/adaptive-reference-20261113/spatial-workbench'/args.run;out.mkdir(parents=True,exist_ok=False)
     frozen=out/'frozen-source';frozen.mkdir()
-    for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','spatial_render.py','spatial_build.py','temporal_grid.py','spatial_strength_preview.js','spatial_manual_preview.js','spatial_manual_worker.js','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
+    for name in ['spatial_workbench.py','spatial_store.py','spatial_jobs.py','spatial_render.py','frame_transfer.py','spatial_build.py','temporal_grid.py','spatial_strength_preview.js','spatial_manual_preview.js','spatial_manual_worker.js','verify_spatial_workbench.py']:(frozen/name).write_bytes(Path(__file__).with_name(name).read_bytes())
     server=make_spatial_workbench(out/'data',enhanced=args.multiref);thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start();url=f'http://127.0.0.1:{server.server_port}';report={}
     def api(path,data=None):
         req=Request(url+path,data=None if data is None else json.dumps(data).encode(),headers={'Content-Type':'application/json'})

@@ -1,0 +1,101 @@
+{
+  "scope": "Captured primary-source static deployment audit; no model inference/image upload; not REA-generated Evidence",
+  "files": [
+    {
+      "path": "index.html",
+      "url": "https://zhkkke.github.io/NeuralPreset/",
+      "bytes": 792,
+      "sha256": "e4d8497a85d3212ac60f668eefb9e442f60708dd2b81a88d9a4d194c278c86c8"
+    },
+    {
+      "path": "app.js",
+      "url": "https://zhkkke.github.io/NeuralPreset/static/js/app.d1b7436617c2987a3969.js",
+      "bytes": 99029,
+      "sha256": "7dad80d32fe64b767ebf6e2c1b077ee55fef86f83e27210d05c2d77f99ec1744"
+    },
+    {
+      "path": "manifest.js",
+      "url": "https://zhkkke.github.io/NeuralPreset/static/js/manifest.8fb12ea1c897156d3673.js",
+      "bytes": 1436,
+      "sha256": "9694c83a607f8a3d3c97a211b820b7796cd6129f4497857756488912caad7de2"
+    },
+    {
+      "path": "editor.js",
+      "url": "https://zhkkke.github.io/NeuralPreset/static/js/0.a0c3843b41ad628bc3a0.js",
+      "bytes": 782889,
+      "sha256": "bdaf4dbe8b07bb2fec7054d2da255e08db9bbbe7f8cc1b4c30c0334d5a1c3288"
+    }
+  ],
+  "locations": {
+    "/npreset/upload": [
+      227201
+    ],
+    "/npreset/process": [
+      227221
+    ],
+    "/npreset/fetch": [
+      227242
+    ],
+    "/npreset/get_model": [
+      227261
+    ],
+    "loadGraphModel": [
+      228582,
+      228678
+    ],
+    "key:\"_runTFModel\"": [
+      229698
+    ],
+    "key:\"_calcNPreset\"": [
+      231621
+    ],
+    "key:\"calcRetouchNPreset\"": [
+      231919
+    ],
+    "key:\"calcDetouchNPreset\"": [
+      232084
+    ]
+  },
+  "metadata_probe": {
+    "url": "https://api.colorist.ai/npreset/get_model",
+    "method": "GET",
+    "result": "Local TLS handshake failed with UNEXPECTED_EOF_WHILE_READING; no image submitted; global endpoint availability unknown"
+  },
+  "claims": {
+    "local_pixel_application": true,
+    "remote_preset_extraction_call_in_static_client": true,
+    "offline_parameter_encoder_obtained": false
+  },
+  "unknowns": [
+    "Backend encoder implementation and weights",
+    "End-to-end output quality",
+    "Public model metadata response and graph weights",
+    "Runtime traffic, actual image submission, full video support"
+  ],
+  "video_color_grading_files": [
+    {
+      "path": "vcg-grading.py",
+      "url": "https://raw.githubusercontent.com/seunghyuns98/VideoColorGrading/main/grading.py",
+      "sha256": "d90e151de2802dc8072e70b276e25935c411f0ee2fe5edc7886a75abe2fab25e",
+      "bytes": 4880
+    },
+    {
+      "path": "vcg-pipeline.py",
+      "url": "https://raw.githubusercontent.com/seunghyuns98/VideoColorGrading/main/pipeline.py",
+      "sha256": "67bf4848702f5e1d2868db540daf3cd5c61bb9037ff7a82e81f3fbd32ef9461c",
+      "bytes": 12778
+    },
+    {
+      "path": "vcg-configs-prompts-video_demo.yaml",
+      "url": "https://raw.githubusercontent.com/seunghyuns98/VideoColorGrading/main/configs/prompts/video_demo.yaml",
+      "sha256": "cc795dc275961259c7b48ff83536e331ccf588f300565f8b40e906f4ced23424",
+      "bytes": 522
+    },
+    {
+      "path": "vcg-fast_env.sh",
+      "url": "https://raw.githubusercontent.com/seunghyuns98/VideoColorGrading/main/fast_env.sh",
+      "sha256": "12d9dc5b06a3a1f93f2347e71a9b5e9b48e2e5f99a14b052171b0660a4d7ed1b",
+      "bytes": 1163
+    }
+  ]
+}
