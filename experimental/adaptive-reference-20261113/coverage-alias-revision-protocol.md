@@ -1,0 +1,9 @@
+# New cohort revision after confirmed capture crossing
+
+The v1 cohort failed its frozen pretraining duplicate screen; no training or model quality scoring occurred. Preserve that failed manifest and review. Do not edit v1 rows or mark it passed.
+
+For v2, freeze a capture-family equivalence graph from ALL manually confirmed pairs in the completed v1 train/heldout duplicate review and consumed-heldout fingerprint review. Require complete reviews, no uncertain decisions, unchanged source manifests/fingerprint files and recorded contact-sheet identity. Edges come only from confirmed visual same-capture/near-capture evidence, never model error or desired style. Distinct photo IDs do not prove distinct captures.
+
+Compute transitive closure of every connected component intersecting any old validation/reserved family. Exclude the complete component from BOTH new training target and reference roles. Keep all old1024 training rows exactly; if closure conflicts with them, stop rather than remove old rows. Rerun the original hash ranking and four-distinct-path selection for1024groups/4096train. Keep64dev unchanged; no new independent allocation, count reduction, threshold change, seed or quality-score filtering.
+
+Record the exact v1→v2 row differences and all source/graph/evidence identities. This is a new explicitly versioned data-hygiene experiment, not continuation of a passing v1 trial. Reuse only byte/pixel-verified assets; fetch any newly selected assets at the pinned revision, under the same8GiB/20MiB limits. Recompute all preparation/complete consumed-heldout crossing checks before any training. Any new confirmed/uncertain crossing fails that frozen revision too; no silent replacement loop. Limited DCT screen and source-family closure still do not prove exhaustive capture/subject/pretraining independence.
