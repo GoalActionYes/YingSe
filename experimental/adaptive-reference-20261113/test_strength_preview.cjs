@@ -38,6 +38,25 @@ test('basis decoding after an authoritative response never repaints that respons
  r.state.strength=.9;r.p.render();r.flush();assert.deepEqual(r.painted[0],[180,90,0,255]);
 });
 
+test('returning to the last server strength repaints after an intermediate local frame',async()=>{
+ const r=rig(decode);r.state.strength=.8;
+ r.p.needsBasis('one',1);await r.p.accept('one',1,'before',pair);r.p.serverApplied();r.flush();
+ r.state.strength=.2;assert.equal(r.p.render(),true);r.flush();assert.deepEqual(r.painted.at(-1),[40,20,0,255]);
+ r.state.strength=.8;assert.equal(r.p.render(),true);r.flush();assert.deepEqual(r.painted.at(-1),[160,80,0,255]);
+});
+
+test('returning to the last server strength also repaints after a manual worker frame',async()=>{
+ const r=rig(decode),sent=[];let worker;
+ r.p.workerFactory=()=>worker={postMessage(m){sent.push(m);},terminate(){}};
+ r.state.neutral=false;r.state.adjustments={basic:{brightness:12}};r.state.strength=.8;
+ r.p.needsBasis('one',1);await r.p.accept('one',1,'before',pair);r.p.serverApplied();r.flush();
+ r.state.strength=.2;r.p.render();r.flush();
+ worker.onmessage({data:{type:'result',id:sent.at(-1).id,width:1,height:1,pixels:new Uint8ClampedArray([30,20,10,255])}});
+ r.state.strength=.8;assert.equal(r.p.render(),true);r.flush();assert.equal(sent.at(-1).strength,.8);
+ worker.onmessage({data:{type:'result',id:sent.at(-1).id,width:1,height:1,pixels:new Uint8ClampedArray([90,80,70,255])}});
+ assert.deepEqual(r.painted.at(-1),[90,80,70,255]);
+});
+
 test('manual worker coalesces changes, rejects stale output, and defers to final server frame',async()=>{
  const r=rig(decode),sent=[];let worker;
  r.p.workerFactory=()=>worker={postMessage(m){sent.push(m);},terminate(){this.stopped=true;}};

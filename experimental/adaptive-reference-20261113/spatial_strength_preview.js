@@ -93,7 +93,7 @@
      this.pending=null;
      if(result.type!=='result'||result.width!==this.workerSize.width||result.height!==this.workerSize.height||!(result.pixels instanceof Uint8ClampedArray)||result.pixels.length!==result.width*result.height*4){fail();return;}
      try{
-      if(this.eligible()&&signature(this.current())===pending.signature)this.paint(result.pixels,result.width,result.height);
+      if(this.eligible()&&signature(this.current())===pending.signature){this.paint(result.pixels,result.width,result.height);this.serverSignature=null;}
       else if(this.eligible())this.render();
      }catch(error){fail();}
     };
@@ -107,7 +107,9 @@
    if(this.frame!==null)return true;
    this.frame=this.requestFrame(()=>{
     this.frame=null;if(!this.eligible())return;
-    try{const s=this.current(),b=this.basis;if(s.neutral)this.paint(blendPixels(b.before,b.full,s.strength),b.width,b.height);else this.manual(s);}
+    // A local frame replaces the last authoritative image. Returning to that
+    // server's old strength must still repaint while the next response is pending.
+    try{const s=this.current(),b=this.basis;if(s.neutral){this.paint(blendPixels(b.before,b.full,s.strength),b.width,b.height);this.serverSignature=null;}else this.manual(s);}
     catch(error){if(this.worker)this.worker.terminate();this.worker=null;this.pending=null;this.manualFailed=true;}
    });return true;
   }

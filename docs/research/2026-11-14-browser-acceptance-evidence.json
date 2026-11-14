@@ -1,0 +1,476 @@
+{
+  "schema_version": 1,
+  "stage": 7,
+  "model_changed": false,
+  "training_started": false,
+  "scope": "Isolated Windows HTTP and fresh headless Edge; finite scripted input events, decode plus next animation frame; not hardware display latency, sustained FPS, human experience or color-quality acceptance",
+  "pre_fix": {
+    "local_run": "acceptance-browser-20261114-v2",
+    "report_sha256": "4c3a636946a584853af53ab45c3f754079b7777300a4341e59ba495df090d11a",
+    "successful_strength_latencies_ms": [
+      65.30000000074506,
+      39.39999999944121,
+      37.5,
+      37.89999999944121,
+      47.10000000055879,
+      38.30000000074506,
+      39.10000000055879,
+      41.5
+    ],
+    "failed_strength": 80,
+    "last_server_strength": 80,
+    "eligible": false,
+    "basis_present": true
+  },
+  "http": {
+    "variant": "multiref-temporal-v1",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "worker_assets_served_with_self_script_policy": true,
+    "rgba_gray_http": true,
+    "analysis_seconds": 0.9578228000000308,
+    "real_gpu_http_manual_oracles": 12,
+    "verified_basis_matches_full_preview": true,
+    "preview_seconds": [
+      0.15001019999999698,
+      0.11574039999959496,
+      0.0903507000002719,
+      0.11638099999981932,
+      0.09917599999971571,
+      0.09637259999999515
+    ],
+    "basis_is_independent_of_manual_adjustments": true,
+    "png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "matches_server_renderer": true,
+      "sha256": "2c874ee9aba2c4cb309a7338287b0c8d0903f9499f247d1f7fa5497760c70041"
+    },
+    "cube_rejection": {
+      "error": "局部调色无法完整导出为普通CUBE，请选择PNG或MP4"
+    },
+    "video": {
+      "wall_seconds": 4.188677000000098,
+      "output_frames": 90,
+      "fps": 30,
+      "dimensions": [
+        640,
+        360
+      ],
+      "duration": 3.0,
+      "sha256": "56b7860ad678193943309b5888d31c7c4808dff50f3185e33a3b80e5796a2e22",
+      "temporal_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6874189814814815
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8979470486111112
+        },
+        {
+          "frame": 60,
+          "lossy_encoded_mae": 1.8434071180555556
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8419126157407408
+        }
+      ]
+    },
+    "video_single_frame_preview_vs_temporal_mae": 0.4023683449074074,
+    "audio_export": {
+      "has_audio": true,
+      "duration": 3.02,
+      "sha256": "fb1cacb81bbd86279364e25b2faa9f81abcd991268bc9e64c41a8339d64dd448",
+      "half_strength_manual_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6635590277777779
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8648075810185185
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8485141782407408
+        }
+      ]
+    },
+    "active_export_stop_rejected": true,
+    "cancel_running_export": true,
+    "source_sha256": {
+      "spatial_build.py": "79a28d7678048ef5af1254be2af23af25d048c5719476af5f598adde7708101d",
+      "spatial_jobs.py": "b9f693c43a9f3dac44af0f5831a96fd134f810866f056852a6eaf335322cca0d",
+      "spatial_manual_preview.js": "150a467f3c703df939de3456739626d2894184b983a7a93cb1a4c51ea54000f5",
+      "spatial_manual_worker.js": "2a65f7a20eb56907c01ea6931bf37df0cbe4d34b91a162c74385939b651b5ac1",
+      "spatial_render.py": "93b014b2b7c9193b318847e050236d75a288c29b1c1affad0a9a9e833bd5820b",
+      "spatial_store.py": "5e012a4f233822e6df6fdbedc506281ad924a502a55c8b4a8f914b76b37369ad",
+      "spatial_strength_preview.js": "e1a52a87f2598f23d774ae00b5eb5678174d248f49c83a014a0ad102fea8ffb6",
+      "spatial_workbench.py": "939e0ed62a6006bb5e2da153850c329ae4f6f121aa241c49abf027907ea2f57a",
+      "temporal_grid.py": "c92db52e18dda2370281671e4a4d937016c821694964a1fd77be7c0e128ae8af",
+      "verify_spatial_workbench.py": "54b4ac4874024acb13255ea0f3170227e91095cd258064e3adb3df95fc6832cf"
+    },
+    "passed": true,
+    "scope": "Actual HTTP workflows including audio and running cancellation; no visual browser acceptance"
+  },
+  "browser": {
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "fixtures": {
+      "target.png": "090ddc6757ee138197f3cf21787022415a3b3011d389a79d502243341a18a560",
+      "reference.png": "822af4aaf8e5ce80a62a6933a64a9516127e5cf2a05acaf5cfafaf0ba5e6346a",
+      "input-audio.mp4": "2517228729b5b2296799034aa1a016f17fd823ccbb88e9a7a182ceaf4c5b1514"
+    },
+    "browser": {
+      "browser": "157.0.4341.46",
+      "page_errors": [],
+      "failed_requests": [],
+      "photo_import": {
+        "width": 960,
+        "height": 540
+      },
+      "strength_local_decoded_ms": [
+        66.09999999962747,
+        38.200000000186265,
+        36.90000000037253,
+        37.09999999962747,
+        42.09999999962747,
+        37.5,
+        36.200000000186265,
+        39.59999999962747,
+        37.299999999813735,
+        37.90000000037253,
+        64.20000000018626,
+        36.700000000186265,
+        37.90000000037253,
+        38.59999999962747
+      ],
+      "manual_local_decoded_ms": [
+        46.10000000055879,
+        32.799999999813735,
+        32.299999999813735,
+        30.600000000558794,
+        31,
+        32.10000000055879,
+        27.199999999254942,
+        34.09999999962747,
+        57.799999999813735
+      ],
+      "preview_http_delay_ms": 1200,
+      "latest_preview_matches_server": true,
+      "undo_redo": true,
+      "curve_sample": {
+        "text": "原图像素 (957, 537) · 曲线输入 RGB 105 / 117 / 122 · 仅定位",
+        "does_not_edit_curve": true
+      },
+      "png_export": {
+        "bytes": 2332904,
+        "download_link_visible": true,
+        "settings": {
+          "strength": 0.1,
+          "adjustments": {
+            "version": 1,
+            "basic": {
+              "enabled": true,
+              "temperature": 0,
+              "tint": 0,
+              "saturation": 0,
+              "vibrance": 0,
+              "brightness": 18,
+              "contrast": 0,
+              "highlights": 0,
+              "shadows": 0,
+              "whites": 0,
+              "blacks": 0,
+              "brilliance": 0
+            },
+            "hsl": {
+              "enabled": true,
+              "red": [
+                0,
+                0,
+                0
+              ],
+              "orange": [
+                0,
+                0,
+                0
+              ],
+              "yellow": [
+                0,
+                0,
+                0
+              ],
+              "green": [
+                0,
+                0,
+                0
+              ],
+              "cyan": [
+                0,
+                0,
+                0
+              ],
+              "blue": [
+                0,
+                0,
+                0
+              ],
+              "purple": [
+                0,
+                0,
+                0
+              ],
+              "magenta": [
+                0,
+                0,
+                0
+              ]
+            },
+            "curves": {
+              "enabled": true,
+              "rgb": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "r": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "g": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "b": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "project_restore": true,
+      "video_import_and_frame_select": true,
+      "mp4_export": {
+        "bytes": 215081,
+        "download_link_visible": true,
+        "settings": {
+          "strength": 0.1,
+          "adjustments": {
+            "version": 1,
+            "basic": {
+              "enabled": true,
+              "temperature": 0,
+              "tint": 0,
+              "saturation": 0,
+              "vibrance": 0,
+              "brightness": 18,
+              "contrast": 0,
+              "highlights": 0,
+              "shadows": 0,
+              "whites": 0,
+              "blacks": 0,
+              "brilliance": 0
+            },
+            "hsl": {
+              "enabled": true,
+              "red": [
+                0,
+                0,
+                0
+              ],
+              "orange": [
+                0,
+                0,
+                0
+              ],
+              "yellow": [
+                0,
+                0,
+                0
+              ],
+              "green": [
+                0,
+                0,
+                0
+              ],
+              "cyan": [
+                0,
+                0,
+                0
+              ],
+              "blue": [
+                0,
+                0,
+                0
+              ],
+              "purple": [
+                0,
+                0,
+                0
+              ],
+              "magenta": [
+                0,
+                0,
+                0
+              ]
+            },
+            "curves": {
+              "enabled": true,
+              "rgb": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "r": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "g": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "b": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "passed": true
+    },
+    "browser_png_verified": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "exact_renderer_match": true,
+      "sha256": "3024227d5596dda7b210d79ee1517a03e7b8063f2b16683bc27b321b8b48abb7"
+    },
+    "browser_mp4_verified": {
+      "dimensions": [
+        640,
+        360
+      ],
+      "frames": 90,
+      "has_audio": true,
+      "duration_seconds": 3.02,
+      "sha256": "48918fa210e0908937433fedc55f77d48e4831a6c8e3a82d602f568f2f4c1c37"
+    },
+    "passed": true,
+    "scope": "Fresh headless browser with isolated app data; not visible desktop or subjective color acceptance",
+    "verifier_sha256": {
+      "verify_browser_workbench.py": "acec8a918ad2a877e543bef27b51ddc7c15b7666d90be32e7742eb0c9050b042",
+      "verify_browser_workbench.cjs": "b93c40b4c096e9b9a6863adb2c10d614dadcb98313bc9794fc1273c5f0498fc3"
+    }
+  },
+  "strength_numeric": {
+    "math": {
+      "max_rgb_code_error": 0,
+      "changed_values": 0,
+      "checked_values": 26476544,
+      "all_65536_channel_pairs": true,
+      "strengths": 101,
+      "numeric_blend_960x640_ms": [
+        3.1547000000000196,
+        3.211599999999976,
+        3.297600000000017,
+        3.812100000000015,
+        4.8463999999999885,
+        3.194999999999993,
+        3.247899999999987,
+        3.751999999999981
+      ],
+      "scope": "Node numeric arithmetic and timing; excludes browser image decode, canvas PNG encoding, layout and paint"
+    },
+    "passed": true,
+    "browser_visual_tested": false,
+    "state_tests": 15,
+    "fallback_tests": 13,
+    "harness_sha256": "90f4b8ef385bba8a714d84c40aa65b6abacc95786d4385c22b138e733d131449",
+    "source_sha256": {
+      "spatial_strength_preview.js": "a17e8085275de6250d6ec9f24c4a680ecdd2dc77dd3fbf24e43024d720ab5328",
+      "spatial_workbench.py": "939e0ed62a6006bb5e2da153850c329ae4f6f121aa241c49abf027907ea2f57a",
+      "verify_strength_preview.py": "34951f989c138ca8b3309b7ef87025811a54690339f660b990440361aaac83f6",
+      "verify_strength_math.cjs": "de4e622c2744a5fbaba1b8d86e90c8b89150e2683b968d8e4eb3d10a53e97504",
+      "test_strength_preview.cjs": "f4b6310e1576f837bc1063f1e6916971905f6865d811d310d04482120bbaa349"
+    }
+  },
+  "regression": {
+    "python_original_tests": 269,
+    "windows_cleanup_tests": 2,
+    "cleanup_independently_reviewed": true,
+    "pre_fix_new_preview_tests_failed": 2,
+    "post_fix_standalone_preview_tests_passed": 10,
+    "python_combined_tests": 271,
+    "python_combined_seconds": 16.794
+  },
+  "reports": {
+    "outputs/adaptive-reference-20261113/spatial-workbench/acceptance-current-20261114-v1/results.json": "514f482696db0617de853b66608b27f5c1a558a68f66b310c6e7416daa3b08a8",
+    "outputs/adaptive-reference-20261113/spatial-workbench/acceptance-browser-20261114-v5/results.json": "e98207a69aa6daa6aada404e1447d453dc9de857ce6ee8eede00d71e71dd9f53",
+    "outputs/adaptive-reference-20261113/strength-preview/acceptance-browser-fix-20261114-v1/results.json": "8aaed5ff685d7b09bedfcda52e9e052dcb8f3023d6390a60a9928cd3c01d3e08"
+  },
+  "source_sha256": {
+    "experimental/adaptive-reference-20261113/spatial_strength_preview.js": "a17e8085275de6250d6ec9f24c4a680ecdd2dc77dd3fbf24e43024d720ab5328",
+    "experimental/adaptive-reference-20261113/test_strength_preview.cjs": "f4b6310e1576f837bc1063f1e6916971905f6865d811d310d04482120bbaa349",
+    "experimental/adaptive-reference-20261113/verify_browser_workbench.py": "acec8a918ad2a877e543bef27b51ddc7c15b7666d90be32e7742eb0c9050b042",
+    "experimental/adaptive-reference-20261113/verify_browser_workbench.cjs": "b93c40b4c096e9b9a6863adb2c10d614dadcb98313bc9794fc1273c5f0498fc3",
+    "experimental/adaptive-reference-20261113/test_browser_process_cleanup.py": "3a2743b8999a6df6a5d6efd3381158a35c1adc608849cf90f0b97fed8d33f6a9",
+    "reference_color_app/web/app.js": "28178869652804249c6b13bdda2d2b3cf34efbb819ada51f87b70974ccaffdf5",
+    "reference_color_app/web/adjustments.js": "ec9ceeffd8d8e689bf41b25d2f3e0e8491b00ab3a04a395dfab6abb168225700",
+    "reference_color_app/web/history.js": "817b9906af7c12c26ca86857c4a2fc7a8091bc2703110256c6136a39db471e62",
+    "reference_color_app/web/styles.css": "d37fb25f8bb7d9cb102a2a00c496dd2953bae5c53c1525af9d2c07fe10d0b326",
+    "reference_color_app/web/index.html": "8d9e06dff189029a432a28bf690cf3b50a3350a6609563f4f106f6081e8524c9"
+  },
+  "privacy": "No photos, video, raw RGBA, weights, session tokens, absolute paths or runtime IDs included"
+}
