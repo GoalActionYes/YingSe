@@ -1,0 +1,57 @@
+{
+  "scope": "Rejected fixed capacity experiment; producer metrics not a full successful artifact audit",
+  "producer_results_sha256": "bedf4d9c3c2b2db8f49a290d3e0eb84c5c7a5a393d7ff584001e5ec9089db674",
+  "source_sha256": {
+    "probe_condition_subspace.py": "d79d7198d4c07b20c3dffa5bf2c86091b7ec1ac3825e7809fbe434220ee9062e",
+    "condition-subspace-protocol.md": "395a53892fc9ba91a2b783006261f6897cc5ed5a7533e5d7968b917d5c0a8f6e",
+    "condition_subspace.py": "6eda2f05c6084c60145bd4939fde7727d488cd611ef705099d8a4d94787eb456",
+    "test_condition_subspace.py": "f3b857ff80a50b2d1f9ed190c8b1d5adc48ccbb74b9cf9f27a5734fe114724ae",
+    "prepared_condition.py": "c717295c196ea0df3c7b6a853ad4f11dc4080937a72eb08bd16ed033dc4928a1",
+    "train_triplet_pilot.py": "2fa48a713768998f2a178b3bb5656af96e90b62b34952a1397b3e6223660ec17",
+    "check_petal_condition.py": "7ac1ebb31abe613b961e5a59a0bab9cbcba0e5e06eec85c61e78e300cbd6181c",
+    "training_checks.py": "798acc2cf8fe4e3981f2eb23e7820a6c82097d560da829fc6457d3e58223a06d",
+    "multiref_response.py": "829d2bf71b02b36503bb1d38ffe66054be0ff43d8fec3920e2a482a258b36c93"
+  },
+  "producer_reported_summary": {
+    "full128": {
+      "baseline_mean": 12.687759717305502,
+      "fit_mean": 4.075542291005452
+    },
+    "rank16": {
+      "baseline_mean": 12.687759717305502,
+      "fit_mean": 4.670787334442139
+    }
+  },
+  "producer_reported_gates": {
+    "control_passed": true,
+    "retained_gain": 0.930883648894079,
+    "retained_passed": true,
+    "close_count": 10,
+    "severe": 2,
+    "response_passed": false,
+    "passed": false
+  },
+  "producer_reported_local_energy": 0.9499144455172365,
+  "condition_files_hash_and_bound_checked": 64,
+  "rechecked_bound_failures": [
+    {
+      "arm": "full128",
+      "index": 15062,
+      "maximum_absolute": 3.000000238418579,
+      "finite": true,
+      "outside_components": 1
+    }
+  ],
+  "strict_audit_passed": false,
+  "product_integrated": false,
+  "decision": "Stop fixed rank16 route; preserve artifacts; no threshold relaxation, no rerun or prediction training",
+  "validation_status": {
+    "status": "not_validated",
+    "producer_finished": true,
+    "capacity_gates_passed": false,
+    "audit_passed": false,
+    "failure": "One saved full128/15062 snapshot exceeds absolute bound 3: 3.000000238418579; original artifacts retained. No tolerance relaxation or quality promotion.",
+    "product_integrated": false,
+    "producer_sha256": "bedf4d9c3c2b2db8f49a290d3e0eb84c5c7a5a393d7ff584001e5ec9089db674"
+  }
+}

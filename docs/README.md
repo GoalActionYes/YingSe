@@ -2,6 +2,8 @@
 
 接手运行先看 [启动指南](GETTING_STARTED.md)，功能边界看 [当前状态](PROJECT_STATUS.md)，版本选择看 [版本索引](../VERSIONS.md)。
 
+理解为什么调整技术路线，先看[目标与路线决策](ROUTE_DECISIONS.md)：区分原计划的LUT权重训练、剪映调查和当前空间调色研究；每次实验先说明用途、对照及停止条件。
+
 最新用户功能：[手动调色指南](MANUAL_COLOR_CONTROLS.md) · [11 月 6 日验证记录](research/2026-11-06-manual-controls/README.md)。
 
 ## 阅读顺序
