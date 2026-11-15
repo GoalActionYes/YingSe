@@ -1,0 +1,5106 @@
+{
+  "scope": "Consumed77-case methodscreen; not newheldout/human/video/product acceptance",
+  "summary": {
+    "pst": {
+      "count": 15,
+      "baseline_mean": 12.837647569444446,
+      "candidate_mean": 14.887084297839504,
+      "improved": 3,
+      "regressed": 11,
+      "severe": 8
+    },
+    "natural": {
+      "count": 32,
+      "baseline_mean": 15.12657356262207,
+      "candidate_mean": 19.131383736928306,
+      "improved": 10,
+      "regressed": 22,
+      "severe": 10
+    },
+    "coco": {
+      "count": 30,
+      "baseline_mean": 21.29235718248181,
+      "candidate_mean": 28.283290692842236,
+      "improved": 12,
+      "regressed": 18,
+      "severe": 16
+    },
+    "regional": {
+      "count": 8,
+      "baseline_mean": 21.7748641461373,
+      "candidate_mean": 30.494651041951883,
+      "improved": 2,
+      "regressed": 6,
+      "severe": 4
+    },
+    "controls": {
+      "count": 22,
+      "baseline_mean": 21.1169001047889,
+      "candidate_mean": 27.479159656802366,
+      "improved": 10,
+      "regressed": 12,
+      "severe": 12
+    },
+    "passed_gate": false
+  },
+  "candidate": {
+    "source_revision": "162bad662d5a108285bb308699faed2888e3d782",
+    "weights": {
+      "ckpts/style_encoder.pt": "c50e00cca2e1dae4cc9a02f6217b0c2f518eb438ab7356beea3d050c7d6d8852",
+      "ckpts/lut_model.pt": "b4ba53ed85139b983f59cd364d25bf8d3e62867ee259d919c985773be3061c13"
+    },
+    "torch": "2.6.0+cu124",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "kornia_version": "0.7.0 imported from isolatedwheel",
+    "strict_publisher_loader": true,
+    "unused_key_omission": "vit.mask_token only, publisher loader behavior",
+    "precision": "publisher no/float32 with its internal RoPE dtype",
+    "cudnn_tf32": true,
+    "matmul_tf32": false,
+    "source_unmodified": true
+  },
+  "baseline_checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "source_sha256": {
+    "frame_transfer.py": "e7539e88c5c9cd68e8fef0fc020aa76b26c74b6c83803a53e23a371cd2ac7d58",
+    "petal-protocol.md": "68648cbfcb014a33d8e4bfaa4d8fbf5a7a75f15043e841954a2cfdd5f03560bb",
+    "petal_model.py": "a30a7a1f195135d5a532ec0e42036b59ee133f495755103696fe55f27dfd0d06",
+    "prepare_petal.py": "4ad6be90c807b9a1c5126e83c3791c893de4eaa3c01024cbf90d505fc1f7dc17",
+    "probe_petal.py": "247aff0646ed96aa2934fe4d9c2cac04dab1ba442ff3b1653cc79e6e98ad998b",
+    "probe_region_histogram.py": "57f70c1fb566e3e2417c2a38c6d60e72c4d6ba9fcf622e0f7cedcbaa7dd42804",
+    "spatial_render.py": "0e6a9c867319225cc42610978936f9e28104df7feb007a446fd7fd1b1da5da9c",
+    "test_petal_model.py": "041e64f59f3f5fd6fdd8f7fc5a024b7d777f5f92e405adaa7d17fc18ee7b9818",
+    "training_checks.py": "798acc2cf8fe4e3981f2eb23e7820a6c82097d560da829fc6457d3e58223a06d",
+    "train_triplet_pilot.py": "2fa48a713768998f2a178b3bb5656af96e90b62b34952a1397b3e6223660ec17"
+  },
+  "asset_manifest_sha256": "f1cae22efdb4cf6b0f37d7655530fcd304334004eebffa827438b4e5347953b1",
+  "results_sha256": "78dddce8823fcefb00905b444a59885bdb86da85713d7ba2798caa59aedfee99",
+  "predictions_sha256": "a63c3a0d2754d3abca822b643d55014a04638b1d969824333e2bbc8ef51d0539",
+  "publisher_bridges": [
+    {
+      "size": [
+        64,
+        48
+      ],
+      "maximum_input_difference": 0.0,
+      "maximum_raw_difference": 0.0,
+      "rgb8_exact": true
+    },
+    {
+      "size": [
+        73,
+        51
+      ],
+      "maximum_input_difference": 0.0,
+      "maximum_raw_difference": 0.0,
+      "rgb8_exact": true
+    },
+    {
+      "size": [
+        160,
+        96
+      ],
+      "maximum_input_difference": 0.0,
+      "maximum_raw_difference": 0.0,
+      "rgb8_exact": true
+    }
+  ],
+  "model_state_before": "c7a383191c18f61476dc157439cd352c396076ff394514d0dd6691200408db6d",
+  "model_state_after": "c7a383191c18f61476dc157439cd352c396076ff394514d0dd6691200408db6d",
+  "phase_events": {
+    "started_ns": 1794700780066259300,
+    "predictions_written_ns": 1794700941745207800,
+    "scoring_started_ns": 1794700941745207800
+  },
+  "all_predictions_before_truth_pixels": true,
+  "cases": [
+    {
+      "group": "pst",
+      "index": 1,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\content_709\\in1.png",
+          "sha256": "f56690e10e4f0fefe77cc2faf726216e1ff86c0cdb06f64dbe6828265876b063"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\paired_style\\tar1.png",
+          "sha256": "a175e3062da5661e140f7a83663dfd876af820f919cbbe8942e9b6974732ea6c"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-1-baseline.png",
+          "sha256": "c29a08b8728fb03df9d00948821280d0849d97fd48e9bf8897da1edf680246a7"
+        },
+        "candidate": {
+          "path": "pst-1-candidate.png",
+          "sha256": "473b92e0601a4d9168fc1ca857881facfb7891e7ecc259bab577381dc2e5ced1"
+        },
+        "raw": {
+          "path": "pst-1-raw.npz",
+          "sha256": "afe7a08eebd97b7654c56fc62876a254b659666b2d80fcf4a0e5fcbce5c0b9cc"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.44832149999274407,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.14081869999790797,
+      "truth_sha256": "e8271d7ae842925331bbd13ad25002bf7f80123d66ff48dc8bcd27fc4bb72bb3",
+      "scores": {
+        "baseline": {
+          "mae": 25.287622974537037,
+          "person_mae": null,
+          "background_mae": 25.287622974537037,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 18.037511574074074,
+          "gradient_mae": 1.525729823293216
+        },
+        "candidate": {
+          "mae": 10.458029513888889,
+          "person_mae": null,
+          "background_mae": 10.458029513888889,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.02152199074074074,
+          "source_movement": 33.709564525462966,
+          "gradient_mae": 1.5879392548823208
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 2,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\content_709\\in2.png",
+          "sha256": "dddda133c4ddfc5e1f11f44000a668ba0146fab16211f42d1d251dc7969046de"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\paired_style\\tar2.png",
+          "sha256": "725dbee457802a6de84b2adc9f62e4ecfa5d3b8c48f541deeb4f59e7696b6c63"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-2-baseline.png",
+          "sha256": "1a90dabd84c8250c51a1337960d49630025973114b9d6a50cf9a61d45529d247"
+        },
+        "candidate": {
+          "path": "pst-2-candidate.png",
+          "sha256": "0a3481af4ce406ca569a6f6c7539c5efdad03ef2240d729dcc244c1d85db446e"
+        },
+        "raw": {
+          "path": "pst-2-raw.npz",
+          "sha256": "801aa3994f26aa11ecc63495048bf424434bba171f71a773234e45f26b822574"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4313521000003675,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.018050299993774388,
+      "truth_sha256": "65d309e7f29a751ec4a28d9322cb0576c6b6399958a10dcfba836f9249fcc996",
+      "scores": {
+        "baseline": {
+          "mae": 3.8729557291666667,
+          "person_mae": null,
+          "background_mae": 3.8729557291666667,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.489547164351851,
+          "gradient_mae": 1.0170799705598008
+        },
+        "candidate": {
+          "mae": 6.397835648148148,
+          "person_mae": null,
+          "background_mae": 6.397835648148148,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 12.96501736111111,
+          "gradient_mae": 1.612136789328714
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 3,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\content_709\\in3.png",
+          "sha256": "04af8eeed01bb1cba14a5b88503c2bac026f26bd7436ada4e6bfd08ea786f84b"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\paired_style\\tar3.png",
+          "sha256": "7492adc751ee8bea9b9de040ac0231ed09ca45c305c6d92ffddce1b09e47d39d"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-3-baseline.png",
+          "sha256": "812e7634aaaea0f62492887e5bddec730c0724527ae38226667eb74d8b6e12e5"
+        },
+        "candidate": {
+          "path": "pst-3-candidate.png",
+          "sha256": "dd7eb6cff84833f12a27d59a4e3e498e94cdae4aa35f0d462c6385ae7bf5155a"
+        },
+        "raw": {
+          "path": "pst-3-raw.npz",
+          "sha256": "227f2836176b9626ef044af080ef25dd24bacf75e26b10be6fe85a1efa996f20"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.43007410000427626,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.018200499995145947,
+      "truth_sha256": "a20b8c0f9a4c35ee1c993c12ceacefe4abe8e46fc37adee866a07a47df1b1942",
+      "scores": {
+        "baseline": {
+          "mae": 16.65568576388889,
+          "person_mae": null,
+          "background_mae": 16.65568576388889,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.42082175925926,
+          "gradient_mae": 2.4581756409193782
+        },
+        "candidate": {
+          "mae": 24.826611689814815,
+          "person_mae": null,
+          "background_mae": 24.826611689814815,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 30.098758680555555,
+          "gradient_mae": 3.647859634832794
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 4,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\content_709\\in4.png",
+          "sha256": "a9f4c41b3aa0f83dc578765e8163202b04297a438dd0a85e783c1318b439b5a3"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\paired_style\\tar4.png",
+          "sha256": "de72a6d9a26a10e7c47c8b329c80e98c482259f0b01d9c7083afb538a72fb04c"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-4-baseline.png",
+          "sha256": "926388e9f69d82074c268501ac5183324660c845d53281432a0241ccd86f07d7"
+        },
+        "candidate": {
+          "path": "pst-4-candidate.png",
+          "sha256": "3b7cf044914e63c7efd6b04f63f0d322ec9f63202833ebc37f42cf4647c56735"
+        },
+        "raw": {
+          "path": "pst-4-raw.npz",
+          "sha256": "7263b12d1e27295869ed0ca4c8e9da817e8fc8f7779de68157409632f23d81b6"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.43005730000004405,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.016746299996157177,
+      "truth_sha256": "d7821e0e06741660763985714068a917b147b398b7006511a1ab6e45e1431324",
+      "scores": {
+        "baseline": {
+          "mae": 24.541086516203702,
+          "person_mae": null,
+          "background_mae": 24.541086516203702,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.132016782407407,
+          "gradient_mae": 0.9583057355432272
+        },
+        "candidate": {
+          "mae": 7.541508969907407,
+          "person_mae": null,
+          "background_mae": 7.541508969907407,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 29.47576678240741,
+          "gradient_mae": 0.89004672679044
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 5,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\content_709\\in5.png",
+          "sha256": "433153d88b511966daabe368568ec500e545351f27e9a9b22ff4fa836e6d007f"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\paired_style\\tar5.png",
+          "sha256": "257714f425c47f71b78a712d5e215c6be2480f0fe86bbb37a4b4c5925ecb9813"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-5-baseline.png",
+          "sha256": "5611b9dae8fe28b40b0ba84ec9094c9efec6906bd84da9ae2b42444f690c5d3e"
+        },
+        "candidate": {
+          "path": "pst-5-candidate.png",
+          "sha256": "ad78372631c7142544fd64e11441731b38422053381be1ffa1f71bdd3717ff81"
+        },
+        "raw": {
+          "path": "pst-5-raw.npz",
+          "sha256": "ecf57562dede94796d9adc8f01537c44330099834a070899f6660e0c8f0f43fd"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4282087000028696,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.014812599998549558,
+      "truth_sha256": "7fe7f3493befbb1ff18e498ebd16746e23bab945a861e0d37a49f9d7048f56fa",
+      "scores": {
+        "baseline": {
+          "mae": 7.220622106481481,
+          "person_mae": null,
+          "background_mae": 7.220622106481481,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 14.81111400462963,
+          "gradient_mae": 0.7048202251410961
+        },
+        "candidate": {
+          "mae": 12.837504340277778,
+          "person_mae": null,
+          "background_mae": 12.837504340277778,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.007021122685185185,
+          "source_movement": 20.395163483796296,
+          "gradient_mae": 0.8035659650023321
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 6,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in6.png",
+          "sha256": "24b49971238ec6f4f7af4e841103c551fcddd6701db3e403e779b6fbbe85e1d2"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar6.png",
+          "sha256": "0c5b46a157f62593e8be63b788c0a27ec9e78a16b0bb8873025433a4b949a733"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-6-baseline.png",
+          "sha256": "b465cf84d779369cfe2861cdfa7b81404c2897a2baaeb6626d97814a1566d01a"
+        },
+        "candidate": {
+          "path": "pst-6-candidate.png",
+          "sha256": "d1ba38eba6bab38fefcf53ec3c4a60d781a68aa85b75cdf198b0ab5ff230636a"
+        },
+        "raw": {
+          "path": "pst-6-raw.npz",
+          "sha256": "0536cb5bdf5e392de2dd2e8b0943e9b7c35f67b70838d9e7f225d6279357349e"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.42756999999983236,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.015236100000038277,
+      "truth_sha256": "e2241350b524f5b3502ee1f6254bbc6af01a0abecf73d6cd37bca95a0baa3253",
+      "scores": {
+        "baseline": {
+          "mae": 3.0345688657407406,
+          "person_mae": null,
+          "background_mae": 3.0345688657407406,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 5.294308449074074,
+          "gradient_mae": 0.2140295590623939
+        },
+        "candidate": {
+          "mae": 3.1029962384259258,
+          "person_mae": null,
+          "background_mae": 3.1029962384259258,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 7.962452256944444,
+          "gradient_mae": 0.2175493996381397
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 7,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in7.png",
+          "sha256": "f5d53639ea4ea8a6d54ba33a069500478cce206d13b3418e5d45fa091797716f"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar7.png",
+          "sha256": "e2729d2e124cc361be19f662f3bb77f479e3af9a9fa308afc4d90f3dc0fc786d"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-7-baseline.png",
+          "sha256": "9ab499ae1a0e036372e25320d461e89fd15de2010e939ff26fec3544fa08fce6"
+        },
+        "candidate": {
+          "path": "pst-7-candidate.png",
+          "sha256": "9dba39f45ccfd11af8d628bd6d1f64328eeaf3f8fbbb96ac9d7b1326c584a73a"
+        },
+        "raw": {
+          "path": "pst-7-raw.npz",
+          "sha256": "69ff0ca5399adb27aedf08ec760bb020f5a9382d074a94dff492a6b5ab85a694"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.431699299995671,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.017469500002334826,
+      "truth_sha256": "23f961f41c7d2353608cf6334552bfb43be9f3c49fd89b230a439bb97cc2edb3",
+      "scores": {
+        "baseline": {
+          "mae": 11.586278935185184,
+          "person_mae": null,
+          "background_mae": 11.586278935185184,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 16.467960069444445,
+          "gradient_mae": 1.1491968735060731
+        },
+        "candidate": {
+          "mae": 18.9565234375,
+          "person_mae": null,
+          "background_mae": 18.9565234375,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.00865162037037037,
+          "source_movement": 16.994379340277778,
+          "gradient_mae": 1.3210368797433314
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 8,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in8.png",
+          "sha256": "dd3c6d01052fd3c02a1999832c3380746fb70f90e5dd83bdf8da84d604a1e6f0"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar8.png",
+          "sha256": "bed502c84529217f16519d864216f13077261203d01a444fc018b2ca93bfc1cf"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-8-baseline.png",
+          "sha256": "51bd671cf273af62881aa9512ccf56b4cda95ecd69e1f91a2660a6b595943db3"
+        },
+        "candidate": {
+          "path": "pst-8-candidate.png",
+          "sha256": "8e641295ff1be7720bb19b78a70a86fbf34488fd86b445fef0ea9d988432d25c"
+        },
+        "raw": {
+          "path": "pst-8-raw.npz",
+          "sha256": "73d34cfa66acc2c51eea83208f087b9c9def6a17db432b5bce7a047fc883f60a"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.426887200002966,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.014944399998057634,
+      "truth_sha256": "4526c5430d0720e8ab681f9bb7f7b30269b5c2fd367eaab58c9252a0ae3edd61",
+      "scores": {
+        "baseline": {
+          "mae": 13.538820891203704,
+          "person_mae": null,
+          "background_mae": 13.538820891203704,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 21.139681712962965,
+          "gradient_mae": 0.6347114922849799
+        },
+        "candidate": {
+          "mae": 20.85927806712963,
+          "person_mae": null,
+          "background_mae": 20.85927806712963,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.10209490740740741,
+          "source_movement": 31.32406539351852,
+          "gradient_mae": 0.7718261682407743
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 9,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in9.png",
+          "sha256": "4146e11a4e2293288c78ecea475fa14fdb56636863b67c1a7791d214e7eb1bd3"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar9.png",
+          "sha256": "6c8781b812a05cbf8259fa78023e7035bbe19e5d2c32b8580192720d3ed298e1"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-9-baseline.png",
+          "sha256": "578e7efae46286081e45b510ef58cb7894c1de037197595f659201d58fcb50c0"
+        },
+        "candidate": {
+          "path": "pst-9-candidate.png",
+          "sha256": "8c315942849626bb7a3efb37b59f66cf76918ed5cc3c9ac3e67aa59cba3102af"
+        },
+        "raw": {
+          "path": "pst-9-raw.npz",
+          "sha256": "3b93f197b06868e4320314595334f93e090ceb8be77f8094659369fc1db368be"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4304874999943422,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.015797300002304837,
+      "truth_sha256": "3caedad65ae7c556da27f816b581d1e68ae84081fcad0aeb192065717d9ec67c",
+      "scores": {
+        "baseline": {
+          "mae": 13.700063657407407,
+          "person_mae": null,
+          "background_mae": 13.700063657407407,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 19.0180078125,
+          "gradient_mae": 0.9245918224306233
+        },
+        "candidate": {
+          "mae": 23.405594618055556,
+          "person_mae": null,
+          "background_mae": 23.405594618055556,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 26.972890625,
+          "gradient_mae": 1.1893914079948067
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 10,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in10.png",
+          "sha256": "c3bc83aba122394eeb9efa9efcbcbf0b4526e819a8d04ca68e57297d4d93eb1a"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar10.png",
+          "sha256": "ce3fa0366dad2e04a8b9fe1147ecbc6f239970feeddf7cf9a822df63cacb5caa"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-10-baseline.png",
+          "sha256": "e879d992c14438207b7a771f1fc2cbe9ac2e9af5f5051b92bbaa17fc4afc8155"
+        },
+        "candidate": {
+          "path": "pst-10-candidate.png",
+          "sha256": "020cba2e32f710e20a1386f1ea1f856e147fc32fd2b5bb527fcc0c0e86dc569a"
+        },
+        "raw": {
+          "path": "pst-10-raw.npz",
+          "sha256": "668afc18bc952f548ab7c67942ff8522d17b70d7e90d26aa9343b75420342afd"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.43140739999944344,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.015428500002599321,
+      "truth_sha256": "89b13439191ff71e2b6d6c88353d3484b9da3263d97c99d57a2fabbdd257af19",
+      "scores": {
+        "baseline": {
+          "mae": 9.011426504629629,
+          "person_mae": null,
+          "background_mae": 9.011426504629629,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 13.282311921296296,
+          "gradient_mae": 0.6900174172405849
+        },
+        "candidate": {
+          "mae": 9.648521412037036,
+          "person_mae": null,
+          "background_mae": 9.648521412037036,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 16.098932291666667,
+          "gradient_mae": 0.9317310753765402
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 11,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in11.png",
+          "sha256": "6d0036762928ea6c26aaaadc44c03398b783cdcd11e23dc34e729c7e88c3f769"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar11.png",
+          "sha256": "9d3a221ec04be017adeac790bb2a5d2b93157f072451122933e2934a57bbe5a1"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-11-baseline.png",
+          "sha256": "ef24da530ec1570072fd1e402be072776ffecb88373f297abedcb596a17e9ddf"
+        },
+        "candidate": {
+          "path": "pst-11-candidate.png",
+          "sha256": "49dfacc3921bf043e734d8f003c96fac1d1bc180d8d50d468b414ec3e7138c31"
+        },
+        "raw": {
+          "path": "pst-11-raw.npz",
+          "sha256": "1069a7f3346e24dd144b9cea49ccaec4bbc92269204dd01c89913535a85bce49"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4291056000001845,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.015574700002616737,
+      "truth_sha256": "274c7b79f8279ff109a798010b0c88b576f2e1b611cb0c89d0e7013ba534e5d6",
+      "scores": {
+        "baseline": {
+          "mae": 15.037670717592592,
+          "person_mae": null,
+          "background_mae": 15.037670717592592,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 17.999078414351853,
+          "gradient_mae": 0.544570244974351
+        },
+        "candidate": {
+          "mae": 8.594917534722223,
+          "person_mae": null,
+          "background_mae": 8.594917534722223,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.06873408564814815,
+          "source_movement": 11.310081018518519,
+          "gradient_mae": 0.6718703649668049
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 12,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in12.png",
+          "sha256": "edd82d724251cdc55540a0f13ec86daf5645e3b41140105123748d131bd3c921"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar12.png",
+          "sha256": "b51e7a20328cca36c0c944cf87ef76fc2689083a26f4f4389e0773699e5c1026"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-12-baseline.png",
+          "sha256": "6ebb9787eda68d59cd579d7443568dcc856ef6eef6a5251083ddf3efd9226d7d"
+        },
+        "candidate": {
+          "path": "pst-12-candidate.png",
+          "sha256": "ec414fab8ec6bdd6ab59c65355d97fab75641ac7ff7a226a622ae692818de43e"
+        },
+        "raw": {
+          "path": "pst-12-raw.npz",
+          "sha256": "63e94af31ca826bfffe6433703f97d24d45630bf05f9d503e4ec25bbb6ebb01d"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4273195999994641,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.01627829999779351,
+      "truth_sha256": "5b452dc0d01adc8f6f92703fae089bf5636ee426509c321e6c5be254bed55d90",
+      "scores": {
+        "baseline": {
+          "mae": 23.34099971064815,
+          "person_mae": null,
+          "background_mae": 23.34099971064815,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 36.08218315972222,
+          "gradient_mae": 1.597144831408352
+        },
+        "candidate": {
+          "mae": 29.31331886574074,
+          "person_mae": null,
+          "background_mae": 29.31331886574074,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 42.07408854166667,
+          "gradient_mae": 1.5865717807120703
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 13,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in13.png",
+          "sha256": "57169d76b7ee8227f722757761692993c2f48aa617bdccb665bb0469f3f67526"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar13.png",
+          "sha256": "a696eb9ec262c8b3baec4736b1950cee78914c9ee88690ba0dbbbc5897c4dabb"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-13-baseline.png",
+          "sha256": "8b0eb762e9921b10396cb40719901214cfdfc14b99e80d5bcd40d34c31b314a4"
+        },
+        "candidate": {
+          "path": "pst-13-candidate.png",
+          "sha256": "cf0de5761ee5d4d477872924fb4c0e92d81f43e90010343a0337bea8b2443199"
+        },
+        "raw": {
+          "path": "pst-13-raw.npz",
+          "sha256": "c65b0be6b009f098ad35ec73378ed9c4730aab8cf1e9ad8f500ee63501b6c8e3"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.42887440000049537,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.017685099999653175,
+      "truth_sha256": "61e289b4faa61004b9fd44814d0e7fbc9243709813029bd5316b511f8dc6996d",
+      "scores": {
+        "baseline": {
+          "mae": 8.827320601851852,
+          "person_mae": null,
+          "background_mae": 8.827320601851852,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 22.785755208333335,
+          "gradient_mae": 0.5883440181399562
+        },
+        "candidate": {
+          "mae": 13.994377893518518,
+          "person_mae": null,
+          "background_mae": 13.994377893518518,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 29.639968171296296,
+          "gradient_mae": 0.7904870898829996
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 14,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in14.png",
+          "sha256": "c3ff0de76a696743784dbd6c3ce949ae17bb6e63f6cd3d6032946734b241780c"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar14.png",
+          "sha256": "8de98f419df4a8d8b3fa5414247b1b3735ca89cd50ed81ea2e9dfb36c8af182b"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-14-baseline.png",
+          "sha256": "df675a5fe965ae229e506292fff52080b49fa6d717c3726fdfe8ccb49e714dd7"
+        },
+        "candidate": {
+          "path": "pst-14-candidate.png",
+          "sha256": "c133e5976ab182e3188d3a4e963eeff4c50bb8de526a336e9933adff97e2ba9a"
+        },
+        "raw": {
+          "path": "pst-14-raw.npz",
+          "sha256": "507e27084baf4a60c5fca98c239fee23429ba6c2dee2ec2413558ddc6144b230"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.42807100000209175,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.024859500001184642,
+      "truth_sha256": "1c667aaaca0453c4a47ce7f4db815780bdf980ec71a30ca0f9376bf6dc795fea",
+      "scores": {
+        "baseline": {
+          "mae": 6.459036458333333,
+          "person_mae": null,
+          "background_mae": 6.459036458333333,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.00036024305555555554,
+          "source_movement": 14.252311921296297,
+          "gradient_mae": 0.9868969511145935
+        },
+        "candidate": {
+          "mae": 10.315894097222222,
+          "person_mae": null,
+          "background_mae": 10.315894097222222,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.041002604166666665,
+          "source_movement": 16.11412615740741,
+          "gradient_mae": 1.6666860670309327
+        }
+      }
+    },
+    {
+      "group": "pst",
+      "index": 15,
+      "people": null,
+      "profile": null,
+      "size": [
+        640,
+        360
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\content_709\\in15.png",
+          "sha256": "bf2b26513cf077ba7c50649170beef5624aeceddefeb0715fdbe6b9c6148da51"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\pst50\\development-dense-round2-v1\\inputs\\paired_style\\tar15.png",
+          "sha256": "bfa2892d40cb68b0269273e331a69e35279c77cfa66cec60404e6fe775bc76dc"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "pst-15-baseline.png",
+          "sha256": "0d2316f22f81e70e5be739231f1e876395544235a191ee09116d4c3a0a78266c"
+        },
+        "candidate": {
+          "path": "pst-15-candidate.png",
+          "sha256": "5695a41153fce83d9c55aa8c9dd3709ade6be5dbf8266ef3df002115845190b0"
+        },
+        "raw": {
+          "path": "pst-15-raw.npz",
+          "sha256": "4b0108d0e1bcda93070332420b32786ab869cf875f9ab7fa493a278ffbbc0da8"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.44292159999895375,
+        "peak_allocated_bytes": 3401595392
+      },
+      "baseline_seconds": 0.018021600000793114,
+      "truth_sha256": "9706a02f902bcdef64fec751ab79ec1020183ea7475a7d360022995ed01ed6bc",
+      "scores": {
+        "baseline": {
+          "mae": 10.450554108796297,
+          "person_mae": null,
+          "background_mae": 10.450554108796297,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.766668113425926,
+          "gradient_mae": 1.0295630918594432
+        },
+        "candidate": {
+          "mae": 23.053352141203703,
+          "person_mae": null,
+          "background_mae": 23.053352141203703,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.06267795138888889,
+          "source_movement": 22.63432146990741,
+          "gradient_mae": 1.9700218648644046
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 80441,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\80441-input.png",
+          "sha256": "2feee7f573c95c912b818d57228d9a8a128b3e0b3688c1dd495b216e957fd1b3"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\014\\13082_1154.png.png",
+          "sha256": "ad71a4915c0a6cffea8c7681cd0294e099d50253c6fff090064821f7541e1917"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-80441-baseline.png",
+          "sha256": "0557d9f46ba15749f9f8f682cb83e12ea54c0a202786ce5c664d1db2d380c706"
+        },
+        "candidate": {
+          "path": "natural-80441-candidate.png",
+          "sha256": "aae40a066be3d22e4bd0e14298d6995bba3546bdafa045226bf714f555552baa"
+        },
+        "raw": {
+          "path": "natural-80441-raw.npz",
+          "sha256": "40e47a0da9bb8ed186f5b00e80566d18ad2875b888e9a6d8cc9a5d2597c03b50"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38207990000228165,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01442999999562744,
+      "truth_sha256": "648e17e48c791fea610766dc2c465ae7189d422c798116ff177a828373490b5d",
+      "scores": {
+        "baseline": {
+          "mae": 8.839518229166666,
+          "person_mae": null,
+          "background_mae": 8.839518229166666,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 13.745936075846354,
+          "gradient_mae": 0.836624285130719
+        },
+        "candidate": {
+          "mae": 12.258285522460938,
+          "person_mae": null,
+          "background_mae": 12.258285522460938,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 7.154795328776042,
+          "gradient_mae": 0.9435993668300653
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 32004,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\32004-input.png",
+          "sha256": "c3c60d9694d50d0582f1184d7a383de1ee725367de8a8f6df0184bec9e20ebf3"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\007\\06990_1357.png.png",
+          "sha256": "0bda9e93106b73db8be2c45fbd1cbe355029e4437bb8ec512a13d02a81d0f5d2"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-32004-baseline.png",
+          "sha256": "422d01578f33f809230d276b9dc9ac3b228fec809219db6fa49cbb47f1975401"
+        },
+        "candidate": {
+          "path": "natural-32004-candidate.png",
+          "sha256": "a653e39f9e81326833fa8c344e1910e38890c05a7b2034757bd291089dcd2601"
+        },
+        "raw": {
+          "path": "natural-32004-raw.npz",
+          "sha256": "08236787d24e9c7336c99bfef1b77b3ed562d00bdf2b6725b6b783079aa5be58"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3829145999989123,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012894500003312714,
+      "truth_sha256": "6175529e0386171cbc6afd50b5d03760fdd28ceb56687e2aa698b6382e49bf8f",
+      "scores": {
+        "baseline": {
+          "mae": 16.603922526041668,
+          "person_mae": null,
+          "background_mae": 16.603922526041668,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0132904052734375,
+          "source_movement": 62.07494608561198,
+          "gradient_mae": 2.2390012254901963
+        },
+        "candidate": {
+          "mae": 21.678548177083332,
+          "person_mae": null,
+          "background_mae": 21.678548177083332,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.026123046875,
+          "source_movement": 80.31219991048177,
+          "gradient_mae": 2.542450469771242
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 37184,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\37184-input.png",
+          "sha256": "842e315ea018d0729e1a939135502a5888a7c18f738e605b7edabbeb16bb9057"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\006\\05216_0523.png.png",
+          "sha256": "d9c8fd71635e452ae1886ca340d04cf37d33f4aa31833a98d1eeb0c14436f4ca"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-37184-baseline.png",
+          "sha256": "0e24c642482deb9ac49371823e465bbae6d71a9a769c2f95363cf1961ab2c465"
+        },
+        "candidate": {
+          "path": "natural-37184-candidate.png",
+          "sha256": "dd2f9dfd1ded4b31ed7996f05689ec8a93d1b7004ffa94ad8c4dd45be52e4d15"
+        },
+        "raw": {
+          "path": "natural-37184-raw.npz",
+          "sha256": "0bd7633f2c4eb0f4d12f91b762c243864dc4c73f7831fb55a86cc5ebb022e698"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3819717000005767,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011581599996134173,
+      "truth_sha256": "f864d618b8f6b6d2ccbe377b7fe25fdbc2fc3751a096e664bce318a80698f516",
+      "scores": {
+        "baseline": {
+          "mae": 8.849197387695312,
+          "person_mae": null,
+          "background_mae": 8.849197387695312,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 2.0345052083333332e-05,
+          "source_movement": 7.5962982177734375,
+          "gradient_mae": 1.3717396854575163
+        },
+        "candidate": {
+          "mae": 11.270187377929688,
+          "person_mae": null,
+          "background_mae": 11.270187377929688,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.009058634440104166,
+          "source_movement": 4.9468536376953125,
+          "gradient_mae": 1.548843443627451
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 67770,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\67770-input.png",
+          "sha256": "b1a91041c58d5ecfe6f71921e4fbddb6598870f04f5264f4535542c6ee024ac0"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\002\\02296_0533.png.png",
+          "sha256": "49e090baf34f914f5f70e9686b0b8bb1b7ceddc47cd6ad46918a2dde12966d49"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-67770-baseline.png",
+          "sha256": "24c1b0fb206857b8e238d5938d6eab83d1b8dd6fc41bffa5557ff2277dc8e40f"
+        },
+        "candidate": {
+          "path": "natural-67770-candidate.png",
+          "sha256": "43767679fba8e94bc06601cbcb8dbfab013279af6f8313f5aafaa401dd5716d2"
+        },
+        "raw": {
+          "path": "natural-67770-raw.npz",
+          "sha256": "12274b0b7fbba28952d9ea3b8352b116044ef783ca18d63d954e5bd6f922ce22"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38218139999662526,
+        "peak_allocated_bytes": 2181533184
+      },
+      "baseline_seconds": 0.015839599996979814,
+      "truth_sha256": "f324633933cd81e675798ca50253bf6b2a25137ddcfaf414dafe47501d642d6e",
+      "scores": {
+        "baseline": {
+          "mae": 9.081853230794271,
+          "person_mae": null,
+          "background_mae": 9.081853230794271,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 20.527623494466145,
+          "gradient_mae": 2.4549708946078432
+        },
+        "candidate": {
+          "mae": 11.532399495442709,
+          "person_mae": null,
+          "background_mae": 11.532399495442709,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 21.6253662109375,
+          "gradient_mae": 2.8267437704248364
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 46837,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\46837-input.png",
+          "sha256": "18a4f2c780ad9f793dcff2ad089b3eb70c6beaaee1885085a55f4b24f54bbf97"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\002\\01833_1314.png.png",
+          "sha256": "5cdd2252660e4d76c51511aa31cc9856221f1c69d6783fcb3d7d54c61e5ff6e8"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-46837-baseline.png",
+          "sha256": "96c9cd4da899a21d7a97fec8bbb73bed7d9fb81fb2546ed316c3a42653c243d7"
+        },
+        "candidate": {
+          "path": "natural-46837-candidate.png",
+          "sha256": "6c0a21c8dae8c07090023f22866c664e9893e143dedf8190a34cacb316661f40"
+        },
+        "raw": {
+          "path": "natural-46837-raw.npz",
+          "sha256": "6a39c73df5db15746ad146afbc20b37e3d9d7f22195c480438a8386618384eb0"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3735354999953415,
+        "peak_allocated_bytes": 2181606912
+      },
+      "baseline_seconds": 0.014096799997787457,
+      "truth_sha256": "556f44ce021417bf1943088f41e8de0334264d9da52fb218ae46084652c5db34",
+      "scores": {
+        "baseline": {
+          "mae": 8.708292643229166,
+          "person_mae": null,
+          "background_mae": 8.708292643229166,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 11.364267985026041,
+          "gradient_mae": 1.3123697916666668
+        },
+        "candidate": {
+          "mae": 5.9222768147786455,
+          "person_mae": null,
+          "background_mae": 5.9222768147786455,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0002695719401041667,
+          "source_movement": 13.324905395507812,
+          "gradient_mae": 1.2256459354575164
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 64590,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\64590-input.png",
+          "sha256": "e50eec16864b8fe6702efd02ad6bc88169d86f8978ebab228578611c5c422951"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\009\\09081_1156.png.png",
+          "sha256": "534143dba562d13a59a24dd6264e8ac401ddc80115af6480405eb85ee9976fae"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-64590-baseline.png",
+          "sha256": "53f45897ea18590abf4848fbfe2c1896ef3d8ea87d26b4120ff058ee87c7e411"
+        },
+        "candidate": {
+          "path": "natural-64590-candidate.png",
+          "sha256": "fa7ca03d920a030e0e2988f3cdfd71a3ad23a487ff5978774d091573e9bc365f"
+        },
+        "raw": {
+          "path": "natural-64590-raw.npz",
+          "sha256": "a3687aabf255f9050c31a1432a1ace9315321ccaaa307c00d76d409ca95f6f0d"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3764646999989054,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011125999997602776,
+      "truth_sha256": "5c155c1f2985a0fc1dc8e809cecc2cd3e6ca8926135f0a128bfc16bb7fc8980c",
+      "scores": {
+        "baseline": {
+          "mae": 10.396235148111979,
+          "person_mae": null,
+          "background_mae": 10.396235148111979,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 12.804997762044271,
+          "gradient_mae": 1.7869740604575166
+        },
+        "candidate": {
+          "mae": 11.049845377604166,
+          "person_mae": null,
+          "background_mae": 11.049845377604166,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.013951619466145834,
+          "source_movement": 18.159383138020832,
+          "gradient_mae": 1.8958997140522875
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 86427,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\86427-input.png",
+          "sha256": "fb468b8e1ebfe89eee78523ef0a6a29edf3e4e319d145cbbd9621628fe1eb59e"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\015\\14187_2038.png.png",
+          "sha256": "9c7ed76ac7c06b6e48900c44374accf63d97b9c9bb6182df56672bd4fedca289"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-86427-baseline.png",
+          "sha256": "988568dbf0a49d72f295f080e1cf9ce54a44662ff6fd8b3d8838837c5d5b0054"
+        },
+        "candidate": {
+          "path": "natural-86427-candidate.png",
+          "sha256": "a4e0954cf863160c04431dc7cb8c23a18b6454c36f03dc3687e9f7da215328cc"
+        },
+        "raw": {
+          "path": "natural-86427-raw.npz",
+          "sha256": "bf8efb690bc35aa663eb6888c698d4f80926c21f94d0ab5710330c6ee0def4cf"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3751942999952007,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012072600002284162,
+      "truth_sha256": "7a9de523443bc4ec24eba4a17d13b9e03f161c6ea8ea774ecd096d4bc4b1c923",
+      "scores": {
+        "baseline": {
+          "mae": 21.145406087239582,
+          "person_mae": null,
+          "background_mae": 21.145406087239582,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.746709187825521,
+          "gradient_mae": 2.065247140522876
+        },
+        "candidate": {
+          "mae": 19.569610595703125,
+          "person_mae": null,
+          "background_mae": 19.569610595703125,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 8.695012410481771,
+          "gradient_mae": 1.5500434027777779
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 6101,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\6101-input.png",
+          "sha256": "9bbf122b1660d0677be8250c060aec813c57dff0a87a27c28d110abafef8eaf5"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\013\\12488_0425.png.png",
+          "sha256": "f9a287009943fe8a79f5f338ed36369e248517aa21aaa57d495fda9e59b8cc2a"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-6101-baseline.png",
+          "sha256": "eda367dee295d7096b7012fd304c830e06c724547834bb40f39dfea17224efe4"
+        },
+        "candidate": {
+          "path": "natural-6101-candidate.png",
+          "sha256": "a0932108ed7049b3d5f33ef5b5aaa01df093df6df9754396db43ee9536c2718c"
+        },
+        "raw": {
+          "path": "natural-6101-raw.npz",
+          "sha256": "2e29e1ac494a276fd079f262f71cf7964bec22d4872eb01f36bba64aded6a4d2"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37480240000149934,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01221580000128597,
+      "truth_sha256": "b2430d21e5be76d273776c008765faa8bf2a477c3c197c2d60136604c437238f",
+      "scores": {
+        "baseline": {
+          "mae": 17.454971313476562,
+          "person_mae": null,
+          "background_mae": 17.454971313476562,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 15.171361287434896,
+          "gradient_mae": 2.6604039011437908
+        },
+        "candidate": {
+          "mae": 9.245839436848959,
+          "person_mae": null,
+          "background_mae": 9.245839436848959,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 23.835662841796875,
+          "gradient_mae": 2.0329273897058826
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 41812,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\41812-input.png",
+          "sha256": "fa00c89eccffa197b84492c4c8939571809365fa5965805a893c3d1576f786f0"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\008\\07815_1285.png.png",
+          "sha256": "aae0dffdcf3e0a6283bca296b43737c68f46154009086c8199fff404ce7833bc"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-41812-baseline.png",
+          "sha256": "4a79d26cd54e00c453aaf0c69f89a048b40817abfc556b6045f018ae78a31fe9"
+        },
+        "candidate": {
+          "path": "natural-41812-candidate.png",
+          "sha256": "bf8ea6f02cb0b561b5dcc00b15cdabb84f0c7bdfab957d60d2a008bf836a8076"
+        },
+        "raw": {
+          "path": "natural-41812-raw.npz",
+          "sha256": "940af26ba248305a7985ca333252b3671debfe1107d771fe5820377e1cffbc63"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37647090000245953,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012717699995846488,
+      "truth_sha256": "b2c1e6cb12dfa6b51ec213b555b5a3b26b85140775cae46dfbeec9a682455807",
+      "scores": {
+        "baseline": {
+          "mae": 23.359446207682293,
+          "person_mae": null,
+          "background_mae": 23.359446207682293,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.020670572916666668,
+          "source_movement": 25.347935994466145,
+          "gradient_mae": 3.048294526143791
+        },
+        "candidate": {
+          "mae": 16.884806315104168,
+          "person_mae": null,
+          "background_mae": 16.884806315104168,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.031163533528645832,
+          "source_movement": 17.919265747070312,
+          "gradient_mae": 2.965451388888889
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 85245,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\85245-input.png",
+          "sha256": "ec597711dc8c3b0d1a3db8b2852c8faf8c0aa1fa2e6baac046a3ae00b725e274"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\004\\03504_0258.png.png",
+          "sha256": "d6023cb00ac97a4bd214e2f043a92b10b78e9c16a2d3fb210305431bdd2be9b9"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-85245-baseline.png",
+          "sha256": "fcedd523ba99a95d58c067939a20a9ae8f5e5637751288929546848eda8840b0"
+        },
+        "candidate": {
+          "path": "natural-85245-candidate.png",
+          "sha256": "7ea6f2f20f7bf487f94ba2b0714f1f17ad199fd80b9189d1cc38cffe685a22f0"
+        },
+        "raw": {
+          "path": "natural-85245-raw.npz",
+          "sha256": "161dd40fc8722310c841bbffa8295aa47751776fdd662872d0cdb54360c0aebf"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38638210000499384,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01161590000265278,
+      "truth_sha256": "314e335d5b175fc0045ec7276724ad7b2c1d6cb95b4715f982b2fee60544e33f",
+      "scores": {
+        "baseline": {
+          "mae": 9.593521118164062,
+          "person_mae": null,
+          "background_mae": 9.593521118164062,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 16.890472412109375,
+          "gradient_mae": 1.4855851715686275
+        },
+        "candidate": {
+          "mae": 8.944066365559896,
+          "person_mae": null,
+          "background_mae": 8.944066365559896,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 2.0345052083333332e-05,
+          "source_movement": 17.742838541666668,
+          "gradient_mae": 1.509247344771242
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 91772,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\91772-input.png",
+          "sha256": "f8c0c10dd7704f19f51d8b1889a735ff4ef32c1db925e37b0949616d635d002f"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\005\\04274_1215.png.png",
+          "sha256": "83e2c3fb04ee1e7893eec5b2aa1b76b93ea3e49362dbf538bc88a698fac40745"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-91772-baseline.png",
+          "sha256": "90eb000f655bc61fdf5dbe2362f0feb0bf31e0355a20347a795f158a7a137096"
+        },
+        "candidate": {
+          "path": "natural-91772-candidate.png",
+          "sha256": "5ec34986eeb02950933094b88eaf2337a7b53c9e06fde0587db20a9a7e111849"
+        },
+        "raw": {
+          "path": "natural-91772-raw.npz",
+          "sha256": "df78fe6a6e1b095b9a11a40f79e44e6a2d73bd5dc0efba69dc01a771fa546cd3"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3793602000005194,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01001630000246223,
+      "truth_sha256": "888ced76ffa510aa56064b63db1abf28ef52337abfdbc538d4a2772e12c8b99b",
+      "scores": {
+        "baseline": {
+          "mae": 23.105031331380207,
+          "person_mae": null,
+          "background_mae": 23.105031331380207,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 22.040603637695312,
+          "gradient_mae": 2.8087009803921568
+        },
+        "candidate": {
+          "mae": 34.13055419921875,
+          "person_mae": null,
+          "background_mae": 34.13055419921875,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 33.31038920084635,
+          "gradient_mae": 3.4870481004901963
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 48828,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\48828-input.png",
+          "sha256": "dd5ba8295cf692d5708e550d145a32bcc579f1fef3d18da99be8291386e99353"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\006\\05676_0233.png.png",
+          "sha256": "3d0fb54568ace61c01802f7cddd32d61344c2572a8c0c2ed544358381b7806e2"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-48828-baseline.png",
+          "sha256": "f9f1cd116c0e3569c61517e3089410c98cfb0e375615afd01b9f4557b7f091e2"
+        },
+        "candidate": {
+          "path": "natural-48828-candidate.png",
+          "sha256": "17eb6584c99184929330013e9b842fb5e98f8c1aece5d768d2c12238392acc6c"
+        },
+        "raw": {
+          "path": "natural-48828-raw.npz",
+          "sha256": "101fbb276eb466258ff8b1956ac74f44258a87a6fc4506fe380c656aa5d8533d"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3767409000065527,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01735020000342047,
+      "truth_sha256": "4c993c1b90a4a872713c639851bba1988b2c1391da8e4ce5b8bbe1e16c3f9414",
+      "scores": {
+        "baseline": {
+          "mae": 6.876749674479167,
+          "person_mae": null,
+          "background_mae": 6.876749674479167,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 8.491307576497396,
+          "gradient_mae": 1.5429457720588236
+        },
+        "candidate": {
+          "mae": 5.9449615478515625,
+          "person_mae": null,
+          "background_mae": 5.9449615478515625,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.40545654296875,
+          "gradient_mae": 1.4674504697712418
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 49515,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\49515-input.png",
+          "sha256": "a2fc76b55a761a31794f9350836ad29dbd22a9713f6bab508b25b95b00f3260a"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\015\\14275_0060.png.png",
+          "sha256": "a2ea53d0bafd543c9ae799a4e1c86bba5f8893d45147d5c2cba0246deb82e5b3"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-49515-baseline.png",
+          "sha256": "245f9320b466cebbe7e860aabfd244e3b39a0ab3be5157a1f9b85f630e2c3cfb"
+        },
+        "candidate": {
+          "path": "natural-49515-candidate.png",
+          "sha256": "783467d6bac526b77b4147c5d5e38669ec49b076a0a9fe80ae06d76be4b88d0d"
+        },
+        "raw": {
+          "path": "natural-49515-raw.npz",
+          "sha256": "2684d1eb37616f856efbc6f9296081e7990873e06d0baee114eda37007d0ad39"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37965930000063963,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01223720000416506,
+      "truth_sha256": "8d21ef132873627e690e38618c10dc369622f289e73be88f64c5cbc18ccbde5f",
+      "scores": {
+        "baseline": {
+          "mae": 15.250625610351562,
+          "person_mae": null,
+          "background_mae": 15.250625610351562,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.014094034830729166,
+          "source_movement": 20.626088460286457,
+          "gradient_mae": 1.0726026348039215
+        },
+        "candidate": {
+          "mae": 10.696736653645834,
+          "person_mae": null,
+          "background_mae": 10.696736653645834,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.038920084635416664,
+          "source_movement": 20.838119506835938,
+          "gradient_mae": 1.1800040849673201
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 25833,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\25833-input.png",
+          "sha256": "1d37da68fea89329b4172079d974b323f39f4827ca1001469ddb1933c5076817"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\012\\11844_1792.png.png",
+          "sha256": "edf708a6b0d8e5c1afc5d49b3c98b2e284ec29e94e9a44cd1902bd3b32e6f7a6"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-25833-baseline.png",
+          "sha256": "86ed98fe3ec61f3f2b6afa38f700425f32da76a6ddbed31fa08b85140756304e"
+        },
+        "candidate": {
+          "path": "natural-25833-candidate.png",
+          "sha256": "98197aae6b0266703a6e041bac7af4ef6befef11fe5e8e119958ce70e0ab242d"
+        },
+        "raw": {
+          "path": "natural-25833-raw.npz",
+          "sha256": "b70fb0ef7a4378b4d36aa25878db550b68bd28b03a566f29011b1a68aa7df235"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37666149999859044,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011796200000389945,
+      "truth_sha256": "b2317d275e1edabdf2071d4892e54fc8ff644ce1c4760a54d6b27edb2d38b8af",
+      "scores": {
+        "baseline": {
+          "mae": 13.279820760091146,
+          "person_mae": null,
+          "background_mae": 13.279820760091146,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 14.773406982421875,
+          "gradient_mae": 1.363263378267974
+        },
+        "candidate": {
+          "mae": 15.530746459960938,
+          "person_mae": null,
+          "background_mae": 15.530746459960938,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 1.52587890625e-05,
+          "source_movement": 16.814849853515625,
+          "gradient_mae": 1.3886897467320263
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 43898,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\43898-input.png",
+          "sha256": "ae716c81053b71303c67697f903cde2de5cc6db0a880f5be1d19e2358a72ff21"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\012\\11689_1877.png.png",
+          "sha256": "e2eaa42fb5ef0e0852dec1cd864e24fff46a6de6fce7fdec360deceb8a98ff0c"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-43898-baseline.png",
+          "sha256": "ae88bf3501dba9310fe498acf1fa3700c1e4dd2b3e1c3f0819953e81f82a22b6"
+        },
+        "candidate": {
+          "path": "natural-43898-candidate.png",
+          "sha256": "bf77efbfb670958c61c899b5e2c5f33ddc7a1f67653ce1284c20e4b9ee4be011"
+        },
+        "raw": {
+          "path": "natural-43898-raw.npz",
+          "sha256": "53728476e939b03d83a8149fd8703041f9efa75a2a7c68908e10800f2e2f47a7"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38941999999951804,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011614600000029895,
+      "truth_sha256": "8e1b285bd493889479f3ffdc921a05636650ca4fe3795c77cb9e41e64ea65672",
+      "scores": {
+        "baseline": {
+          "mae": 24.240895589192707,
+          "person_mae": null,
+          "background_mae": 24.240895589192707,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 22.523646036783855,
+          "gradient_mae": 4.820215482026144
+        },
+        "candidate": {
+          "mae": 28.986129760742188,
+          "person_mae": null,
+          "background_mae": 28.986129760742188,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.000335693359375,
+          "source_movement": 22.435068766276043,
+          "gradient_mae": 5.803451797385621
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 38555,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\38555-input.png",
+          "sha256": "ada5411828a532a598e67c8081b288c310006ac274e052df2ce2547a5bd7d0ef"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\012\\11832_0851.png.png",
+          "sha256": "e48be6ba7541f0e726927f3cde1fe401376b2cf7747d7fe6c7066ee4b14b86ac"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-38555-baseline.png",
+          "sha256": "68be97fb74f22a34170b533a898f2c5b355cd469d4989d75bb2096d626162315"
+        },
+        "candidate": {
+          "path": "natural-38555-candidate.png",
+          "sha256": "26f10ca75c6ebc37ec020f79bb0ddfee93e76252374bbf5cd5b3d538e17cb8f3"
+        },
+        "raw": {
+          "path": "natural-38555-raw.npz",
+          "sha256": "991eb6b22cf0c99e7422184c714df508765c2ad21e76ba6e3e704d676bd31f8e"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3812261999992188,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011279900005320087,
+      "truth_sha256": "e473cbe8fb3055624cd6be1a6fdf0530a7f5c6a51ac9d33060d22e826eead7d0",
+      "scores": {
+        "baseline": {
+          "mae": 21.678009033203125,
+          "person_mae": null,
+          "background_mae": 21.678009033203125,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0321502685546875,
+          "source_movement": 37.478129069010414,
+          "gradient_mae": 5.445915032679738
+        },
+        "candidate": {
+          "mae": 39.36152140299479,
+          "person_mae": null,
+          "background_mae": 39.36152140299479,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.106475830078125,
+          "source_movement": 28.077504475911457,
+          "gradient_mae": 6.454330065359477
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 93208,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\93208-input.png",
+          "sha256": "05933e22a127a7dbc8c04046b6a7559248b740c46cd7521c5b833a083e98ce1f"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\015\\14003_1656.png.png",
+          "sha256": "f05fca29e2334daea46f95094f6deb1995b804131a5fd4b707355b015b1ae5e3"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-93208-baseline.png",
+          "sha256": "84b603770171a8763f8c5e9e2868a4c16ad26d909233e2e8869297956473e114"
+        },
+        "candidate": {
+          "path": "natural-93208-candidate.png",
+          "sha256": "7e3eb2e8d44bb31e41cbbf9a7974aa4563628550339f8432d4e0ad5ab1bd3f23"
+        },
+        "raw": {
+          "path": "natural-93208-raw.npz",
+          "sha256": "821442043f57b897875a0c045910a7832aec9ea5b4e31cf25e3928b7ef74c7f3"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38174000000435626,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012767600004735868,
+      "truth_sha256": "532d42770d4da2712d1bc62c330f2b37110e4a18cb4151d9b55e4a6239bf49b6",
+      "scores": {
+        "baseline": {
+          "mae": 6.1040802001953125,
+          "person_mae": null,
+          "background_mae": 6.1040802001953125,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 11.185017903645834,
+          "gradient_mae": 1.1562627655228759
+        },
+        "candidate": {
+          "mae": 14.759368896484375,
+          "person_mae": null,
+          "background_mae": 14.759368896484375,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 16.755406697591145,
+          "gradient_mae": 1.458185253267974
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 4458,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\4458-input.png",
+          "sha256": "af6a01203a323a14d6411074f50c82a696a1491d72ca08612783f5def0f5d2bc"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\001\\00907_2190.png.png",
+          "sha256": "2bbef8b08840c16c7d099574dd73d8733dba126124bed818458b41ce6ffa472a"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-4458-baseline.png",
+          "sha256": "801c190cd0e412faf3c54b6cdee69b58618b879241edac4a53ad37bab0fa4c71"
+        },
+        "candidate": {
+          "path": "natural-4458-candidate.png",
+          "sha256": "fe1e6d4103610312d8128cc89cf695eda03d5adcf2abcec10806dc909b3ad9f6"
+        },
+        "raw": {
+          "path": "natural-4458-raw.npz",
+          "sha256": "65e64346a16539cca1c2623c0ef8c416a41ca009055b5f0f34ccf747fd6b829c"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37898049999785144,
+        "peak_allocated_bytes": 2181606912
+      },
+      "baseline_seconds": 0.01370860000315588,
+      "truth_sha256": "388fbe815eda5f2ea4f62cfe81dc93dffd5f1745067a13556b5eaa69ef514e30",
+      "scores": {
+        "baseline": {
+          "mae": 12.116678873697916,
+          "person_mae": null,
+          "background_mae": 12.116678873697916,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0002543131510416667,
+          "source_movement": 11.629628499348959,
+          "gradient_mae": 2.6209277982026142
+        },
+        "candidate": {
+          "mae": 37.671366373697914,
+          "person_mae": null,
+          "background_mae": 37.671366373697914,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 31.7044677734375,
+          "gradient_mae": 3.592887050653595
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 21840,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\21840-input.png",
+          "sha256": "56d2410d42a010351fb397562b4d074a18a8564e0d8048ff2b23ce18cea2fd66"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\008\\07327_0848.png.png",
+          "sha256": "4dc5cd18e1b9f369fb6ccd2053b3eb693574370c194343aa51cc1c6538fd5c91"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-21840-baseline.png",
+          "sha256": "5a130d55e6e7d52637fa7843ab77646259e25dcc0328af3890af65e78ccb4a1f"
+        },
+        "candidate": {
+          "path": "natural-21840-candidate.png",
+          "sha256": "8e188d16808ca0597aabd38d502a48394edf68945868c3f498b7f4a691a5383f"
+        },
+        "raw": {
+          "path": "natural-21840-raw.npz",
+          "sha256": "fabb360f24324fb4892db411605d05ff6166ac91a92b705f150cadbdc58468ed"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37369980000221403,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012506400002166629,
+      "truth_sha256": "7c2003dc8963364f8e32d5f0d5ee2cf798f14d348114eb31475f509611295385",
+      "scores": {
+        "baseline": {
+          "mae": 20.145731608072918,
+          "person_mae": null,
+          "background_mae": 20.145731608072918,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 14.825739542643229,
+          "gradient_mae": 3.999808517156863
+        },
+        "candidate": {
+          "mae": 14.002120971679688,
+          "person_mae": null,
+          "background_mae": 14.002120971679688,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.018274943033854168,
+          "source_movement": 29.47430419921875,
+          "gradient_mae": 3.683136744281046
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 47832,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\47832-input.png",
+          "sha256": "13672725a1d85ae35b4cf74f50a10f2a69459e42d46c996cef62e521af7df365"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\005\\04444_2143.png.png",
+          "sha256": "ae0c842464878321f67c3e8f272df50ceb65f2537645373d85aa1fdd7a73ecb7"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-47832-baseline.png",
+          "sha256": "0e0a466c68cffb883693e8cdf840a5a41bddd3cb337f14b97ee7911b96d3504c"
+        },
+        "candidate": {
+          "path": "natural-47832-candidate.png",
+          "sha256": "d0deb9c48b7d1902ad682f3a3bce1ec80fab8768d8277c96d0612e2e4d93393b"
+        },
+        "raw": {
+          "path": "natural-47832-raw.npz",
+          "sha256": "9f27265a477eebc4d3a058b01aa27d7df5d23a08dee86f0cece6d10fc4dd5a8a"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.37688599999819417,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01671150000038324,
+      "truth_sha256": "6c08d2db5f5c19c1616e1759c8ab5a8e9aaf2dc28e41319792f7da33e67cfbe3",
+      "scores": {
+        "baseline": {
+          "mae": 9.178070068359375,
+          "person_mae": null,
+          "background_mae": 9.178070068359375,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 4.8804270426432295,
+          "gradient_mae": 1.438158700980392
+        },
+        "candidate": {
+          "mae": 13.148747762044271,
+          "person_mae": null,
+          "background_mae": 13.148747762044271,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0018564860026041667,
+          "source_movement": 13.689900716145834,
+          "gradient_mae": 1.8203125
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 19797,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\19797-input.png",
+          "sha256": "8cb1ad40ba94f5126ed335d12b33055b71555f14a5f84964eafaed8cd7cd963b"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\011\\10614_0939.png.png",
+          "sha256": "0b722b72957805bb111c0f8c752efab04a61db4444ece229412ade3b455953be"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-19797-baseline.png",
+          "sha256": "4469ce880b09ed52d29a450d4caaff962d8807720b1530378ad1ac9b8ffee39f"
+        },
+        "candidate": {
+          "path": "natural-19797-candidate.png",
+          "sha256": "d28806f4c49276695cb6cac2764261903c60087c37bcb09f3c9dcab65383fe6f"
+        },
+        "raw": {
+          "path": "natural-19797-raw.npz",
+          "sha256": "4866b3630f9a087dbf0dc443bf858e669bdbb27b410fc81d4c5ef2ae839eaa99"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3809363000036683,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012573599997267593,
+      "truth_sha256": "c4cce6bb5133e6462f8140a326054d62a74e163cb95b155927771d7055a11ee3",
+      "scores": {
+        "baseline": {
+          "mae": 13.876093546549479,
+          "person_mae": null,
+          "background_mae": 13.876093546549479,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 3.0517578125e-05,
+          "source_movement": 8.779179890950521,
+          "gradient_mae": 2.233499285130719
+        },
+        "candidate": {
+          "mae": 31.70032246907552,
+          "person_mae": null,
+          "background_mae": 31.70032246907552,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 34.22065734863281,
+          "gradient_mae": 3.0148948120915033
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 55597,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\55597-input.png",
+          "sha256": "afd3f2044e1624cfa5889e7e885ac493e9b7f06973bf4fc3e30def517dcca3c6"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\011\\10992_1504.png.png",
+          "sha256": "c642cd6bc192d5b229fe76417f5e4738c95f8489a3b0782378d21161fb9bc16a"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-55597-baseline.png",
+          "sha256": "a6bab3497522a0e09ff9634b91f4c93654e7e3dc9fe660a3605e890e28d808aa"
+        },
+        "candidate": {
+          "path": "natural-55597-candidate.png",
+          "sha256": "a095fb6b15802797abf73b063e4da51f9b69f93c68a4fdcc38193bf397052a74"
+        },
+        "raw": {
+          "path": "natural-55597-raw.npz",
+          "sha256": "762a853c3a9f6075ffe8b0929249e8ed4c137b68856c7ce8e7fee00e0bd2a746"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38319339999725344,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.015819000000192318,
+      "truth_sha256": "fb0ea4714b634d2c8768ce31a5aa07b49507ecb4323883fef74f2ea0cee6dd49",
+      "scores": {
+        "baseline": {
+          "mae": 14.74945068359375,
+          "person_mae": null,
+          "background_mae": 14.74945068359375,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0030110677083333335,
+          "source_movement": 18.575525919596355,
+          "gradient_mae": 1.6001021241830067
+        },
+        "candidate": {
+          "mae": 26.443801879882812,
+          "person_mae": null,
+          "background_mae": 26.443801879882812,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.011850992838541666,
+          "source_movement": 28.752583821614582,
+          "gradient_mae": 2.2084252450980393
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 41329,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\41329-input.png",
+          "sha256": "80bf676246afbed772db6571f56977ac332735167ae4fabbce25deb668fd1ef9"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\013\\12611_1134.png.png",
+          "sha256": "4d96cf062e2138339a8a490c7785ed0e8513e40fe13af50190caefa2907339b0"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-41329-baseline.png",
+          "sha256": "ce30928fea248107d61abf8b843cc2ae32222c2c1eae9f064555497d2a67612b"
+        },
+        "candidate": {
+          "path": "natural-41329-candidate.png",
+          "sha256": "c1ed1e499103ff3a15a5ab4ce7238597a8473d04f97319a3bea4ee02938937b5"
+        },
+        "raw": {
+          "path": "natural-41329-raw.npz",
+          "sha256": "4d3880dc33fa544431c04e2b7be2312f66f893e446e363500c9120ea695ed08d"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3806572000030428,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011581799997657072,
+      "truth_sha256": "d9249b8dbe57da842bf72db7cce1ae096184349e94df8e1c0e83925cfb394c79",
+      "scores": {
+        "baseline": {
+          "mae": 10.996576944986979,
+          "person_mae": null,
+          "background_mae": 10.996576944986979,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 9.816813151041666,
+          "gradient_mae": 2.8154181985294118
+        },
+        "candidate": {
+          "mae": 12.837560017903646,
+          "person_mae": null,
+          "background_mae": 12.837560017903646,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 10.170461018880209,
+          "gradient_mae": 3.0987719566993466
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 20262,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\20262-input.png",
+          "sha256": "b32f241de51a169288faeae4160220f9477524ce4c76af69414e5abaf3710ab6"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\002\\01564_1767.png.png",
+          "sha256": "ffb7a47feefe7184119a915295db784b05df1fa1545eab8c0ebf9d3debb60c1f"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-20262-baseline.png",
+          "sha256": "862750d7fc4f8fae98f82fe3c9849d3977a0b711e30b8c4182d81528d89b88ea"
+        },
+        "candidate": {
+          "path": "natural-20262-candidate.png",
+          "sha256": "cbaf009ed1d6cb03611cecfd36c9d50fbcb36e7cdcab7c538d6323f250fc4e8a"
+        },
+        "raw": {
+          "path": "natural-20262-raw.npz",
+          "sha256": "1eed237e930c59b301dc526c4234698f8f73c817c902e7beefc2a68b8136d9e8"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38535789999878034,
+        "peak_allocated_bytes": 2181606912
+      },
+      "baseline_seconds": 0.014659100001154002,
+      "truth_sha256": "e0f52a36710625bc28cafa562399e56a1174c9dcb4d593a604182d5c0a7a683d",
+      "scores": {
+        "baseline": {
+          "mae": 16.812606811523438,
+          "person_mae": null,
+          "background_mae": 16.812606811523438,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 18.28692626953125,
+          "gradient_mae": 3.4943984885620916
+        },
+        "candidate": {
+          "mae": 16.203023274739582,
+          "person_mae": null,
+          "background_mae": 16.203023274739582,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 27.369349161783855,
+          "gradient_mae": 4.317733864379085
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 93056,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\93056-input.png",
+          "sha256": "369d3a21c070f5986332f9c68424d86e16a2b2c9851ffe1f70daf298d618d634"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\015\\14566_0004.png.png",
+          "sha256": "4b11cc6638fca30e6af7aba95eb42ea65f46251fc60bf5964d640ca427db6d27"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-93056-baseline.png",
+          "sha256": "afb6e0218fbff9820e70291f348cab55b3acab665dbde7059a8c5d2a1bbe7483"
+        },
+        "candidate": {
+          "path": "natural-93056-candidate.png",
+          "sha256": "ad5b31a56f7e126f29ad32d9b176d3122521971004cb414bcaf3ab6220c6ada4"
+        },
+        "raw": {
+          "path": "natural-93056-raw.npz",
+          "sha256": "9198ad6f9d26e7748bdccb4b63706fa82b915453a8c26e2e45664c2a3812b10b"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3787321999989217,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.011740000001736917,
+      "truth_sha256": "a84ef95dd1ae7f3ef47eb716372b7a07616734dae8bd6e4cce96844ac5dde4b6",
+      "scores": {
+        "baseline": {
+          "mae": 12.526097615559896,
+          "person_mae": null,
+          "background_mae": 12.526097615559896,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 9.180994669596354,
+          "gradient_mae": 2.8205882352941174
+        },
+        "candidate": {
+          "mae": 25.947794596354168,
+          "person_mae": null,
+          "background_mae": 25.947794596354168,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 13.939453125,
+          "gradient_mae": 3.380001531862745
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 35034,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\35034-input.png",
+          "sha256": "a24cc7e633a1d1e7cc9c50e8c41e3e660616af66fdd6ad7f25410a77ca0e46dd"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\005\\04153_1790.png.png",
+          "sha256": "bba236c7a5c986b5c3ceea1a5e3b771d6ea18b57b368e06fb8cbd290f13e7d9b"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-35034-baseline.png",
+          "sha256": "d923f65c74c3edb6603ed87beeb2bfac7548b25baaa141822bcb6f63267f3f81"
+        },
+        "candidate": {
+          "path": "natural-35034-candidate.png",
+          "sha256": "5e798e6baf8ee2ef74f0a433a1c1fe809bcde7fc0e4a989e668dda489786005d"
+        },
+        "raw": {
+          "path": "natural-35034-raw.npz",
+          "sha256": "f51d445530d5c7708f9efe7e01865427de95d31b42504f3e56dd29dcf58ccf54"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3738420000008773,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012493500005803071,
+      "truth_sha256": "d70d9106a642fdc03199660730bae8e0590c3e03484c2c3d46d58d1e6ed00d90",
+      "scores": {
+        "baseline": {
+          "mae": 23.894383748372395,
+          "person_mae": null,
+          "background_mae": 23.894383748372395,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 11.336090087890625,
+          "gradient_mae": 3.7135110294117646
+        },
+        "candidate": {
+          "mae": 34.5309804280599,
+          "person_mae": null,
+          "background_mae": 34.5309804280599,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 15.738535563151041,
+          "gradient_mae": 3.9183644812091503
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 15276,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\15276-input.png",
+          "sha256": "62ac8f4c67e19a3359877bb0b18ede4078de70770218e9d04201ad12657f092d"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\004\\03504_1915.png.png",
+          "sha256": "1ce097951f36769d596330e967f3d542d390b09aa2976b5ad3b7833753ddcb39"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-15276-baseline.png",
+          "sha256": "74694d9504f4cfc7d6f0303e0af6af247e700411552cb2399d34daef67274ace"
+        },
+        "candidate": {
+          "path": "natural-15276-candidate.png",
+          "sha256": "4a652273dbd738bb7d2f9d9f8035420118968a65923cd5e66b8b4b42ca2f54d7"
+        },
+        "raw": {
+          "path": "natural-15276-raw.npz",
+          "sha256": "4f809822e5226ec81d819c306dd61477f1630c9e61fcc8b0ae2d7f1a9271a2ec"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.379586000002746,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.017389500004355796,
+      "truth_sha256": "b36b551ab291ed7adcda83875a88e73187cf837ae059877444677f30321be11d",
+      "scores": {
+        "baseline": {
+          "mae": 23.715352376302082,
+          "person_mae": null,
+          "background_mae": 23.715352376302082,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 9.131245930989584,
+          "gradient_mae": 2.61390420751634
+        },
+        "candidate": {
+          "mae": 27.547439575195312,
+          "person_mae": null,
+          "background_mae": 27.547439575195312,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 8.751571655273438,
+          "gradient_mae": 3.047306474673203
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 30730,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\30730-input.png",
+          "sha256": "bf775587307d3b14feb0991501b403c62ad41c2567b959513c95b9020f93dcf2"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\012\\11574_1566.png.png",
+          "sha256": "5b931a50ebc5752a1555561fa5fda6f834e95016353f2f79174dd8a8377014ec"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-30730-baseline.png",
+          "sha256": "fb584ff2cf47e3a5d602bc380ecf89975a1cbab702fdab3f32fb6127b5541cd9"
+        },
+        "candidate": {
+          "path": "natural-30730-candidate.png",
+          "sha256": "788ed98442d5c9d90b5f2e9009685cd1a13c1d79871c88c2163a5d12f5cfed1e"
+        },
+        "raw": {
+          "path": "natural-30730-raw.npz",
+          "sha256": "5c8febc14fcb03373a6f50dc8c398fa9f2445fca69b6400d6c317fb9d8cd1752"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.384423000003153,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.01741520000359742,
+      "truth_sha256": "fb2ea63180bbab5f1bcbb17c1aad3e3ee0e90dbf2efc06af70c5f35e22220946",
+      "scores": {
+        "baseline": {
+          "mae": 18.28380839029948,
+          "person_mae": null,
+          "background_mae": 18.28380839029948,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 7.0161997477213545,
+          "gradient_mae": 1.3097069035947713
+        },
+        "candidate": {
+          "mae": 18.580902099609375,
+          "person_mae": null,
+          "background_mae": 18.580902099609375,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0322418212890625,
+          "source_movement": 8.917449951171875,
+          "gradient_mae": 1.5406020220588235
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 40671,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\40671-input.png",
+          "sha256": "e3ad8357bbf482e542a5c3b61d6ea9e328c982fceac3c2a7c62df3779f75c8ed"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\015\\14283_2014.png.png",
+          "sha256": "1660aa92a95adf26670be9ec648eb529402b6ee113f990bc14c4e1e1cb8dcd04"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-40671-baseline.png",
+          "sha256": "d37852c348e8767fd1f09e1f28664bf5dc059f3cc87ad14a56c7eb63fd9168fc"
+        },
+        "candidate": {
+          "path": "natural-40671-candidate.png",
+          "sha256": "5c3c4d90fc54a107c2f291d0257bd379b7403d80c23baf8d2935c38aea5c41b7"
+        },
+        "raw": {
+          "path": "natural-40671-raw.npz",
+          "sha256": "a791a7476b9271237ff0c20f7a6bb719db95dbca4d8fd6360aec9ca6c0ed1ba9"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38046290000056615,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.012759800003550481,
+      "truth_sha256": "4a0d2367a739cd28c88988109217780c68e2207bb627f06f8570cdafbc209013",
+      "scores": {
+        "baseline": {
+          "mae": 20.434956868489582,
+          "person_mae": null,
+          "background_mae": 20.434956868489582,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.025029500325520832,
+          "source_movement": 20.391331990559895,
+          "gradient_mae": 2.479467933006536
+        },
+        "candidate": {
+          "mae": 26.002156575520832,
+          "person_mae": null,
+          "background_mae": 26.002156575520832,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.146759033203125,
+          "source_movement": 26.491317749023438,
+          "gradient_mae": 2.2144914215686273
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 52069,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\52069-input.png",
+          "sha256": "09987971b82b86b865eec5f487b562eb87f8509e041e758bfdb9fad90bf70c19"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\002\\01585_0801.png.png",
+          "sha256": "b575f32ed3ea337dcbfa00094d6169077eb679b639af6e49808608fb87fc6f48"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-52069-baseline.png",
+          "sha256": "10e5282181521e1d259e992c3b3552dafd91d574621e26d3cb3d5c17ba471d3e"
+        },
+        "candidate": {
+          "path": "natural-52069-candidate.png",
+          "sha256": "b643cd4e113787b2218bf5f1cabffd56c518a989e6129a904b33fa427b90d20b"
+        },
+        "raw": {
+          "path": "natural-52069-raw.npz",
+          "sha256": "a610b8ccdef8c9f4f13c681c7983d8bd6c718b518b06d01f091bed5742e0b0d7"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38851599999907194,
+        "peak_allocated_bytes": 2181606912
+      },
+      "baseline_seconds": 0.014208599997800775,
+      "truth_sha256": "2f14e8f63c4cb6f0f85b80d3f5c8c5b3efe1d50b36ccacc88765c057f1e90826",
+      "scores": {
+        "baseline": {
+          "mae": 13.234842936197916,
+          "person_mae": null,
+          "background_mae": 13.234842936197916,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.006006876627604167,
+          "source_movement": 13.314351399739584,
+          "gradient_mae": 1.727938623366013
+        },
+        "candidate": {
+          "mae": 17.36096700032552,
+          "person_mae": null,
+          "background_mae": 17.36096700032552,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.017751057942708332,
+          "source_movement": 21.782567342122395,
+          "gradient_mae": 2.408231209150327
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 20932,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\20932-input.png",
+          "sha256": "7ecb1586fbe4c3f20997e5c79679fb5ccf13022d5fb299e824b6227429cb5eea"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\005\\04580_0994.png.png",
+          "sha256": "a7a371767c4ea027fdeee451de50f429947516a00f519147cef3bcde9101fcd4"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-20932-baseline.png",
+          "sha256": "a7b004c014ab017bc1f980526450e5eef36217148f7bd85a53174d62a9e14171"
+        },
+        "candidate": {
+          "path": "natural-20932-candidate.png",
+          "sha256": "e8e3e6993433f20b039fc01f4a5ec5544bdb925ca69a700b246a809e6bdbfda5"
+        },
+        "raw": {
+          "path": "natural-20932-raw.npz",
+          "sha256": "e59b4f6870d1251df6f095cfee464b4fcbd3b86a15bce0ce83ac7b270eef539a"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.3786675000010291,
+        "peak_allocated_bytes": 2174139904
+      },
+      "baseline_seconds": 0.010920399996393826,
+      "truth_sha256": "f3aa1603c273780e14ed6bb378c5721c3c19cdd2b66ecb8caba9c9456f4d7480",
+      "scores": {
+        "baseline": {
+          "mae": 18.781092325846355,
+          "person_mae": null,
+          "background_mae": 18.781092325846355,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0036214192708333335,
+          "source_movement": 16.233688354492188,
+          "gradient_mae": 3.564657373366013
+        },
+        "candidate": {
+          "mae": 22.018605550130207,
+          "person_mae": null,
+          "background_mae": 22.018605550130207,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0008799235026041666,
+          "source_movement": 21.94915771484375,
+          "gradient_mae": 5.201718239379085
+        }
+      }
+    },
+    {
+      "group": "natural",
+      "index": 98904,
+      "people": null,
+      "profile": null,
+      "size": [
+        256,
+        256
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\98904-input.png",
+          "sha256": "5d19c666c0ba22869fa13ea49b39b50ec8ed5de1d404e568e2665b4474282724"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\tst100k\\reserved-multiref-v1\\srgb\\style_images\\015\\14735_1000.png.png",
+          "sha256": "cd9b6046429bb0bd239e13dd4b246e6d16c8901c18da6c4cdf075ed4270cb141"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "natural-98904-baseline.png",
+          "sha256": "7285ecdf205e78f9e9720cf8fa779e54e45383315002405cc49cf0e4276a347f"
+        },
+        "candidate": {
+          "path": "natural-98904-candidate.png",
+          "sha256": "72fe95fd6f89cd55be815e2493d6e427099c6000d0e84d0f6dce5a55e7c9579a"
+        },
+        "raw": {
+          "path": "natural-98904-raw.npz",
+          "sha256": "49e1ae1ef0d7a5f06351d442697694044025b4ad7e6a182cfef2ae55c7f82fcd"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.38913859999593114,
+        "peak_allocated_bytes": 2184650752
+      },
+      "baseline_seconds": 0.017612600000575185,
+      "truth_sha256": "182e867c9595689c4b153f5b7c1d217cb6ea1b1d7af9a8009c4d7f86d32e2d3c",
+      "scores": {
+        "baseline": {
+          "mae": 10.737035115559896,
+          "person_mae": null,
+          "background_mae": 10.737035115559896,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 7.3160044352213545,
+          "gradient_mae": 2.778870506535948
+        },
+        "candidate": {
+          "mae": 10.442606608072916,
+          "person_mae": null,
+          "background_mae": 10.442606608072916,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 6.972218831380208,
+          "gradient_mae": 3.030833843954248
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 0,
+      "people": "single",
+      "profile": "identity",
+      "size": [
+        640,
+        425
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\785-input.png",
+          "sha256": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\3553-identity.png",
+          "sha256": "e69981d30b73607bec3eb849ebfa04af844b5895e891116b643879ab3de5ae71"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-0-baseline.png",
+          "sha256": "da8701d5a8c7e9efdd4e5d4ec982bf70742b1d2d2487c69c9765ab04e425534b"
+        },
+        "candidate": {
+          "path": "coco-0-candidate.png",
+          "sha256": "9f8a53429845fe74bd2230f88eb5912a8e28af1faf73e83974f777ea2f57277e"
+        },
+        "raw": {
+          "path": "coco-0-raw.npz",
+          "sha256": "1e5a550279345342c2eae7af7324626396bf398497771877624be4d5a76f5240"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4415090999973472,
+        "peak_allocated_bytes": 3747700736
+      },
+      "baseline_seconds": 0.01507310000306461,
+      "truth_sha256": "f56d1aa4085181964916f249bc964487b1155aad9b0f2f3297374f85e8349944",
+      "scores": {
+        "baseline": {
+          "mae": 11.06494362745098,
+          "person_mae": 13.22580189345768,
+          "background_mae": 10.813931793684924,
+          "relation_mae": 18.306274426624118,
+          "boundary_mae": 13.034272375192318,
+          "endpoint_fraction": 0.0023504901960784315,
+          "source_movement": 11.06494362745098,
+          "gradient_mae": 1.2986381052560816
+        },
+        "candidate": {
+          "mae": 10.288888480392156,
+          "person_mae": 20.689451745089727,
+          "background_mae": 9.080727585093753,
+          "relation_mae": 11.370228989150945,
+          "boundary_mae": 13.226802482890339,
+          "endpoint_fraction": 0.0048676470588235295,
+          "source_movement": 10.288888480392156,
+          "gradient_mae": 1.70948078323712
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 1,
+      "people": "single",
+      "profile": "global_contrast",
+      "size": [
+        640,
+        425
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\785-input.png",
+          "sha256": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\3553-global_contrast.png",
+          "sha256": "ed806b606a5e14d34d61b56aab8809491f01d7fb4d1d689f928086f60d1c63e8"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-1-baseline.png",
+          "sha256": "2e24d162b29c9b7ec559f8b5ab98698c60592b6eb83367b4a565d04342643a00"
+        },
+        "candidate": {
+          "path": "coco-1-candidate.png",
+          "sha256": "3d5b7c72224a852ae4a300a83c719234e2c1b75a51292b1a17e8119be91b9b56"
+        },
+        "raw": {
+          "path": "coco-1-raw.npz",
+          "sha256": "559ceff4cfaf7414dade2389a1c59997e66e36879dc583a84589abcfaab43920"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.43772850000095787,
+        "peak_allocated_bytes": 3747700736
+      },
+      "baseline_seconds": 0.017832699995778967,
+      "truth_sha256": "5009961c1b058b752f31861ec5cca330ad909dbbae51aafb0def1670fcb25104",
+      "scores": {
+        "baseline": {
+          "mae": 9.650473039215687,
+          "person_mae": 12.447882812867975,
+          "background_mae": 9.325517456461435,
+          "relation_mae": 7.994872959027636,
+          "boundary_mae": 11.777707040161282,
+          "endpoint_fraction": 0.0045441176470588235,
+          "source_movement": 9.867707107843136,
+          "gradient_mae": 1.5463551794953965
+        },
+        "candidate": {
+          "mae": 16.251490196078432,
+          "person_mae": 21.95243982855259,
+          "background_mae": 15.589250638784476,
+          "relation_mae": 13.29584118979374,
+          "boundary_mae": 17.743912143880312,
+          "endpoint_fraction": 0.03049877450980392,
+          "source_movement": 11.150322303921568,
+          "gradient_mae": 2.0468773978240717
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 2,
+      "people": "single",
+      "profile": "global_desaturate",
+      "size": [
+        640,
+        425
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\785-input.png",
+          "sha256": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\3553-global_desaturate.png",
+          "sha256": "eb155e39e1b77b6c904c3a972d0c0c76cdf3c5fe98d28717d2752d0b28e2cb2b"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-2-baseline.png",
+          "sha256": "4d92041a6648d419d0ed59dd9538033a35a3b1d152ef6429d687a770ed5a048c"
+        },
+        "candidate": {
+          "path": "coco-2-candidate.png",
+          "sha256": "fd1b47f3c1a7c1005641c970689f9e320008909d41a434f735a40ef1fa19b747"
+        },
+        "raw": {
+          "path": "coco-2-raw.npz",
+          "sha256": "acc4e47b4b105e1c56e34ee46997a56d37cb4a29c627145103da555cec46dd3f"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.443817700004729,
+        "peak_allocated_bytes": 3747700736
+      },
+      "baseline_seconds": 0.01662150000629481,
+      "truth_sha256": "fac51696293fc9ae784829cb3ee7885d5eb5a00d278f7ae6f2bafedeb3d19e4d",
+      "scores": {
+        "baseline": {
+          "mae": 11.264598039215686,
+          "person_mae": 11.342765296029391,
+          "background_mae": 11.255517894172426,
+          "relation_mae": 18.38337900890349,
+          "boundary_mae": 12.371903018727783,
+          "endpoint_fraction": 0.0006887254901960784,
+          "source_movement": 11.41038112745098,
+          "gradient_mae": 1.059234807759028
+        },
+        "candidate": {
+          "mae": 9.495487745098039,
+          "person_mae": 16.45430031557628,
+          "background_mae": 8.687131023313581,
+          "relation_mae": 8.127786464156108,
+          "boundary_mae": 11.017613666507508,
+          "endpoint_fraction": 0.005254901960784313,
+          "source_movement": 10.658405637254901,
+          "gradient_mae": 1.3238929084737543
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 3,
+      "people": "single",
+      "profile": "region_color_luminance",
+      "size": [
+        640,
+        425
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\785-input.png",
+          "sha256": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\3553-region_color_luminance.png",
+          "sha256": "a811de8d66e508876c875feb32e42716004f774a872019c2402223aedac36b04"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-3-baseline.png",
+          "sha256": "e6793ab632f21d6dd930b973c9f511c85e5a2add37058728b77fd4e46f2f9de7"
+        },
+        "candidate": {
+          "path": "coco-3-candidate.png",
+          "sha256": "86fc08eb72d8d7a35fc2416d33ad9c46dc971660e4571173b1d4174c9c895d36"
+        },
+        "raw": {
+          "path": "coco-3-raw.npz",
+          "sha256": "a1ac2f8833f34e08f2d560aadc50223b2e0582f4884aade187425c7569cf44bf"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.4430164000004879,
+        "peak_allocated_bytes": 3747700736
+      },
+      "baseline_seconds": 0.019417199997405987,
+      "truth_sha256": "e889978473faa66219259a99887a24250f6b9aae8fc80e0d53057982d17f6d6f",
+      "scores": {
+        "baseline": {
+          "mae": 9.411457107843137,
+          "person_mae": 13.674002637652489,
+          "background_mae": 8.916306922946452,
+          "relation_mae": 18.07211541899333,
+          "boundary_mae": 12.016207756379648,
+          "endpoint_fraction": 0.00289828431372549,
+          "source_movement": 12.047867647058824,
+          "gradient_mae": 1.1155881190485908
+        },
+        "candidate": {
+          "mae": 8.636932598039216,
+          "person_mae": 16.845120342894823,
+          "background_mae": 7.68344467606651,
+          "relation_mae": 11.732215579260583,
+          "boundary_mae": 11.159955435301608,
+          "endpoint_fraction": 0.010387254901960784,
+          "source_movement": 9.127240196078432,
+          "gradient_mae": 1.4352391876891952
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 4,
+      "people": "single",
+      "profile": "region_tone_saturation",
+      "size": [
+        640,
+        425
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\785-input.png",
+          "sha256": "9c64ac4eb5c047b35e192cb2e04cbdec9e5069aa31f47dc53f8ec6e5ff8956cd"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\3553-region_tone_saturation.png",
+          "sha256": "a58259c52ef1b00bb66e1ba3b285b137897faa002b40be2cc3f8603e9af57f41"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-4-baseline.png",
+          "sha256": "25839dc421bd1d0590046de1ae1409a4b0788c759648946a21d3ce7371e66c8d"
+        },
+        "candidate": {
+          "path": "coco-4-candidate.png",
+          "sha256": "7cf654297e2c3e5277f77292c88a7d3ab370ffbe5f33047fdfd14c297d236398"
+        },
+        "raw": {
+          "path": "coco-4-raw.npz",
+          "sha256": "5f5dbdc5a152c422afb41ccdb85156cc87121012d49fe009249f9a8d7a19af8c"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 0.43657440000242786,
+        "peak_allocated_bytes": 3747700736
+      },
+      "baseline_seconds": 0.019848600000841543,
+      "truth_sha256": "15006091d55e6ff27c5a39206bbf4d2b2d4a82797c89a5726e573b6de367468c",
+      "scores": {
+        "baseline": {
+          "mae": 9.859463235294118,
+          "person_mae": 20.932586783476992,
+          "background_mae": 8.573175702662924,
+          "relation_mae": 21.870710396440767,
+          "boundary_mae": 13.1671706721842,
+          "endpoint_fraction": 0.004430147058823529,
+          "source_movement": 11.006009803921568,
+          "gradient_mae": 1.2344633540409586
+        },
+        "candidate": {
+          "mae": 14.182709558823529,
+          "person_mae": 25.950049455984175,
+          "background_mae": 12.815779754772418,
+          "relation_mae": 6.734060548557608,
+          "boundary_mae": 17.831476470900313,
+          "endpoint_fraction": 0.02445955882352941,
+          "source_movement": 11.74711887254902,
+          "gradient_mae": 1.9812948727522186
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 5,
+      "people": "single",
+      "profile": "identity",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\9483-input.png",
+          "sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\19432-identity.png",
+          "sha256": "55b762f8977a85d29f1055a5abbebbb7e3fe6c6c50cbd3b6c3be1dafa7235c94"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-5-baseline.png",
+          "sha256": "41cb413b75921a396cdcf6bbd827518fb534e64a13a7a57282af41c3239bedb4"
+        },
+        "candidate": {
+          "path": "coco-5-candidate.png",
+          "sha256": "241301e1029a82ac389c008a45faa82d249b96fe8e2a7b81986361304652668e"
+        },
+        "raw": {
+          "path": "coco-5-raw.npz",
+          "sha256": "837fc838325da1f3024283600e2ba27542c413c50de63c1720b4a02da6ad9316"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 3.3413428999992902,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.018629499994858634,
+      "truth_sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+      "scores": {
+        "baseline": {
+          "mae": 22.209814453125,
+          "person_mae": 16.277366364766472,
+          "background_mae": 23.03568444213701,
+          "relation_mae": 22.557801146831135,
+          "boundary_mae": 23.003173677904076,
+          "endpoint_fraction": 0.011578776041666667,
+          "source_movement": 22.209814453125,
+          "gradient_mae": 2.641600260973947
+        },
+        "candidate": {
+          "mae": 46.25086480034722,
+          "person_mae": 25.11171195169597,
+          "background_mae": 49.193695765037454,
+          "relation_mae": 47.828363179648356,
+          "boundary_mae": 37.78237637229185,
+          "endpoint_fraction": 0.1729351128472222,
+          "source_movement": 46.25086480034722,
+          "gradient_mae": 5.085635941582185
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 6,
+      "people": "single",
+      "profile": "global_contrast",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\9483-input.png",
+          "sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\19432-global_contrast.png",
+          "sha256": "f259e6928526043cf5d97720b1e8265e2c11564a518ecf1ed1cb67d7f93f47ce"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-6-baseline.png",
+          "sha256": "842c868b33857082d655d1d721f3c9f607ae7ce843b8fe382dc6799a0765d708"
+        },
+        "candidate": {
+          "path": "coco-6-candidate.png",
+          "sha256": "1c5338335fb6322481f5a3c47642c30110588683c6ff29927d186285dde69458"
+        },
+        "raw": {
+          "path": "coco-6-raw.npz",
+          "sha256": "641cd8bbfeb2901f103d0fbc6e49e33eebd61aef5694c8107782ae0134053ebe"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.117251700001361,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.019003700006578583,
+      "truth_sha256": "033520cd3769b4e65014c1d0be003a01253c73238f96a957fc3ea10abe2e7ae7",
+      "scores": {
+        "baseline": {
+          "mae": 15.094406467013888,
+          "person_mae": 6.933937133724028,
+          "background_mae": 16.230444510371086,
+          "relation_mae": 10.888926472034953,
+          "boundary_mae": 15.104083681466369,
+          "endpoint_fraction": 0.010718315972222222,
+          "source_movement": 20.195784505208334,
+          "gradient_mae": 2.1459221453816326
+        },
+        "candidate": {
+          "mae": 42.720387369791666,
+          "person_mae": 16.574995560291246,
+          "background_mae": 46.360148582165195,
+          "relation_mae": 40.054962250259216,
+          "boundary_mae": 32.038440364001424,
+          "endpoint_fraction": 0.21289605034722223,
+          "source_movement": 47.77720811631944,
+          "gradient_mae": 5.340737735681078
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 7,
+      "people": "single",
+      "profile": "global_desaturate",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\9483-input.png",
+          "sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\19432-global_desaturate.png",
+          "sha256": "99cb944e34418df63cccfe9662d69ed2f8dc0d776af1d03a4ba931d13e4ce0a0"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-7-baseline.png",
+          "sha256": "2d22e91d1d898d74c366827fe5b398d77dfb8a92143d4cb05ce62c972eaf8c26"
+        },
+        "candidate": {
+          "path": "coco-7-candidate.png",
+          "sha256": "00cd531ca4eca4a48c809a29975152db3e05e982a559637c9e0b5b8ea3270b6e"
+        },
+        "raw": {
+          "path": "coco-7-raw.npz",
+          "sha256": "e010a8915209dd76dec58d5632132858f7c935bc3c58f6637fb33d52aad2fa04"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.093856700004835,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.019328499998664483,
+      "truth_sha256": "0eddae822a252cb96063d2fe9629ea587d47229aab702a1acfe5cd3c1be46907",
+      "scores": {
+        "baseline": {
+          "mae": 20.605989583333333,
+          "person_mae": 14.94786893979755,
+          "background_mae": 21.393669806422903,
+          "relation_mae": 20.929276723072274,
+          "boundary_mae": 21.47754137115839,
+          "endpoint_fraction": 0.004720052083333333,
+          "source_movement": 21.075269097222222,
+          "gradient_mae": 2.4523065543039806
+        },
+        "candidate": {
+          "mae": 44.12217122395833,
+          "person_mae": 23.42049369561357,
+          "background_mae": 47.00410022497466,
+          "relation_mae": 46.27943457162714,
+          "boundary_mae": 36.1979014864471,
+          "endpoint_fraction": 0.19362630208333334,
+          "source_movement": 44.74770290798611,
+          "gradient_mae": 4.509409279687766
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 8,
+      "people": "single",
+      "profile": "region_color_luminance",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\9483-input.png",
+          "sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\19432-region_color_luminance.png",
+          "sha256": "22391a812f25f48dd986b3fd13483aff0819f692e10e00ee8821b90dee755b4d"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-8-baseline.png",
+          "sha256": "8d5b173ea3053407ed073169dd40c3d4fb99ffaa6c39a9519a41ff13ab9fe330"
+        },
+        "candidate": {
+          "path": "coco-8-candidate.png",
+          "sha256": "9df860921896a5658825f6f6af6ceba3176a0b8a2058ac06357943fded935cc0"
+        },
+        "raw": {
+          "path": "coco-8-raw.npz",
+          "sha256": "dc3d6be6a76e951cebfe501c1f521d586714ef96aaa76b0fd1424b740debf465"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.103991199997836,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.016741299994464498,
+      "truth_sha256": "f1b1b3b376fcc4b1dfc1bdc1dc51abc71ae29bf99c3f3fdf074df8b94868cf8a",
+      "scores": {
+        "baseline": {
+          "mae": 21.586596137152778,
+          "person_mae": 17.542594565796485,
+          "background_mae": 22.149571064797648,
+          "relation_mae": 22.54013130487212,
+          "boundary_mae": 22.65821432041193,
+          "endpoint_fraction": 0.006184895833333333,
+          "source_movement": 21.372088758680555,
+          "gradient_mae": 2.549786077527953
+        },
+        "candidate": {
+          "mae": 45.53175238715278,
+          "person_mae": 27.12362812999467,
+          "background_mae": 48.094390467007834,
+          "relation_mae": 49.74201629002672,
+          "boundary_mae": 37.24009844878396,
+          "endpoint_fraction": 0.16858940972222222,
+          "source_movement": 45.11047634548611,
+          "gradient_mae": 4.956399387426131
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 9,
+      "people": "single",
+      "profile": "region_tone_saturation",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\9483-input.png",
+          "sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\19432-region_tone_saturation.png",
+          "sha256": "855b94b528e9bc0ce851ba874c0e90fdae21f618345609723eb678eb89408b96"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-9-baseline.png",
+          "sha256": "0357f6f3df6da9901b0fd7244c36c9243b5eb657a4bf2bc9b2e48c789ab39f7b"
+        },
+        "candidate": {
+          "path": "coco-9-candidate.png",
+          "sha256": "57d218b177cd6db6a9c797c415dcc9082a03854e196272565285fbffd89af5f3"
+        },
+        "raw": {
+          "path": "coco-9-raw.npz",
+          "sha256": "893de33ec646e34a63064a19c1ec79d3855a81b91019d96c529cbba072d7876a"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.074645599997893,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.01727289999689674,
+      "truth_sha256": "b3e2afab0b58d1a5b92643826d104a43754efe085f954d3d8f65f112dcf1d451",
+      "scores": {
+        "baseline": {
+          "mae": 17.246546223958333,
+          "person_mae": 19.673787959509855,
+          "background_mae": 16.9086442186457,
+          "relation_mae": 30.6783286333601,
+          "boundary_mae": 19.22199553094336,
+          "endpoint_fraction": 0.007927517361111112,
+          "source_movement": 18.766719835069445,
+          "gradient_mae": 1.9705933525471107
+        },
+        "candidate": {
+          "mae": 45.73325520833333,
+          "person_mae": 30.4117385899485,
+          "background_mae": 47.86619941160474,
+          "relation_mae": 61.55049841238017,
+          "boundary_mae": 37.032352083940545,
+          "endpoint_fraction": 0.1919118923611111,
+          "source_movement": 46.62327473958333,
+          "gradient_mae": 5.24546539673231
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 10,
+      "people": "multiple",
+      "profile": "identity",
+      "size": [
+        621,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\872-input.png",
+          "sha256": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1268-identity.png",
+          "sha256": "b1afffecb3afc8fb6aa48d5972400f2b0544011d5a9c0c5fa5c57e148ee4d5b5"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-10-baseline.png",
+          "sha256": "0a0d13be9966d47e30464c58882a6e4c88a3537e4aa71a036e650a4ea9e4874b"
+        },
+        "candidate": {
+          "path": "coco-10-candidate.png",
+          "sha256": "ba212ae948121e2fb230a758d9fd95008274b4944909fa9f8d2674dfcd8f0c56"
+        },
+        "raw": {
+          "path": "coco-10-raw.npz",
+          "sha256": "9acd53d0589bfc69cd7107be5b115c38135c4f9ccb7874d9dc3ced762bad2427"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.9688715999946,
+        "peak_allocated_bytes": 4774896640
+      },
+      "baseline_seconds": 0.022995699997409247,
+      "truth_sha256": "c7a5f1233d50dcda43bcc92bc41af53f0793572994003d6902e0514af055813d",
+      "scores": {
+        "baseline": {
+          "mae": 12.007076959205582,
+          "person_mae": 8.705159299110711,
+          "background_mae": 12.770430169149543,
+          "relation_mae": 8.698694847582411,
+          "boundary_mae": 10.316706017027975,
+          "endpoint_fraction": 0.017029824208266237,
+          "source_movement": 12.007076959205582,
+          "gradient_mae": 2.3546843489214324
+        },
+        "candidate": {
+          "mae": 20.35722205448202,
+          "person_mae": 22.585572185968815,
+          "background_mae": 19.842061350656163,
+          "relation_mae": 8.743316942629823,
+          "boundary_mae": 19.910295485440365,
+          "endpoint_fraction": 0.08160309312936125,
+          "source_movement": 20.35722205448202,
+          "gradient_mae": 2.822374075475339
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 11,
+      "people": "multiple",
+      "profile": "global_contrast",
+      "size": [
+        621,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\872-input.png",
+          "sha256": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1268-global_contrast.png",
+          "sha256": "f8ded2dfec77a108dd3ec00822bff3d09853e474c92f1ce20c12a9f11f2e76b6"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-11-baseline.png",
+          "sha256": "e681bd6bb7e2ee3791d9268fbe7cf8c7944d533fdb0b94655aee5174e76f5eae"
+        },
+        "candidate": {
+          "path": "coco-11-candidate.png",
+          "sha256": "cd5082e9e64b31de9546eb4f99aa877fe4f5fbfeb4791fb18ea5248fc49986ac"
+        },
+        "raw": {
+          "path": "coco-11-raw.npz",
+          "sha256": "ef59a17229f9f5d2887a4c997809ee858b9bf02ec5aab4698fe7d0f1d433ea3c"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.809963899999275,
+        "peak_allocated_bytes": 4774896640
+      },
+      "baseline_seconds": 0.020085700001800433,
+      "truth_sha256": "a5b0b0e9619447185e212a0aedd3a6d93648239e706f7c4070ade5c367664ccd",
+      "scores": {
+        "baseline": {
+          "mae": 10.989267981749865,
+          "person_mae": 7.069356416406491,
+          "background_mae": 11.895491995832442,
+          "relation_mae": 8.520330794663485,
+          "boundary_mae": 8.72158546183015,
+          "endpoint_fraction": 0.03202495974235105,
+          "source_movement": 15.446544551798175,
+          "gradient_mae": 2.921346196326894
+        },
+        "candidate": {
+          "mae": 19.856465546162106,
+          "person_mae": 23.29718116728528,
+          "background_mae": 19.06102435584083,
+          "relation_mae": 10.19081554598794,
+          "boundary_mae": 20.51062459755312,
+          "endpoint_fraction": 0.15095108695652174,
+          "source_movement": 20.83179767176597,
+          "gradient_mae": 3.8033709547009793
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 12,
+      "people": "multiple",
+      "profile": "global_desaturate",
+      "size": [
+        621,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\872-input.png",
+          "sha256": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1268-global_desaturate.png",
+          "sha256": "3560ec7e8a261685c013707350dc6983e3913cc918cba50882b23debf04e2e69"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-12-baseline.png",
+          "sha256": "e01b97b2317029553d2eea412707f5820d9092e781dfd7dce1a68ea5b689235d"
+        },
+        "candidate": {
+          "path": "coco-12-candidate.png",
+          "sha256": "89e26fa199dd0dff95b5af0b790cd0f39aa2b7182b8792a48df49a1eee8cff45"
+        },
+        "raw": {
+          "path": "coco-12-raw.npz",
+          "sha256": "9b9062c970b73fbd74738134f6748eb68226559d2fa9526e07a05f5ae5c1484c"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.743889600002149,
+        "peak_allocated_bytes": 4774896640
+      },
+      "baseline_seconds": 0.029034400002274197,
+      "truth_sha256": "8cc0efb365e6b535d05c0a57966d9239e66003a602ebceeb5f0965e6d4eb8a6e",
+      "scores": {
+        "baseline": {
+          "mae": 11.379547436929684,
+          "person_mae": 8.415745443013662,
+          "background_mae": 12.064733440516793,
+          "relation_mae": 9.117243137629822,
+          "boundary_mae": 9.513329040566646,
+          "endpoint_fraction": 0.01756239935587762,
+          "source_movement": 12.790346551261406,
+          "gradient_mae": 2.1856785374046055
+        },
+        "candidate": {
+          "mae": 17.418188070316692,
+          "person_mae": 17.585514120962806,
+          "background_mae": 17.37950482893499,
+          "relation_mae": 4.685289974671259,
+          "boundary_mae": 16.168505401731416,
+          "endpoint_fraction": 0.08174231749865808,
+          "source_movement": 18.455136205045626,
+          "gradient_mae": 2.5659375509364057
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 13,
+      "people": "multiple",
+      "profile": "region_color_luminance",
+      "size": [
+        621,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\872-input.png",
+          "sha256": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1268-region_color_luminance.png",
+          "sha256": "ecf4f192910f2cfc4ac6887c537f14e91339c2ab91d3b8a394ff08968d6271b3"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-13-baseline.png",
+          "sha256": "1abb9444298dfdb81fb4dab0393aa1c68fc8a24d2a2eecda618c553f7a8837cb"
+        },
+        "candidate": {
+          "path": "coco-13-candidate.png",
+          "sha256": "c18a9cb83b5addb1db48c676db182e481bf23792c7a797b1302662e4981a345e"
+        },
+        "raw": {
+          "path": "coco-13-raw.npz",
+          "sha256": "ba44b3358e14fe306a4aa64277ff52ce166464ecefc615bd52204be8c6b970e4"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.826441199998953,
+        "peak_allocated_bytes": 4774896640
+      },
+      "baseline_seconds": 0.019785500000580214,
+      "truth_sha256": "040b37dc7994b9b7adcf0f18c29ccbe8c89d9022fccacf17c9384ea35ef25010",
+      "scores": {
+        "baseline": {
+          "mae": 13.832908950617284,
+          "person_mae": 14.454541800104517,
+          "background_mae": 13.689196877842866,
+          "relation_mae": 19.21164823567403,
+          "boundary_mae": 12.215024683408457,
+          "endpoint_fraction": 0.014033145464304885,
+          "source_movement": 12.166122349704777,
+          "gradient_mae": 2.3419609241594923
+        },
+        "candidate": {
+          "mae": 23.990232487922704,
+          "person_mae": 29.146600740552152,
+          "background_mae": 22.79815846837107,
+          "relation_mae": 18.07629035995126,
+          "boundary_mae": 24.741847320598126,
+          "endpoint_fraction": 0.05334641706924315,
+          "source_movement": 23.14784369967794,
+          "gradient_mae": 2.741551890563351
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 14,
+      "people": "multiple",
+      "profile": "region_tone_saturation",
+      "size": [
+        621,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\872-input.png",
+          "sha256": "115fed7101db97ccfc49fa919087ddb76fce854e988f147bed2175852a70f1b7"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1268-region_tone_saturation.png",
+          "sha256": "5a7298396f49232eae000bcc0522c3e857ec67f62c8ddc61d45b8dcca978c9cf"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-14-baseline.png",
+          "sha256": "74c3e2c394a52481862638c7a4bdece46f938c7dd2f7eb59b919669efecc0078"
+        },
+        "candidate": {
+          "path": "coco-14-candidate.png",
+          "sha256": "5151f03576bfc013ed058294d14b47a733d670d6a456a455dc08e079d70309d0"
+        },
+        "raw": {
+          "path": "coco-14-raw.npz",
+          "sha256": "8a5e08e59356c5097a2c048cda0b34dd38235757d04a02f4e0301f4f9b19fd94"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.9069639000008465,
+        "peak_allocated_bytes": 4774896640
+      },
+      "baseline_seconds": 0.027283399998850655,
+      "truth_sha256": "e2fa2bc1f3d3d95deffe8e0a517d3aa807d1a39d021aa01e1903d9b2d0e65667",
+      "scores": {
+        "baseline": {
+          "mae": 11.454963432635534,
+          "person_mae": 9.266031524831723,
+          "background_mae": 11.961011241872178,
+          "relation_mae": 9.001264016208566,
+          "boundary_mae": 10.04762109179366,
+          "endpoint_fraction": 0.026975979602791196,
+          "source_movement": 14.428842089371981,
+          "gradient_mae": 2.7629711072530694
+        },
+        "candidate": {
+          "mae": 18.313202831454642,
+          "person_mae": 27.560631032619135,
+          "background_mae": 16.175337891211885,
+          "relation_mae": 16.27817311248312,
+          "boundary_mae": 21.753623810545896,
+          "endpoint_fraction": 0.14302116881374127,
+          "source_movement": 21.14091602925389,
+          "gradient_mae": 3.295160964222465
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 15,
+      "people": "multiple",
+      "profile": "identity",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\8021-input.png",
+          "sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\8690-identity.png",
+          "sha256": "1306c8da5d20ba76ecdae68d58975639bf75b8d488f5203e80d3a50d4c7274ad"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-15-baseline.png",
+          "sha256": "4fd4252267b748cd94d3a0001397797e66ae919b7bb4f3dc17b5e87573323b42"
+        },
+        "candidate": {
+          "path": "coco-15-candidate.png",
+          "sha256": "2d2ea30d38802f04614d8d3b18535e70bef601708472f25c9a77ee61b8c7573f"
+        },
+        "raw": {
+          "path": "coco-15-raw.npz",
+          "sha256": "955bc58a3fde4389a8e2d074af0360c1b3fd6070719b0e577614ee8b2120f964"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.140833000004932,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.018208999994385522,
+      "truth_sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56",
+      "scores": {
+        "baseline": {
+          "mae": 46.59575954861111,
+          "person_mae": 28.39704236329647,
+          "background_mae": 57.29852976147396,
+          "relation_mae": 28.892763630772468,
+          "boundary_mae": 47.031047214141864,
+          "endpoint_fraction": 0.01025607638888889,
+          "source_movement": 46.59575954861111,
+          "gradient_mae": 1.6124609089836968
+        },
+        "candidate": {
+          "mae": 43.99435329861111,
+          "person_mae": 31.034879836852376,
+          "background_mae": 51.61589415385464,
+          "relation_mae": 20.404520269041075,
+          "boundary_mae": 49.269542030282686,
+          "endpoint_fraction": 0.0013997395833333333,
+          "source_movement": 43.99435329861111,
+          "gradient_mae": 2.0023362038856636
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 16,
+      "people": "multiple",
+      "profile": "global_contrast",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\8021-input.png",
+          "sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\8690-global_contrast.png",
+          "sha256": "6ceb93fa7b5f103558bb68e3228e92f3ebb594ea8d1b0b7721f3487ee7f20abb"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-16-baseline.png",
+          "sha256": "ff6b9b3182c71ba06da879694b78ecc37e0424dfb2cd33e888af89ebfaf1f886"
+        },
+        "candidate": {
+          "path": "coco-16-candidate.png",
+          "sha256": "53f72d3fc23408b0dcda207c8b091d41118f62d076ba9e35ebbd70fa4740368a"
+        },
+        "raw": {
+          "path": "coco-16-raw.npz",
+          "sha256": "f7958e1ea5926c99e633ec1470d7d3dea888b25d48d85cdba0414a41fbded974"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.022280699995463,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.021541499998420477,
+      "truth_sha256": "bdb85d6478bef4206e7049ee9bd44dbfeaa051cd6fe951166bfa13303e028630",
+      "scores": {
+        "baseline": {
+          "mae": 44.094637586805554,
+          "person_mae": 25.2618536945553,
+          "background_mae": 55.17030607567627,
+          "relation_mae": 29.88804620013846,
+          "boundary_mae": 46.027597523681656,
+          "endpoint_fraction": 0.015230034722222223,
+          "source_movement": 41.03720920138889,
+          "gradient_mae": 2.288618940885383
+        },
+        "candidate": {
+          "mae": 43.15684461805556,
+          "person_mae": 28.12039169494207,
+          "background_mae": 51.99986903641822,
+          "relation_mae": 24.050775134594513,
+          "boundary_mae": 49.857537107481164,
+          "endpoint_fraction": 0.02780056423611111,
+          "source_movement": 40.70798828125,
+          "gradient_mae": 2.8781422751226167
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 17,
+      "people": "multiple",
+      "profile": "global_desaturate",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\8021-input.png",
+          "sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\8690-global_desaturate.png",
+          "sha256": "6f38510e8e8d8063370d0e388b9b80666d909790d2c9a2ec77015144cb5951bb"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-17-baseline.png",
+          "sha256": "9c21b8d54039f778565bb33c240cea68b6d99cd04c9c286dfdf4a37f593b1955"
+        },
+        "candidate": {
+          "path": "coco-17-candidate.png",
+          "sha256": "c9ee5f8ed3c8f5b8a7b4e2d54ade40bcb27a9e8665a5dd4cf18233f9f0256989"
+        },
+        "raw": {
+          "path": "coco-17-raw.npz",
+          "sha256": "0594a89f491479c4b410c44b46fd81eda4758f9adfbc8fae3a095aeb2a18f696"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.117825799999991,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.020427199997357093,
+      "truth_sha256": "4b3095626cd35cda3eb38524c4e18fe1a9cf94eb1255d023cd4de1a31e9b599e",
+      "scores": {
+        "baseline": {
+          "mae": 48.36878255208333,
+          "person_mae": 30.347585309681616,
+          "background_mae": 58.96715226584229,
+          "relation_mae": 28.60849364067975,
+          "boundary_mae": 48.62471097188036,
+          "endpoint_fraction": 0.0008995225694444444,
+          "source_movement": 47.59720811631944,
+          "gradient_mae": 1.4516943684047505
+        },
+        "candidate": {
+          "mae": 41.139233940972225,
+          "person_mae": 28.71378257531806,
+          "background_mae": 48.4467133310587,
+          "relation_mae": 19.557876429777796,
+          "boundary_mae": 45.28680912955919,
+          "endpoint_fraction": 0.0019900173611111112,
+          "source_movement": 42.176728515625,
+          "gradient_mae": 1.659827488929038
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 18,
+      "people": "multiple",
+      "profile": "region_color_luminance",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\8021-input.png",
+          "sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\8690-region_color_luminance.png",
+          "sha256": "999d9a97319c0b007d1058d95865916bcd39e52f65fcef2d1ebf2a05f4fd5fc0"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-18-baseline.png",
+          "sha256": "75e01c657a5d8b4d55bdf4cfc962cd2a33e8954a68c99b59165fe5c6f82de770"
+        },
+        "candidate": {
+          "path": "coco-18-candidate.png",
+          "sha256": "cf5e7cf42767c50154f742060f9b2514d090a8486ed4c15fa925ee2060d3d44b"
+        },
+        "raw": {
+          "path": "coco-18-raw.npz",
+          "sha256": "4863b244f47049120d5f0bae6616e947300180cacc4eef560a007d55b2b1f077"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.062920199998189,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.026204999994661193,
+      "truth_sha256": "a0ac0a9f18031fd7b29124fe75fb5ddf58f7886cfb9b2a5722ba6a1336d56336",
+      "scores": {
+        "baseline": {
+          "mae": 47.05724066840278,
+          "person_mae": 28.440861916398564,
+          "background_mae": 58.005640050041876,
+          "relation_mae": 29.538912580912548,
+          "boundary_mae": 47.277485641828896,
+          "endpoint_fraction": 0.011737196180555555,
+          "source_movement": 48.09919704861111,
+          "gradient_mae": 1.668514556298006
+        },
+        "candidate": {
+          "mae": 43.080205078125,
+          "person_mae": 29.486840948647174,
+          "background_mae": 51.07454067970099,
+          "relation_mae": 20.28666694640748,
+          "boundary_mae": 47.990844335048855,
+          "endpoint_fraction": 0.001533203125,
+          "source_movement": 44.258854166666666,
+          "gradient_mae": 2.015886859639823
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 19,
+      "people": "multiple",
+      "profile": "region_tone_saturation",
+      "size": [
+        640,
+        480
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\8021-input.png",
+          "sha256": "8db8cc39a2a84c69e3e1a84f3a0028077a82174b7c2b09fdcd2238ecbabbaf56"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\8690-region_tone_saturation.png",
+          "sha256": "a4efea59977db332a5dd1c8dd352ed11e82601bcb3036a634d093060839b02fd"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-19-baseline.png",
+          "sha256": "ec8a833e273deb0d19c690a8d69d169a8f77257b793c3034e3c11473475c11eb"
+        },
+        "candidate": {
+          "path": "coco-19-candidate.png",
+          "sha256": "8aaa241ee5224c388580630867d6ce7e40428b866a3bd011c445743213563c18"
+        },
+        "raw": {
+          "path": "coco-19-raw.npz",
+          "sha256": "3cd3a460052bed16bf4739a2e11d2f2acdd13618975ad8ac621f1d8a945cf0ba"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.049314399999275,
+        "peak_allocated_bytes": 4035181056
+      },
+      "baseline_seconds": 0.01607259999582311,
+      "truth_sha256": "90e9019c091feead041b1ffb8515db87065db1d4d4252824d97d666e6c20af37",
+      "scores": {
+        "baseline": {
+          "mae": 43.749737413194445,
+          "person_mae": 19.887288080964353,
+          "background_mae": 57.78338106611248,
+          "relation_mae": 44.94163170014474,
+          "boundary_mae": 42.419128067427465,
+          "endpoint_fraction": 0.01607638888888889,
+          "source_movement": 39.63804470486111,
+          "gradient_mae": 2.3793205599806733
+        },
+        "candidate": {
+          "mae": 44.488918185763886,
+          "person_mae": 21.255176010735862,
+          "background_mae": 58.152815544687876,
+          "relation_mae": 41.101242987115334,
+          "boundary_mae": 48.6219512195122,
+          "endpoint_fraction": 0.022135416666666668,
+          "source_movement": 42.02937174479167,
+          "gradient_mae": 2.995892993523592
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 20,
+      "people": "none",
+      "profile": "identity",
+      "size": [
+        586,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\285-input.png",
+          "sha256": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1993-identity.png",
+          "sha256": "33f654bb14153bceaa888e9d39acfe6653871b3559016fe9be43e2cac496186e"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-20-baseline.png",
+          "sha256": "da4d167509f0a31975f97a6fb85ce4d67f638215662c6eff9bd884ec74063536"
+        },
+        "candidate": {
+          "path": "coco-20-candidate.png",
+          "sha256": "5aa0dc048854f694843192859d5fd2a5709ce01543265e0c9dfa463ed0489384"
+        },
+        "raw": {
+          "path": "coco-20-raw.npz",
+          "sha256": "819d44c4d9475fd14c40a447bc2aa30c29d3bc3f1c082a799c33b81d0c4e91c4"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.733540699999139,
+        "peak_allocated_bytes": 4590962176
+      },
+      "baseline_seconds": 0.02753389999998035,
+      "truth_sha256": "7b4f5145e91420e6c4267e811f761b872f2bd2d96d1632f53f9aaacd24459d32",
+      "scores": {
+        "baseline": {
+          "mae": 14.812849296075086,
+          "person_mae": null,
+          "background_mae": 14.812849296075086,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 14.812849296075086,
+          "gradient_mae": 1.8378035692404038
+        },
+        "candidate": {
+          "mae": 26.133384883390217,
+          "person_mae": null,
+          "background_mae": 26.133384883390217,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.005036796075085324,
+          "source_movement": 26.133384883390217,
+          "gradient_mae": 3.033254808188757
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 21,
+      "people": "none",
+      "profile": "global_contrast",
+      "size": [
+        586,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\285-input.png",
+          "sha256": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1993-global_contrast.png",
+          "sha256": "2ba9f49bf82e44f5f72b0a610edd1dc47c27492782c441e8fdf8198eee9b961b"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-21-baseline.png",
+          "sha256": "48a395d3e2b0d11c22750aba22395d6c759bfbe9308a16e679ebd093a20c7b52"
+        },
+        "candidate": {
+          "path": "coco-21-candidate.png",
+          "sha256": "c8a57038c6e429cbe79989ded9767fde106456892d3160922d8b6948677678e3"
+        },
+        "raw": {
+          "path": "coco-21-raw.npz",
+          "sha256": "58eff46f4b3ee928649882a13242a63296a4ab8af87bf96df8dc4b429f876633"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.677483799998299,
+        "peak_allocated_bytes": 4590962176
+      },
+      "baseline_seconds": 0.021657899997080676,
+      "truth_sha256": "ecd8d8dfb9a59a319bbe37f1f8ce8fea99b087dc77210ae1a0e7a61fd1de9312",
+      "scores": {
+        "baseline": {
+          "mae": 16.240329031569967,
+          "person_mae": null,
+          "background_mae": 16.240329031569967,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 6.22155858930603e-06,
+          "source_movement": 14.578043230944255,
+          "gradient_mae": 3.0931426566054534
+        },
+        "candidate": {
+          "mae": 25.713355908703072,
+          "person_mae": null,
+          "background_mae": 25.713355908703072,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.07845652019340159,
+          "source_movement": 25.697383390216153,
+          "gradient_mae": 3.453544845204875
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 22,
+      "people": "none",
+      "profile": "global_desaturate",
+      "size": [
+        586,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\285-input.png",
+          "sha256": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1993-global_desaturate.png",
+          "sha256": "a6935eb4607d21da7e1aa480054af6bed21ad93a08d5cf7fe52eab704407fe84"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-22-baseline.png",
+          "sha256": "40cfc4a72432676738521a9b86074a4a042bd4c6b6aefa07ba4413ca12b103e8"
+        },
+        "candidate": {
+          "path": "coco-22-candidate.png",
+          "sha256": "4710612e3b96daa7ffc92191e20196d3775f65afb9d1504b95ff0cfb4f80e495"
+        },
+        "raw": {
+          "path": "coco-22-raw.npz",
+          "sha256": "97f68b2744d93435a0ddb36ec5b04c9ab935e1f8c1514952a58c5991c2a58336"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.655778799999098,
+        "peak_allocated_bytes": 4590962176
+      },
+      "baseline_seconds": 0.020772100004251115,
+      "truth_sha256": "bb64d271a697fc24eb8002fefd0d41506b200c65ecffe4e5b8ecd0f25cbef7ab",
+      "scores": {
+        "baseline": {
+          "mae": 8.85198289960182,
+          "person_mae": null,
+          "background_mae": 8.85198289960182,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 16.02151681598407,
+          "gradient_mae": 1.4802107054837657
+        },
+        "candidate": {
+          "mae": 27.619232615187713,
+          "person_mae": null,
+          "background_mae": 27.619232615187713,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0011189917519908988,
+          "source_movement": 28.196701685153585,
+          "gradient_mae": 2.9135249409464965
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 23,
+      "people": "none",
+      "profile": "region_color_luminance",
+      "size": [
+        586,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\285-input.png",
+          "sha256": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1993-region_color_luminance.png",
+          "sha256": "d33b9637c3d34e25b71394560de6aa46134c2c4fc79fb3b1142e31aa605f5f68"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-23-baseline.png",
+          "sha256": "ef3c06fbc366ae368a2f1ac734dfb922dc001b959bd43633bcb0403cd6517bb3"
+        },
+        "candidate": {
+          "path": "coco-23-candidate.png",
+          "sha256": "c5f60bf1fb8eafb40e68c4ad6b987ea705c572fd35b90ef254d95be50ef0d763"
+        },
+        "raw": {
+          "path": "coco-23-raw.npz",
+          "sha256": "3e17a03ca7a86f91b9e851a4ab213e6994f91ea5f9d5ca783843187bafc5ea61"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.646991599998728,
+        "peak_allocated_bytes": 4590962176
+      },
+      "baseline_seconds": 0.01949880000029225,
+      "truth_sha256": "7bbc33a1edf93a44b384fde1291ffb25661e6cd071e1f63ea3ca90d97d13c5bb",
+      "scores": {
+        "baseline": {
+          "mae": 14.967237272468715,
+          "person_mae": null,
+          "background_mae": 14.967237272468715,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 11.58640233930603,
+          "gradient_mae": 2.1451315435787324
+        },
+        "candidate": {
+          "mae": 26.888743422923778,
+          "person_mae": null,
+          "background_mae": 26.888743422923778,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.01522237627986348,
+          "source_movement": 24.487585324232082,
+          "gradient_mae": 2.981959602005306
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 24,
+      "people": "none",
+      "profile": "region_tone_saturation",
+      "size": [
+        586,
+        640
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\285-input.png",
+          "sha256": "c9e9aa9853c2759fc4132f4f3052fe95dbd59fdbb02f8a9851b50c2aac0151b1"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\1993-region_tone_saturation.png",
+          "sha256": "6551425dca4a421cd127674be762b9b0c2481b875bc69686d31b78f3ea085c2c"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-24-baseline.png",
+          "sha256": "99a637150d9da09e44e2c7786339e343a5f44f4d62b6c59dd66bd11736661156"
+        },
+        "candidate": {
+          "path": "coco-24-candidate.png",
+          "sha256": "03a64974e30eb8a536bea4009343c573f58c45a5bce5a8de93200534c5288cc9"
+        },
+        "raw": {
+          "path": "coco-24-raw.npz",
+          "sha256": "f5fa434ee1bc86c9920ad5e42989472da89a594465414fba434ae4f45fd58b9d"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 5.677718500002811,
+        "peak_allocated_bytes": 4590962176
+      },
+      "baseline_seconds": 0.023443000005499925,
+      "truth_sha256": "1878942add26e3d8792835a56c78107ac5d5d9669ef51ca44239d298749dd9da",
+      "scores": {
+        "baseline": {
+          "mae": 17.70922923777019,
+          "person_mae": null,
+          "background_mae": 17.70922923777019,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 7.999146757679181e-06,
+          "source_movement": 14.632998257963594,
+          "gradient_mae": 3.1296329804271945
+        },
+        "candidate": {
+          "mae": 24.81038733646189,
+          "person_mae": null,
+          "background_mae": 24.81038733646189,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0922870449374289,
+          "source_movement": 25.98496338168373,
+          "gradient_mae": 3.6225640918861624
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 25,
+      "people": "none",
+      "profile": "identity",
+      "size": [
+        640,
+        427
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\2149-input.png",
+          "sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\2592-identity.png",
+          "sha256": "8c56e725ddc2d4d0102aab90db6e85879c683d23fb6fd7479c8d4f79895a4377"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-25-baseline.png",
+          "sha256": "c991d48a79ca008bd27471b6214a4415faa2b3e3d5afe28c3375c812cfd6bac3"
+        },
+        "candidate": {
+          "path": "coco-25-candidate.png",
+          "sha256": "685ba6f599b9294bb25d8c9b00020b3ec735788dce84d0247978b4f689de382d"
+        },
+        "raw": {
+          "path": "coco-25-raw.npz",
+          "sha256": "afdfc25949bdc649410dd73d47f4812d0b10df0ff025cf2e5f845afe27abc457"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 3.9745490999994217,
+        "peak_allocated_bytes": 3754940416
+      },
+      "baseline_seconds": 0.018604200005938765,
+      "truth_sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5",
+      "scores": {
+        "baseline": {
+          "mae": 25.340010245901638,
+          "person_mae": null,
+          "background_mae": 25.340010245901638,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 25.340010245901638,
+          "gradient_mae": 0.6227616600865057
+        },
+        "candidate": {
+          "mae": 23.373352117486338,
+          "person_mae": null,
+          "background_mae": 23.373352117486338,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0003464090554254489,
+          "source_movement": 23.373352117486338,
+          "gradient_mae": 0.7312311205957664
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 26,
+      "people": "none",
+      "profile": "global_contrast",
+      "size": [
+        640,
+        427
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\2149-input.png",
+          "sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\2592-global_contrast.png",
+          "sha256": "2633d3146f8f1de1b49173639ed5a9acb0101b618d8354e038ac1eedc5c164ff"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-26-baseline.png",
+          "sha256": "7945fbb4ee66ebc27f290e033daf63d03d4e85a4758f1e4f8a699db1fb1bd7ad"
+        },
+        "candidate": {
+          "path": "coco-26-candidate.png",
+          "sha256": "b843379549d9a06b30c849b05354249bfb62223970036687b8a8f4392b14fc8f"
+        },
+        "raw": {
+          "path": "coco-26-raw.npz",
+          "sha256": "1fcad3e0ed41ad74ca7a5df1e1c4101abc639e614fc192e61b140b419544f0b9"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.010773599999084,
+        "peak_allocated_bytes": 3754940416
+      },
+      "baseline_seconds": 0.018287400002009235,
+      "truth_sha256": "ce9ead8c92df5860ca2a58d4fbe2e56d2220ec0f64888b843906f81549caae55",
+      "scores": {
+        "baseline": {
+          "mae": 27.90475092701015,
+          "person_mae": null,
+          "background_mae": 27.90475092701015,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 22.627768832943012,
+          "gradient_mae": 0.8981366201726143
+        },
+        "candidate": {
+          "mae": 26.40319330601093,
+          "person_mae": null,
+          "background_mae": 26.40319330601093,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.021901834504293522,
+          "source_movement": 24.58814524785324,
+          "gradient_mae": 0.8634102915535105
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 27,
+      "people": "none",
+      "profile": "global_desaturate",
+      "size": [
+        640,
+        427
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\2149-input.png",
+          "sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\2592-global_desaturate.png",
+          "sha256": "781a3805d5c8e5813afce31212ba354cd53c74462b32f2a1d47a54124cda32da"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-27-baseline.png",
+          "sha256": "f4064287a88ee40c60841e770780187ae716af518604bae66ad3a1d606e2dc48"
+        },
+        "candidate": {
+          "path": "coco-27-candidate.png",
+          "sha256": "b248e5f99049e1af4ab0f2a8fe1c81420bdd81d004fa8853129c13072094bf26"
+        },
+        "raw": {
+          "path": "coco-27-raw.npz",
+          "sha256": "30ed6b1cac186abeae18715e6c0aa9f67e416c36488686be86eb2a34570f7523"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.028256500001589,
+        "peak_allocated_bytes": 3754940416
+      },
+      "baseline_seconds": 0.018332600004214328,
+      "truth_sha256": "da6f90904ebc3a4d9c72fbd563f793551aefbc2a24c1069ed169a11b363b6c0d",
+      "scores": {
+        "baseline": {
+          "mae": 20.78921618852459,
+          "person_mae": null,
+          "background_mae": 20.78921618852459,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 26.87247511709602,
+          "gradient_mae": 0.507221865077838
+        },
+        "candidate": {
+          "mae": 17.73825868462139,
+          "person_mae": null,
+          "background_mae": 17.73825868462139,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.001094115925058548,
+          "source_movement": 24.27425961163154,
+          "gradient_mae": 0.6317821704246426
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 28,
+      "people": "none",
+      "profile": "region_color_luminance",
+      "size": [
+        640,
+        427
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\2149-input.png",
+          "sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\2592-region_color_luminance.png",
+          "sha256": "f4840bee3cfde4e0d724b016158fc1b0d70b5416acde6bbf24b102ed7bfd1d03"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-28-baseline.png",
+          "sha256": "cec01db9c1d66fee9197560e30033d7b7aa202c69f469272bf8ac90c805bf7e6"
+        },
+        "candidate": {
+          "path": "coco-28-candidate.png",
+          "sha256": "43d61a5db5d7fd8827d64c7c8be83a41a410311ab8e735640ee0a0d2f7072ba2"
+        },
+        "raw": {
+          "path": "coco-28-raw.npz",
+          "sha256": "01cf10f2a660a99e4fea980858d0f5c8e27e5a5865835b1b18d40cb40216c86d"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.039475199999288,
+        "peak_allocated_bytes": 3754940416
+      },
+      "baseline_seconds": 0.01831300000048941,
+      "truth_sha256": "03b6c4c207ad8566813daa37b48a8f0b97d0313eeed4dfef6caf6bcd82153f1b",
+      "scores": {
+        "baseline": {
+          "mae": 25.083476044106167,
+          "person_mae": null,
+          "background_mae": 25.083476044106167,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 26.518136465651835,
+          "gradient_mae": 0.6769869959740227
+        },
+        "candidate": {
+          "mae": 21.84316817915691,
+          "person_mae": null,
+          "background_mae": 21.84316817915691,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 22.762032835675253,
+          "gradient_mae": 0.7309669501908231
+        }
+      }
+    },
+    {
+      "group": "coco",
+      "index": 29,
+      "people": "none",
+      "profile": "region_tone_saturation",
+      "size": [
+        640,
+        427
+      ],
+      "inputs": {
+        "target": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\2149-input.png",
+          "sha256": "5d88b5a55bfc59e92ffa6135dd1e2a861734379576dd4049bc92ba4ea4b2a2e5"
+        },
+        "reference": {
+          "path": "outputs\\adaptive-reference-20261113\\independent-coco\\development\\references\\2592-region_tone_saturation.png",
+          "sha256": "2daaa9effad2d0c8dfe0a03334ae3565d6ec6e7ff4594457bf13f9dbd136a56c"
+        }
+      },
+      "files": {
+        "baseline": {
+          "path": "coco-29-baseline.png",
+          "sha256": "12d89aae168e36baaa2a60338c2701c311dc9e056f6081d2cbc5a3ca7f8225d6"
+        },
+        "candidate": {
+          "path": "coco-29-candidate.png",
+          "sha256": "0dbadb3978eba1fd6c3d75368d52a49f38de3a816d5e60f30d288563450983a5"
+        },
+        "raw": {
+          "path": "coco-29-raw.npz",
+          "sha256": "ecb4b666fdc0087193d09fbdf5d7a32495bb7774438621e13d5dd299a327b4cc"
+        }
+      },
+      "candidate_timing": {
+        "seconds": 4.0365260999969905,
+        "peak_allocated_bytes": 3754940416
+      },
+      "baseline_seconds": 0.02098969999497058,
+      "truth_sha256": "242bf330c825b3b410685985c2f8ec925ec2de6dea901984ddf6826d686bb77b",
+      "scores": {
+        "baseline": {
+          "mae": 29.547423887587822,
+          "person_mae": null,
+          "background_mae": 29.547423887587822,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.0,
+          "source_movement": 21.53688768540203,
+          "gradient_mae": 1.0288665036095443
+        },
+        "candidate": {
+          "mae": 28.966838651444185,
+          "person_mae": null,
+          "background_mae": 28.966838651444185,
+          "relation_mae": null,
+          "boundary_mae": null,
+          "endpoint_fraction": 0.03320038056206089,
+          "source_movement": 22.48365412763466,
+          "gradient_mae": 0.9451042896915494
+        }
+      }
+    }
+  ],
+  "postscreen_provenance": {
+    "scope": "Postscreen fresh-process dependency-origin check; not retrospective proof of original process importpath, not new inference",
+    "passed": true,
+    "results_sha256": "78dddce8823fcefb00905b444a59885bdb86da85713d7ba2798caa59aedfee99",
+    "verifier_sha256": "a71eb13dcb8927d10fbe14c3925dd2ce1a70aa922223f38bed3f96f4a6b63245",
+    "kornia": {
+      "version": "0.7.0",
+      "runtime_path": ".tools\\PETAL-source\\deps\\kornia-0.7.0-py2.py3-none-any.whl\\kornia\\__init__.py",
+      "wheel_sha256": "daa77a65f9cbfc1a67487d64a6b23d18a81f10eb94380312cda255d431bcc18a",
+      "installed": false
+    },
+    "postscreen_source_changes": {
+      "petal_model.py": {
+        "frozen_sha256": "a30a7a1f195135d5a532ec0e42036b59ee133f495755103696fe55f27dfd0d06",
+        "current_sha256": "41ed3321077fa3d002894293be978e6dcb466e4c5624b157095039ac471856a1"
+      },
+      "prepare_petal.py": {
+        "frozen_sha256": "4ad6be90c807b9a1c5126e83c3791c893de4eaa3c01024cbf90d505fc1f7dc17",
+        "current_sha256": "c77a0f7ba231dcc0c0f34d346c833231a99d665021143e700d0bbc3ff9eedc73"
+      },
+      "test_petal_model.py": {
+        "frozen_sha256": "041e64f59f3f5fd6fdd8f7fc5a024b7d777f5f92e405adaa7d17fc18ee7b9818",
+        "current_sha256": "c9c28d6ac6b18eafdce4296b6256e83a35862471ed7596a47fac18145d70fd08"
+      }
+    },
+    "change_reason": "Fail-closed runtime wheel origin/version validation and its test; acquisition pins the same immutable source revision instead of resolving master; publisherAPI/image math unchanged; no prediction rerun",
+    "original_model_state_before": "c7a383191c18f61476dc157439cd352c396076ff394514d0dd6691200408db6d",
+    "original_model_state_after": "c7a383191c18f61476dc157439cd352c396076ff394514d0dd6691200408db6d"
+  },
+  "official_assets": {
+    "repo": "https://github.com/jiacongfang/PETAL",
+    "revision": "162bad662d5a108285bb308699faed2888e3d782",
+    "model_repo": "JiacongFang/PETAL",
+    "model_revision": "34eb5176def5f583b72306fea03e0f6b44c6f3bf",
+    "files": [
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/LICENSE",
+        "bytes": 10174,
+        "git_blob": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      },
+      {
+        "path": "LICENSE-DINOv3.md",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/LICENSE-DINOv3.md",
+        "bytes": 7503,
+        "git_blob": "f531b1e6b5ab2318957bbf8ad1bda9f800a23e17",
+        "sha256": "25d122eb8f5b880fd23c736fb6ea8018ee45c12237e00b8a86d14c653904999e"
+      },
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/README.md",
+        "bytes": 6972,
+        "git_blob": "670056cd27a08243f87ccdaa0561f2f996fb9add",
+        "sha256": "09c31492dc896a6d43a69e82a311a6d32a1a19fe7762405df5899bc69475d5e6"
+      },
+      {
+        "path": "infer.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/infer.py",
+        "bytes": 11614,
+        "git_blob": "7ebfc5e29064b4c3a07f792a6437b841266151b4",
+        "sha256": "831539fc54734d778dea242af97d025279aa8341413c41f7d06484097aa9bf89"
+      },
+      {
+        "path": "layers/__init__.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/__init__.py",
+        "bytes": 724,
+        "git_blob": "72849216cad6d712ff9e7ae21e5d9057c75544ea",
+        "sha256": "6e412d1b071f1e2b0d998d92f63428b3c0f84618beba268227a6e6b5042b34b8"
+      },
+      {
+        "path": "layers/attention.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/attention.py",
+        "bytes": 3161,
+        "git_blob": "6bf542467b5e674065d4cbda02ba20b3cbb0726a",
+        "sha256": "10607a3ff87a41bb625f515176603877ba433a89d7cb247892c18ff819cb06bc"
+      },
+      {
+        "path": "layers/block.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/block.py",
+        "bytes": 6910,
+        "git_blob": "11c69596376aeeeae575aab3de40f79b37246324",
+        "sha256": "5d0ad4e8b81e1d274c0fe7c8d443055bfa2bb1c6699780c3abab8d0f6b1ab916"
+      },
+      {
+        "path": "layers/ffn_layers.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/ffn_layers.py",
+        "bytes": 2158,
+        "git_blob": "e3ec833b1253c260b4fa1afd17516129343d5ee6",
+        "sha256": "f94b9a982552ca178c68c9b78f342714a8a92fe1b1120938dbfdce35eb11e1be"
+      },
+      {
+        "path": "layers/layer_scale.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/layer_scale.py",
+        "bytes": 798,
+        "git_blob": "0b72b7c64c9cc38fd4e3db63e9c90f0158caa36c",
+        "sha256": "f9a10ee763a62136f9e814bfe2f2209c2cb501dfdc5573f858ab01ba9a69c23f"
+      },
+      {
+        "path": "layers/patch_embed.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/patch_embed.py",
+        "bytes": 2874,
+        "git_blob": "760343f14cd0c1c2bbb2c70d43f82eb0bb1fddf4",
+        "sha256": "c592c7262779c8e1789ed502aee81bdd55eba4607065f8d04ae95eea683d0ef1"
+      },
+      {
+        "path": "layers/rms_norm.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/rms_norm.py",
+        "bytes": 721,
+        "git_blob": "1d0a89c47c5e71687cadbf47fef567b2c6a2b3b4",
+        "sha256": "8509ffc53f0bbe9e353a8b9e57ca2396795640b4ecc85140c27b17127c971869"
+      },
+      {
+        "path": "layers/rope_position_encoding.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/rope_position_encoding.py",
+        "bytes": 5304,
+        "git_blob": "2635d09e7732fb4c146f57d3aef19c2d3e5668ec",
+        "sha256": "af8ea35acb76d18ad4d53b844d5057bf01472a848375c51d70583a87f044efd1"
+      },
+      {
+        "path": "layers/utils.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/layers/utils.py",
+        "bytes": 857,
+        "git_blob": "3c666d88b04c6657cd340c64c33aa110ace10290",
+        "sha256": "3595054a0aca98ac353ac38ffd86dcb4cbd9bc625c88a7feb2260fc901d76ae4"
+      },
+      {
+        "path": "models_lut.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/models_lut.py",
+        "bytes": 2773,
+        "git_blob": "cbca81546b49a3f646c1ad9ee575a8cc53cd0a1c",
+        "sha256": "808d25f399b773fb6cd3efc405ad9f2adb393b59046af60cdd7a5cc671995cd0"
+      },
+      {
+        "path": "models_style_encoder.py",
+        "url": "https://raw.githubusercontent.com/jiacongfang/PETAL/162bad662d5a108285bb308699faed2888e3d782/models_style_encoder.py",
+        "bytes": 18411,
+        "git_blob": "1d40dfa0fe14525aebdabd8bbccdb3bb4fdab408",
+        "sha256": "4e25435243c052e0049d6a3ec9ace5985849d6a306595d0299d638e9270eec9a"
+      }
+    ],
+    "weights": [
+      {
+        "path": "ckpts/style_encoder.pt",
+        "bytes": 1449783062,
+        "sha256": "c50e00cca2e1dae4cc9a02f6217b0c2f518eb438ab7356beea3d050c7d6d8852",
+        "url": "https://huggingface.co/JiacongFang/PETAL/resolve/34eb5176def5f583b72306fea03e0f6b44c6f3bf/ckpts/style_encoder.pt"
+      },
+      {
+        "path": "ckpts/lut_model.pt",
+        "bytes": 6921051,
+        "sha256": "b4ba53ed85139b983f59cd364d25bf8d3e62867ee259d919c985773be3061c13",
+        "url": "https://huggingface.co/JiacongFang/PETAL/resolve/34eb5176def5f583b72306fea03e0f6b44c6f3bf/ckpts/lut_model.pt"
+      }
+    ],
+    "ready": true,
+    "scope": "Official source/weights acquired for isolated noncommercial academic inference; DINOv3-derived license retained, not product integration",
+    "kornia": {
+      "version": "0.7.0",
+      "path": "deps\\kornia-0.7.0-py2.py3-none-any.whl",
+      "sha256": "daa77a65f9cbfc1a67487d64a6b23d18a81f10eb94380312cda255d431bcc18a",
+      "url": "https://files.pythonhosted.org/packages/55/da/72cb83aa364ebb4d0109965e20c5d33d7063ccab15332c3fd0acfd5609c9/kornia-0.7.0-py2.py3-none-any.whl",
+      "installed": false
+    }
+  },
+  "training": false,
+  "product_integrated": false,
+  "visual_review": {
+    "pst_sheets": 5,
+    "natural_sheets": 8,
+    "coco_sheets": 6,
+    "reviewers": "DeveloperAI13sheets; separateartifactreviewAI6sheets",
+    "labels_visible": true,
+    "ground_truth_visible": true,
+    "score_based_selection": false,
+    "human_reviewers": 0,
+    "coco_observations": [
+      {
+        "indices": "0-4",
+        "observation": "Red jacket becomes olive/gray; snowcast, maingeometry retained"
+      },
+      {
+        "indices": "5-9",
+        "observation": "Brighter wall/darker suit; highcontrast direction, shadowdetail loss"
+      },
+      {
+        "indices": "10-14",
+        "observation": "People/background graybrown; whiteclothes dirty andtrees losegreen"
+      },
+      {
+        "indices": "15-19",
+        "observation": "Green-yellow face/hand andpurple suit; structuralpositions retained"
+      },
+      {
+        "indices": "20-24",
+        "observation": "Bear darker graypurple/brown; shadowdetail reduced"
+      },
+      {
+        "indices": "25-29",
+        "observation": "Lessgraycyan thanbaseline in someapples; stillmuted versus known green"
+      }
+    ]
+  },
+  "independent_review": {
+    "original_tests_passed": 3,
+    "raw_outputs_and_scores_recomputed": 77,
+    "neural_inference_rerun": false,
+    "weight_source_wheel_hashes_verified": true,
+    "dependency_origin_provenance_limit_disclosed": true,
+    "postscreen_guard_tests_passed": 4,
+    "postscreen_dependency_origin_audit_repeated": true
+  },
+  "postscreen_tests_passed": 4,
+  "decision": "Reject frozen complete recipe; no guidance/precision/resolution tuning, no product/model replacement",
+  "asset_manifest_revalidated_sha256": "f1cae22efdb4cf6b0f37d7655530fcd304334004eebffa827438b4e5347953b1"
+}
