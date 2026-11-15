@@ -1,0 +1,69 @@
+{
+  "scope": "Train1024 only known-GT supervision targets, not prediction or acceptance",
+  "split": "train",
+  "config": {
+    "seed": 20261126,
+    "steps": 128,
+    "batch": 4,
+    "lr": 0.03,
+    "bound": 3.0,
+    "gradient_weight": 0.1
+  },
+  "source_sha256": {
+    "prepare_condition_labels.py": "cefbe268d2bd3a4eed74b547ba5ac05fc43d1d409a6a132f40069a74cdba879d",
+    "condition-labels-protocol.md": "1a5fc6ea406da6d107092c3e06ce384006b5fac05df31a9e933437de2a734d9b",
+    "prepared_condition.py": "c717295c196ea0df3c7b6a853ad4f11dc4080937a72eb08bd16ed033dc4928a1",
+    "petal_condition.py": "24dc94041c3b6b368b791c284d7b34f82bbdfc3da7c757484f9bf3ad1a9b08db",
+    "train_triplet_pilot.py": "2fa48a713768998f2a178b3bb5656af96e90b62b34952a1397b3e6223660ec17",
+    "check_petal_condition.py": "7ac1ebb31abe613b961e5a59a0bab9cbcba0e5e06eec85c61e78e300cbd6181c",
+    "training_checks.py": "798acc2cf8fe4e3981f2eb23e7820a6c82097d560da829fc6457d3e58223a06d"
+  },
+  "cohort_sha256": "124d8c670536719fc6f243b2d273849b70a89a164d8f84dbedc924b1d258862d",
+  "prepared_manifest_sha256": "b1bcb21c86a16aefe81aa3cd489836265b67b90c677247e42e67c5d5080fa04c",
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "bridge_sha256": "8c4d112600fbad62c39e2e08b7227550bf873f22a2d16206e6cb36713363d796",
+  "backbone_state_before": "8acf1512e0af1a41f6c216a534f8f5571603751099ac705207183296d9623834",
+  "gt_used_for_labels": true,
+  "development_labels_used": false,
+  "model_weights_updated": false,
+  "product_integrated": false,
+  "finished": true,
+  "backbone_state_after": "8acf1512e0af1a41f6c216a534f8f5571603751099ac705207183296d9623834",
+  "summary": {
+    "count": 1024,
+    "baseline_mean": 13.267179777224857,
+    "fit_mean": 3.571341951688131,
+    "improved": 1024,
+    "regressed": 0
+  },
+  "results_sha256": "e35b8dd9398e429923e58aab6df4b970323a725d494da76f87e7ec04a6bc7f33",
+  "artifact_audit": {
+    "scope": "All1024 train labels CPU artifact audit, no GPU replay or normal inference acceptance",
+    "producer_results_sha256": "e35b8dd9398e429923e58aab6df4b970323a725d494da76f87e7ec04a6bc7f33",
+    "auditor_sha256": "88cc0bff343d85f7a1031f4bc443fca809c0c0a812151f56f7f26f26c2600115",
+    "input_role_records_checked": 3072,
+    "pngs_scored": 2048,
+    "condition_snapshots_checked": 9216,
+    "summary": {
+      "count": 1024,
+      "baseline_mean": 13.267179777224857,
+      "fit_mean": 3.571341951688131,
+      "improved": 1024,
+      "regressed": 0
+    },
+    "boundary_selected": 247,
+    "selected_steps": {
+      "128": 1024
+    },
+    "development_labels_used": false,
+    "finished": true
+  },
+  "artifact_audit_sha256": "9e9a8d9fece0bbc3c586a727e42b5e6ff337d6905094f2c1a90d813e116f1e62",
+  "independent_review": {
+    "input_role_records": 3072,
+    "pngs_scored": 2048,
+    "condition_snapshots": 9216,
+    "gpu_rerender": false,
+    "normal_inference_quality_evaluated": false
+  }
+}
