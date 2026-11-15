@@ -1,0 +1,55 @@
+{
+  "scope": "Consumed train1024/development64 content/reference-only frozen feature preparation",
+  "source_sha256": {
+    "prepare_petal_condition.py": "95aba05f517816c8d277c943180d92f6a2087674fa775829ed1b57a63ce229c4",
+    "petal-condition-protocol.md": "c86df8e9ddc2af27fbfb63bf73ae75303f6f2d40c59692cc931c63d170dc9bda",
+    "petal_model.py": "41ed3321077fa3d002894293be978e6dcb466e4c5624b157095039ac471856a1",
+    "petal_encoder.py": "54e0cb7b3e27cd4278f3466cfe42f3d0113c434ddefb58709b5ddb15b4a93faa",
+    "independent_coco.py": "c95724a2a1da72f3d2e4eaac63eddbe4b33d968741b85f650cdd1058428b9ded"
+  },
+  "prior_results_sha256": "ff7fe5c57c647bdc0c8e82cd484bd0e4e42787fd85413845f8c8df22732f5a92",
+  "prior_features_sha256": "d6919fd7b31c6f09c6826ddc5cd5376556225c845ade07b99c8811ed38ea8c12",
+  "cohort_sha256": "124d8c670536719fc6f243b2d273849b70a89a164d8f84dbedc924b1d258862d",
+  "prepared_manifest_sha256": "b1bcb21c86a16aefe81aa3cd489836265b67b90c677247e42e67c5d5080fa04c",
+  "training_started": false,
+  "gt_features_reused": false,
+  "finished": true,
+  "product_integrated": false,
+  "provenance": {
+    "source_revision": "162bad662d5a108285bb308699faed2888e3d782",
+    "weights": {
+      "ckpts/style_encoder.pt": "c50e00cca2e1dae4cc9a02f6217b0c2f518eb438ab7356beea3d050c7d6d8852",
+      "ckpts/lut_model.pt": "b4ba53ed85139b983f59cd364d25bf8d3e62867ee259d919c985773be3061c13"
+    },
+    "torch": "2.6.0+cu124",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "kornia_version": "0.7.0",
+    "kornia_runtime_path": ".tools\\PETAL-source\\deps\\kornia-0.7.0-py2.py3-none-any.whl\\kornia\\__init__.py",
+    "strict_publisher_loader": true,
+    "unused_key_omission": "vit.mask_token only, publisher loader behavior",
+    "precision": "publisher no/float32 with its internal RoPE dtype",
+    "cudnn_tf32": true,
+    "matmul_tf32": false,
+    "source_unmodified": true
+  },
+  "model_state_before": "c7a383191c18f61476dc157439cd352c396076ff394514d0dd6691200408db6d",
+  "features_sha256": "b6b2b32b81145a7f8260f014423ceb83f385099f468db2be17a82f29d95437ff",
+  "model_state_after": "c7a383191c18f61476dc157439cd352c396076ff394514d0dd6691200408db6d",
+  "local_results_sha256": "8eec4d78680fc7d4f43c5e3720a0cd02efef2f3581ffb0c70819d63567ce8d09",
+  "counts": {
+    "train_rows": 1024,
+    "development_rows": 64,
+    "role_mappings": 2176,
+    "unique_pixels": 1365,
+    "reference_vectors_reused": 1013,
+    "new_vectors": 352
+  },
+  "independent_review": {
+    "all_role_mappings_and_parent_pixel_hashes_checked": 2176,
+    "all_unique_inputs_checked": 1365,
+    "all_reused_reference_vectors_exact": 1013,
+    "finite_unit_norm_cache": true,
+    "gpu_reextracted": false,
+    "quality_evaluated": false
+  }
+}
