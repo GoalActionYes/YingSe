@@ -1,0 +1,44 @@
+{
+  "scope": "Consumed training1024/development64 RGB-only automatic regional preparation; no trained correction yet",
+  "results_sha256": "7b848f0a5fae6c0b43ed7d1fb851a56514ea11e47e810fff0b8d960fb97d5d3c",
+  "source_sha256": {
+    "regional-correction-preparation-protocol.md": "b511de17b82e6f503de4eb49f93ac9f7cc366fc5cb306fef591cb28846ef74ef",
+    "prepare_regional_correction.py": "2afc96b375de1f7e36c7f839efa5c0ed6cd641172e5a144b0bbc381a5efe0c02",
+    "regional_descriptors.py": "35d15dc75fc80a13cc09e55009945447ee804ad90990bc4fcb834c882b309d3f",
+    "test_regional_descriptors.py": "5a3e24342332e7ce45744a57a38b7478246aedba8bcada240a802fbf6453ffd3",
+    "person_segmenter.py": "d4d586fc37abf302ca4e6a7172ff806298628c90b872afc4fc9de9cc15fe3299"
+  },
+  "audit_script_sha256": "40773f2d29ef913c1aafd1b8550d972d685af5e30d8d2b68972d14bbcfda2635",
+  "inputs": 1365,
+  "rows": 1088,
+  "descriptors_sha256": "be50eb9911edc1b08a98a603838323c2dc41228a73726f5aa4bc49238b45d31a",
+  "maximum_descriptor_recalculation_difference": 0.0,
+  "support": {
+    "train": {
+      "rows": 1024,
+      "both_regions_supported": 573
+    },
+    "validation": {
+      "rows": 64,
+      "both_regions_supported": 28
+    }
+  },
+  "segmentation_endpoint_repeats": [
+    {
+      "index": 0,
+      "maximum_probability_difference": 0.0
+    },
+    {
+      "index": 1364,
+      "maximum_probability_difference": 0.0
+    }
+  ],
+  "shared_train_development_input_pixels": 0,
+  "segmentation_state_before": "1630c13268c625efa0e53d81e995ad343b6a3f38ca90eb6f50b1e6eff8b17ad0",
+  "segmentation_state_after": "1630c13268c625efa0e53d81e995ad343b6a3f38ca90eb6f50b1e6eff8b17ad0",
+  "exact_fallback_development_improvement_upper_bound": 28,
+  "existing_required_improvement_count": 40,
+  "original_exact_fallback_design_can_pass": false,
+  "training_started": false,
+  "product_integrated": false
+}
