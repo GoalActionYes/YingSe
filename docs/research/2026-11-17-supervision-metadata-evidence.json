@@ -1,0 +1,82 @@
+{
+  "scope": "Metadata-only supervision task audit; paths are not pixels or semantic truth",
+  "index_sha256": "5e71ea9eb3255d0169f042d5fe4f9904f5ef9849024cba98fce74c5299159413",
+  "source_sha256": "aaeed240ceaa8f475c537ce67101158729ca76328c9c36075df848fb43020443",
+  "all_index": {
+    "rows": 108808,
+    "unique_input_path_pairs": 108694,
+    "exact_input_pairs_with_multiple_gt_paths": 108,
+    "schemas": [
+      {
+        "keys": [
+          "content",
+          "gt",
+          "reference"
+        ],
+        "rows": 108808
+      }
+    ]
+  },
+  "cohort": {
+    "train": {
+      "rows": 1024,
+      "unique_input_path_pairs": 1024,
+      "exact_input_pairs_with_multiple_gt_paths": 0,
+      "schemas": [
+        {
+          "keys": [
+            "content",
+            "gt",
+            "reference"
+          ],
+          "rows": 1024
+        }
+      ],
+      "input_pairs_with_alternative_gt_in_full_index": [
+        {
+          "index": 31626,
+          "gt_paths": [
+            "style_images/005/04803_1710.png",
+            "style_images/005/04803_1713.png"
+          ]
+        },
+        {
+          "index": 59453,
+          "gt_paths": [
+            "style_images/012/11286_2092.png",
+            "style_images/012/11286_2093.png"
+          ]
+        },
+        {
+          "index": 87840,
+          "gt_paths": [
+            "style_images/010/09574_0252.png",
+            "style_images/010/09574_0478.png"
+          ]
+        }
+      ]
+    },
+    "validation": {
+      "rows": 64,
+      "unique_input_path_pairs": 64,
+      "exact_input_pairs_with_multiple_gt_paths": 0,
+      "schemas": [
+        {
+          "keys": [
+            "content",
+            "gt",
+            "reference"
+          ],
+          "rows": 64
+        }
+      ],
+      "input_pairs_with_alternative_gt_in_full_index": []
+    }
+  },
+  "limitations": [
+    "Different GT paths may have identical pixels; conflicts are only candidates for investigation",
+    "No duplicate-path conflict does not prove perfect perceptual labels",
+    "No masks, material identity or should-transfer labels present in three-path schema",
+    "No independent evaluation images read"
+  ]
+}
