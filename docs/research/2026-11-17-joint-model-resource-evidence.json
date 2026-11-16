@@ -1,0 +1,115 @@
+{
+  "scope": "Resource feasibility only; no model inference, images, training or weight downloads",
+  "utc": "2026-11-16T19:25:32.141206+00:00",
+  "local_hf_credential_available": false,
+  "sources": [],
+  "models": {
+    "flux": {
+      "repository": "black-forest-labs/FLUX.1-Fill-dev",
+      "revision": "358293da0354175698b67ec8299acf928313a78a",
+      "gated": "auto",
+      "selected_weights": [
+        {
+          "path": "text_encoder/model.safetensors",
+          "bytes": 246144352,
+          "sha256": "893d67a23f4693ed42cdab4cbad7fe3e727cf59609c40da28a46b5470f9ed082"
+        },
+        {
+          "path": "text_encoder_2/model-00001-of-00002.safetensors",
+          "bytes": 4994582224,
+          "sha256": "ec87bffd1923e8b2774a6d240c922a41f6143081d52cf83b8fe39e9d838c893e"
+        },
+        {
+          "path": "text_encoder_2/model-00002-of-00002.safetensors",
+          "bytes": 4530066360,
+          "sha256": "a5640855b301fcdbceddfa90ae8066cd9414aff020552a201a255ecf2059da00"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+          "bytes": 9985006384,
+          "sha256": "4cef6b166b2163ba9a01ccb68bf53054556852b69b32c0565dfe0741d28982d7"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+          "bytes": 9949328904,
+          "sha256": "cd99fdd45ac404a9c98c939bdc986647cd5160ca48b8e679e81d3d59c2b9a1e0"
+        },
+        {
+          "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+          "bytes": 3870584832,
+          "sha256": "ed878852603579083b4a4ea80544504faca9f42ebd41aaa103c3023ee2ebfbd5"
+        },
+        {
+          "path": "vae/diffusion_pytorch_model.safetensors",
+          "bytes": 335306212,
+          "sha256": "8c717328c8ad41faab2ccfd52ae17332505c6833cf176aad56e7b58f2c4d4c94"
+        }
+      ],
+      "selected_weight_bytes": 33911019268,
+      "metadata_sha256": "0311e1538a99dd4a70fe418ea7c5db94692e05d1394e639937d9cb464f300111",
+      "unauthenticated_config": {
+        "status": 401,
+        "response_bytes": 141,
+        "url": "https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/358293da0354175698b67ec8299acf928313a78a/transformer/config.json"
+      }
+    },
+    "lora": {
+      "repository": "ToneStyle/ICTone-Fill-LoRA",
+      "revision": "15f997790c273081638e401c7a1a2b8d5ab522e8",
+      "gated": false,
+      "selected_weights": [
+        {
+          "path": "pytorch_lora_weights.safetensors",
+          "bytes": 1854698344,
+          "sha256": "bf494b4c9b17dae544e0b244c60e68a13b67dfde705ef520e0c4fdc0b7c57827"
+        }
+      ],
+      "selected_weight_bytes": 1854698344,
+      "metadata_sha256": "3a511c6648dd246a3d90c9e8faee70d78e2d358610bd662edd99c3b3b1849ea7"
+    },
+    "sage": {
+      "repository": "chenxib/sage-color",
+      "revision": "59cffdb1ed7605abbf8b56e57b418c55464b3ccc",
+      "gated": false,
+      "selected_weights": [
+        {
+          "path": "checkpoints/sage-color-final.pt",
+          "bytes": 4838257536,
+          "sha256": "b40ead3d840344c3dde0bed1877f5d547a14e67fbb1647bb4afc87058ded6e87"
+        }
+      ],
+      "selected_weight_bytes": 4838257536,
+      "metadata_sha256": "8d6cf3b8e000cca564a385721247f7d5bb56e916c0861b408b243cad248f4987"
+    },
+    "sd35": {
+      "repository": "stabilityai/stable-diffusion-3.5-medium",
+      "revision": "b940f670f0eda2d07fbb75229e779da1ad11eb80",
+      "gated": "auto",
+      "selected_weights": [],
+      "selected_weight_bytes": 0,
+      "metadata_sha256": "bfad38c09fc1d731ddef6e94b49a3f89cd192dbc98337c9df2b3763e5a2b8ace",
+      "unauthenticated_config": {
+        "status": 401,
+        "response_bytes": 147,
+        "url": "https://huggingface.co/stabilityai/stable-diffusion-3.5-medium/resolve/b940f670f0eda2d07fbb75229e779da1ad11eb80/transformer/config.json"
+      }
+    }
+  },
+  "author_inference": {
+    "revision": "00a6b4a8e133057e3db76db03d46e663a3cb48a8",
+    "url": "https://raw.githubusercontent.com/dengyuhai/ICTone/00a6b4a8e133057e3db76db03d46e663a3cb48a8/inference.py",
+    "sha256": "0899f20276cfe6e3da42426fc511a96644440b49c721824d188e37760ee1bcca",
+    "model_cpu_offload_call": true,
+    "sequential_cpu_offload_call": false,
+    "quantization_config": false
+  },
+  "ictone_selected_weight_bytes": 35765717612,
+  "flux_transformer_weight_bytes": 23804920120,
+  "gpu_csv_mib": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188, 5705",
+  "ram_bytes": {
+    "total": 16858472448,
+    "available": 2591006720
+  },
+  "source_sha256": "b73b4316b778e6f7c723c728e39841a0501c399355057ac48f6359c05d42f6c7",
+  "finished": true
+}
