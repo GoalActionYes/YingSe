@@ -1,0 +1,67 @@
+{
+  "scope": "Author architecture/checkpoint runtime preflight only; not style inference or quality evaluation",
+  "tensorflow": "2.20.0",
+  "legacy_keras": true,
+  "manifests": {
+    "source-check.json": {
+      "revision": "834a7701769de1cf0d7b6cee250f583f4cca1e8f",
+      "files": [
+        {
+          "path": "utils/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "utils/model_relu.py",
+          "bytes": 6053,
+          "sha256": "e0744cd88931ec7a8d3e5cf6a425c4729caccbb927ba2889913256d24a99f430"
+        },
+        {
+          "path": "utils/vgg_layers.csv",
+          "bytes": 1594,
+          "sha256": "06e4f1f75d575557db606964d4e029bfee31e2d548d5269dcd550fcc8dea6d10"
+        }
+      ]
+    },
+    "checkpoint-check.json": {
+      "revision": "834a7701769de1cf0d7b6cee250f583f4cca1e8f",
+      "files": [
+        {
+          "path": "ckpts/ckpts-relu/decoder.data-00000-of-00001",
+          "bytes": 14023636,
+          "sha256": "70eb3c48a67d2c5e902d43b55838ea4980becdcda5cefa03bd4c17e23bb49dc2",
+          "git_blob": "8cfccd53883490c7c9a0b429a8262d29cddc2f8d"
+        },
+        {
+          "path": "ckpts/ckpts-relu/decoder.index",
+          "bytes": 1425,
+          "sha256": "378d29539e198d426cde22de6143953fd8ba215092a779225426b171ccb5666d",
+          "git_blob": "7e5f4a963986a3cb304ba21f1f0b6dae99aa4d41"
+        },
+        {
+          "path": "ckpts/ckpts-relu/encoder.data-00000-of-00001",
+          "bytes": 14026326,
+          "sha256": "6a7ab7d0a90122fc70acfbad7e652d7f68686678d9710e6396d5ceb0f5839434",
+          "git_blob": "88d544881a229ffea631aa46c960d54a410fff3a"
+        },
+        {
+          "path": "ckpts/ckpts-relu/encoder.index",
+          "bytes": 1545,
+          "sha256": "f8c71851236e7e6b24d6695bb4f83a4e210d18eed12a65a07aca7678fa9db639",
+          "git_blob": "040b386ff0c6a86319d17606f6bbe47f6ccc561b"
+        }
+      ]
+    }
+  },
+  "strict_checkpoint_consumed": true,
+  "reconstruction_shape": [
+    1,
+    64,
+    64,
+    3
+  ],
+  "finite": true,
+  "source_sha256": "26c8fd945ba93178ae2e672bdc94d17d84bdcb3d6cddcaedbd78c80c1985f14e",
+  "product_integrated": false,
+  "training": false
+}
