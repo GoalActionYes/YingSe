@@ -1,0 +1,185 @@
+{
+  "scope": "Single AI thumbnail diagnosis before reading alias-to-method mapping in this continuation; not human acceptance, not independent holdout, no preference votes",
+  "conditions": {
+    "strength": 0.8,
+    "panels": "256px images, four cases per sheet",
+    "equal_visual_strength": false
+  },
+  "limitations": [
+    "Developer AI has prior project context; not independently blinded",
+    "Only thumbnails reviewed; no claim of original-resolution detail assessment",
+    "No inferred correctness from source object colors alone; stylistic casts may be intentional"
+  ],
+  "sheets": {
+    "sheet-1.png": "874c16e8299b3c0cfb8b9d8c71e8fa5ed794c02d70a6759ffa273a29a65c3495",
+    "sheet-2.png": "803e30ffe060d515a43d2cdf798a390160473ecd6cec7b5347c67f32cad4e538",
+    "sheet-3.png": "34ca56ec68803ee4af6f641aae121b6e93a726c8257e1b52c112b2925c138236",
+    "sheet-4.png": "9773253d1bdbe3a1897ebf7f5a1e025055f902c6075ae71b6c91e4b209cd4470",
+    "sheet-5.png": "abb7d94abbf719a8b981aab2538c2c21e018bcf62d4f095d8509401f8a83ff71",
+    "sheet-6.png": "144428281f3623d1a3c42d96ddc7bd45a490e3648fb3a7ed357f88f832ff5162",
+    "sheet-7.png": "e26a22131a6681e043b17de5cc421dec4777c8db76ca14254f682eb23541dc97",
+    "sheet-8.png": "c4ff0ba0aaea23c3ebaeb04ec78501666e2e7453ce064d20d07e20718732180a"
+  },
+  "observations": [
+    {
+      "alias": "C01",
+      "observation": "A背景更青，脸与手臂偏灰绿；B肤色较自然，背景风格较弱。",
+      "issue_tag": "skin_environment_tradeoff"
+    },
+    {
+      "alias": "C02",
+      "observation": "两者均暖化；A头发偏绿灰，B整体较暖。小图不足以确定协调性优劣。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C03",
+      "observation": "均保留黑白；B反差较强，更接近参考的黑白反差。细节需原尺寸核查。",
+      "issue_tag": "contrast"
+    },
+    {
+      "alias": "C04",
+      "observation": "B白衣及环境青色更明显，A肤色较暖；参考的红衣与青环境关系未直接复现。",
+      "issue_tag": "skin_environment_tradeoff"
+    },
+    {
+      "alias": "C05",
+      "observation": "两者均对白盘暖化，差异很小，无法可靠分胜负。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C06",
+      "observation": "B整体黄暖更明显，A较克制；参考冷环境与暖肤色的分离均有限。",
+      "issue_tag": "skin_environment_tradeoff"
+    },
+    {
+      "alias": "C07",
+      "observation": "均产生蓝色森林与木道，B蓝色更强；更接近强蓝参考与保持场景本色有取舍。",
+      "issue_tag": "style_naturalness_tradeoff"
+    },
+    {
+      "alias": "C08",
+      "observation": "草地参考下A建筑偏青绿，B建筑及道路绿染更重。",
+      "issue_tag": "content_color_leakage"
+    },
+    {
+      "alias": "C09",
+      "observation": "两者变化较小；B街道偏粉，A更接近原图。参考夜景反差未明显重现。",
+      "issue_tag": "weak_transfer"
+    },
+    {
+      "alias": "C10",
+      "observation": "A天空偏黄绿，B较中性；阴天参考的灰调迁移程度小图难分。",
+      "issue_tag": "color_cast"
+    },
+    {
+      "alias": "C11",
+      "observation": "两者均使室内白墙偏黄绿，B绿色和暗化更明显。",
+      "issue_tag": "content_color_leakage"
+    },
+    {
+      "alias": "C12",
+      "observation": "两者天空灰化，A草木偏暖，B偏冷；均有参考阴郁感，不确定哪者更好。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C13",
+      "observation": "两者移除部分原图黄调；参考雪景与室内内容不同，小图无可靠优劣。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C14",
+      "observation": "A橙色迁移明显，人物及草地一并暖化；B较克制，但参考强烈明暗关系均有限。",
+      "issue_tag": "style_naturalness_tradeoff"
+    },
+    {
+      "alias": "C15",
+      "observation": "两者整体轻微偏青，差别小；参考的低饱和明暗关系迁移有限。",
+      "issue_tag": "weak_transfer"
+    },
+    {
+      "alias": "C16",
+      "observation": "A背景偏粉，B人物及环境更青灰；参考冷黑衣物与暖红背景关系均未完整复现。",
+      "issue_tag": "skin_environment_tradeoff"
+    },
+    {
+      "alias": "C17",
+      "observation": "两者轻微灰化，人物面部偏粉；小图难以判断谁更接近餐桌参考风格。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C18",
+      "observation": "A肤色偏紫更明显；B肤色较浅粉，均有粉紫调，衣服绿色仍突出。",
+      "issue_tag": "skin_cast"
+    },
+    {
+      "alias": "C19",
+      "observation": "两者背景转暖，B更黄；参考柔和暖调均有响应，小图不足以判胜。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C20",
+      "observation": "原图已偏蓝，两者改动小，B稍灰；无充分差异判优劣。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C21",
+      "observation": "两者偏橙暖，A稍克制；参考及原图均暖，优势难分。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C22",
+      "observation": "A对白色玩偶和柜边明显染青；B较克制。蓝烟参考的颜色影响扩散到目标白物。",
+      "issue_tag": "content_color_leakage"
+    },
+    {
+      "alias": "C23",
+      "observation": "两者均未明显改善人物暗脸与暖亮参考的差距，B环境略暖。",
+      "issue_tag": "weak_transfer"
+    },
+    {
+      "alias": "C24",
+      "observation": "两者略降低草木饱和度，差别小；无法可靠判优劣。",
+      "issue_tag": "uncertain"
+    },
+    {
+      "alias": "C25",
+      "observation": "A木墙偏暖，B衣物与暗部偏紫蓝；参考暖红砖风格方向在B中不明显。",
+      "issue_tag": "color_cast"
+    },
+    {
+      "alias": "C26",
+      "observation": "A背景与衣物更暖，B较灰；参考暖高光有所迁移，需区分强度因素。",
+      "issue_tag": "style_naturalness_tradeoff"
+    },
+    {
+      "alias": "C27",
+      "observation": "B环境明显偏蓝，A较中性；参考暖肤色与冷环境的关系均未充分重现。",
+      "issue_tag": "skin_environment_tradeoff"
+    },
+    {
+      "alias": "C28",
+      "observation": "两者均偏青，B稍明显，原图与参考是相近画面；小图不能验证对应精度。",
+      "issue_tag": "aligned_review_needed"
+    },
+    {
+      "alias": "C29",
+      "observation": "A皮肤明显灰紫，B保留较暖肤色；参考冷天空不应自动解释为人物需灰紫。",
+      "issue_tag": "skin_cast"
+    },
+    {
+      "alias": "C30",
+      "observation": "两者均粉紫化，A面部更粉红，B墙面紫色更强；参考亮度关系均未充分重现。",
+      "issue_tag": "skin_environment_tradeoff"
+    },
+    {
+      "alias": "C31",
+      "observation": "两者与原图接近；参考柔和暖暗调的迁移较弱。",
+      "issue_tag": "weak_transfer"
+    },
+    {
+      "alias": "C32",
+      "observation": "两者整体冷青，差别很小，无法可靠判断更优。",
+      "issue_tag": "uncertain"
+    }
+  ]
+}
