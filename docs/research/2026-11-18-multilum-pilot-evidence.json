@@ -1,0 +1,86 @@
+{
+  "model_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "archives": {
+    "main_experiment120": "fa4f368ac11170f6ebacf3aaac4af074961b7b9f03e09c2fb060056fa8862b48",
+    "kingston_dining10": "302e5089ac541e5da5f585507ff55fb8319fe242cc538e148711429936a8d104"
+  },
+  "inputs": {
+    "main_experiment120": {
+      "14": "0d710c8b483c3c2c840aa46fbfe20a0a4923807eed66bc74547e52f8b7f75bce",
+      "24": "0defe6d33033e9c95ed7b1d3eec2cd4852f9d4fc8544e1dd8831bef8eb8a531b"
+    },
+    "kingston_dining10": {
+      "14": "deeeb66c2422d924e0e1685e32b3791c469bf5f55260ca2c5b6b01891b93fb12",
+      "24": "ba41b72d4af584a0995bae52c49bd1a267d42f4bd698a41729982295400d9e5b"
+    }
+  },
+  "outputs": {
+    "main_experiment120": {
+      "14": "cd7a9f73f5eb8978a10128c61573730439a6f3ece41eedae33236e0f6650fa74",
+      "24": "1c453bfc0490108e1515cf5ff8596edd6020fa06cd0d806a36d4f454d1710b38"
+    },
+    "kingston_dining10": {
+      "14": "346d8283beb29e5da46bff35aafa84dfbf4c4ab623e5b38abd6a7e9512268375",
+      "24": "99f0d9cef810eb195416b2d83084d96cdced57899ceda27ed7b086e9de9b280c"
+    }
+  },
+  "render_and_save_seconds": 1.7969999999986612,
+  "protocol_sha256": "e3d99add7692e6eecf75c4696e827391904b0ad22a326d878aad718555ce42e0",
+  "script_sha256": "cf4e61616bff3dd43b891f71d8cf8f2de891dbc2e6a5ce4a3a9f05bf4918df34",
+  "cases": [
+    {
+      "target": "main_experiment120",
+      "reference": "kingston_dining10",
+      "metrics": {
+        "whole": {
+          "pixel_fraction": 1.0,
+          "usable": true,
+          "observed_mae": 78.88911577777777,
+          "generated_mae": 28.039742444444446,
+          "response_error": 64.77462266666667,
+          "response_projection": 0.20044302861610022,
+          "better_than_no_response": true
+        },
+        "neutral_proxy": {
+          "pixel_fraction": 0.764382,
+          "usable": true,
+          "observed_mae": 85.52851875400287,
+          "generated_mae": 32.33442615515977,
+          "response_error": 69.23587740742776,
+          "response_projection": 0.2103191238175282,
+          "better_than_no_response": true
+        }
+      }
+    },
+    {
+      "target": "kingston_dining10",
+      "reference": "main_experiment120",
+      "metrics": {
+        "whole": {
+          "pixel_fraction": 1.0,
+          "usable": true,
+          "observed_mae": 57.000717333333334,
+          "generated_mae": 22.67113422222222,
+          "response_error": 48.04575777777778,
+          "response_projection": 0.18287675468338363,
+          "better_than_no_response": true
+        },
+        "neutral_proxy": {
+          "pixel_fraction": 0.049584,
+          "usable": true,
+          "observed_mae": 32.81892456347926,
+          "generated_mae": 28.199369868416333,
+          "response_error": 41.95497651572192,
+          "response_projection": 0.11272863168601875,
+          "better_than_no_response": false
+        }
+      }
+    }
+  ],
+  "predictions_sha256": "12e1f460da24a06c90ee2a4c5a302ab7cb5cc2a372807b7fa135eecc688cb064",
+  "verified_input_jpegs": 4,
+  "verified_output_pngs": 4,
+  "verified_region_metrics": 4,
+  "results_sha256": "4d36e896a7ef021fe511f1f2a6493d03a3a9af6c7664365debc757f05d268a91"
+}
