@@ -16,7 +16,7 @@ from spatial_render import SpatialEngine, finish_spatial
 
 
 @torch.inference_mode()
-def run(out, split_dir=None):
+def run(out, split_dir=None, engine=None):
     metadata, cases, ready = audit()
     assert metadata['proceed'] and len(cases) == 8
     if split_dir is not None:
@@ -36,7 +36,8 @@ def run(out, split_dir=None):
         with Image.open(prepared) as im:
             return np.asarray(im.convert('RGB').resize((256, 256), Image.Resampling.BILINEAR)).copy()
 
-    engine = SpatialEngine('multiref-v1')
+    if engine is None:
+        engine = SpatialEngine('multiref-v1')
     torch.set_num_threads(4)
     start = time.monotonic()
     predictions = {}
@@ -86,6 +87,7 @@ def run(out, split_dir=None):
                   seconds=time.monotonic() - start)
     (out / 'results.json').write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
     print(count, report['seconds'])
+    return report
 
 
 if __name__ == '__main__':
