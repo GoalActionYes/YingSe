@@ -1,0 +1,104 @@
+{
+  "scope": "single consumed development image, offline research only, no product or final acceptance",
+  "result": {
+    "finished": true,
+    "scope": "offline research; first consumed development image; not product candidate",
+    "config": {
+      "steps": 4,
+      "guidance": 50.0,
+      "seed": 666,
+      "panel": [
+        512,
+        512
+      ],
+      "source": "author pinned README"
+    },
+    "source_sha256": {
+      "screen_ictone_first.py": "2723a9895223b0056cd709eb60bf8e5a219f48e1b953dff5e2a29229457e749a",
+      "ictone_flux_stage.py": "f3c56a924d662d5ab961ea73630403fde4aa3bc7fa8d7f527f8d7bbb81ea7342",
+      "ictone_gguf_runtime.py": "8db259af2a6b9979a04829f3d16194977294aba436c9734aa51fd879bbde3f4b"
+    },
+    "inputs": {
+      "content": {
+        "sha256": "b53aa7ab3dc1b6851b05286d13ada97f945134d70f63f921f7455ba58d5db56e"
+      },
+      "reference": {
+        "sha256": "74b9b8f48bd4b4407725ed60c1ec5bc653d38c0f0b8ae8e3ae59f6b136aea6f2"
+      }
+    },
+    "stage": "finished",
+    "elapsed_seconds": 114.90599999999995,
+    "staging_seconds": 26.766000000000076,
+    "component_state_tensors_verified": {
+      "clip": 196,
+      "vae": 244
+    },
+    "initial_resources": {
+      "ram_available": 2969088000,
+      "cuda_free_total": [
+        6945767424,
+        8585216000
+      ]
+    },
+    "completed_steps": 4,
+    "image_pipeline_seconds": 85.85899999999992,
+    "checked_parameter_count": 1846,
+    "peak_cuda_allocated_bytes": 2106100736,
+    "peak_cuda_reserved_bytes": 2902458368,
+    "output_sha256": {
+      "triptych-output.png": "e93f5567eb143aba5af123da0d7d3426e10a765d61e991c98435c39ac3ef6a01",
+      "native512.png": "c36c8ddcf173afaecb7691f6d12d0893024784009e9c0239c8d8c78ee5c1a766",
+      "metric256.png": "aa3033238bbd9dbe7831a92a357d2fde859e13615543c7d7ddd2d1e7e7e8dbe8"
+    }
+  },
+  "audit": {
+    "finished": true,
+    "scope": "one consumed development image; full source/state file audit; no independent/human acceptance",
+    "source_sha256": "641c31b84b74d5993af8c45b898740cb48057f343543e0e2e0a2f4d6b86151ac",
+    "producer_result_sha256": "76f523603cb8ca9574c0cb433f0358acda58220d7202482f015654ecf775ccbc",
+    "stage_result_sha256": "85f6c642322c48aabebc364e4d4301c8b973ea0c57e42e0eeb980ca08cff1863",
+    "state_parameters_verified": 1846,
+    "gpu_repeated_by_auditor": false,
+    "conversion": "same pinned Diffusers official conversion, recomputed from original bytes",
+    "output_crop_resize_exact": true,
+    "inputs_exact": true,
+    "index": 22927,
+    "baseline_mae": 15.993245442708334,
+    "candidate_mae": 10.603251139322916,
+    "severe": false
+  },
+  "staging": {
+    "finished": true,
+    "scope": "frozen real Fill and LoRA state staging only; no image or GPU inference",
+    "parameter_count": 1846,
+    "staged_bytes": 7076098064,
+    "wall_seconds": 26.766000000000076,
+    "sampled_peak_rss_bytes": 2523504640,
+    "source_sha256": "f3c56a924d662d5ab961ea73630403fde4aa3bc7fa8d7f527f8d7bbb81ea7342"
+  },
+  "staging_group_count": 58,
+  "staging_manifest_sha256": "85f6c642322c48aabebc364e4d4301c8b973ea0c57e42e0eeb980ca08cff1863",
+  "fill_asset": {
+    "finished": true,
+    "records": [
+      {
+        "target": "models/fill/flux1-fill-dev-Q3_K_S.gguf",
+        "bytes": 5238187296,
+        "sha256": "acc2a48ebfd3f7b983ff044f7be8cc7e3cfdd3013bf4187828ddda94315f3998",
+        "reused": true
+      }
+    ],
+    "source_sha256": "d7e38adf4f518694982c8c66476bf2a393e2998934a3a9f246ff586dcf40aabf"
+  },
+  "baseline_improvement_percent": 33.701691896705256,
+  "human_evaluations": 0,
+  "full64_gate_evaluated": false,
+  "video_evaluated": false,
+  "source_sha256": {
+    "ictone_flux_stage.py": "f3c56a924d662d5ab961ea73630403fde4aa3bc7fa8d7f527f8d7bbb81ea7342",
+    "screen_ictone_first.py": "2723a9895223b0056cd709eb60bf8e5a219f48e1b953dff5e2a29229457e749a",
+    "audit_ictone_first.py": "641c31b84b74d5993af8c45b898740cb48057f343543e0e2e0a2f4d6b86151ac",
+    "test_ictone_flux_stage.py": "e900fd2a3e9de394ed9de0ed2d368ee37229a863833e5efa1cddeaeabeb76bc4"
+  },
+  "author_training_overlap_not_excluded": true
+}
