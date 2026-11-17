@@ -1,0 +1,249 @@
+{
+  "scope": "Header shapes and synthetic numerical compatibility, not image or pipeline validation",
+  "models": {
+    "fill": {
+      "repository": "YarvixPA/FLUX.1-Fill-dev-GGUF",
+      "revision": "78b83f1da140a4dcd6466580516544e1f6effe3e",
+      "gated": false,
+      "license": "other",
+      "selected_metadata_files": [
+        {
+          "path": "flux1-fill-dev-Q3_K_S.gguf",
+          "bytes": 5238187296,
+          "lfs": {
+            "sha256": "acc2a48ebfd3f7b983ff044f7be8cc7e3cfdd3013bf4187828ddda94315f3998",
+            "size": 5238187296,
+            "pointerSize": 135
+          }
+        }
+      ]
+    },
+    "lora": {
+      "repository": "ToneStyle/ICTone-Fill-LoRA",
+      "revision": "15f997790c273081638e401c7a1a2b8d5ab522e8",
+      "gated": false,
+      "license": null,
+      "selected_metadata_files": [
+        {
+          "path": "pytorch_lora_weights.safetensors",
+          "bytes": 1854698344,
+          "lfs": {
+            "sha256": "bf494b4c9b17dae544e0b244c60e68a13b67dfde705ef520e0c4fdc0b7c57827",
+            "size": 1854698344,
+            "pointerSize": 135
+          }
+        }
+      ]
+    },
+    "t5": {
+      "repository": "city96/t5-v1_1-xxl-encoder-gguf",
+      "revision": "005a6ea51a7d0b84d677b3e633bb52a8c85a83d9",
+      "gated": false,
+      "license": "apache-2.0",
+      "selected_metadata_files": [
+        {
+          "path": "t5-v1_1-xxl-encoder-Q3_K_S.gguf",
+          "bytes": 2099467456,
+          "lfs": {
+            "sha256": "31ebe18e901bfb6e5709a20ec1c95fce29bce2b9545073231e0f909a53239f5c",
+            "size": 2099467456,
+            "pointerSize": 135
+          }
+        }
+      ]
+    }
+  },
+  "header_sources": [
+    {
+      "url": "https://huggingface.co/api/models/YarvixPA/FLUX.1-Fill-dev-GGUF?blobs=true",
+      "status": 200,
+      "bytes_read": 3299,
+      "content_range": null,
+      "sha256": "2bf8c4fff24dbe640d90c3d343cfdeeb3f693fcadebece262b803ddceb54aff1",
+      "scope": "complete_metadata"
+    },
+    {
+      "url": "https://huggingface.co/api/models/ToneStyle/ICTone-Fill-LoRA?blobs=true",
+      "status": 200,
+      "bytes_read": 769,
+      "content_range": null,
+      "sha256": "3a511c6648dd246a3d90c9e8faee70d78e2d358610bd662edd99c3b3b1849ea7",
+      "scope": "complete_metadata"
+    },
+    {
+      "url": "https://huggingface.co/api/models/city96/t5-v1_1-xxl-encoder-gguf?blobs=true",
+      "status": 200,
+      "bytes_read": 3646,
+      "content_range": null,
+      "sha256": "cc1a00ec1aaeb80930fc6e47d4544bbad5521d7c6abebccd2a30f3b8b22eb811",
+      "scope": "complete_metadata"
+    },
+    {
+      "url": "https://huggingface.co/YarvixPA/FLUX.1-Fill-dev-GGUF/resolve/78b83f1da140a4dcd6466580516544e1f6effe3e/flux1-fill-dev-Q3_K_S.gguf",
+      "status": 206,
+      "bytes_read": 2000000,
+      "content_range": "bytes 0-1999999/5238187296",
+      "sha256": "c230b277b0446629fa585004ace6e6ef80a176bf7bf8877f967b6438aea9fdd8",
+      "scope": "prefix_only"
+    },
+    {
+      "url": "https://huggingface.co/ToneStyle/ICTone-Fill-LoRA/resolve/15f997790c273081638e401c7a1a2b8d5ab522e8/pytorch_lora_weights.safetensors",
+      "status": 206,
+      "bytes_read": 2000000,
+      "content_range": "bytes 0-1999999/1854698344",
+      "sha256": "cc8ce49567687bb96929ab4eb93406b6e0a331c8e65ca49a2688a7d6fefb0a30",
+      "scope": "prefix_only"
+    }
+  ],
+  "metadata_report_sha256": "a41a1c1b4e8238ccd2583f20fb3e61aa40293293804da6b205070b9dcec0701d",
+  "lora_probe_report_sha256": "63666401616d7addecb472a6ccf72aca399890a45182fb77684b7106dd252891",
+  "shape_report_sha256": "47f05cd6bfec0bafc857d717fb256aa15f0faf3840a3094c7d36dc5ed11493dd",
+  "lora_probe": {
+    "finished": true,
+    "scope": "synthetic linear layer only; no model/image quality claim",
+    "rows": [
+      {
+        "device": "cpu",
+        "quant_type": "Q3_K",
+        "adapter_dtypes": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "dequant_numpy_max_error": 0.00042724609375,
+        "scaling": 1.0,
+        "nonzero_output_max": 0.03125,
+        "explicit_max_error": 0.0,
+        "disabled_exact": true,
+        "base_bytes_unchanged": true,
+        "packed_shape": [
+          6,
+          110
+        ],
+        "logical_shape": [
+          6,
+          256
+        ]
+      },
+      {
+        "device": "cuda",
+        "quant_type": "Q3_K",
+        "adapter_dtypes": [
+          "torch.bfloat16",
+          "torch.bfloat16"
+        ],
+        "dequant_numpy_max_error": 0.00042724609375,
+        "scaling": 1.0,
+        "nonzero_output_max": 0.03125,
+        "explicit_max_error": 0.0,
+        "disabled_exact": true,
+        "base_bytes_unchanged": true,
+        "packed_shape": [
+          6,
+          110
+        ],
+        "logical_shape": [
+          6,
+          256
+        ]
+      }
+    ],
+    "wall_seconds": 5.2970000000000255,
+    "source_sha256": "95481bcbd91288d36b38beccf3b9a0a99a32027c2e951a706a2cf35fc40d1c00"
+  },
+  "shapes": {
+    "finished": true,
+    "scope": "all meta shapes only; no full checkpoint payload or forward verification",
+    "metadata_sha256": "a41a1c1b4e8238ccd2583f20fb3e61aa40293293804da6b205070b9dcec0701d",
+    "source_sha256": "9d3dd9f200ac62cddf8dce5aa634d569ad298d69216e16302938000f8342a5bb",
+    "gguf_tensors": 780,
+    "converted_model_tensors": 1160,
+    "packed_parameter_bytes": 5238132992,
+    "bf16_adapter_bytes": 1854603264,
+    "base_plus_adapter_bytes": 7092736256,
+    "base_config_source": "Diffusers 0.36 defaults with in_channels=384, out_channels=64 and guidance_embeds=True; all header shapes checked"
+  },
+  "checked_lora_tensor_count": 686,
+  "dependencies": {
+    "packages": [
+      {
+        "name": "gguf",
+        "version": "0.17.1",
+        "filename": "gguf-0.17.1-py3-none-any.whl",
+        "bytes": 96224,
+        "sha256": "7bc5aa7eeb1931f7d39b48fdc5b38fda6b294b9dca75cf607ac69557840a3943",
+        "requirements": [
+          "PySide6<7.0,>=6.9; (python_version >= \"3.9\" and python_version < \"3.14\") and extra == \"gui\"",
+          "numpy>=1.17",
+          "pyyaml>=5.1",
+          "tqdm>=4.27"
+        ]
+      },
+      {
+        "name": "peft",
+        "version": "0.18.0",
+        "filename": "peft-0.18.0-py3-none-any.whl",
+        "bytes": 556427,
+        "sha256": "624f69ca6393b765ccc6734adda7ca57d80b238f0900a42c357d8b67a03d62ff",
+        "requirements": [
+          "numpy>=1.17",
+          "packaging>=20.0",
+          "psutil",
+          "pyyaml",
+          "torch>=1.13.0",
+          "transformers",
+          "tqdm",
+          "accelerate>=0.21.0",
+          "safetensors",
+          "huggingface_hub>=0.25.0",
+          "black; extra == \"quality\"",
+          "hf-doc-builder; extra == \"quality\"",
+          "ruff~=0.12.8; extra == \"quality\"",
+          "black; extra == \"docs-specific\"",
+          "hf-doc-builder; extra == \"docs-specific\"",
+          "black; extra == \"dev\"",
+          "hf-doc-builder; extra == \"dev\"",
+          "ruff~=0.12.8; extra == \"dev\"",
+          "black; extra == \"dev\"",
+          "hf-doc-builder; extra == \"dev\"",
+          "black; extra == \"test\"",
+          "hf-doc-builder; extra == \"test\"",
+          "ruff~=0.12.8; extra == \"test\"",
+          "black; extra == \"test\"",
+          "hf-doc-builder; extra == \"test\"",
+          "pytest; extra == \"test\"",
+          "pytest-cov; extra == \"test\"",
+          "pytest-xdist; extra == \"test\"",
+          "parameterized; extra == \"test\"",
+          "datasets; extra == \"test\"",
+          "diffusers; extra == \"test\"",
+          "scipy; extra == \"test\"",
+          "protobuf; extra == \"test\"",
+          "sentencepiece; extra == \"test\""
+        ]
+      }
+    ],
+    "unchanged_environment": {
+      "torch": "2.6.0+cu124",
+      "transformers": "4.57.1",
+      "accelerate": "1.11.0",
+      "numpy": "2.5.4",
+      "safetensors": "0.6.2",
+      "huggingface-hub": "0.36.0"
+    },
+    "total_download_bytes": 652651
+  },
+  "prior_probe_errors": [
+    {
+      "run": "ictone-quantized-lora-probe-v1",
+      "reason": "Test compared native FP16 Q3_K dequantization against NumPy FP32 with dtype equality; no adapter test reached",
+      "correction": "Compare float values with explicit FP16 rounding bound rtol .002 / atol .001; keep LoRA and disable equality exact"
+    },
+    {
+      "run": "ictone-quantized-shapes-v1",
+      "reason": "Meta config left output channels default384; header final_layer is64",
+      "correction": "Set explicit out_channels64 from header and verify all1160 shapes"
+    }
+  ],
+  "no_full_model_weights_downloaded": true,
+  "no_image_inference": true
+}
