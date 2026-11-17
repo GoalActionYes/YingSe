@@ -38,7 +38,9 @@ class HeaderReader:
             return self.string()
         if kind == 9:
             subkind, count = self.unpack('I'), self.unpack('Q')
-            assert count <= 100_000
+            # Tokenizer precompiled_charsmap can validly exceed 100k bytes.
+            # Bound by the entire prefix budget; read() still enforces EOF.
+            assert count <= LIMIT
             return [self.value(subkind) for _ in range(count)]
         raise ValueError(f'unsupported GGUF metadata type {kind}')
 

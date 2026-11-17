@@ -1,0 +1,252 @@
+{
+  "scope": "Header and synthetic full architecture compatibility; no pretrained inference or quality results",
+  "runs": {
+    "t5_header": {
+      "local_run": "ictone-t5-header-v2",
+      "results_sha256": "c03b321a797dc02597b46065904c02baba1b12cabdefdbbd3f7b2ed979f3f1f7",
+      "result": {
+        "finished": true,
+        "source_sha256": "4afbf12925b4ce6855d69d081357ee8523054ae463621f29e04be8b00d9a80ca",
+        "repository": "city96/t5-v1_1-xxl-encoder-gguf",
+        "revision": "005a6ea51a7d0b84d677b3e633bb52a8c85a83d9",
+        "file": {
+          "path": "t5-v1_1-xxl-encoder-Q3_K_S.gguf",
+          "bytes": 2099467456,
+          "lfs": {
+            "sha256": "31ebe18e901bfb6e5709a20ec1c95fce29bce2b9545073231e0f909a53239f5c",
+            "size": 2099467456,
+            "pointerSize": 135
+          }
+        },
+        "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/005a6ea51a7d0b84d677b3e633bb52a8c85a83d9/t5-v1_1-xxl-encoder-Q3_K_S.gguf",
+        "status": null,
+        "content_range": null,
+        "bytes_read": 2000000,
+        "prefix_sha256": "fb6daa35f6ff0c63675d628e8a44e73e3ea8f9253981a72eaf2880bdc2cad806",
+        "payload_verified": false,
+        "tied_aliases_not_separately_stored": [
+          "encoder.embed_tokens.weight"
+        ],
+        "matched_tensor_count": 219,
+        "matching_sha256": "e764b40fa3b223c1a07203c56fc4810ec06dc4156ec90f6ca75b72ee13696def"
+      }
+    },
+    "t5_stock": {
+      "local_run": "ictone-t5-offload-stock-v4",
+      "results_sha256": "399fd2e0097712c9f580d74ce7959bd33071cbfa17cb75ead37de25ec7af810f",
+      "result": {
+        "finished": true,
+        "scope": "two-layer synthetic T5, not pretrained XXL or image quality",
+        "source_sha256": "2344d513f93dd8741b6ca0cca8964f6f34d250e9919d0e34079b0be77a461e6a",
+        "replaced_linear_count": 14,
+        "dense_dequantized_output_exact": true,
+        "adapted_t5_gated_modules": [
+          "encoder.block.0.layer.1.DenseReluDense",
+          "encoder.block.1.layer.1.DenseReluDense"
+        ],
+        "release_cpu_storage": false,
+        "released_disk_groups": 0,
+        "runtime_sha256": "f7f3b3ededbf0b0b47c0497482b5eddf901bb99daae61a6d20bf0f575380eb3b",
+        "third_forward_restored_all_packed_bytes": true,
+        "wall_compute_seconds": 0.5779999999999745,
+        "disk_files": [
+          {
+            "name": "group_0c4da6978a2109de.safetensors",
+            "bytes": 17048,
+            "sha256": "927114f3255b1bd3bafca25bcc5f4239b2de4aaf06109dc084e9c62f8eb58b9b"
+          },
+          {
+            "name": "group_49456eca3f06e11d.safetensors",
+            "bytes": 283608,
+            "sha256": "a127f868b4a83937932ffb02934ea897e7e0dd87cfff34f09589f7d438405d6f"
+          },
+          {
+            "name": "group_4ddd65406c9c1080.safetensors",
+            "bytes": 283288,
+            "sha256": "603fd3b1bcd1ba050ba42815582aa21e3d54c59bc1b6f1321266829d352addf0"
+          }
+        ],
+        "observations": [
+          {
+            "iteration": 0,
+            "exact_output": true,
+            "packed_bytes_equal_after_offload": false,
+            "quantized_cpu_storage_bytes": 563200,
+            "quantized_layers": 14
+          },
+          {
+            "iteration": 1,
+            "exact_output": true,
+            "packed_bytes_equal_after_offload": false,
+            "quantized_cpu_storage_bytes": 563200,
+            "quantized_layers": 14
+          }
+        ]
+      }
+    },
+    "t5_release": {
+      "local_run": "ictone-t5-offload-release-v1",
+      "results_sha256": "ee1a3af000018b74955b0fce1ad238c1fd9f07aa034694cdc852c5abde440815",
+      "result": {
+        "finished": true,
+        "scope": "two-layer synthetic T5, not pretrained XXL or image quality",
+        "source_sha256": "2344d513f93dd8741b6ca0cca8964f6f34d250e9919d0e34079b0be77a461e6a",
+        "replaced_linear_count": 14,
+        "dense_dequantized_output_exact": true,
+        "adapted_t5_gated_modules": [
+          "encoder.block.0.layer.1.DenseReluDense",
+          "encoder.block.1.layer.1.DenseReluDense"
+        ],
+        "release_cpu_storage": true,
+        "released_disk_groups": 3,
+        "runtime_sha256": "f7f3b3ededbf0b0b47c0497482b5eddf901bb99daae61a6d20bf0f575380eb3b",
+        "third_forward_restored_all_packed_bytes": true,
+        "wall_compute_seconds": 0.5780000000002019,
+        "disk_files": [
+          {
+            "name": "group_0c4da6978a2109de.safetensors",
+            "bytes": 17048,
+            "sha256": "927114f3255b1bd3bafca25bcc5f4239b2de4aaf06109dc084e9c62f8eb58b9b"
+          },
+          {
+            "name": "group_49456eca3f06e11d.safetensors",
+            "bytes": 283608,
+            "sha256": "a127f868b4a83937932ffb02934ea897e7e0dd87cfff34f09589f7d438405d6f"
+          },
+          {
+            "name": "group_4ddd65406c9c1080.safetensors",
+            "bytes": 283288,
+            "sha256": "603fd3b1bcd1ba050ba42815582aa21e3d54c59bc1b6f1321266829d352addf0"
+          }
+        ],
+        "observations": [
+          {
+            "iteration": 0,
+            "exact_output": true,
+            "packed_bytes_equal_after_offload": false,
+            "quantized_cpu_storage_bytes": 0,
+            "quantized_layers": 14
+          },
+          {
+            "iteration": 1,
+            "exact_output": true,
+            "packed_bytes_equal_after_offload": false,
+            "quantized_cpu_storage_bytes": 0,
+            "quantized_layers": 14
+          }
+        ]
+      }
+    },
+    "flux_release": {
+      "local_run": "ictone-flux-offload-v2",
+      "results_sha256": "0c36bb90fa73da74f4a222f99055da7d4ce04c4fae07a361a368f2bd4515b6d6",
+      "result": {
+        "finished": true,
+        "scope": "synthetic four-block Fill-shaped model, not pretrained pipeline/image quality",
+        "source_sha256": "1584768158a72d13a97c221f3722816365b69d465d2959264655b9e728d088a7",
+        "runtime_sha256": "f7f3b3ededbf0b0b47c0497482b5eddf901bb99daae61a6d20bf0f575380eb3b",
+        "q3_linear_count": 48,
+        "adapter_tensor_count": 82,
+        "disk_groups": 5,
+        "lora_output_nonzero_max": 0.0068359375,
+        "total_parameters": 194,
+        "rows": [
+          {
+            "iteration": 0,
+            "output_exact": true,
+            "all_group_cpu_storage_bytes": 0
+          },
+          {
+            "iteration": 1,
+            "output_exact": true,
+            "all_group_cpu_storage_bytes": 0
+          }
+        ],
+        "wall_compute_seconds": 1.0779999999999745,
+        "checked_onload_parameter_count": 194
+      }
+    },
+    "largest_shapes": {
+      "local_run": "ictone-quantized-peak-v1",
+      "results_sha256": "38f577c40a4041b9a25f30a8ad4ece69ce7c8904f6192c8deccc08dedae44bec",
+      "result": {
+        "finished": true,
+        "scope": "synthetic largest fused weight only; not full blocks/pipeline or LoRA activation peak",
+        "rows": [
+          {
+            "label": "t5",
+            "logical_weight_shape": [
+              10240,
+              4096
+            ],
+            "input_tokens": 512,
+            "source": "synthetic Q3_K bytes using header maximum shape",
+            "output_shape": [
+              1,
+              512,
+              10240
+            ],
+            "packed_bytes": 18022400,
+            "before_allocated_bytes": 0,
+            "driver_free_before_bytes": 7440695296,
+            "peak_allocated_bytes": 245891072,
+            "peak_reserved_bytes": 356515840,
+            "linear_seconds": 0.15599999999994907,
+            "finite": true
+          },
+          {
+            "label": "fill_fused",
+            "logical_weight_shape": [
+              21504,
+              3072
+            ],
+            "input_tokens": 3072,
+            "source": "synthetic Q3_K bytes using header maximum shape",
+            "output_shape": [
+              1,
+              3072,
+              21504
+            ],
+            "packed_bytes": 28385280,
+            "before_allocated_bytes": 8519680,
+            "driver_free_before_bytes": 7369392128,
+            "peak_allocated_bytes": 521273344,
+            "peak_reserved_bytes": 603979776,
+            "linear_seconds": 0.03099999999994907,
+            "finite": true
+          }
+        ],
+        "wall_compute_seconds": 0.359000000000151,
+        "source_sha256": "4f7f2e52f9d5a74661eaa20e251226d235ea9c66036f0f43d16ff0f55698ba3e"
+      }
+    }
+  },
+  "source_sha256": {
+    "audit_ictone_quantized.py": "4abebb5ac4fcf922180494603d849bcc914bd5d383e113880b0ab5283e31807f",
+    "audit_ictone_t5_header.py": "4afbf12925b4ce6855d69d081357ee8523054ae463621f29e04be8b00d9a80ca",
+    "ictone_gguf_runtime.py": "f7f3b3ededbf0b0b47c0497482b5eddf901bb99daae61a6d20bf0f575380eb3b",
+    "probe_ictone_t5_offload.py": "2344d513f93dd8741b6ca0cca8964f6f34d250e9919d0e34079b0be77a461e6a",
+    "probe_ictone_flux_offload.py": "1584768158a72d13a97c221f3722816365b69d465d2959264655b9e728d088a7",
+    "probe_ictone_quantized_peak.py": "4f7f2e52f9d5a74661eaa20e251226d235ea9c66036f0f43d16ff0f55698ba3e"
+  },
+  "prior_errors": [
+    {
+      "run": "ictone-t5-header-v1",
+      "reason": "Parser rejected legitimate237539-byte tokenizer charsmap array; bounded2MB read was retained"
+    },
+    {
+      "run": "ictone-t5-offload-v1",
+      "reason": "Deepcopy GGUFParameter loses required quant_type; reference now copied before quantization"
+    },
+    {
+      "run": "ictone-t5-offload-v2",
+      "reason": "Stock T5 cast intermediate activations to uint8 packed weight dtype; fixed gated module selects compute dtype"
+    },
+    {
+      "run": "ictone-flux-offload-v1",
+      "reason": "PEFT enable_adapters marked adapters trainable; immutable disk helper correctly refused; freeze explicitly before offload"
+    }
+  ],
+  "no_full_model_weights_downloaded": true,
+  "no_images_generated": true
+}
