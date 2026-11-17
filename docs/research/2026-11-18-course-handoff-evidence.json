@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-18",
+  "source_base_commit": "29ff6dc",
+  "classification": "engineering handoff; no quality upgrade",
+  "http_report_sha256": "b0c9d6b52cf5176294fc13bc9d3017d94f6675d5cc12d8bfff09edc6d4a25314",
+  "http": {
+    "variant": "multiref-temporal-v1",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "worker_assets_served_with_self_script_policy": true,
+    "rgba_gray_http": true,
+    "analysis_seconds": 2.309593299996777,
+    "real_gpu_http_manual_oracles": 12,
+    "verified_basis_matches_full_preview": true,
+    "preview_seconds": [
+      0.27575579999756883,
+      0.17449720000149682,
+      0.16754629999923054,
+      0.2449625000008382,
+      0.16835730000093463,
+      0.1916200999985449
+    ],
+    "basis_is_independent_of_manual_adjustments": true,
+    "png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "matches_server_renderer": true,
+      "sha256": "2c874ee9aba2c4cb309a7338287b0c8d0903f9499f247d1f7fa5497760c70041"
+    },
+    "cube_rejection": {
+      "error": "\u5c40\u90e8\u8c03\u8272\u65e0\u6cd5\u5b8c\u6574\u5bfc\u51fa\u4e3a\u666e\u901aCUBE\uff0c\u8bf7\u9009\u62e9PNG\u6216MP4"
+    },
+    "video": {
+      "wall_seconds": 6.29052640000009,
+      "output_frames": 90,
+      "fps": 30,
+      "dimensions": [
+        640,
+        360
+      ],
+      "duration": 3.0,
+      "sha256": "56b7860ad678193943309b5888d31c7c4808dff50f3185e33a3b80e5796a2e22",
+      "temporal_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6874189814814815
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8979470486111112
+        },
+        {
+          "frame": 60,
+          "lossy_encoded_mae": 1.8434071180555556
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8419126157407408
+        }
+      ]
+    },
+    "video_single_frame_preview_vs_temporal_mae": 0.4023683449074074,
+    "audio_export": {
+      "has_audio": true,
+      "duration": 3.02,
+      "sha256": "fb1cacb81bbd86279364e25b2faa9f81abcd991268bc9e64c41a8339d64dd448",
+      "half_strength_manual_oracle_samples": [
+        {
+          "frame": 0,
+          "lossy_encoded_mae": 1.6635590277777779
+        },
+        {
+          "frame": 30,
+          "lossy_encoded_mae": 1.8648075810185185
+        },
+        {
+          "frame": 89,
+          "lossy_encoded_mae": 1.8485141782407408
+        }
+      ]
+    },
+    "active_export_stop_rejected": true,
+    "cancel_running_export": true,
+    "source_sha256": {
+      "frame_transfer.py": "e7539e88c5c9cd68e8fef0fc020aa76b26c74b6c83803a53e23a371cd2ac7d58",
+      "spatial_build.py": "01ec38bfb6ceb886110089ff47374be7d3cb97e45859c7e090e49bc791a746b0",
+      "spatial_jobs.py": "733d2fd7aa5d4d6106fb6d714baae503a4267cb6f83c2f4aa2b0af8d179a0490",
+      "spatial_manual_preview.js": "150a467f3c703df939de3456739626d2894184b983a7a93cb1a4c51ea54000f5",
+      "spatial_manual_worker.js": "2a65f7a20eb56907c01ea6931bf37df0cbe4d34b91a162c74385939b651b5ac1",
+      "spatial_render.py": "0e6a9c867319225cc42610978936f9e28104df7feb007a446fd7fd1b1da5da9c",
+      "spatial_store.py": "b9b171dcd82125463411b8f4c58eb88f9f2368f3c8c07afb5dee96aea282a5f2",
+      "spatial_strength_preview.js": "a17e8085275de6250d6ec9f24c4a680ecdd2dc77dd3fbf24e43024d720ab5328",
+      "spatial_workbench.py": "939e0ed62a6006bb5e2da153850c329ae4f6f121aa241c49abf027907ea2f57a",
+      "temporal_grid.py": "c92db52e18dda2370281671e4a4d937016c821694964a1fd77be7c0e128ae8af",
+      "verify_spatial_workbench.py": "8b6ac03f4f19c4aaf7cbe28231173b335552ddffcef376d60f3d625b1351d2c1"
+    },
+    "passed": true,
+    "scope": "Actual HTTP workflows including audio and running cancellation; no visual browser acceptance"
+  },
+  "stable_launcher": {
+    "passed": true,
+    "launcher_sha256": "35fef90e68ddb8faa104cfa6485279f5d30d613edd431e7b851587de149298d6",
+    "health": {
+      "app": "reference-color-app",
+      "version": 1,
+      "active_exports": 0
+    },
+    "html_contains_1_3": true,
+    "owned_stop_exit_code": 0
+  },
+  "visible_browser": {
+    "url_at_check": "http://127.0.0.1:7537/",
+    "restored_project": true,
+    "preview_image_visible": true,
+    "export_enabled": true,
+    "scope": "visible restored page only; no new exhaustive UI or subjective quality acceptance"
+  },
+  "quality_goal_complete": false,
+  "portable_package_created": false
+}
