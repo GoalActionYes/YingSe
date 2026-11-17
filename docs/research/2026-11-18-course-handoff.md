@@ -44,6 +44,8 @@
 
 本页图像与报告链接引用本机文件，不包含新上传的照片或模型，也不是可在其他电脑直接打开的完整素材包。源码及[小型构建证据](2026-11-18-course-recap-evidence.json)进入Git，页面、检查图、原面板和其他生成物只留本机。演示或对外提交自然图片前仍需确认权限。
 
+接续补充了白球服受控对照。生成前将本机诊断报告的 SHA256 与 Git 证据比对，再核对案例 872-1268 的四张参考及输出图。两次输出均来自现有模型和 80% 强度。渲染后在 390 和 1280 像素宽度通过布局检查，核对 87 处本机文件引用，并查看四张新增图。此次复用既有输出，无新推理、评分或画质验收。见 [原背景干预报告](2026-11-16-background-intervention-v2.md)。
+
 本机重建：先运行 `.tools/vision-advisor-env/Scripts/python.exe -X utf8 scripts/build_course_recap.py`，再运行 `node C:/Users/HP/.codex/skills/visual-explainer/kit/render.mjs outputs/course-recap-20261118/yingse-progress.src.html`。后者是本机汇报工具，不是映色运行依赖；其他电脑缺少面板或工具时不能仅靠Git生成同一份图解。已有软件与源码启动不依赖本页。
 
 ### 补充：干净源码交接检查
