@@ -1,0 +1,3161 @@
+{
+  "scope": "consumed COCO controlled property diagnosis; not quality or product acceptance",
+  "source_sha256": "d7dac2996d03cdf8d5a08c3e0200272772bfd8c6f7fe0d81931c84db01cd33dc",
+  "protocol_sha256": "d85ede82087dca212a33e5a386dad3adb9648cd3c2cb26b2c2b79e20fb7c51d3",
+  "driver_sha256": "f908e04156fb8b1cdfab14e96de878f7bf92cad91f60c7c46b797902373c0428",
+  "primary": "clipped common-original RGB, reference person mask; whole image for no-person descriptive controls",
+  "finished": true,
+  "app_promoted": false,
+  "seconds": 16.137999799999307,
+  "necessary_conditions_pass": false,
+  "cuda_peak_allocated_bytes": 311201280,
+  "assets": {
+    "revision": "d70afa227c94152fd8421db75b3ee6ac06a417dc",
+    "files": [
+      {
+        "path": "PyTorch/arch/__init__.py",
+        "bytes": 37,
+        "git_blob": "fb23c94fc9f912b4fec74113fc07f3ae9b6b9b7f",
+        "sha256": "872cc052c1b6431666bb9deb621c64ace9171ac2e048b745043f280cb910d4cf"
+      },
+      {
+        "path": "PyTorch/arch/deep_wb_blocks.py",
+        "bytes": 2966,
+        "git_blob": "0177f1d0827bd581aaeb1f3e7954b5ad0f091a4f",
+        "sha256": "05118cefbe5b92d0d509c12971abed41da81db1620ff091ea62c13016fa4e1ed"
+      },
+      {
+        "path": "PyTorch/arch/deep_wb_model.py",
+        "bytes": 2510,
+        "git_blob": "908b309801bd9be533369c89adf0d2d87d55b71a",
+        "sha256": "7b4cfbeada747efde616bd275257da45ce6d7c4fc533d171884c1388ed2f4f17"
+      },
+      {
+        "path": "PyTorch/arch/deep_wb_single_task.py",
+        "bytes": 1399,
+        "git_blob": "b5bad473e79f139b8c96f059f2239857b40eee6a",
+        "sha256": "581bfcbe73921c20b45c4b51e250886f9c828646625404b02e4aca274f0bfb12"
+      },
+      {
+        "path": "PyTorch/utilities/deepWB.py",
+        "bytes": 4056,
+        "git_blob": "f98d70ba644c8c7899c06d37ff884e3d6a30f534",
+        "sha256": "558def9dcddd52f9d0c617cfe778e3256446a35c245ee8bb8112e6988655046a"
+      },
+      {
+        "path": "PyTorch/utilities/utils.py",
+        "bytes": 4636,
+        "git_blob": "ea2eadd4441fbc0b2f924eba99747297e7a397fd",
+        "sha256": "56a568c0822a432d8ae92610342597418511cf4362cbd443a86f08df3ac81657"
+      },
+      {
+        "path": "PyTorch/models/net_awb.pth",
+        "bytes": 17474846,
+        "git_blob": "54177b02dee127e7a3ef078f479a0e787ee5644e",
+        "sha256": "b70f4cfab8cc788d137836bdc54af7c9d7f329eaf83538c1bf616d34bedeb801"
+      }
+    ],
+    "wheels": [
+      {
+        "name": "scikit-learn",
+        "version": "1.7.2",
+        "filename": "scikit_learn-1.7.2-cp312-cp312-win_amd64.whl",
+        "bytes": 8731256,
+        "sha256": "6088aa475f0785e01bcf8529f55280a3d7d298679f50c0bb70a2364a82d0b290"
+      },
+      {
+        "name": "scipy",
+        "version": "1.16.3",
+        "filename": "scipy-1.16.3-cp312-cp312-win_amd64.whl",
+        "bytes": 38555926,
+        "sha256": "56edc65510d1331dae01ef9b658d428e33ed48b4f77b1d51caf479a0253f96dc"
+      },
+      {
+        "name": "joblib",
+        "version": "1.5.2",
+        "filename": "joblib-1.5.2-py3-none-any.whl",
+        "bytes": 308396,
+        "sha256": "4e1f0bdbb987e6d843c70cf43714cb276623def372df3c22fe5266b2670bc241"
+      },
+      {
+        "name": "threadpoolctl",
+        "version": "3.6.0",
+        "filename": "threadpoolctl-3.6.0-py3-none-any.whl",
+        "bytes": 18638,
+        "sha256": "43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb"
+      }
+    ]
+  },
+  "audit": {
+    "finished": true,
+    "images_checked": 72,
+    "person_direction_checks": 8,
+    "necessary_conditions_pass": false,
+    "results_sha256": "e81f8dc442f3375b42e3c8e7ed117d599679a8c6979336d3c0b8ef6121fe1679",
+    "note": "offline file/map/metric audit; no independent GPU rerun or human quality evaluation"
+  },
+  "cases": [
+    {
+      "pair": "785-3553",
+      "descriptive_only": false,
+      "mask_sha256": "87a61d14c2c63ded983aa4dc3fbf626a07858db4f5884d51a2717e4d4c9d1bc6",
+      "checks": [
+        {
+          "color": "green",
+          "opposing_cosine": 0.953675145375485,
+          "compensation_fraction": 0.20660207400066052,
+          "background_to_whole_ratio": 0.24316932235396357,
+          "response_pass": false,
+          "invariance_pass": true
+        },
+        {
+          "color": "magenta",
+          "opposing_cosine": 0.993809848922863,
+          "compensation_fraction": 0.11708066562636016,
+          "background_to_whole_ratio": 0.6727855961199202,
+          "response_pass": false,
+          "invariance_pass": false
+        }
+      ],
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "1d68b15027439a495aa8aaebcae295957595be635c50816278251ee33f262149",
+          "output_sha256": "448a506a4108da447325693f8a545f0468e877147fa68cd64caffbfdcc70e5eb",
+          "seconds": 0.6339054999989457,
+          "rank": 10,
+          "network": {
+            "min": -0.008726000785827637,
+            "max": 1.0028163194656372,
+            "outside_fraction": 0.0015832589706405997
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "44128f6cdd7e8761cb022792e5dff87a2cc24a6df2271ccd687ec4995bc6e8eb"
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "1d68b15027439a495aa8aaebcae295957595be635c50816278251ee33f262149",
+          "output_sha256": "448a506a4108da447325693f8a545f0468e877147fa68cd64caffbfdcc70e5eb",
+          "seconds": 0.17253449999952863,
+          "rank": 10,
+          "network": {
+            "min": -0.008726000785827637,
+            "max": 1.0028163194656372,
+            "outside_fraction": 0.0015832589706405997
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "44128f6cdd7e8761cb022792e5dff87a2cc24a6df2271ccd687ec4995bc6e8eb"
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "32c80ddc4486d8f03f467d51ed778fc4884f5144cefc489e9b0044b4bc300d4d",
+          "output_sha256": "60d0b1f3f56be027186d982215e45ac58dfadafd6b10c60dbbac02f44480905d",
+          "seconds": 0.19994210000004387,
+          "rank": 10,
+          "network": {
+            "min": -0.019597306847572327,
+            "max": 1.0028163194656372,
+            "outside_fraction": 0.003411287907510996
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.03571910071122655,
+              1.1829618948158849
+            ],
+            "chroma_norm": 1.1835010345335604,
+            "rgb_mae": 0.8191250032374726,
+            "y_mean": 0.044755908600821986
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.03571910071122655,
+              1.1829618948158849
+            ],
+            "chroma_norm": 1.1835010345335604,
+            "rgb_mae": 0.8191250032374726,
+            "y_mean": 0.044755908600821986
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "31fd0f4b9824f53637b112f55ad32d113f91133a6071c7a41f45ccf035f4bb64"
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "5829ca4f38f7354e4f4ca51cda4837dadf48134498df0abf63ced8a301d097bc",
+          "output_sha256": "00afda382bbb3b0bfd8ebe5bbbc9e28f8c663523f439402671eec0141acdf805",
+          "seconds": 0.16727699999864853,
+          "rank": 10,
+          "network": {
+            "min": -0.008726000785827637,
+            "max": 1.0028163194656372,
+            "outside_fraction": 0.0015832589706405997
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0659155106110159,
+              0.06401790973061215
+            ],
+            "chroma_norm": 0.09188660024937126,
+            "rgb_mae": 1.0987323343100497,
+            "y_mean": 0.24561404207060253
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0659155106110159,
+              0.06401790973061215
+            ],
+            "chroma_norm": 0.09188660024937126,
+            "rgb_mae": 1.0987323343100497,
+            "y_mean": 0.24561404207060253
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "ab66e62e910f9e3447169e26434ff31005b03d2964857c469a7e8d23c949d300"
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "7615b3c230b2a67e2b69ec226160046b910855091c7515060592cd991efbbefc",
+          "output_sha256": "8fce5ea0612e64b03ac93029126a4eb6daabe17a5ac1a52eb6bdb253294c8322",
+          "seconds": 0.16342699999950128,
+          "rank": 10,
+          "network": {
+            "min": -0.01565372198820114,
+            "max": 1.0022971630096436,
+            "outside_fraction": 0.004097573459148407
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.47842429191883473,
+              2.6343112405272713
+            ],
+            "chroma_norm": 2.677402755482703,
+            "rgb_mae": 1.9114622643055283,
+            "y_mean": 0.5405450391692054
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.47842429191883473,
+              2.6343112405272713
+            ],
+            "chroma_norm": 2.677402755482703,
+            "rgb_mae": 1.9114622643055283,
+            "y_mean": 0.5405450391692054
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "6e8b77c0c5042bf5128111d6d3c1e2619dd5db60f263a42cfb8a516cc1f90aab"
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "f4f862dcd3c6c53f9c0ba52604ce2e5ca195c931024d259d4bc50aa2175590dc",
+          "output_sha256": "a9eeea79d335abbb87e7e719aae4d769816c844f24dc3a7d744f7c48b318f4d3",
+          "seconds": 0.1550611000002391,
+          "rank": 10,
+          "network": {
+            "min": -0.00452243909239769,
+            "max": 1.003014326095581,
+            "outside_fraction": 0.0015360091347247362
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.6934365640207808,
+              -0.6997325649474564
+            ],
+            "chroma_norm": 0.9851293979822614,
+            "rgb_mae": 1.4816882735471057,
+            "y_mean": 0.9277912186964097
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.6934365640207808,
+              -0.6997325649474564
+            ],
+            "chroma_norm": 0.9851293979822614,
+            "rgb_mae": 1.4816882735471057,
+            "y_mean": 0.9277912186964097
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "9b0cf1d5a7b1818b16915463dae5e84c6a998c941b504d428532632f4593b7aa"
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "edfeb96c128ba4f1ebdffb97313382adec38e5a560391e037d5fcae1a797db36",
+          "output_sha256": "aa851642a76ea52f1025f410a5018195d4c61bdc145b7a68f33dbabef3c0c295",
+          "seconds": 0.16898349999974016,
+          "rank": 10,
+          "network": {
+            "min": -0.01565372198820114,
+            "max": 1.001434326171875,
+            "outside_fraction": 0.004059618804603815
+          },
+          "common_raw": {
+            "chroma_vector": [
+              1.4502007852529613,
+              0.40688922319590676
+            ],
+            "chroma_norm": 1.5062009021047869,
+            "rgb_mae": 2.828232338919157,
+            "y_mean": 1.274855470065974
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              1.4502007852529613,
+              0.40688922319590676
+            ],
+            "chroma_norm": 1.5062009021047869,
+            "rgb_mae": 2.828232338919157,
+            "y_mean": 1.274855470065974
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "7f20f26a8ad7258e3eaf878fca668b47a90db56021a6714452028e6be93bf841"
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "33e9b6e7ea0f87b22bc1dc1f4226bb17b98419cc1b7e083c71f6aa6eb7e782dc",
+          "output_sha256": "765aab97bdf77003dc9c83b9e44fe1e1ea591a8f4fd387230ccc8d8e2b519228",
+          "seconds": 0.15066160000060336,
+          "rank": 10,
+          "network": {
+            "min": -0.00753391720354557,
+            "max": 0.9954978823661804,
+            "outside_fraction": 0.0015747385332360864
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.6609213708835754,
+              -2.2672027483030854
+            ],
+            "chroma_norm": 2.3615726455910027,
+            "rgb_mae": 1.8521663324611919,
+            "y_mean": 1.1246234288415062
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.6609213708835754,
+              -2.2672027483030854
+            ],
+            "chroma_norm": 2.3615726455910027,
+            "rgb_mae": 1.8521663324611919,
+            "y_mean": 1.1246234288415062
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "b3863291fd39e9f4c42aa882646d8b9105ceb4703f0ed8f57cc7900f81fb992b"
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "8d61e350f6301f0260ea7e5c22af929f275ca924e4a16be257983b00b47a5de0",
+          "output_sha256": "1e1de76c284df7f2fe85a5dccd0d6a6e5b004c55b64e487dba0311d1356577e0",
+          "seconds": 0.1997336999993422,
+          "rank": 10,
+          "network": {
+            "min": -0.020593756809830666,
+            "max": 1.001434326171875,
+            "outside_fraction": 0.0044298721477389336
+          },
+          "common_raw": {
+            "chroma_vector": [
+              2.8593264425835714,
+              5.494579494438053
+            ],
+            "chroma_norm": 6.194041614806665,
+            "rgb_mae": 4.745652668041519,
+            "y_mean": 1.5789147334091653
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              2.8593264425835714,
+              5.494579494438053
+            ],
+            "chroma_norm": 6.194041614806665,
+            "rgb_mae": 4.745652668041519,
+            "y_mean": 1.5789147334091653
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -21.199442696627834,
+              -21.199442696627834
+            ],
+            "chroma_norm": 29.98053937632234,
+            "rgb_mae": 16.881959630998164,
+            "y_mean": 0.19484274187466966
+          },
+          "output_float_sha256": "85479df5994bbe124c67b2629fb651252d810eee96d6d7d5f6c96b70c4b79010"
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "bfd3d18ad740c952d6fbd980e2144605d14babec77f4ffac7eedc62c33a04914",
+          "output_sha256": "2336392a45f7902a27499f825b8c605748f5d7d49c6bbdeccf09f6973544853d",
+          "seconds": 0.14548520000062126,
+          "rank": 10,
+          "network": {
+            "min": -0.00753391720354557,
+            "max": 0.9954118132591248,
+            "outside_fraction": 0.0015824844595044851
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -2.742422120206766,
+              -2.190939138101459
+            ],
+            "chroma_norm": 3.51014150601712,
+            "rgb_mae": 2.853506104339238,
+            "y_mean": 2.9692645855469157
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -2.742422120206766,
+              -2.190939138101459
+            ],
+            "chroma_norm": 3.51014150601712,
+            "rgb_mae": 2.853506104339238,
+            "y_mean": 2.9692645855469157
+          },
+          "input_delta": {
+            "chroma_vector": [
+              21.199442696627834,
+              21.199442696627834
+            ],
+            "chroma_norm": 29.98053937632234,
+            "rgb_mae": 16.881959630998164,
+            "y_mean": -0.19484274187466924
+          },
+          "output_float_sha256": "f5c32a1c26e64fafed68abb3706c424d1f6ffa23a24f5adc14498e5af165b07b"
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "2e67d4d0a10e91e05e88b41e5b06fad8098f90f8a5a351160ee77eb5c6d64746",
+          "output_sha256": "80dda7d1cea3bfaab55635eac1cd9e78dd05c78b880ba4c486fb9fe218760dd6",
+          "seconds": 0.15113380000002508,
+          "rank": 10,
+          "network": {
+            "min": -0.01218078751116991,
+            "max": 1.006398320198059,
+            "outside_fraction": 0.012340744957327843
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.47277865658406293,
+              0.7162690567803767
+            ],
+            "chroma_norm": 0.8582313323472184,
+            "rgb_mae": 1.6553218530228737,
+            "y_mean": 1.509367170512086
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.47277865658406293,
+              0.7162690567803767
+            ],
+            "chroma_norm": 0.8582313323472184,
+            "rgb_mae": 1.6553218530228737,
+            "y_mean": 1.509367170512086
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -0.004816921800769354,
+              0.02006807933036926
+            ],
+            "chroma_norm": 0.020638084786256717,
+            "rgb_mae": 8.114747505215796,
+            "y_mean": -7.899941392051881
+          },
+          "output_float_sha256": "9727402a2538d6ca9736b3d16dc37dd8818f4b3db506a8b731f766c79a2a453f"
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "ee2886209b0b9e43ab204f2d2ebe0573b11e6760638aa2f78a6b6466d4b3451b",
+          "output_sha256": "36ed34121b78a096b33bf600290d7c5c8143b0e968425b7b48856404c37757b0",
+          "seconds": 0.1342406999992818,
+          "rank": 10,
+          "network": {
+            "min": -0.00862129032611847,
+            "max": 1.0023342370986938,
+            "outside_fraction": 0.00152593944221735
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.096721845811358,
+              -0.22240538785876837
+            ],
+            "chroma_norm": 0.24252684801020546,
+            "rgb_mae": 0.1386756770997746,
+            "y_mean": -0.003687465651895472
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.096721845811358,
+              -0.22240538785876837
+            ],
+            "chroma_norm": 0.24252684801020546,
+            "rgb_mae": 0.1386756770997746,
+            "y_mean": -0.003687465651895472
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.04309664429530302,
+              0.1237089661413229
+            ],
+            "chroma_norm": 0.13100087424620818,
+            "rgb_mae": 0.4225925646632984,
+            "y_mean": -0.00976582459844658
+          },
+          "output_float_sha256": "e1fa11bfcf4828442b7c7a1bb386428d0fc0f2449c16b3b0f460517816a8a8a0"
+        }
+      ]
+    },
+    {
+      "pair": "9483-19432",
+      "descriptive_only": false,
+      "mask_sha256": "e48cd50387637847bb16744b4d1831bb3d2862d9e1d832c8e8c744be0c4e9464",
+      "checks": [
+        {
+          "color": "green",
+          "opposing_cosine": 0.9683792322507175,
+          "compensation_fraction": 0.44020663659417375,
+          "background_to_whole_ratio": 0.43018550252434873,
+          "response_pass": true,
+          "invariance_pass": true
+        },
+        {
+          "color": "magenta",
+          "opposing_cosine": 0.9758531458966003,
+          "compensation_fraction": 0.9414973332753496,
+          "background_to_whole_ratio": 0.8089429636589365,
+          "response_pass": true,
+          "invariance_pass": false
+        }
+      ],
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "790d368600bc67223fbd5af0faec0258ee063c98a003725d1946d235eb1d0108",
+          "output_sha256": "c2a1ee5f8c6c620ff94b23c04a012799ee08452f00625d1b3e2343a0fc1bf6c5",
+          "seconds": 0.13574090000111028,
+          "rank": 10,
+          "network": {
+            "min": -0.005348600447177887,
+            "max": 1.0262588262557983,
+            "outside_fraction": 0.003117718966677785
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "512764373fdd201d25c044cb85357ad31ac96f13fdb1f24fb88f08b2a809bf5d"
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "790d368600bc67223fbd5af0faec0258ee063c98a003725d1946d235eb1d0108",
+          "output_sha256": "c2a1ee5f8c6c620ff94b23c04a012799ee08452f00625d1b3e2343a0fc1bf6c5",
+          "seconds": 0.14186920000065584,
+          "rank": 10,
+          "network": {
+            "min": -0.005348600447177887,
+            "max": 1.0262588262557983,
+            "outside_fraction": 0.003117718966677785
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "512764373fdd201d25c044cb85357ad31ac96f13fdb1f24fb88f08b2a809bf5d"
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "ac87f25ecac47848d3ae9a543277181a5c50ee989e1a0fe77be66902aba3823a",
+          "output_sha256": "c79e71eb697739b173807f0b630ea979a7f9b7759ece5a2f9864c89c4caa3311",
+          "seconds": 0.13044040000022505,
+          "rank": 10,
+          "network": {
+            "min": -0.004970390349626541,
+            "max": 1.0370914936065674,
+            "outside_fraction": 0.003058850299566984
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.4976739743440492,
+              0.7960378672322174
+            ],
+            "chroma_norm": 0.9388054488588243,
+            "rgb_mae": 1.1017816500538127,
+            "y_mean": -0.3070182711239099
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.4976739743440492,
+              0.7960378672322174
+            ],
+            "chroma_norm": 0.9388054488588243,
+            "rgb_mae": 1.1017816500538127,
+            "y_mean": -0.3070182711239099
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "55d6edd942ea0642797ada31f1e257971be3a0c22a2bd66c87139f0da2a1fd74"
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "e0eb5851d0600f38c97cf2388a0994c08680ef9edbeafb278d2455f2fac32849",
+          "output_sha256": "936d5ab5542fa010e05a32986cadb722ef8c46c37d224ce29fcf0c5226da55c4",
+          "seconds": 0.13556960000096296,
+          "rank": 10,
+          "network": {
+            "min": -0.004058213904500008,
+            "max": 1.0262588262557983,
+            "outside_fraction": 0.0030402601696550846
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -3.509329082543511,
+              -5.370347832000704
+            ],
+            "chroma_norm": 6.415296286708848,
+            "rgb_mae": 3.882266131166746,
+            "y_mean": -0.22576036425506343
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -3.509329082543511,
+              -5.370347832000704
+            ],
+            "chroma_norm": 6.415296286708848,
+            "rgb_mae": 3.882266131166746,
+            "y_mean": -0.22576036425506343
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "cb43a37ada1afd7bbe01db7ef9a3712eb8a6df65a6bd6f80b563708312ccb95a"
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "d7497268d03846a15432403c13272154748bf4842d3cc5c876d2cfd412bb3af4",
+          "output_sha256": "2214704166a4a3f19273f1730671bba66cd6b5c841556b9318604fcedc7bde89",
+          "seconds": 0.13300779999917722,
+          "rank": 10,
+          "network": {
+            "min": -0.004970390349626541,
+            "max": 1.03706693649292,
+            "outside_fraction": 0.003108423901721835
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -1.3098897441115962,
+              0.5981858233302777
+            ],
+            "chroma_norm": 1.4400129933309855,
+            "rgb_mae": 1.688327511802251,
+            "y_mean": -0.08016429388220586
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -1.3098897441115962,
+              0.5981858233302777
+            ],
+            "chroma_norm": 1.4400129933309855,
+            "rgb_mae": 1.688327511802251,
+            "y_mean": -0.08016429388220586
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "7cb64e327deea7ae243e508ee173523795ba254a43c4bdd059ee4e4e7c735122"
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "f08f14f60460fb711c077e453769d7fd8f23aaf03d0f86c8d4016c3053121427",
+          "output_sha256": "6ad47871fee799eb3ae534b06a6992fb4d91c9ff944e5888afb687ebb0eabb4f",
+          "seconds": 0.14036050000140676,
+          "rank": 10,
+          "network": {
+            "min": -0.047274693846702576,
+            "max": 1.041454792022705,
+            "outside_fraction": 0.0031796859111636877
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -6.455939794244477,
+              -11.255280487962004
+            ],
+            "chroma_norm": 12.975380437182087,
+            "rgb_mae": 7.392077109057461,
+            "y_mean": -0.6103713601372525
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -6.46722173125956,
+              -11.110302909532665
+            ],
+            "chroma_norm": 12.85549639892781,
+            "rgb_mae": 7.3399906039093255,
+            "y_mean": -0.599089423122166
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "e2457aa5ea0d94a89bbd5d12fc34630c559bb147404ae8eb033690a2c0ee9852"
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "17cd91703ba908e174389d461ebe6ebb1d56cfe241d31f7b3545d3da35934319",
+          "output_sha256": "79eca46f123f3f49a68bcdb6cd48f02832bb2f6d81d3cf996b528d9e19dda4f2",
+          "seconds": 0.13708419999966281,
+          "rank": 10,
+          "network": {
+            "min": -0.004970390349626541,
+            "max": 1.0505714416503906,
+            "outside_fraction": 0.004548383876681328
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.8548084638381964,
+              4.082936927029126
+            ],
+            "chroma_norm": 4.171459152376714,
+            "rgb_mae": 3.0128449172154217,
+            "y_mean": -0.16923947107830453
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.8547812939794706,
+              4.082944262959994
+            ],
+            "chroma_norm": 4.171460765124748,
+            "rgb_mae": 3.012833415285557,
+            "y_mean": -0.16924680700917208
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "7f56a9d21d704edbda4cea9949f1d359f7b3a89b6537071aaa0da99175620cdd"
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "fac77c7d226593d2e20b321092028c6f434db8fb1e5daaab962046422abbda08",
+          "output_sha256": "a5c334bad780d9b294f0e29b89e7a5aaf545531091db1ceb6d66e446bb8901e3",
+          "seconds": 0.1491933000015706,
+          "rank": 10,
+          "network": {
+            "min": -0.08000592887401581,
+            "max": 1.04957115650177,
+            "outside_fraction": 0.003204472828656435
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -8.547897627220292,
+              -14.778366638077987
+            ],
+            "chroma_norm": 17.072395096614148,
+            "rgb_mae": 9.664922403305004,
+            "y_mean": -1.0187496451849596
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -8.575826794419045,
+              -14.419465234656943
+            ],
+            "chroma_norm": 16.776941999701727,
+            "rgb_mae": 9.535978879765066,
+            "y_mean": -0.9908204779862092
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "c9cafe2093bf8b7d2aa92255e5b488a07b81b8b1ba597148fdb289828d5b2593"
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "1ee53eb384f3d0a4c9cc56ad01d251d6b1a61bee13a2c8e7c7b0c268aefac1c1",
+          "output_sha256": "638289747413cfb4783358931965ff3bbd525080c8ea7d1a1ab7d3e572593d4e",
+          "seconds": 0.146884300000238,
+          "rank": 10,
+          "network": {
+            "min": -0.054422810673713684,
+            "max": 1.2195321321487427,
+            "outside_fraction": 0.007676947396248579
+          },
+          "common_raw": {
+            "chroma_vector": [
+              4.929507291845056,
+              8.350497097048208
+            ],
+            "chroma_norm": 9.696950237480037,
+            "rgb_mae": 5.348944934872924,
+            "y_mean": -0.40616035342887213
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              4.929282735357808,
+              8.350557727870138
+            ],
+            "chroma_norm": 9.696888297365719,
+            "rgb_mae": 5.348849872436531,
+            "y_mean": -0.4062209842508035
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -15.576174690426114,
+              -15.576174690426114
+            ],
+            "chroma_norm": 22.028037497093155,
+            "rgb_mae": 12.40164099466425,
+            "y_mean": 0.1500194503171242
+          },
+          "output_float_sha256": "c2a90c79865b01564e5c2757ab86f238e5ffb7404b02bca16651dad074b6f773"
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "d92e424d883f82a202aba3e7a1d2fcd275b33a9e219c53270f5faa8a892564bb",
+          "output_sha256": "55fb7a1ced9ef1a678a13b39bd28731920dedb0887e3b9de8ff729d1f4f2e20f",
+          "seconds": 0.14219870000124502,
+          "rank": 10,
+          "network": {
+            "min": -0.07994114607572556,
+            "max": 1.0495585203170776,
+            "outside_fraction": 0.0038667460903525352
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -11.023800672057947,
+              -18.59076282641866
+            ],
+            "chroma_norm": 21.61343664772947,
+            "rgb_mae": 12.051824971458597,
+            "y_mean": -1.2549834420680017
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -11.107589576531934,
+              -17.514040588593865
+            ],
+            "chroma_norm": 20.73933856080261,
+            "rgb_mae": 11.664987924025642,
+            "y_mean": -1.1711945375940234
+          },
+          "input_delta": {
+            "chroma_vector": [
+              15.576174690426114,
+              15.576174690426114
+            ],
+            "chroma_norm": 22.028037497093155,
+            "rgb_mae": 12.40164099466425,
+            "y_mean": -0.15001945031712433
+          },
+          "output_float_sha256": "481015bb84f0deacef1a34a212bbc79f9f388e34e4eb820cb333f5af1d880e6d"
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "50c2a75a79289ae7447ab0109907d7e82b1934689cececa8ece4c5dbd3df4b26",
+          "output_sha256": "4e7f031d87ea1a86701b7aa55fb8fad8760941d93dac911e67058b589cbd262e",
+          "seconds": 0.1394402000005357,
+          "rank": 10,
+          "network": {
+            "min": -0.013627039268612862,
+            "max": 1.056391954421997,
+            "outside_fraction": 0.014397277496755123
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -1.889061118018645,
+              -1.1753090289694414
+            ],
+            "chroma_norm": 2.2248377966015735,
+            "rgb_mae": 2.397085443265368,
+            "y_mean": -1.174865578533016
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -1.889061118018645,
+              -1.1753090289694414
+            ],
+            "chroma_norm": 2.2248377966015735,
+            "rgb_mae": 2.397085443265368,
+            "y_mean": -1.174865578533016
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.27122706131078345,
+              -0.1540221081244328
+            ],
+            "chroma_norm": 0.31190852597897667,
+            "rgb_mae": 5.141347025067955,
+            "y_mean": -2.1230845061914825
+          },
+          "output_float_sha256": "eee6824ff5c28c480fae500fccf04f9e0f6d78e651683d0d4c69cbbfa06b2534"
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "d740163849a6ffd069c9f524ea8c27dd1e7433462ba0ecde036873cb8936e0b2",
+          "output_sha256": "0c973fe1b7f172a510b6d88ed96049114b7ab4158d17a00db200fbe00f22d6af",
+          "seconds": 0.1405233000004955,
+          "rank": 10,
+          "network": {
+            "min": -0.003602508455514908,
+            "max": 1.0127205848693848,
+            "outside_fraction": 0.0028404162731021643
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.3973983208148264,
+              -0.18126554746079282
+            ],
+            "chroma_norm": 0.4367867031889875,
+            "rgb_mae": 1.9747537550906333,
+            "y_mean": 0.23804069131601577
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.3973983208148264,
+              -0.18126554746079282
+            ],
+            "chroma_norm": 0.4367867031889875,
+            "rgb_mae": 1.9747537550906333,
+            "y_mean": 0.23804069131601577
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -2.0882461189972887,
+              -0.9663796134098511
+            ],
+            "chroma_norm": 2.3010131270206635,
+            "rgb_mae": 2.8097754958220076,
+            "y_mean": -0.01670706735125343
+          },
+          "output_float_sha256": "ddd77c2d954065f14420c5e03d31a3684ba2895bac86c542388beb52e27a84fa"
+        }
+      ]
+    },
+    {
+      "pair": "872-1268",
+      "descriptive_only": false,
+      "mask_sha256": "c1f2bf05a5cdee746b6bc9f0a7367717e173ea5634a4c69139f71f893c5dcc98",
+      "checks": [
+        {
+          "color": "green",
+          "opposing_cosine": 0.9974419328773223,
+          "compensation_fraction": 0.6228976391305675,
+          "background_to_whole_ratio": 0.12268608612372066,
+          "response_pass": true,
+          "invariance_pass": true
+        },
+        {
+          "color": "magenta",
+          "opposing_cosine": 0.8570248876112454,
+          "compensation_fraction": 0.15087725183152537,
+          "background_to_whole_ratio": 0.6975712370356396,
+          "response_pass": false,
+          "invariance_pass": false
+        }
+      ],
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "d795cb763288f4592d1c6ac62477c82999c8965ebcba8929484fd9789b7bf48b",
+          "output_sha256": "6fbf3cca63876d4f8c953ad0e04bc6295f4421d7c94caad651ac820dbfcc65c3",
+          "seconds": 0.13753949999954784,
+          "rank": 10,
+          "network": {
+            "min": -0.005251925438642502,
+            "max": 1.0135937929153442,
+            "outside_fraction": 0.003768373280763626
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "1a5c9abfbbff0a618d8eda515ebf8a441b59ebe877c54f005f27bf6906ca2560"
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "d795cb763288f4592d1c6ac62477c82999c8965ebcba8929484fd9789b7bf48b",
+          "output_sha256": "6fbf3cca63876d4f8c953ad0e04bc6295f4421d7c94caad651ac820dbfcc65c3",
+          "seconds": 0.13888959999894723,
+          "rank": 10,
+          "network": {
+            "min": -0.005251925438642502,
+            "max": 1.0135937929153442,
+            "outside_fraction": 0.003768373280763626
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "1a5c9abfbbff0a618d8eda515ebf8a441b59ebe877c54f005f27bf6906ca2560"
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "69fde7d8e15d9c827bd37b7656397208b65cd70132188231e55a6989965f3536",
+          "output_sha256": "0297f6072e57ab514464843fca40d7a8bfabda7cb65d16e086bb17ebbae8804c",
+          "seconds": 0.1366037999996479,
+          "rank": 10,
+          "network": {
+            "min": -0.0029317159205675125,
+            "max": 1.0135937929153442,
+            "outside_fraction": 0.0037590782158076763
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.23267750069040288,
+              0.46853686848744897
+            ],
+            "chroma_norm": 0.5231305921656251,
+            "rgb_mae": 0.8899818794844669,
+            "y_mean": 0.35855270878944157
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.23267750069040288,
+              0.46853686848744897
+            ],
+            "chroma_norm": 0.5231305921656251,
+            "rgb_mae": 0.8899818794844669,
+            "y_mean": 0.35855270878944157
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "98eaf3272a5ece6732e3cfacd4075377ec621b1692e4704659b86e7273cb7d0c"
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "590a5a6115556912caadee94e78ce1babe0721127d01acf5a75c002be4cd9654",
+          "output_sha256": "b841ed34cfc8949ce34d1c494d7b3b6be3f48d42e53115010d3b26a051429f8b",
+          "seconds": 0.13635669999894162,
+          "rank": 10,
+          "network": {
+            "min": -0.0029317159205675125,
+            "max": 1.014853596687317,
+            "outside_fraction": 0.0037691479083150625
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.2812113872681001,
+              -1.7850848402527282
+            ],
+            "chroma_norm": 1.8070992588204327,
+            "rgb_mae": 1.9217643446256039,
+            "y_mean": 0.6470167238381802
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.2812113872681001,
+              -1.7850848402527282
+            ],
+            "chroma_norm": 1.8070992588204327,
+            "rgb_mae": 1.9217643446256039,
+            "y_mean": 0.6470167238381802
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "a69a8d256f15cacde42b7c931bd47f07323d882077fc6e604f42a86daad402a1"
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "cb24fbfbeebb287a9229b680d5e27b6a2a40ee84b85776d47b03b24093160b90",
+          "output_sha256": "78aa800dd594ddfca048a219dec07cdadb435c89eec386219492f8a554b2497d",
+          "seconds": 0.13567179999881773,
+          "rank": 10,
+          "network": {
+            "min": -0.011331150308251381,
+            "max": 1.0362967252731323,
+            "outside_fraction": 0.003879139432683587
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.32214553124873263,
+              0.0897514605126289
+            ],
+            "chroma_norm": 0.33441451518688325,
+            "rgb_mae": 1.4703565683907764,
+            "y_mean": 0.7783048309840798
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.32214553124873263,
+              0.0897514605126289
+            ],
+            "chroma_norm": 0.33441451518688325,
+            "rgb_mae": 1.4703565683907764,
+            "y_mean": 0.7783048309840798
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "5bef46aafbdee26a29504820d71e1c62349e79d0fd638b6e74079db546d4ce2b"
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "d6a6e7ac7f76cd33467920a84a8baf7b6f8dd8c6a33e2e5be00ce132863416dc",
+          "output_sha256": "0266075c6d84501f859208e7d7f15a7791ba6c09ab0df8a7cacc82f37a409f55",
+          "seconds": 0.14763769999990473,
+          "rank": 10,
+          "network": {
+            "min": -0.0029317159205675125,
+            "max": 1.016944408416748,
+            "outside_fraction": 0.0038102010730654
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.6489185486676247,
+              -1.8262997108845518
+            ],
+            "chroma_norm": 1.9381604466044327,
+            "rgb_mae": 2.623853093438972,
+            "y_mean": 0.8733736169862069
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.6519534715257306,
+              -1.787299691109623
+            ],
+            "chroma_norm": 1.9024940249249156,
+            "rgb_mae": 2.609841445894625,
+            "y_mean": 0.8764085398443124
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "c857cd830a7a5ae25920cbfc010046493fd8320317fa427fb5366b7e87e4307d"
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "34e395577426f713409e5cf4439e883ab70ad3b15165b1848875a93c2cb22e01",
+          "output_sha256": "a340c94ef2beb8dcb922e9d9ca044df7fadd32a90d5de702eb10c91e98acadc8",
+          "seconds": 0.1423039000001154,
+          "rank": 10,
+          "network": {
+            "min": -0.011331150308251381,
+            "max": 1.012008786201477,
+            "outside_fraction": 0.003752107033506036
+          },
+          "common_raw": {
+            "chroma_vector": [
+              1.5351286846813907,
+              0.08792622410478713
+            ],
+            "chroma_norm": 1.5376446596717142,
+            "rgb_mae": 2.4861843986820213,
+            "y_mean": 1.6900881570875992
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              1.5351286846813907,
+              0.08792622410478713
+            ],
+            "chroma_norm": 1.5376446596717142,
+            "rgb_mae": 2.4861843986820213,
+            "y_mean": 1.6900881570875992
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "1321f9e00582d2464b01cfe4faa1525e9e74e355550676bf0a7781e3fb12241f"
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "84216d35ac4a6e9f15387e9d8dca7a1d269088926a859f507b6d2248c4c33fce",
+          "output_sha256": "912eb0888b203d10c1375263b70f79c367aa605e869f98e29af1681a45862d58",
+          "seconds": 0.15511110000079498,
+          "rank": 10,
+          "network": {
+            "min": -0.004965443164110184,
+            "max": 1.014853596687317,
+            "outside_fraction": 0.0038504796102643013
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.8403960694599378,
+              -1.993892869539163
+            ],
+            "chroma_norm": 2.1637639263013027,
+            "rgb_mae": 3.986690074489522,
+            "y_mean": 2.1951775832891247
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.8444332092601833,
+              -1.942013945624088
+            ],
+            "chroma_norm": 2.117660409484932,
+            "rgb_mae": 3.968051386584411,
+            "y_mean": 2.1992147230893715
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "36a2b560a17244b9142d787c570a6cc63dabdf1d672046aa02fc7c68b7f562b4"
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "12b11b179e63955726b27f774d624ed51f4d7e6ed3edd6d6795d724cce458583",
+          "output_sha256": "eff88dd0accfd5dd34c28ebe65ace1698dc35005dffe65af5047ca8c6322ebe5",
+          "seconds": 0.17956889999913983,
+          "rank": 10,
+          "network": {
+            "min": -0.017034733667969704,
+            "max": 1.012008786201477,
+            "outside_fraction": 0.0036072588991373777
+          },
+          "common_raw": {
+            "chroma_vector": [
+              9.47310239218233,
+              8.206125425707896
+            ],
+            "chroma_norm": 12.533162547227263,
+            "rgb_mae": 8.566195576829582,
+            "y_mean": 3.372163995827772
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              9.47310239218233,
+              8.206125425707896
+            ],
+            "chroma_norm": 12.533162547227263,
+            "rgb_mae": 8.566195576829582,
+            "y_mean": 3.372163995827772
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -14.227512949362792,
+              -14.227512949362792
+            ],
+            "chroma_norm": 20.120741771827696,
+            "rgb_mae": 11.34248163896405,
+            "y_mean": 0.09312305115320141
+          },
+          "output_float_sha256": "5acae6caf4dbf0e8f0e2371d4e8c90a5fc7e5d95ca277f69273765742ce2e91b"
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "db6bd92d1d72f97a728ec3223437d28655e4b0399b955e1e9a5ee2741f0beaf3",
+          "output_sha256": "42044fadeca34be7583d83124770e2961b68f1f6afd22b140fbc5f568dea0995",
+          "seconds": 0.1530812999990303,
+          "rank": 10,
+          "network": {
+            "min": -0.005002759397029877,
+            "max": 1.014853596687317,
+            "outside_fraction": 0.003989905584603548
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -2.9448224028969063,
+              -0.7460373816943427
+            ],
+            "chroma_norm": 3.0378529851671328,
+            "rgb_mae": 4.58206151999659,
+            "y_mean": 3.4806364985663505
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -2.945790025660136,
+              -0.7336030271275318
+            ],
+            "chroma_norm": 3.035762223345139,
+            "rgb_mae": 4.57759419421991,
+            "y_mean": 3.4816041213295796
+          },
+          "input_delta": {
+            "chroma_vector": [
+              14.227512949362792,
+              14.227512949362792
+            ],
+            "chroma_norm": 20.120741771827696,
+            "rgb_mae": 11.34248163896405,
+            "y_mean": -0.0931230511532015
+          },
+          "output_float_sha256": "43872f6369d23da3fe214a791083ffe9820c764bff3ddbc69fc95c18f390ff3e"
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "94ef781cc4af0990da1b2aa74110569499019ce272ecd01df461cc6c2a0efc95",
+          "output_sha256": "9710db6c4f398fe252ce51c0ad2509a849ac0394de78d05e685a4cc90fc8b484",
+          "seconds": 0.15020020000156364,
+          "rank": 10,
+          "network": {
+            "min": -0.013295925222337246,
+            "max": 1.0273596048355103,
+            "outside_fraction": 0.04019959643483162
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.4828138389325608,
+              -0.7851865037507513
+            ],
+            "chroma_norm": 0.9217521623175752,
+            "rgb_mae": 1.0666768220649652,
+            "y_mean": 0.3514461236152528
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.4828138389325608,
+              -0.7851865037507513
+            ],
+            "chroma_norm": 0.9217521623175752,
+            "rgb_mae": 1.0666768220649652,
+            "y_mean": 0.3514461236152528
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.7213352403040861,
+              -0.5493772967401136
+            ],
+            "chroma_norm": 0.9067193298248518,
+            "rgb_mae": 7.925353262036679,
+            "y_mean": -7.812689447236181
+          },
+          "output_float_sha256": "1184105753bf1fda2d11d1e7017befaff769deb45a1e32ac627e7223165ea88b"
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "a0748feac03dfbe1ed50fe3f13f9ce5548c3c2a964aad73f8a56e6f42a5f9c70",
+          "output_sha256": "bd12faa356c8a25ba0710fd66cc7f996b5c7bde0472319db41cd861597993ab2",
+          "seconds": 0.14710420000119484,
+          "rank": 10,
+          "network": {
+            "min": -0.004812736064195633,
+            "max": 1.0018491744995117,
+            "outside_fraction": 0.0038249182980507612
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.39601004211493673,
+              0.3407591312214907
+            ],
+            "chroma_norm": 0.5224373062547305,
+            "rgb_mae": 0.3798344290047868,
+            "y_mean": -0.11786791806726908
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.39601004211493673,
+              0.3407591312214907
+            ],
+            "chroma_norm": 0.5224373062547305,
+            "rgb_mae": 0.3798344290047868,
+            "y_mean": -0.11786791806726908
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -1.0619107073830907,
+              0.05405373018942192
+            ],
+            "chroma_norm": 1.0632855478197034,
+            "rgb_mae": 1.12137611132586,
+            "y_mean": 0.04438719237211697
+          },
+          "output_float_sha256": "b65039d2799afa8239c06812c744e6b7590affdf4a5b5608a9dc8e52c13774da"
+        }
+      ]
+    },
+    {
+      "pair": "8021-8690",
+      "descriptive_only": false,
+      "mask_sha256": "0a7d63d316abce5f5f5869de28fad73fe4c7dda020501aa42b1646502e03abad",
+      "checks": [
+        {
+          "color": "green",
+          "opposing_cosine": 0.971574659967045,
+          "compensation_fraction": 0.5231208494836559,
+          "background_to_whole_ratio": 0.11612513031985472,
+          "response_pass": true,
+          "invariance_pass": true
+        },
+        {
+          "color": "magenta",
+          "opposing_cosine": 0.9999907108227645,
+          "compensation_fraction": 0.8046947604010783,
+          "background_to_whole_ratio": 0.33142352734954583,
+          "response_pass": true,
+          "invariance_pass": true
+        }
+      ],
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "4a22dfed922995a6d1282f4f2f8c2676ec22a72a7c69e06e3d60b9a54462cc7c",
+          "output_sha256": "3dd37c94ed8ffdc23071ef0e2fb8a7dd083eed2fdfb1e288209223ac80485a0f",
+          "seconds": 0.1423928000003798,
+          "rank": 10,
+          "network": {
+            "min": 0.019764693453907967,
+            "max": 1.0423328876495361,
+            "outside_fraction": 0.0007257894612848759
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "7df6ebb3696c40b174e4c2d5b29dff2d814e86faec738a17b6cebd4d7b3e4364"
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "4a22dfed922995a6d1282f4f2f8c2676ec22a72a7c69e06e3d60b9a54462cc7c",
+          "output_sha256": "3dd37c94ed8ffdc23071ef0e2fb8a7dd083eed2fdfb1e288209223ac80485a0f",
+          "seconds": 0.15016380000088247,
+          "rank": 10,
+          "network": {
+            "min": 0.019764693453907967,
+            "max": 1.0423328876495361,
+            "outside_fraction": 0.0007257894612848759
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "7df6ebb3696c40b174e4c2d5b29dff2d814e86faec738a17b6cebd4d7b3e4364"
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "2f374254919169be99709fd9d7ceeb756fc3db9996a0776fbb953ff175003500",
+          "output_sha256": "0ddbc2f7963aaf01c962c5581fa15abb428859b2d43cb2b573a06f02fd28ae73",
+          "seconds": 0.15104059999976016,
+          "rank": 10,
+          "network": {
+            "min": 0.019764693453907967,
+            "max": 1.0423328876495361,
+            "outside_fraction": 0.0007172690238803625
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.5709898670033151,
+              -0.558620678344579
+            ],
+            "chroma_norm": 0.7988031612948343,
+            "rgb_mae": 1.7654900723564482,
+            "y_mean": -0.0007484346445259471
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.5717576348961165,
+              -0.5584133790633883
+            ],
+            "chroma_norm": 0.7992072916202606,
+            "rgb_mae": 1.7647420532404463,
+            "y_mean": -0.0009557339257166587
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "5f4e706b3eba482ff1ce7bac82d46697605d5851bb58b582fa05fce992e7781b"
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "8e2749fe5bbcc137a14ae7054488ac7fe5143bcce3e418425169025172cc2db3",
+          "output_sha256": "3d9de997ae2e1913b64c026966f23c97a2d7d8d0f29f1ffc041e6385e6c35b6e",
+          "seconds": 0.14989999999852444,
+          "rank": 10,
+          "network": {
+            "min": 0.019764693453907967,
+            "max": 1.0423328876495361,
+            "outside_fraction": 0.0006320642423816025
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -2.0675506689613146,
+              -0.6876532998123333
+            ],
+            "chroma_norm": 2.178906337928542,
+            "rgb_mae": 1.4030208508699575,
+            "y_mean": -0.46184659848035153
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -2.066194613925076,
+              -0.6880194381165045
+            ],
+            "chroma_norm": 2.1777352754270076,
+            "rgb_mae": 1.4024467864231542,
+            "y_mean": -0.4614804601761802
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "576a0e2f9342ab9d304b8e12ac09cb1bae753a493df5153e8c8634241870011a"
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "9539928adcdadc1c074734b87719f33adb7ea1a58c07f42852e6c1b5a04d66ab",
+          "output_sha256": "8f7b6a0e8e6af993bfba63b3cc9b6176fc188cdbb0273c1338e77cac99d6ef14",
+          "seconds": 0.14360640000086278,
+          "rank": 10,
+          "network": {
+            "min": -0.013419647701084614,
+            "max": 1.0423328876495361,
+            "outside_fraction": 0.0009047194616869092
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.09856197843452941,
+              -1.2990398516283448
+            ],
+            "chroma_norm": 1.3027735796029642,
+            "rgb_mae": 2.3249931621545237,
+            "y_mean": 0.2687430045874875
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.09856258541884683,
+              -1.2990400155156523
+            ],
+            "chroma_norm": 1.3027737889424063,
+            "rgb_mae": 2.3242464127625047,
+            "y_mean": 0.26874316847479496
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "2030b9632371c210036b015ee4a0dcfe4593b4cbcc1d715daefee8a1943e730c"
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "a59a17f90d2e6fdbd6d313909320146c5d2b481141afff0ac117ef51ea6107aa",
+          "output_sha256": "0ef7764ce2cb78224a27c0fe0662334c2098baefb8b135b42a615d385d8813ce",
+          "seconds": 0.14999030000035418,
+          "rank": 10,
+          "network": {
+            "min": 0.029589802026748657,
+            "max": 1.0423328876495361,
+            "outside_fraction": 0.000655301904771477
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -4.023882134064138,
+              -2.737168167459159
+            ],
+            "chroma_norm": 4.866591929244971,
+            "rgb_mae": 2.9957001945131125,
+            "y_mean": -0.34889744605252887
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -4.022526079027897,
+              -2.7375343057633303
+            ],
+            "chroma_norm": 4.865676739333457,
+            "rgb_mae": 2.995126130066309,
+            "y_mean": -0.3485313077483575
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "fb6ce722012f59aea861b1feef2bc7a3b29281ace3b3950935e53080f5ab4329"
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "13a152bef1ef865320f6d2184f2dca41e5acfb1af591265b8aa59c8136ab8c4f",
+          "output_sha256": "2eeb894d6c0149ce926fbd3c114a8025cfb8d52ffa60e54d197f04b141b8a44b",
+          "seconds": 0.15733069999987492,
+          "rank": 10,
+          "network": {
+            "min": -0.008874936029314995,
+            "max": 1.0958187580108643,
+            "outside_fraction": 0.0007288878550752997
+          },
+          "common_raw": {
+            "chroma_vector": [
+              1.392253434473852,
+              -1.4079789572491006
+            ],
+            "chroma_norm": 1.9800945355867485,
+            "rgb_mae": 2.736473451052881,
+            "y_mean": 0.29563516659419875
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              1.383906367817737,
+              -1.4057252280503578
+            ],
+            "chroma_norm": 1.972627752938631,
+            "rgb_mae": 2.732674241831621,
+            "y_mean": 0.29338143739545613
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "70f85e45e0787835cd7f39aec6d3ce5a6bcc0efcfbb52cbb12d2f17849e9635f"
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "4b4f8ff397dd94006a06cd564102c510f79cb64632c86d745c6c39d3236ba954",
+          "output_sha256": "0caceb60af6b92c0b6a99fa77c768ce7f45749fc7030230dd1c1578b3c38c88e",
+          "seconds": 0.15326439999989816,
+          "rank": 10,
+          "network": {
+            "min": 0.027338512241840363,
+            "max": 1.0569298267364502,
+            "outside_fraction": 0.0005840397789143026
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -5.496658323561069,
+              -6.693280036236997
+            ],
+            "chroma_norm": 8.661019014496038,
+            "rgb_mae": 5.240907430107975,
+            "y_mean": -0.5972391761066727
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -5.495320770290812,
+              -6.693408419160591
+            ],
+            "chroma_norm": 8.660269431956461,
+            "rgb_mae": 5.240247946612317,
+            "y_mean": -0.5968545360365196
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "84ffc332143d50101b2a4851054d47d6bd19ab44b051e9cf2fc3d68d4b7b80e5"
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "89aa60dc439afde0cc4c0f62b88bc881c453f3b5d19115b32f88a93dc59a5740",
+          "output_sha256": "101e6c69485954aab4b959424ea95ee8ab1e93ec0ac7d6bb8cb5e04078bc89d4",
+          "seconds": 0.15139519999866025,
+          "rank": 10,
+          "network": {
+            "min": -0.07032429426908493,
+            "max": 1.1469744443893433,
+            "outside_fraction": 0.0017792299622669816
+          },
+          "common_raw": {
+            "chroma_vector": [
+              14.573570910236558,
+              8.810547896311938
+            ],
+            "chroma_norm": 17.029818651673892,
+            "rgb_mae": 9.3608119499144,
+            "y_mean": -2.0441868475708636
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              14.513814965357557,
+              8.82668215320967
+            ],
+            "chroma_norm": 16.98708752795567,
+            "rgb_mae": 9.335512342908578,
+            "y_mean": -2.060321104468597
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -22.961586783403796,
+              -22.961586783403796
+            ],
+            "chroma_norm": 32.47258744269646,
+            "rgb_mae": 18.259962920131432,
+            "y_mean": 0.28682495732143776
+          },
+          "output_float_sha256": "7255ffb45352aff88055bcc6387579719b48c2ba8da3507ed1ec86e389214e29"
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "8a010e53e02db92442195370fa58112da306f529763c62064ddd5f705df38bdf",
+          "output_sha256": "b9d44e6204e9a44f4c45345944cc7dd1bad7de3fb6999da899dce782a2adee33",
+          "seconds": 0.17937539999911678,
+          "rank": 10,
+          "network": {
+            "min": -0.004526248201727867,
+            "max": 1.04823637008667,
+            "outside_fraction": 0.0010573134059086442
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -18.397923300347273,
+              -18.56502400820768
+            ],
+            "chroma_norm": 26.137017775384948,
+            "rgb_mae": 15.473826547477236,
+            "y_mean": -1.5360757851219682
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -18.397256125388225,
+              -18.556537751281567
+            ],
+            "chroma_norm": 26.13052097180369,
+            "rgb_mae": 15.470072057927943,
+            "y_mean": -1.5350207667405975
+          },
+          "input_delta": {
+            "chroma_vector": [
+              22.961586783403796,
+              22.961586783403796
+            ],
+            "chroma_norm": 32.47258744269646,
+            "rgb_mae": 18.259962920131432,
+            "y_mean": -0.2868249573214378
+          },
+          "output_float_sha256": "97ac16829da6198f878de4f71f742698cba83a1d6de1052d09b7690704551aa1"
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "fb8fcc68816d254797aaa5fb4de879555b76d824299631fa67c00a4e2f784b01",
+          "output_sha256": "92f9217a3fa669cee403103449b708f14ca187eb0b6c22d4950cdc622ce80636",
+          "seconds": 0.1748221999987436,
+          "rank": 10,
+          "network": {
+            "min": -0.00741809606552124,
+            "max": 1.110594630241394,
+            "outside_fraction": 0.0024600932374596596
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.37797187558205414,
+              -1.3392041748522463
+            ],
+            "chroma_norm": 1.3915209522938208,
+            "rgb_mae": 2.0232843599913957,
+            "y_mean": -0.5661683944075221
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.3766162799277366,
+              -1.3395701891221317
+            ],
+            "chroma_norm": 1.3915057002726618,
+            "rgb_mae": 2.022710490016661,
+            "y_mean": -0.5658023801376365
+          },
+          "input_delta": {
+            "chroma_vector": [
+              2.0908416432623236,
+              -0.016267779062713213
+            ],
+            "chroma_norm": 2.090904927976288,
+            "rgb_mae": 4.016006755144373,
+            "y_mean": 0.6082607302164216
+          },
+          "output_float_sha256": "07255eedb04fda0bc56d733b32e63375d1fbbcd4dc587447ea51caa9d22eddf2"
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "d0987e8eebd59c19027d3fd29fc07c9cf6217f069c6c2f4ea98c500e23ebcfe9",
+          "output_sha256": "e13e5bef2032c9ed494929478dc463f43febc14880618860bec658ffa7914e0c",
+          "seconds": 0.16314299999976356,
+          "rank": 10,
+          "network": {
+            "min": 0.028474053367972374,
+            "max": 1.0314744710922241,
+            "outside_fraction": 0.0004624293651431799
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -1.2889969430034531,
+              1.760754487313419
+            ],
+            "chroma_norm": 2.1821479060014672,
+            "rgb_mae": 1.2468644417481611,
+            "y_mean": 0.003702885461991901
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -1.2883750554505478,
+              1.7605865760945374
+            ],
+            "chroma_norm": 2.1816451075808567,
+            "rgb_mae": 1.2463905120107825,
+            "y_mean": 0.0038707966808739004
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -4.161901932925872,
+              0.1536440773170378
+            ],
+            "chroma_norm": 4.164736990709823,
+            "rgb_mae": 4.033959285570057,
+            "y_mean": 0.017841136626466123
+          },
+          "output_float_sha256": "43be8c28b811b4c923e94d7f39c1a73ba77f0e0abe62df546ad1630df3f49a56"
+        }
+      ]
+    },
+    {
+      "pair": "285-1993",
+      "descriptive_only": true,
+      "mask_sha256": "5933d4c44ed2bc2f431e2698b41923a18d056b24b450540bb109e7592a547060",
+      "checks": [
+        {
+          "color": "green",
+          "opposing_cosine": 0.9916191719356265,
+          "compensation_fraction": 0.24007505568151372,
+          "background_to_whole_ratio": 1.0,
+          "response_pass": false,
+          "invariance_pass": false
+        },
+        {
+          "color": "magenta",
+          "opposing_cosine": 0.9990994216026705,
+          "compensation_fraction": 0.4366172122938588,
+          "background_to_whole_ratio": 1.0,
+          "response_pass": true,
+          "invariance_pass": false
+        }
+      ],
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "33baada356aec9d2db74ff4cc999aa798ff1557b6facd3ae8af7f472a5c723b3",
+          "output_sha256": "a3fe1d058c0ed192822e796bb80e1e56dd2810cbff05ca388a5fd98049082cef",
+          "seconds": 0.1539229999998497,
+          "rank": 10,
+          "network": {
+            "min": -0.0067071011289954185,
+            "max": 1.0015121698379517,
+            "outside_fraction": 9.29506313696038e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "a2080e5071b90f1b709858b8f0fd953f2d2d74f8d3d73f27d0c8b7cb78a8182d"
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "33baada356aec9d2db74ff4cc999aa798ff1557b6facd3ae8af7f472a5c723b3",
+          "output_sha256": "a3fe1d058c0ed192822e796bb80e1e56dd2810cbff05ca388a5fd98049082cef",
+          "seconds": 0.18894130000080622,
+          "rank": 10,
+          "network": {
+            "min": -0.0067071011289954185,
+            "max": 1.0015121698379517,
+            "outside_fraction": 9.29506313696038e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "a2080e5071b90f1b709858b8f0fd953f2d2d74f8d3d73f27d0c8b7cb78a8182d"
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "55e7d2e9ef4f05412de498d5827b7e51ffc32deaa25333f08702c4840af4b77a",
+          "output_sha256": "6663bc08c072e81e7b2f7b8b19172611181a196cadafd1f2edcfe7c38362dd85",
+          "seconds": 0.15577110000049288,
+          "rank": 10,
+          "network": {
+            "min": -0.008345664478838444,
+            "max": 1.0016436576843262,
+            "outside_fraction": 9.372521890327334e-05
+          },
+          "common_raw": {
+            "chroma_vector": [
+              1.5970696823697135,
+              -0.8159641975120691
+            ],
+            "chroma_norm": 1.7934405877993318,
+            "rgb_mae": 2.0248424349396514,
+            "y_mean": -0.12237990394504548
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              1.5918030756365105,
+              -0.8151417948137512
+            ],
+            "chroma_norm": 1.7883772469079442,
+            "rgb_mae": 2.022591987614417,
+            "y_mean": -0.12320009812997351
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -5.233477975463033,
+              -5.234103585814595
+            ],
+            "chroma_norm": 7.401697917822224,
+            "rgb_mae": 4.1644643147786455,
+            "y_mean": 0.05827655944824206
+          },
+          "output_float_sha256": "32314316512c30f2e7d7398e50af818223be0f536374388a10298cfa88a72053"
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "d5fb7d518021c3b6c15b00c2a0b597bf11627f501527e060a91ce74210754e11",
+          "output_sha256": "101481ddcc63bdc659cb3e43d627cbcd3d6da6be844ad0ebf714f12ad8a0ecde",
+          "seconds": 0.17059279999921273,
+          "rank": 10,
+          "network": {
+            "min": -0.0067071011289954185,
+            "max": 0.9987195730209351,
+            "outside_fraction": 7.745885341137182e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -1.494440626618487,
+              -2.277743185375959
+            ],
+            "chroma_norm": 2.7242369216010704,
+            "rgb_mae": 2.397671744479067,
+            "y_mean": -0.21013197572156608
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -1.494730809819267,
+              -2.2780333685767378
+            ],
+            "chroma_norm": 2.7246387324142702,
+            "rgb_mae": 2.397536498766549,
+            "y_mean": -0.20984179252078713
+          },
+          "input_delta": {
+            "chroma_vector": [
+              5.233477975463033,
+              5.234103585814595
+            ],
+            "chroma_norm": 7.401697917822224,
+            "rgb_mae": 4.1644643147786455,
+            "y_mean": -0.05827655944824204
+          },
+          "output_float_sha256": "1e2e775fe4f0ff8b938d31db7ee37562b78367d36fbf9dff5038a9b1f8b4cb9d"
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "bf6348d7589f8e02027f314d2c0787d53a566d8020c50b095d284700de17b025",
+          "output_sha256": "703dc8d326b8556052c97835b360cec29157e474561c23b82719027dec9abd7d",
+          "seconds": 0.16494160000002012,
+          "rank": 10,
+          "network": {
+            "min": -0.0067071011289954185,
+            "max": 1.0244001150131226,
+            "outside_fraction": 4.879908010479994e-05
+          },
+          "common_raw": {
+            "chroma_vector": [
+              3.439315592878935,
+              -1.0255689472473908
+            ],
+            "chroma_norm": 3.5889669005130576,
+            "rgb_mae": 2.8791572630074467,
+            "y_mean": -0.05183651448931359
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              3.4070017287153966,
+              -1.0174457223482687
+            ],
+            "chroma_norm": 3.5556794818141992,
+            "rgb_mae": 2.8654574558051653,
+            "y_mean": -0.05995973938843566
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -10.956585809324714,
+              -10.95612804565284
+            ],
+            "chroma_norm": 15.494628564436013,
+            "rgb_mae": 8.717193603515625,
+            "y_mean": 0.1241120544433591
+          },
+          "output_float_sha256": "9084bc566f04af55b9b1efbfd2ef9b9952d80e96616873ece7b1a9530d628b41"
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "1d07fb74ce41c8e2b7919f3cc95ba09d6290637733102fe074fa7c5c3d4f1f16",
+          "output_sha256": "db40bd955e9589ff5d31cc57d541b162417c2c86cd955fea08cd80c0cf69e48c",
+          "seconds": 0.21276570000009087,
+          "rank": 10,
+          "network": {
+            "min": -0.0067071011289954185,
+            "max": 0.9937775135040283,
+            "outside_fraction": 7.745885341137182e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -2.475383545590453,
+              -2.035520053226478
+            ],
+            "chroma_norm": 3.2048191189000175,
+            "rgb_mae": 3.587389942805666,
+            "y_mean": -0.8228109599641273
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -2.4758572458260537,
+              -2.03599375346208
+            ],
+            "chroma_norm": 3.205485870479853,
+            "rgb_mae": 3.5871691652909377,
+            "y_mean": -0.8223372597285277
+          },
+          "input_delta": {
+            "chroma_vector": [
+              10.956585809324714,
+              10.95612804565284
+            ],
+            "chroma_norm": 15.494628564436013,
+            "rgb_mae": 8.717193603515625,
+            "y_mean": -0.12411205444335906
+          },
+          "output_float_sha256": "13fda1563ef69d26904ed41f2bce2c33a8cd461fe171fec63d7c2a0bfe92a418"
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "4bf8ffbca69b338cc6bd7dba4804cd5f8793c39b358c7a2eebc687f9ad3dce21",
+          "output_sha256": "e978cb23cdd58b0d19b3f50d8d9b92d536e12b9adee7074a27a45f1375585e57",
+          "seconds": 0.18218329999945126,
+          "rank": 10,
+          "network": {
+            "min": -0.034077368676662445,
+            "max": 1.0393612384796143,
+            "outside_fraction": 0.0038109757006168365
+          },
+          "common_raw": {
+            "chroma_vector": [
+              4.760343159745804,
+              6.045808955450844
+            ],
+            "chroma_norm": 7.694977123055551,
+            "rgb_mae": 5.240272242321199,
+            "y_mean": -0.37855791622995827
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              4.670028425537054,
+              6.069214100293303
+            ],
+            "chroma_norm": 7.657971356078785,
+            "rgb_mae": 5.2018670595520495,
+            "y_mean": -0.40237972942844324
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -22.555460668930365,
+              -22.555460668930365
+            ],
+            "chroma_norm": 31.898238383574245,
+            "rgb_mae": 17.941853841145832,
+            "y_mean": 0.2671763671874993
+          },
+          "output_float_sha256": "be2394b1912bd6f205a464b4f0ce872751538f26ec78ff69ad5a154c18b098bc"
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "970fdd0e81b4a370799259f991cbe41604cd83524cf63c5cacffb742d1485175",
+          "output_sha256": "267385b2daad1f81e29e9808dca480af53daeb904e3a5af05a794ce56ee9a2d1",
+          "seconds": 0.1840434000005189,
+          "rank": 10,
+          "network": {
+            "min": -0.028701215982437134,
+            "max": 0.9937775135040283,
+            "outside_fraction": 6.5840024035424e-05
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -9.421060682629145,
+              -10.25682643627158
+            ],
+            "chroma_norm": 13.926911823142284,
+            "rgb_mae": 7.596078345728905,
+            "y_mean": 1.9279707434919806
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -9.421373646892901,
+              -10.2570930951725
+            ],
+            "chroma_norm": 13.927319920121151,
+            "rgb_mae": 7.595918605510757,
+            "y_mean": 1.9282837077557353
+          },
+          "input_delta": {
+            "chroma_vector": [
+              22.555460668930365,
+              22.555460668930365
+            ],
+            "chroma_norm": 31.898238383574245,
+            "rgb_mae": 17.941853841145832,
+            "y_mean": -0.2671763671874994
+          },
+          "output_float_sha256": "f29616f0296a5b04e04c8efe50439419665254d50b5414721a95b14d3ead75e8"
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "4bf8ffbca69b338cc6bd7dba4804cd5f8793c39b358c7a2eebc687f9ad3dce21",
+          "output_sha256": "e978cb23cdd58b0d19b3f50d8d9b92d536e12b9adee7074a27a45f1375585e57",
+          "seconds": 0.22498449999875447,
+          "rank": 10,
+          "network": {
+            "min": -0.034077368676662445,
+            "max": 1.0393612384796143,
+            "outside_fraction": 0.0038109757006168365
+          },
+          "common_raw": {
+            "chroma_vector": [
+              4.760343159745804,
+              6.045808955450844
+            ],
+            "chroma_norm": 7.694977123055551,
+            "rgb_mae": 5.240272242321199,
+            "y_mean": -0.37855791622995827
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              4.670028425537054,
+              6.069214100293303
+            ],
+            "chroma_norm": 7.657971356078785,
+            "rgb_mae": 5.2018670595520495,
+            "y_mean": -0.40237972942844324
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -22.555460668930365,
+              -22.555460668930365
+            ],
+            "chroma_norm": 31.898238383574245,
+            "rgb_mae": 17.941853841145832,
+            "y_mean": 0.2671763671874993
+          },
+          "output_float_sha256": "be2394b1912bd6f205a464b4f0ce872751538f26ec78ff69ad5a154c18b098bc"
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "970fdd0e81b4a370799259f991cbe41604cd83524cf63c5cacffb742d1485175",
+          "output_sha256": "267385b2daad1f81e29e9808dca480af53daeb904e3a5af05a794ce56ee9a2d1",
+          "seconds": 0.1888693000000785,
+          "rank": 10,
+          "network": {
+            "min": -0.028701215982437134,
+            "max": 0.9937775135040283,
+            "outside_fraction": 6.5840024035424e-05
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -9.421060682629145,
+              -10.25682643627158
+            ],
+            "chroma_norm": 13.926911823142284,
+            "rgb_mae": 7.596078345728905,
+            "y_mean": 1.9279707434919806
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -9.421373646892901,
+              -10.2570930951725
+            ],
+            "chroma_norm": 13.927319920121151,
+            "rgb_mae": 7.595918605510757,
+            "y_mean": 1.9282837077557353
+          },
+          "input_delta": {
+            "chroma_vector": [
+              22.555460668930365,
+              22.555460668930365
+            ],
+            "chroma_norm": 31.898238383574245,
+            "rgb_mae": 17.941853841145832,
+            "y_mean": -0.2671763671874994
+          },
+          "output_float_sha256": "f29616f0296a5b04e04c8efe50439419665254d50b5414721a95b14d3ead75e8"
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "7d338604bf9e8b1477cb6fd3ba4a83a69b0461a1a5c0a464594337262b173508",
+          "output_sha256": "426e6b87c9b10031c9642889a8c17658dc12c906e0050ab04742356eaecdef1e",
+          "seconds": 0.1989025999992009,
+          "rank": 10,
+          "network": {
+            "min": -0.02122427150607109,
+            "max": 1.0065202713012695,
+            "outside_fraction": 0.012985202483832836
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -1.2507821205832637,
+              0.5274412332024502
+            ],
+            "chroma_norm": 1.357442509888683,
+            "rgb_mae": 1.3568166515335,
+            "y_mean": 0.46334154077270356
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -1.2512558208188633,
+              0.5269675329668503
+            ],
+            "chroma_norm": 1.3576950725160108,
+            "rgb_mae": 1.3565958740187722,
+            "y_mean": 0.46381524100830335
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.4849273529052729,
+              0.0788757171630965
+            ],
+            "chroma_norm": 0.4913002303619528,
+            "rgb_mae": 6.0189158121744795,
+            "y_mean": -1.755755599975586
+          },
+          "output_float_sha256": "af4b95044fca1551a94b7e7926879a93fea126a9d0973038e48aca28d8a30c4a"
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "a9a1c7edb1902627e2c8832c804979dce1d62b049ebd367a4e595eae4a838a76",
+          "output_sha256": "87213dd6b49a557ef35da7b9737af4f96ded2977262710cb0d110c9ac6f95f9b",
+          "seconds": 0.1695913000003202,
+          "rank": 10,
+          "network": {
+            "min": -0.0024776440113782883,
+            "max": 1.0028454065322876,
+            "outside_fraction": 2.323765784240095e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.692711315735161,
+              -0.5928612049197042
+            ],
+            "chroma_norm": 0.9117748489876113,
+            "rgb_mae": 0.6973458450788681,
+            "y_mean": 0.15162070067412498
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.6931717793129503,
+              -0.5924007413419142
+            ],
+            "chroma_norm": 0.9118255063214293,
+            "rgb_mae": 0.697131236774529,
+            "y_mean": 0.15116023709633508
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -1.1352263916015513,
+              -0.06759943847657687
+            ],
+            "chroma_norm": 1.1372372858251822,
+            "rgb_mae": 1.1418711344401042,
+            "y_mean": -0.003659106445312525
+          },
+          "output_float_sha256": "41daed8bed8c72ef882a8d01a1f30496100c01d2318cd70ab31138972632d245"
+        }
+      ]
+    },
+    {
+      "pair": "2149-2592",
+      "descriptive_only": true,
+      "mask_sha256": "5933d4c44ed2bc2f431e2698b41923a18d056b24b450540bb109e7592a547060",
+      "checks": [
+        {
+          "color": "green",
+          "opposing_cosine": 0.25539114039125566,
+          "compensation_fraction": 1.1543412341005552,
+          "background_to_whole_ratio": 1.0,
+          "response_pass": false,
+          "invariance_pass": false
+        },
+        {
+          "color": "magenta",
+          "opposing_cosine": -0.31002328733076323,
+          "compensation_fraction": 0.3708194428659691,
+          "background_to_whole_ratio": 1.0,
+          "response_pass": false,
+          "invariance_pass": false
+        }
+      ],
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "21887260fbc428163295262c5fc78d0fd98efddd3aef8dfacb57fe8fd6499fd7",
+          "output_sha256": "3b2c881c8ce5428e77bd519c896e25a4c0e36e66982516bb28c397800c39a537",
+          "seconds": 0.18891459999940707,
+          "rank": 10,
+          "network": {
+            "min": 0.0016934610903263092,
+            "max": 0.9605112671852112,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "0e6b90b1703ab2cf2120cc6bc0317d632986520d5357d4311a47e7a41b7a976c"
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "21887260fbc428163295262c5fc78d0fd98efddd3aef8dfacb57fe8fd6499fd7",
+          "output_sha256": "3b2c881c8ce5428e77bd519c896e25a4c0e36e66982516bb28c397800c39a537",
+          "seconds": 0.18716020000101707,
+          "rank": 10,
+          "network": {
+            "min": 0.0016934610903263092,
+            "max": 0.9605112671852112,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "input_delta": {
+            "chroma_vector": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "rgb_mae": 0.0,
+            "y_mean": 0.0
+          },
+          "output_float_sha256": "0e6b90b1703ab2cf2120cc6bc0317d632986520d5357d4311a47e7a41b7a976c"
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "0258e635d6109df5cc1bd2a9ab059c6c9f15703457d45f14366e114541dec792",
+          "output_sha256": "4b890651b6a26231c9878f1db9ce694a75ab6e2c5b060e2c818cd5a15ede90d8",
+          "seconds": 0.1762178999997559,
+          "rank": 10,
+          "network": {
+            "min": 0.0016934610903263092,
+            "max": 0.9605112671852112,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.5081444105963575,
+              -0.43934632905186316
+            ],
+            "chroma_norm": 0.6717409760254823,
+            "rgb_mae": 1.2503827302344293,
+            "y_mean": 0.279513822889758
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.5081442210893881,
+              -0.43934389380856365
+            ],
+            "chroma_norm": 0.671739239923805,
+            "rgb_mae": 1.250381855317673,
+            "y_mean": 0.2795140123967274
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -5.9763342498760865,
+              -5.97647157897765
+            ],
+            "chroma_norm": 8.45191005634641,
+            "rgb_mae": 4.754201253255208,
+            "y_mean": 0.07005373229980455
+          },
+          "output_float_sha256": "8eb9cac48ebc3b0a249be5f4d4e2c8d59fa856921e8992b09d47c6816425940a"
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "efd7138b4cb9a85f2e16b93f08069234b76efea5ffe88c8eacdb805410a088a9",
+          "output_sha256": "7ab06b23cf829078ec455fcf3aacc2a0f3cfa38c355d9d2312180eaf680a45db",
+          "seconds": 0.16462510000019392,
+          "rank": 10,
+          "network": {
+            "min": 0.0016934610903263092,
+            "max": 0.9605112671852112,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.33214789342289996,
+              -1.1471620645629255
+            ],
+            "chroma_norm": 1.1942792912369968,
+            "rgb_mae": 1.1707716563059642,
+            "y_mean": 0.24151644609040485
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.3321443622493168,
+              -1.1471166875151346
+            ],
+            "chroma_norm": 1.194234722384884,
+            "rgb_mae": 1.1707553535655058,
+            "y_mean": 0.24151997726398808
+          },
+          "input_delta": {
+            "chroma_vector": [
+              5.9763342498760865,
+              5.976471578977649
+            ],
+            "chroma_norm": 8.451910056346408,
+            "rgb_mae": 4.754201253255208,
+            "y_mean": -0.07005373229980451
+          },
+          "output_float_sha256": "2f068cf0a0b96ed41c5d1e2ba877bd10aac055dade7b59d315eab3b50917273a"
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "d5a4fa19648b6af07024f306e046803afda7994f179e4357ad5b742ff33f1cbd",
+          "output_sha256": "5d0501b52f3b47d0f4f478bb4f57c00264ca266b8b2596212f7f1e54cc45f2f9",
+          "seconds": 0.20580339999833086,
+          "rank": 10,
+          "network": {
+            "min": 0.0016932934522628784,
+            "max": 0.9761090874671936,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.38175778838693486,
+              0.5693048762381459
+            ],
+            "chroma_norm": 0.6854539015153494,
+            "rgb_mae": 2.2961526112903314,
+            "y_mean": -0.0019453468267046636
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.38175853360054346,
+              0.5693144525426614
+            ],
+            "chroma_norm": 0.6854622701876358,
+            "rgb_mae": 2.29614917078429,
+            "y_mean": -0.0019446016130960642
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -12.029060308837973,
+              -12.029029791259848
+            ],
+            "chroma_norm": 17.011638652189802,
+            "rgb_mae": 9.566177368164062,
+            "y_mean": 0.14965051879882785
+          },
+          "output_float_sha256": "4df7052e720d7369bd0054710817aa068a7d4fcb0c7c920fc8c1f2f90b36735d"
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "5600e1b0d075bcc84a4f30d2b2f2544c79308218a7617bff25f2cfca4d7ae217",
+          "output_sha256": "19ede39d8670ef9b3dc7f344bd9568721d1c6ef7693511dd979be9d46339a314",
+          "seconds": 0.1665290000000823,
+          "rank": 10,
+          "network": {
+            "min": 0.001691104844212532,
+            "max": 0.9741703867912292,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              0.8258410044775646,
+              -2.1687617216318142
+            ],
+            "chroma_norm": 2.3206767913459867,
+            "rgb_mae": 1.5378854456473998,
+            "y_mean": 0.21218553151954717
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              0.8258410044775646,
+              -2.1687617216318142
+            ],
+            "chroma_norm": 2.3206767913459867,
+            "rgb_mae": 1.5378854456473998,
+            "y_mean": 0.21218553151954717
+          },
+          "input_delta": {
+            "chroma_vector": [
+              12.029060308837973,
+              12.029029791259848
+            ],
+            "chroma_norm": 17.011638652189802,
+            "rgb_mae": 9.566177368164062,
+            "y_mean": -0.14965051879882774
+          },
+          "output_float_sha256": "f204e30412b13171a08e73dcae1d8f43c19d3c7c66a245fd1d5ef57762f0842b"
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "62db6364dbd0dd47f3132b7212f39b39c1b0b5dc54dfffccc46e4fa69a64bd01",
+          "output_sha256": "f762e41d3628428ea6186b303618bb0912ce13cd7ab6aa4ab195c1fc40bc731b",
+          "seconds": 0.156485800000155,
+          "rank": 10,
+          "network": {
+            "min": 0.022694392129778862,
+            "max": 1.0014963150024414,
+            "outside_fraction": 1.5491771137021715e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -19.398584104755454,
+              33.332329143611545
+            ],
+            "chroma_norm": 38.56616692656047,
+            "rgb_mae": 18.34957270365314,
+            "y_mean": -3.501957445647417
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -19.397995281155325,
+              33.32476251568636
+            ],
+            "chroma_norm": 38.55933113598599,
+            "rgb_mae": 18.346854219811366,
+            "y_mean": -3.5025462692475458
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -23.62002128904126,
+              -23.62002128904126
+            ],
+            "chroma_norm": 33.403754450503385,
+            "rgb_mae": 18.782028198242188,
+            "y_mean": 0.2996935302734369
+          },
+          "output_float_sha256": "d105abe7533be3d524b2b355ca7a7f161980cd0aba8d08f2b1a0c1f1c6cf5b46"
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "5284e1250f008db867dda86c8eb3714054ff1fb229ca4b3bb1e87d5d1a88ca7f",
+          "output_sha256": "4665eeee95ef50fb912e199dfcc660583df09f4ce7f29613dccbc3ff82aa4d9a",
+          "seconds": 0.15696390000084648,
+          "rank": 10,
+          "network": {
+            "min": 0.008698992431163788,
+            "max": 0.9521540999412537,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -5.611789253402105,
+              11.04263033345896
+            ],
+            "chroma_norm": 12.3867616149673,
+            "rgb_mae": 9.146958730321465,
+            "y_mean": 6.104355920382161
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -5.611789253402105,
+              11.04263033345896
+            ],
+            "chroma_norm": 12.3867616149673,
+            "rgb_mae": 9.146958730321465,
+            "y_mean": 6.104355920382161
+          },
+          "input_delta": {
+            "chroma_vector": [
+              23.62002128904126,
+              23.62002128904126
+            ],
+            "chroma_norm": 33.403754450503385,
+            "rgb_mae": 18.782028198242188,
+            "y_mean": -0.2996935302734368
+          },
+          "output_float_sha256": "d9f1d9a42564b4640ab05f9a530ceb4b8f8fff023e1f2328ef4d9487334abb46"
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "62db6364dbd0dd47f3132b7212f39b39c1b0b5dc54dfffccc46e4fa69a64bd01",
+          "output_sha256": "f762e41d3628428ea6186b303618bb0912ce13cd7ab6aa4ab195c1fc40bc731b",
+          "seconds": 0.1565298999994411,
+          "rank": 10,
+          "network": {
+            "min": 0.022694392129778862,
+            "max": 1.0014963150024414,
+            "outside_fraction": 1.5491771137021715e-06
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -19.398584104755454,
+              33.332329143611545
+            ],
+            "chroma_norm": 38.56616692656047,
+            "rgb_mae": 18.34957270365314,
+            "y_mean": -3.501957445647417
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -19.397995281155325,
+              33.32476251568636
+            ],
+            "chroma_norm": 38.55933113598599,
+            "rgb_mae": 18.346854219811366,
+            "y_mean": -3.5025462692475458
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -23.62002128904126,
+              -23.62002128904126
+            ],
+            "chroma_norm": 33.403754450503385,
+            "rgb_mae": 18.782028198242188,
+            "y_mean": 0.2996935302734369
+          },
+          "output_float_sha256": "d105abe7533be3d524b2b355ca7a7f161980cd0aba8d08f2b1a0c1f1c6cf5b46"
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "5284e1250f008db867dda86c8eb3714054ff1fb229ca4b3bb1e87d5d1a88ca7f",
+          "output_sha256": "4665eeee95ef50fb912e199dfcc660583df09f4ce7f29613dccbc3ff82aa4d9a",
+          "seconds": 0.15605949999917357,
+          "rank": 10,
+          "network": {
+            "min": 0.008698992431163788,
+            "max": 0.9521540999412537,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -5.611789253402105,
+              11.04263033345896
+            ],
+            "chroma_norm": 12.3867616149673,
+            "rgb_mae": 9.146958730321465,
+            "y_mean": 6.104355920382161
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -5.611789253402105,
+              11.04263033345896
+            ],
+            "chroma_norm": 12.3867616149673,
+            "rgb_mae": 9.146958730321465,
+            "y_mean": 6.104355920382161
+          },
+          "input_delta": {
+            "chroma_vector": [
+              23.62002128904126,
+              23.62002128904126
+            ],
+            "chroma_norm": 33.403754450503385,
+            "rgb_mae": 18.782028198242188,
+            "y_mean": -0.2996935302734368
+          },
+          "output_float_sha256": "d9f1d9a42564b4640ab05f9a530ceb4b8f8fff023e1f2328ef4d9487334abb46"
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "49f6113fa8bcdd6149af8e48a7eee24e79532df4c67a2c99b346270ec1515322",
+          "output_sha256": "0af4c11a7b2a2e1a8f74baa12f671ad4b7fa1f5d5f668f55f09cb970eb25c62f",
+          "seconds": 0.1538377999986551,
+          "rank": 10,
+          "network": {
+            "min": -0.0062807826325297356,
+            "max": 0.9954195022583008,
+            "outside_fraction": 0.008163388818502426
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.021939650038130417,
+              -0.4834271429875628
+            ],
+            "chroma_norm": 0.4839247367317702,
+            "rgb_mae": 0.7648354889336207,
+            "y_mean": -0.10504617923367635
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.023124638645232832,
+              -0.46819954700876204
+            ],
+            "chroma_norm": 0.4687702686089238,
+            "rgb_mae": 0.7593646274049854,
+            "y_mean": -0.10386119062657398
+          },
+          "input_delta": {
+            "chroma_vector": [
+              -0.669561602783351,
+              0.03676774292002096
+            ],
+            "chroma_norm": 0.6705703593518302,
+            "rgb_mae": 3.0923004150390625,
+            "y_mean": -0.046624920654296964
+          },
+          "output_float_sha256": "2af3e9590bb52b665f0d74986eef1924bf4ad12c2b6bff73635710e56f6f362e"
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "bfcdf2e65fae4b278ef4ac7f4c761a24afd2fdbaf9f923dd728495f03a083a5a",
+          "output_sha256": "7b821b47e2ea0b250e81c5db7c6bd08fe2dff80d4335118217e08dab5e879734",
+          "seconds": 0.15336019999995187,
+          "rank": 10,
+          "network": {
+            "min": 0.023034607991576195,
+            "max": 0.9631901979446411,
+            "outside_fraction": 0.0
+          },
+          "common_raw": {
+            "chroma_vector": [
+              -0.0773794069469611,
+              0.46099789884051207
+            ],
+            "chroma_norm": 0.4674469331965185,
+            "rgb_mae": 0.3536989871880219,
+            "y_mean": -0.13017819498172237
+          },
+          "common_clipped": {
+            "chroma_vector": [
+              -0.0773794069469611,
+              0.46099789884051207
+            ],
+            "chroma_norm": 0.4674469331965185,
+            "rgb_mae": 0.3536989871880219,
+            "y_mean": -0.13017819498172237
+          },
+          "input_delta": {
+            "chroma_vector": [
+              1.386545755005168,
+              -0.0674489959716299
+            ],
+            "chroma_norm": 1.388185325444853,
+            "rgb_mae": 0.9204813639322916,
+            "y_mean": 0.047215841674804686
+          },
+          "output_float_sha256": "dbf89464ca35f343b2f3d9a497b4808a213cc15bd000312a752616070e615678"
+        }
+      ]
+    }
+  ],
+  "runtime_import_path_verification_after_run": [
+    {
+      "module": "numpy",
+      "version": "2.5.4",
+      "file": ".tools\\adaptive-env\\Lib\\site-packages\\numpy\\__init__.py"
+    },
+    {
+      "module": "scipy",
+      "version": "1.16.3",
+      "file": ".tools\\DeepWB-audit\\vendor\\scipy\\__init__.py"
+    },
+    {
+      "module": "sklearn",
+      "version": "1.7.2",
+      "file": ".tools\\DeepWB-audit\\vendor\\sklearn\\__init__.py"
+    },
+    {
+      "module": "joblib",
+      "version": "1.5.2",
+      "file": ".tools\\DeepWB-audit\\vendor\\joblib\\__init__.py"
+    },
+    {
+      "module": "threadpoolctl",
+      "version": "3.6.0",
+      "file": ".tools\\DeepWB-audit\\vendor\\threadpoolctl.py"
+    },
+    {
+      "module": "matplotlib",
+      "version": "3.9.2",
+      "file": ".tools\\ModFlows-audit\\vendor\\matplotlib\\__init__.py"
+    }
+  ]
+}
