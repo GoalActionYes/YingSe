@@ -1,0 +1,197 @@
+{
+  "scope": "first offline intrinsic decomposition, not color transfer or product quality",
+  "assets": {
+    "repository": "prs-eth/marigold-iid-lighting-v1-1",
+    "revision": "08c3930bb641abf786ba44ce92547507ebefbc16",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 6501,
+        "sha256": "431d75f76c4089344c9d7b49951d208f4fe5774e61038f434157b779341aab30",
+        "git_blob": "f9c88e631221a9a06509ff91b469c46ae9eb812b"
+      },
+      {
+        "path": "model_index.json",
+        "bytes": 857,
+        "sha256": "f23f8eeb8fd4a6cd70cfc3d62dee4375d38dac0220e13ceff26f5f976c6f0d41",
+        "git_blob": "2288e9e5cda1032fe86a31a98eda012c05256b88"
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "bytes": 533,
+        "sha256": "506414f187b3d1e96d8b3e121bca0e35158ece49b76b34d22dd756ca6332bd76",
+        "git_blob": "ece79362969e0d8a9ded0333156ba96a0f7c2269"
+      },
+      {
+        "path": "text_encoder/config.json",
+        "bytes": 633,
+        "sha256": "6b34b0bf6cff02e2afe88145740ef5e0316caf7add8307c8ec0b021a7923cc42",
+        "git_blob": "9c60528fdcb99a7caf834426a94ea13c56cf422b"
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "bytes": 524619,
+        "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a",
+        "git_blob": "76e821f1b6f0a9709293c3b6b51ed90980b3166b"
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "bytes": 1059962,
+        "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349",
+        "git_blob": "469be27c5c010538f845f518c4f5e8574c78f7c8"
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "bytes": 855,
+        "sha256": "516314ccab66918d7cb647480ac27abd3520d14e1e5825aac99f50c851c16071",
+        "git_blob": "bd2abe19377557ff5771584921f9b65fa041fef0"
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "bytes": 460,
+        "sha256": "f118ab3a983206e4f32583448de6bd6aae4ee21869135cef1f5848a753cdaab6",
+        "git_blob": "ae0c5be6f35217e51c4c000fd325d8de0294e99c"
+      },
+      {
+        "path": "unet/config.json",
+        "bytes": 1954,
+        "sha256": "9073c69ca6dd9868a6f013501bc7ae876ff97c8e4d48c5ce393029f61d95d6b7",
+        "git_blob": "b89addfb3e7c45d8060d0c764457de7304d4f3a5"
+      },
+      {
+        "path": "vae/config.json",
+        "bytes": 711,
+        "sha256": "52dbd493c4a9bd8d46867790f61f0bc4bc441d509ada5e07ce6c1c81c3c89da5",
+        "git_blob": "87cb39197e3d376a794a6b9ae898e39d21de4773"
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.fp16.safetensors",
+        "bytes": 1732019968,
+        "sha256": "8c2e8da73793181f87c9c7a752a939d6f6834104e9854bf1c53c6b37de3594d9",
+        "git_blob": "7570f90c9a1dbc66efaa20a8cff8a31b813a411f"
+      },
+      {
+        "path": "text_encoder/model.fp16.safetensors",
+        "bytes": 680820392,
+        "sha256": "bc1827c465450322616f06dea41596eac7d493f4e95904dcb51f0fc745c4e13f",
+        "git_blob": "a55e85a6b511d04d31fbcc67af976a8b0adf8030"
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.fp16.safetensors",
+        "bytes": 167335342,
+        "sha256": "3e4c08995484ee61270175e9e7a072b66a6e4eeb5f0c266667fe1f45b90daf9a",
+        "git_blob": "9a75e3c8e7cf4387be816cdebb751fbd5fc4e1e2"
+      }
+    ],
+    "finished": true
+  },
+  "parent_sha256": "f211d39e44ee8b46ec765281f41a7b823aa4ba17cdbb873d14a2191252517783",
+  "input_sha256": "975affdf99ecdcc28c4b0fd1292f3dbd5cdbdab4cb2ad1adfab7ad1d4808b927",
+  "source_sha256": {
+    "probe_intrinsic_prior.py": "9747c9358b784bf68b71d68f47b501015cc692bf2ba0afbb9d8771b568eeaa7c",
+    "intrinsic-prior-protocol.md": "edfdced538dcf432d3eb2cd3a2e3056e5679d2bb4785a5a0badb589d7e1bec6f"
+  },
+  "implementation_sha256": {
+    "marigold_image_processing.py": "bde5a8218e100c12a9ef8f8c5878dbad0c203ed0f974e10254f0224d4b360c31",
+    "pipeline_marigold_depth.py": "14382584940547f87e6854e174d38dbf9db7385a6b8c34c67ee63fbb62a89ad8",
+    "pipeline_marigold_intrinsics.py": "006961feb706a42769d42dfcb96283f67f96b9611c1df483fa316ab427f56428",
+    "pipeline_marigold_normals.py": "4890576724ecea61ff94c139917c0650f7233dfb1ea7e162c3a48b57e2f84190",
+    "__init__.py": "900b370d9078a318981ea2ceabd92002f042630de9b69890286af4d613360434"
+  },
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "diffusers": "0.36.0",
+    "transformers": "4.57.1",
+    "numpy": "2.5.4"
+  },
+  "config": {
+    "steps": 4,
+    "ensemble_size": 1,
+    "processing_resolution": 768,
+    "batch_size": 1,
+    "seed": 20261117
+  },
+  "runs": [
+    {
+      "file": "prediction-0.npy",
+      "sha256": "8acd5d69e5fb14cb28f66e5495c2ad50bb6a0e79a59c8768976bad1f96e4175b",
+      "seconds": 2.9247353000009753,
+      "ranges": [
+        {
+          "min": 0.0,
+          "max": 1.0
+        },
+        {
+          "min": 0.041748046875,
+          "max": 0.9619140625
+        },
+        {
+          "min": 0.0,
+          "max": 1.0
+        }
+      ]
+    },
+    {
+      "file": "prediction-1.npy",
+      "sha256": "8acd5d69e5fb14cb28f66e5495c2ad50bb6a0e79a59c8768976bad1f96e4175b",
+      "seconds": 2.0405325000010635,
+      "ranges": [
+        {
+          "min": 0.0,
+          "max": 1.0
+        },
+        {
+          "min": 0.041748046875,
+          "max": 0.9619140625
+        },
+        {
+          "min": 0.0,
+          "max": 1.0
+        }
+      ]
+    }
+  ],
+  "finished": true,
+  "product_integrated": false,
+  "load_seconds": 4.360984700000699,
+  "reconstruction": {
+    "scales": [
+      0.6901702232557011,
+      0.7492358104401482
+    ],
+    "linear_mae": 0.012238684672349018,
+    "linear_rmse": 0.01957898744006213,
+    "raw_outside_fraction": 0.0,
+    "srgb_mae": 5.9432627360026045
+  },
+  "exact_repeat": true,
+  "cuda_peak_allocated_bytes": 4076228096,
+  "reconstruction_sha256": "bfd7bcfdd16d906b5a47692ca2d1cf943d3c1adb0d6bd5c8cc354e32da55d181",
+  "seconds": 9.638760100000582,
+  "audit": {
+    "finished": true,
+    "raw_repeat_exact": true,
+    "independent_scipy_nnls": true,
+    "reconstruction": {
+      "scales": [
+        0.6901702232557014,
+        0.7492358104401495
+      ],
+      "linear_mae": 0.012238684672349015,
+      "linear_rmse": 0.019578987440062128,
+      "raw_outside_fraction": 0.0,
+      "srgb_mae": 5.9432627360026045
+    },
+    "results_sha256": "c37d1711d5225756d3d88a356028f657e0da575e147513c697006ecbf649797c",
+    "scope": "file identity and offline reconstruction; not independent GPU or intrinsic ground truth"
+  },
+  "license_status": {
+    "repository": "prs-eth/Marigold",
+    "revision": "2bfbdeae5d10a50b71f1ba20c865d46e480f6010",
+    "sha256": "c6eb688db91701503e4378447f33a0bb23b05b9d7eae7e26bfe8153d49327b3e",
+    "author_model_card_license": "openrail++",
+    "upstream_model_card_license_page_status": 401,
+    "author_license_placeholders": true,
+    "scope": "local harmless image research only; full distribution licensing not established"
+  }
+}
