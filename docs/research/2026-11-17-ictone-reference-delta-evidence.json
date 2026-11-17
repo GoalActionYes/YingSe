@@ -1,0 +1,208 @@
+{
+  "plan.json": {
+    "finished": true,
+    "child_run": "ictone-reference-delta-v1-native",
+    "spec_sha256": "720c6e9ff88026ed7693e6cfb58fcf905f00ddf15b9251618e07e510da6f0757",
+    "previous_result_sha256": "5ee0ebe5d6fbb245bf30585d0fdfd45fb6752516268aa547d5cdd73d69f0c449",
+    "previous_case": {
+      "index": "1-9483",
+      "target": 9483,
+      "reference": 19432,
+      "profile": "global_contrast",
+      "child_run": "ictone-coco-v1-1-9483",
+      "producer_sha256": "559e2f478e9b6d31ebb36412b147f5fc8fc707ce53a69e78e0aa7adca4cbb304",
+      "baseline": {
+        "mae": 15.133331298828125,
+        "person_mae": 7.039668664668663,
+        "background_mae": 16.25998354424512,
+        "clipped_channel_fraction": 0.005182902018229167
+      },
+      "raw": {
+        "mae": 36.386749267578125,
+        "person_mae": 17.49292374292374,
+        "background_mae": 39.016803411672,
+        "clipped_channel_fraction": 0.14748636881510416
+      },
+      "candidate": {
+        "mae": 35.79731750488281,
+        "person_mae": 17.516150516150518,
+        "background_mae": 38.34208849024243,
+        "clipped_channel_fraction": 0.15516153971354166
+      },
+      "severe": true,
+      "output_sha256": "5abd45471b0b4093777a5f47239912dcdddcff304770d08290c7c0f8cef2983f",
+      "lut_sha256": "cffc10bf6e56bc4740c643b09e54be0f8f43273a8b4366793d851a661a6282c5",
+      "image_pipeline_seconds": 78.34400000000005,
+      "reconstruction_seconds": 0.125
+    },
+    "raw_reference_input_sha256": "55b762f8977a85d29f1055a5abbebbb7e3fe6c6c50cbd3b6c3be1dafa7235c94",
+    "protocol_sha256": "8e5c59beedce47c84ab412f4ede1247fd35bee3fbcc36de88c00087bb90226e4",
+    "source_sha256": "1b93933a2056d391dba7b38e80dde982eacf2bcc0f8fa76dce1729f18aeb8e7e"
+  },
+  "results.json": {
+    "finished": true,
+    "scope": "one consumed reference intervention, not causal attribution percentage or quality acceptance",
+    "source_sha256": "1b93933a2056d391dba7b38e80dde982eacf2bcc0f8fa76dce1729f18aeb8e7e",
+    "plan_sha256": "e3971013bc2383d776569f736cc4bac6b959010007ef95a4a03938b6b1c8c81e",
+    "child_result_sha256": "a38f19e639cf94426db14c4bf6ceb5c4de31b347bc170f0b3749b68f353916ae",
+    "fixed_inputs_verified": true,
+    "baseline_graded_pixels_exact": true,
+    "reference_increment_mae": 4.943623860677083,
+    "known_target_increment_mae": 6.7143198649088545,
+    "input": {
+      "mean_y": 99.02036534118652,
+      "clipped_channel_fraction": 0.0
+    },
+    "known_control_gt": {
+      "mean_y": 95.69076069641113,
+      "clipped_channel_fraction": 0.004450480143229167
+    },
+    "current13": {
+      "ungraded_reference_output_change_from_content": 22.175557454427082,
+      "graded_reference_error_to_control_gt": 15.133331298828125,
+      "observed_increment_mae": 3.438908894856771,
+      "increment_error_mae": 7.895762125651042,
+      "increment_projection_on_known_delta": -0.023409873193826477,
+      "increment_cosine": -0.04208952647417752,
+      "ungraded_output": {
+        "mean_y": 109.06955297851562,
+        "clipped_channel_fraction": 0.005854288736979167
+      },
+      "graded_output": {
+        "mean_y": 106.4665771484375,
+        "clipped_channel_fraction": 0.005182902018229167
+      }
+    },
+    "ictone_lut": {
+      "ungraded_reference_output_change_from_content": 37.21087137858073,
+      "graded_reference_error_to_control_gt": 35.79731750488281,
+      "observed_increment_mae": 3.611597696940104,
+      "increment_error_mae": 5.420786539713542,
+      "increment_projection_on_known_delta": 0.3068902124141223,
+      "increment_cosine": 0.5427892218922098,
+      "ungraded_output": {
+        "mean_y": 117.86778521728515,
+        "clipped_channel_fraction": 0.12894185384114584
+      },
+      "graded_output": {
+        "mean_y": 119.28913385009766,
+        "clipped_channel_fraction": 0.15516153971354166
+      }
+    },
+    "wall_measurement_seconds": 2.4059999999990396,
+    "image_pipeline_seconds": 76.5,
+    "generated_sha256": {
+      "ungraded-reference-lut.png": "aedcebd5717388a5fa752c58e11cd0edb21d26d4a1b2d099d819ade900323546",
+      "ungraded-reference-lut.npy": "cc775ee0e1038ee3ef382b903e8d02516298df383c854b5f2fb8b76b10ec4e24",
+      "current13-ungraded-reference.png": "83cc848c462678771b34e9ad728aa17e0095d2fb0ad2a31237c031b1c1743167"
+    }
+  },
+  "audit.json": {
+    "finished": true,
+    "scope": "single-case file and numeric audit, no independent model or natural judgement",
+    "source_sha256": "0e1fb61150345444a352cc15610f9661529cba72dd85e08f15c57b873e898d76",
+    "result_sha256": "6fd794bdc3bd1d3cb9f346cd63e673a1de6b20751bdb9a2158085c8b80a7160d",
+    "reconstructed_reference_and_gt_control_exact": true,
+    "input_and_weights_config_consistent": true,
+    "stored_lut_cpu_gpu_max_error": 1,
+    "all_difference_statistics_recomputed": true,
+    "ungraded_raw_output_change_from_content": 37.69869486490885,
+    "ungraded_raw_stats": {
+      "mean_y": 118.34608854675292,
+      "clipped_channel_fraction": 0.10890706380208333
+    },
+    "model_rerun_by_auditor": false
+  },
+  "record_sha256": {
+    "plan.json": "e3971013bc2383d776569f736cc4bac6b959010007ef95a4a03938b6b1c8c81e",
+    "results.json": "6fd794bdc3bd1d3cb9f346cd63e673a1de6b20751bdb9a2158085c8b80a7160d",
+    "audit.json": "f821e60e23e53cd04a567d1cd0e3c55cf28c41fd3cdb371f90dd5c3df536fa5e"
+  },
+  "source_sha256": {
+    "ictone_reference_delta.py": "1b93933a2056d391dba7b38e80dde982eacf2bcc0f8fa76dce1729f18aeb8e7e",
+    "audit_ictone_reference_delta.py": "0e1fb61150345444a352cc15610f9661529cba72dd85e08f15c57b873e898d76"
+  },
+  "scope": "single consumed causal-input intervention; no root-cause percentage or product acceptance",
+  "child": {
+    "finished": true,
+    "scope": "offline research; first consumed development image; not product candidate",
+    "config": {
+      "steps": 4,
+      "guidance": 50.0,
+      "seed": 666,
+      "panel": [
+        512,
+        512
+      ],
+      "source": "author pinned README"
+    },
+    "source_sha256": {
+      "screen_ictone_first.py": "d66a4bb072b0a823812763f79e4e4f64f061aa2a86d9f393187edf704ce66b56",
+      "ictone_flux_stage.py": "f37dc9cd1f200cf71eefe6451599f691fceb53c1e2415834b052538d7cbe62b8",
+      "ictone_gguf_runtime.py": "8db259af2a6b9979a04829f3d16194977294aba436c9734aa51fd879bbde3f4b",
+      "ictone_input_spec.py": "617312de07f8132cf8f7eb2e4a89e88efd652f02406e8292a109d686c03f8a2e"
+    },
+    "index": "reference-delta-9483",
+    "input_spec_sha256": "720c6e9ff88026ed7693e6cfb58fcf905f00ddf15b9251618e07e510da6f0757",
+    "inputs": {
+      "content": {
+        "sha256": "975affdf99ecdcc28c4b0fd1292f3dbd5cdbdab4cb2ad1adfab7ad1d4808b927"
+      },
+      "reference": {
+        "sha256": "790d368600bc67223fbd5af0faec0258ee063c98a003725d1946d235eb1d0108"
+      }
+    },
+    "stage": "finished",
+    "elapsed_seconds": 79.5630000000001,
+    "reused_stage_from": "ictone-first-v1",
+    "staging_seconds": 0.0,
+    "reload_seconds": 0.7029999999995198,
+    "component_state_tensors_verified": {
+      "clip": 196,
+      "vae": 244
+    },
+    "initial_resources": {
+      "ram_available": 2942865408,
+      "cuda_free_total": [
+        6945767424,
+        8585216000
+      ]
+    },
+    "completed_steps": 4,
+    "image_pipeline_seconds": 76.5,
+    "checked_parameter_count": 1846,
+    "peak_cuda_allocated_bytes": 2106100736,
+    "peak_cuda_reserved_bytes": 2902458368,
+    "output_sha256": {
+      "triptych-output.png": "78d58b4f91d25a7684a75ec5fd0c08d5228417bb38bd0d036e99b44d4eda0c4f",
+      "native512.png": "8ee5b27ff0aa0676d990cd43056b40dc626cfdba67008d02d30973aaa07059b4",
+      "metric256.png": "81c7a015f005c885abe6f8ed5f07b72ac5d839fcd27fe070bcc3751725f59fdb"
+    }
+  },
+  "next_feasibility": {
+    "scope": "read-only feasibility; no weights downloaded or inference",
+    "repository": "mahmoudnafifi/Deep_White_Balance",
+    "revision": "d70afa227c94152fd8421db75b3ee6ac06a417dc",
+    "model": {
+      "path": "PyTorch/models/net_awb.pth",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54177b02dee127e7a3ef078f479a0e787ee5644e",
+      "size": 17474846,
+      "url": "https://api.github.com/repos/mahmoudnafifi/Deep_White_Balance/git/blobs/54177b02dee127e7a3ef078f479a0e787ee5644e"
+    },
+    "license": "CC BY-NC-SA 4.0; README research and noncommercial restriction",
+    "license_blob": {
+      "path": "LICENSE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cdbe0b482f604a06a0988dad8877ae8d9257f7d",
+      "size": 20850,
+      "url": "https://api.github.com/repos/mahmoudnafifi/Deep_White_Balance/git/blobs/7cdbe0b482f604a06a0988dad8877ae8d9257f7d"
+    },
+    "new_capability_hypothesis": "learned sRGB neutral-white-balance estimate may separate some scene colors from grading; must test interference and uniform-color controls first",
+    "not_a_reference_transfer_model": true,
+    "license_file_sha256": "7074fb66818fbbc771e52bb25b0273a586a4ed42bf21c923b7e880cf1a9597e9",
+    "readme_sha256": "48ef74d19655910e1f81087af7db435a03d17b215b6663bb65cf4ae929b95119"
+  }
+}
