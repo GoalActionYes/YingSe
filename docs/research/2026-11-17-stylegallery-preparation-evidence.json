@@ -1,0 +1,156 @@
+{
+  "scope": "Source, isolated dependency and import preflight only; no image inference",
+  "source_counts": {
+    "source": 8,
+    "depth_source": 13
+  },
+  "new_wheels": 7,
+  "reused_wheels": 9,
+  "assets": [
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "README.md",
+      "expected_bytes": 14461,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "feature_extractor/preprocessor_config.json",
+      "expected_bytes": 342,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "model_index.json",
+      "expected_bytes": 541,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "scheduler/scheduler_config.json",
+      "expected_bytes": 308,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "text_encoder/config.json",
+      "expected_bytes": 617,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "text_encoder/model.safetensors",
+      "expected_bytes": 492265874,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "tokenizer/merges.txt",
+      "expected_bytes": 524619,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "tokenizer/special_tokens_map.json",
+      "expected_bytes": 472,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "tokenizer/tokenizer_config.json",
+      "expected_bytes": 806,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "tokenizer/vocab.json",
+      "expected_bytes": 1059962,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "unet/config.json",
+      "expected_bytes": 743,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "unet/diffusion_pytorch_model.safetensors",
+      "expected_bytes": 3438167540,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "vae/config.json",
+      "expected_bytes": 547,
+      "status": "verified"
+    },
+    {
+      "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+      "file": "vae/diffusion_pytorch_model.safetensors",
+      "expected_bytes": 334643276,
+      "status": "verified"
+    },
+    {
+      "repository": "facebook/dinov2-base",
+      "file": "README.md",
+      "expected_bytes": 3047,
+      "status": "verified"
+    },
+    {
+      "repository": "facebook/dinov2-base",
+      "file": "config.json",
+      "expected_bytes": 548,
+      "status": "verified"
+    },
+    {
+      "repository": "facebook/dinov2-base",
+      "file": "model.safetensors",
+      "expected_bytes": 346345912,
+      "status": "verified"
+    },
+    {
+      "repository": "facebook/dinov2-base",
+      "file": "preprocessor_config.json",
+      "expected_bytes": 436,
+      "status": "verified"
+    },
+    {
+      "repository": "depth-anything/Depth-Anything-V2-Large",
+      "file": "README.md",
+      "expected_bytes": 1966,
+      "status": "verified"
+    },
+    {
+      "repository": "depth-anything/Depth-Anything-V2-Large",
+      "file": "depth_anything_v2_vitl.pth",
+      "expected_bytes": 1341395338,
+      "status": "verified"
+    }
+  ],
+  "all_model_files_verified": true,
+  "imports_passed": true,
+  "runtime": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformers": "4.57.1",
+    "accelerate": "1.11.0",
+    "diffusers": "0.36.0"
+  },
+  "cv2_version": "4.11.0",
+  "physical_ram_available": 2800324608,
+  "cuda_free_total": [
+    7440695296,
+    8585216000
+  ],
+  "source_sha256": {
+    "check_stylegallery_preparation.py": "b9fb2293c12a96e5caef925e9fd8025376ec36afd6731dde3969a1acf623f0b5",
+    "fetch_stylegallery_weights.py": "cd7455d02c0cee77007716a986ccb7726dd1795be07ffa88a19d8645c4411055",
+    "stylegallery-screen-protocol.md": "0d9617d4c8cb445bbd58a1ad50b20628ef2bfdaa913bdf527e5fa800ab4e7cde"
+  },
+  "asset_registry_sha256": "b10ad20699acbd8b1c12fdb9ebcf695a36280df23cf763795a0a0baf22f09b01",
+  "weights_loaded": false,
+  "image_inference": false,
+  "training": false,
+  "product_integrated": false
+}
