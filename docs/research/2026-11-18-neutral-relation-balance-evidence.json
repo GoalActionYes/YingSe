@@ -1,0 +1,1345 @@
+{
+  "cases": {
+    "785-3553": {
+      "output": {
+        "base": {
+          "applied": true,
+          "target_support": 1384,
+          "reference_support": 3291,
+          "observed": [
+            3.349056010999968,
+            -1.643861725435135,
+            -0.31948170577756385
+          ],
+          "desired": [
+            -2.4538496132444725,
+            -1.1682405392507869,
+            12.451387990353146
+          ],
+          "vector": [
+            -2.901452812122233,
+            0.23781059309216113,
+            6.385434848065342
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.11434936523437504,
+          "sha256": "7fa3682525928894b6539a89931016acf0a6c397bdb73d9ff888e6f5d39d42f2"
+        },
+        "local": {
+          "applied": true,
+          "target_support": 1384,
+          "reference_support": 3106,
+          "observed": [
+            4.293234603818843,
+            -1.8845839974168461,
+            -1.5563714040188026
+          ],
+          "desired": [
+            4.8377559989782295,
+            -2.5781159645883593,
+            0.5865353291127979
+          ],
+          "vector": [
+            0.27226069757970284,
+            -0.34676598358574706,
+            1.07145336656581
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.012091278076171877,
+          "sha256": "0e30bf310947e18a844ef1e8d4b25e99238c522da799344c00f8a3f263231ca4"
+        },
+        "whole": {
+          "applied": true,
+          "target_support": 1384,
+          "reference_support": 3446,
+          "observed": [
+            4.265743888043925,
+            -1.8639146326444667,
+            -1.5906976593229707
+          ],
+          "desired": [
+            -2.9459948266597302,
+            -1.8524315499898276,
+            17.26517344750247
+          ],
+          "vector": [
+            -3.0597318676380363,
+            0.004871939393137564,
+            8.000000000000009
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.10895799255371098,
+          "sha256": "3926b89e8bc54149d45624accce6ec576ff0258984a2e0148975816c3bfd5504"
+        }
+      },
+      "metrics": {
+        "local": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 2.9556783040364585,
+              "rgb_mean_delta": [
+                -1.433868408203125,
+                0.3700408935546875,
+                5.8270416259765625
+              ],
+              "luminance_mean_delta": 0.45277009582519534,
+              "saturation_range_mean_delta": -7.1248931884765625,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 5.5041758219401045,
+              "rgb_mean_delta": [
+                -5.08074951171875,
+                0.414825439453125,
+                11.016952514648438
+              ],
+              "luminance_mean_delta": -0.019708984374999874,
+              "saturation_range_mean_delta": 7.4090728759765625,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.483393351236979,
+            "projection": 0.47896582624154105
+          },
+          "person": {
+            "observed": {
+              "pixels": 6816,
+              "rgb_mae": 2.2063282472613457,
+              "rgb_mean_delta": [
+                1.962881455399061,
+                -0.062206572769953054,
+                -2.1895539906103285
+              ],
+              "luminance_mean_delta": 0.3007771420187793,
+              "saturation_range_mean_delta": 1.8829225352112675,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 6816,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 2.2063282472613457,
+            "projection": null
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 38738,
+              "rgb_mae": 3.19901216720877,
+              "rgb_mean_delta": [
+                -1.775724095203676,
+                0.6041871031028964,
+                7.024910940162115
+              ],
+              "luminance_mean_delta": 0.6245561722339823,
+              "saturation_range_mean_delta": -8.204708554907326,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 38738,
+              "rgb_mae": 5.855120725558022,
+              "rgb_mean_delta": [
+                -5.561799783158656,
+                0.36783003768909084,
+                11.63573235582632
+              ],
+              "luminance_mean_delta": -0.12058841447674107,
+              "saturation_range_mean_delta": 9.88948835768496,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.4213864078338236,
+            "projection": 0.5108506879259457
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 1479,
+              "rgb_mae": 1.6880775298625197,
+              "rgb_mean_delta": [
+                0.9012846517917512,
+                1.2528735632183907,
+                1.0182555780933062
+              ],
+              "luminance_mean_delta": 1.121002028397566,
+              "saturation_range_mean_delta": 0.1737660581473969,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 1479,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 1.6880775298625197,
+            "projection": null
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 49533,
+              "rgb_mae": 3.1720671067773,
+              "rgb_mean_delta": [
+                -2.0035935638867017,
+                0.38951809904508106,
+                7.048553489592797
+              ],
+              "luminance_mean_delta": 0.4331077463509176,
+              "saturation_range_mean_delta": -8.61308622534472,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 49533,
+              "rgb_mae": 6.917745072308697,
+              "rgb_mean_delta": [
+                -6.386772454727152,
+                0.5109119173076535,
+                13.855550844891285
+              ],
+              "luminance_mean_delta": -0.030206872186219133,
+              "saturation_range_mean_delta": 9.698927987402337,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.947307855369148,
+            "projection": 0.47358980163900993
+          }
+        },
+        "whole": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 3.6686503092447915,
+              "rgb_mean_delta": [
+                -2.266510009765625,
+                0.8740081787109375,
+                7.7556304931640625
+              ],
+              "luminance_mean_delta": 0.7194981842041016,
+              "saturation_range_mean_delta": -8.078948974609375,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.902638753255208,
+              "rgb_mean_delta": [
+                -6.3663330078125,
+                0.534912109375,
+                13.806671142578125
+              ],
+              "luminance_mean_delta": -0.0155796508789061,
+              "saturation_range_mean_delta": 8.917648315429688,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.6623433430989585,
+            "projection": 0.5261303025194569
+          }
+        }
+      },
+      "gates": {
+        "positive": true,
+        "checks": {
+          "local_background_direction": false,
+          "local_background_error": false,
+          "local_person_protection": false,
+          "local_neutral_person": false,
+          "whole_response": false,
+          "no_person": null
+        }
+      }
+    },
+    "9483-19432": {
+      "output": {
+        "base": {
+          "applied": true,
+          "target_support": 732,
+          "reference_support": 925,
+          "observed": [
+            6.672151568139423,
+            -4.359341207395521,
+            4.947017279539315
+          ],
+          "desired": [
+            5.974232054021641,
+            -5.636805108252946,
+            13.355343985894791
+          ],
+          "vector": [
+            -0.34895975705889043,
+            -0.6387319504287121,
+            4.204163353177739
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.11341159057617191,
+          "sha256": "ef5c3eed4c419dbbf84dfef69e30f6ef1ca13888cad6ef786ef59e402b196f82"
+        },
+        "local": {
+          "applied": true,
+          "target_support": 732,
+          "reference_support": 936,
+          "observed": [
+            7.2909189446282365,
+            -4.519050952666572,
+            4.146474954135457
+          ],
+          "desired": [
+            15.976317862006743,
+            -9.123284694874368,
+            5.074114694308313
+          ],
+          "vector": [
+            4.342699458689301,
+            -2.3021168711038493,
+            0.46381987008647607
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.2516897430419922,
+          "sha256": "03ef73dd2e9d9a510995fc90d3e2150ff764ee9d7f235b15de89c93e3e4018c3"
+        },
+        "whole": {
+          "applied": true,
+          "target_support": 732,
+          "reference_support": 788,
+          "observed": [
+            6.7735734649610775,
+            -4.020495183907376,
+            2.9362474292129175
+          ],
+          "desired": [
+            15.781401988967529,
+            -10.068058920751467,
+            10.450099927892095
+          ],
+          "vector": [
+            4.503914262003289,
+            -3.0237818684219824,
+            3.756926249339652
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.2704569702148437,
+          "sha256": "3a7dc5a2eef25a4eb4b59a318093fe18054c1c69cecd41852251cb3c7ee48a3b"
+        }
+      },
+      "metrics": {
+        "local": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 3.2115987141927085,
+              "rgb_mean_delta": [
+                -1.5861663818359375,
+                1.0788421630859375,
+                5.588165283203125
+              ],
+              "luminance_mean_delta": 0.7960674438476563,
+              "saturation_range_mean_delta": 0.41375732421875,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 5.487650553385417,
+              "rgb_mean_delta": [
+                -5.135223388671875,
+                0.5091400146484375,
+                10.818588256835938
+              ],
+              "luminance_mean_delta": -0.003247543334960836,
+              "saturation_range_mean_delta": 2.780242919921875,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.648834228515625,
+            "projection": 0.4707833245146078
+          },
+          "person": {
+            "observed": {
+              "pixels": 8008,
+              "rgb_mae": 1.8237595737595738,
+              "rgb_mean_delta": [
+                2.4664085914085914,
+                -1.0846653346653348,
+                -0.893981018981019
+              ],
+              "luminance_mean_delta": -0.0011562187812187831,
+              "saturation_range_mean_delta": -2.5595654345654344,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 8008,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 1.8237595737595738,
+            "projection": null
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 41635,
+              "rgb_mae": 3.7189303870941917,
+              "rgb_mean_delta": [
+                -1.9799687762699651,
+                1.7573195628677796,
+                7.2628077338777475
+              ],
+              "luminance_mean_delta": 1.2674960009607303,
+              "saturation_range_mean_delta": -0.20009607301549176,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 41635,
+              "rgb_mae": 6.086801969496817,
+              "rgb_mean_delta": [
+                -5.714999399543653,
+                0.5479044073495857,
+                11.997502101597213
+              ],
+              "luminance_mean_delta": -0.019449693767263007,
+              "saturation_range_mean_delta": 1.5799447580160921,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.6667467275129098,
+            "projection": 0.5243401062636485
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 610,
+              "rgb_mae": 1.805464480874317,
+              "rgb_mean_delta": [
+                2.057377049180328,
+                0.14918032786885246,
+                1.8262295081967213
+              ],
+              "luminance_mean_delta": 0.9109147540983606,
+              "saturation_range_mean_delta": -0.33114754098360655,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 610,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 1.805464480874317,
+            "projection": null
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 50437,
+              "rgb_mae": 3.4654717766718877,
+              "rgb_mean_delta": [
+                -2.3059063782540594,
+                1.3796022761068263,
+                6.564902749965303
+              ],
+              "luminance_mean_delta": 0.8687594424727879,
+              "saturation_range_mean_delta": 1.096040605111327,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 50437,
+              "rgb_mae": 6.858205946692574,
+              "rgb_mean_delta": [
+                -6.4242520371949166,
+                0.6345143446279518,
+                13.515851458254852
+              ],
+              "luminance_mean_delta": -0.007584372583619043,
+              "saturation_range_mean_delta": 3.7731625592323095,
+              "sensitive_over_one_code": true
+            },
+            "error": 4.127142111280739,
+            "projection": 0.4639842295245427
+          }
+        },
+        "whole": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 4.8109079996744795,
+              "rgb_mean_delta": [
+                -2.23199462890625,
+                1.7887725830078125,
+                9.44024658203125
+              ],
+              "luminance_mean_delta": 1.4588312225341797,
+              "saturation_range_mean_delta": 0.5849456787109375,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.846140543619792,
+              "rgb_mean_delta": [
+                -6.37451171875,
+                0.6546630859375,
+                13.509246826171875
+              ],
+              "luminance_mean_delta": 0.018362365722656385,
+              "saturation_range_mean_delta": 4.7616424560546875,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.5515289306640625,
+            "projection": 0.6381590271398674
+          }
+        }
+      },
+      "gates": {
+        "positive": true,
+        "checks": {
+          "local_background_direction": false,
+          "local_background_error": false,
+          "local_person_protection": false,
+          "local_neutral_person": false,
+          "whole_response": false,
+          "no_person": null
+        }
+      }
+    },
+    "872-1268": {
+      "output": {
+        "base": {
+          "applied": true,
+          "target_support": 4228,
+          "reference_support": 2067,
+          "observed": [
+            -2.3651422903687727,
+            -1.4443145096832675,
+            13.640264578985494
+          ],
+          "desired": [
+            8.172490361669137,
+            -2.928499163784248,
+            -6.355663236821007
+          ],
+          "vector": [
+            4.215911459215387,
+            -0.5937947637229901,
+            -8.000000000000048
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.17641311645507818,
+          "sha256": "964ef2bb7e229cd945c427e7e79ab5338d22b576c5107bedda835fbbb833fa7a"
+        },
+        "local": {
+          "applied": true,
+          "target_support": 4228,
+          "reference_support": 1677,
+          "observed": [
+            -2.0758178660681064,
+            -1.5063521467441783,
+            13.200861860466599
+          ],
+          "desired": [
+            17.206335601425582,
+            -4.148201890033772,
+            -23.76929680154879
+          ],
+          "vector": [
+            4.172479462427641,
+            -0.5716718215772877,
+            -7.999999999999971
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.17610363769531254,
+          "sha256": "0a64f92c0fa522c900f14f21126e3fd437295a1688a9b2a8c1a7e6f210da459f"
+        },
+        "whole": {
+          "applied": true,
+          "target_support": 4228,
+          "reference_support": 2054,
+          "observed": [
+            -1.8212492436799634,
+            -1.3950604176237165,
+            11.960122710573904
+          ],
+          "desired": [
+            9.692341399986736,
+            -3.3397708195586837,
+            -8.224250943117099
+          ],
+          "vector": [
+            4.563368015756696,
+            -0.7707785974638223,
+            -7.999999999999898
+          ],
+          "clip_fraction": 0.0,
+          "mean_luminance_error": 0.18293769836425783,
+          "sha256": "255464df88fce5c0689628f7c7613e0ecdb733de19c23b3d040298f03e5732d5"
+        }
+      },
+      "metrics": {
+        "local": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 5.089833577473958,
+              "rgb_mean_delta": [
+                -6.250030517578125,
+                0.08221435546875,
+                8.756195068359375
+              ],
+              "luminance_mean_delta": -0.8222930603027343,
+              "saturation_range_mean_delta": -3.569091796875,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 4.6622060139973955,
+              "rgb_mean_delta": [
+                -4.2806243896484375,
+                0.392608642578125,
+                9.313385009765625
+              ],
+              "luminance_mean_delta": 0.012280471801757894,
+              "saturation_range_mean_delta": -4.1159210205078125,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.115076700846354,
+            "projection": 0.7281200595566816
+          },
+          "person": {
+            "observed": {
+              "pixels": 12299,
+              "rgb_mae": 4.753855326991355,
+              "rgb_mean_delta": [
+                -5.301975770387837,
+                -0.043499471501748106,
+                8.624359704040979
+              ],
+              "luminance_mean_delta": -0.6276479388568176,
+              "saturation_range_mean_delta": -2.568989348727539,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 12299,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 4.753855326991355,
+            "projection": null
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 10335,
+              "rgb_mae": 5.051540074181584,
+              "rgb_mean_delta": [
+                -6.495403967102081,
+                -0.07692307692307693,
+                8.424770198355104
+              ],
+              "luminance_mean_delta": -1.0268558297048864,
+              "saturation_range_mean_delta": -3.2530237058538947,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 10335,
+              "rgb_mae": 3.493114013868731,
+              "rgb_mean_delta": [
+                -3.3039187227866473,
+                0.3127237542331882,
+                6.862699564586357
+              ],
+              "luminance_mean_delta": -0.021955104015481314,
+              "saturation_range_mean_delta": 1.096758587324625,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.9418480890179004,
+            "projection": 0.6308423667029938
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 3908,
+              "rgb_mae": 5.4665643125213235,
+              "rgb_mean_delta": [
+                -6.0734390992835205,
+                -0.04887410440122825,
+                10.047082906857728
+              ],
+              "luminance_mean_delta": -0.6992799385875127,
+              "saturation_range_mean_delta": -9.093142272262027,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 3908,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 5.4665643125213235,
+            "projection": null
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 41808,
+              "rgb_mae": 5.16457775226432,
+              "rgb_mean_delta": [
+                -6.551712590891696,
+                0.07646861844623039,
+                8.707878874856487
+              ],
+              "luminance_mean_delta": -0.92137679391504,
+              "saturation_range_mean_delta": -3.6287552621507846,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 41808,
+              "rgb_mae": 6.822187141216992,
+              "rgb_mean_delta": [
+                -6.267341178721776,
+                0.5756314580941446,
+                13.623588786835056
+              ],
+              "luminance_mean_delta": 0.01704977516264842,
+              "saturation_range_mean_delta": -5.8023584003061615,
+              "sensitive_over_one_code": true
+            },
+            "error": 2.4446039035591274,
+            "projection": 0.7089922192675256
+          }
+        },
+        "whole": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 6.2277069091796875,
+              "rgb_mean_delta": [
+                -7.10491943359375,
+                -0.2624664306640625,
+                11.070648193359375
+              ],
+              "luminance_mean_delta": -1.0163848114013672,
+              "saturation_range_mean_delta": -5.120147705078125,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.828379313151042,
+              "rgb_mean_delta": [
+                -6.3024444580078125,
+                0.571197509765625,
+                13.611495971679688
+              ],
+              "luminance_mean_delta": 0.0025725860595704284,
+              "saturation_range_mean_delta": -3.99853515625,
+              "sensitive_over_one_code": true
+            },
+            "error": 2.002527872721354,
+            "projection": 0.864849377467191
+          }
+        }
+      },
+      "gates": {
+        "positive": true,
+        "checks": {
+          "local_background_direction": false,
+          "local_background_error": true,
+          "local_person_protection": false,
+          "local_neutral_person": false,
+          "whole_response": true,
+          "no_person": null
+        }
+      }
+    },
+    "8021-8690": {
+      "output": {
+        "base": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "61807b59285a5da6ed2053f016ca1416c4b24238d35d58a6c472538e7f345cff"
+        },
+        "local": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "99a33f200cd11b0c8a2a8196237b0531d57116ed8efa485b2908d870bae6452e"
+        },
+        "whole": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "9082850a16b2db8fa8a6b00e3f9a612a1cfb2aff843445594244b5a5a5823331"
+        }
+      },
+      "metrics": {
+        "local": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 3.132476806640625,
+              "rgb_mean_delta": [
+                -3.7869873046875,
+                -0.041961669921875,
+                4.70477294921875
+              ],
+              "luminance_mean_delta": -0.6205965881347656,
+              "saturation_range_mean_delta": 2.0988311767578125,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 3.4961700439453125,
+              "rgb_mean_delta": [
+                -3.2658233642578125,
+                0.3289642333984375,
+                6.8937225341796875
+              ],
+              "luminance_mean_delta": 0.002505187988281303,
+              "saturation_range_mean_delta": 3.6802520751953125,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.002049763997396,
+            "projection": 0.4814714004818728
+          },
+          "person": {
+            "observed": {
+              "pixels": 24235,
+              "rgb_mae": 2.2013479127982944,
+              "rgb_mean_delta": [
+                -2.45232102331339,
+                -0.7952547967815143,
+                3.201733030740664
+              ],
+              "luminance_mean_delta": -0.8350609861770167,
+              "saturation_range_mean_delta": -4.222735712812049,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 24235,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 2.2013479127982944,
+            "projection": null
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 673,
+              "rgb_mae": 3.1292719167904903,
+              "rgb_mean_delta": [
+                -2.9078751857355125,
+                0.7592867756315007,
+                5.607726597325408
+              ],
+              "luminance_mean_delta": 0.21552748885586925,
+              "saturation_range_mean_delta": -3.800891530460624,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 673,
+              "rgb_mae": 2.585438335809807,
+              "rgb_mean_delta": [
+                -2.424962852897474,
+                0.2199108469539376,
+                5.1114413075780085
+              ],
+              "luminance_mean_delta": -0.0132719167904903,
+              "saturation_range_mean_delta": -0.7191679049034175,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.1966319960376426,
+            "projection": 0.4558214364967823
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 142,
+              "rgb_mae": 2.9295774647887325,
+              "rgb_mean_delta": [
+                -3.1619718309859155,
+                0.4084507042253521,
+                5.02112676056338
+              ],
+              "luminance_mean_delta": -0.13326056338028167,
+              "saturation_range_mean_delta": -4.366197183098592,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 142,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 2.9295774647887325,
+            "projection": null
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 30586,
+              "rgb_mae": 3.7134309814948017,
+              "rgb_mean_delta": [
+                -4.781664813967175,
+                0.3094553063493101,
+                5.487020205322697
+              ],
+              "luminance_mean_delta": -0.6225472111423527,
+              "saturation_range_mean_delta": 5.783332243510102,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 30586,
+              "rgb_mae": 6.8540072800191805,
+              "rgb_mean_delta": [
+                -6.3954750539462495,
+                0.6519322565879815,
+                13.51461452952331
+              ],
+              "luminance_mean_delta": 0.011103249852873963,
+              "saturation_range_mean_delta": 6.933760544039757,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.7486758647747336,
+            "projection": 0.4639423118896968
+          }
+        },
+        "whole": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 5.8278961181640625,
+              "rgb_mean_delta": [
+                -6.8800506591796875,
+                -0.242706298828125,
+                9.961181640625
+              ],
+              "luminance_mean_delta": -1.0640290374755859,
+              "saturation_range_mean_delta": 2.3924713134765625,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.877298990885417,
+              "rgb_mean_delta": [
+                -6.4279327392578125,
+                0.5577850341796875,
+                13.64617919921875
+              ],
+              "luminance_mean_delta": -0.03886764526367178,
+              "saturation_range_mean_delta": 1.3016357421875,
+              "sensitive_over_one_code": true
+            },
+            "error": 2.330591837565104,
+            "projection": 0.7834593561547394
+          }
+        }
+      },
+      "gates": {
+        "positive": true,
+        "checks": {
+          "local_background_direction": false,
+          "local_background_error": false,
+          "local_person_protection": false,
+          "local_neutral_person": false,
+          "whole_response": true,
+          "no_person": null
+        }
+      }
+    },
+    "285-1993": {
+      "output": {
+        "base": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "2693010935ac7d6dfb4ac088e01b86093810e0ed36293568e53b5823c11c4282"
+        },
+        "local": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "2693010935ac7d6dfb4ac088e01b86093810e0ed36293568e53b5823c11c4282"
+        },
+        "whole": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "7b8ea956b9557e294c81f1ad7aa25ac8c1c5943ef7dd246c37db6b1c0fc27337"
+        }
+      },
+      "metrics": {
+        "local": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.0,
+            "projection": null
+          },
+          "person": null,
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 589,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 589,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.0,
+            "projection": null
+          },
+          "neutral_person": null,
+          "edited_core": null
+        },
+        "whole": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 6.121083577473958,
+              "rgb_mean_delta": [
+                -6.1840972900390625,
+                0.321044921875,
+                11.648086547851562
+              ],
+              "luminance_mean_delta": -0.3327098541259764,
+              "saturation_range_mean_delta": -15.093399047851562,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.917694091796875,
+              "rgb_mean_delta": [
+                -6.467132568359375,
+                0.6540374755859375,
+                13.631912231445312
+              ],
+              "luminance_mean_delta": 0.004285354614257927,
+              "saturation_range_mean_delta": -17.75189208984375,
+              "sensitive_over_one_code": true
+            },
+            "error": 1.925689697265625,
+            "projection": 0.8678923491557824
+          }
+        }
+      },
+      "gates": {
+        "positive": false,
+        "checks": {
+          "whole_response": true,
+          "no_person": true
+        }
+      }
+    },
+    "2149-2592": {
+      "output": {
+        "base": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "673acd82f72b8c46359b5a6af4d556ede22c4529ffe2cd30c184654f0e1f249e"
+        },
+        "local": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "673acd82f72b8c46359b5a6af4d556ede22c4529ffe2cd30c184654f0e1f249e"
+        },
+        "whole": {
+          "applied": false,
+          "target_support": 0,
+          "reason": "target_support",
+          "sha256": "0734850a8a1544ac2221aa63848f38b323fde8b2bed43f15c9333b01d94a82a4"
+        }
+      },
+      "metrics": {
+        "local": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.0,
+            "projection": null
+          },
+          "person": null,
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 84,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 84,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.0,
+            "projection": null
+          },
+          "neutral_person": null,
+          "edited_core": null
+        },
+        "whole": {
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 6.252329508463542,
+              "rgb_mean_delta": [
+                -7.4991912841796875,
+                -0.431610107421875,
+                10.509841918945312
+              ],
+              "luminance_mean_delta": -1.2974913482666015,
+              "saturation_range_mean_delta": -9.098541259765625,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.921101888020833,
+              "rgb_mean_delta": [
+                -6.3646087646484375,
+                0.6371002197265625,
+                13.7615966796875
+              ],
+              "luminance_mean_delta": 0.03978182983398451,
+              "saturation_range_mean_delta": -14.448196411132812,
+              "sensitive_over_one_code": true
+            },
+            "error": 2.2299601236979165,
+            "projection": 0.8309574895867017
+          }
+        }
+      },
+      "gates": {
+        "positive": false,
+        "checks": {
+          "whole_response": true,
+          "no_person": true
+        }
+      }
+    }
+  },
+  "authored": {
+    "portrait": {
+      "metrics": {
+        "whole": {
+          "pixels": 760320,
+          "region_pixels": 760320,
+          "coverage": 1.0,
+          "methods": {
+            "original": {
+              "mae": 9.387941480780022,
+              "projection": 0.0
+            },
+            "current13": {
+              "mae": 15.459186044472503,
+              "projection": -0.1546922192004834
+            },
+            "candidate": {
+              "mae": 15.459186044472503,
+              "projection": -0.1546922192004834
+            }
+          }
+        },
+        "neutral_proxy": {
+          "pixels": 177766,
+          "region_pixels": 177766,
+          "coverage": 1.0,
+          "methods": {
+            "original": {
+              "mae": 7.601867998754917,
+              "projection": 0.0
+            },
+            "current13": {
+              "mae": 16.771300473656378,
+              "projection": -0.7661827386711317
+            },
+            "candidate": {
+              "mae": 16.771300473656378,
+              "projection": -0.7661827386711317
+            }
+          }
+        }
+      },
+      "gate": false,
+      "sha256": "2853ad45324a8b3213ae078f5797e055f675f564b417744840c150a49fafc20b",
+      "applied": false,
+      "target_support": 39681,
+      "reference_support": 0,
+      "reason": "reference_support"
+    },
+    "tower": {
+      "metrics": {
+        "whole": {
+          "pixels": 760320,
+          "region_pixels": 760320,
+          "coverage": 1.0,
+          "methods": {
+            "original": {
+              "mae": 11.38734918630752,
+              "projection": 0.0
+            },
+            "current13": {
+              "mae": 15.027565148007856,
+              "projection": 1.1287527307182503
+            },
+            "candidate": {
+              "mae": 15.027565148007856,
+              "projection": 1.1287527307182503
+            }
+          }
+        },
+        "neutral_proxy": {
+          "pixels": 68714,
+          "region_pixels": 68714,
+          "coverage": 1.0,
+          "methods": {
+            "original": {
+              "mae": 11.933890231005812,
+              "projection": 0.0
+            },
+            "current13": {
+              "mae": 15.910823607028165,
+              "projection": 0.11447452159347545
+            },
+            "candidate": {
+              "mae": 15.910823607028165,
+              "projection": 0.11447452159347545
+            }
+          }
+        }
+      },
+      "gate": false,
+      "sha256": "8d7b927b834393f1e090247e7cfcc7ccb2900ad1d9bd422185582e3af1ea5036",
+      "applied": false,
+      "target_support": 0,
+      "reason": "target_support"
+    }
+  },
+  "same_image_held": true,
+  "segmenter_sha256": "fc3c493d68e89cc31ef488c803d5d7dd2f3190fb570598faa49fef69be8e5e70",
+  "toggle_sha256": "437681478dfde0362c953b0210598fbc4f23f1d043e7be8514f4a49d4df5857a",
+  "psbench_sha256": "8e3f455399879e457af2fe5444e28806affa5114f29067a2087324584ad410b6",
+  "source_sha256": "6f0c3417661b884f09f462ecaeef1460e296a4c136b06362e534a9955759bb45",
+  "protocol_sha256": "870d1339ddf0a7ff1d78756e392cfd84ccee6df22954420e0c811478617498a5",
+  "verification": {
+    "runtimes_seconds": [
+      5.046999999998661,
+      5.25
+    ],
+    "hash_matched_outputs": 20,
+    "recomputed_region_scores": 48,
+    "failed_serialization_outputs_also_match": true,
+    "run_hashes": [
+      "b83e90ec66699744ee9607dbb264e80d1741851d9e5c0baaac62b8fad1728cae",
+      "8c02778524c205be4311b60634e696ecb1fb2d017b75402038073713e6f85c94"
+    ]
+  }
+}
