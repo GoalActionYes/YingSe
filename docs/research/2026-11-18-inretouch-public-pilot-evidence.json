@@ -1,0 +1,85 @@
+{
+  "tree_sha": "1f1269732b9b58beb9cb2c8e05e09d3223793406",
+  "baseline_checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "inputs": {
+    "example_data/Inference_Data/a0006-IMG_2787.jpg": "1ab86844409a429d4489689906da961596c3308bab152e33af3d11b61e6d5fa3",
+    "example_data/Inference_Data/a0007-IMG_2480.jpg": "aafba02de94325572310991104d2bd57b3ff38228675e9618ed92d3da55010ae",
+    "example_data/Example1_After.jpg": "79fa941b178c978139877c09471266258435ccb50f339ee01ca4f5d402a820c0",
+    "example_data/Example2_After.jpg": "8534dae0173da67621b357943dd3fcabb94b221b40a0646e0964616bdcd84652",
+    "example_data/Example1_Before.jpg": "dc3ac8a7d0dd01c9343f43c8217cd568098ae67828bf2ee94fc76aca71a2fa50",
+    "example_data/Example2_Before.jpg": "93986f2cfec16fba0ae8819d8fea3fa4894f7721fd1ec0ef30e7845d12fdc6e6",
+    "example_data/GT/a0006-IMG_2787.jpg": "07e5b0eb5a83948cfaa2cb1146c96eb74d164b9d51c76851aa1d753276e5e0e2",
+    "example_data/GT/a0007-IMG_2480.jpg": "27202c1c299d62ba8f25f8650203c16f6ceb27b8e2e4ec759a4e6447c36bc088"
+  },
+  "predictions": {
+    "a0006-IMG_2787-Example1.png": "e23da1eb97d60b6c709eb7e610610453ff2b9158942445284aca4693f089078e",
+    "a0006-IMG_2787-Example2.png": "e8353dc50dd63e0bdfc7912400c455561936af319cf523806e3b2ddc84630efd",
+    "a0007-IMG_2480-Example1.png": "035a52c0f1fc1164201198301d5a57a2f6b44270fee4cf5bd405d0cb80a9fb9d",
+    "a0007-IMG_2480-Example2.png": "7803c3120fee19bf78ea5411ace46b9c59aa3eb6cc4c20ba994123158cccf19d"
+  },
+  "predictions_sha256": "ccd00cf155137aadb8f474349e0d1344ff30965500b7b6219ba2c619ad70b218",
+  "cases": {
+    "a0006-IMG_2787": {
+      "neutral_proxy": {
+        "pixels": 152302,
+        "original_mae": 11.551634252997335,
+        "outputs_mae": {
+          "Example1": 10.276155270449502,
+          "Example2": 12.064466214057159
+        },
+        "reference_swap_mae": 5.484147724039518
+      },
+      "whole": {
+        "pixels": 393216,
+        "original_mae": 13.536677890353733,
+        "outputs_mae": {
+          "Example1": 12.638220893012154,
+          "Example2": 14.667856852213541
+        },
+        "reference_swap_mae": 8.689219156901041
+      }
+    },
+    "a0007-IMG_2480": {
+      "neutral_proxy": {
+        "pixels": 321733,
+        "original_mae": 14.085742940056921,
+        "outputs_mae": {
+          "Example1": 13.010431009563831,
+          "Example2": 14.685751850136604
+        },
+        "reference_swap_mae": 6.453465036743718
+      },
+      "whole": {
+        "pixels": 393216,
+        "original_mae": 13.996861775716146,
+        "outputs_mae": {
+          "Example1": 12.763897365993923,
+          "Example2": 14.431341383192274
+        },
+        "reference_swap_mae": 6.355852762858073
+      }
+    }
+  },
+  "model_and_render_seconds": 1.0,
+  "protocol_sha256": "9b93225a7da1b0201ce5dd146a6e65c225159fa1499a5c72f035e813a41c8742",
+  "script_sha256": "9f925c4c51b3c5c42c1e332560353c7d92d28072e32c50f9bd36d493e50a1fc7",
+  "verified_regions": 4,
+  "media_bytes": 1623640,
+  "results_sha256": "1b00d19ea856bb648000adbeb1390349c0279fbeb941822d5d90441d4e95e10d",
+  "sources": {
+    "RTD-info.json": "cefb6a59ae43f31a8eef85f972a3fab868bbb0839a840f3d3480c9d1f0bd0a15",
+    "RTD-tree.json": "8c43270bf35567b3f7f1fba5ee59482bc9abc62df2408527d0dcd2612932b006",
+    "RTD-benchmark.json": "9c2252e54e65f8467e8538562cb78bad4265e1ec49759e256024130728db14c8",
+    "SixStyle-info.json": "aa5a83c7bbaeb53c63e1eebd08c99e138e8ccb159d1e8d1d9ef8cca05e0996cd",
+    "SixStyle-tree.json": "6816092e9ba103f86a957b89f5dd38d2c7d2b8f30489b9618c6a6762b4dc6e08",
+    "InRetouch-pinned-tree.json": "57a3646cad9850abfcc2bcb1833a8b0376877ac2192028aaf253df8fcb0a47d7",
+    "InRetouch_Optimize_Multiple.yml": "a6c5c7cc6449a301e23b8e11fbc6ec1f0f3b5d62997d551b06e2b30aa72c2ebd",
+    "INR_Inference.yml": "cc2d587908d6b6c746368244aa2c3b214a5e6ae58ac94748998662f970d00875",
+    "LICENSE": "55a218c62e9fd91d6dbaea59ce256cb390204e94d9937447f6c99662155bdc5b"
+  },
+  "unauthenticated_index_status": {
+    "RTD": 401,
+    "SixStyle": 401
+  }
+}
