@@ -58,7 +58,7 @@ def count_groups(values, parent):
                 independent_target_families_with_alternative_result=len(matched))
 
 
-def frozen_cases(grouped, parent):
+def frozen_cases(grouped, parent, limit):
     per_target = defaultdict(dict)
     for (content, answer), references in grouped.items():
         per_target[content][answer] = references
@@ -78,12 +78,12 @@ def frozen_cases(grouped, parent):
         if selection is not None:
             chosen.append(selection)
             seen.add(target_family)
-        if len(chosen) == 8:
+        if limit is not None and len(chosen) == limit:
             break
     return chosen
 
 
-def audit():
+def audit(limit=8):
     rows, cohort, manifest = (load(path, sha) for path, sha in zip((INDEX, COHORT, MANIFEST), HASHES, strict=True))
     train = cohort['groups']['train']
     assert len(rows) == 108808 and len(train) == 4096 and manifest['passed']
@@ -118,7 +118,7 @@ def audit():
                   input_sha256=dict(index=HASHES[0], cohort=HASHES[1], manifest=HASHES[2]),
                   proceed_threshold=8)
     report['proceed'] = report['all_assets_ready']['independent_target_families_with_alternative_result'] >= 8
-    return report, frozen_cases(ready_groups, parent), ready
+    return report, frozen_cases(ready_groups, parent, limit), ready
 
 
 def main(out):

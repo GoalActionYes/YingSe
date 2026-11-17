@@ -16,9 +16,16 @@ from spatial_render import SpatialEngine, finish_spatial
 
 
 @torch.inference_mode()
-def run(out):
+def run(out, split_dir=None):
     metadata, cases, ready = audit()
     assert metadata['proceed'] and len(cases) == 8
+    if split_dir is not None:
+        split = json.loads((split_dir / 'results.json').read_text(encoding='utf-8'))
+        path = split_dir / 'private-assignment.json'
+        assert split['readiness'] and digest(path) == split['assignment_sha256']
+        cases = json.loads(path.read_text(encoding='utf-8'))['development']
+        assert len(cases) == split['development_cases']
+        metadata = split
     out.mkdir(exist_ok=False)
     (out / 'private-selection.json').write_text(json.dumps(cases, indent=2), encoding='utf-8')
 
@@ -71,10 +78,11 @@ def run(out):
         passed = whole['expected_delta'] >= 1 and whole['same_swap'] < min(whole['different_swap']) and whole['projection'] >= .50
         scored.append(dict(index=index, passed=passed, regions=scores))
     count = sum(row['passed'] for row in scored)
-    report = dict(metadata=metadata, cases=scored, passed_cases=count, passed=count >= 6,
+    protocol = 'tst-reference-equivalence-pilot-protocol.md' if split_dir is None else 'tst-reference-equivalence-split-protocol.md'
+    report = dict(metadata=metadata, cases=scored, passed_cases=count, passed=count * 4 >= len(cases) * 3,
                   checkpoint_sha256=engine.checkpoint_sha, predictions=predictions,
                   prediction_manifest_sha256=digest(prediction_path),
-                  script_sha256=digest(__file__), protocol_sha256=digest(Path(__file__).with_name('tst-reference-equivalence-pilot-protocol.md')),
+                  script_sha256=digest(__file__), protocol_sha256=digest(Path(__file__).with_name(protocol)),
                   seconds=time.monotonic() - start)
     (out / 'results.json').write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
     print(count, report['seconds'])
@@ -83,4 +91,6 @@ def run(out):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('out', type=Path)
-    run(parser.parse_args().out)
+    parser.add_argument('--split-dir', type=Path)
+    args = parser.parse_args()
+    run(args.out, args.split_dir)
