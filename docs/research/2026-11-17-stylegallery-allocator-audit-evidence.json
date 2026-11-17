@@ -1,0 +1,167 @@
+{
+  "scope": "Persisted allocator records and source audit; no GPU re-execution",
+  "allocator_results_sha256": "636b476317220cc140763fe8019c5940f1d1c619737a35892e6e53f6f19104e3",
+  "record_conditions_recomputed": true,
+  "reserved_released": 1715470336,
+  "allocated_unchanged": true,
+  "full_image_pair_verified": true,
+  "auditor_sha256": "27835ccf5ac62588f5362d7778ea665b9a9ba4f57873761c57531d86bcc712d1",
+  "product_integrated": false,
+  "native512.png": {
+    "exact": true,
+    "maximum_difference": 0,
+    "mean_difference": 0.0
+  },
+  "metric256.png": {
+    "exact": true,
+    "maximum_difference": 0,
+    "mean_difference": 0.0
+  },
+  "full_image_pair_passed": true,
+  "full_image_results_sha256": [
+    "919bb02f8f61b0618edf3c3c7a8a5dc8e824c664fc14763875986bbd97a65364",
+    "92cfdbfea188c0715f899f994d82e8e0cb37baa6927caf07cad2aa9463e0c9f5"
+  ],
+  "image_statuses": [
+    {
+      "index": 22927,
+      "stage": "complete",
+      "finished": true,
+      "activation_checkpoint": false,
+      "strict_deterministic": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "initial_resources": {
+        "ram_available": 889098240,
+        "cuda_free_total": [
+          7440695296,
+          8585216000
+        ]
+      },
+      "elapsed_seconds": 191.5839233000006,
+      "components": {
+        "text_encoder": {
+          "state_tensors_verified": 196,
+          "renamed_checkpoint_keys": 0,
+          "parameters": 123060480,
+          "initial_values_exact": true
+        },
+        "unet": {
+          "state_tensors_verified": 686,
+          "renamed_checkpoint_keys": 0,
+          "parameters": 859520964,
+          "initial_values_exact": true
+        },
+        "vae": {
+          "state_tensors_verified": 248,
+          "renamed_checkpoint_keys": 16,
+          "parameters": 83653863,
+          "initial_values_exact": true
+        }
+      },
+      "load_seconds": 12.301427700003842,
+      "cluster_seconds": 87.80900209999527,
+      "matched_regions": 3,
+      "content_regions": 3,
+      "cluster_peak_cuda_allocated_bytes": 6920510976,
+      "init_cache_release": {
+        "before": {
+          "allocated": 2210834944,
+          "reserved": 7488929792,
+          "cuda_free_total": [
+            0,
+            8585216000
+          ],
+          "ram_available": 3022606336
+        },
+        "after": {
+          "allocated": 2210834944,
+          "reserved": 4406116352,
+          "cuda_free_total": [
+            2845835264,
+            8585216000
+          ],
+          "ram_available": 3068317696
+        },
+        "state_sha256": "77091decc603666d5feb4a2fdf346ca58a34dae67095e015acc2ce291d2ca66d",
+        "state_exact": true
+      },
+      "optimization_seconds": 91.38994149999053,
+      "native_sha256": "3149cf7bbd90c8d5ec93830774ce26ed4b83784c58341dd65329572fd14e2e05",
+      "metric_sha256": "bae5bd7e26add5e7a7c1f97d2284be23aa8e5e9f6fdb3566dd97f24c014ca61e",
+      "peak_cuda_allocated_bytes": 4336970752,
+      "model_training": false,
+      "latent_optimization": true
+    },
+    {
+      "index": 22927,
+      "stage": "complete",
+      "finished": true,
+      "activation_checkpoint": true,
+      "strict_deterministic": true,
+      "warn_only": false,
+      "cublas_workspace_config": ":4096:8",
+      "initial_resources": {
+        "ram_available": 1848225792,
+        "cuda_free_total": [
+          7440695296,
+          8585216000
+        ]
+      },
+      "elapsed_seconds": 207.25598960000207,
+      "components": {
+        "text_encoder": {
+          "state_tensors_verified": 196,
+          "renamed_checkpoint_keys": 0,
+          "parameters": 123060480,
+          "initial_values_exact": true
+        },
+        "unet": {
+          "state_tensors_verified": 686,
+          "renamed_checkpoint_keys": 0,
+          "parameters": 859520964,
+          "initial_values_exact": true
+        },
+        "vae": {
+          "state_tensors_verified": 248,
+          "renamed_checkpoint_keys": 16,
+          "parameters": 83653863,
+          "initial_values_exact": true
+        }
+      },
+      "load_seconds": 8.72783449999406,
+      "cluster_seconds": 92.21746470000653,
+      "matched_regions": 3,
+      "content_regions": 3,
+      "cluster_peak_cuda_allocated_bytes": 6920829952,
+      "init_cache_release": {
+        "before": {
+          "allocated": 2205452800,
+          "reserved": 7493124096,
+          "cuda_free_total": [
+            0,
+            8585216000
+          ],
+          "ram_available": 2874408960
+        },
+        "after": {
+          "allocated": 2205452800,
+          "reserved": 4265607168,
+          "cuda_free_total": [
+            2986344448,
+            8585216000
+          ],
+          "ram_available": 3054411776
+        },
+        "state_sha256": "77091decc603666d5feb4a2fdf346ca58a34dae67095e015acc2ce291d2ca66d",
+        "state_exact": true
+      },
+      "optimization_seconds": 106.23412670000107,
+      "native_sha256": "3149cf7bbd90c8d5ec93830774ce26ed4b83784c58341dd65329572fd14e2e05",
+      "metric_sha256": "bae5bd7e26add5e7a7c1f97d2284be23aa8e5e9f6fdb3566dd97f24c014ca61e",
+      "peak_cuda_allocated_bytes": 4336708608,
+      "model_training": false,
+      "latent_optimization": true
+    }
+  ]
+}

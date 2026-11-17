@@ -1,0 +1,165 @@
+{
+  "scope": "FP32-to-FP16 partial preparation/allocator probe; no candidate output",
+  "snapshots": [
+    {
+      "stage": "loaded_fp32",
+      "seconds": 7.340045200005989,
+      "allocated": 4279489024,
+      "reserved": 4315938816,
+      "cuda_free_total": [
+        3112173568,
+        8585216000
+      ],
+      "ram_available": 3520516096
+    },
+    {
+      "stage": "partial_fp32_preparation_complete",
+      "seconds": 8.836523300007684,
+      "allocated": 4313174528,
+      "reserved": 5597298688,
+      "cuda_free_total": [
+        1048502272,
+        8585216000
+      ],
+      "ram_available": 3052703744
+    },
+    {
+      "stage": "converted_fp16",
+      "seconds": 9.015305600012653,
+      "allocated": 2191231488,
+      "reserved": 5641338880,
+      "cuda_free_total": [
+        996020224,
+        8585216000
+      ],
+      "ram_available": 3039109120
+    },
+    {
+      "stage": "untrimmed_A_before",
+      "seconds": 11.903750300014508,
+      "allocated": 2257803264,
+      "reserved": 5641338880,
+      "cuda_free_total": [
+        980881408,
+        8585216000
+      ],
+      "ram_available": 2124083200
+    },
+    {
+      "stage": "untrimmed_A_after",
+      "seconds": 12.574141200006125,
+      "allocated": 2236913664,
+      "reserved": 5689573376,
+      "cuda_free_total": [
+        911302656,
+        8585216000
+      ],
+      "ram_available": 2335666176
+    },
+    {
+      "stage": "untrimmed_B_before",
+      "seconds": 12.796365800008061,
+      "allocated": 2290849792,
+      "reserved": 5689573376,
+      "cuda_free_total": [
+        929161216,
+        8585216000
+      ],
+      "ram_available": 2479525888
+    },
+    {
+      "stage": "untrimmed_B_after",
+      "seconds": 13.236603100012871,
+      "allocated": 2236913664,
+      "reserved": 5689573376,
+      "cuda_free_total": [
+        912908288,
+        8585216000
+      ],
+      "ram_available": 2403729408
+    },
+    {
+      "stage": "before_cache_release",
+      "seconds": 13.23770970001351,
+      "allocated": 2236913664,
+      "reserved": 5689573376,
+      "cuda_free_total": [
+        912613376,
+        8585216000
+      ],
+      "ram_available": 2403540992
+    },
+    {
+      "stage": "after_cache_release",
+      "seconds": 13.551944700011518,
+      "allocated": 2236913664,
+      "reserved": 3974103040,
+      "cuda_free_total": [
+        3370123264,
+        8585216000
+      ],
+      "ram_available": 2263040000
+    },
+    {
+      "stage": "trimmed_C_before",
+      "seconds": 13.768979800006491,
+      "allocated": 2291357696,
+      "reserved": 3974103040,
+      "cuda_free_total": [
+        3370123264,
+        8585216000
+      ],
+      "ram_available": 2223951872
+    },
+    {
+      "stage": "trimmed_C_after",
+      "seconds": 14.222294800012605,
+      "allocated": 2236913664,
+      "reserved": 4028628992,
+      "cuda_free_total": [
+        3315597312,
+        8585216000
+      ],
+      "ram_available": 2175967232
+    }
+  ],
+  "trials": [
+    {
+      "name": "untrimmed_A",
+      "loss": 3.990152359008789,
+      "seconds": 0.6679383000009693,
+      "peak_allocated": 3424195584,
+      "gradient_sha256": "6ac113e2222fdef9e657490b7e19ae9a1b937e2fcbe8c2967a2095004f856b0a"
+    },
+    {
+      "name": "untrimmed_B",
+      "loss": 3.990152359008789,
+      "seconds": 0.4373372999980347,
+      "peak_allocated": 3458929664,
+      "gradient_sha256": "6ac113e2222fdef9e657490b7e19ae9a1b937e2fcbe8c2967a2095004f856b0a"
+    },
+    {
+      "name": "trimmed_C",
+      "loss": 3.990152359008789,
+      "seconds": 0.45096830000693444,
+      "peak_allocated": 3458536448,
+      "gradient_sha256": "6ac113e2222fdef9e657490b7e19ae9a1b937e2fcbe8c2967a2095004f856b0a"
+    }
+  ],
+  "finished": true,
+  "cache_sha256": [
+    "b229ddeb8aabf1421dba8fa7d0e16ca65b09386226452bdf182ad45c4de77ff4",
+    "7ad8f1e3c78d9b7984933b6521c54945a0dea89d2a5847f9569b0c237513bd4a"
+  ],
+  "loss_exact": true,
+  "gradient_exact": true,
+  "state_unchanged": true,
+  "reserved_released": 1715470336,
+  "allocated_unchanged": true,
+  "source_sha256": {
+    "probe_stylegallery_allocator.py": "553eec77c4580bea4f7d233b3e987e7535c71a5657d0a1a1c95b5032e1cd3094",
+    "stylegallery-allocator-protocol.md": "a087b20037addef724de8f6d10710d3affe2eb7546ffdba7897ba940276e3a26"
+  },
+  "product_integrated": false,
+  "supports_full_trial": true
+}

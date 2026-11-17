@@ -66,6 +66,22 @@ def child(position,out):
         tokenizer=CLIPTokenizer.from_pretrained(str(modeldir/'tokenizer'),local_files_only=True)
         processor=CLIPImageProcessor.from_pretrained(str(modeldir/'feature_extractor'),local_files_only=True)
         pipe=pipeline.StyleGallery(vae=vae,text_encoder=text,tokenizer=tokenizer,unet=unet,scheduler=scheduler,safety_checker=None,feature_extractor=processor,requires_safety_checker=False)
+        if config.get('trim_after_init',False):
+            import gc
+            original_init=pipe.init
+            def identity():
+                h=hashlib.sha256()
+                for prefix,module in [('unet',pipe.unet),('vae',pipe.vae),('text',pipe.text_encoder)]:
+                    for key,value in module.state_dict().items():h.update((prefix+key).encode());h.update(value.detach().cpu().numpy().tobytes())
+                return h.hexdigest()
+            def trimmed_init(enable_gradient_checkpoint):
+                original_init(enable_gradient_checkpoint);before_hash=identity();torch.cuda.synchronize()
+                before=dict(allocated=torch.cuda.memory_allocated(),reserved=torch.cuda.memory_reserved(),cuda_free_total=list(torch.cuda.mem_get_info()),ram_available=psutil.virtual_memory().available)
+                gc.collect();torch.cuda.empty_cache();torch.cuda.synchronize()
+                after=dict(allocated=torch.cuda.memory_allocated(),reserved=torch.cuda.memory_reserved(),cuda_free_total=list(torch.cuda.mem_get_info()),ram_available=psutil.virtual_memory().available)
+                assert before_hash==identity() and after['allocated']<=before['allocated']
+                status['init_cache_release']=dict(before=before,after=after,state_sha256=before_hash,state_exact=True);stage('style_transfer_after_init_trim')
+            pipe.init=trimmed_init
         pipe.extractor=pipe.unet;torch.manual_seed(42);torch.cuda.synchronize();status.update(components=states,load_seconds=time.perf_counter()-start)
         content=str(out/row['inputs']['content']['path']);reference=str(out/row['inputs']['reference']['path'])
         for e in row['inputs'].values():assert digest(out/e['path'])==e['sha256']
@@ -94,12 +110,21 @@ def child(position,out):
         stage('failed');write(folder/'failure.json',status);(folder/'traceback.txt').write_text(traceback.format_exc(),encoding='utf-8');raise
 
 
-def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministic=False,controlled=False,controlled_baseline=None):
+def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministic=False,controlled=False,controlled_baseline=None,trim=False,validated_proof=None):
+    if trim:assert (controlled or validated_proof) and deterministic and not resume
     if controlled:assert deterministic and not bridge and not resume and bool(controlled_baseline)==checkpoint
-    if checkpoint and not bridge and not controlled:assert resume and proof,'Checkpoint continuation requires an exact full-image bridge and preserved prior results'
+    if checkpoint and not bridge and not controlled and not validated_proof:assert resume and proof,'Checkpoint continuation requires an exact full-image bridge and preserved prior results'
     import numpy as np
     from PIL import Image
     registry=load(ROOT/'docs/research/2026-11-17-stylegallery-assets.json');prep=load(ROOT/'docs/research/2026-11-17-stylegallery-preparation-evidence.json')
+    if validated_proof:
+        import ast
+        assert checkpoint and deterministic and trim and not controlled and not bridge and not resume and Path(validated_proof).name==validated_proof
+        validated=load(BASE/validated_proof/'results.json');assert validated['finished'] and validated['controlled_bridge']['passed'] and validated['strict_deterministic'] and validated['trim_after_init'] and validated['activation_checkpoint']
+        audited=load(ROOT/'docs/research/2026-11-17-stylegallery-allocator-audit-evidence.json');assert audited['full_image_pair_passed'] and audited['full_image_results_sha256'][1]==digest(BASE/validated_proof/'results.json') and digest(Path(__file__).with_name('audit_stylegallery_allocator.py'))==audited['auditor_sha256']
+        def computational_ast(path):
+            tree=ast.parse(Path(path).read_text(encoding='utf-8'));return [ast.dump(n,include_attributes=False) for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in ['child','checkpoint_key_map']]
+        assert computational_ast(Path(__file__))==computational_ast(BASE/validated_proof/'frozen-source/screen_stylegallery.py')
     assert prep['all_model_files_verified'] and prep['imports_passed'] and digest(ROOT/'docs/research/2026-11-17-stylegallery-assets.json')==prep['asset_registry_sha256']
     for key,folder in [('source',ASSETS/'source'),('depth_source',ASSETS/'source/pretrained_models/dpv2')]:
         for e in registry[key]['files']:assert digest(folder/e['path'])==e['sha256']
@@ -116,11 +141,17 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministi
         checked=load(ROOT/'docs/research/2026-11-17-stylegallery-deterministic-evidence.json');assert checked['passed'] and checked['deterministic_algorithms'] and not checked['warn_only']
         for n,h in checked['source_sha256'].items():assert digest(Path(__file__).with_name(n))==h
         names+=['check_stylegallery_deterministic.py','stylegallery-deterministic-protocol.md','stylegallery-deterministic-image-protocol.md']
+    if trim:
+        measured=load(ROOT/'docs/research/2026-11-17-stylegallery-allocator-evidence.json');assert measured['supports_full_trial']
+        for n,h in measured['source_sha256'].items():assert digest(Path(__file__).with_name(n))==h
+        names+=['probe_stylegallery_allocator.py','stylegallery-allocator-protocol.md','stylegallery-cache-trim-image-protocol.md']
+    if validated_proof:names+=['stylegallery-validated-screen-protocol.md']
     for n in names:(out/'frozen-source'/n).write_bytes(Path(__file__).with_name(n).read_bytes())
     report=dict(scope='First8 consumed development style0 rows; necessary-condition screen only',source_sha256={n:digest(Path(__file__).with_name(n)) for n in names},preparation_sha256=digest(ROOT/'docs/research/2026-11-17-stylegallery-preparation-evidence.json'),rows=[],completed=[],finished=False,product_integrated=False,training=False)
-    report.update(activation_checkpoint=checkpoint,bridge_only=bridge,expected_count=len(rows),strict_deterministic=deterministic,controlled_single_case=controlled)
+    report.update(activation_checkpoint=checkpoint,bridge_only=bridge,expected_count=len(rows),strict_deterministic=deterministic,controlled_single_case=controlled,trim_after_init=trim)
     if bridge:assert checkpoint and not resume;report['scope']='First completed case execution bridge only; no new quality selection'
     if controlled:report['scope']='Controlled deterministic single-case execution only; no quality selection'
+    if validated_proof:report.update(scope='Up to8 consumed style0 development cases; validated execution necessary-condition screen only',validated_execution_results_sha256=digest(BASE/validated_proof/'results.json'),computational_child_ast_exact=True,reused_case_indices=[22927])
     def read(relative):
         e=lookup[relative];p=data/e['prepared_path'];assert p.resolve().is_relative_to(BASE.resolve()) and digest(p)==e['sha256']
         with Image.open(p) as im:return np.array(im.convert('RGB').resize((256,256),Image.Resampling.BILINEAR))
@@ -132,7 +163,13 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministi
     if controlled_baseline:
         assert controlled and deterministic and checkpoint and Path(controlled_baseline).name==controlled_baseline
         prior_control=load(BASE/controlled_baseline/'results.json');assert prior_control['finished'] and prior_control['controlled_single_case'] and prior_control['strict_deterministic'] and not prior_control['activation_checkpoint']
+        assert prior_control.get('trim_after_init',False)==trim
         assert prior_control['rows']==report['rows'];report['controlled_baseline_results_sha256']=digest(BASE/controlled_baseline/'results.json')
+    if validated_proof:
+        item=validated['completed'][0];assert item['index']==22927 and validated['rows'][0]==report['rows'][0];folder=out/'22927';folder.mkdir()
+        for name,key in [('native512.png','native_sha256'),('metric256.png','metric_sha256')]:
+            p=BASE/validated_proof/'22927'/name;assert digest(p)==item[key];(folder/name).write_bytes(p.read_bytes());assert digest(folder/name)==item[key]
+        copied=dict(item,reused_from=validated_proof);write(folder/'result.json',copied);report['completed'].append(copied)
     if resume:
         assert checkpoint and not bridge and proof and Path(resume).name==resume and Path(proof).name==proof
         bridge_record=load(BASE/proof/'results.json');assert bridge_record['finished'] and bridge_record['bridge']['native_exact'] and bridge_record['bridge']['metric_exact']
@@ -146,6 +183,13 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministi
             copied=dict(item,reused_from=resume);write(folder/'result.json',copied);report['completed'].append(copied)
         report.update(prior_results_sha256=digest(BASE/resume/'results.json'),bridge_results_sha256=digest(BASE/proof/'results.json'))
     write(out/'frozen-config.json',report);start=time.perf_counter();already={r['index'] for r in report['completed']}
+    def necessary_measurement(item):
+        index=item['index'];row=next(r for r in rows if r['index']==index);truth=read(row['gt']);baseline=load(BASE/'training-coverage-expanded-v2/results.json')['baseline'];prior=next(r for r in baseline['cases'] if r['index']==index);path=BASE/'multiref-control-v1/epoch-6'/f'{index}.png';assert digest(path)==prior['sha256']
+        with Image.open(path) as im:base_pixels=np.array(im)
+        with Image.open(out/str(index)/'metric256.png') as im:prediction=np.array(im)
+        baseline_mae=float(np.abs(base_pixels.astype(float)-truth).mean());assert baseline_mae==prior['mae'];mae=float(np.abs(prediction.astype(float)-truth).mean())
+        return dict(index=index,mae=mae,baseline_mae=baseline_mae,severe=bool(mae-baseline_mae>5 and mae>baseline_mae*1.25))
+    if validated_proof:report['partial_measurements']=[necessary_measurement(e) for e in report['completed']];write(out/'progress.json',report)
     for i,row in enumerate(rows):
         if row['index'] in already:continue
         remaining=2700-(time.perf_counter()-start)
@@ -158,6 +202,9 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministi
             except subprocess.TimeoutExpired:process.kill();process.wait();report.update(stop_reason='child_timeout',failed_index=row['index']);write(out/'progress.json',report);break
         if code!=0:report.update(stop_reason='child_failure',failed_index=row['index'],child_exit_code=code);write(out/'progress.json',report);break
         item=load(out/str(row['index'])/'result.json');assert item['finished'];report['completed'].append(item);write(out/'progress.json',report);print(json.dumps(dict(completed=len(report['completed']),index=row['index'])),flush=True)
+        if validated_proof:
+            report['partial_measurements'].append(necessary_measurement(item));write(out/'progress.json',report)
+            if sum(e['severe'] for e in report['partial_measurements'])>=3:report['stop_reason']='necessary_severe_gate';break
     baseline=load(BASE/'training-coverage-expanded-v2/results.json')['baseline'];byindex={e['index']:e for e in baseline['cases']};measurements=[]
     for item in ([] if bridge or controlled else report['completed']):
         index=item['index'];row=next(r for r in rows if r['index']==index);path=out/str(index)/'metric256.png';assert digest(path)==item['metric_sha256']
@@ -182,11 +229,13 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministi
             differences[key]=bool(np.array_equal(a,b))
         report['controlled_bridge']=dict(differences,passed=all(differences.values()),baseline_results_sha256=report['controlled_baseline_results_sha256'])
     report['full64_severe_gate_impossible']=report['severe_regressions']>=3
+    if validated_proof:
+        assert measurements==report['partial_measurements'];report.update(all8_completed=len(report['completed'])==8,fresh_predictions=sum('reused_from' not in e for e in report['completed']),reused_predictions=sum('reused_from' in e for e in report['completed']),finished=report['finished'] or report.get('stop_reason')=='necessary_severe_gate')
     for n,h in report['source_sha256'].items():assert digest(Path(__file__).with_name(n))==h
     write(out/'results.json',report);print(json.dumps(dict(finished=report['finished'],completed=len(report['completed']),severe=report['severe_regressions'],stop=report.get('stop_reason'))),flush=True)
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--run',default='stylegallery-screen-v1');parser.add_argument('--child',action='store_true');parser.add_argument('--position',type=int);parser.add_argument('--out',type=Path);parser.add_argument('--checkpoint-enabled',action='store_true');parser.add_argument('--bridge-only',action='store_true');parser.add_argument('--resume-from');parser.add_argument('--bridge-proof');parser.add_argument('--deterministic',action='store_true');parser.add_argument('--controlled-single-case',action='store_true');parser.add_argument('--controlled-baseline');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='stylegallery-screen-v1');parser.add_argument('--child',action='store_true');parser.add_argument('--position',type=int);parser.add_argument('--out',type=Path);parser.add_argument('--checkpoint-enabled',action='store_true');parser.add_argument('--bridge-only',action='store_true');parser.add_argument('--resume-from');parser.add_argument('--bridge-proof');parser.add_argument('--deterministic',action='store_true');parser.add_argument('--controlled-single-case',action='store_true');parser.add_argument('--controlled-baseline');parser.add_argument('--trim-after-init',action='store_true');parser.add_argument('--validated-execution-proof');args=parser.parse_args()
     if args.child:child(args.position,args.out)
-    else:assert args.run.startswith('stylegallery-screen-') and Path(args.run).name==args.run;parent(args.run,args.checkpoint_enabled,args.bridge_only,args.resume_from,args.bridge_proof,args.deterministic,args.controlled_single_case,args.controlled_baseline)
+    else:assert args.run.startswith('stylegallery-screen-') and Path(args.run).name==args.run;parent(args.run,args.checkpoint_enabled,args.bridge_only,args.resume_from,args.bridge_proof,args.deterministic,args.controlled_single_case,args.controlled_baseline,args.trim_after_init,args.validated_execution_proof)
