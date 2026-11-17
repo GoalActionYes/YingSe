@@ -1,0 +1,161 @@
+{
+  "scope": "Stopped2-case screen and failed exact execution bridge; incomplete quality acceptance",
+  "partial_results_sha256": "8a0f3e48a4ce7fa38b22c5752122b16af7b70e381af0c69f80629fc37261e2ee",
+  "bridge_results_sha256": "3f1106a1957f7192ce114c823031f91ebc8455b34400eb575f3f28f2bf0e4e46",
+  "measurements": [
+    {
+      "index": 22927,
+      "mae": 23.702255249023438,
+      "baseline_mae": 15.993245442708334,
+      "severe": true
+    },
+    {
+      "index": 88391,
+      "mae": 12.129135131835938,
+      "baseline_mae": 9.939224243164062,
+      "severe": false
+    }
+  ],
+  "verified_partial_pngs": 4,
+  "bridge_differences": {
+    "native512.png": {
+      "exact": false,
+      "maximum_difference": 12,
+      "mean_difference": 0.5422554016113281,
+      "different_fraction": 0.4299875895182292
+    },
+    "metric256.png": {
+      "exact": false,
+      "maximum_difference": 9,
+      "mean_difference": 0.4981231689453125,
+      "different_fraction": 0.4119771321614583
+    }
+  },
+  "prep_cache_comparisons": [
+    {
+      "role": "content",
+      "files_sha256": [
+        "eaf9aabc49c554fd86e918062c6e6fb7927942be18d058e8b5435677cf1eca91",
+        "af3b866dc5f9c58d530205dcc05aaeab3a5a61ebf66e98aca16d5fb0ada51c9e"
+      ],
+      "fields": {
+        "feature": {
+          "exact": true,
+          "shape": [
+            1,
+            4,
+            64,
+            64
+          ]
+        },
+        "unet_feature": {
+          "exact": true,
+          "shape": [
+            1,
+            640,
+            64,
+            64
+          ]
+        },
+        "mask": {
+          "exact": true,
+          "shape": [
+            64,
+            64
+          ]
+        },
+        "C15": {
+          "exact": true,
+          "shape": [
+            1,
+            4,
+            64,
+            64
+          ]
+        },
+        "depth": {
+          "exact": true,
+          "shape": [
+            256,
+            256
+          ]
+        }
+      }
+    },
+    {
+      "role": "reference",
+      "files_sha256": [
+        "67e695838c9a1aa1dd4b76fefe52390f07f3a0322a1a872891ec5c7dd8a7f47e",
+        "e74cce0a8f7796f12f6fd5814455985d732a0a70c3298ff47f0f41dd2fa3ad82"
+      ],
+      "fields": {
+        "feature": {
+          "exact": true,
+          "shape": [
+            1,
+            4,
+            64,
+            64
+          ]
+        },
+        "unet_feature": {
+          "exact": true,
+          "shape": [
+            1,
+            640,
+            64,
+            64
+          ]
+        },
+        "mask": {
+          "exact": true,
+          "shape": [
+            64,
+            64
+          ]
+        },
+        "C15": {
+          "exact": true,
+          "shape": [
+            1,
+            4,
+            64,
+            64
+          ]
+        },
+        "depth": {
+          "exact": true,
+          "shape": [
+            256,
+            256
+          ]
+        }
+      }
+    }
+  ],
+  "gradient_comparisons": {
+    "default_repeat": {
+      "loss_exact": true,
+      "gradient_exact": false,
+      "maximum_gradient_difference": 7.62939453125e-06,
+      "mean_gradient_difference": 1.2022610462736338e-06
+    },
+    "checkpoint_vs_default": {
+      "loss_exact": true,
+      "gradient_exact": false,
+      "maximum_gradient_difference": 5.9604644775390625e-06,
+      "mean_gradient_difference": 1.145901478594169e-06
+    }
+  },
+  "gradient_evidence_sha256": "61e89705d93bebd110e25e6ab3ceb9714adf0f96af5caa7c319b1dac18cc32ad",
+  "failed_case": {
+    "index": 39532,
+    "error_type": "RuntimeError",
+    "peak_cuda_allocated_bytes": 6069753856
+  },
+  "full8_complete": false,
+  "full_execution_bridge_passed": false,
+  "legacy_case_merge_allowed": false,
+  "auditor_sha256": "22bf9cc6d5642db327c8c12e84d60f182b92f5fd01b98bc174e192c807bbfd68",
+  "product_integrated": false
+}

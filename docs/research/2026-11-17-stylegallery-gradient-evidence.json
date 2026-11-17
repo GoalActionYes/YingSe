@@ -1,0 +1,51 @@
+{
+  "scope": "Full64x64 latent single-step native loss only; constructed fixed region matching, fixed scale1, no candidate output",
+  "fixed_gradient_scale": 1,
+  "prior_scale65536_nonfinite": true,
+  "trials": [
+    {
+      "label": "default_A",
+      "checkpoint_enabled": false,
+      "loss": 3.990152359008789,
+      "incremental_peak_bytes": 1158724608,
+      "seconds": 0.3981759000016609,
+      "gradient_sha256": "000808aa6cfeafca4d2edb1c73f6635fa9888bbe5175871417fcb0c3429564a4"
+    },
+    {
+      "label": "default_B",
+      "checkpoint_enabled": false,
+      "loss": 3.990152359008789,
+      "incremental_peak_bytes": 1161526272,
+      "seconds": 0.298930000004475,
+      "gradient_sha256": "e29d87a9f4f112c634e131f569c78e67959e186714c25022e0a14d9e5113a572"
+    },
+    {
+      "label": "checkpoint_C",
+      "checkpoint_enabled": true,
+      "loss": 3.990152359008789,
+      "incremental_peak_bytes": 397715456,
+      "seconds": 0.3642266999959247,
+      "gradient_sha256": "4b028812cef1a8f98ef34fcb6fe045fb8bc4d6d8f8ca4226b9f5ef4c39bf82e3"
+    }
+  ],
+  "comparisons": {
+    "default_repeat": {
+      "loss_exact": true,
+      "gradient_exact": false,
+      "maximum_gradient_difference": 7.62939453125e-06,
+      "mean_gradient_difference": 1.2022610462736338e-06
+    },
+    "checkpoint_vs_default": {
+      "loss_exact": true,
+      "gradient_exact": false,
+      "maximum_gradient_difference": 5.9604644775390625e-06,
+      "mean_gradient_difference": 1.145901478594169e-06
+    }
+  },
+  "source_sha256": {
+    "diagnose_stylegallery_gradient.py": "77800408db40262c7ea3cbc67766d767cfdcf0f4d5b95e6fa7db44be40571833",
+    "stylegallery-gradient-diagnostic-protocol.md": "2bf9f8701c08ecdd3c62b9271dc1598315764047e87d758a049cbb0458f2de83"
+  },
+  "training": false,
+  "product_integrated": false
+}

@@ -1,0 +1,106 @@
+{
+  "scope": "Synthetic16x16 latent real UNet/native attention-cache execution test only",
+  "trials": [
+    {
+      "checkpoint_enabled": false,
+      "loss": 1.4482421875,
+      "q_shapes": [
+        [
+          1,
+          8,
+          64,
+          80
+        ],
+        [
+          1,
+          8,
+          64,
+          80
+        ],
+        [
+          1,
+          8,
+          64,
+          80
+        ],
+        [
+          1,
+          8,
+          256,
+          40
+        ],
+        [
+          1,
+          8,
+          256,
+          40
+        ],
+        [
+          1,
+          8,
+          256,
+          40
+        ]
+      ],
+      "incremental_peak_bytes": 100666368,
+      "seconds": 0.42224960000021383
+    },
+    {
+      "checkpoint_enabled": true,
+      "loss": 1.4482421875,
+      "q_shapes": [
+        [
+          1,
+          8,
+          64,
+          80
+        ],
+        [
+          1,
+          8,
+          64,
+          80
+        ],
+        [
+          1,
+          8,
+          64,
+          80
+        ],
+        [
+          1,
+          8,
+          256,
+          40
+        ],
+        [
+          1,
+          8,
+          256,
+          40
+        ],
+        [
+          1,
+          8,
+          256,
+          40
+        ]
+      ],
+      "incremental_peak_bytes": 68715520,
+      "seconds": 0.266349600002286
+    }
+  ],
+  "loss_exact": true,
+  "gradient_exact": true,
+  "maximum_gradient_difference": 0.0,
+  "cache_shapes_exact": true,
+  "model_state_unchanged": true,
+  "incremental_peak_reduced": true,
+  "source_sha256": {
+    "check_stylegallery_checkpoint.py": "eff822f060344529cec5ba7550cc6418a468e0ab6ccb9c1f90a8a65c0323c7f8",
+    "stylegallery-checkpoint-protocol.md": "e1736523463d3be20aa18a7d028fc0e87b53d1ded4aa1be9ac3c97454cd39ad4"
+  },
+  "training": false,
+  "product_integrated": false,
+  "passed": true
+}
