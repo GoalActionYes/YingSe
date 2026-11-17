@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-18",
+  "source_commit": "dcd0ea6b335e5824e1167902c50095137ffc2fc6",
+  "scope": "stable source handoff only; not adaptive model or independent quality acceptance",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "Pillow": "12.0.0",
+    "imageio_ffmpeg": "0.6.0",
+    "research_paths_present": false
+  },
+  "dependencies": [
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "filename": "numpy-2.2.6-cp312-cp312-win_amd64.whl",
+      "size": 12614190,
+      "sha256": "c1f9540be57940698ed329904db803cf7a402f3fc200bfe599334c9bd84a40b2"
+    },
+    {
+      "name": "Pillow",
+      "version": "12.0.0",
+      "filename": "pillow-12.0.0-cp312-cp312-win_amd64.whl",
+      "size": 7001107,
+      "sha256": "9fe611163f6303d1619bbcb653540a4d60f9e55e622d60a3108be0d5b441017a"
+    },
+    {
+      "name": "imageio-ffmpeg",
+      "version": "0.6.0",
+      "filename": "imageio_ffmpeg-0.6.0-py3-none-win_amd64.whl",
+      "size": 31246824,
+      "sha256": "02fa47c83703c37df6bfe4896aab339013f62bf02c5ebf2dce6da56af04ffc0a"
+    }
+  ],
+  "archive": {
+    "tracked_entries": 55,
+    "archive_sha256": "51b299f09c797d73997c14ec25dbd8f517088b13eab322486becb58ec8f2c12f",
+    "synthetic_demo_sha256": {
+      "reference_color_app/demo/source.png": "ea207d3efd2effff9a9bb2b2fd06fcaa6d64b707bc5ec85adcdc637c743fc6bb",
+      "reference_color_app/demo/reference.png": "d4059fdfa51be5d5b5a971827f7a3dc419bec1101b3192edf9409491102ab367",
+      "reference_color_app/demo/source-motion.mp4": "ed5095191a8c5f142e59f8fc5807ba3a35c8dd0eff05b45c57f65b7bf03ca759"
+    },
+    "private_media_models_runtime_present": false
+  },
+  "demo": {
+    "cases": [
+      {
+        "kind": "image",
+        "preview": true,
+        "export_status": "done",
+        "bytes": 4167,
+        "sha256": "272dff41d01b419234a8e5c403231b31ec26c21d53c1bcf35ff61fbeccd161b7"
+      },
+      {
+        "kind": "video",
+        "preview": true,
+        "export_status": "done",
+        "bytes": 315203,
+        "sha256": "2d3d5fc3fbe47fb9fe81bfec75da1aef61d1145ee6c62ea83eb50c45a34c391f"
+      }
+    ],
+    "source_commit": "dcd0ea6b335e5824e1167902c50095137ffc2fc6",
+    "health": {
+      "app": "reference-color-app",
+      "version": 1,
+      "active_exports": 0
+    },
+    "passed": true,
+    "exit_code": 0
+  },
+  "portable_checks": {
+    "initial": {
+      "tests": 77,
+      "errors": 1,
+      "exit_code": 1,
+      "error_test": "test_upload_limits_and_true_decode",
+      "error": "WinError 10053 before reading expected 413",
+      "seconds": 45.213
+    },
+    "targeted_repeat": {
+      "tests": 8,
+      "errors": 0,
+      "exit_code": 0
+    },
+    "serial_repeat": {
+      "tests": 77,
+      "errors": 0,
+      "exit_code": 0,
+      "seconds": 40.123
+    },
+    "intermittent_issue_fixed": false
+  },
+  "logs_sha256": {
+    "portable-tests.log": "b6c9183c5b20460824031b77223f5bb48006147e5e6a19e181c8c7dd947d98b8",
+    "upload-repeat.log": "3ff2592f25734719dc0235e0521fc0ea4378389ae2d18101c03e7145d4c3c807",
+    "portable-tests-repeat.log": "ae0f65ecd9b5dbe1ceb3bf54b5eef2ef9acb8d63fc1af4dd68f293b2acf5e70c",
+    "verify_demo.py": "75945258421315a9f2efcbce6c09e7f1b6928ff6c80713b31d77c1dfaaf3b4d7"
+  },
+  "quality_goal_complete": false
+}

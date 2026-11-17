@@ -1,8 +1,10 @@
-# 当前可交接状态
+# 稳定版1.3交接快照（2026-11-07）
 
-最新版本为 `feature/adjustment-history-20261107`（1.3），包含 1.2 交互预览与曲线取色，以及手动微调撤销／重做。下述匹配算法基础不变。[本轮评估](research/2026-11-07-usability-review.md)
+本文保留稳定版1.3的功能与当时路线状态，不是整个项目的最新进展。2026-11-18用户选择先整理现有软件供体验、演示和课程交付；当前入口见[体验与汇报](../00-从这里开始/0-体验与课程交付.md)，完整研究状态见[进度入口](RESEARCH_PROGRESS.md)。后续空间自适应研究版已独立运行，但没有替换稳定版，完整画质目标仍未完成。
 
-当前用户控件版本：`feature/manual-controls-20261106`，新增基础／HSL／RGB 曲线和一致导出；匹配算法基线仍为 `feature/aligned-reference-20261105`，提交 `cb79e4a`。[控件指南](MANUAL_COLOR_CONTROLS.md)。人物与背景分区研发已按用户决定暂停。
+当时稳定版本为 `feature/adjustment-history-20261107`（1.3），包含 1.2 交互预览与曲线取色，以及手动微调撤销／重做。下述匹配算法基础不变。[当时评估](research/2026-11-07-usability-review.md)
+
+当时的用户控件版本：`feature/manual-controls-20261106`，新增基础／HSL／RGB 曲线和一致导出；匹配算法基线仍为 `feature/aligned-reference-20261105`，提交 `cb79e4a`。[控件指南](MANUAL_COLOR_CONTROLS.md)。当时人物与背景分区研发暂停，后续路线及结果以进度入口为准。
 
 ## 做到了什么
 
