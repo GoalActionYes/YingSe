@@ -1,0 +1,75 @@
+{
+  "scope": "First real output and loading/encoding engineering verification; full8 results pending",
+  "source_sha256": {
+    "screen_stylegallery.py": "8d0cbd35b7124beed0ba8a252c912d7160b6acf5db83e17cde15a6e9d2626b3f",
+    "stylegallery-screen-protocol.md": "0d9617d4c8cb445bbd58a1ad50b20628ef2bfdaa913bdf527e5fa800ab4e7cde",
+    "stylegallery-runtime-adaptation.md": "86ff28d408373ead0a1dfbbda54bd92603e49575e7f41ec885d337fbcbbacfd2",
+    "test_stylegallery_loading.py": "5c0fa2e4fee46a8d086f05077b5ed2cef1c7144b1c5327c53a27a059ff6c6272"
+  },
+  "frozen_config_sha256": "76c278cf4969f3481e27757a13b9f50b1f68ecf50df18e43bf919efa07c286d7",
+  "first_case": {
+    "index": 22927,
+    "stage": "complete",
+    "finished": true,
+    "initial_resources": {
+      "ram_available": 3395325952,
+      "cuda_free_total": [
+        7440695296,
+        8585216000
+      ]
+    },
+    "elapsed_seconds": 294.77453080000123,
+    "components": {
+      "text_encoder": {
+        "state_tensors_verified": 196,
+        "renamed_checkpoint_keys": 0,
+        "parameters": 123060480,
+        "initial_values_exact": true
+      },
+      "unet": {
+        "state_tensors_verified": 686,
+        "renamed_checkpoint_keys": 0,
+        "parameters": 859520964,
+        "initial_values_exact": true
+      },
+      "vae": {
+        "state_tensors_verified": 248,
+        "renamed_checkpoint_keys": 16,
+        "parameters": 83653863,
+        "initial_values_exact": true
+      }
+    },
+    "load_seconds": 7.904829200000677,
+    "cluster_seconds": 43.244698399998015,
+    "matched_regions": 3,
+    "content_regions": 3,
+    "optimization_seconds": 243.53940960000182,
+    "native_sha256": "cff61b2499cf4f92b384eb6ba63b07bf52b30e15f3f509a5b5ad3a4edf383c5b",
+    "metric_sha256": "049347ac1c206c16b0e8406b718f440651672bf40b7447270471b95fafa24391",
+    "peak_cuda_allocated_bytes": 6070384640,
+    "model_training": false,
+    "latent_optimization": true
+  },
+  "failures_preserved": [
+    {
+      "run": "stylegallery-screen-v1",
+      "error_type": "AssertionError",
+      "stage": "failed",
+      "child_exit_code": 1,
+      "prediction_count": 0
+    },
+    {
+      "run": "stylegallery-screen-v2",
+      "error_type": "UnicodeEncodeError",
+      "stage": "failed",
+      "child_exit_code": 1,
+      "prediction_count": 0
+    }
+  ],
+  "metric_resize_exact": true,
+  "real_vae_key_test_passed": true,
+  "utf8_warning_subprocess_check_passed": true,
+  "full8_finished": false,
+  "model_training": false,
+  "product_integrated": false
+}
