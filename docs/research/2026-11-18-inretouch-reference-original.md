@@ -11,4 +11,6 @@
 
 二次映射在两张参考自身的交叉拟合误差仍有 13.863 和 9.822 码值。该拟合的跨场景差异可能同时反映映射表达不足和不同场景的颜色覆盖。本轮没有把两种原因分离，也没有核实作者实际使用的局部操作。结果判断范围限两张参考、两张目标和固定全局拟合。素材来源见 [INRetouch 作者样例](https://github.com/omarAlezaby/InRetouch/tree/cbf0db19487222c21d63116c320357764438360d/example_data)。
 
+后续核查未发现简单整数平移，但人像参考和鸭子目标的前后图梯度一致性低于预设门槛。因此不能把全部交叉拟合误差归因于颜色映射，既有数值作为描述性证据保留。见 [布局核查](2026-11-18-inretouch-registration.md)。
+
 生成阶段先保存四张图再解码目标作者答案。独立用增广最小二乘复拟合两对参考，复核四张 PNG 逐像素一致、四个测量区域的误差及门槛一致。保留额外参考原图的离线诊断边界，未更新软件模型。复现时从仓库根目录设置 `$env:PYTHONPATH = (Get-Location).Path`，运行 `python experimental/adaptive-reference-20261113/probe_inretouch_reference_original.py <上一轮示例目录> <新输出目录>`。

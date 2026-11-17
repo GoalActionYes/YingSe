@@ -17,4 +17,6 @@
 
 两对参考都带原图，下一步可以在离线测量中控制是否提供参考原图，判断未能识别同款是否与缺失的原始颜色信息有关。参考原图只作为额外输入诊断，正式目标仍是两图推理。样本或产品验收范围不扩大。
 
+后续布局核查发现，人像参考和鸭子目标的前后图梯度一致性未达到预设门槛。两组换参考输出差异仍可用于说明软件响应，但与作者目标的逐像素误差需要按描述性证据解读。见 [布局核查](2026-11-18-inretouch-registration.md)。
+
 复现时从仓库根目录设置 `$env:PYTHONPATH = (Get-Location).Path`，运行 `python experimental/adaptive-reference-20261113/probe_inretouch_public.py <示例目录> <固定树元数据> <新输出目录>`。本机示例位于 `outputs/adaptive-reference-20261113/inretouch-public-pilot-v1`。
