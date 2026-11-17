@@ -10,7 +10,7 @@ import time
 import traceback
 from pathlib import Path
 
-from ictone_flux_stage import ROOT, ASSETS, stage_real_flux
+from ictone_flux_stage import ROOT, ASSETS, stage_real_flux, reload_staged_flux
 
 
 def digest(path):
@@ -24,6 +24,8 @@ def digest(path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--run', required=True)
+    p.add_argument('--index',type=int,default=0,help='Ordinal within the fixed first eight development rows')
+    p.add_argument('--reuse-stage',help='Previously audited first-case directory; never rewrite its groups')
     args = p.parse_args()
     assert Path(args.run).name == args.run and args.run not in ('.', '..')
     out = ROOT / 'outputs/adaptive-reference-20261113/tst100k' / args.run
@@ -58,8 +60,9 @@ def main():
         assert digest(data/'cohort.json') == 'ed423c03750504c0e478bbebb30e05ce6bfc5228fec940dcbae073827a3fb077'
         assert digest(data/'srgb-v1/manifest.json') == 'da0b2162eea340fb75c2a1cfb62066658865a72873bbf951a01202add692603f'
         rows = json.loads((data/'cohort.json').read_text())['groups']['validation']
-        row = rows[0]
-        assert row['index'] == 22927
+        assert 0<=args.index<8
+        row = rows[args.index]
+        status['index']=row['index']
         lookup = {x['original_path']:x for x in json.loads((data/'srgb-v1/manifest.json').read_text())['files']}
         inputs = {}
         for role in ['content','reference']:
@@ -72,8 +75,16 @@ def main():
             inputs[role] = pixels.resize((512,512), Image.Resampling.LANCZOS)
         status['inputs'] = {role:dict(sha256=digest(out/(role+'256.png'))) for role in inputs}
         stage('staging_real_fill_lora')
-        model, staged = stage_real_flux(out)
-        status['staging_seconds'] = staged['wall_seconds']
+        if args.reuse_stage:
+            assert Path(args.reuse_stage).name==args.reuse_stage
+            source=base/args.reuse_stage
+            load_start=time.monotonic()
+            model,staged=reload_staged_flux(source)
+            (out/'stage.json').write_bytes((source/'stage.json').read_bytes())
+            status.update(reused_stage_from=args.reuse_stage,staging_seconds=0.,reload_seconds=time.monotonic()-load_start)
+        else:
+            model, staged = stage_real_flux(out)
+            status['staging_seconds'] = staged['wall_seconds']
         components = ASSETS/'models/components'
         stage('loading_clip_and_vae')
         clip = CLIPTextModel.from_pretrained(components/'text_encoder', torch_dtype=torch.bfloat16,

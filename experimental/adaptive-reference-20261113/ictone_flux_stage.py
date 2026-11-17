@@ -43,7 +43,7 @@ def source_group(name):
     return 'root'
 
 
-def build_empty_flux_groups(metadata, config, directory):
+def build_empty_flux_groups(metadata, config, directory, existing_manifest=None):
     import torch
     from accelerate import init_empty_weights
     from diffusers import FluxTransformer2DModel
@@ -53,7 +53,14 @@ def build_empty_flux_groups(metadata, config, directory):
     from ictone_gguf_runtime import release_disk_group_storage
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
-    assert not list(directory.iterdir()), 'new empty staging directory required'
+    if existing_manifest is None:
+        assert not list(directory.iterdir()), 'new empty staging directory required'
+    else:
+        assert existing_manifest['finished'] and existing_manifest['parameter_count']==1846
+        expected_files = {row['file']:row for row in existing_manifest['groups']}
+        assert len(expected_files)==58 and set(expected_files)=={p.name for p in directory.iterdir()}
+        for name,row in expected_files.items():
+            assert Path(name).name==name and (directory/name).stat().st_size==row['bytes']
     converted = convert_flux_transformer_checkpoint_to_diffusers(meta_checkpoint(metadata))
     with init_empty_weights():
         model = FluxTransformer2DModel.from_config(config).eval().to(dtype=torch.bfloat16)
@@ -92,8 +99,32 @@ def build_empty_flux_groups(metadata, config, directory):
         inputs = [row['name'] for row in rows if (not row['name'].startswith(('double_blocks.', 'single_blocks.'))
                     if prefix == 'root' else row['name'].startswith(prefix))]
         assert inputs
+        if existing_manifest is not None:
+            expected = expected_files[Path(group.safetensors_file_path).name]
+            expected_state = {row['name']:row for row in expected['state']}
+            assert set(expected_state)==set(names.values())
+            for parameter,name in names.items():
+                row = expected_state[name]
+                assert row['key']==group.tensor_to_key[parameter]
+                assert all(row[key]==value for key,value in identities[name].items())
         groups.append((group, names, inputs))
     return model, groups, identities
+
+
+def reload_staged_flux(directory):
+    """Rebuild only empty objects/hooks, preserving already-audited disk bytes."""
+    directory=Path(directory).resolve()
+    assert directory.is_relative_to((ROOT/'outputs/adaptive-reference-20261113/tst100k').resolve())
+    manifest_path=directory/'stage.json'
+    staged=json.loads(manifest_path.read_text())
+    audit=json.loads((directory/'audit.json').read_text())
+    producer=json.loads((directory/'results.json').read_text())
+    assert audit['finished'] and producer['finished'] and audit['state_parameters_verified']==1846
+    assert hashlib.sha256(manifest_path.read_bytes()).hexdigest()==audit['stage_result_sha256']
+    metadata=json.loads((ROOT/'outputs/adaptive-reference-20261113/ictone-quantized-metadata-v1/results.json').read_text())
+    config=json.loads((ASSETS/'models/components/transformer/config.json').read_text())
+    model,groups,identities=build_empty_flux_groups(metadata,config,directory/'groups',existing_manifest=staged)
+    return model,staged
 
 
 def stage_real_flux(directory):

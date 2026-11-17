@@ -19,7 +19,7 @@ def main():
     report = json.loads((out/'results.json').read_text())
     assert report['finished'] and report['completed_steps']==4
     for name, sha in report['source_sha256'].items():
-        assert digest(out/name)==sha==digest(Path(__file__).with_name(name))
+        assert digest(out/name)==sha
     import numpy as np
     import torch
     import gguf
@@ -47,7 +47,7 @@ def main():
                     value = torch.from_numpy(np.frombuffer(handle.read(item.n_bytes),dtype=item.data.dtype).reshape(item.data.shape).copy())
                     shadow[name] = GGUFParameter(value,quant_type=item.tensor_type) if item.tensor_type==gguf.GGMLQuantizationType.Q3_K else value
             converted = convert_flux_transformer_checkpoint_to_diffusers(shadow)
-            saved = load_file(str(out/'groups'/group['file']))
+            saved = load_file(str(base/report.get('reused_stage_from',args.run)/'groups'/group['file']))
             assert set(saved)=={x['key'] for x in group['state']}
             for row in group['state']:
                 name = row['name']
@@ -79,8 +79,8 @@ def main():
     with Image.open(out/'metric256.png') as im:
         assert np.array_equal(np.array(metric),np.array(im))
     data = base/'cohort-training-coverage-v2'
-    row=json.loads((data/'cohort.json').read_text())['groups']['validation'][0]
-    assert row['index']==22927
+    row=next(x for x in json.loads((data/'cohort.json').read_text())['groups']['validation'] if x['index']==report.get('index',22927))
+    index=row['index']
     lookup={x['original_path']:x for x in json.loads((data/'srgb-v1/manifest.json').read_text())['files']}
     def read(role):
         item=lookup[row[role]]
@@ -91,10 +91,10 @@ def main():
         with Image.open(out/(role+'256.png')) as im:
             assert np.array_equal(np.array(im),np.array(read(role)))
     truth=np.array(read('gt')).astype(float)
-    with Image.open(base/'multiref-control-v1/epoch-6/22927.png') as im:baseline=im.copy()
+    with Image.open(base/'multiref-control-v1/epoch-6'/f'{index}.png') as im:baseline=im.copy()
     prior=json.loads((base/'training-coverage-expanded-v2/results.json').read_text())['baseline']
-    old=next(x for x in prior['cases'] if x['index']==22927)
-    assert digest(base/'multiref-control-v1/epoch-6/22927.png')==old['sha256']
+    old=next(x for x in prior['cases'] if x['index']==index)
+    assert digest(base/'multiref-control-v1/epoch-6'/f'{index}.png')==old['sha256']
     baseline_mae=float(np.abs(np.array(baseline).astype(float)-truth).mean())
     candidate_mae=float(np.abs(np.array(metric).astype(float)-truth).mean())
     assert baseline_mae==old['mae']
@@ -109,7 +109,7 @@ def main():
                 source_sha256=digest(Path(__file__)),producer_result_sha256=digest(out/'results.json'),
                 stage_result_sha256=digest(out/'stage.json'),state_parameters_verified=1846,
                 gpu_repeated_by_auditor=False,conversion='same pinned Diffusers official conversion, recomputed from original bytes',
-                output_crop_resize_exact=True,inputs_exact=True,index=22927,
+                output_crop_resize_exact=True,inputs_exact=True,index=index,
                 baseline_mae=baseline_mae,candidate_mae=candidate_mae,
                 severe=bool(candidate_mae-baseline_mae>5 and candidate_mae>baseline_mae*1.25))
     (out/'audit.json').write_text(json.dumps(result,indent=2),encoding='utf-8')

@@ -30,6 +30,23 @@ class StageTest(unittest.TestCase):
             self.assertTrue(all(not p.is_meta and not p.requires_grad for p in model.parameters()))
             self.assertEqual(set(identities), {name for name, _ in model.named_parameters()})
 
+    def test_reuse_checks_full_group_inventory_and_key_identity(self):
+        metadata = json.loads((ROOT / 'outputs/adaptive-reference-20261113/ictone-quantized-metadata-v1/results.json').read_text())
+        config = json.loads((ROOT / '.tools/ICTone-quantized-audit/models/components/transformer/config.json').read_text())
+        source = ROOT / 'outputs/adaptive-reference-20261113/tst100k/ictone-first-v1'
+        manifest = json.loads((source/'stage.json').read_text())
+        before = {p.name:(p.stat().st_size,p.stat().st_mtime_ns) for p in (source/'groups').iterdir()}
+        model, groups, identities = build_empty_flux_groups(metadata,config,source/'groups',existing_manifest=manifest)
+        self.assertEqual(len(groups),58)
+        self.assertEqual(len(identities),1846)
+        self.assertEqual(before,{p.name:(p.stat().st_size,p.stat().st_mtime_ns) for p in (source/'groups').iterdir()})
+        self.assertTrue(all(p.untyped_storage().nbytes()==0 for p in model.parameters()))
+        import copy
+        broken=copy.deepcopy(manifest)
+        broken['groups'][0]['bytes']+=1
+        with self.assertRaises(AssertionError):
+            build_empty_flux_groups(metadata,config,source/'groups',existing_manifest=broken)
+
 
 if __name__ == '__main__':
     unittest.main()
