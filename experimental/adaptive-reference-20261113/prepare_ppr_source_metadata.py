@@ -28,4 +28,3 @@ def main():
     (BASE/'source-manifest.json').write_text(json.dumps(dict(revision=REV,files=entries),indent=2),encoding='utf-8')
     print('Verified six pinned source snapshots; no author scripts executed')
 if __name__=='__main__':main()
-
