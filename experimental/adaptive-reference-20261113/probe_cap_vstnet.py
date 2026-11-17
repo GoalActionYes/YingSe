@@ -30,7 +30,7 @@ BLOBS = {
 }
 
 
-def load_candidate(device):
+def load_candidate(device, replay=False):
     for name, expected in BLOBS.items():
         data = (ASSETS / name).read_bytes()
         assert hashlib.sha1(f'blob {len(data)}\0'.encode() + data).hexdigest() == expected
@@ -61,8 +61,7 @@ def load_candidate(device):
         labels = F.interpolate(logits, size=rgb.shape[:2], mode='bilinear', align_corners=False)[0].argmax(0)
         return features, labels.to(torch.uint8).cpu().numpy()
 
-    def apply(target_features, target_labels, reference):
-        ref_features, ref_labels = encode(reference)
+    def render(target_features, target_labels, ref_features, ref_labels):
         remap = SegReMapping(ASSETS / 'models/segmentation/ade20k_semantic_rel.npy', min_ratio=.02)
         target_seg = remap.self_remapping(target_labels)
         ref_seg = remap.self_remapping(ref_labels)
@@ -71,6 +70,12 @@ def load_candidate(device):
         result = model(mapped, forward=False)
         assert torch.isfinite(result).all()
         return (result[0].permute(1, 2, 0).clamp(0, 1) * 255).round().byte().cpu().numpy()
+
+    if replay:
+        return encode, render, manifest['revision']
+
+    def apply(target_features, target_labels, reference):
+        return render(target_features, target_labels, *encode(reference))
 
     return encode, apply, manifest['revision']
 
