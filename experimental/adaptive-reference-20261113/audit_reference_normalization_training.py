@@ -55,7 +55,8 @@ def main():
         best=int(np.argmin(means));assert best==record['best_epoch'] and means[best]==record['best_mean']
         assert digest(folder/f'epoch-{best}.pth')==record['selected_checkpoint_sha256']
         order_lists[arm]=orders;all_scores[arm]=scores_by_epoch[best]
-        records[arm]=dict(best_epoch=best,best_mean=means[best],updates=4096,png_verified=320,initial_state_exact=True,all_scores_recomputed=True)
+        records[arm]=dict(best_epoch=best,best_mean=means[best],updates=4096,png_verified=320,initial_state_exact=True,all_scores_recomputed=True,
+            epoch_summary=[{k:e[k] for k in ['epoch','updates','mean','delta_mean','loss_means','teacher_rows','order_sha256']} for e in record['epochs']])
     assert order_lists['identity_control']==order_lists['original_teacher']
     assert heads['identity_control'].keys()==heads['original_teacher'].keys()
     assert all(torch.equal(v,heads['original_teacher'][k]) for k,v in heads['identity_control'].items())
@@ -66,8 +67,13 @@ def main():
         assert gates==r['arms'][arm]['gates']
         passed=bool(arm=='original_teacher' and all(g['proceed_to_independent_evaluation'] for g in gates.values()))
         assert passed==r['arms'][arm]['full_candidate_gate'];records[arm].update(gates=gates,full_candidate_gate=passed)
+    selected_states=[torch.load(out/arm/f"epoch-{r['arms'][arm]['best_epoch']}.pth",map_location='cpu',weights_only=True) for arm in ['identity_control','original_teacher']]
+    encoder_keys=[k for k in selected_states[0] if k.startswith('img_projection.')]
+    encoder_comparison=dict(tensors=len(encoder_keys),unequal_tensors=sum(not torch.equal(selected_states[0][k],selected_states[1][k]) for k in encoder_keys),
+        maximum_absolute_difference=max(float((selected_states[0][k]-selected_states[1][k]).abs().max()) for k in encoder_keys))
     evidence=dict(scope=r['scope'],config=r['config'],results_sha256=digest(out/'results.json'),source_sha256=r['source_sha256'],auditor_sha256=digest(Path(__file__)),
         arms=records,total_prediction_pngs_verified=verified,initial_heads_identical=True,training_orders_identical=True,product_integrated=False)
+    evidence['selected_shared_encoder_comparison']=encoder_comparison
     (ROOT/'docs/research/2026-11-17-reference-normalization-training-evidence.json').write_text(json.dumps(evidence,indent=2),encoding='utf-8')
     print(json.dumps(dict(verified=verified,arms={k:{a:v[a] for a in ['best_epoch','best_mean','full_candidate_gate']} for k,v in records.items()})))
 
