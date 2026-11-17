@@ -2,6 +2,27 @@
 import types
 
 
+def load_t5_tokenizer_from_ascii_cache(source):
+    """SentencePiece on Windows cannot open this workspace's Unicode path."""
+    import hashlib
+    import shutil
+    from pathlib import Path
+    from transformers import T5TokenizerFast
+    source = Path(source)
+    names = ['spiece.model', 'tokenizer.json', 'tokenizer_config.json', 'special_tokens_map.json']
+    content_id = hashlib.sha256(b''.join((source / n).read_bytes() for n in names)).hexdigest()
+    cache = Path.home() / '.cache/YingSeResearch/ictone-tokenizer' / content_id
+    assert str(cache).isascii(), 'SentencePiece requires an ASCII cache path on this Windows build'
+    cache.mkdir(parents=True, exist_ok=True)
+    for name in names:
+        original, copy = source / name, cache / name
+        expected = hashlib.sha256(original.read_bytes()).hexdigest()
+        if not copy.exists():
+            shutil.copyfile(original, copy)
+        assert hashlib.sha256(copy.read_bytes()).hexdigest() == expected
+    return T5TokenizerFast.from_pretrained(cache, local_files_only=True), content_id
+
+
 def adapt_t5_gated_gguf(model):
     """Keep T5's gated FFN computation, selecting GGUF compute dtype for wo.
 
