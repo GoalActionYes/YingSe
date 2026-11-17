@@ -28,6 +28,8 @@ def checkpoint_key_map(model,keys):
 
 def child(position,out):
     # Import numerical/model libraries only in this child's address space.
+    config=load(out/'frozen-config.json')
+    if config.get('strict_deterministic',False):os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
     os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',TOKENIZERS_PARALLELISM='false',MPLBACKEND='Agg',MPLCONFIGDIR=str(ASSETS/'mpl-cache'))
     sys.path[:0]=[str(ASSETS/'vendor'),str(ROOT/'.tools/ModFlows-audit/vendor'),str(ASSETS/'source')]
     import torch,numpy as np,psutil
@@ -38,7 +40,8 @@ def child(position,out):
     from torchvision.utils import save_image
     import pipeline,utils
     torch.set_num_threads(4);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
-    config=load(out/'frozen-config.json');row=config['rows'][position];folder=out/str(row['index']);folder.mkdir(exist_ok=False);status=dict(index=row['index'],stage='loading',finished=False,activation_checkpoint=config.get('activation_checkpoint',False))
+    if config.get('strict_deterministic',False):torch.use_deterministic_algorithms(True,warn_only=False);torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True
+    row=config['rows'][position];folder=out/str(row['index']);folder.mkdir(exist_ok=False);status=dict(index=row['index'],stage='loading',finished=False,activation_checkpoint=config.get('activation_checkpoint',False),strict_deterministic=torch.are_deterministic_algorithms_enabled(),warn_only=torch.is_deterministic_algorithms_warn_only_enabled(),cublas_workspace_config=os.environ.get('CUBLAS_WORKSPACE_CONFIG'))
     def stage(name):
         status.update(stage=name,elapsed_seconds=time.perf_counter()-start);write(folder/'status.json',status);print(name,flush=True)
     start=time.perf_counter();status['initial_resources']=dict(ram_available=psutil.virtual_memory().available,cuda_free_total=list(torch.cuda.mem_get_info()))
@@ -91,8 +94,9 @@ def child(position,out):
         stage('failed');write(folder/'failure.json',status);(folder/'traceback.txt').write_text(traceback.format_exc(),encoding='utf-8');raise
 
 
-def parent(run,checkpoint=False,bridge=False,resume=None,proof=None):
-    if checkpoint and not bridge:assert resume and proof,'Checkpoint continuation requires an exact full-image bridge and preserved prior results'
+def parent(run,checkpoint=False,bridge=False,resume=None,proof=None,deterministic=False,controlled=False,controlled_baseline=None):
+    if controlled:assert deterministic and not bridge and not resume and bool(controlled_baseline)==checkpoint
+    if checkpoint and not bridge and not controlled:assert resume and proof,'Checkpoint continuation requires an exact full-image bridge and preserved prior results'
     import numpy as np
     from PIL import Image
     registry=load(ROOT/'docs/research/2026-11-17-stylegallery-assets.json');prep=load(ROOT/'docs/research/2026-11-17-stylegallery-preparation-evidence.json')
@@ -101,17 +105,22 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None):
         for e in registry[key]['files']:assert digest(folder/e['path'])==e['sha256']
     data=BASE/'cohort-training-coverage-v2';assert digest(data/'cohort.json')=='ed423c03750504c0e478bbebb30e05ce6bfc5228fec940dcbae073827a3fb077'
     assert digest(data/'srgb-v1/manifest.json')=='da0b2162eea340fb75c2a1cfb62066658865a72873bbf951a01202add692603f'
-    rows=load(data/'cohort.json')['groups']['validation'][:1 if bridge else 8];lookup={e['original_path']:e for e in load(data/'srgb-v1/manifest.json')['files']}
+    rows=load(data/'cohort.json')['groups']['validation'][:1 if bridge or controlled else 8];lookup={e['original_path']:e for e in load(data/'srgb-v1/manifest.json')['files']}
     out=BASE/run;out.mkdir(exist_ok=False);(out/'inputs').mkdir();(out/'frozen-source').mkdir()
     names=['screen_stylegallery.py','stylegallery-screen-protocol.md','stylegallery-runtime-adaptation.md','test_stylegallery_loading.py']
     if checkpoint:
         checked=load(ROOT/'docs/research/2026-11-17-stylegallery-checkpoint-evidence.json');assert checked['passed']
         for n,h in checked['source_sha256'].items():assert digest(Path(__file__).with_name(n))==h
         names+=['check_stylegallery_checkpoint.py','stylegallery-checkpoint-protocol.md']
+    if deterministic:
+        checked=load(ROOT/'docs/research/2026-11-17-stylegallery-deterministic-evidence.json');assert checked['passed'] and checked['deterministic_algorithms'] and not checked['warn_only']
+        for n,h in checked['source_sha256'].items():assert digest(Path(__file__).with_name(n))==h
+        names+=['check_stylegallery_deterministic.py','stylegallery-deterministic-protocol.md','stylegallery-deterministic-image-protocol.md']
     for n in names:(out/'frozen-source'/n).write_bytes(Path(__file__).with_name(n).read_bytes())
     report=dict(scope='First8 consumed development style0 rows; necessary-condition screen only',source_sha256={n:digest(Path(__file__).with_name(n)) for n in names},preparation_sha256=digest(ROOT/'docs/research/2026-11-17-stylegallery-preparation-evidence.json'),rows=[],completed=[],finished=False,product_integrated=False,training=False)
-    report.update(activation_checkpoint=checkpoint,bridge_only=bridge,expected_count=len(rows))
+    report.update(activation_checkpoint=checkpoint,bridge_only=bridge,expected_count=len(rows),strict_deterministic=deterministic,controlled_single_case=controlled)
     if bridge:assert checkpoint and not resume;report['scope']='First completed case execution bridge only; no new quality selection'
+    if controlled:report['scope']='Controlled deterministic single-case execution only; no quality selection'
     def read(relative):
         e=lookup[relative];p=data/e['prepared_path'];assert p.resolve().is_relative_to(BASE.resolve()) and digest(p)==e['sha256']
         with Image.open(p) as im:return np.array(im.convert('RGB').resize((256,256),Image.Resampling.BILINEAR))
@@ -120,6 +129,10 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None):
         for role in ['content','reference']:
             a=read(row[role]);p=out/'inputs'/f"{row['index']}-{role}.png";Image.fromarray(a).save(p);identity[role]=dict(path=str(p.relative_to(out)),sha256=digest(p),pixel_sha256=hashlib.sha256(a.tobytes()).hexdigest())
         report['rows'].append(dict(index=row['index'],inputs=identity))
+    if controlled_baseline:
+        assert controlled and deterministic and checkpoint and Path(controlled_baseline).name==controlled_baseline
+        prior_control=load(BASE/controlled_baseline/'results.json');assert prior_control['finished'] and prior_control['controlled_single_case'] and prior_control['strict_deterministic'] and not prior_control['activation_checkpoint']
+        assert prior_control['rows']==report['rows'];report['controlled_baseline_results_sha256']=digest(BASE/controlled_baseline/'results.json')
     if resume:
         assert checkpoint and not bridge and proof and Path(resume).name==resume and Path(proof).name==proof
         bridge_record=load(BASE/proof/'results.json');assert bridge_record['finished'] and bridge_record['bridge']['native_exact'] and bridge_record['bridge']['metric_exact']
@@ -146,7 +159,7 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None):
         if code!=0:report.update(stop_reason='child_failure',failed_index=row['index'],child_exit_code=code);write(out/'progress.json',report);break
         item=load(out/str(row['index'])/'result.json');assert item['finished'];report['completed'].append(item);write(out/'progress.json',report);print(json.dumps(dict(completed=len(report['completed']),index=row['index'])),flush=True)
     baseline=load(BASE/'training-coverage-expanded-v2/results.json')['baseline'];byindex={e['index']:e for e in baseline['cases']};measurements=[]
-    for item in ([] if bridge else report['completed']):
+    for item in ([] if bridge or controlled else report['completed']):
         index=item['index'];row=next(r for r in rows if r['index']==index);path=out/str(index)/'metric256.png';assert digest(path)==item['metric_sha256']
         with Image.open(path) as im:pred=np.array(im)
         truth=read(row['gt']);old=BASE/'multiref-control-v1/epoch-6'/f'{index}.png';assert digest(old)==byindex[index]['sha256']
@@ -161,12 +174,19 @@ def parent(run,checkpoint=False,bridge=False,resume=None,proof=None):
             with Image.open(prior/str(index)/filename) as im:b=np.array(im)
             comparisons[name]=bool(np.array_equal(a,b))
         report['bridge']=dict(comparisons,prior_results_sha256=digest(prior/'results.json'))
+    if controlled_baseline and report['finished']:
+        differences={};index=rows[0]['index']
+        for filename,key in [('native512.png','native_exact'),('metric256.png','metric_exact')]:
+            with Image.open(out/str(index)/filename) as im:a=np.array(im)
+            with Image.open(BASE/controlled_baseline/str(index)/filename) as im:b=np.array(im)
+            differences[key]=bool(np.array_equal(a,b))
+        report['controlled_bridge']=dict(differences,passed=all(differences.values()),baseline_results_sha256=report['controlled_baseline_results_sha256'])
     report['full64_severe_gate_impossible']=report['severe_regressions']>=3
     for n,h in report['source_sha256'].items():assert digest(Path(__file__).with_name(n))==h
     write(out/'results.json',report);print(json.dumps(dict(finished=report['finished'],completed=len(report['completed']),severe=report['severe_regressions'],stop=report.get('stop_reason'))),flush=True)
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--run',default='stylegallery-screen-v1');parser.add_argument('--child',action='store_true');parser.add_argument('--position',type=int);parser.add_argument('--out',type=Path);parser.add_argument('--checkpoint-enabled',action='store_true');parser.add_argument('--bridge-only',action='store_true');parser.add_argument('--resume-from');parser.add_argument('--bridge-proof');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--run',default='stylegallery-screen-v1');parser.add_argument('--child',action='store_true');parser.add_argument('--position',type=int);parser.add_argument('--out',type=Path);parser.add_argument('--checkpoint-enabled',action='store_true');parser.add_argument('--bridge-only',action='store_true');parser.add_argument('--resume-from');parser.add_argument('--bridge-proof');parser.add_argument('--deterministic',action='store_true');parser.add_argument('--controlled-single-case',action='store_true');parser.add_argument('--controlled-baseline');args=parser.parse_args()
     if args.child:child(args.position,args.out)
-    else:assert args.run.startswith('stylegallery-screen-') and Path(args.run).name==args.run;parent(args.run,args.checkpoint_enabled,args.bridge_only,args.resume_from,args.bridge_proof)
+    else:assert args.run.startswith('stylegallery-screen-') and Path(args.run).name==args.run;parent(args.run,args.checkpoint_enabled,args.bridge_only,args.resume_from,args.bridge_proof,args.deterministic,args.controlled_single_case,args.controlled_baseline)

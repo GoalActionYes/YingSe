@@ -1,0 +1,57 @@
+{
+  "scope": "Full64x64 latent single-step native loss only; constructed fixed region matching, fixed scale1, no candidate output",
+  "fixed_gradient_scale": 1,
+  "runtime": "2.6.0+cu124",
+  "trials": [
+    {
+      "label": "default_A",
+      "checkpoint_enabled": false,
+      "loss": 3.990152359008789,
+      "incremental_peak_bytes": 1160494080,
+      "seconds": 0.610351700001047,
+      "gradient_sha256": "6ac113e2222fdef9e657490b7e19ae9a1b937e2fcbe8c2967a2095004f856b0a"
+    },
+    {
+      "label": "default_B",
+      "checkpoint_enabled": false,
+      "loss": 3.990152359008789,
+      "incremental_peak_bytes": 1161001984,
+      "seconds": 0.4800876000081189,
+      "gradient_sha256": "6ac113e2222fdef9e657490b7e19ae9a1b937e2fcbe8c2967a2095004f856b0a"
+    },
+    {
+      "label": "checkpoint_C",
+      "checkpoint_enabled": true,
+      "loss": 3.990152359008789,
+      "incremental_peak_bytes": 397535232,
+      "seconds": 0.5221999000059441,
+      "gradient_sha256": "6ac113e2222fdef9e657490b7e19ae9a1b937e2fcbe8c2967a2095004f856b0a"
+    }
+  ],
+  "comparisons": {
+    "default_repeat": {
+      "loss_exact": true,
+      "gradient_exact": true,
+      "maximum_gradient_difference": 0.0,
+      "mean_gradient_difference": 0.0
+    },
+    "checkpoint_vs_default": {
+      "loss_exact": true,
+      "gradient_exact": true,
+      "maximum_gradient_difference": 0.0,
+      "mean_gradient_difference": 0.0
+    }
+  },
+  "source_sha256": {
+    "check_stylegallery_deterministic.py": "3a5061d8d43f875f1ef8eceb5d4bc887ea6d98ed5e21d53a819503705d715ac7",
+    "stylegallery-deterministic-protocol.md": "08e66fb396997530151b220ccf4cc251b98a1c383720439b7ba089777f279536"
+  },
+  "training": false,
+  "product_integrated": false,
+  "deterministic_algorithms": true,
+  "warn_only": false,
+  "cudnn_deterministic": true,
+  "cudnn_benchmark": false,
+  "cublas_workspace_config": ":4096:8",
+  "passed": true
+}
