@@ -22,11 +22,15 @@ MODEL_SHA256 = '2ce7b908dd8e48fa037ac337c81b4ac234b783fab4a5b4097c37a90b3fa1e44d
 TARGET = 'a0007-IMG_2480'
 
 
-def input_tensor(rgb, device):
+def input_tensor(rgb, device, zero_coordinates=False):
     h, w = rgb.shape[:2]
-    vertical, horizontal = torch.meshgrid(torch.linspace(-1, 1, h), torch.linspace(-1, 1, w), indexing='ij')
+    if zero_coordinates:
+        coordinates = torch.zeros((2, h, w))
+    else:
+        vertical, horizontal = torch.meshgrid(torch.linspace(-1, 1, h), torch.linspace(-1, 1, w), indexing='ij')
+        coordinates = torch.stack([vertical, horizontal])
     pixels = torch.from_numpy(rgb.copy()).float().permute(2, 0, 1) / 255
-    return torch.cat([torch.stack([vertical, horizontal]), pixels]).to(device)
+    return torch.cat([coordinates, pixels]).to(device)
 
 
 @torch.inference_mode()
@@ -42,7 +46,7 @@ def infer_original(after):
     return inferred, canonicalizer.provenance
 
 
-def run(source, upstream, out, inferred_original=False):
+def run(source, upstream, out, inferred_original=False, zero_coordinates=False):
     assert digest(upstream) == MODEL_SHA256
     spec = importlib.util.spec_from_file_location('inretouch_frozen_network', upstream)
     module = importlib.util.module_from_spec(spec)
@@ -76,7 +80,7 @@ def run(source, upstream, out, inferred_original=False):
                   for layer, decay in zip((model.model_p, model.model_s, model.model_m), (.1, .0001, .001))]
     schedules = [torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=1000, eta_min=.0001)
                  for optimizer in optimizers]
-    x = input_tensor(before, device)
+    x = input_tensor(before, device, zero_coordinates)
     y = input_tensor(after, device)[2:]
     ncols = before.shape[1] - 11
     windows = (before.shape[0] - 11) * ncols
@@ -106,7 +110,7 @@ def run(source, upstream, out, inferred_original=False):
     with torch.inference_mode():
         rgb8 = lambda val: (model(val[None])[0].clamp(0, 1)*255).round().to(torch.uint8).permute(1, 2, 0).cpu().numpy()
         recon = rgb8(x)
-        full = rgb8(input_tensor(target, device))
+        full = rgb8(input_tensor(target, device, zero_coordinates))
     output = finish_spatial(target, full, evidence['strength'])
     path = out / 'target.png'
     Image.fromarray(output).save(path)
@@ -126,7 +130,11 @@ def run(source, upstream, out, inferred_original=False):
     whole, neutral = metrics['whole'], metrics['neutral_proxy']
     passed = (whole['candidate'] <= min(whole['baseline'], whole['quadratic'])-.25
               and neutral['candidate'] <= min(neutral['baseline'], neutral['quadratic'])+.25)
-    protocol_name = 'inretouch-inferred-original-protocol.md' if inferred_original else 'inretouch-spatial-fit-protocol.md'
+    protocol_name = 'inretouch-spatial-fit-protocol.md'
+    if inferred_original:
+        protocol_name = 'inretouch-inferred-original-protocol.md'
+    if zero_coordinates:
+        protocol_name = 'inretouch-coordinates-protocol.md'
     protocol = Path(__file__).with_name(protocol_name)
     report = dict(network_sha256=MODEL_SHA256, script_sha256=digest(__file__), protocol_sha256=digest(protocol),
                   baseline_evidence_sha256=digest(EVIDENCE),
@@ -134,6 +142,8 @@ def run(source, upstream, out, inferred_original=False):
                   reference_reconstruction_sha256=digest(out/'reference-reconstruction.png'),
                   reference_in_sample_mae=float(np.abs(recon.astype(np.int16)-after).mean()),
                   metrics=metrics, passed=passed, losses=train_loss, elapsed_seconds=time.monotonic()-started)
+    if zero_coordinates:
+        report['zero_coordinates'] = True
     if inferred_original:
         actual_original = read('example_data/Example1_Before.jpg')
         assert actual_original.shape == before.shape
@@ -160,6 +170,8 @@ if __name__ == '__main__':
     parser.add_argument('source', type=Path)
     parser.add_argument('upstream', type=Path)
     parser.add_argument('out', type=Path)
-    parser.add_argument('--inferred-original', action='store_true')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--inferred-original', action='store_true')
+    mode.add_argument('--zero-coordinates', action='store_true')
     args = parser.parse_args()
-    run(args.source, args.upstream, args.out, args.inferred_original)
+    run(args.source, args.upstream, args.out, args.inferred_original, args.zero_coordinates)
