@@ -43,7 +43,7 @@ def tensor_samples(rows):
     return samples
 
 
-def optimize(engine, samples, orders, weight):
+def optimize(engine, samples, orders, weight, response_weight=0.):
     model, api = engine.model, engine.api
     parameters = list(model.hist_projection.parameters())
     optimizer = torch.optim.AdamW(parameters, lr=1e-5, weight_decay=1e-4)
@@ -63,14 +63,24 @@ def optimize(engine, samples, orders, weight):
             rgb_loss = F.l1_loss(pred, truth)
             agreement = F.l1_loss(pred[0], pred[1])
             loss = rgb_loss + weight * agreement
+            response = None
+            if response_weight:
+                response = F.l1_loss(pred[2] - pred[:2], truth[2] - truth[:2])
+                loss = loss + response_weight * response
             assert torch.isfinite(loss)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(parameters, 1., error_if_nonfinite=True)
             optimizer.step()
-            losses.append([float(rgb_loss.detach()), float(agreement.detach())])
+            row = [float(rgb_loss.detach()), float(agreement.detach())]
+            if response is not None:
+                row.append(float(response.detach()))
+            losses.append(row)
             assert time.monotonic() - started <= 240
-        rgb, consistency = np.asarray(losses).mean(axis=0).tolist()
-        epochs.append(dict(epoch=epoch, rgb_l1=rgb, same_result_l1=consistency, seconds=time.monotonic()-started))
+        rgb, consistency, *response_mean = np.asarray(losses).mean(axis=0).tolist()
+        summary = dict(epoch=epoch, rgb_l1=rgb, same_result_l1=consistency, seconds=time.monotonic()-started)
+        if response_mean:
+            summary['different_result_delta_l1'] = response_mean[0]
+        epochs.append(summary)
         print(weight, epochs[-1], flush=True)
     return epochs
 
