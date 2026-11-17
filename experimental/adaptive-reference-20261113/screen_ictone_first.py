@@ -26,6 +26,7 @@ def main():
     p.add_argument('--run', required=True)
     p.add_argument('--index',type=int,default=0,help='Ordinal within the fixed first eight development rows')
     p.add_argument('--reuse-stage',help='Previously audited first-case directory; never rewrite its groups')
+    p.add_argument('--input-spec',help='Strict RGB-only input JSON for a separately frozen protocol')
     args = p.parse_args()
     assert Path(args.run).name == args.run and args.run not in ('.', '..')
     out = ROOT / 'outputs/adaptive-reference-20261113/tst100k' / args.run
@@ -47,7 +48,7 @@ def main():
     status = dict(finished=False, scope='offline research; first consumed development image; not product candidate',
                   config=dict(steps=4, guidance=50., seed=666, panel=[512,512], source='author pinned README'),
                   source_sha256={name: digest(Path(__file__).with_name(name)) for name in
-                                 ['screen_ictone_first.py','ictone_flux_stage.py','ictone_gguf_runtime.py']})
+                                 ['screen_ictone_first.py','ictone_flux_stage.py','ictone_gguf_runtime.py','ictone_input_spec.py']})
     for name in status['source_sha256']:
         (out / name).write_bytes(Path(__file__).with_name(name).read_bytes())
     def stage(name):
@@ -56,21 +57,29 @@ def main():
         print(name, flush=True)
     try:
         base = ROOT / 'outputs/adaptive-reference-20261113/tst100k'
-        data = base / 'cohort-training-coverage-v2'
-        assert digest(data/'cohort.json') == 'ed423c03750504c0e478bbebb30e05ce6bfc5228fec940dcbae073827a3fb077'
-        assert digest(data/'srgb-v1/manifest.json') == 'da0b2162eea340fb75c2a1cfb62066658865a72873bbf951a01202add692603f'
-        rows = json.loads((data/'cohort.json').read_text())['groups']['validation']
-        assert 0<=args.index<8
-        row = rows[args.index]
-        status['index']=row['index']
-        lookup = {x['original_path']:x for x in json.loads((data/'srgb-v1/manifest.json').read_text())['files']}
+        if args.input_spec:
+            from ictone_input_spec import read_rgb_input_spec
+            index,canonical=read_rgb_input_spec(args.input_spec,base)
+            status.update(index=index,input_spec_sha256=digest(args.input_spec))
+        else:
+            data = base / 'cohort-training-coverage-v2'
+            assert digest(data/'cohort.json') == 'ed423c03750504c0e478bbebb30e05ce6bfc5228fec940dcbae073827a3fb077'
+            assert digest(data/'srgb-v1/manifest.json') == 'da0b2162eea340fb75c2a1cfb62066658865a72873bbf951a01202add692603f'
+            rows = json.loads((data/'cohort.json').read_text())['groups']['validation']
+            assert 0<=args.index<8
+            row = rows[args.index]
+            status['index']=row['index']
+            lookup = {x['original_path']:x for x in json.loads((data/'srgb-v1/manifest.json').read_text())['files']}
+            canonical={}
+            for role in ['content','reference']:
+                item=lookup[row[role]]
+                path=data/item['prepared_path']
+                assert path.resolve().is_relative_to(base.resolve()) and digest(path)==item['sha256']
+                with Image.open(path) as im:
+                    canonical[role]=im.convert('RGB').resize((256,256),Image.Resampling.BILINEAR)
         inputs = {}
         for role in ['content','reference']:
-            item = lookup[row[role]]
-            path = data/item['prepared_path']
-            assert path.resolve().is_relative_to(base.resolve()) and digest(path) == item['sha256']
-            with Image.open(path) as im:
-                pixels = im.convert('RGB').resize((256,256), Image.Resampling.BILINEAR)
+            pixels=canonical[role]
             pixels.save(out/(role+'256.png'))
             inputs[role] = pixels.resize((512,512), Image.Resampling.LANCZOS)
         status['inputs'] = {role:dict(sha256=digest(out/(role+'256.png'))) for role in inputs}
