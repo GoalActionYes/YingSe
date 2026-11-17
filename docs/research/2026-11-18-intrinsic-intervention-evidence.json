@@ -1,0 +1,6010 @@
+{
+  "scope": "controlled spatial lighting estimate, not transfer quality or physical truth",
+  "assets": {
+    "repository": "prs-eth/marigold-iid-lighting-v1-1",
+    "revision": "08c3930bb641abf786ba44ce92547507ebefbc16",
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 6501,
+        "sha256": "431d75f76c4089344c9d7b49951d208f4fe5774e61038f434157b779341aab30",
+        "git_blob": "f9c88e631221a9a06509ff91b469c46ae9eb812b"
+      },
+      {
+        "path": "model_index.json",
+        "bytes": 857,
+        "sha256": "f23f8eeb8fd4a6cd70cfc3d62dee4375d38dac0220e13ceff26f5f976c6f0d41",
+        "git_blob": "2288e9e5cda1032fe86a31a98eda012c05256b88"
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "bytes": 533,
+        "sha256": "506414f187b3d1e96d8b3e121bca0e35158ece49b76b34d22dd756ca6332bd76",
+        "git_blob": "ece79362969e0d8a9ded0333156ba96a0f7c2269"
+      },
+      {
+        "path": "text_encoder/config.json",
+        "bytes": 633,
+        "sha256": "6b34b0bf6cff02e2afe88145740ef5e0316caf7add8307c8ec0b021a7923cc42",
+        "git_blob": "9c60528fdcb99a7caf834426a94ea13c56cf422b"
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "bytes": 524619,
+        "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a",
+        "git_blob": "76e821f1b6f0a9709293c3b6b51ed90980b3166b"
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "bytes": 1059962,
+        "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349",
+        "git_blob": "469be27c5c010538f845f518c4f5e8574c78f7c8"
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "bytes": 855,
+        "sha256": "516314ccab66918d7cb647480ac27abd3520d14e1e5825aac99f50c851c16071",
+        "git_blob": "bd2abe19377557ff5771584921f9b65fa041fef0"
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "bytes": 460,
+        "sha256": "f118ab3a983206e4f32583448de6bd6aae4ee21869135cef1f5848a753cdaab6",
+        "git_blob": "ae0c5be6f35217e51c4c000fd325d8de0294e99c"
+      },
+      {
+        "path": "unet/config.json",
+        "bytes": 1954,
+        "sha256": "9073c69ca6dd9868a6f013501bc7ae876ff97c8e4d48c5ce393029f61d95d6b7",
+        "git_blob": "b89addfb3e7c45d8060d0c764457de7304d4f3a5"
+      },
+      {
+        "path": "vae/config.json",
+        "bytes": 711,
+        "sha256": "52dbd493c4a9bd8d46867790f61f0bc4bc441d509ada5e07ce6c1c81c3c89da5",
+        "git_blob": "87cb39197e3d376a794a6b9ae898e39d21de4773"
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.fp16.safetensors",
+        "bytes": 1732019968,
+        "sha256": "8c2e8da73793181f87c9c7a752a939d6f6834104e9854bf1c53c6b37de3594d9",
+        "git_blob": "7570f90c9a1dbc66efaa20a8cff8a31b813a411f"
+      },
+      {
+        "path": "text_encoder/model.fp16.safetensors",
+        "bytes": 680820392,
+        "sha256": "bc1827c465450322616f06dea41596eac7d493f4e95904dcb51f0fc745c4e13f",
+        "git_blob": "a55e85a6b511d04d31fbcc67af976a8b0adf8030"
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.fp16.safetensors",
+        "bytes": 167335342,
+        "sha256": "3e4c08995484ee61270175e9e7a072b66a6e4eeb5f0c266667fe1f45b90daf9a",
+        "git_blob": "9a75e3c8e7cf4387be816cdebb751fbd5fc4e1e2"
+      }
+    ],
+    "finished": true
+  },
+  "source_results_sha256": "d7dac2996d03cdf8d5a08c3e0200272772bfd8c6f7fe0d81931c84db01cd33dc",
+  "first_results_sha256": "c37d1711d5225756d3d88a356028f657e0da575e147513c697006ecbf649797c",
+  "source_sha256": {
+    "probe_intrinsic_intervention.py": "cfb9a165ad27cfe4aa86be70a89adc0095c12f0784014e94debca5cd4afc8895",
+    "intrinsic-intervention-protocol.md": "ebb45202edc2f3056acfd8e6f512e0661e91c8b790e1717368a3cb4bc5ceb09c",
+    "probe_intrinsic_prior.py": "9747c9358b784bf68b71d68f47b501015cc692bf2ba0afbb9d8771b568eeaa7c"
+  },
+  "config": {
+    "steps": 4,
+    "ensemble_size": 1,
+    "processing_resolution": 768,
+    "batch_size": 1,
+    "seed": 20261117
+  },
+  "cases": [
+    {
+      "pair": "785-3553",
+      "mask_sha256": "87a61d14c2c63ded983aa4dc3fbf626a07858db4f5884d51a2717e4d4c9d1bc6",
+      "primary_pixels": 5079,
+      "person_pixels": 13261,
+      "descriptive_only": false,
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "1d68b15027439a495aa8aaebcae295957595be635c50816278251ee33f262149",
+          "prediction": {
+            "file": "785-3553\\identity.npy",
+            "sha256": "82b5312023ba570682130ecb98e0049c7ca457361fdea53c8f46843c4a537e5b",
+            "seconds": 2.1124099000007845
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.006724039713541667,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0030670166015625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "1d68b15027439a495aa8aaebcae295957595be635c50816278251ee33f262149",
+          "prediction": {
+            "file": "785-3553\\identity_repeat.npy",
+            "sha256": "82b5312023ba570682130ecb98e0049c7ca457361fdea53c8f46843c4a537e5b",
+            "seconds": 2.109278500000073
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.006724039713541667,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0030670166015625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "32c80ddc4486d8f03f467d51ed778fc4884f5144cefc489e9b0044b4bc300d4d",
+          "prediction": {
+            "file": "785-3553\\background_green_25.npy",
+            "sha256": "0e0e5d78f2f587782bd0d9fc9548ad06bfa5d56ebb0da2d271bc97f155553f90",
+            "seconds": 2.1175752999988617
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.04388613502186831,
+                  -0.006463752321177208
+                ],
+                "norm": 0.044359586801808466,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.024627453069830402,
+                  0.00165174906759791
+                ],
+                "norm": 0.024682781846643815,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.057510501856558004,
+                  -0.0072294531004961325
+                ],
+                "norm": 0.05796311599565222,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.017800416235237877,
+                  -0.022596918214562015
+                ],
+                "norm": 0.02876587441645612,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.08786203509470311,
+                  -0.030306798960224764
+                ],
+                "norm": 0.092942128629585,
+                "floor_fraction": 0.008158365885416666,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.03714036105345459,
+                  -0.11746764707420662
+                ],
+                "norm": 0.12319924727177245,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.16262470187620182,
+                  -0.2541093280597319
+                ],
+                "norm": 0.3016924663747704,
+                "floor_fraction": 0.005482991536458333,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "5829ca4f38f7354e4f4ca51cda4837dadf48134498df0abf63ced8a301d097bc",
+          "prediction": {
+            "file": "785-3553\\background_magenta_25.npy",
+            "sha256": "221735257ce26b39f1107cfb050c601cbe93221ce51deaeb7c16885fc3deac76",
+            "seconds": 2.1139555999998265
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.014104883767874672,
+                  0.06459289323874938
+                ],
+                "norm": 0.06611497260876488,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  -0.01935963880703006,
+                  -0.010169864222488355
+                ],
+                "norm": 0.021868281895076096,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.04830451664771934,
+                  0.05670280942793555
+                ],
+                "norm": 0.07448848854414064,
+                "floor_fraction": 0.00010054545911570268,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  -0.004052585992826458,
+                  -0.06834718497129359
+                ],
+                "norm": 0.0684672268076448,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0758956115750349,
+                  0.04735766811132585
+                ],
+                "norm": 0.08945888768194617,
+                "floor_fraction": 0.004648844401041667,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.15283456148036512,
+                  0.19143242728858828
+                ],
+                "norm": 0.24495872591213433,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.13842794026714011,
+                  0.17623920423914985
+                ],
+                "norm": 0.2241038860828872,
+                "floor_fraction": 0.0030670166015625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "7615b3c230b2a67e2b69ec226160046b910855091c7515060592cd991efbbefc",
+          "prediction": {
+            "file": "785-3553\\background_green_50.npy",
+            "sha256": "978fc05d7660612dec629876dd5d29b80fb31371b2b4b25fc690fb97948d7eaf",
+            "seconds": 2.127987600000779
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.16010264561109286,
+                  0.014917388847853203
+                ],
+                "norm": 0.1607960995226851,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.12865968929939794,
+                  0.06992142614009793
+                ],
+                "norm": 0.146431968791254,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.1829485426333958,
+                  -0.002964301661894069
+                ],
+                "norm": 0.1829725562373389,
+                "floor_fraction": 0.00010054545911570268,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.18576451366997127,
+                  0.14227154690852187
+                ],
+                "norm": 0.2339864260994314,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.16171177284407107,
+                  0.00558937129311093
+                ],
+                "norm": 0.16180833893166535,
+                "floor_fraction": 0.0030924479166666665,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.12843244165118056,
+                  -0.858005039256247
+                ],
+                "norm": 0.8675641414083445,
+                "floor_fraction": 0.010050455729166666,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.3388475254291461,
+                  -0.4805484432953378
+                ],
+                "norm": 0.5880003842201366,
+                "floor_fraction": 0.008900960286458334,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "f4f862dcd3c6c53f9c0ba52604ce2e5ca195c931024d259d4bc50aa2175590dc",
+          "prediction": {
+            "file": "785-3553\\background_magenta_50.npy",
+            "sha256": "fc2f0f833e7b076f86e12adb031e95c05584e946c5b018b85306bab679f68468",
+            "seconds": 2.125632899998891
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.014554504601405581,
+                  0.12562623390366157
+                ],
+                "norm": 0.12646653410689257,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  -0.013972326670769555,
+                  -0.08073926263731424
+                ],
+                "norm": 0.08193933392340888,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.06061760258311039,
+                  0.1646228504627416
+                ],
+                "norm": 0.17542855137463256,
+                "floor_fraction": 2.513636477892567e-05,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.0021500528428215204,
+                  -0.17663999394082464
+                ],
+                "norm": 0.17665307862203106,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.09213428065780813,
+                  0.1048249292708742
+                ],
+                "norm": 0.13955999236520306,
+                "floor_fraction": 0.0006357828776041666,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.33333072492766724,
+                  0.24474344922551652
+                ],
+                "norm": 0.4135320158338495,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.2781096610860809,
+                  0.33336134405750445
+                ],
+                "norm": 0.4341368094290562,
+                "floor_fraction": 0.0030721028645833335,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "edfeb96c128ba4f1ebdffb97313382adec38e5a560391e037d5fcae1a797db36",
+          "prediction": {
+            "file": "785-3553\\background_green_100.npy",
+            "sha256": "6a35a20567bec91785fcd687d16d1cb82a40db85265b9cda6c10e08ea78c9173",
+            "seconds": 2.115145499999926
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.2558463126956631,
+                  -0.004101102703638552
+                ],
+                "norm": 0.2558791800114906,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.2620885374550493,
+                  0.15980477220913483
+                ],
+                "norm": 0.3069657418770705,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.2911236273554522,
+                  -0.023108470952509595
+                ],
+                "norm": 0.2920393258353388,
+                "floor_fraction": 2.513636477892567e-05,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.3395822942378054,
+                  0.23001818126959248
+                ],
+                "norm": 0.410151799062716,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.2445533541370033,
+                  0.026933611818253947
+                ],
+                "norm": 0.2460320354450512,
+                "floor_fraction": 0.0012003580729166667,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.2270733720217311,
+                  -1.110267526521845
+                ],
+                "norm": 1.133250323948886,
+                "floor_fraction": 0.001495361328125,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.5789748338462922,
+                  -0.8927894422875721
+                ],
+                "norm": 1.064088739949585,
+                "floor_fraction": 0.0258636474609375,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "33e9b6e7ea0f87b22bc1dc1f4226bb17b98419cc1b7e083c71f6aa6eb7e782dc",
+          "prediction": {
+            "file": "785-3553\\background_magenta_100.npy",
+            "sha256": "521e26da6eaeb38742e7cc522c7557198e175131e3eca0d0d43c0e395be27163",
+            "seconds": 2.1191297999994276
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.02009325069185226,
+                  0.24536420039279958
+                ],
+                "norm": 0.2461855591982672,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  -0.006145001734414876,
+                  -0.20421812734517733
+                ],
+                "norm": 0.2043105591561215,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.04179032157142383,
+                  0.2808791690538375
+                ],
+                "norm": 0.2839710171574156,
+                "floor_fraction": 2.513636477892567e-05,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.0032891560284249283,
+                  -0.26612743216208906
+                ],
+                "norm": 0.2661477572638301,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.06710904331657544,
+                  0.19682060619083191
+                ],
+                "norm": 0.20794704786601934,
+                "floor_fraction": 9.1552734375e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.7080185921722545,
+                  0.40825847963685297
+                ],
+                "norm": 0.8172914492743552,
+                "floor_fraction": 5.086263020833333e-06,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.47183398728487486,
+                  0.5654325792316277
+                ],
+                "norm": 0.7364382616442973,
+                "floor_fraction": 0.0030721028645833335,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "8d61e350f6301f0260ea7e5c22af929f275ca924e4a16be257983b00b47a5de0",
+          "prediction": {
+            "file": "785-3553\\whole_green.npy",
+            "sha256": "683278d79d08ce88d99f30b55f20f041bdf5f0c7b3f8d5e05a9587ccf7f3395d",
+            "seconds": 2.1201006999999663
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.9503740610103284,
+                  -0.29686494940291386
+                ],
+                "norm": 0.9956604109962683,
+                "floor_fraction": 0.0021657806654853317,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  -0.1637888481602941,
+                  -0.6371384959475709
+                ],
+                "norm": 0.6578542770249417,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  -1.093478611977007,
+                  -1.1099897559499077
+                ],
+                "norm": 1.5581311668678275,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -1.5778703830553156,
+                  -0.4085935490894447
+                ],
+                "norm": 1.629915222973464,
+                "floor_fraction": 0.017394364427016563,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  -0.3083388477634461,
+                  -1.2378851743305128
+                ],
+                "norm": 1.2757086461521587,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  -2.5464325779504664,
+                  -2.484325610802413
+                ],
+                "norm": 3.557554302401615,
+                "floor_fraction": 0.1746977352135334,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.8311847165934612,
+                  -0.29844536561497065
+                ],
+                "norm": 0.8831407981492,
+                "floor_fraction": 0.007080078125,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.2123060898233771,
+                  -0.9094810662647099
+                ],
+                "norm": 0.9339323774610695,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.1536452545508675,
+                  -1.4852670176119234
+                ],
+                "norm": 1.8806688934933637,
+                "floor_fraction": 0.064117431640625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "bfd3d18ad740c952d6fbd980e2144605d14babec77f4ffac7eedc62c33a04914",
+          "prediction": {
+            "file": "785-3553\\whole_magenta.npy",
+            "sha256": "fdb58689a0cb1bc11509c97bf01e0ce0402358d763619cba5b5da47d7657fa5c",
+            "seconds": 2.1283266999998887
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.21370559582735507,
+                  0.31583300913206613
+                ],
+                "norm": 0.3813404926641552,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.6897225907844589,
+                  0.5144950008361768
+                ],
+                "norm": 0.8604779823585516,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.8932354613854553,
+                  0.9028421594432487
+                ],
+                "norm": 1.2700368318850583,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.28807566792750505,
+                  0.40922813961503574
+                ],
+                "norm": 0.5004550536308544,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  1.1124147717236048,
+                  0.8695186276827118
+                ],
+                "norm": 1.4119239597924904,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  1.3313274868617568,
+                  1.3337895069296868
+                ],
+                "norm": 1.8845231030871916,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.21644818353629355,
+                  0.25238856347377886
+                ],
+                "norm": 0.3324903053150854,
+                "floor_fraction": 3.0517578125e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.8355998043446818,
+                  0.6367285665695928
+                ],
+                "norm": 1.0505476193427115,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.7868158712763693,
+                  0.8893452322027021
+                ],
+                "norm": 1.1874401700018702,
+                "floor_fraction": 0.0030721028645833335,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "2e67d4d0a10e91e05e88b41e5b06fad8098f90f8a5a351160ee77eb5c6d64746",
+          "prediction": {
+            "file": "785-3553\\whole_contrast.npy",
+            "sha256": "a4002be21d1b026462c23c2ce6fbcc39beb20b3bf1d8502a632ba975206843bc",
+            "seconds": 2.1307555999992474
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.0425781766329898,
+                  -0.0028928241978943086
+                ],
+                "norm": 0.04267633486172403,
+                "floor_fraction": 0.0001312594342718383,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.01829707596161523,
+                  -0.02146934065644397
+                ],
+                "norm": 0.02820843095543522,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  -0.009186911419903642,
+                  -0.017052715449098615
+                ],
+                "norm": 0.019369936644839148,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.03095882338890501,
+                  -0.030255971656321965
+                ],
+                "norm": 0.043288249750868535,
+                "floor_fraction": 0.00015081818867355404,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  0.04827702990942302,
+                  -0.008799324763635904
+                ],
+                "norm": 0.049072392780169796,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.011156873251240986,
+                  -0.014005081186099663
+                ],
+                "norm": 0.017905812457788654,
+                "floor_fraction": 0.08388004926727496,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.05287305074094686,
+                  0.022150439626772392
+                ],
+                "norm": 0.05732539987051141,
+                "floor_fraction": 0.0013936360677083333,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.029643307318180566,
+                  -0.07327150555960416
+                ],
+                "norm": 0.07904074389662082,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.0032897241888014354,
+                  -0.09945968969038832
+                ],
+                "norm": 0.09951408020248552,
+                "floor_fraction": 0.0472869873046875,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "ee2886209b0b9e43ab204f2d2ebe0573b11e6760638aa2f78a6b6466d4b3451b",
+          "prediction": {
+            "file": "785-3553\\whole_desaturate.npy",
+            "sha256": "0702d62045f8f244221e94f54dabec9b85c4d39a8d6ad18002b28cbead1ce093",
+            "seconds": 2.1227161000006163
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.000619997629611284,
+                  0.0149232703514276
+                ],
+                "norm": 0.014936143914763328,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "albedo": {
+                "vector": [
+                  0.0011388274539534226,
+                  0.019100432754492688
+                ],
+                "norm": 0.01913435286020343,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              },
+              "input": {
+                "vector": [
+                  0.009112290449603929,
+                  0.02034303290785104
+                ],
+                "norm": 0.022290644340795834,
+                "floor_fraction": 0.0,
+                "pixels": 5079
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.008774840365664295,
+                  0.025770661380622485
+                ],
+                "norm": 0.027223607612467504,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "albedo": {
+                "vector": [
+                  -0.005722155109465419,
+                  -0.008455891151650744
+                ],
+                "norm": 0.010210051628926593,
+                "floor_fraction": 0.0,
+                "pixels": 13261
+              },
+              "input": {
+                "vector": [
+                  0.0020679790654618718,
+                  0.0051918322762983474
+                ],
+                "norm": 0.005588529305676211,
+                "floor_fraction": 0.0019606364527562023,
+                "pixels": 13261
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0013837908213864668,
+                  0.003246726567613033
+                ],
+                "norm": 0.003529321527177389,
+                "floor_fraction": 0.00592041015625,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.013766860856645727,
+                  0.10535950054993647
+                ],
+                "norm": 0.10625512135411783,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.001355193376347149,
+                  0.10953653904014811
+                ],
+                "norm": 0.10954492199084898,
+                "floor_fraction": 0.0030466715494791665,
+                "pixels": 65536
+              }
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "color": "green",
+          "supported": true,
+          "cosine": 0.8822725636661765,
+          "response_fraction": 0.639009367226609,
+          "background_to_whole_ratio": 0.25699443021487134,
+          "response_pass": true,
+          "invariance_pass": true,
+          "floor_reliable": true,
+          "passed": true
+        },
+        {
+          "color": "magenta",
+          "supported": true,
+          "cosine": 0.9829043627715811,
+          "response_fraction": 0.30025939649179206,
+          "background_to_whole_ratio": 0.6455793809840218,
+          "response_pass": true,
+          "invariance_pass": false,
+          "floor_reliable": true,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "pair": "9483-19432",
+      "mask_sha256": "e48cd50387637847bb16744b4d1831bb3d2862d9e1d832c8e8c744be0c4e9464",
+      "primary_pixels": 2677,
+      "person_pixels": 6622,
+      "descriptive_only": false,
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "790d368600bc67223fbd5af0faec0258ee063c98a003725d1946d235eb1d0108",
+          "prediction": {
+            "file": "9483-19432\\identity.npy",
+            "sha256": "5f77f49df05ddc606eead20e50a182c80ec474ac2a1f593cfa66e7582e855c1a",
+            "seconds": 2.2571691000011924
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.004358112314780227,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.004026980771166817,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0028889973958333335,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.09325663248697917,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.008143107096354166,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "790d368600bc67223fbd5af0faec0258ee063c98a003725d1946d235eb1d0108",
+          "prediction": {
+            "file": "9483-19432\\identity_repeat.npy",
+            "sha256": "5f77f49df05ddc606eead20e50a182c80ec474ac2a1f593cfa66e7582e855c1a",
+            "seconds": 2.1336069000008138
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.004358112314780227,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.004026980771166817,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0028889973958333335,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.09325663248697917,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.008143107096354166,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "ac87f25ecac47848d3ae9a543277181a5c50ee989e1a0fe77be66902aba3823a",
+          "prediction": {
+            "file": "9483-19432\\background_green_25.npy",
+            "sha256": "57dac91c2140c41a86c6e507734f4851f554912770715566422b5cfc0f4ed2ef",
+            "seconds": 2.138100800000757
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.06169331814844481,
+                  -0.024828639720440696
+                ],
+                "norm": 0.06650208158044886,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  0.04098309503988116,
+                  0.06317464850367345
+                ],
+                "norm": 0.07530372031055718,
+                "floor_fraction": 0.004358112314780227,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.08660315727132699,
+                  -0.028845273703685795
+                ],
+                "norm": 0.09128064780884688,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  0.13000920434013824,
+                  0.0786886423587766
+                ],
+                "norm": 0.1519680744413881,
+                "floor_fraction": 0.004681365146481426,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.07874746498854567,
+                  -0.025386749008724854
+                ],
+                "norm": 0.0827384449174277,
+                "floor_fraction": 0.0034077962239583335,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.24654961627685862,
+                  -0.09972008359524726
+                ],
+                "norm": 0.26595264307487027,
+                "floor_fraction": 0.057790120442708336,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.32022441645737143,
+                  -0.14108385570908744
+                ],
+                "norm": 0.34992617969681356,
+                "floor_fraction": 0.0232696533203125,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "e0eb5851d0600f38c97cf2388a0994c08680ef9edbeafb278d2455f2fac32849",
+          "prediction": {
+            "file": "9483-19432\\background_magenta_25.npy",
+            "sha256": "28eeb15bfe673bc69021b31760091df50135fb0328605142b31e3f8fa20206dc",
+            "seconds": 2.1361710999990464
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.04618003740367458,
+                  -0.0007166788824224514
+                ],
+                "norm": 0.046185598223096494,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.20388336499102824,
+                  -0.14415477241641358
+                ],
+                "norm": 0.24969786729263996,
+                "floor_fraction": 0.0004980699788320259,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.05209071288170471,
+                  0.005952409472461904
+                ],
+                "norm": 0.05242970100097893,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.16447163812961307,
+                  -0.1078906472736978
+                ],
+                "norm": 0.19670107147185514,
+                "floor_fraction": 0.000453035336756267,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.032387800994732235,
+                  0.005519289730952985
+                ],
+                "norm": 0.03285471370151598,
+                "floor_fraction": 0.0037078857421875,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.3422497423934703,
+                  0.09213732374334359
+                ],
+                "norm": 0.3544350047540204,
+                "floor_fraction": 0.061436971028645836,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.17000895240353386,
+                  0.11772513306210385
+                ],
+                "norm": 0.20679035483270758,
+                "floor_fraction": 0.010167439778645834,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "d7497268d03846a15432403c13272154748bf4842d3cc5c876d2cfd412bb3af4",
+          "prediction": {
+            "file": "9483-19432\\background_green_50.npy",
+            "sha256": "efa899605ac1521042d20edab706efdb640c0ec4c505b2cffa62e5526da13c18",
+            "seconds": 2.1321855999995023
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.07091423455460077,
+                  -0.03930542060309228
+                ],
+                "norm": 0.08107863313630125,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.05177451135207424,
+                  -0.02623500832082186
+                ],
+                "norm": 0.05804201656851403,
+                "floor_fraction": 0.0011206574523720584,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.09167125139385525,
+                  -0.047760514566963896
+                ],
+                "norm": 0.10336675037852636,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  0.023220667694537424,
+                  -0.00038089949739289865
+                ],
+                "norm": 0.02322379152092199,
+                "floor_fraction": 0.0012584314909896304,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.12484789427612514,
+                  -0.04238458108309143
+                ],
+                "norm": 0.13184630984131362,
+                "floor_fraction": 0.004267374674479167,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.3152730424292451,
+                  -0.22928253545425661
+                ],
+                "norm": 0.38983018398646996,
+                "floor_fraction": 0.047780354817708336,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.7348611337192679,
+                  -0.30833691166454086
+                ],
+                "norm": 0.7969269332542316,
+                "floor_fraction": 0.045359293619791664,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "f08f14f60460fb711c077e453769d7fd8f23aaf03d0f86c8d4016c3053121427",
+          "prediction": {
+            "file": "9483-19432\\background_magenta_50.npy",
+            "sha256": "3a1ef17950a69c09e16c670656dc4f81183853c703316a3d3bbe0736d8e70230",
+            "seconds": 2.131513799999084
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.08876112985318989,
+                  9.714717333505129e-05
+                ],
+                "norm": 0.08876118301593397,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.25678320397654664,
+                  -0.13905318682880125
+                ],
+                "norm": 0.29201609991866245,
+                "floor_fraction": 0.00037355248412401944,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.11051409060909871,
+                  0.011779728677297582
+                ],
+                "norm": 0.11114011980768614,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.2110298953941861,
+                  -0.10402876659389182
+                ],
+                "norm": 0.23527771043838291,
+                "floor_fraction": 0.00035236081747709656,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.09095386878994882,
+                  0.017987708661600967
+                ],
+                "norm": 0.09271549984093198,
+                "floor_fraction": 0.005864461263020833,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.7590576426763367,
+                  0.20513737992471273
+                ],
+                "norm": 0.786288655359934,
+                "floor_fraction": 0.03240966796875,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.35880733277497207,
+                  0.2518906876260642
+                ],
+                "norm": 0.438396647530317,
+                "floor_fraction": 0.010213216145833334,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "17cd91703ba908e174389d461ebe6ebb1d56cfe241d31f7b3545d3da35934319",
+          "prediction": {
+            "file": "9483-19432\\background_green_100.npy",
+            "sha256": "c59f340650aee5f99c79d1b1ee494bdbf5d38dd4c0ebf8f0cc1bf69e830a9408",
+            "seconds": 2.135217700000794
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.11319115186569909,
+                  -0.08354036309158411
+                ],
+                "norm": 0.14068130339941218,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.16430486405997463,
+                  -0.10151963816357462
+                ],
+                "norm": 0.19313809900335527,
+                "floor_fraction": 0.00012451749470800648,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.1435878525285785,
+                  -0.09721927301305935
+                ],
+                "norm": 0.17340432070440626,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.0757998914646483,
+                  -0.07751501582896272
+                ],
+                "norm": 0.1084167940174252,
+                "floor_fraction": 0.00020134903855834087,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.21827638137076721,
+                  -0.0907516744914382
+                ],
+                "norm": 0.23639045049941543,
+                "floor_fraction": 0.0017954508463541667,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.2338728698581012,
+                  -0.6233455996137914
+                ],
+                "norm": 0.6657749287961673,
+                "floor_fraction": 0.06353759765625,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.5481502478678861,
+                  -0.6352605331193669
+                ],
+                "norm": 1.6734172028853116,
+                "floor_fraction": 0.10101318359375,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "fac77c7d226593d2e20b321092028c6f434db8fb1e5daaab962046422abbda08",
+          "prediction": {
+            "file": "9483-19432\\background_magenta_100.npy",
+            "sha256": "bb45f67bc94b5ea8777242c349567951c7582eec133cbba2ba8adcc2b44cc530",
+            "seconds": 2.1415539999998146
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.13520078401529748,
+                  -0.0316472295363493
+                ],
+                "norm": 0.1388553172754918,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.3567000258252018,
+                  -0.09560170372180711
+                ],
+                "norm": 0.36928930959101947,
+                "floor_fraction": 0.00012451749470800648,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.1667471409178066,
+                  -0.010721183666535185
+                ],
+                "norm": 0.16709145036019776,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.3181776290672836,
+                  -0.06849853247321738
+                ],
+                "norm": 0.3254674370653112,
+                "floor_fraction": 5.033725963958522e-05,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.07454948152622572,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.19698059196566559,
+                  0.0336137870694195
+                ],
+                "norm": 0.19982802679377162,
+                "floor_fraction": 0.0005747477213541666,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  1.3563045237731912,
+                  0.33305185720515007
+                ],
+                "norm": 1.3965978307284537,
+                "floor_fraction": 0.0004374186197916667,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.7170128721673381,
+                  0.5102546584392665
+                ],
+                "norm": 0.8800382237793015,
+                "floor_fraction": 0.0124359130859375,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "1ee53eb384f3d0a4c9cc56ad01d251d6b1a61bee13a2c8e7c7b0c268aefac1c1",
+          "prediction": {
+            "file": "9483-19432\\whole_green.npy",
+            "sha256": "697205d3a0e2e9001ebc5e8cfa2ccd5e51c98914894fe3f03a3ebe2664fc11ba",
+            "seconds": 2.128569000000425
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.3646300108713088,
+                  -0.26076988449243105
+                ],
+                "norm": 0.4482811366611432,
+                "floor_fraction": 0.00037355248412401944,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.44357463100826106,
+                  -0.7787569743561115
+                ],
+                "norm": 0.8962259081182602,
+                "floor_fraction": 0.004856182293612252,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  -0.8307678310438836,
+                  -0.8549442977394993
+                ],
+                "norm": 1.192101061711902,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.31342085422542804,
+                  -0.2864676107319831
+                ],
+                "norm": 0.4246131461246672,
+                "floor_fraction": 0.0006543843753146079,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.41437078685581485,
+                  -0.6098225337628016
+                ],
+                "norm": 0.7372833049000842,
+                "floor_fraction": 0.003624282694050136,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  -1.130305061246176,
+                  -1.1534567972757266
+                ],
+                "norm": 1.6149464742400284,
+                "floor_fraction": 0.15473673613208497,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.309605387484796,
+                  -0.19954866143741265
+                ],
+                "norm": 0.36834109768131196,
+                "floor_fraction": 0.0016123453776041667,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.10765903714603028,
+                  -0.5248394707411882
+                ],
+                "norm": 0.5357676159745948,
+                "floor_fraction": 0.09096272786458333,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.8381371524233823,
+                  -0.8417641882662743
+                ],
+                "norm": 2.0217109436728884,
+                "floor_fraction": 0.12054951985677083,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "d92e424d883f82a202aba3e7a1d2fcd275b33a9e219c53270f5faa8a892564bb",
+          "prediction": {
+            "file": "9483-19432\\whole_magenta.npy",
+            "sha256": "7a91aa25c401dfe94358deae9d1c7239d5f682b691083e9171e3478e4b8f0d17",
+            "seconds": 2.139044699999431
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.24290746957088677,
+                  0.04151670161154589
+                ],
+                "norm": 0.24642985875504905,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.31668234414944363,
+                  0.13022716154627637
+                ],
+                "norm": 0.34241323090731557,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.7100604843283589,
+                  0.730067555629616
+                ],
+                "norm": 1.0184225680863646,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.23468899051320458,
+                  0.06205719899572645
+                ],
+                "norm": 0.2427550580632713,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.25911372449454395,
+                  0.11580043003370795
+                ],
+                "norm": 0.28381272314226175,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.9090782491945214,
+                  0.9248365764503544
+                ],
+                "norm": 1.2968214820471586,
+                "floor_fraction": 0.10973522601429578,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.24213447194905086,
+                  0.05512481851884979
+                ],
+                "norm": 0.24833011924207224,
+                "floor_fraction": 1.52587890625e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  1.497060693077388,
+                  0.2946204126660671
+                ],
+                "norm": 1.5257758375059138,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.8929727587950727,
+                  0.670744138385227
+                ],
+                "norm": 1.1168249850035696,
+                "floor_fraction": 0.016728719075520832,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "50c2a75a79289ae7447ab0109907d7e82b1934689cececa8ece4c5dbd3df4b26",
+          "prediction": {
+            "file": "9483-19432\\whole_contrast.npy",
+            "sha256": "050fe77f01c2241b24fe23c7f0aab716f4514facf390fa34fe7363db9accce51",
+            "seconds": 2.137616200001503
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.009519975957593237,
+                  0.0005522956588160013
+                ],
+                "norm": 0.009535983049895815,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  0.1337202092348973,
+                  0.03918720755342909
+                ],
+                "norm": 0.13934393274793216,
+                "floor_fraction": 0.011580127007844603,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  0.03242017651683676,
+                  0.01957260594692323
+                ],
+                "norm": 0.03787023565990036,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0030118100373301864,
+                  -0.01662620730368951
+                ],
+                "norm": 0.016896797596178435,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.012280759125772261,
+                  0.03266278868331623
+                ],
+                "norm": 0.03489519751020488,
+                "floor_fraction": 0.009815765629719118,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  0.049255406149558284,
+                  -0.012935794167786136
+                ],
+                "norm": 0.05092572832772521,
+                "floor_fraction": 0.2704620960434914,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.005104279757690437,
+                  -0.004876009767308162
+                ],
+                "norm": 0.007058976065666531,
+                "floor_fraction": 0.0006612141927083334,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.017340107941112456,
+                  0.019393214771487265
+                ],
+                "norm": 0.026014921152724316,
+                "floor_fraction": 0.10442606608072917,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.5078334374627249,
+                  0.014880767224657126
+                ],
+                "norm": 0.5080514121999877,
+                "floor_fraction": 0.098846435546875,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "d740163849a6ffd069c9f524ea8c27dd1e7433462ba0ecde036873cb8936e0b2",
+          "prediction": {
+            "file": "9483-19432\\whole_desaturate.npy",
+            "sha256": "9f2b622b51a494934cb87e27b59c6b7e2c7c8012065a4fc9b05c3cb71733791c",
+            "seconds": 2.127410899998722
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.014613878325480788,
+                  -0.014191819474193275
+                ],
+                "norm": 0.02037089049845511,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              },
+              "albedo": {
+                "vector": [
+                  -0.1859863909491865,
+                  -0.07521713401729609
+                ],
+                "norm": 0.20062042485270418,
+                "floor_fraction": 0.00024903498941601296,
+                "pixels": 2677
+              },
+              "input": {
+                "vector": [
+                  -0.047622566014601894,
+                  -0.02161774884081488
+                ],
+                "norm": 0.05229948239475864,
+                "floor_fraction": 0.0,
+                "pixels": 2677
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.017083097823658935,
+                  -0.013476175136495018
+                ],
+                "norm": 0.02175866557402331,
+                "floor_fraction": 0.0,
+                "pixels": 6622
+              },
+              "albedo": {
+                "vector": [
+                  -0.14032984742408652,
+                  -0.0723468328336241
+                ],
+                "norm": 0.1578813804700344,
+                "floor_fraction": 0.00035236081747709656,
+                "pixels": 6622
+              },
+              "input": {
+                "vector": [
+                  -0.07936911788409745,
+                  -0.0716839324211783
+                ],
+                "norm": 0.10694878700136723,
+                "floor_fraction": 0.0732407127755965,
+                "pixels": 6622
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.006552167473899672,
+                  -0.011055681013445135
+                ],
+                "norm": 0.012851419426548962,
+                "floor_fraction": 0.00347900390625,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  1.0505363147691842,
+                  0.019020409943695846
+                ],
+                "norm": 1.0507084869949632,
+                "floor_fraction": 0.0029805501302083335,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.23103821130467955,
+                  -0.025891813548559472
+                ],
+                "norm": 0.2324844964544929,
+                "floor_fraction": 0.008005777994791666,
+                "pixels": 65536
+              }
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "color": "green",
+          "supported": true,
+          "cosine": 0.9840384223724334,
+          "response_fraction": 0.3760428969146245,
+          "background_to_whole_ratio": 0.31382383039184963,
+          "response_pass": true,
+          "invariance_pass": true,
+          "floor_reliable": true,
+          "passed": true
+        },
+        {
+          "color": "magenta",
+          "supported": true,
+          "cosine": 0.8080217190806256,
+          "response_fraction": 0.24197211106397168,
+          "background_to_whole_ratio": 0.5634679091932354,
+          "response_pass": false,
+          "invariance_pass": false,
+          "floor_reliable": true,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "pair": "872-1268",
+      "mask_sha256": "c1f2bf05a5cdee746b6bc9f0a7367717e173ea5634a4c69139f71f893c5dcc98",
+      "primary_pixels": 1481,
+      "person_pixels": 7761,
+      "descriptive_only": false,
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "d795cb763288f4592d1c6ac62477c82999c8965ebcba8929484fd9789b7bf48b",
+          "prediction": {
+            "file": "872-1268\\identity.npy",
+            "sha256": "77a84354563f160069c2b5cecbc4488cbc519bb4df5949dbd4605bc463c1f253",
+            "seconds": 2.212245199998506
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.006313619378946012,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.000946044921875,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.012135823567708334,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "d795cb763288f4592d1c6ac62477c82999c8965ebcba8929484fd9789b7bf48b",
+          "prediction": {
+            "file": "872-1268\\identity_repeat.npy",
+            "sha256": "77a84354563f160069c2b5cecbc4488cbc519bb4df5949dbd4605bc463c1f253",
+            "seconds": 2.137330400000792
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.006313619378946012,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.000946044921875,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.012135823567708334,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "69fde7d8e15d9c827bd37b7656397208b65cd70132188231e55a6989965f3536",
+          "prediction": {
+            "file": "872-1268\\background_green_25.npy",
+            "sha256": "13664c8342507bf49a3911db96f4e9b5d39f0e66a8bf31dd0687fc475164d562",
+            "seconds": 2.1291206999994756
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.010537893451148,
+                  0.015585355546281814
+                ],
+                "norm": 0.01881357238516293,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.05228251540325235,
+                  -0.007879909310706623
+                ],
+                "norm": 0.0528730024458256,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.01573736745003458,
+                  0.020698912525767315
+                ],
+                "norm": 0.026002109799144663,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.033880501523663294,
+                  -0.04797740676787759
+                ],
+                "norm": 0.058734316576132366,
+                "floor_fraction": 0.0016750418760469012,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.002346696525986763,
+                  0.02481500965619071
+                ],
+                "norm": 0.024925723436279967,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.11721304688005917,
+                  -0.26328475862217804
+                ],
+                "norm": 0.28819743663267633,
+                "floor_fraction": 0.0003509521484375,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.25851960983575045,
+                  -0.24364660975467062
+                ],
+                "norm": 0.3552408466302452,
+                "floor_fraction": 0.016270955403645832,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "590a5a6115556912caadee94e78ce1babe0721127d01acf5a75c002be4cd9654",
+          "prediction": {
+            "file": "872-1268\\background_magenta_25.npy",
+            "sha256": "a6cf6b6f498a8a060553e424c75a4536ff4395fb5e73895469a08be0082dfa08",
+            "seconds": 2.13601430000017
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.0004445563298942787,
+                  0.06560186520112465
+                ],
+                "norm": 0.06560337146974216,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.09172254863477546,
+                  0.0275146622808074
+                ],
+                "norm": 0.09576054807949688,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.04031863708624176,
+                  0.18190263753892444
+                ],
+                "norm": 0.18631736913156915,
+                "floor_fraction": 0.01937035605377314,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  -0.03135630489036615,
+                  -0.07994715985199309
+                ],
+                "norm": 0.08587645908383587,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.012781289607588928,
+                  0.076075440188717
+                ],
+                "norm": 0.07714164869861233,
+                "floor_fraction": 0.0031534830729166665,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.11961409620473605,
+                  0.09107969867789634
+                ],
+                "norm": 0.15034308604698868,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.185391376885875,
+                  0.18286561305174903
+                ],
+                "norm": 0.260403139498034,
+                "floor_fraction": 0.0121612548828125,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "cb24fbfbeebb287a9229b680d5e27b6a2a40ee84b85776d47b03b24093160b90",
+          "prediction": {
+            "file": "872-1268\\background_green_50.npy",
+            "sha256": "50da4c4c8a3a4cf7427d0b70679af57efb66266e7a6e0b8f9d66697c633a113a",
+            "seconds": 2.1313298999994004
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.09322366536097058,
+                  0.008284594135517685
+                ],
+                "norm": 0.0935910587787342,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.012667235527413888,
+                  0.011504528398674984
+                ],
+                "norm": 0.017111780432874184,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.10708625916330604,
+                  0.01206521580865834
+                ],
+                "norm": 0.1077637988106407,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.24886384548571422,
+                  0.15653319427168091
+                ],
+                "norm": 0.29399975254893196,
+                "floor_fraction": 0.0062277197955589916,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.11964516531248302,
+                  0.02914758801295012
+                ],
+                "norm": 0.12314441712730652,
+                "floor_fraction": 0.0009613037109375,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.2047527429204003,
+                  -0.8777260437143476
+                ],
+                "norm": 0.9012916806161413,
+                "floor_fraction": 0.012563069661458334,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.4906790367356884,
+                  -0.47998499034577763
+                ],
+                "norm": 0.6864047698327127,
+                "floor_fraction": 0.019938151041666668,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "d6a6e7ac7f76cd33467920a84a8baf7b6f8dd8c6a33e2e5be00ce132863416dc",
+          "prediction": {
+            "file": "872-1268\\background_magenta_50.npy",
+            "sha256": "c63fc43039234cc5a27c985ed3b1443aecc2521c35b17950c442c47b1926268e",
+            "seconds": 2.1230956000017613
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.053633903519564916,
+                  0.1059393712495472
+                ],
+                "norm": 0.1187423512799683,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.0779406255035679,
+                  0.0024191582791097937
+                ],
+                "norm": 0.07797815995948355,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.07471826577889569,
+                  0.2748899872730348
+                ],
+                "norm": 0.28486369432410114,
+                "floor_fraction": 0.017394665635871664,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.060775370356235384,
+                  -0.039583312145790014
+                ],
+                "norm": 0.07252919579292619,
+                "floor_fraction": 4.294979169351029e-05,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.025509290042248313,
+                  0.14718784894239514
+                ],
+                "norm": 0.14938201616911215,
+                "floor_fraction": 0.005071004231770833,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.3311756022460186,
+                  0.20295369081069856
+                ],
+                "norm": 0.3884166321576585,
+                "floor_fraction": 5.086263020833333e-06,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.363333246729054,
+                  0.35861751934365016
+                ],
+                "norm": 0.5105071726811181,
+                "floor_fraction": 0.012181599934895834,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "34e395577426f713409e5cf4439e883ab70ad3b15165b1848875a93c2cb22e01",
+          "prediction": {
+            "file": "872-1268\\background_green_100.npy",
+            "sha256": "19db1b56240ae076e3b7ccdd79ea2d437327d6066b7f81f70d04b683df9f35c3",
+            "seconds": 2.131127099999503
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.6113031285283416,
+                  0.005319206070894338
+                ],
+                "norm": 0.6113262704168394,
+                "floor_fraction": 0.002025658338960162,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  0.17642046770011544,
+                  0.11562223199781632
+                ],
+                "norm": 0.21093288495558093,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.8663330531498793,
+                  -0.0047310569559597445
+                ],
+                "norm": 0.8663459712377684,
+                "floor_fraction": 0.01348623459176223,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.6670498859621109,
+                  0.48391503970024274
+                ],
+                "norm": 0.8240930263084093,
+                "floor_fraction": 0.02065884980457845,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.8181197382280323,
+                  0.07551952126339928
+                ],
+                "norm": 0.8215978968876181,
+                "floor_fraction": 0.0066070556640625,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.2863350187149402,
+                  -1.789805162749876
+                ],
+                "norm": 1.8125645543120927,
+                "floor_fraction": 0.026067097981770832,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.028405300394218,
+                  -1.0538991043567913
+                ],
+                "norm": 1.4725219129245475,
+                "floor_fraction": 0.05816650390625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "84216d35ac4a6e9f15387e9d8dca7a1d269088926a859f507b6d2248c4c33fce",
+          "prediction": {
+            "file": "872-1268\\background_magenta_100.npy",
+            "sha256": "f5f81a3a524a44b2d14aba3722804bb562126d0b00ee2f6071df27515bbd2971",
+            "seconds": 2.135496900000362
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.012782010455513413,
+                  0.14135505873737716
+                ],
+                "norm": 0.14193178791916983,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.12097452061552737,
+                  -0.09292595377755004
+                ],
+                "norm": 0.15254529662898172,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.05776117079098525,
+                  0.19686200912272195
+                ],
+                "norm": 0.20516092095469846,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.1346055318173291,
+                  -0.11228080016109811
+                ],
+                "norm": 0.17528727073191153,
+                "floor_fraction": 0.003307133960400292,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.04776016836318344,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.05906469190382149,
+                  0.15398572309437503
+                ],
+                "norm": 0.16492495489340264,
+                "floor_fraction": 0.0006612141927083334,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.8705716931763453,
+                  0.5773264472102467
+                ],
+                "norm": 1.0446056191732527,
+                "floor_fraction": 0.00054931640625,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.7144628716728245,
+                  0.7171742458707737
+                ],
+                "norm": 1.0123221295315499,
+                "floor_fraction": 0.012232462565104166,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "12b11b179e63955726b27f774d624ed51f4d7e6ed3edd6d6795d724cce458583",
+          "prediction": {
+            "file": "872-1268\\whole_green.npy",
+            "sha256": "5eafaef7bfdb3c34f46c3a36acc23aa527ea18d774380bc6ddbd108a0063f418",
+            "seconds": 2.1477403999997478
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -1.6254046292336393,
+                  -0.11148049376890024
+                ],
+                "norm": 1.6292231612719916,
+                "floor_fraction": 0.007427413909520594,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.37857881312515246,
+                  -1.8616315206693703
+                ],
+                "norm": 1.8997352016786448,
+                "floor_fraction": 0.0038262435291469728,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  -1.3542135908042348,
+                  -1.5956606340745152
+                ],
+                "norm": 2.092851477925269,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -2.0956469958164257,
+                  -0.15152345812557547
+                ],
+                "norm": 2.101117723840514,
+                "floor_fraction": 0.039299059399561916,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  -0.04272579238015329,
+                  -1.4867301314249834
+                ],
+                "norm": 1.4873439336688272,
+                "floor_fraction": 0.016449770218614438,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  -1.9251593066080221,
+                  -2.257557037565612
+                ],
+                "norm": 2.9669516567820082,
+                "floor_fraction": 0.2688227462096809,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -1.5054556747835242,
+                  -0.1743339388867539
+                ],
+                "norm": 1.5155161203318448,
+                "floor_fraction": 0.0195465087890625,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.19760182079377492,
+                  -1.053445270080682
+                ],
+                "norm": 1.0718178094416868,
+                "floor_fraction": 0.0034230550130208335,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.493542530726884,
+                  -1.5690386669186536
+                ],
+                "norm": 2.1662298191502978,
+                "floor_fraction": 0.11322021484375,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "db6bd92d1d72f97a728ec3223437d28655e4b0399b955e1e9a5ee2741f0beaf3",
+          "prediction": {
+            "file": "872-1268\\whole_magenta.npy",
+            "sha256": "9e89f73ca0eda79c83c2065fe7bc03128fbd9917f54e7b23afd6b6230409b8da",
+            "seconds": 2.125727200000256
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.21397794213292481,
+                  0.3624148505392808
+                ],
+                "norm": 0.4208694377248728,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  0.4915252289431555,
+                  0.6155697422054883
+                ],
+                "norm": 0.7877329231449913,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  1.1147758463813036,
+                  1.2189316103952987
+                ],
+                "norm": 1.6518230711840867,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.20878279911671885,
+                  0.40314500981120327
+                ],
+                "norm": 0.4540001719632795,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.4957415294580175,
+                  0.32821844626957414
+                ],
+                "norm": 0.5945477377814062,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  1.186826659221154,
+                  1.242979600188281
+                ],
+                "norm": 1.7185912270002612,
+                "floor_fraction": 0.060387407121075466,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.18153968757739786,
+                  0.28933719648571693
+                ],
+                "norm": 0.3415738155010035,
+                "floor_fraction": 3.5603841145833336e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.6190309839552682,
+                  0.41000840196749266
+                ],
+                "norm": 0.7424999991788315,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.9776912002760823,
+                  0.9915799561626703
+                ],
+                "norm": 1.3925196201708792,
+                "floor_fraction": 0.013890584309895834,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "94ef781cc4af0990da1b2aa74110569499019ce272ecd01df461cc6c2a0efc95",
+          "prediction": {
+            "file": "872-1268\\whole_contrast.npy",
+            "sha256": "e6633b4aea8622b0c460b1ea226f24241ae371b1fa444100dc6dce0c5a6a79c9",
+            "seconds": 2.1251927000012074
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.016707669606633817,
+                  -0.041729491227967014
+                ],
+                "norm": 0.04494993505923464,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  0.07832859116021641,
+                  -0.05904479905539591
+                ],
+                "norm": 0.09809004275988677,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  0.08537685442629395,
+                  -0.011411199295790101
+                ],
+                "norm": 0.08613607107998848,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.06660402340888054,
+                  -0.04011469299332716
+                ],
+                "norm": 0.07775142782097058,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.05593874046178814,
+                  -0.15877171893900202
+                ],
+                "norm": 0.16833775993310815,
+                "floor_fraction": 0.00042949791693510286,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  0.19292049684841714,
+                  0.08953152383324864
+                ],
+                "norm": 0.21268336057186912,
+                "floor_fraction": 0.3289095047889018,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.033517077536797835,
+                  -0.010303136035941867
+                ],
+                "norm": 0.0350649269039997,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.016056613314093752,
+                  -0.020809632361312804
+                ],
+                "norm": 0.026284132668424307,
+                "floor_fraction": 7.120768229166667e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.07532781429545873,
+                  0.01445675556142204
+                ],
+                "norm": 0.07670252530323773,
+                "floor_fraction": 0.1585693359375,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "a0748feac03dfbe1ed50fe3f13f9ce5548c3c2a964aad73f8a56e6f42a5f9c70",
+          "prediction": {
+            "file": "872-1268\\whole_desaturate.npy",
+            "sha256": "54e0b5abb3c5d26e468fb6d134ab5241edf651633c1acfe8c5b5ec1456f10f6b",
+            "seconds": 2.121419799999785
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.02506902220688793,
+                  -0.010406816636287647
+                ],
+                "norm": 0.02714328106384255,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "albedo": {
+                "vector": [
+                  -0.06004097778562534,
+                  0.03617044323807345
+                ],
+                "norm": 0.07009436480554375,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              },
+              "input": {
+                "vector": [
+                  -0.06852620645861315,
+                  0.005184128335430028
+                ],
+                "norm": 0.06872202091183498,
+                "floor_fraction": 0.0,
+                "pixels": 1481
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.03230931687058979,
+                  -0.008742781182056417
+                ],
+                "norm": 0.03347130382045937,
+                "floor_fraction": 0.0,
+                "pixels": 7761
+              },
+              "albedo": {
+                "vector": [
+                  0.06775187607404659,
+                  0.004931546767449638
+                ],
+                "norm": 0.06793111853247015,
+                "floor_fraction": 0.001932740626207963,
+                "pixels": 7761
+              },
+              "input": {
+                "vector": [
+                  -0.031123041964445056,
+                  -0.01915363553507104
+                ],
+                "norm": 0.03654456861601932,
+                "floor_fraction": 0.04660052398745866,
+                "pixels": 7761
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.011605468179757416,
+                  -0.008253811930536198
+                ],
+                "norm": 0.014241218454051732,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.013338539419672796,
+                  0.009094224705216866
+                ],
+                "norm": 0.016143777650820822,
+                "floor_fraction": 0.0003712972005208333,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.014605864481096057,
+                  0.003534371588756688
+                ],
+                "norm": 0.015027410281467458,
+                "floor_fraction": 0.011805216471354166,
+                "pixels": 65536
+              }
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "color": "green",
+          "supported": true,
+          "cosine": 0.697719639434533,
+          "response_fraction": 0.778470511862174,
+          "background_to_whole_ratio": 0.37522561976074265,
+          "response_pass": true,
+          "invariance_pass": true,
+          "floor_reliable": true,
+          "passed": true
+        },
+        {
+          "color": "magenta",
+          "supported": true,
+          "cosine": 0.9785594812452179,
+          "response_fraction": 0.25479087020087343,
+          "background_to_whole_ratio": 0.3372347222131921,
+          "response_pass": true,
+          "invariance_pass": true,
+          "floor_reliable": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "pair": "8021-8690",
+      "mask_sha256": "0a7d63d316abce5f5f5869de28fad73fe4c7dda020501aa42b1646502e03abad",
+      "primary_pixels": 15819,
+      "person_pixels": 18159,
+      "descriptive_only": false,
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "4a22dfed922995a6d1282f4f2f8c2676ec22a72a7c69e06e3d60b9a54462cc7c",
+          "prediction": {
+            "file": "8021-8690\\identity.npy",
+            "sha256": "c27b372f3bb81aaedc4e1d638887480382c7eede94e9097aa0b81b06eb2a6053",
+            "seconds": 2.253481499999907
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0002950038982657985,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0004589092644602309,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.00013224283854166666,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "4a22dfed922995a6d1282f4f2f8c2676ec22a72a7c69e06e3d60b9a54462cc7c",
+          "prediction": {
+            "file": "8021-8690\\identity_repeat.npy",
+            "sha256": "c27b372f3bb81aaedc4e1d638887480382c7eede94e9097aa0b81b06eb2a6053",
+            "seconds": 2.138075000000754
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0002950038982657985,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0004589092644602309,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.00013224283854166666,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "2f374254919169be99709fd9d7ceeb756fc3db9996a0776fbb953ff175003500",
+          "prediction": {
+            "file": "8021-8690\\background_green_25.npy",
+            "sha256": "d953052caf3cb7ff5c771716181a5321d2ea3481bf7811c87454f8d4d4efda7d",
+            "seconds": 2.145052300000316
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.024614561095117025,
+                  -0.0011361051038469984
+                ],
+                "norm": 0.024640766073972534,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  -0.015358834957037115,
+                  -0.02540838092004522
+                ],
+                "norm": 0.029689722669900828,
+                "floor_fraction": 0.0002739321912468129,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.023864799838821314,
+                  -0.001522877332168954
+                ],
+                "norm": 0.0239133399322604,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  -0.014082440675409752,
+                  -0.02843660365848317
+                ],
+                "norm": 0.031732563133256245,
+                "floor_fraction": 0.0004038401527250032,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.024153042335010245,
+                  -0.002484043144978534
+                ],
+                "norm": 0.024280443249308937,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.024091209088796906,
+                  -0.10319021436825429
+                ],
+                "norm": 0.10596512018926985,
+                "floor_fraction": 0.00013224283854166666,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.03879102631132539,
+                  -0.042313182686818655
+                ],
+                "norm": 0.05740338972024238,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "8e2749fe5bbcc137a14ae7054488ac7fe5143bcce3e418425169025172cc2db3",
+          "prediction": {
+            "file": "8021-8690\\background_magenta_25.npy",
+            "sha256": "17de298ea809eb1162d18be34a41619366fe2275cedc59e34eca5b2fa7740e4f",
+            "seconds": 2.138147300000128
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.0024970266964242155,
+                  -0.007554071322381947
+                ],
+                "norm": 0.00795607540602077,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  -0.015095785101986784,
+                  0.0010942536974905914
+                ],
+                "norm": 0.01513539292518823,
+                "floor_fraction": 0.00018964536317087047,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.0009731958473052247,
+                  -0.009461582185708726
+                ],
+                "norm": 0.009511500807660842,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  -0.015147334229544243,
+                  -0.0008525491651962757
+                ],
+                "norm": 0.015171307601541785,
+                "floor_fraction": 0.00033041467041136624,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.007462100538437579,
+                  -0.014368037258811354
+                ],
+                "norm": 0.01619022665426095,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.009794743039293495,
+                  0.08792784143208747
+                ],
+                "norm": 0.08847170333000323,
+                "floor_fraction": 9.663899739583333e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.03542177023821009,
+                  0.038366713803461384
+                ],
+                "norm": 0.05221787562593159,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "9539928adcdadc1c074734b87719f33adb7ea1a58c07f42852e6c1b5a04d66ab",
+          "prediction": {
+            "file": "8021-8690\\background_green_50.npy",
+            "sha256": "6ea37412b681c912bcefc6194539475445471e8bb982e9e510e514f64f48d4f7",
+            "seconds": 2.1206492000001163
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.04191294635379573,
+                  -0.004392391453608179
+                ],
+                "norm": 0.042142474710651356,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  0.013888550585277043,
+                  -0.017211645300143356
+                ],
+                "norm": 0.022116341725017412,
+                "floor_fraction": 0.00037929072634174094,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.041646045792373694,
+                  -0.004504733183473289
+                ],
+                "norm": 0.041888969326002425,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  0.014534240032680192,
+                  -0.020295046500430052
+                ],
+                "norm": 0.02496263298977457,
+                "floor_fraction": 0.0005323347467738679,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.05133336756087627,
+                  -0.01727671133318227
+                ],
+                "norm": 0.05416271207786896,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.12468152436240355,
+                  -0.14698745597525517
+                ],
+                "norm": 0.19274541429411546,
+                "floor_fraction": 0.00017801920572916666,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.2758629222982161,
+                  -0.16719776111036516
+                ],
+                "norm": 0.32257625954063995,
+                "floor_fraction": 0.012659708658854166,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "a59a17f90d2e6fdbd6d313909320146c5d2b481141afff0ac117ef51ea6107aa",
+          "prediction": {
+            "file": "8021-8690\\background_magenta_50.npy",
+            "sha256": "238ff7e9b5bbbb5dca5a6569d9c8b41f76c14bd908c772998542929395d5bb98",
+            "seconds": 2.1394602000000305
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.022430804146122866,
+                  0.00970918735473994
+                ],
+                "norm": 0.02444195764932025,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  -0.011372930834638919,
+                  0.0026306754318138796
+                ],
+                "norm": 0.011673217594006798,
+                "floor_fraction": 0.0005057209684556546,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.022789978035071167,
+                  0.008192645482015589
+                ],
+                "norm": 0.02421781449332323,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  -0.011930412090053705,
+                  0.0014829383151249295
+                ],
+                "norm": 0.012022222701520929,
+                "floor_fraction": 0.0006791857114011418,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.03590842219007616,
+                  0.008362553236414431
+                ],
+                "norm": 0.03686932438779723,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.26216180315978604,
+                  0.3290533093949092
+                ],
+                "norm": 0.4207194926072861,
+                "floor_fraction": 0.004170735677083333,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.14439643976640945,
+                  0.13599726183818703
+                ],
+                "norm": 0.19835722080302173,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "13a152bef1ef865320f6d2184f2dca41e5acfb1af591265b8aa59c8136ab8c4f",
+          "prediction": {
+            "file": "8021-8690\\background_green_100.npy",
+            "sha256": "dd3742c7898b9fc3e8205132e8509f49887877577ec2b4b387681c13f88fc37b",
+            "seconds": 2.1403924000005645
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.024991250268063682,
+                  -0.013700072528855842
+                ],
+                "norm": 0.028500080302639563,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  0.01429707432139612,
+                  -0.012485146864210185
+                ],
+                "norm": 0.01898118084768231,
+                "floor_fraction": 0.0002950038982657985,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.024979220612210154,
+                  -0.014271984394984763
+                ],
+                "norm": 0.028768924223268294,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  0.009470856985927267,
+                  -0.01825494471951223
+                ],
+                "norm": 0.02056550847317748,
+                "floor_fraction": 0.0004405528938818217,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.05361368284690209,
+                  -0.03603488412623105
+                ],
+                "norm": 0.06459829612612938,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.30752922478564054,
+                  -0.2726578769941562
+                ],
+                "norm": 0.4109945765873529,
+                "floor_fraction": 0.0021107991536458335,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.40302180981381625,
+                  -0.2841995682094665
+                ],
+                "norm": 0.4931490380767776,
+                "floor_fraction": 0.014241536458333334,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "4b4f8ff397dd94006a06cd564102c510f79cb64632c86d745c6c39d3236ba954",
+          "prediction": {
+            "file": "8021-8690\\background_magenta_100.npy",
+            "sha256": "4c9c2c352a992a5eca7c242cb0d671e382b9a84293a235dec2fc5cec2577ab08",
+            "seconds": 2.132436300000336
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.04288632232931682,
+                  0.019227553023050795
+                ],
+                "norm": 0.046999313167197326,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  -0.05285017434043553,
+                  -0.004721379740440555
+                ],
+                "norm": 0.05306064788963542,
+                "floor_fraction": 0.0003160756052847841,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.041404828813362445,
+                  0.018299206097910067
+                ],
+                "norm": 0.04526831996968341,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  -0.04777527103176549,
+                  -0.00410599604959504
+                ],
+                "norm": 0.04795138919487047,
+                "floor_fraction": 0.0005323347467738679,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.05862359234430067,
+                  0.03835943751493187
+                ],
+                "norm": 0.07005834729575564,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.23027502881374629,
+                  0.32697667902483607
+                ],
+                "norm": 0.3999254149479404,
+                "floor_fraction": 0.00014750162760416666,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.24054975218555028,
+                  0.23087012272818758
+                ],
+                "norm": 0.33341445206388104,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "89aa60dc439afde0cc4c0f62b88bc881c453f3b5d19115b32f88a93dc59a5740",
+          "prediction": {
+            "file": "8021-8690\\whole_green.npy",
+            "sha256": "30b94dd99af5f6ca6634702a877ae768dbdd813fbff2965d056a0429ecc2a155",
+            "seconds": 2.115406000000803
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.24084191316525488,
+                  -0.2456479008203428
+                ],
+                "norm": 0.34401703201228445,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  -0.25048648015745606,
+                  -0.31217463282408947
+                ],
+                "norm": 0.40024552229915916,
+                "floor_fraction": 0.0002528604842278273,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  -0.6208397004085973,
+                  -0.6954242435313547
+                ],
+                "norm": 0.9322321664127416,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.23482032115602572,
+                  -0.23745096747734737
+                ],
+                "norm": 0.33395141141152157,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  -0.24634260950318793,
+                  -0.30763475889099456
+                ],
+                "norm": 0.3941114387261051,
+                "floor_fraction": 0.00033041467041136624,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  -0.5900487191885668,
+                  -0.6562999975014174
+                ],
+                "norm": 0.8825458502176693,
+                "floor_fraction": 0.0010646694935477357,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.22433775604838008,
+                  -0.21324952681057044
+                ],
+                "norm": 0.30952025696835206,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.3362719392350216,
+                  -0.34512768077740785
+                ],
+                "norm": 0.4818629817237203,
+                "floor_fraction": 0.00011189778645833333,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.7545114734327256,
+                  -0.6306707907881609
+                ],
+                "norm": 0.9833784672723858,
+                "floor_fraction": 0.023895263671875,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "8a010e53e02db92442195370fa58112da306f529763c62064ddd5f705df38bdf",
+          "prediction": {
+            "file": "8021-8690\\whole_magenta.npy",
+            "sha256": "6d80e5bcef3f1aa2a58b8caca457631a3c634b1341559bf36a790e79219f4d48",
+            "seconds": 2.122674799999004
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  0.21304729648115275,
+                  0.22085904878640758
+                ],
+                "norm": 0.3068678379510713,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  0.17266125359260154,
+                  0.26168824158066667
+                ],
+                "norm": 0.3135165773507838,
+                "floor_fraction": 0.00010535853509492805,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.5624585909380919,
+                  0.617640189007907
+                ],
+                "norm": 0.8353676254187654,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  0.21346921802097263,
+                  0.21887402702324416
+                ],
+                "norm": 0.3057367278359886,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  0.15921885529562035,
+                  0.24712446868728466
+                ],
+                "norm": 0.29397473855013534,
+                "floor_fraction": 9.178185289204618e-05,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.5276610174285893,
+                  0.5753851795231213
+                ],
+                "norm": 0.7807011298369105,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  0.24303443642437003,
+                  0.24280263755616358
+                ],
+                "norm": 0.34353872866438345,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.22113993827331876,
+                  0.30360324440200154
+                ],
+                "norm": 0.37560325119858684,
+                "floor_fraction": 2.5431315104166668e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.49707057678948885,
+                  0.499833133887311
+                ],
+                "norm": 0.7049200806059122,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "fb8fcc68816d254797aaa5fb4de879555b76d824299631fa67c00a4e2f784b01",
+          "prediction": {
+            "file": "8021-8690\\whole_contrast.npy",
+            "sha256": "583fd3fe1bcd19be801ce2e484853fde478ffbd4d03a4c15b3a8e8b00890841a",
+            "seconds": 2.1211614000003465
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  6.690874961792245e-05,
+                  -0.0037216848589259935
+                ],
+                "norm": 0.0037222862557753974,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  0.055026980332728695,
+                  -0.003603741038618305
+                ],
+                "norm": 0.05514485936161169,
+                "floor_fraction": 0.0009060834018163812,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  0.049271299028294004,
+                  0.011991523060260688
+                ],
+                "norm": 0.05070954085022196,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.0024332241583604522,
+                  -0.000532393631834729
+                ],
+                "norm": 0.002490787583084335,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  0.05260495437009341,
+                  -0.005201105730019011
+                ],
+                "norm": 0.052861448382488026,
+                "floor_fraction": 0.0010463131229693264,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  0.044441027205973205,
+                  0.012713008474272723
+                ],
+                "norm": 0.04622364636837925,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.012836257945863,
+                  0.012263100263308872
+                ],
+                "norm": 0.017752553228217543,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.016849327964137965,
+                  0.00015406276914900114
+                ],
+                "norm": 0.016850032290174385,
+                "floor_fraction": 0.00030517578125,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.0025351976814197035,
+                  0.016885473389765527
+                ],
+                "norm": 0.017074731004626562,
+                "floor_fraction": 0.0008697509765625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "d0987e8eebd59c19027d3fd29fc07c9cf6217f069c6c2f4ea98c500e23ebcfe9",
+          "prediction": {
+            "file": "8021-8690\\whole_desaturate.npy",
+            "sha256": "0a6e90f43db30669dbf7df533690dd687bfbb299612a5effd33c80647b29346a",
+            "seconds": 2.1219392999992124
+          },
+          "regions": {
+            "primary": {
+              "shading": {
+                "vector": [
+                  -0.012988385018587501,
+                  0.0001880168600534965
+                ],
+                "norm": 0.012989745791613192,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              },
+              "albedo": {
+                "vector": [
+                  -0.05690323400450798,
+                  0.000960158240277665
+                ],
+                "norm": 0.05691133405586418,
+                "floor_fraction": 8.428682807594244e-05,
+                "pixels": 15819
+              },
+              "input": {
+                "vector": [
+                  -0.08915896652785865,
+                  -0.014043461757511758
+                ],
+                "norm": 0.09025818594704035,
+                "floor_fraction": 0.0,
+                "pixels": 15819
+              }
+            },
+            "person": {
+              "shading": {
+                "vector": [
+                  -0.011513413025345219,
+                  -0.0011153024425956679
+                ],
+                "norm": 0.011567306472582492,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              },
+              "albedo": {
+                "vector": [
+                  -0.05144208964100621,
+                  -0.0017194101726134467
+                ],
+                "norm": 0.051470816566040654,
+                "floor_fraction": 9.178185289204618e-05,
+                "pixels": 18159
+              },
+              "input": {
+                "vector": [
+                  -0.07786424877294895,
+                  -0.01306518106176778
+                ],
+                "norm": 0.07895277191557278,
+                "floor_fraction": 0.0,
+                "pixels": 18159
+              }
+            },
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.0014883985440872687,
+                  -0.007454250745502288
+                ],
+                "norm": 0.007601393582946651,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.00398475293686023,
+                  0.016876939176344176
+                ],
+                "norm": 0.017340972635058193,
+                "floor_fraction": 3.0517578125e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.013919530094544219,
+                  0.008612669390995836
+                ],
+                "norm": 0.01636860996210487,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              }
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "color": "green",
+          "supported": true,
+          "cosine": 0.9989085995255997,
+          "response_fraction": 0.3690250609309832,
+          "background_to_whole_ratio": 0.08284496885497768,
+          "response_pass": true,
+          "invariance_pass": true,
+          "floor_reliable": true,
+          "passed": true
+        },
+        {
+          "color": "magenta",
+          "supported": true,
+          "cosine": 0.9995874728414778,
+          "response_fraction": 0.367344661935205,
+          "background_to_whole_ratio": 0.15315815916391717,
+          "response_pass": true,
+          "invariance_pass": true,
+          "floor_reliable": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "pair": "285-1993",
+      "mask_sha256": "5933d4c44ed2bc2f431e2698b41923a18d056b24b450540bb109e7592a547060",
+      "primary_pixels": 0,
+      "person_pixels": 0,
+      "descriptive_only": true,
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "33baada356aec9d2db74ff4cc999aa798ff1557b6facd3ae8af7f472a5c723b3",
+          "prediction": {
+            "file": "285-1993\\identity.npy",
+            "sha256": "fae25c0b8de7c0e87a8da3ea57c0ec15785485ca1ae7c66f580e568dbfc193b8",
+            "seconds": 2.265860999999859
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0037841796875,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0001983642578125,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "33baada356aec9d2db74ff4cc999aa798ff1557b6facd3ae8af7f472a5c723b3",
+          "prediction": {
+            "file": "285-1993\\identity_repeat.npy",
+            "sha256": "fae25c0b8de7c0e87a8da3ea57c0ec15785485ca1ae7c66f580e568dbfc193b8",
+            "seconds": 2.1401286000000255
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0037841796875,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0001983642578125,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "55e7d2e9ef4f05412de498d5827b7e51ffc32deaa25333f08702c4840af4b77a",
+          "prediction": {
+            "file": "285-1993\\background_green_25.npy",
+            "sha256": "eadfdff43eaaaa0972c7a18b69f3920accb1eb583e5483bcb4af30cdba96a98d",
+            "seconds": 2.1402242000003753
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.018199221928477134,
+                  0.004943246993266917
+                ],
+                "norm": 0.01885861526301455,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.30896206988599867,
+                  -0.4059572785230995
+                ],
+                "norm": 0.5101557336873929,
+                "floor_fraction": 0.005640665690104167,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.21284273046642294,
+                  -0.2864159151819062
+                ],
+                "norm": 0.35684184785684997,
+                "floor_fraction": 0.018305460611979168,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "d5fb7d518021c3b6c15b00c2a0b597bf11627f501527e060a91ce74210754e11",
+          "prediction": {
+            "file": "285-1993\\background_magenta_25.npy",
+            "sha256": "13ede9c527173dcf8a943632cae9fb28a8e279e6a7eda998182b432fc482b2dd",
+            "seconds": 2.133520600000338
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.10715595071070338,
+                  0.11141800250144177
+                ],
+                "norm": 0.15458450457314918,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.038970429354057125,
+                  0.0666479749190977
+                ],
+                "norm": 0.0772052260203688,
+                "floor_fraction": 0.0004475911458333333,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.16237607354467581,
+                  0.1740934667753292
+                ],
+                "norm": 0.23806411832453586,
+                "floor_fraction": 0.00023905436197916666,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "bf6348d7589f8e02027f314d2c0787d53a566d8020c50b095d284700de17b025",
+          "prediction": {
+            "file": "285-1993\\background_green_50.npy",
+            "sha256": "a8012d5da3a2c39c9837ab157a377e8ca48a37a1a0cd284e6f0b83ab8f912913",
+            "seconds": 2.1267647000004217
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.06377923484615602,
+                  -0.06064426170254247
+                ],
+                "norm": 0.08800862045849589,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.5335312740184849,
+                  -1.178654950037353
+                ],
+                "norm": 1.2937863469689819,
+                "floor_fraction": 0.035710652669270836,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.44637598542197077,
+                  -0.6140818444469421
+                ],
+                "norm": 0.759175890054995,
+                "floor_fraction": 0.0287933349609375,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "1d07fb74ce41c8e2b7919f3cc95ba09d6290637733102fe074fa7c5c3d4f1f16",
+          "prediction": {
+            "file": "285-1993\\background_magenta_50.npy",
+            "sha256": "f9d8cac5c593fa8bd4ab2e9c8e98f21d69f4647bc9b7b4d7500337127b4f69b3",
+            "seconds": 2.130309699999998
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.22894734380653897,
+                  0.22418122096005919
+                ],
+                "norm": 0.320428004499002,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.07997791897933208,
+                  0.11008899213906265
+                ],
+                "norm": 0.13607370691819637,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.35012383726390833,
+                  0.3738465500664803
+                ],
+                "norm": 0.5121991257479976,
+                "floor_fraction": 0.00023905436197916666,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "4bf8ffbca69b338cc6bd7dba4804cd5f8793c39b358c7a2eebc687f9ad3dce21",
+          "prediction": {
+            "file": "285-1993\\background_green_100.npy",
+            "sha256": "42384e7df33bab3490243be4fd9edfa8ddc9d511526b81810b0a78f15e08e73c",
+            "seconds": 2.1170916999999463
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.43625290212042694,
+                  -0.2711334006888033
+                ],
+                "norm": 0.513643763300568,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.926125178372643,
+                  -2.109767026210377
+                ],
+                "norm": 2.304088702914959,
+                "floor_fraction": 0.06380716959635417,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.0402816960527639,
+                  -1.3436036267237952
+                ],
+                "norm": 1.699251809735023,
+                "floor_fraction": 0.046208699544270836,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "970fdd0e81b4a370799259f991cbe41604cd83524cf63c5cacffb742d1485175",
+          "prediction": {
+            "file": "285-1993\\background_magenta_100.npy",
+            "sha256": "e834daa3acdc3caf794a962dd4772b96a0fe20f0c44aaf1426f55b131ed2408a",
+            "seconds": 2.128256299998611
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.4719050994595817,
+                  0.4578018787512709
+                ],
+                "norm": 0.6574777434135326,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.21406812601450678,
+                  0.42818619525013824
+                ],
+                "norm": 0.47871555268045374,
+                "floor_fraction": 5.0862630208333336e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.8273110103131204,
+                  0.8686035832516179
+                ],
+                "norm": 1.199548120178122,
+                "floor_fraction": 0.0002593994140625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "4bf8ffbca69b338cc6bd7dba4804cd5f8793c39b358c7a2eebc687f9ad3dce21",
+          "prediction": {
+            "file": "285-1993\\whole_green.npy",
+            "sha256": "42384e7df33bab3490243be4fd9edfa8ddc9d511526b81810b0a78f15e08e73c",
+            "seconds": 2.122712700000193
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.43625290212042694,
+                  -0.2711334006888033
+                ],
+                "norm": 0.513643763300568,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.926125178372643,
+                  -2.109767026210377
+                ],
+                "norm": 2.304088702914959,
+                "floor_fraction": 0.06380716959635417,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -1.0402816960527639,
+                  -1.3436036267237952
+                ],
+                "norm": 1.699251809735023,
+                "floor_fraction": 0.046208699544270836,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "970fdd0e81b4a370799259f991cbe41604cd83524cf63c5cacffb742d1485175",
+          "prediction": {
+            "file": "285-1993\\whole_magenta.npy",
+            "sha256": "e834daa3acdc3caf794a962dd4772b96a0fe20f0c44aaf1426f55b131ed2408a",
+            "seconds": 2.12763300000006
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.4719050994595817,
+                  0.4578018787512709
+                ],
+                "norm": 0.6574777434135326,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.21406812601450678,
+                  0.42818619525013824
+                ],
+                "norm": 0.47871555268045374,
+                "floor_fraction": 5.0862630208333336e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.8273110103131204,
+                  0.8686035832516179
+                ],
+                "norm": 1.199548120178122,
+                "floor_fraction": 0.0002593994140625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "7d338604bf9e8b1477cb6fd3ba4a83a69b0461a1a5c0a464594337262b173508",
+          "prediction": {
+            "file": "285-1993\\whole_contrast.npy",
+            "sha256": "f31558d57f86a82831109e0361ccb3b01fcffb0206fde5226a66ea4015e7ae48",
+            "seconds": 2.12323219999962
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.008589397353183566,
+                  0.013264927923233118
+                ],
+                "norm": 0.015803039571533273,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.15381110944206255,
+                  0.03318211994520159
+                ],
+                "norm": 0.15734964401566306,
+                "floor_fraction": 0.01080322265625,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.10229989934993272,
+                  0.04476110030322825
+                ],
+                "norm": 0.11166389527220527,
+                "floor_fraction": 0.054590861002604164,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "a9a1c7edb1902627e2c8832c804979dce1d62b049ebd367a4e595eae4a838a76",
+          "prediction": {
+            "file": "285-1993\\whole_desaturate.npy",
+            "sha256": "cabfc6c009d7882e3139c2b4d7d5be82432b41e1a82cf87873eb712bf72ae0f5",
+            "seconds": 2.119106699999975
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.0058451758438920805,
+                  -0.008574788160888806
+                ],
+                "norm": 0.010377527289780466,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.061541908647292094,
+                  0.018832503662450078
+                ],
+                "norm": 0.06435891324554698,
+                "floor_fraction": 0.0014902750651041667,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.044901655379690396,
+                  -0.013008546575282942
+                ],
+                "norm": 0.04674805813975363,
+                "floor_fraction": 0.00018819173177083334,
+                "pixels": 65536
+              }
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "color": "green",
+          "supported": false,
+          "passed": false
+        },
+        {
+          "color": "magenta",
+          "supported": false,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "pair": "2149-2592",
+      "mask_sha256": "5933d4c44ed2bc2f431e2698b41923a18d056b24b450540bb109e7592a547060",
+      "primary_pixels": 0,
+      "person_pixels": 0,
+      "descriptive_only": true,
+      "rows": [
+        {
+          "name": "identity",
+          "input_sha256": "21887260fbc428163295262c5fc78d0fd98efddd3aef8dfacb57fe8fd6499fd7",
+          "prediction": {
+            "file": "2149-2592\\identity.npy",
+            "sha256": "4c7815a6e575f53daba60fd6a09292e1cd67ba708fbcbf723666e1e7e2493348",
+            "seconds": 2.1445454000004247
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 3.0517578125e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0014546712239583333,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "identity_repeat",
+          "input_sha256": "21887260fbc428163295262c5fc78d0fd98efddd3aef8dfacb57fe8fd6499fd7",
+          "prediction": {
+            "file": "2149-2592\\identity_repeat.npy",
+            "sha256": "4c7815a6e575f53daba60fd6a09292e1cd67ba708fbcbf723666e1e7e2493348",
+            "seconds": 2.1487738999985595
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 3.0517578125e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0,
+                  0.0
+                ],
+                "norm": 0.0,
+                "floor_fraction": 0.0014546712239583333,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_25",
+          "input_sha256": "0258e635d6109df5cc1bd2a9ab059c6c9f15703457d45f14366e114541dec792",
+          "prediction": {
+            "file": "2149-2592\\background_green_25.npy",
+            "sha256": "cc30827bd1bbde0356e86d32c1dfa676a2026031235a8f6de863011a108f9289",
+            "seconds": 2.138377400000536
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.03087478682522955,
+                  -0.00011544932843280578
+                ],
+                "norm": 0.030875002672887394,
+                "floor_fraction": 0.00013224283854166666,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.11653332298199562,
+                  -0.23105897542860096
+                ],
+                "norm": 0.2587822742989576,
+                "floor_fraction": 0.00011189778645833333,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.19808635229887803,
+                  -0.2570085757366342
+                ],
+                "norm": 0.32448668843151096,
+                "floor_fraction": 0.0071563720703125,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_25",
+          "input_sha256": "efd7138b4cb9a85f2e16b93f08069234b76efea5ffe88c8eacdb805410a088a9",
+          "prediction": {
+            "file": "2149-2592\\background_magenta_25.npy",
+            "sha256": "82f88aa276df84857e879191afa62ec8bfc91e5fbd697ad781821223f672d466",
+            "seconds": 2.1324702000001707
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.007854465369667694,
+                  0.03655507453864578
+                ],
+                "norm": 0.03738938486748957,
+                "floor_fraction": 0.0002492268880208333,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.2171048325225907,
+                  0.15753284366407758
+                ],
+                "norm": 0.2682370316297749,
+                "floor_fraction": 8.138020833333333e-05,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.1700344550856345,
+                  0.17628782795988712
+                ],
+                "norm": 0.24492675273045086,
+                "floor_fraction": 0.0014546712239583333,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_50",
+          "input_sha256": "d5a4fa19648b6af07024f306e046803afda7994f179e4357ad5b742ff33f1cbd",
+          "prediction": {
+            "file": "2149-2592\\background_green_50.npy",
+            "sha256": "a777779498ed51f1361fe0aad7755084fc458ddb9693475332b129737780d514",
+            "seconds": 2.1682091999991826
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.15715163609560207,
+                  -0.060524455071095155
+                ],
+                "norm": 0.16840381940198848,
+                "floor_fraction": 0.012791951497395834,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.09455557346131079,
+                  -0.24604881307247847
+                ],
+                "norm": 0.2635920615021871,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.35534926415625206,
+                  -0.42702380561402575
+                ],
+                "norm": 0.5555379645870074,
+                "floor_fraction": 0.008336385091145834,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_50",
+          "input_sha256": "5600e1b0d075bcc84a4f30d2b2f2544c79308218a7617bff25f2cfca4d7ae217",
+          "prediction": {
+            "file": "2149-2592\\background_magenta_50.npy",
+            "sha256": "85ebd4dbeb2e395a91602265e2e907f6325175c9d0124495419d7ad3d23f7169",
+            "seconds": 2.137952499999301
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.20783191458347167,
+                  0.21914653140886914
+                ],
+                "norm": 0.3020253415658526,
+                "floor_fraction": 0.013921101888020834,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.14677221681718103,
+                  0.08061829794551666
+                ],
+                "norm": 0.1674556466443031,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.30946839544827004,
+                  0.3160343412589268
+                ],
+                "norm": 0.44232159413292343,
+                "floor_fraction": 0.0014546712239583333,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_green_100",
+          "input_sha256": "62db6364dbd0dd47f3132b7212f39b39c1b0b5dc54dfffccc46e4fa69a64bd01",
+          "prediction": {
+            "file": "2149-2592\\background_green_100.npy",
+            "sha256": "ac451e4979c604c62274a36f6920c47ae361d1ba56453ca4ec0fe710bda3c0dd",
+            "seconds": 2.162064599999212
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.5246112201867519,
+                  -0.44297706046806656
+                ],
+                "norm": 0.6866189688952394,
+                "floor_fraction": 0.0013631184895833333,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.0956379241140625,
+                  -0.3340120410724734
+                ],
+                "norm": 0.3474343910873632,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.7491357534733524,
+                  -0.7747670753971457
+                ],
+                "norm": 1.077714432607977,
+                "floor_fraction": 0.019368489583333332,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "background_magenta_100",
+          "input_sha256": "5284e1250f008db867dda86c8eb3714054ff1fb229ca4b3bb1e87d5d1a88ca7f",
+          "prediction": {
+            "file": "2149-2592\\background_magenta_100.npy",
+            "sha256": "3708452d3a09d304c820efd16ddb73f7d3563ad4418465372a194ea652161b58",
+            "seconds": 2.1307417000007263
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.47210876068810487,
+                  0.43003172479728763
+                ],
+                "norm": 0.638603136737198,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.1778299334900101,
+                  0.15392024630849907
+                ],
+                "norm": 0.23519125721150955,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.6148344227739715,
+                  0.6089403561807055
+                ],
+                "norm": 0.8653494813156631,
+                "floor_fraction": 0.0014597574869791667,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_green",
+          "input_sha256": "62db6364dbd0dd47f3132b7212f39b39c1b0b5dc54dfffccc46e4fa69a64bd01",
+          "prediction": {
+            "file": "2149-2592\\whole_green.npy",
+            "sha256": "ac451e4979c604c62274a36f6920c47ae361d1ba56453ca4ec0fe710bda3c0dd",
+            "seconds": 2.13595130000067
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.5246112201867519,
+                  -0.44297706046806656
+                ],
+                "norm": 0.6866189688952394,
+                "floor_fraction": 0.0013631184895833333,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  -0.0956379241140625,
+                  -0.3340120410724734
+                ],
+                "norm": 0.3474343910873632,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.7491357534733524,
+                  -0.7747670753971457
+                ],
+                "norm": 1.077714432607977,
+                "floor_fraction": 0.019368489583333332,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_magenta",
+          "input_sha256": "5284e1250f008db867dda86c8eb3714054ff1fb229ca4b3bb1e87d5d1a88ca7f",
+          "prediction": {
+            "file": "2149-2592\\whole_magenta.npy",
+            "sha256": "3708452d3a09d304c820efd16ddb73f7d3563ad4418465372a194ea652161b58",
+            "seconds": 2.127021899999818
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.47210876068810487,
+                  0.43003172479728763
+                ],
+                "norm": 0.638603136737198,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.1778299334900101,
+                  0.15392024630849907
+                ],
+                "norm": 0.23519125721150955,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.6148344227739715,
+                  0.6089403561807055
+                ],
+                "norm": 0.8653494813156631,
+                "floor_fraction": 0.0014597574869791667,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_contrast",
+          "input_sha256": "49f6113fa8bcdd6149af8e48a7eee24e79532df4c67a2c99b346270ec1515322",
+          "prediction": {
+            "file": "2149-2592\\whole_contrast.npy",
+            "sha256": "c831b8339c6334d4a9ac3e9486882328696fc827bce497c85c087d10999fa1ac",
+            "seconds": 2.14786340000137
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  -0.00474176073860889,
+                  -0.0005697371298814005
+                ],
+                "norm": 0.004775865921419719,
+                "floor_fraction": 5.086263020833333e-06,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.0022167292195164716,
+                  -0.003431171913622119
+                ],
+                "norm": 0.004084951546039118,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  -0.007553700410697023,
+                  -0.00874564027541212
+                ],
+                "norm": 0.011556150471565994,
+                "floor_fraction": 0.02301025390625,
+                "pixels": 65536
+              }
+            }
+          }
+        },
+        {
+          "name": "whole_desaturate",
+          "input_sha256": "bfcdf2e65fae4b278ef4ac7f4c761a24afd2fdbaf9f923dd728495f03a083a5a",
+          "prediction": {
+            "file": "2149-2592\\whole_desaturate.npy",
+            "sha256": "c6b8af484ab2c2c25cbc64169673cc8bb909a8c6d1cbc569cdc715292eb334cc",
+            "seconds": 2.1318206999985705
+          },
+          "regions": {
+            "primary": null,
+            "person": null,
+            "all": {
+              "shading": {
+                "vector": [
+                  0.001656523042142199,
+                  -0.00013569057604848248
+                ],
+                "norm": 0.0016620711541857692,
+                "floor_fraction": 1.52587890625e-05,
+                "pixels": 65536
+              },
+              "albedo": {
+                "vector": [
+                  0.012590777499602789,
+                  0.017437572224756195
+                ],
+                "norm": 0.021508059027678265,
+                "floor_fraction": 0.0,
+                "pixels": 65536
+              },
+              "input": {
+                "vector": [
+                  0.0309802513139424,
+                  0.013892696423688556
+                ],
+                "norm": 0.03395265800192672,
+                "floor_fraction": 0.0012664794921875,
+                "pixels": 65536
+              }
+            }
+          }
+        }
+      ],
+      "checks": [
+        {
+          "color": "green",
+          "supported": false,
+          "passed": false
+        },
+        {
+          "color": "magenta",
+          "supported": false,
+          "passed": false
+        }
+      ]
+    }
+  ],
+  "finished": true,
+  "product_integrated": false,
+  "load_seconds": 4.24369200000001,
+  "bridge": {
+    "file": "bridge.npy",
+    "sha256": "8acd5d69e5fb14cb28f66e5495c2ad50bb6a0e79a59c8768976bad1f96e4175b",
+    "seconds": 3.091692999998486
+  },
+  "seconds": 176.58966920000057,
+  "cuda_peak_allocated_bytes": 4076228096,
+  "necessary_conditions_pass": false,
+  "audit": {
+    "finished": true,
+    "predictions_checked": 73,
+    "directions": 8,
+    "passed": 6,
+    "necessary_conditions_pass": false,
+    "results_sha256": "46018f32ccd5ddf5e23940cac72e476201a5d9bcae43d8f9ffa9b14b681bc122",
+    "scope": "offline input/layer/log-metric audit, not independent GPU or natural evaluation"
+  }
+}
