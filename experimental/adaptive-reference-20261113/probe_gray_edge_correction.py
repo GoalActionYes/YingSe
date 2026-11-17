@@ -62,7 +62,7 @@ def save_rgb(path, rgb):
     return digest(path)
 
 
-def controlled(out, parent):
+def controlled(out, parent, correct=correction):
     cases = []
     for case in parent['cases']:
         target = read(case['input_file'])
@@ -76,7 +76,7 @@ def controlled(out, parent):
             variant = inputs[name]
             ref = read(variant['reference'])
             baseline = read(variant['methods']['adaptive']['file'])
-            rgb, debug = correction(target, ref, baseline)
+            rgb, debug = correct(target, ref, baseline)
             prediction[name] = dict(baseline=baseline, candidate=rgb)
             diagnostics[name] = dict(**debug, sha256=save_rgb(folder / f'{name}.png', rgb))
 
@@ -100,7 +100,7 @@ def controlled(out, parent):
     return cases
 
 
-def authored(out, folder, evidence):
+def authored(out, folder, evidence, correct=correction):
     baseline = json.loads(evidence.read_text(encoding='utf-8'))
     if baseline['files'] != verify_source(folder, '105') or baseline['strength'] != .8:
         raise ValueError('Unexpected PSBench source or strength')
@@ -112,7 +112,7 @@ def authored(out, folder, evidence):
         if digest(path) != baseline['predictions'][target]:
             raise ValueError(f'{target}: PSBench baseline changed')
         original, grade, current = source[:, crops[target]], edited[:, crops[target]], decode_image(path)
-        refined, debug = correction(original, edited[:, crops[reference]], current)
+        refined, debug = correct(original, edited[:, crops[reference]], current)
         sha = save_rgb(out / f'psbench-{target}.png', refined)
         expected = original + np.rint((grade.astype(np.int16) - original) * .8).astype(np.int16)
         metrics = score(original, expected, dict(original=original, current13=current, candidate=refined),
