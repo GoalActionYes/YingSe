@@ -46,7 +46,48 @@ def infer_original(after):
     return inferred, canonicalizer.provenance
 
 
-def run(source, upstream, out, inferred_original=False, zero_coordinates=False):
+def reframe_outputs(target, target_tensor, render, strength, out):
+    height = target.shape[0]
+    trim = height // 8
+    frames = {}
+    for name, bounds in [('trim-top', slice(trim, height)), ('trim-bottom', slice(0, height - trim))]:
+        cropped = target[bounds]
+        inherited = target_tensor[:, bounds, :].contiguous()
+        normalized = input_tensor(cropped, target_tensor.device)
+        assert torch.equal(inherited[2:], normalized[2:])
+        images = {label: finish_spatial(cropped, render(tensor), strength)
+                  for label, tensor in [('inherited', inherited), ('normalized', normalized)]}
+        hashes = {}
+        for label, rgb in images.items():
+            path = out / f'{name}-{label}.png'
+            Image.fromarray(rgb).save(path)
+            hashes[label] = digest(path)
+        frames[name] = (bounds, images, hashes)
+    hashes = {name: frame[2] for name, frame in frames.items()}
+    (out / 'reframes.sha256.json').write_text(json.dumps(hashes, indent=2), encoding='ascii')
+    return frames
+
+
+def score_reframes(frames, output, truth, regions):
+    results = {}
+    for name, (bounds, images, hashes) in frames.items():
+        comparisons = {}
+        for region in ('whole', 'neutral_proxy'):
+            mask = regions[region][bounds]
+            inherited = images['inherited'][mask].astype(np.int16)
+            normalized = images['normalized'][mask].astype(np.int16)
+            gt = truth[bounds][mask]
+            comparisons[region] = dict(
+                inherited_vs_full=float(np.abs(inherited - output[bounds][mask]).mean()),
+                normalized_vs_inherited=float(np.abs(normalized - inherited).mean()),
+                inherited_vs_truth=float(np.abs(inherited - gt).mean()),
+                normalized_vs_truth=float(np.abs(normalized - gt).mean()),
+            )
+        results[name] = dict(output_sha256=hashes, crop_rows=[bounds.start, bounds.stop], metrics=comparisons)
+    return results
+
+
+def run(source, upstream, out, inferred_original=False, zero_coordinates=False, reframe=False):
     assert digest(upstream) == MODEL_SHA256
     spec = importlib.util.spec_from_file_location('inretouch_frozen_network', upstream)
     module = importlib.util.module_from_spec(spec)
@@ -110,7 +151,10 @@ def run(source, upstream, out, inferred_original=False, zero_coordinates=False):
     with torch.inference_mode():
         rgb8 = lambda val: (model(val[None])[0].clamp(0, 1)*255).round().to(torch.uint8).permute(1, 2, 0).cpu().numpy()
         recon = rgb8(x)
-        full = rgb8(input_tensor(target, device, zero_coordinates))
+        target_tensor = input_tensor(target, device, zero_coordinates)
+        full = rgb8(target_tensor)
+        if reframe:
+            frames = reframe_outputs(target, target_tensor, rgb8, evidence['strength'], out)
     output = finish_spatial(target, full, evidence['strength'])
     path = out / 'target.png'
     Image.fromarray(output).save(path)
@@ -135,6 +179,8 @@ def run(source, upstream, out, inferred_original=False, zero_coordinates=False):
         protocol_name = 'inretouch-inferred-original-protocol.md'
     if zero_coordinates:
         protocol_name = 'inretouch-coordinates-protocol.md'
+    if reframe:
+        protocol_name = 'inretouch-reframe-protocol.md'
     protocol = Path(__file__).with_name(protocol_name)
     report = dict(network_sha256=MODEL_SHA256, script_sha256=digest(__file__), protocol_sha256=digest(protocol),
                   baseline_evidence_sha256=digest(EVIDENCE),
@@ -144,6 +190,8 @@ def run(source, upstream, out, inferred_original=False, zero_coordinates=False):
                   metrics=metrics, passed=passed, losses=train_loss, elapsed_seconds=time.monotonic()-started)
     if zero_coordinates:
         report['zero_coordinates'] = True
+    if reframe:
+        report['reframes'] = score_reframes(frames, output, truth80, regions)
     if inferred_original:
         actual_original = read('example_data/Example1_Before.jpg')
         assert actual_original.shape == before.shape
@@ -173,5 +221,6 @@ if __name__ == '__main__':
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument('--inferred-original', action='store_true')
     mode.add_argument('--zero-coordinates', action='store_true')
+    mode.add_argument('--reframe', action='store_true')
     args = parser.parse_args()
-    run(args.source, args.upstream, args.out, args.inferred_original, args.zero_coordinates)
+    run(args.source, args.upstream, args.out, args.inferred_original, args.zero_coordinates, args.reframe)
