@@ -1,0 +1,72 @@
+{
+  "network_sha256": "2ce7b908dd8e48fa037ac337c81b4ac234b783fab4a5b4097c37a90b3fa1e44d",
+  "script_sha256": "17639267640447918f1350c1d625017ca3ad2c4b8dafee683dde91bdb141638e",
+  "protocol_sha256": "215c1780cdb13b74f776283acdd6104ccd1900e488b434e456807d9eb5ef31c7",
+  "baseline_evidence_sha256": "b6905b01123c60e00313eb7de5304d61e1d34c35c6b14995c24b93388d18d88b",
+  "prior_fit_evidence_sha256": "e373872a965ffefce2fd3a9ed9c36c46d5b320045125ae139034eafb14ddb3dd",
+  "output_sha256": "90373e0d5961fc1b2d562c17ac145a1bba546621801b1b4c517427a7e47b71ec",
+  "reference_reconstruction_sha256": "b5a41259e3eecaa42294289714d23b46cd190435031a8f7f6dd725365f65b026",
+  "reference_in_sample_mae": 0.8033549783549784,
+  "metrics": {
+    "whole": {
+      "candidate": 19.151861402723526,
+      "baseline": 12.763897365993923,
+      "quadratic": 13.352377149793837
+    },
+    "neutral_proxy": {
+      "candidate": 20.124729718949148,
+      "baseline": 13.010431009563831,
+      "quadratic": 13.802256322271365
+    }
+  },
+  "passed": false,
+  "losses": {
+    "1": 0.14615586400032043,
+    "100": 0.01300296001136303,
+    "200": 0.01245221495628357,
+    "300": 0.009664750657975674,
+    "400": 0.006288721691817045,
+    "500": 0.00621624942868948,
+    "600": 0.005639418959617615,
+    "700": 0.004702797159552574,
+    "800": 0.003898514900356531,
+    "900": 0.003683857386931777,
+    "1000": 0.0035710628144443035
+  },
+  "elapsed_seconds": 9.75,
+  "canonicalizer": {
+    "author_repo": "https://github.com/Jinwon-Ko/CanonCGT",
+    "author_commit": "229a7d3ec24af19ea5d97bb136f0317762bb9261",
+    "stage": "E2E, not final SSL",
+    "checkpoint_sha256": "916f7ad5028d3fef51cf915bb51febc9508e7a378c0babe9ff3d3992b8c594f7",
+    "torch_version": "2.6.0+cu124",
+    "device": "cuda",
+    "all_inference_weights_loaded": true,
+    "limitation": "Two learned global LUT stages; does not establish region-dependent mapping",
+    "ignored_centroid_count": 57
+  },
+  "inferred_original_sha256": "de2c67738cc174cc28d5d9a0e37ed942a3f4b56f7c5b5aaf9f444389fd95e559",
+  "original_fit_evidence_sha256": "2180f95de176c847d1e0621ea9311293ef1097ba44eb3e6f2702183326c47107",
+  "inferred_to_actual_original_mae": 20.7162954883658,
+  "retained_original_fit_gain": -1.1023708242792398,
+  "results_sha256": "f2aba6a085f9f9c9a474ac57afcd7e74f771ef4e922016f8dd22e8d0f67ffb4a",
+  "default_regression": {
+    "output_sha256": "404985b5256a0266f1600621d46c9a76b182fdc6133ea5441e0b8e5a449c38ca",
+    "metrics": {
+      "whole": {
+        "candidate": 7.036035325792101,
+        "baseline": 12.763897365993923,
+        "quadratic": 13.352377149793837
+      },
+      "neutral_proxy": {
+        "candidate": 7.176298359198466,
+        "baseline": 13.010431009563831,
+        "quadratic": 13.802256322271365
+      }
+    },
+    "passed": true,
+    "output_change_mae": 1.0904820760091145
+  },
+  "checked_output_files": 7,
+  "independently_checked_error_metrics": 10
+}

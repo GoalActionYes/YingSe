@@ -17,6 +17,7 @@ from spatial_render import finish_spatial
 ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE = ROOT / 'docs/research/2026-11-18-inretouch-public-pilot-evidence.json'
 QUADRATIC = ROOT / 'docs/research/2026-11-18-inretouch-reference-original-evidence.json'
+ORIGINAL_FIT = ROOT / 'docs/research/2026-11-18-inretouch-spatial-fit-evidence.json'
 MODEL_SHA256 = '2ce7b908dd8e48fa037ac337c81b4ac234b783fab4a5b4097c37a90b3fa1e44d'
 TARGET = 'a0007-IMG_2480'
 
@@ -28,7 +29,20 @@ def input_tensor(rgb, device):
     return torch.cat([torch.stack([vertical, horizontal]), pixels]).to(device)
 
 
-def run(source, upstream, out):
+@torch.inference_mode()
+def infer_original(after):
+    from canonical_model import CanonicalModel
+
+    canonicalizer = CanonicalModel()
+    image = canonicalizer._tensor(after)
+    condition = canonicalizer.model.Embedding_Net(image)
+    result = canonicalizer.model.Canonicalizer(image, condition=condition)['result']
+    assert result.shape == image.shape and torch.isfinite(result).all()
+    inferred = result[0].permute(1, 2, 0).clamp(0, 1).mul(255).round().byte().cpu().numpy()
+    return inferred, canonicalizer.provenance
+
+
+def run(source, upstream, out, inferred_original=False):
     assert digest(upstream) == MODEL_SHA256
     spec = importlib.util.spec_from_file_location('inretouch_frozen_network', upstream)
     module = importlib.util.module_from_spec(spec)
@@ -42,9 +56,16 @@ def run(source, upstream, out):
         return decode_image(path)
 
     out.mkdir(exist_ok=False)
-    before = read('example_data/Example1_Before.jpg')
     after = read('example_data/Example1_After.jpg')
     target = read(f'example_data/Inference_Data/{TARGET}.jpg')
+    if inferred_original:
+        before, canonicalizer_provenance = infer_original(after)
+        inferred_path = out / 'inferred-reference-original.png'
+        Image.fromarray(before).save(inferred_path)
+        inferred_sha = digest(inferred_path)
+        (out / 'inferred-reference-original.sha256').write_text(inferred_sha, encoding='ascii')
+    else:
+        before = read('example_data/Example1_Before.jpg')
     assert before.shape == after.shape
     torch.manual_seed(42)
     torch.backends.cuda.matmul.allow_tf32 = False
@@ -105,13 +126,31 @@ def run(source, upstream, out):
     whole, neutral = metrics['whole'], metrics['neutral_proxy']
     passed = (whole['candidate'] <= min(whole['baseline'], whole['quadratic'])-.25
               and neutral['candidate'] <= min(neutral['baseline'], neutral['quadratic'])+.25)
-    protocol = Path(__file__).with_name('inretouch-spatial-fit-protocol.md')
+    protocol_name = 'inretouch-inferred-original-protocol.md' if inferred_original else 'inretouch-spatial-fit-protocol.md'
+    protocol = Path(__file__).with_name(protocol_name)
     report = dict(network_sha256=MODEL_SHA256, script_sha256=digest(__file__), protocol_sha256=digest(protocol),
                   baseline_evidence_sha256=digest(EVIDENCE),
                   prior_fit_evidence_sha256=digest(QUADRATIC), output_sha256=prediction_sha,
                   reference_reconstruction_sha256=digest(out/'reference-reconstruction.png'),
                   reference_in_sample_mae=float(np.abs(recon.astype(np.int16)-after).mean()),
                   metrics=metrics, passed=passed, losses=train_loss, elapsed_seconds=time.monotonic()-started)
+    if inferred_original:
+        actual_original = read('example_data/Example1_Before.jpg')
+        assert actual_original.shape == before.shape
+        original_fit = json.loads(ORIGINAL_FIT.read_text(encoding='utf-8'))
+        oracle_error = original_fit['metrics']['whole']['candidate']
+        candidate_gain = whole['baseline'] - whole['candidate']
+        oracle_gain = whole['baseline'] - oracle_error
+        assert oracle_gain > 0
+        report.update(
+            canonicalizer=canonicalizer_provenance,
+            inferred_original_sha256=inferred_sha,
+            original_fit_evidence_sha256=digest(ORIGINAL_FIT),
+            inferred_to_actual_original_mae=float(np.abs(before.astype(np.int16) - actual_original).mean()),
+            retained_original_fit_gain=candidate_gain / oracle_gain,
+            passed=candidate_gain >= max(.25, .5 * oracle_gain)
+            and neutral['candidate'] <= neutral['baseline'] + .25,
+        )
     (out/'results.json').write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
     print(json.dumps(report))
 
@@ -121,5 +160,6 @@ if __name__ == '__main__':
     parser.add_argument('source', type=Path)
     parser.add_argument('upstream', type=Path)
     parser.add_argument('out', type=Path)
+    parser.add_argument('--inferred-original', action='store_true')
     args = parser.parse_args()
-    run(args.source, args.upstream, args.out)
+    run(args.source, args.upstream, args.out, args.inferred_original)
