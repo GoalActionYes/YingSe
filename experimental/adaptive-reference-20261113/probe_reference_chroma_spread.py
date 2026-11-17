@@ -72,15 +72,17 @@ def decision(cases):
 
 
 @torch.inference_mode()
-def main():
+def main(out=OUT, protocol=None, weight_chroma=None, experiment_source=None):
     torch.set_num_threads(4)
     data = json.loads((PARENT / 'results.json').read_text())
     assert data['finished'] and len(data['cases']) == 6 and data['strength'] == .8
-    OUT.mkdir(exist_ok=False)
-    protocol = Path(__file__).with_name('reference-chroma-spread-protocol.md')
+    out.mkdir(exist_ok=False)
+    protocol = protocol or Path(__file__).with_name('reference-chroma-spread-protocol.md')
     report = dict(parent_sha256=digest(PARENT / 'results.json'), protocol_sha256=digest(protocol),
                   source_sha256=digest(__file__), cases=[], finished=False)
-    (OUT / 'config.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    if experiment_source is not None:
+        report['experiment_sha256'] = digest(experiment_source)
+    (out / 'config.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
     engine = SpatialEngine('multiref-v1')
     assert engine.checkpoint_sha == data['model_sha256']
     report['model_sha256'] = engine.checkpoint_sha
@@ -88,7 +90,7 @@ def main():
     for case in data['cases']:
         target = read(case['input_file'])
         pair = case['pair']
-        folder = OUT / pair
+        folder = out / pair
         folder.mkdir()
         mask_name = pair.split('-')[0] + '-human-mask.png'
         mask_path = BASE / 'independent-coco' / mask_name
@@ -99,7 +101,8 @@ def main():
         content = engine.analysis(target)
         color = engine.api['srgb_to_ycbcr']
         histogram = engine.api['batch_histogram_1D']
-        target_histogram = histogram(color(content))
+        target_color = color(content)
+        target_histogram = histogram(target_color)
         low = engine.api['TF'].resize(content, (64, 64), antialias=True)
         inputs = {v['name']: v for v in case['variants']}
         origin = {}
@@ -111,7 +114,9 @@ def main():
             ref_color = color(engine.analysis(read(variant['reference'])))
             base_histogram = histogram(ref_color)
             outputs, hashes = {}, {}
-            for label, condition in [('baseline', base_histogram), ('candidate', spread_histogram(ref_color, base_histogram))]:
+            candidate = (spread_histogram(ref_color, base_histogram) if weight_chroma is None
+                         else weight_chroma(ref_color, base_histogram, target_color))
+            for label, condition in [('baseline', base_histogram), ('candidate', candidate)]:
                 grid = engine.api['lowpass'](engine.model.apply_grid(low, torch.cat([target_histogram, condition], 1)))
                 assert torch.isfinite(grid).all()
                 output = finish_spatial(target, PreparedSpatial(engine, grid, {}).apply(target, 1), .8)
@@ -133,7 +138,7 @@ def main():
         report['cases'].append(dict(pair=pair, variants=records))
         print(pair, flush=True)
     report.update(finished=True, decision=decision(report['cases']))
-    (OUT / 'results.json').write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
+    (out / 'results.json').write_text(json.dumps(report, indent=2, allow_nan=False), encoding='utf-8')
     print(json.dumps(report['decision']))
 
 
