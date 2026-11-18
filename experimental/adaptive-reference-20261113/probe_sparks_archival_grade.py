@@ -21,6 +21,10 @@ D65 = (.3127, .3290)
 BRADFORD = np.array([[.8951, .2664, -.1614], [-.7502, 1.7135, .0367],
                      [.0389, -.0685, 1.0296]])
 PROTOCOL = Path(__file__).with_name('sparks-archival-grade-protocol.md')
+ACES_PROTOCOL = Path(__file__).with_name('sparks-aces-display-protocol.md')
+ACES_CONFIG = 'cg-config-v4.0.0_aces-v2.0_ocio-v2.5'
+ACES_DISPLAY = 'sRGB - Display'
+ACES_VIEW = 'ACES 2.0 - SDR 100 nits (Rec.709)'
 
 
 def sha(path):
@@ -50,7 +54,22 @@ def display_transform():
     return transform, display[1]
 
 
-def prepare_thumbnail(source, matrix, luma):
+def aces_transform():
+    import PyOpenColorIO as ocio
+
+    if ocio.__version__ != '2.5.2':
+        raise ValueError('Expected the frozen OpenColorIO 2.5.2 build')
+    config = ocio.Config.CreateFromBuiltinConfig(ACES_CONFIG)
+    config.validate()
+    transform = ocio.DisplayViewTransform(src='ACES2065-1', display=ACES_DISPLAY, view=ACES_VIEW)
+    processor = config.getProcessor(transform).getDefaultCPUProcessor()
+    info = dict(ocio=ocio.__version__, config=ACES_CONFIG, config_cache_id=config.getCacheID(),
+                source='ACES2065-1', display=ACES_DISPLAY, view=ACES_VIEW,
+                cpu_processor_id=processor.getCacheID())
+    return processor, info
+
+
+def prepare_thumbnail(source, matrix, luma, processor=None):
     os.environ['OPENCV_IO_ENABLE_OPENEXR'] = '1'
     import cv2
 
@@ -59,15 +78,25 @@ def prepare_thumbnail(source, matrix, luma):
         raise ValueError(f'Unexpected EXR format for {source}')
     if not np.isfinite(bgr).all():
         raise ValueError(f'EXR contains non-finite values: {source}')
-    small = cv2.resize(bgr, SIZE, interpolation=cv2.INTER_AREA)[..., ::-1].astype(np.float64)
+    small = cv2.resize(bgr, SIZE, interpolation=cv2.INTER_AREA)[..., ::-1]
+    limits = dict(ap0_min=float(bgr.min()), ap0_max=float(bgr.max()))
+    if processor is not None:
+        encoded = np.ascontiguousarray(small)
+        processor.applyRGB(encoded)
+        if not np.isfinite(encoded).all():
+            raise ValueError(f'Non-finite display values for {source}')
+        rgb = np.rint(encoded.clip(0., 1.) * 255.).astype(np.uint8)
+        return rgb, dict(limits, below_zero=float((encoded < 0.).mean()),
+                         above_one=float((encoded > 1.).mean()))
+
+    small = small.astype(np.float64)
     linear = small @ matrix.T
     luminance = linear @ luma
     mapped = linear / (1 + np.maximum(luminance, 0.)[..., None])
     clipped = np.clip(mapped, 0., 1.)
     encoded = np.where(clipped <= .0031308, clipped * 12.92, 1.055 * clipped**(1 / 2.4) - .055)
     rgb = np.rint(encoded * 255.).astype(np.uint8)
-    return rgb, dict(ap0_min=float(bgr.min()), ap0_max=float(bgr.max()),
-                     below_zero=float((mapped < 0.).mean()), above_one=float((mapped > 1.).mean()))
+    return rgb, dict(limits, below_zero=float((mapped < 0.).mean()), above_one=float((mapped > 1.).mean()))
 
 
 def grad(rgb, luma):
@@ -77,7 +106,7 @@ def grad(rgb, luma):
     return np.hypot(dx, dy).ravel()
 
 
-def prepare(source, out):
+def prepare(source, out, aces=False):
     started = time.monotonic()
     intake = source / 'intake.json'
     files = {item['name']: item for item in json.loads(intake.read_text(encoding='utf-8-sig'))}
@@ -85,6 +114,7 @@ def prepare(source, out):
     if set(files) != expected or sum(r['size'] for r in files.values()) > 204 * 1024**2:
         raise ValueError('Unexpected frame set or size')
     matrix, luma = display_transform()
+    processor, display = aces_transform() if aces else (None, None)
     out.mkdir()
     pairs = {}
     for frame in FRAMES:
@@ -95,7 +125,7 @@ def prepare(source, out):
             path = source / f'{name}.exr'
             if path.stat().st_size != FRAME_BYTES or sha(path) != files[name]['sha256']:
                 raise ValueError(f'Invalid frame identity: {name}')
-            thumb, info = prepare_thumbnail(path, matrix, luma)
+            thumb, info = prepare_thumbnail(path, matrix, luma, processor)
             png = out / f'{name}.png'
             Image.fromarray(thumb).save(png)
             rows[role] = dict(files[name], **info, png_sha256=sha(png))
@@ -108,8 +138,11 @@ def prepare(source, out):
                             qualified=corr is not None and corr >= .70 and delta >= 2.)
     if time.monotonic() - started > 120:
         raise RuntimeError('Preparation exceeded the compute budget')
-    write_json(out / 'prepared.json', dict(pairs=pairs, source_sha256=sha(Path(__file__)),
-                                           protocol_sha256=sha(PROTOCOL), intake_sha256=sha(intake)))
+    record = dict(pairs=pairs, source_sha256=sha(Path(__file__)),
+                  protocol_sha256=sha(ACES_PROTOCOL if aces else PROTOCOL), intake_sha256=sha(intake))
+    if display is not None:
+        record['display'] = display
+    write_json(out / 'prepared.json', record)
     print({frame: (r['gradient_correlation'], r['image_delta'], r['qualified']) for frame, r in pairs.items()})
 
 
@@ -166,5 +199,11 @@ if __name__ == '__main__':
     parser.add_argument('phase', choices=('prepare', 'render'))
     parser.add_argument('source', type=Path)
     parser.add_argument('out', type=Path)
+    parser.add_argument('--aces', action='store_true', help='Prepare with the pinned ACES 2.0 SDR view')
     args = parser.parse_args()
-    {'prepare': prepare, 'render': render}[args.phase](args.source, args.out)
+    if args.phase == 'prepare':
+        prepare(args.source, args.out, args.aces)
+    elif args.aces:
+        parser.error('--aces applies to prepare only')
+    else:
+        render(args.source, args.out)
