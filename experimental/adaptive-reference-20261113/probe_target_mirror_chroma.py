@@ -68,7 +68,7 @@ def panel(path, rows):
     return digest(path)
 
 
-def background(engine, output):
+def background(engine, output, grade=mirror_grade, label="mirror mean"):
     source = BASE / "bg-real-editor-look"
     known = checked_json(source / "results.json", BG_SHA)
     parent = checked_json(PARENT / "results.json", PARENT_SHA)
@@ -94,11 +94,11 @@ def background(engine, output):
                 stem = f"{variant}-{state}"
                 guide = load(f"{stem}-reference.png")
                 current = load(f"{stem}-13.png")
-                result, detail = mirror_grade(engine, original, guide, current)
+                result, detail = grade(engine, original, guide, current)
                 rendered[variant][state], baseline[variant][state] = result, current
                 diagnostics[stem] = {**detail, "sha256": save(root / f"{stem}.png", result)}
                 pictures[stem] = {"target": original, "reference": guide, "13": current,
-                                  "mirror mean": result, "known edit": target_grade[state]}
+                                  label: result, "known edit": target_grade[state]}
         mask = mask_for(entries[name], name.split("-")[0])
         original_scores = evaluate(original, target_grade, baseline, mask)
         if any(value != archived[key] for key, value in original_scores.items()):
@@ -111,7 +111,7 @@ def background(engine, output):
             "passed": count >= 3 and worst <= 3}
 
 
-def facd(engine, output):
+def facd(engine, output, grade=mirror_grade, label="mirror mean"):
     aligned = BASE / "facd-border-registration-v1"
     baseline_folder = BASE / "facd-two-image-baseline-v1"
     source = checked_json(ROOT / "docs/research/2026-11-18-facd-border-registration-evidence.json", FACD_SOURCE_SHA)
@@ -129,8 +129,8 @@ def facd(engine, output):
         supported = neutral & np.logical_and.reduce([interior(image) for image in rgb])
         if supported.sum() < 256 or supported.sum() < .5 * neutral.sum():
             raise ValueError(f"Lost prevalidated SDR coverage: {name}")
-        expected = {style: finish_spatial(original, grade, STRENGTH).astype(np.int16)
-                    for style, grade in filters.items()}
+        expected = {style: finish_spatial(original, filtered, STRENGTH).astype(np.int16)
+                    for style, filtered in filters.items()}
         pictures, detail = {}, {}
         arms = {arm: {style: {} for style in STYLES} for arm in ("baseline", "candidate")}
         for style in STYLES:
@@ -138,14 +138,14 @@ def facd(engine, output):
                 filename = f"{ref}-{style}.png"
                 guide = read_checked(aligned, ref, style, source)
                 current = checked_rgb(baseline_folder / name / filename, baseline["artifacts"][f"{name}/{filename}"])
-                result, debug = mirror_grade(engine, original, guide, current)
+                result, debug = grade(engine, original, guide, current)
                 arms["baseline"][style][ref] = current.astype(np.int16)
                 arms["candidate"][style][ref] = result.astype(np.int16)
                 neutral_errors = {key: float(np.abs(images[style][ref][supported] - expected[style][supported]).mean())
                                   for key, images in arms.items()}
                 detail[filename] = {**debug, "neutral_error": neutral_errors, "sha256": save(root / filename, result)}
                 pictures[f"{ref} {style}"] = {"target": original, "reference": guide, "13": current,
-                                              "mirror mean": result, "author": expected[style].astype(np.uint8)}
+                                              label: result, "author": expected[style].astype(np.uint8)}
         scores = {arm: case_metrics(original, expected, images, refs) for arm, images in arms.items()}
         if scores["baseline"] != baseline["cases"][name]:
             raise ValueError(f"FACD baseline score changed: {name}")
