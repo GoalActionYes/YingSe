@@ -1,0 +1,291 @@
+{
+  "prepared": {
+    "cases": {
+      "showgirl_01": {
+        "correlations": {
+          "0": {
+            "zero": 0.7307719164085368,
+            "peak": 0.7307719164085368,
+            "peak_offset_y_x": [
+              0,
+              0
+            ],
+            "passed": true
+          },
+          "-1": {
+            "zero": 0.5945684715106924,
+            "peak": 0.5945684715106924,
+            "peak_offset_y_x": [
+              0,
+              0
+            ],
+            "passed": false
+          },
+          "1": {
+            "zero": 0.5809933172832275,
+            "peak": 0.5809933172832275,
+            "peak_offset_y_x": [
+              0,
+              0
+            ],
+            "passed": false
+          }
+        },
+        "margin": 0.13620344489784442,
+        "temporal_verified": true,
+        "images": {
+          "graded": {
+            "file": "showgirl_01-graded.png",
+            "sha256": "6354c04e3eb7b1f45c3bf70dd88d08f6890fee6f44a495ab2ad1d5d90736e121",
+            "below_0": 0.007358127170138889,
+            "above_1": 0.08254439742476852
+          },
+          "half": {
+            "file": "showgirl_01-half.png",
+            "sha256": "0b36f45047ccab4fba8bcc1f9dd83eafb18dd0ddb107a1783355d0264d1dd828",
+            "below_0": 0.0009200484664351852,
+            "above_1": 0.00010172526041666667
+          },
+          "unit": {
+            "file": "showgirl_01-unit.png",
+            "sha256": "ceb0d080f30d5291da45dcf05a2ea9e9d17a6d60e79a6bb72bc45a73d2de1467",
+            "below_0": 0.0009200484664351852,
+            "above_1": 0.0005131474247685185
+          },
+          "double": {
+            "file": "showgirl_01-double.png",
+            "sha256": "7dcd31324b8f169180978cef307c5cdb5b94010b2a8352d4fc33c0a96913febc",
+            "below_0": 0.0009200484664351852,
+            "above_1": 0.0008929217303240741
+          }
+        }
+      },
+      "poker_fullshot": {
+        "correlations": {
+          "0": {
+            "zero": 0.6772179300723224,
+            "peak": 0.6772179300723224,
+            "peak_offset_y_x": [
+              0,
+              0
+            ],
+            "passed": true
+          },
+          "-1": {
+            "zero": 0.6661861983091298,
+            "peak": 0.6661861983091298,
+            "peak_offset_y_x": [
+              0,
+              0
+            ],
+            "passed": true
+          },
+          "1": {
+            "zero": 0.6649329132725901,
+            "peak": 0.6649329132725901,
+            "peak_offset_y_x": [
+              0,
+              0
+            ],
+            "passed": true
+          }
+        },
+        "margin": 0.01103173176319261,
+        "temporal_verified": true,
+        "images": {
+          "graded": {
+            "file": "poker_fullshot-graded.png",
+            "sha256": "26c63ec7d2569b58b9cc61f1cc07b1a09f4311d59e1da49d04f7ea40c002cf48",
+            "below_0": 0.10277642144097222,
+            "above_1": 0.027228461371527776
+          },
+          "half": {
+            "file": "poker_fullshot-half.png",
+            "sha256": "b76a19986be4e2c13d8709474bde1cac28c1ec16f4ed248a5a8f1f1c52459a32",
+            "below_0": 6.781684027777777E-06,
+            "above_1": 0.0
+          },
+          "unit": {
+            "file": "poker_fullshot-unit.png",
+            "sha256": "13d2f23fbb9845938ae31cbc8560a41b62ee0283a2a207f2600df8455eb9e139",
+            "below_0": 6.781684027777777E-06,
+            "above_1": 1.3563368055555555E-05
+          },
+          "double": {
+            "file": "poker_fullshot-double.png",
+            "sha256": "42d660f225a5bf52e7f5c9cfb287dc55f724eac1864c8f15fd2d60abed9f15c2",
+            "below_0": 6.781684027777777E-06,
+            "above_1": 0.00048149956597222225
+          }
+        }
+      }
+    },
+    "strict_temporal_requirement": 0.002,
+    "neighborhood_source_sha256": "7135a5002d831bd0f25dea14eaf8dd8f8b93e157f894b0318055575d324cb41d"
+  },
+  "render": {
+    "prepared_sha256": "c407b64b4752862231cf56163cf4d56eb94cc904d75515036c7d258c283798fc",
+    "model_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "scores": {
+      "showgirl_01": {
+        "donor": "poker_fullshot",
+        "exposures": {
+          "half": {
+            "output_sha256": "933c73ebaf6ede59ea0bb76db6a07b9a35e79391c2b5149b0a571e1ba80346e2",
+            "mae": {
+              "whole": [
+                99.14576551649306,
+                93.22525589554398
+              ],
+              "neutral_pixels": 9,
+              "neutral": null
+            }
+          },
+          "unit": {
+            "output_sha256": "845192dc980e2f7faede14274a450bcc8260d0aac07965f2b7ed469e797289b4",
+            "mae": {
+              "whole": [
+                95.66713460286458,
+                89.95763934100115
+              ],
+              "neutral_pixels": 10,
+              "neutral": null
+            }
+          },
+          "double": {
+            "output_sha256": "e81863400dcdcb5396616ad6602afd04e7f8e7f73e6f7ceec904a2e425b863c0",
+            "mae": {
+              "whole": [
+                90.64004855685764,
+                85.37853099681713
+              ],
+              "neutral_pixels": 7,
+              "neutral": null
+            }
+          }
+        }
+      },
+      "poker_fullshot": {
+        "donor": "showgirl_01",
+        "exposures": {
+          "half": {
+            "output_sha256": "540f46f52633c43aecc95a55065a252821ee837ba3cb25b80015059bc1d9f453",
+            "mae": {
+              "whole": [
+                41.427919741030095,
+                35.05681694878472
+              ],
+              "neutral_pixels": 3874,
+              "neutral": [
+                164.40535191877473,
+                123.56530717604544
+              ]
+            }
+          },
+          "unit": {
+            "output_sha256": "7c2ba788acc01ff303bfaf95ef28ddc52ca5eb83baf62e17f34d3b8f73af3ec7",
+            "mae": {
+              "whole": [
+                38.55827048972801,
+                31.5417638708044
+              ],
+              "neutral_pixels": 3244,
+              "neutral": [
+                155.4086518701192,
+                118.39704069050555
+              ]
+            }
+          },
+          "double": {
+            "output_sha256": "f85e13de21cf5a69f9f46ff62cf49ef7b2decafb3ac18c88470d6ad40c7f3985",
+            "mae": {
+              "whole": [
+                34.76194932725694,
+                27.72665066189236
+              ],
+              "neutral_pixels": 3027,
+              "neutral": [
+                151.79209338178615,
+                118.8633410417355
+              ]
+            }
+          }
+        }
+      }
+    },
+    "comparison_sha256": "40ecfda40ea8a4d1007d5d1ac8f771f137411760f6e52a8389e188a2a5e907d2"
+  },
+  "common_neutral_component_audit": {
+    "showgirl_01": {
+      "common_neutral_pixels": 0,
+      "exposures": {}
+    },
+    "poker_fullshot": {
+      "common_neutral_pixels": 1397,
+      "exposures": {
+        "half": [
+          {
+            "y_prime_mae": 179.2014559770938,
+            "cbcr_mae": 4.772705586427067
+          },
+          {
+            "y_prime_mae": 140.07196907659267,
+            "cbcr_mae": 8.437431209221312
+          }
+        ],
+        "unit": [
+          {
+            "y_prime_mae": 157.24169377236933,
+            "cbcr_mae": 4.576927041467009
+          },
+          {
+            "y_prime_mae": 117.49006385110951,
+            "cbcr_mae": 7.726301995628546
+          }
+        ],
+        "double": [
+          {
+            "y_prime_mae": 130.98911410164638,
+            "cbcr_mae": 4.389541582822217
+          },
+          {
+            "y_prime_mae": 91.03123135289907,
+            "cbcr_mae": 7.018734707304214
+          }
+        ]
+      }
+    }
+  },
+  "neighbors": {
+    "showgirl_01": {
+      "-1": {
+        "file": "showgirl_01-neighbor--1.exr",
+        "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/showgirl_01/showgirl_01_000570.exr",
+        "sha256": "67af6825f43e408ee460a37264fdd92af67df5401841011659c9382fac4b72b9",
+        "bytes": 6128495
+      },
+      "1": {
+        "file": "showgirl_01-neighbor-+1.exr",
+        "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/showgirl_01/showgirl_01_000572.exr",
+        "sha256": "5b92bef6e602f4ea2789a20ec4272a30a3527f9afd6c20235e890e8e9c5dd764",
+        "bytes": 6130481
+      }
+    },
+    "poker_fullshot": {
+      "-1": {
+        "file": "poker_fullshot-neighbor--1.exr",
+        "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/poker_fullshot/poker_fullshot_000669.exr",
+        "sha256": "f7c3ac22e25c095d0c3858c0409976da78d9944fd3f8cdd402d6bdb901bde7a7",
+        "bytes": 6636305
+      },
+      "1": {
+        "file": "poker_fullshot-neighbor-+1.exr",
+        "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/poker_fullshot/poker_fullshot_000671.exr",
+        "sha256": "2cf0522e63c9ac17679619bc5e3b4942df353441674462af52c05a80f54259ee",
+        "bytes": 6630973
+      }
+    }
+  },
+  "source_sha256": "c38bdaf22c67226a8b5c191893ec0fa1b2bb0d6efecc59b02b3205909f63cdf0",
+  "protocol_sha256": "9d50ef9a27b4dd1b3a4c42d33b5a6f5acdd82af64ab3db1057fe9b53d1696a85"
+}
