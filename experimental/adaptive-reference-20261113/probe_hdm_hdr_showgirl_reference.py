@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from probe_hdm_hdr_display import REC2020_TO_REC709, SOURCE_TO_REC709, decode_pq, digest, display, json_to
-from probe_hdm_hdr_equal_luminance import linear_rgb, verified_rgb
+from probe_hdm_hdr_equal_luminance import Y_WEIGHTS, encode, linear_rgb, verified_rgb
 from probe_hdm_hdr_showgirl_light import CASES, REGIONS, SIZE, material_measurement
 
 MODEL_SHA = "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
@@ -25,7 +25,28 @@ def measure_display(pixels, box):
     return result
 
 
-def prepare(source, rois, output):
+def bounded_display(linear):
+    y = np.maximum(linear @ Y_WEIGHTS, 0)
+    display_y = .003 + .82 * (y / (100 + y))**.55
+    lifted = np.divide(display_y, y, out=np.zeros_like(y), where=y > 0)[..., None] * linear
+    chroma = np.where(y[..., None] > 0, lifted - display_y[..., None], 0)
+    low = np.maximum(-chroma.min(axis=-1), 0)
+    high = np.maximum(chroma.max(axis=-1), 0)
+    low_limit = np.divide(display_y - .001, low, out=np.ones_like(y), where=low > 0)
+    high_limit = np.divide(.95 - display_y, high, out=np.ones_like(y), where=high > 0)
+    scale = np.minimum(1., np.minimum(low_limit, high_limit))
+    bounded = display_y[..., None] + chroma * scale[..., None]
+    if bounded.min() < .001 - 1e-12 or bounded.max() > .95 + 1e-12:
+        raise ValueError("Display RGB escaped the registered bounds")
+    return encode(bounded), scale
+
+
+def summarize_compression(scale):
+    return {"compressed_fraction": float((scale < 1).mean()),
+            "mean_chroma_scale": float(scale.mean()), "minimum_chroma_scale": float(scale.min())}
+
+
+def prepare(source, rois, output, bounded=False):
     import cv2
     from audit_hdm_hdr_still_alignment import verified_image
 
@@ -38,6 +59,9 @@ def prepare(source, rois, output):
     manifest = json.loads(path.read_bytes())
     output.mkdir()
     cases = {}
+    if bounded:
+        board = Image.new("RGB", (1048, 638), "#222730")
+        draw = ImageDraw.Draw(board)
     for case in CASES:
         boxes = {key: markings["cases"][case][key] for key in REGIONS}
         cases[case] = {"boxes": boxes}
@@ -49,7 +73,11 @@ def prepare(source, rois, output):
             else:
                 frame, matrix = decode_pq(bgr[..., ::-1]), REC2020_TO_REC709
             linear = cv2.resize(frame, SIZE, interpolation=cv2.INTER_AREA) @ matrix
-            pixels, clipping = display(linear)
+            if bounded:
+                pixels, scale = bounded_display(linear)
+                clipping = summarize_compression(scale)
+            else:
+                pixels, clipping = display(linear)
             item = output / f"{case}-{role}.png"
             Image.fromarray(pixels).save(item)
             cases[case][role] = {
@@ -57,8 +85,34 @@ def prepare(source, rois, output):
                 "display": {key: measure_display(pixels, box) for key, box in boxes.items()},
                 "preclip": {key: material_measurement(linear, box) for key, box in boxes.items()},
             }
-    json_to(output / "prepared.json", {"archive_sha256": digest(path), "roi_sha256": sha256(appendix).hexdigest(),
-                                       "cases": cases})
+            if bounded:
+                left = 8 + 520 * ROLES.index(role)
+                top = 22 + 314 * CASES.index(case)
+                board.paste(Image.fromarray(pixels), (left, top))
+                draw.text((left, top - 17), f"{case} / {role}", fill="white")
+                for key, (x0, y0, x1, y1) in boxes.items():
+                    cases[case][role]["display"][key].update(summarize_compression(scale[y0:y1, x0:x1]))
+                    draw.rectangle((left + x0, top + y0, left + x1 - 1, top + y1 - 1), outline=REGIONS[key])
+    report = {"archive_sha256": digest(path), "roi_sha256": sha256(appendix).hexdigest(), "cases": cases}
+    if bounded:
+        audit = {}
+        for case, frames in cases.items():
+            audit[case] = {}
+            for key in REGIONS:
+                original, grade = (frames[role] for role in ROLES)
+                edit = delta(grade["display"][key], original["display"][key])
+                before_display = delta(grade["preclip"][key], original["preclip"][key])
+                change = alignment(edit, before_display)
+                endpoints = grade["display"][key]["endpoint_fraction"]
+                passed = (
+                    endpoints <= .1 and change["cosine"] is not None
+                    and change["cosine"] >= .7 and change["change_length"] >= .005
+                )
+                audit[case][key] = {**change, "endpoint_fraction": endpoints, "passed": passed}
+        report["bounded_display_support"] = audit
+        board.save(output / "comparison.png")
+        report["comparison_sha256"] = digest(output / "comparison.png")
+    json_to(output / "prepared.json", report)
 
 
 def delta(after, before):
@@ -102,12 +156,17 @@ def reference_response(frames, before, after, region):
 
 
 def render(prepared, output):
+    path = prepared / "prepared.json"
+    manifest = json.loads(path.read_bytes())
+    audit = manifest.get("bounded_display_support")
+    if audit is not None and not all(reg["passed"] for case in audit.values() for reg in case.values()):
+        raise ValueError("Bounded display did not preserve every registered editing direction")
+
     import torch
     from spatial_render import SpatialEngine, finish_spatial
 
     torch.set_num_threads(4)
-    path = prepared / "prepared.json"
-    records = json.loads(path.read_bytes())["cases"]
+    records = manifest["cases"]
     photos = {}
     for case, role in product(CASES, ROLES):
         photos[case, role] = verified_rgb(prepared / f"{case}-{role}.png", records[case][role]["sha256"])
@@ -179,11 +238,12 @@ if __name__ == "__main__":
     pre.add_argument("source", type=Path)
     pre.add_argument("regions", type=Path)
     pre.add_argument("output", type=Path)
+    pre.add_argument("--bounded-display", action="store_true")
     run = stages.add_parser("render")
     run.add_argument("prepared", type=Path)
     run.add_argument("output", type=Path)
     args = cli.parse_args()
     if args.stage == "prepare":
-        prepare(args.source, args.regions, args.output)
+        prepare(args.source, args.regions, args.output, args.bounded_display)
     else:
         render(args.prepared, args.output)
