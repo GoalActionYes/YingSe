@@ -20,7 +20,7 @@ def cohort(evidence):
             if row['subject'] in ('Man','Woman')][:4]
 
 
-def fetch(path, expected, proxy):
+def fetch(path, expected, proxy, expected_size=None, expected_object=None):
     assert path.startswith(('v2/images/','v2/masks/subject/'))
     assert '..' not in path.split('/')
     proxies = {'https':proxy,'http':proxy} if proxy else None
@@ -33,6 +33,9 @@ def fetch(path, expected, proxy):
         assert len(linked) in (40,64)
         size = int(response.headers['Content-Length'])
         assert 0<size<=LIMIT
+        if (expected_size is not None and size != expected_size
+                or expected_object is not None and linked != expected_object):
+            raise ValueError('The release object differs from its verified preflight')
         data = response.raw.read(size+1)
     assert len(data)==size
     content_sha = hashlib.sha256(data).hexdigest()
