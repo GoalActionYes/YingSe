@@ -1,0 +1,137 @@
+{
+  "source_files": [
+    {
+      "name": "dining_area.csv",
+      "url": "https://www2.cs.sfu.ca/~colour/data2/DRONE-Dataset/illumination_gt/dining_area.csv",
+      "etag": "96b-5b23ce22dfd80",
+      "bytes": 2411,
+      "sha256": "ed62ddd606200145eabfded7a47935a849504ad4d5e11d75173e77e499e77c88"
+    },
+    {
+      "name": "wall_hallway.csv",
+      "url": "https://www2.cs.sfu.ca/~colour/data2/DRONE-Dataset/illumination_gt/wall_hallway.csv",
+      "etag": "284d-5b23ce23d3fc0",
+      "bytes": 10317,
+      "sha256": "fad22b76b7fb8c228ea4322d8c77b9c366f23691387362abc361d644309b68da"
+    },
+    {
+      "name": "conversion.txt",
+      "url": "https://www2.cs.sfu.ca/~colour/data2/DRONE-Dataset/NEF%20to%20TIFF/script.txt",
+      "etag": "2e-5afed3ce05cc0",
+      "bytes": 46,
+      "sha256": "ad7befc3a4a87edc3508b43ed1e7df84490123b51f382ec82564fb471cf315d0"
+    },
+    {
+      "name": "dining_area.NEF",
+      "url": "https://www2.cs.sfu.ca/~colour/data2/DRONE-Dataset/scenes/dining_area.NEF",
+      "etag": "e88bb9-58e638af87b00",
+      "bytes": 15240121,
+      "sha256": "e6576664afa5ad40ab2661be52b1d84f85db34543f44297ebef0d5e94b993c18"
+    },
+    {
+      "name": "wall_hallway.NEF",
+      "url": "https://www2.cs.sfu.ca/~colour/data2/DRONE-Dataset/scenes/wall_hallway.NEF",
+      "etag": "e22c87-58da729ce6400",
+      "bytes": 14822535,
+      "sha256": "2858d74d1be7948a9255f15827a6b8002fe9332a5e4e8ba05149a3aef8f52cbe"
+    }
+  ],
+  "decoder": "0.28.0",
+  "paint": [
+    0.22464097,
+    0.4464182,
+    0.32894083
+  ],
+  "source_sha256": "0c6254f212e2e408dd7c70ae2c7efb8ec5d0ca3ca0f6ce3055c9ac5c9e12700d",
+  "protocol_sha256": "7e1c42557dc355f17bc7d6e432cbcd430d00d519e009ade0e685ad167eeb86e1",
+  "scenes": {
+    "dining_area": {
+      "dimensions": [
+        4284,
+        2844
+      ],
+      "scanline_correlations": [
+        0.9999999997883064,
+        0.9999999992791098
+      ],
+      "samples": 29,
+      "rejected": [],
+      "unique_centers": 29,
+      "occupied_tiles": 4,
+      "qualified": true,
+      "tiff_header_sha256": "0fc9074c4ed7dc20183e60781f473acc9d437ad4d7d3c13e63857b7fde2525cd",
+      "tiff_center_sha256": "ec4cada410e9f35f24fca9f8dbf974ff73d5568a8c8d7ea6bee87800d748df73",
+      "preview_sha256": "f7408315e1fa5cbbde2d287e3d2fdf911d1b40ac9c8531895831fc2519d2028d",
+      "estimates": {
+        "errors": {
+          "local": [
+            24.388404959580203,
+            26.98478302888184
+          ],
+          "global": [
+            22.503003753481472,
+            22.756660596195246
+          ]
+        },
+        "window_radius": 355,
+        "full_normalized": [
+          0.5378041352936,
+          0.30125234069511325,
+          0.16094352401128664
+        ],
+        "passed": false
+      },
+      "observations": {
+        "illumination_pair_max_angle": 2.064586675660762,
+        "median_pair_angle": 0.5291500257870267
+      }
+    },
+    "wall_hallway": {
+      "dimensions": [
+        4284,
+        2844
+      ],
+      "scanline_correlations": [
+        0.9999999984292801,
+        0.9999999993925172
+      ],
+      "samples": 125,
+      "rejected": [],
+      "unique_centers": 125,
+      "occupied_tiles": 8,
+      "qualified": true,
+      "tiff_header_sha256": "71ec6ec52a98d8a50eb6d7efce1a3852adbbabf198a5acadda2bfbda42f601b6",
+      "tiff_center_sha256": "e65c133209dc4d4713aba02b6a3c145a0218f19cddadf372fecb3ea596a3a4c2",
+      "preview_sha256": "6635d02efc244aa43f8fdab5fef327784e27d11d5dda939bbcd134d86dcd369f",
+      "estimates": {
+        "errors": {
+          "local": [
+            20.720301722796226,
+            25.182269829953476
+          ],
+          "global": [
+            24.197633574143595,
+            24.797179468516074
+          ]
+        },
+        "window_radius": 355,
+        "full_normalized": [
+          0.49115634891315835,
+          0.30540666297445734,
+          0.20343698811238434
+        ],
+        "passed": false
+      },
+      "observations": {
+        "illumination_pair_max_angle": 13.146409631570455,
+        "median_pair_angle": 1.10860979956846
+      }
+    }
+  },
+  "verification": {
+    "points_recomputed": 154,
+    "tiff_rows_per_scene": 4,
+    "output_hashes_identical": true,
+    "author_data_bytes": 30075430
+  }
+}
