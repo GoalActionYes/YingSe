@@ -74,11 +74,11 @@ def predict(reference, models):
             for arm, (center, scale, weights) in models.items()}
 
 
-def paint(target, cube_on, reference_states, models, folder):
+def paint(target, cube_on, reference_states, models, folder, predictor):
     folder.mkdir()
     records, images = {}, {}
     for background, refs in reference_states.items():
-        measurements = {edit: predict(ref, models) for edit, ref in refs.items()}
+        measurements = {edit: predictor(ref, models) for edit, ref in refs.items()}
         for arm in models:
             records.setdefault(arm, {})[background] = {}
             branch = images.setdefault(arm, {}).setdefault(background, {})
@@ -106,13 +106,17 @@ def evaluate_group(target, expected, images, person, neutral):
     return {"style": results, "swap_mae": gaps, "passed": bool(passed)}
 
 
-def run(cube_file, real_folder, out):
+def run(cube_file, real_folder, out, *, fitter=train, predictor=predict, arms=ARMS, provenance=None,
+        post_sdr_control=True):
     parent_file = real_folder / "results.json"
     if digest(cube_file) != CUBE_SHA or digest(parent_file) != REPORT_SHA:
         raise ValueError("Frozen LUT or real scenes changed")
     cube = np.loadtxt(cube_file, skiprows=4, dtype=np.float32).reshape(64, 64, 64, 3).transpose(2, 1, 0, 3)
     fitting, dev, targets = fixed_sets()
-    models = train(fitting, cube)
+    models = fitter(fitting, cube)
+    control, candidate = arms
+    if tuple(models) != arms:
+        raise ValueError("Unexpected model arms")
     out.mkdir()
     groups = {}
     for row in dev.values():
@@ -123,7 +127,7 @@ def run(cube_file, real_folder, out):
         person = mask_for(targets[name], name.split("-")[0])
         neutral = target_regions(source, person)["neutral_proxy"] & person
         refs = {key: states(value, cube) for key, value in pair(BASE / "bg-real-pixel-inputs", row["input"]).items()}
-        logs, images = paint(target, expected, refs, models, out / name)
+        logs, images = paint(target, expected, refs, models, out / name, predictor)
         groups[name] = {arm: {"choices": logs[arm], **evaluate_group(target, expected, images[arm], person, neutral)}
                         for arm in models}
     real = {}
@@ -137,28 +141,33 @@ def run(cube_file, real_folder, out):
         finished = finish_spatial(original, render(original, cube), .8)
         shape = original.shape[:2]
         neutral = np.logical_and(*(target_regions(x, np.zeros(shape, bool))["neutral_proxy"] for x in (original, film)))
-        logs, images = paint(original, finished, {"native": native[reference]}, models, out / scene)
-        digital_control = predict(render(native[reference]["off"], cube), models)
+        logs, images = paint(original, finished, {"native": native[reference]}, models, out / scene, predictor)
         real[scene] = {arm: {"choices": logs[arm]["native"], "style": evaluate(
             original, expected, images[arm], {"whole": np.ones(shape, bool), "neutral": neutral}
-        )["native"], "same_reference_post_sdr_control_score": digital_control[arm]} for arm in models}
+        )["native"]} for arm in models}
+        if post_sdr_control:
+            digital_control = predictor(render(native[reference]["off"], cube), models)
+            for arm, row in real[scene].items():
+                row["same_reference_post_sdr_control_score"] = digital_control[arm]
 
     counts = {arm: sum(row[arm]["passed"] for row in groups.values()) for arm in models}
     maximum_regression = max(
-        row["edges"]["style"][background]["whole"][metric] - row["quantiles"]["style"][background]["whole"][metric]
+        row[candidate]["style"][background]["whole"][metric] - row[control]["style"][background]["whole"][metric]
         for row in groups.values() for background, metric in product(
             ROLES, ("off_matches_original_mae", "on_matches_authored_mae"))
     )
     maximum_regression = max(maximum_regression, max(
-        row["edges"]["style"]["whole"][metric] - row["quantiles"]["style"]["whole"][metric]
+        row[candidate]["style"]["whole"][metric] - row[control]["style"]["whole"][metric]
         for row in real.values() for metric in ("off_matches_original_mae", "on_matches_authored_mae")
     ))
     real_counts = {arm: sum(all(region["passed"] for region in row[arm]["style"].values()) for row in real.values())
                    for arm in models}
-    passed = counts["edges"] >= 3 and counts["edges"] > counts["quantiles"] and real_counts["edges"] == 2
+    passed = counts[candidate] >= 3 and counts[candidate] > counts[control] and real_counts[candidate] == 2
     report = {"cube_sha256": CUBE_SHA, "real_source_sha256": REPORT_SHA, "fit_groups": len(fitting),
               "bg_real": groups, "native": real, "bg_passed": counts, "native_passed": real_counts,
               "worst_target_regression": maximum_regression, "passed": passed and maximum_regression <= 2}
+    if provenance is not None:
+        report["provenance"] = provenance
     (out / "results.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n",
                                      encoding="utf-8", newline="\n")
 
