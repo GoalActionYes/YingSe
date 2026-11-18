@@ -1,0 +1,2488 @@
+{
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "background_baseline_sha256": "11b72e0865bad7f3d20a4b3b9a8120c5e8df0de8fd2bbc78549625d67fa1d94d",
+  "facd_baseline_sha256": "f5c752354e97e31abde828b402e56b404a2cdb1ae7da58208fb4de8e4258a7c9",
+  "background": {
+    "cases": {
+      "785-3553": {
+        "baseline": {
+          "expected_mean_abs_delta": {
+            "luma": 5.09556883239746,
+            "chroma": 0.28669548815927715
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.1556356355986747,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.2594250617020253,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.114778951486698,
+              "neutral": 5.418908221040494,
+              "neutral_person": 5.007888212756367
+            },
+            "on": {
+              "person": 4.143045774647887,
+              "neutral": 8.24108110898859,
+              "neutral_person": 6.397791300428217
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 8.24108110898859
+        },
+        "candidate": {
+          "expected_mean_abs_delta": {
+            "luma": 5.09556883239746,
+            "chroma": 0.28669548815927715
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.28649441450475027,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.1983860195890905,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 14.877396322378717,
+              "neutral": 7.561266284612869,
+              "neutral_person": 10.785215235519495
+            },
+            "on": {
+              "person": 17.41774256651017,
+              "neutral": 10.569922728759014,
+              "neutral_person": 12.829614604462474
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 17.41774256651017
+        },
+        "outputs": {
+          "C1-off": {
+            "target_band_rgb8": 40.568694674012946,
+            "reference_band_rgb8": 50.55393044995354,
+            "baseline_band_rgb8": 44.59050142842548,
+            "detail_gain": 0.1469958318710226,
+            "output_change_mae": 1.6693064371744792,
+            "luma_change_mae": 1.6230379669189454,
+            "gamut_fraction": 0.016693115234375,
+            "luma_clip_fraction": 0.0007781982421875,
+            "sha256": "2be118c16f9b25dc560221827539d8f3111fdb939308b339931a21d25e6fa389"
+          },
+          "C1-on": {
+            "target_band_rgb8": 40.568694674012946,
+            "reference_band_rgb8": 55.128725566778655,
+            "baseline_band_rgb8": 45.33962492602821,
+            "detail_gain": 0.2412969093388416,
+            "output_change_mae": 2.723627726236979,
+            "luma_change_mae": 2.614900653076172,
+            "gamut_fraction": 0.042510986328125,
+            "luma_clip_fraction": 0.0206756591796875,
+            "sha256": "09cde16301d625bce1b94265ddd00c904d7cee1f834f70d17d05c53c21f277a1"
+          },
+          "F1-off": {
+            "target_band_rgb8": 40.568694674012946,
+            "reference_band_rgb8": 35.55508146311578,
+            "baseline_band_rgb8": 43.57505874910627,
+            "detail_gain": -0.19768881770622596,
+            "output_change_mae": 2.199315388997396,
+            "luma_change_mae": 2.1990924774169924,
+            "gamut_fraction": 0.0002899169921875,
+            "luma_clip_fraction": 0.0,
+            "sha256": "553effd9310329aee61b1a1813ce9c2c2e2900c27df753146923b29f070e5b0f"
+          },
+          "F1-on": {
+            "target_band_rgb8": 40.568694674012946,
+            "reference_band_rgb8": 37.327802491582545,
+            "baseline_band_rgb8": 43.77447673706781,
+            "detail_gain": -0.15890760837357684,
+            "output_change_mae": 1.7564544677734375,
+            "luma_change_mae": 1.7562941925048827,
+            "gamut_fraction": 0.000274658203125,
+            "luma_clip_fraction": 0.0,
+            "sha256": "26b81439f0dc552d32f3723e7bd94ef39a4f8564daa961fd04b5dfc9443db433"
+          }
+        },
+        "comparison_sha256": "18834d3b6390d70d178df5f753dd1912d758be83ebe897143345906dcdfb9345"
+      },
+      "9483-19432": {
+        "baseline": {
+          "expected_mean_abs_delta": {
+            "luma": 6.700823196411132,
+            "chroma": 0.9192225430069891
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.3044341444639756,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.10416273674869242,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.8997668997668997,
+              "neutral": 2.58131379848685,
+              "neutral_person": 2.7442622950819673
+            },
+            "on": {
+              "person": 3.1095154845154847,
+              "neutral": 2.669885112685641,
+              "neutral_person": 3.209289617486339
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 3.8997668997668997
+        },
+        "candidate": {
+          "expected_mean_abs_delta": {
+            "luma": 6.700823196411132,
+            "chroma": 0.9192225430069891
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.38257339884810915,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.18030334219733724,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 8.572843822843822,
+              "neutral": 8.301605219967175,
+              "neutral_person": 11.825136612021858
+            },
+            "on": {
+              "person": 9.207084582084581,
+              "neutral": 8.607517713462231,
+              "neutral_person": 12.744262295081967
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 12.744262295081967
+        },
+        "outputs": {
+          "C1-off": {
+            "target_band_rgb8": 32.81843890419351,
+            "reference_band_rgb8": 55.68003499642905,
+            "baseline_band_rgb8": 41.92213303744519,
+            "detail_gain": 0.4192125652029684,
+            "output_change_mae": 5.545328776041667,
+            "luma_change_mae": 5.524625817871094,
+            "gamut_fraction": 0.0204620361328125,
+            "luma_clip_fraction": 0.0048828125,
+            "sha256": "890f47490642d319eab7dbd14870ba9e0e5f26c7bdecaa9a2427d02848518b8f"
+          },
+          "C1-on": {
+            "target_band_rgb8": 32.81843890419351,
+            "reference_band_rgb8": 59.23953796551369,
+            "baseline_band_rgb8": 43.34543888378756,
+            "detail_gain": 0.4843039343865682,
+            "output_change_mae": 6.410268147786458,
+            "luma_change_mae": 6.3551488250732415,
+            "gamut_fraction": 0.0434112548828125,
+            "luma_clip_fraction": 0.0147705078125,
+            "sha256": "0d4b0f90aa8ff5df49036a18bdeadd421a2e551b8676a2e40afd07c49525ee9f"
+          },
+          "F1-off": {
+            "target_band_rgb8": 32.81843890419351,
+            "reference_band_rgb8": 35.51864754616885,
+            "baseline_band_rgb8": 42.316179746965,
+            "detail_gain": -0.20712539742186106,
+            "output_change_mae": 2.717926025390625,
+            "luma_change_mae": 2.717926025390625,
+            "gamut_fraction": 0.0,
+            "luma_clip_fraction": 0.0,
+            "sha256": "132064c8a3d0293f4529bb1d03b2c6ca50968895a8cff3f6729842ec43fef192"
+          },
+          "F1-on": {
+            "target_band_rgb8": 32.81843890419351,
+            "reference_band_rgb8": 38.2447417610441,
+            "baseline_band_rgb8": 43.069736730945685,
+            "detail_gain": -0.14702085568381665,
+            "output_change_mae": 1.9149169921875,
+            "luma_change_mae": 1.9149169921875,
+            "gamut_fraction": 0.0,
+            "luma_clip_fraction": 0.0,
+            "sha256": "a372772bff330e387b99db9982d4c70bb3c174ada32983ef34b221282e727b2a"
+          }
+        },
+        "comparison_sha256": "61fc402c9069ad50c6c2a14130b06b6cf60087211cfbda3b30ab6cf02fc5b556"
+      },
+      "872-1268": {
+        "baseline": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.22093199638862257,
+              "chroma": 0.1586716745429196
+            },
+            "F1": {
+              "luma": 0.2545125485280661,
+              "chroma": 0.08970502743969601
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.677670271295769,
+              "neutral": 6.102564102564102,
+              "neutral_person": 4.843995223473217
+            },
+            "on": {
+              "person": 6.2547361574111715,
+              "neutral": 7.679535558780842,
+              "neutral_person": 6.304674172637325
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 7.679535558780842
+        },
+        "candidate": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.2527533556824916,
+              "chroma": 0.15857064482883992
+            },
+            "F1": {
+              "luma": 0.3126067908239515,
+              "chroma": 0.08970972639607863
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 5.593977830175895,
+              "neutral": 6.376745686179649,
+              "neutral_person": 5.42459911293074
+            },
+            "on": {
+              "person": 6.8195517250724995,
+              "neutral": 7.78745363651024,
+              "neutral_person": 6.620010235414535
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 7.78745363651024
+        },
+        "outputs": {
+          "C1-off": {
+            "target_band_rgb8": 32.02116671768206,
+            "reference_band_rgb8": 35.97219632078362,
+            "baseline_band_rgb8": 37.0462472094686,
+            "detail_gain": -0.033541903646249614,
+            "output_change_mae": 0.3779754638671875,
+            "luma_change_mae": 0.37797546386718706,
+            "gamut_fraction": 9.1552734375e-05,
+            "luma_clip_fraction": 0.0,
+            "sha256": "b4b44fb1d4eba77af236e1e52f14c01a167e4d18cc0b77be8efc70919c53e0a7"
+          },
+          "C1-on": {
+            "target_band_rgb8": 32.02116671768206,
+            "reference_band_rgb8": 38.52829440669339,
+            "baseline_band_rgb8": 38.278688746045816,
+            "detail_gain": 0.007795020801342092,
+            "output_change_mae": 0.008290608723958334,
+            "luma_change_mae": 0.007808657836914062,
+            "gamut_fraction": 0.0177154541015625,
+            "luma_clip_fraction": 0.011444091796875,
+            "sha256": "d48bd5a0140a1f93dc324b6ba0f965d15c9d17be7371d334b524ebf7bd55ed13"
+          },
+          "F1-off": {
+            "target_band_rgb8": 32.02116671768206,
+            "reference_band_rgb8": 30.843758661361033,
+            "baseline_band_rgb8": 34.16682059993868,
+            "detail_gain": -0.10377704122637908,
+            "output_change_mae": 1.3839060465494792,
+            "luma_change_mae": 1.3839121734619138,
+            "gamut_fraction": 9.1552734375e-05,
+            "luma_clip_fraction": 0.0,
+            "sha256": "4763ba13b5e02fc853a5840d997d8e174d687e411a798b045d5892f56af9cede"
+          },
+          "F1-on": {
+            "target_band_rgb8": 32.02116671768206,
+            "reference_band_rgb8": 32.821296596265704,
+            "baseline_band_rgb8": 34.28763684317935,
+            "detail_gain": -0.04579284258571172,
+            "output_change_mae": 0.5656636555989584,
+            "luma_change_mae": 0.5656618133544918,
+            "gamut_fraction": 7.62939453125e-05,
+            "luma_clip_fraction": 0.0,
+            "sha256": "589c6bddb81bb913d769988e71f77133e229893fcd6873837e9183e8325a8587"
+          }
+        },
+        "comparison_sha256": "5a85108f97e8b49958c77bff589075b61d7fdc2163fc1f76df5325713220ca05"
+      },
+      "8021-8690": {
+        "baseline": {
+          "expected_mean_abs_delta": {
+            "luma": 2.5851414642333985,
+            "chroma": 3.1992151400947453
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.24308525797741656,
+              "chroma": 0.16298575234525906
+            },
+            "F1": {
+              "luma": 0.5264374158071898,
+              "chroma": 0.570133122831698
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 10.91847878412764,
+              "neutral": 30.740465577018327,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 10.428732549343236,
+              "neutral": 32.20406141654284,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 32.20406141654284
+        },
+        "candidate": {
+          "expected_mean_abs_delta": {
+            "luma": 2.5851414642333985,
+            "chroma": 3.1992151400947453
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.33066822415788105,
+              "chroma": 0.16803518608643034
+            },
+            "F1": {
+              "luma": 0.6875503940210691,
+              "chroma": 0.5658977624117566
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 11.132728147995323,
+              "neutral": 28.603764239722636,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 10.37601265387525,
+              "neutral": 30.730559683011393,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 30.730559683011393
+        },
+        "outputs": {
+          "C1-off": {
+            "target_band_rgb8": 31.425238873584682,
+            "reference_band_rgb8": 38.22118415263788,
+            "baseline_band_rgb8": 31.75389628609336,
+            "detail_gain": 0.20579916329548636,
+            "output_change_mae": 2.2770182291666665,
+            "luma_change_mae": 2.25797289428711,
+            "gamut_fraction": 0.08941650390625,
+            "luma_clip_fraction": 0.0125732421875,
+            "sha256": "60cb47100d34022d3f0ee099374a87e5d3d786ae926302f85f4370f576363b49"
+          },
+          "C1-on": {
+            "target_band_rgb8": 31.425238873584682,
+            "reference_band_rgb8": 40.01828538720562,
+            "baseline_band_rgb8": 32.1020097949186,
+            "detail_gain": 0.25190820741672254,
+            "output_change_mae": 2.8129730224609375,
+            "luma_change_mae": 2.750714157104492,
+            "gamut_fraction": 0.1210784912109375,
+            "luma_clip_fraction": 0.0251617431640625,
+            "sha256": "d75f53326bd71094c55c81bc9a03dc89b34772b81d732de72ad01f320d8af4e8"
+          },
+          "F1-off": {
+            "target_band_rgb8": 31.425238873584682,
+            "reference_band_rgb8": 42.51483963677167,
+            "baseline_band_rgb8": 40.528508284868735,
+            "detail_gain": 0.06320815443578368,
+            "output_change_mae": 0.6664632161458334,
+            "luma_change_mae": 0.6666314453125,
+            "gamut_fraction": 0.0171051025390625,
+            "luma_clip_fraction": 0.0009002685546875,
+            "sha256": "f53c098a32323e2732208e0d0b51f6c9bf88f027c7a6c7721dfe4a57df35d21d"
+          },
+          "F1-on": {
+            "target_band_rgb8": 31.425238873584682,
+            "reference_band_rgb8": 46.91393097439028,
+            "baseline_band_rgb8": 42.01447708397136,
+            "detail_gain": 0.15590824655711022,
+            "output_change_mae": 1.6843210856119792,
+            "luma_change_mae": 1.6897130157470701,
+            "gamut_fraction": 0.080230712890625,
+            "luma_clip_fraction": 0.016937255859375,
+            "sha256": "4e77e889406034e400cf4364ee1cda3fc1b481fc235ac5b59c07c816b7123a13"
+          }
+        },
+        "comparison_sha256": "89f8421e5f44d8b2973f83bbaf25a81f16dce286faaba56d3cc767912b3235c6"
+      }
+    },
+    "passing_cases": 0,
+    "worst_protected_swap": 30.730559683011393,
+    "passed": false
+  },
+  "facd": {
+    "cases": {
+      "711468": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 20.586158578743625,
+              "neutral_proxy": 20.215016875018076
+            },
+            "Hudson": {
+              "whole": 18.181011367664453,
+              "neutral_proxy": 17.889392432605604
+            },
+            "XProII": {
+              "whole": 16.651470882424167,
+              "neutral_proxy": 17.782382347640947
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 20.293163081588173,
+            "Amaro-XProII": 37.32117073958256,
+            "Hudson-XProII": 45.61546216452404
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "261132": {
+                "whole": 0.30378737818098006,
+                "neutral_proxy": 0.2991243447423003
+              },
+              "38088": {
+                "whole": 0.2921758597570956,
+                "neutral_proxy": 0.26890162518352084
+              }
+            },
+            "Amaro-XProII": {
+              "261132": {
+                "whole": 0.24778140660448206,
+                "neutral_proxy": 0.22985570678801825
+              },
+              "38088": {
+                "whole": 0.3225784135510105,
+                "neutral_proxy": 0.306744630353523
+              }
+            },
+            "Hudson-XProII": {
+              "261132": {
+                "whole": 0.5351990670310548,
+                "neutral_proxy": 0.551385669328154
+              },
+              "38088": {
+                "whole": 0.5645597282898299,
+                "neutral_proxy": 0.5901255567336203
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 379908,
+                "region_pixels": 379908,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 24.60723561142873,
+                    "projection": 0.0
+                  },
+                  "261132": {
+                    "mae": 44.39990208155659,
+                    "projection": -0.3932042454663429
+                  },
+                  "38088": {
+                    "mae": 29.448918334614344,
+                    "projection": -0.010231189289476278
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 149827,
+                "region_pixels": 149827,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 24.849308424605265,
+                    "projection": 0.0
+                  },
+                  "261132": {
+                    "mae": 43.98170779187552,
+                    "projection": -0.3393501407854816
+                  },
+                  "38088": {
+                    "mae": 29.44895557320554,
+                    "projection": -0.046898466678419876
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 379908,
+                "region_pixels": 379908,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 29.723050492926358,
+                    "projection": 0.0
+                  },
+                  "261132": {
+                    "mae": 40.63516518034191,
+                    "projection": -0.39136843565856283
+                  },
+                  "38088": {
+                    "mae": 25.235255202136656,
+                    "projection": 0.1624530355813931
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 149827,
+                "region_pixels": 149827,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 29.498049973191304,
+                    "projection": 0.0
+                  },
+                  "261132": {
+                    "mae": 39.90895499476063,
+                    "projection": -0.39008512403508944
+                  },
+                  "38088": {
+                    "mae": 23.526238038982736,
+                    "projection": 0.1880459153970468
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 379908,
+                "region_pixels": 379908,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 17.873991422484742,
+                    "projection": 0.0
+                  },
+                  "261132": {
+                    "mae": 24.22360325833272,
+                    "projection": 1.4736290810077268
+                  },
+                  "38088": {
+                    "mae": 11.788123264930809,
+                    "projection": 0.9733426324806076
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 149827,
+                "region_pixels": 149827,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 17.296771164965815,
+                    "projection": 0.0
+                  },
+                  "261132": {
+                    "mae": 24.834635946791966,
+                    "projection": 1.5282146389404159
+                  },
+                  "38088": {
+                    "mae": 11.203552541709216,
+                    "projection": 1.0382442220549786
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 10.146581540794086,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 149785,
+        "outputs": {
+          "261132-Amaro.png": {
+            "target_band_rgb8": 35.57598637690029,
+            "reference_band_rgb8": 44.66536179573505,
+            "baseline_band_rgb8": 41.41123854708703,
+            "detail_gain": 0.09146965636238673,
+            "output_change_mae": 1.25051328216305,
+            "luma_change_mae": 1.2489753919369952,
+            "gamut_fraction": 0.005419733198563863,
+            "luma_clip_fraction": 0.0009554944881392337,
+            "neutral_error": {
+              "baseline": 43.616606024190226,
+              "candidate": 43.98637380245018
+            },
+            "sha256": "c997b66ada9f60583225a90f2429515e35d00b925ea2e9e7bc9ffe1fbf2574e6"
+          },
+          "38088-Amaro.png": {
+            "target_band_rgb8": 35.57598637690029,
+            "reference_band_rgb8": 28.564023197632903,
+            "baseline_band_rgb8": 46.535889605142465,
+            "detail_gain": -0.5,
+            "output_change_mae": 7.063686471461511,
+            "luma_change_mae": 7.064136335112711,
+            "gamut_fraction": 0.004043084115101551,
+            "luma_clip_fraction": 0.001379281299683081,
+            "neutral_error": {
+              "baseline": 31.300305994147166,
+              "candidate": 29.449978302233202
+            },
+            "sha256": "13cbfed78a4fd0ce91bdff66e34eebfbfe6f25f0e690eccac2f506e01bd7122d"
+          },
+          "261132-Hudson.png": {
+            "target_band_rgb8": 35.57598637690029,
+            "reference_band_rgb8": 39.66310411794727,
+            "baseline_band_rgb8": 38.74099011529445,
+            "detail_gain": 0.025919562507240933,
+            "output_change_mae": 0.3022442275498278,
+            "luma_change_mae": 0.3022442275498278,
+            "gamut_fraction": 0.0,
+            "luma_clip_fraction": 0.0,
+            "neutral_error": {
+              "baseline": 39.859322807134674,
+              "candidate": 39.911372967920684
+            },
+            "sha256": "2421e6f5dc23b473f86db2c39c3dbb26492c007475c1189e94140a7b5fc10aed"
+          },
+          "38088-Hudson.png": {
+            "target_band_rgb8": 35.57598637690029,
+            "reference_band_rgb8": 26.0853540597898,
+            "baseline_band_rgb8": 40.95271235792267,
+            "detail_gain": -0.41790431727246047,
+            "output_change_mae": 5.902169297128077,
+            "luma_change_mae": 5.903630888004465,
+            "gamut_fraction": 0.00148720216473462,
+            "luma_clip_fraction": 0.00035534918980384726,
+            "neutral_error": {
+              "baseline": 24.788766120328027,
+              "candidate": 23.52642342913732
+            },
+            "sha256": "c9e2a24df85b61db7720839789ec25bbf85c297245ee1161cded5f98b456d50f"
+          },
+          "261132-XProII.png": {
+            "target_band_rgb8": 35.57598637690029,
+            "reference_band_rgb8": 33.35204011631464,
+            "baseline_band_rgb8": 40.5459085093358,
+            "detail_gain": -0.20221135450209712,
+            "output_change_mae": 2.832733188034998,
+            "luma_change_mae": 2.8320919896395966,
+            "gamut_fraction": 0.002047864219758468,
+            "luma_clip_fraction": 0.00018688735167461597,
+            "neutral_error": {
+              "baseline": 24.97045765597356,
+              "candidate": 24.83730235559858
+            },
+            "sha256": "dc0513f6eaef98711ae8dad899b65d5ec4595aa56cbfb73d39a96318333f18d6"
+          },
+          "38088-XProII.png": {
+            "target_band_rgb8": 35.57598637690029,
+            "reference_band_rgb8": 31.876809694929126,
+            "baseline_band_rgb8": 46.64337295786122,
+            "detail_gain": -0.41507108493048317,
+            "output_change_mae": 5.856870610779452,
+            "luma_change_mae": 5.856604184170904,
+            "gamut_fraction": 0.005935647577834634,
+            "luma_clip_fraction": 0.0022426482200953914,
+            "neutral_error": {
+              "baseline": 11.146892768523774,
+              "candidate": 11.202763961678405
+            },
+            "sha256": "0284222d496b0fcfa5f0adef4c776ee93ecdd014a5b6e78043d002cc6a6134b5"
+          }
+        },
+        "comparison_sha256": "3d35e8e889084d713adce51476188aa5b6a269ff2c3360d384f505de264c5b36"
+      },
+      "38088": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 20.963935959507044,
+              "neutral_proxy": 20.47919849509972
+            },
+            "Hudson": {
+              "whole": 23.674996594148222,
+              "neutral_proxy": 19.272300689053097
+            },
+            "XProII": {
+              "whole": 19.220441136401742,
+              "neutral_proxy": 27.089680832268055
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 16.293107603957075,
+            "Amaro-XProII": 22.464400989268945,
+            "Hudson-XProII": 33.61237738933602
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "711468": {
+                "whole": 0.6111978265145465,
+                "neutral_proxy": 0.3585734345649208
+              },
+              "379484": {
+                "whole": 0.5218102081200515,
+                "neutral_proxy": 0.41875276589362115
+              }
+            },
+            "Amaro-XProII": {
+              "711468": {
+                "whole": 0.20706843438854416,
+                "neutral_proxy": 0.12661836187226863
+              },
+              "379484": {
+                "whole": 0.21865004196300553,
+                "neutral_proxy": 0.19446109696160532
+              }
+            },
+            "Hudson-XProII": {
+              "711468": {
+                "whole": 0.5013725601214288,
+                "neutral_proxy": 0.2819259366629924
+              },
+              "379484": {
+                "whole": 0.41882138643836386,
+                "neutral_proxy": 0.37032105227386786
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 254464,
+                "region_pixels": 254464,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 17.60366888832998,
+                    "projection": 0.0
+                  },
+                  "711468": {
+                    "mae": 17.714377410295103,
+                    "projection": 0.5743174655318197
+                  },
+                  "379484": {
+                    "mae": 17.216985506790746,
+                    "projection": 0.1053450564254864
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 64146,
+                "region_pixels": 64146,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 22.192971242685957,
+                    "projection": 0.0
+                  },
+                  "711468": {
+                    "mae": 14.253125682037851,
+                    "projection": 0.42372749479974
+                  },
+                  "379484": {
+                    "mae": 27.924729003627142,
+                    "projection": -0.111137127051784
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 254464,
+                "region_pixels": 254464,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 29.49766830147552,
+                    "projection": 0.0
+                  },
+                  "711468": {
+                    "mae": 18.125998176559357,
+                    "projection": 1.071074393756796
+                  },
+                  "379484": {
+                    "mae": 16.91552308643528,
+                    "projection": 0.38630318978889705
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 64146,
+                "region_pixels": 64146,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 31.36206466498301,
+                    "projection": 0.0
+                  },
+                  "711468": {
+                    "mae": 11.246718423596171,
+                    "projection": 0.6633641913627676
+                  },
+                  "379484": {
+                    "mae": 27.361700911462393,
+                    "projection": 0.10539868426673404
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 254464,
+                "region_pixels": 254464,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 12.102833144701542,
+                    "projection": 0.0
+                  },
+                  "711468": {
+                    "mae": 16.531340386066397,
+                    "projection": 0.3394415628091566
+                  },
+                  "379484": {
+                    "mae": 10.678854376257545,
+                    "projection": 0.5208569755624279
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 64146,
+                "region_pixels": 64146,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 14.117211777299701,
+                    "projection": 0.0
+                  },
+                  "711468": {
+                    "mae": 20.176617923694906,
+                    "projection": 0.05131368300580842
+                  },
+                  "379484": {
+                    "mae": 15.750371548238913,
+                    "projection": 0.6292504562791333
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 8.146553801978538,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 64090,
+        "outputs": {
+          "711468-Amaro.png": {
+            "target_band_rgb8": 27.040580732578217,
+            "reference_band_rgb8": 33.42378800326513,
+            "baseline_band_rgb8": 24.908605491276045,
+            "detail_gain": 0.31490383273204187,
+            "output_change_mae": 3.6027755072099263,
+            "luma_change_mae": 3.5843964961644863,
+            "gamut_fraction": 0.00982850226358149,
+            "luma_clip_fraction": 0.005285619969818914,
+            "neutral_error": {
+              "baseline": 14.652519893899203,
+              "candidate": 14.256171009517866
+            },
+            "sha256": "aa043807fac677fe1b98724fd80e4ec2ee196635101d1afdc879a4c8a85bf902"
+          },
+          "379484-Amaro.png": {
+            "target_band_rgb8": 27.040580732578217,
+            "reference_band_rgb8": 21.701278932762104,
+            "baseline_band_rgb8": 25.415333304765298,
+            "detail_gain": -0.1373511319425377,
+            "output_change_mae": 1.5622537307176392,
+            "luma_change_mae": 1.5621411028672032,
+            "gamut_fraction": 0.0021181778169014087,
+            "luma_clip_fraction": 1.9649144869215292e-05,
+            "neutral_error": {
+              "baseline": 27.177261143184065,
+              "candidate": 27.93498725750247
+            },
+            "sha256": "c6b95e339e6364dc05a4a7ee900245bc0c94cf228699db45b008aa9a293a580e"
+          },
+          "711468-Hudson.png": {
+            "target_band_rgb8": 27.040580732578217,
+            "reference_band_rgb8": 31.845196559535037,
+            "baseline_band_rgb8": 24.703321932455964,
+            "detail_gain": 0.26411690997725557,
+            "output_change_mae": 3.0307404321763918,
+            "luma_change_mae": 3.0274483887701207,
+            "gamut_fraction": 0.004849408953722334,
+            "luma_clip_fraction": 0.001960984657947686,
+            "neutral_error": {
+              "baseline": 12.583741613356217,
+              "candidate": 11.247261663286004
+            },
+            "sha256": "1af27c58fde271e6a638db004ad699c1776b0c4eb68676b1a70cbbe0c8f19e53"
+          },
+          "379484-Hudson.png": {
+            "target_band_rgb8": 27.040580732578217,
+            "reference_band_rgb8": 19.348869852055838,
+            "baseline_band_rgb8": 24.411700575451487,
+            "detail_gain": -0.1872308429121865,
+            "output_change_mae": 2.1447369110496313,
+            "luma_change_mae": 2.1445763479313382,
+            "gamut_fraction": 0.000133614185110664,
+            "luma_clip_fraction": 5.501760563380282e-05,
+            "neutral_error": {
+              "baseline": 25.923123732251522,
+              "candidate": 27.36709315025745
+            },
+            "sha256": "821a255812db9dcfc6d5ccd3a3384acc5fbbc2a53a4592f2d5d30d31da577e33"
+          },
+          "711468-XProII.png": {
+            "target_band_rgb8": 27.040580732578217,
+            "reference_band_rgb8": 46.928135716763684,
+            "baseline_band_rgb8": 26.660165670849782,
+            "detail_gain": 0.5,
+            "output_change_mae": 5.637477206991952,
+            "luma_change_mae": 5.591263668731137,
+            "gamut_fraction": 0.0313325264084507,
+            "luma_clip_fraction": 0.014465700452716298,
+            "neutral_error": {
+              "baseline": 17.452223435793414,
+              "candidate": 20.174769854891558
+            },
+            "sha256": "be6d6bb54991118a9d82744fb7b9bc4c0f113d76c02795f16eba30eceda80f84"
+          },
+          "379484-XProII.png": {
+            "target_band_rgb8": 27.040580732578217,
+            "reference_band_rgb8": 22.148440879502083,
+            "baseline_band_rgb8": 25.98210681154986,
+            "detail_gain": -0.14177454138139178,
+            "output_change_mae": 1.6158330189470154,
+            "luma_change_mae": 1.6135496989751006,
+            "gamut_fraction": 0.03917646504024145,
+            "luma_clip_fraction": 0.0001611229879275654,
+            "neutral_error": {
+              "baseline": 14.917543038435534,
+              "candidate": 15.752176626618818
+            },
+            "sha256": "bf65921b89e3b09dbd636ae6646e344ae91189656f61c2f0f607a2bbdcf481a9"
+          }
+        },
+        "comparison_sha256": "6746e207d9c81bc5016fe18eb1bb2905ba5f9755466b711054f77680551494bd"
+      },
+      "379484": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 10.613951573602465,
+              "neutral_proxy": 14.600592550790068
+            },
+            "Hudson": {
+              "whole": 7.55592793026473,
+              "neutral_proxy": 8.869736240997527
+            },
+            "XProII": {
+              "whole": 6.529248608753066,
+              "neutral_proxy": 7.597898527356767
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 17.098233234295417,
+            "Amaro-XProII": 21.34858595862416,
+            "Hudson-XProII": 33.788118790479786
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "38088": {
+                "whole": 0.6593270518173999,
+                "neutral_proxy": 0.5182998288195714
+              },
+              "523992": {
+                "whole": 0.490232662557952,
+                "neutral_proxy": 0.314202713863226
+              }
+            },
+            "Amaro-XProII": {
+              "38088": {
+                "whole": 0.2512459388008479,
+                "neutral_proxy": 0.33197433343551863
+              },
+              "523992": {
+                "whole": 0.3967365433470205,
+                "neutral_proxy": 0.45207161510441757
+              }
+            },
+            "Hudson-XProII": {
+              "38088": {
+                "whole": 0.5211886982428536,
+                "neutral_proxy": 0.5123389554638291
+              },
+              "523992": {
+                "whole": 0.5497032808711997,
+                "neutral_proxy": 0.5256888954598067
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 339264,
+                "region_pixels": 339264,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 14.860767229453563,
+                    "projection": 0.0
+                  },
+                  "38088": {
+                    "mae": 14.809484649122806,
+                    "projection": 0.3200816514084968
+                  },
+                  "523992": {
+                    "mae": 17.398427183550275,
+                    "projection": 0.6387687818650064
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 99232,
+                "region_pixels": 99232,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 18.301089030420293,
+                    "projection": 0.0
+                  },
+                  "38088": {
+                    "mae": 17.06829114264216,
+                    "projection": 0.1653142667775883
+                  },
+                  "523992": {
+                    "mae": 17.055506288294097,
+                    "projection": 0.49271185746605317
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 339264,
+                "region_pixels": 339264,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 28.03475268031189,
+                    "projection": 0.0
+                  },
+                  "38088": {
+                    "mae": 14.562078499339748,
+                    "projection": 0.7357585786606186
+                  },
+                  "523992": {
+                    "mae": 13.920482770546437,
+                    "projection": 0.948688959680803
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 99232,
+                "region_pixels": 99232,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 30.551656723637535,
+                    "projection": 0.0
+                  },
+                  "38088": {
+                    "mae": 15.064858110287004,
+                    "projection": 0.5196341731385534
+                  },
+                  "523992": {
+                    "mae": 9.819906884875847,
+                    "projection": 0.8016784891640387
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 339264,
+                "region_pixels": 339264,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 14.029461815380746,
+                    "projection": 0.0
+                  },
+                  "38088": {
+                    "mae": 16.799022786581148,
+                    "projection": 0.3179519773798675
+                  },
+                  "523992": {
+                    "mae": 17.979803338992642,
+                    "projection": 0.1679954094769165
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 99232,
+                "region_pixels": 99232,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 19.03560679350747,
+                    "projection": 0.0
+                  },
+                  "38088": {
+                    "mae": 10.81563406965495,
+                    "projection": 0.5626224626453445
+                  },
+                  "523992": {
+                    "mae": 16.923771229710844,
+                    "projection": 0.2837813518783074
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 8.549116617147709,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 99226,
+        "outputs": {
+          "38088-Amaro.png": {
+            "target_band_rgb8": 20.271774290378538,
+            "reference_band_rgb8": 28.564023197632903,
+            "baseline_band_rgb8": 24.560349750024827,
+            "detail_gain": 0.1974999025866381,
+            "output_change_mae": 1.5116349902534114,
+            "luma_change_mae": 1.4974262014242594,
+            "gamut_fraction": 0.016264619883040937,
+            "luma_clip_fraction": 0.0032098896434634974,
+            "neutral_error": {
+              "baseline": 17.00782389024382,
+              "candidate": 17.06807355599003
+            },
+            "sha256": "64a4ede2e9d5bd838ca1ee0a81d1dac1025c5adb3ff0f37da57a8d1290048c75"
+          },
+          "523992-Amaro.png": {
+            "target_band_rgb8": 20.271774290378538,
+            "reference_band_rgb8": 46.29409022752786,
+            "baseline_band_rgb8": 25.188936632996167,
+            "detail_gain": 0.5,
+            "output_change_mae": 3.806000636672326,
+            "luma_change_mae": 3.649880929895302,
+            "gamut_fraction": 0.06424790133936993,
+            "luma_clip_fraction": 0.044637804187889076,
+            "neutral_error": {
+              "baseline": 16.351940687588602,
+              "candidate": 17.054676529673003
+            },
+            "sha256": "afd621481f7bd4feeb7bbb3da3d0ad7b7f46f46b362fb47c0c246fa9fc32a555"
+          },
+          "38088-Hudson.png": {
+            "target_band_rgb8": 20.271774290378538,
+            "reference_band_rgb8": 26.0853540597898,
+            "baseline_band_rgb8": 22.177441650851815,
+            "detail_gain": 0.19277604184813624,
+            "output_change_mae": 1.470716020562158,
+            "luma_change_mae": 1.4666854862290133,
+            "gamut_fraction": 0.0031568336162988114,
+            "luma_clip_fraction": 0.0005688785134880211,
+            "neutral_error": {
+              "baseline": 14.898114741432018,
+              "candidate": 15.06512406022615
+            },
+            "sha256": "eebe8994891651b58baf4b8ab302ddbcac2d818cde54e496bc87836f6a990d20"
+          },
+          "523992-Hudson.png": {
+            "target_band_rgb8": 20.271774290378538,
+            "reference_band_rgb8": 41.423720746862415,
+            "baseline_band_rgb8": 23.0681587307418,
+            "detail_gain": 0.5,
+            "output_change_mae": 3.80952394988367,
+            "luma_change_mae": 3.7465825433880395,
+            "gamut_fraction": 0.02029982550462177,
+            "luma_clip_fraction": 0.012813030560271646,
+            "neutral_error": {
+              "baseline": 9.06139183950443,
+              "candidate": 9.819738106275908
+            },
+            "sha256": "1c564bb0ea621ba8dc65cd545741d45b6e665fa943840c652079f0ec87815d69"
+          },
+          "38088-XProII.png": {
+            "target_band_rgb8": 20.271774290378538,
+            "reference_band_rgb8": 31.876809694929126,
+            "baseline_band_rgb8": 26.237365015814806,
+            "detail_gain": 0.27819196279187725,
+            "output_change_mae": 2.0878391655662454,
+            "luma_change_mae": 1.9760918859649121,
+            "gamut_fraction": 0.12676263912469346,
+            "luma_clip_fraction": 0.07205892756083758,
+            "neutral_error": {
+              "baseline": 10.437086381929467,
+              "candidate": 10.814981288506372
+            },
+            "sha256": "6840219e9bd69728f8c2c647d5b24e1a940595f917899fbe98ef1a17abc34429"
+          },
+          "523992-XProII.png": {
+            "target_band_rgb8": 20.271774290378538,
+            "reference_band_rgb8": 48.34203211713065,
+            "baseline_band_rgb8": 25.58616002244662,
+            "detail_gain": 0.5,
+            "output_change_mae": 3.7735843865937246,
+            "luma_change_mae": 3.585870230852669,
+            "gamut_fraction": 0.09296889737785323,
+            "luma_clip_fraction": 0.058656385587624975,
+            "neutral_error": {
+              "baseline": 16.53721806784512,
+              "candidate": 16.92307459738375
+            },
+            "sha256": "38cc9e62abe4e9add1e72aba6163b841ce90894c1ba3c9c5fab3ae0b9599db88"
+          }
+        },
+        "comparison_sha256": "fdf2eea92859545da4ae5f4f6123a30606f055e6d1406a3e0b99875163f7532c"
+      },
+      "523992": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 12.927687914962846,
+              "neutral_proxy": 19.713582183870475
+            },
+            "Hudson": {
+              "whole": 11.916434452358967,
+              "neutral_proxy": 15.479440413152906
+            },
+            "XProII": {
+              "whole": 21.94491711735479,
+              "neutral_proxy": 32.83948922446667
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 13.673009277579915,
+            "Amaro-XProII": 25.390280800685925,
+            "Hudson-XProII": 33.95935974805435
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "379484": {
+                "whole": 0.522405535577662,
+                "neutral_proxy": 0.45053396606052826
+              },
+              "244905": {
+                "whole": 0.5370165111832725,
+                "neutral_proxy": 0.19871599202601936
+              }
+            },
+            "Amaro-XProII": {
+              "379484": {
+                "whole": 0.41228922968167486,
+                "neutral_proxy": 0.4856131820747209
+              },
+              "244905": {
+                "whole": 0.18305687095727172,
+                "neutral_proxy": 0.18809974767871618
+              }
+            },
+            "Hudson-XProII": {
+              "379484": {
+                "whole": 0.5492762878107892,
+                "neutral_proxy": 0.5654654145129243
+              },
+              "244905": {
+                "whole": 0.3162378704629066,
+                "neutral_proxy": 0.22937704997423267
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 242592,
+                "region_pixels": 242592,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 16.112037220243593,
+                    "projection": 0.0
+                  },
+                  "379484": {
+                    "mae": 21.358308050828825,
+                    "projection": 0.06136455463861133
+                  },
+                  "244905": {
+                    "mae": 13.292541935980301,
+                    "projection": 0.37197809250909936
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 15297,
+                "region_pixels": 15297,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 20.300952256433725,
+                    "projection": 0.0
+                  },
+                  "379484": {
+                    "mae": 29.279706260486805,
+                    "projection": -0.18140853224779882
+                  },
+                  "244905": {
+                    "mae": 13.760672027194875,
+                    "projection": 0.42528974031126443
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 242592,
+                "region_pixels": 242592,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 26.306970826188277,
+                    "projection": 0.0
+                  },
+                  "379484": {
+                    "mae": 22.181973574286594,
+                    "projection": 0.262795520518719
+                  },
+                  "244905": {
+                    "mae": 15.783745273270897,
+                    "projection": 0.5631174334330595
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 15297,
+                "region_pixels": 15297,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 29.92120459349328,
+                    "projection": 0.0
+                  },
+                  "379484": {
+                    "mae": 30.13588721099998,
+                    "projection": 8.763191567824958e-05
+                  },
+                  "244905": {
+                    "mae": 17.841079950317056,
+                    "projection": 0.4358612169482816
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 242592,
+                "region_pixels": 242592,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 15.748770226003606,
+                    "projection": 0.0
+                  },
+                  "379484": {
+                    "mae": 16.56975910170162,
+                    "projection": 0.9348246663212373
+                  },
+                  "244905": {
+                    "mae": 15.715287396121884,
+                    "projection": 0.1477063710385099
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 15297,
+                "region_pixels": 15297,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 14.081432089080648,
+                    "projection": 0.0
+                  },
+                  "379484": {
+                    "mae": 24.01987317774727,
+                    "projection": 0.9636158374932103
+                  },
+                  "244905": {
+                    "mae": 17.46841428602558,
+                    "projection": -0.03776661523695273
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 6.8365046387899575,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 15234,
+        "outputs": {
+          "379484-Amaro.png": {
+            "target_band_rgb8": 44.19086448321593,
+            "reference_band_rgb8": 21.701278932762104,
+            "baseline_band_rgb8": 42.83441903071126,
+            "detail_gain": -0.4782241837784301,
+            "output_change_mae": 8.202195455744624,
+            "luma_change_mae": 8.197810420788814,
+            "gamut_fraction": 0.014316218177021502,
+            "luma_clip_fraction": 0.003380160928637383,
+            "neutral_error": {
+              "baseline": 27.61728151940834,
+              "candidate": 29.31191195133692
+            },
+            "sha256": "12a74021e0e9e80f689ba06de55f27507dd62463bc65bfa75fea1f0898eab231"
+          },
+          "244905-Amaro.png": {
+            "target_band_rgb8": 44.19086448321593,
+            "reference_band_rgb8": 29.56594950515273,
+            "baseline_band_rgb8": 45.610056712580395,
+            "detail_gain": -0.363063891033889,
+            "output_change_mae": 6.223366805170822,
+            "luma_change_mae": 6.223797268665083,
+            "gamut_fraction": 0.012279877324891175,
+            "luma_clip_fraction": 0.002263058963197467,
+            "neutral_error": {
+              "baseline": 12.42063804647499,
+              "candidate": 13.783401164062841
+            },
+            "sha256": "184a6fe971d97364ae8f0073f2bd4dacbce69f0cecceac80caff667ea5ba6523"
+          },
+          "379484-Hudson.png": {
+            "target_band_rgb8": 44.19086448321593,
+            "reference_band_rgb8": 19.348869852055838,
+            "baseline_band_rgb8": 39.85313667380794,
+            "detail_gain": -0.46399334028733014,
+            "output_change_mae": 7.962289220859166,
+            "luma_change_mae": 7.963764730081783,
+            "gamut_fraction": 0.0015664160401002505,
+            "luma_clip_fraction": 0.00011542012927054478,
+            "neutral_error": {
+              "baseline": 27.84490831911076,
+              "candidate": 30.151284407684564
+            },
+            "sha256": "912bd8eff6c724daef0286890f802bd63acadc3ee5d3c61799d71f48e8d851c7"
+          },
+          "244905-Hudson.png": {
+            "target_band_rgb8": 44.19086448321593,
+            "reference_band_rgb8": 24.732541618202333,
+            "baseline_band_rgb8": 40.23082607489031,
+            "detail_gain": -0.3507124071441136,
+            "output_change_mae": 6.014244767620807,
+            "luma_change_mae": 6.014816273413798,
+            "gamut_fraction": 0.001187178472497032,
+            "luma_clip_fraction": 7.832080200501253e-05,
+            "neutral_error": {
+              "baseline": 16.072316310008315,
+              "candidate": 17.846505623386285
+            },
+            "sha256": "c0791ca2f3349559eb8d7988a7889d3ec2e04f9798f7b0791abd771a887bd6a6"
+          },
+          "379484-XProII.png": {
+            "target_band_rgb8": 44.19086448321593,
+            "reference_band_rgb8": 22.148440879502083,
+            "baseline_band_rgb8": 38.115630417303755,
+            "detail_gain": -0.3613233125110315,
+            "output_change_mae": 6.208902189684738,
+            "luma_change_mae": 6.190152601075056,
+            "gamut_fraction": 0.021311502440311304,
+            "luma_clip_fraction": 0.0050413863606384385,
+            "neutral_error": {
+              "baseline": 21.484398932213033,
+              "candidate": 24.0157104721894
+            },
+            "sha256": "59547b1ffe1ca0e9df4e739ffec9f29ba0c781ef4f36506d8aa09549d1eacd3d"
+          },
+          "244905-XProII.png": {
+            "target_band_rgb8": 44.19086448321593,
+            "reference_band_rgb8": 35.84168618508315,
+            "baseline_band_rgb8": 45.77957869809241,
+            "detail_gain": -0.22488567782564553,
+            "output_change_mae": 3.843997328848437,
+            "luma_change_mae": 3.8486669774765865,
+            "gamut_fraction": 0.01593209998680913,
+            "luma_clip_fraction": 0.0018302334784329245,
+            "neutral_error": {
+              "baseline": 17.31420944378802,
+              "candidate": 17.461052032733797
+            },
+            "sha256": "cf04490b6f940f0e5ba216f5be62d940b3aa43b968cffbd27858e41a67666029"
+          }
+        },
+        "comparison_sha256": "bcd469a4e4b4ca9720150f717a47215dcd62e413f901bb3649e667718fe83e1f"
+      },
+      "244905": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 12.354714912280702,
+              "neutral_proxy": 11.499317363783046
+            },
+            "Hudson": {
+              "whole": 12.880622996259685,
+              "neutral_proxy": 11.351929998758843
+            },
+            "XProII": {
+              "whole": 17.22502838632113,
+              "neutral_proxy": 14.131417814736668
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 19.06648799982189,
+            "Amaro-XProII": 31.91820704203402,
+            "Hudson-XProII": 39.701265974263066
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "523992": {
+                "whole": 0.26000519735208705,
+                "neutral_proxy": 0.6101325514703348
+              },
+              "64573": {
+                "whole": 0.24085642355999853,
+                "neutral_proxy": 0.5813965797298392
+              }
+            },
+            "Amaro-XProII": {
+              "523992": {
+                "whole": 0.16360231941609865,
+                "neutral_proxy": 0.22967258024375134
+              },
+              "64573": {
+                "whole": 0.14662980176208523,
+                "neutral_proxy": 0.22238603950086858
+              }
+            },
+            "Hudson-XProII": {
+              "523992": {
+                "whole": 0.3392138980803993,
+                "neutral_proxy": 0.4011565693546358
+              },
+              "64573": {
+                "whole": 0.37505924295656745,
+                "neutral_proxy": 0.42976896264068454
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 239552,
+                "region_pixels": 239552,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 20.545587875144715,
+                    "projection": 0.0
+                  },
+                  "523992": {
+                    "mae": 24.073886532638703,
+                    "projection": 0.07338798514272027
+                  },
+                  "64573": {
+                    "mae": 22.357886109626858,
+                    "projection": 0.29342879743290806
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 16114,
+                "region_pixels": 16114,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 21.51470770758347,
+                    "projection": 0.0
+                  },
+                  "523992": {
+                    "mae": 28.3803524885193,
+                    "projection": -0.1367299229385346
+                  },
+                  "64573": {
+                    "mae": 22.22864176078772,
+                    "projection": 0.14143427769049072
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 239552,
+                "region_pixels": 239552,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 25.983783618309733,
+                    "projection": 0.0
+                  },
+                  "523992": {
+                    "mae": 19.04000244901594,
+                    "projection": 0.4114864072427356
+                  },
+                  "64573": {
+                    "mae": 20.234600420785466,
+                    "projection": 0.603285059179144
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 16114,
+                "region_pixels": 16114,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 34.187373298580944,
+                    "projection": 0.0
+                  },
+                  "523992": {
+                    "mae": 27.965806131314384,
+                    "projection": 0.17876354075805584
+                  },
+                  "64573": {
+                    "mae": 21.99375284431757,
+                    "projection": 0.35517857545150505
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 239552,
+                "region_pixels": 239552,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 19.340378428622316,
+                    "projection": 0.0
+                  },
+                  "523992": {
+                    "mae": 18.129835414996883,
+                    "projection": 0.3339404046293603
+                  },
+                  "64573": {
+                    "mae": 21.38439949015941,
+                    "projection": 0.4202730294570469
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 16114,
+                "region_pixels": 16114,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 18.489657027015845,
+                    "projection": 0.0
+                  },
+                  "523992": {
+                    "mae": 11.26976542137272,
+                    "projection": 0.700598707641171
+                  },
+                  "64573": {
+                    "mae": 17.94874022589053,
+                    "projection": 0.29263088868750653
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 9.533243999910946,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 16099,
+        "outputs": {
+          "523992-Amaro.png": {
+            "target_band_rgb8": 29.060515039281853,
+            "reference_band_rgb8": 46.29409022752786,
+            "baseline_band_rgb8": 32.96071123354747,
+            "detail_gain": 0.4588142700140488,
+            "output_change_mae": 4.60719593240716,
+            "luma_change_mae": 4.645676638057707,
+            "gamut_fraction": 0.08528002270905691,
+            "luma_clip_fraction": 0.017177898744322736,
+            "neutral_error": {
+              "baseline": 25.284800298155165,
+              "candidate": 28.387229020436052
+            },
+            "sha256": "7cf5873b5a719293ef2bd98f1815a30c541afaba2fafd040d7ef89c89961e71f"
+          },
+          "64573-Amaro.png": {
+            "target_band_rgb8": 29.060515039281853,
+            "reference_band_rgb8": 37.34895554331173,
+            "baseline_band_rgb8": 29.520141097846988,
+            "detail_gain": 0.2693969613023834,
+            "output_change_mae": 2.7973592372428535,
+            "luma_change_mae": 2.7971837947502003,
+            "gamut_fraction": 0.007451409297355062,
+            "luma_clip_fraction": 0.0010436147475287203,
+            "neutral_error": {
+              "baseline": 20.4443133113858,
+              "candidate": 22.234465908855622
+            },
+            "sha256": "435206dd2114e4e9f77c5a3af25006d3f19a521bf154dab9bdebc5c169c92134"
+          },
+          "523992-Hudson.png": {
+            "target_band_rgb8": 29.060515039281853,
+            "reference_band_rgb8": 41.423720746862415,
+            "baseline_band_rgb8": 28.85860242832321,
+            "detail_gain": 0.4323776884736767,
+            "output_change_mae": 4.450908362276249,
+            "luma_change_mae": 4.448493305002672,
+            "gamut_fraction": 0.051821733903286135,
+            "luma_clip_fraction": 0.0057357066524178464,
+            "neutral_error": {
+              "baseline": 25.202724806923825,
+              "candidate": 27.973373087355323
+            },
+            "sha256": "b621a0a18944b0b86555de1eda704e33c3759ba4119c6d2010d890d356b224f4"
+          },
+          "64573-Hudson.png": {
+            "target_band_rgb8": 29.060515039281853,
+            "reference_band_rgb8": 32.366317079889726,
+            "baseline_band_rgb8": 27.38511340679537,
+            "detail_gain": 0.17140796253477042,
+            "output_change_mae": 1.7549982188974975,
+            "luma_change_mae": 1.7549897558776382,
+            "gamut_fraction": 2.9221212930804167e-05,
+            "luma_clip_fraction": 0.0,
+            "neutral_error": {
+              "baseline": 21.086982628320598,
+              "candidate": 21.99488581071288
+            },
+            "sha256": "01df4912c246f06084995931deee029bf754dbf04f4514c614a53f4899fd839a"
+          },
+          "523992-XProII.png": {
+            "target_band_rgb8": 29.060515039281853,
+            "reference_band_rgb8": 48.34203211713065,
+            "baseline_band_rgb8": 33.36882607897167,
+            "detail_gain": 0.5,
+            "output_change_mae": 5.012281258348918,
+            "luma_change_mae": 5.009983453279455,
+            "gamut_fraction": 0.10699138391664441,
+            "luma_clip_fraction": 0.0237317993588031,
+            "neutral_error": {
+              "baseline": 10.284137731122016,
+              "candidate": 11.266579704743567
+            },
+            "sha256": "4b06ddce02ff286ca2c13500d0b42654d2c88ed51dd379e1360e60a352974ee0"
+          },
+          "64573-XProII.png": {
+            "target_band_rgb8": 29.060515039281853,
+            "reference_band_rgb8": 35.753267517600065,
+            "baseline_band_rgb8": 30.02786728905226,
+            "detail_gain": 0.19701647478747822,
+            "output_change_mae": 2.0313404466114524,
+            "luma_change_mae": 2.031928111641731,
+            "gamut_fraction": 0.006921253005610473,
+            "luma_clip_fraction": 0.0003005610472882714,
+            "neutral_error": {
+              "baseline": 18.30293807068762,
+              "candidate": 17.94939644284324
+            },
+            "sha256": "5f5d0bcb5ced946f03ad814b20aa54913ae9a005db5259b8c6ee10936518df0a"
+          }
+        },
+        "comparison_sha256": "969d00ea7e114f897e2897f3dc93cb4eb67cb62f07d1d5ea5f7e3241c61d9edc"
+      },
+      "64573": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 20.749578675884646,
+              "neutral_proxy": 16.967430076340968
+            },
+            "Hudson": {
+              "whole": 20.0452714781073,
+              "neutral_proxy": 15.773910724405773
+            },
+            "XProII": {
+              "whole": 23.023155327259804,
+              "neutral_proxy": 19.91235790245691
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 18.410760052551097,
+            "Amaro-XProII": 24.86286371174431,
+            "Hudson-XProII": 30.60383956839181
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "244905": {
+                "whole": 0.27926353032295287,
+                "neutral_proxy": 0.1142913222054059
+              },
+              "261132": {
+                "whole": 0.3020952186533093,
+                "neutral_proxy": 0.2651682959755887
+              }
+            },
+            "Amaro-XProII": {
+              "244905": {
+                "whole": 0.09674932650972179,
+                "neutral_proxy": 0.06160589958006907
+              },
+              "261132": {
+                "whole": 0.1555072335155751,
+                "neutral_proxy": -0.05863146894151985
+              }
+            },
+            "Hudson-XProII": {
+              "244905": {
+                "whole": 0.46442540887348777,
+                "neutral_proxy": 0.16409346735942612
+              },
+              "261132": {
+                "whole": 0.5838871073578322,
+                "neutral_proxy": 0.2855462563955343
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 247632,
+                "region_pixels": 247632,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 18.59303724882083,
+                    "projection": 0.0
+                  },
+                  "244905": {
+                    "mae": 17.784811063728974,
+                    "projection": 0.19116671941072136
+                  },
+                  "261132": {
+                    "mae": 26.22122073614611,
+                    "projection": -0.11189707497812457
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 9999,
+                "region_pixels": 9999,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 10.247424742474248,
+                    "projection": 0.0
+                  },
+                  "244905": {
+                    "mae": 10.863619695302864,
+                    "projection": 0.4953903046912271
+                  },
+                  "261132": {
+                    "mae": 14.913891389138914,
+                    "projection": -0.0613487823896739
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 247632,
+                "region_pixels": 247632,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 24.108164534470504,
+                    "projection": 0.0
+                  },
+                  "244905": {
+                    "mae": 13.202457679136783,
+                    "projection": 0.7583939870385388
+                  },
+                  "261132": {
+                    "mae": 23.750604391462602,
+                    "projection": 0.029579454259403497
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 9999,
+                "region_pixels": 9999,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 16.57109044237757,
+                    "projection": 0.0
+                  },
+                  "244905": {
+                    "mae": 11.101776844351102,
+                    "projection": 0.6671803349252484
+                  },
+                  "261132": {
+                    "mae": 13.967130046337967,
+                    "projection": 0.1232341274286062
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 247632,
+                "region_pixels": 247632,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 13.359518694406754,
+                    "projection": 0.0
+                  },
+                  "244905": {
+                    "mae": 18.357772824190736,
+                    "projection": 0.14686008489894706
+                  },
+                  "261132": {
+                    "mae": 19.442013417759686,
+                    "projection": 1.0673063909952591
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 9999,
+                "region_pixels": 9999,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 15.55905590559056,
+                    "projection": 0.0
+                  },
+                  "244905": {
+                    "mae": 24.477881121445478,
+                    "projection": -0.3894719396360354
+                  },
+                  "261132": {
+                    "mae": 21.95119511951195,
+                    "projection": 0.1301831228360361
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 9.205380026275549,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 9999,
+        "outputs": {
+          "244905-Amaro.png": {
+            "target_band_rgb8": 33.07136385062776,
+            "reference_band_rgb8": 29.56594950515273,
+            "baseline_band_rgb8": 39.00712500969292,
+            "detail_gain": -0.2854788676748503,
+            "output_change_mae": 3.964071687019448,
+            "luma_change_mae": 3.9637701088712283,
+            "gamut_fraction": 0.0006259287975705887,
+            "luma_clip_fraction": 0.0001373005104348388,
+            "neutral_error": {
+              "baseline": 12.350701736840351,
+              "candidate": 10.863619695302864
+            },
+            "sha256": "06efe510787e8cc9ea4a3838fb5852665e4e856b38b2cf21eabec1b264c27e85"
+          },
+          "261132-Amaro.png": {
+            "target_band_rgb8": 33.07136385062776,
+            "reference_band_rgb8": 44.66536179573505,
+            "baseline_band_rgb8": 34.945957492092816,
+            "detail_gain": 0.2938918499866386,
+            "output_change_mae": 4.240076672912494,
+            "luma_change_mae": 3.985087328778186,
+            "gamut_fraction": 0.09151886670543387,
+            "luma_clip_fraction": 0.02905924920850294,
+            "neutral_error": {
+              "baseline": 13.808614194752808,
+              "candidate": 14.913891389138914
+            },
+            "sha256": "0cbcb7c9fbd9427b6457bc70e8a2b40f67cd5201fdba4ce44405a6e9b75a707f"
+          },
+          "244905-Hudson.png": {
+            "target_band_rgb8": 33.07136385062776,
+            "reference_band_rgb8": 24.732541618202333,
+            "baseline_band_rgb8": 34.50650071829407,
+            "detail_gain": -0.2955414582911496,
+            "output_change_mae": 4.10632443841399,
+            "luma_change_mae": 4.106322726465077,
+            "gamut_fraction": 1.6153001227628092e-05,
+            "luma_clip_fraction": 4.038250306907023e-06,
+            "neutral_error": {
+              "baseline": 7.985231856518985,
+              "candidate": 11.101776844351102
+            },
+            "sha256": "6b2747b8df47dd1404d534f68e206142008f0eff4af32e859d23a3eb734fddcb"
+          },
+          "261132-Hudson.png": {
+            "target_band_rgb8": 33.07136385062776,
+            "reference_band_rgb8": 39.66310411794727,
+            "baseline_band_rgb8": 31.847368515457532,
+            "detail_gain": 0.2363294008009706,
+            "output_change_mae": 3.2811483707006097,
+            "luma_change_mae": 3.2761844705046195,
+            "gamut_fraction": 0.0025885184467274018,
+            "luma_clip_fraction": 0.00044420753375977256,
+            "neutral_error": {
+              "baseline": 16.493749374937494,
+              "candidate": 13.967130046337967
+            },
+            "sha256": "723786db62be50c9e67296869b0f406cd2fec3c4594100960161fd66ad20aa09"
+          },
+          "244905-XProII.png": {
+            "target_band_rgb8": 33.07136385062776,
+            "reference_band_rgb8": 35.84168618508315,
+            "baseline_band_rgb8": 38.3989788552188,
+            "detail_gain": -0.07732649556535025,
+            "output_change_mae": 1.04760289461782,
+            "luma_change_mae": 1.0475999030819927,
+            "gamut_fraction": 0.00033921302578018993,
+            "luma_clip_fraction": 8.076500613814046e-06,
+            "neutral_error": {
+              "baseline": 24.394439443944396,
+              "candidate": 24.477881121445478
+            },
+            "sha256": "ccfea9c4ba949d62a4d946b5fc77df2754965ff668a8cfe99c6ead75aaf61d8a"
+          },
+          "261132-XProII.png": {
+            "target_band_rgb8": 33.07136385062776,
+            "reference_band_rgb8": 33.35204011631464,
+            "baseline_band_rgb8": 33.50011851851855,
+            "detail_gain": -0.004477541442582405,
+            "output_change_mae": 0.0011670543386961298,
+            "luma_change_mae": 0.0011670543386961298,
+            "gamut_fraction": 4.4420753375977256e-05,
+            "luma_clip_fraction": 0.0,
+            "neutral_error": {
+              "baseline": 21.95119511951195,
+              "candidate": 21.95119511951195
+            },
+            "sha256": "6e72130b14996a7f23782241be27c7c3c28ecdc9a9295bd1e2b0e40207dcfc3f"
+          }
+        },
+        "comparison_sha256": "0b5e1ac5b23d64d40ee62cff9970522c3090de63a772708a6ab2a2e80e8d768f"
+      },
+      "261132": {
+        "candidate": {
+          "same_filter_swaps": {
+            "Amaro": {
+              "whole": 21.23205315183925,
+              "neutral_proxy": 14.187654320987654
+            },
+            "Hudson": {
+              "whole": 26.40855637479969,
+              "neutral_proxy": 21.488888888888887
+            },
+            "XProII": {
+              "whole": 15.511783386449162,
+              "neutral_proxy": 22.18395061728395
+            }
+          },
+          "author_style_differences": {
+            "Amaro-Hudson": 13.957106717801905,
+            "Amaro-XProII": 15.664361979870002,
+            "Hudson-XProII": 25.83320954644484
+          },
+          "style_projections": {
+            "Amaro-Hudson": {
+              "64573": {
+                "whole": 0.7649130809016929,
+                "neutral_proxy": 0.4003838581174926
+              },
+              "711468": {
+                "whole": 1.0914569786127426,
+                "neutral_proxy": 0.747519803415803
+              }
+            },
+            "Amaro-XProII": {
+              "64573": {
+                "whole": 0.11436889467440393,
+                "neutral_proxy": 0.05176825103584954
+              },
+              "711468": {
+                "whole": 0.2879335868206818,
+                "neutral_proxy": 0.17722912788580414
+              }
+            },
+            "Hudson-XProII": {
+              "64573": {
+                "whole": 0.5361022763201195,
+                "neutral_proxy": 0.2833548290643109
+              },
+              "711468": {
+                "whole": 0.9091912730021344,
+                "neutral_proxy": 0.4755746389051904
+              }
+            }
+          },
+          "fidelity": {
+            "Amaro": {
+              "whole": {
+                "pixels": 296208,
+                "region_pixels": 296208,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 14.868743135454366,
+                    "projection": 0.0
+                  },
+                  "64573": {
+                    "mae": 9.162236221393975,
+                    "projection": 0.7266723997852678
+                  },
+                  "711468": {
+                    "mae": 23.425726741568987,
+                    "projection": 1.3482646334117596
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 270,
+                "region_pixels": 270,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 19.04074074074074,
+                    "projection": 0.0
+                  },
+                  "64573": {
+                    "mae": 10.576543209876544,
+                    "projection": 0.6886385181770879
+                  },
+                  "711468": {
+                    "mae": 14.722222222222221,
+                    "projection": 1.070546251131539
+                  }
+                }
+              }
+            },
+            "Hudson": {
+              "whole": {
+                "pixels": 296208,
+                "region_pixels": 296208,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 26.320799348205764,
+                    "projection": 0.0
+                  },
+                  "64573": {
+                    "mae": 8.213156520643151,
+                    "projection": 1.085297893320873
+                  },
+                  "711468": {
+                    "mae": 29.733265138011127,
+                    "projection": 1.9792642211781057
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 270,
+                "region_pixels": 270,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 27.796296296296298,
+                    "projection": 0.0
+                  },
+                  "64573": {
+                    "mae": 10.601234567901235,
+                    "projection": 0.9111930980173768
+                  },
+                  "711468": {
+                    "mae": 19.70740740740741,
+                    "projection": 1.6394616128700106
+                  }
+                }
+              }
+            },
+            "XProII": {
+              "whole": {
+                "pixels": 296208,
+                "region_pixels": 296208,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 9.733092961702587,
+                    "projection": 0.0
+                  },
+                  "64573": {
+                    "mae": 13.766037154071913,
+                    "projection": -0.10502703577881375
+                  },
+                  "711468": {
+                    "mae": 19.396273339455156,
+                    "projection": 0.47304820493951694
+                  }
+                }
+              },
+              "neutral_proxy": {
+                "pixels": 270,
+                "region_pixels": 270,
+                "coverage": 1.0,
+                "methods": {
+                  "original": {
+                    "mae": 18.49506172839506,
+                    "projection": 0.0
+                  },
+                  "64573": {
+                    "mae": 30.42222222222222,
+                    "projection": -0.6004578603289986
+                  },
+                  "711468": {
+                    "mae": 42.023456790123454,
+                    "projection": -0.7020393927712613
+                  }
+                }
+              }
+            }
+          },
+          "swap_limit": 6.978553358900952,
+          "gates": {
+            "stable": false,
+            "responds": false,
+            "fidelity": false
+          }
+        },
+        "common_neutral_pixels": 270,
+        "outputs": {
+          "64573-Amaro.png": {
+            "target_band_rgb8": 38.48161508009383,
+            "reference_band_rgb8": 37.34895554331173,
+            "baseline_band_rgb8": 39.781497477808415,
+            "detail_gain": -0.06321309356256759,
+            "output_change_mae": 0.9231823583427862,
+            "luma_change_mae": 0.9231823583427862,
+            "gamut_fraction": 0.0,
+            "luma_clip_fraction": 0.0,
+            "neutral_error": {
+              "baseline": 10.419753086419753,
+              "candidate": 10.576543209876544
+            },
+            "sha256": "5e08a6665ffae14c48b7efbd3761e9410e081b4af6af4838b7f13d957bc885a4"
+          },
+          "711468-Amaro.png": {
+            "target_band_rgb8": 38.48161508009383,
+            "reference_band_rgb8": 33.42378800326513,
+            "baseline_band_rgb8": 36.06709495561677,
+            "detail_gain": -0.0686901250597196,
+            "output_change_mae": 1.013426376060066,
+            "luma_change_mae": 1.013426376060066,
+            "gamut_fraction": 0.0,
+            "luma_clip_fraction": 0.0,
+            "neutral_error": {
+              "baseline": 15.720987654320988,
+              "candidate": 14.722222222222221
+            },
+            "sha256": "a8aff09260d4cd82552ebcde742c5175fb4c3d1832059795a9702739fea6fca2"
+          },
+          "64573-Hudson.png": {
+            "target_band_rgb8": 38.48161508009383,
+            "reference_band_rgb8": 32.366317079889726,
+            "baseline_band_rgb8": 37.86800892766037,
+            "detail_gain": -0.1429693591685193,
+            "output_change_mae": 2.1670852914168424,
+            "luma_change_mae": 2.167085291416842,
+            "gamut_fraction": 0.0,
+            "luma_clip_fraction": 0.0,
+            "neutral_error": {
+              "baseline": 9.5320987654321,
+              "candidate": 10.601234567901235
+            },
+            "sha256": "cd0ae4096971bce71b282764f9701853e97acdb8122c328bea530fde67e5eb4d"
+          },
+          "711468-Hudson.png": {
+            "target_band_rgb8": 38.48161508009383,
+            "reference_band_rgb8": 31.845196559535037,
+            "baseline_band_rgb8": 33.689717390062164,
+            "detail_gain": -0.047932521197149025,
+            "output_change_mae": 0.6907128324240623,
+            "luma_change_mae": 0.6906828492140659,
+            "gamut_fraction": 1.3504024199211365e-05,
+            "luma_clip_fraction": 3.3760060498028413e-06,
+            "neutral_error": {
+              "baseline": 20.40246913580247,
+              "candidate": 19.70740740740741
+            },
+            "sha256": "0ccac1000bf51f64eed614f9d3407869a719a49a08cb63a1f3f313d24d388aaa"
+          },
+          "64573-XProII.png": {
+            "target_band_rgb8": 38.48161508009383,
+            "reference_band_rgb8": 35.753267517600065,
+            "baseline_band_rgb8": 42.13474275278045,
+            "detail_gain": -0.16583179323160627,
+            "output_change_mae": 2.523651173049569,
+            "luma_change_mae": 2.521513965861827,
+            "gamut_fraction": 0.0019412034786366337,
+            "luma_clip_fraction": 0.0003173445686814671,
+            "neutral_error": {
+              "baseline": 31.59753086419753,
+              "candidate": 30.42222222222222
+            },
+            "sha256": "2229989cab7c8b7749b90a21e3951b225144283fea6cdbf5f38f107efcdfcdcb"
+          },
+          "711468-XProII.png": {
+            "target_band_rgb8": 38.48161508009383,
+            "reference_band_rgb8": 46.928135716763684,
+            "baseline_band_rgb8": 39.79149686766656,
+            "detail_gain": 0.18545580361539551,
+            "output_change_mae": 2.835241902086822,
+            "luma_change_mae": 2.811017275698158,
+            "gamut_fraction": 0.017997488251498946,
+            "luma_clip_fraction": 0.0040680872900124235,
+            "neutral_error": {
+              "baseline": 38.79506172839506,
+              "candidate": 42.023456790123454
+            },
+            "sha256": "6f0e05430b85c040bbeb632e412eca12fb6eaaf1e9462c7edf90e370e9adbf7e"
+          }
+        },
+        "comparison_sha256": "df32b38e9c460c265c1c6b1ad52473dd86af7fd320ed945cffd2ffbc80d4d5ec"
+      }
+    },
+    "passing_cases": 0,
+    "max_neutral_degradation": 3.228395061728392,
+    "passed": false
+  },
+  "luma_directions": {
+    "785-3553": {
+      "C1": {
+        "baseline": 0.1556356355986747,
+        "candidate": 0.28649441450475027,
+        "improvement_toward_expected": 0.13085877890607567
+      },
+      "F1": {
+        "baseline": -0.2594250617020253,
+        "candidate": -0.1983860195890905,
+        "improvement_toward_expected": 0.06103904211293476
+      }
+    },
+    "9483-19432": {
+      "C1": {
+        "baseline": 0.3044341444639756,
+        "candidate": 0.38257339884810915,
+        "improvement_toward_expected": 0.0781392543841336
+      },
+      "F1": {
+        "baseline": 0.10416273674869242,
+        "candidate": 0.18030334219733724,
+        "improvement_toward_expected": 0.07614060544864487
+      }
+    },
+    "872-1268": {
+      "C1": {
+        "baseline": 0.22093199638862257,
+        "candidate": 0.2527533556824916,
+        "improvement_toward_expected": 0.03182135929386898
+      },
+      "F1": {
+        "baseline": 0.2545125485280661,
+        "candidate": 0.3126067908239515,
+        "improvement_toward_expected": 0.058094242295885334
+      }
+    },
+    "8021-8690": {
+      "C1": {
+        "baseline": 0.24308525797741656,
+        "candidate": 0.33066822415788105,
+        "improvement_toward_expected": 0.08758296618046457
+      },
+      "F1": {
+        "baseline": 0.5264374158071898,
+        "candidate": 0.6875503940210691,
+        "improvement_toward_expected": 0.16111297821387927
+      }
+    }
+  },
+  "improvements_at_least_point_one": 2,
+  "direction_gate": false,
+  "passed": false
+}
