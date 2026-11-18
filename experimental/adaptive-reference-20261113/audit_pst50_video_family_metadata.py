@@ -90,7 +90,7 @@ def timecode_track(metadata):
 
 def timecode_description(description):
     length, kind, _ = box_header(description, 8, len(description))
-    if kind != b"tmcd" or 8 + length != len(description) or length < 36:
+    if kind != b"tmcd" or 8 + length != len(description) or length < 34:
         raise ValueError("Unexpected sample description")
     flags, timescale, framesize, nominal = struct.unpack_from(">IIIB", description, 28)
     source_labels = []
@@ -127,13 +127,11 @@ def timecode_sample(tables, index, top_boxes):
     return offset
 
 
-def fetch_one(row, output, proxy, expanded):
+def range_reader(row, proxy, budget):
     path, total = row["path"], row["size"]
-    expected = row["lfs"]["oid"]
     name = Path(path).stem
     opener = build_opener(ProxyHandler({"https": proxy} if proxy else {}))
     log = []
-    budget = EXPANDED_LIMIT_PER_FILE if expanded else LIMIT_PER_FILE
 
     def fetch(start, length):
         if length + sum(item["length"] for item in log) > budget:
@@ -154,6 +152,15 @@ def fetch_one(row, output, proxy, expanded):
         log.append({"offset": start, "length": length, "etag": etag, "sha256": sha256(data).hexdigest()})
         return data
 
+    return fetch, log
+
+
+def fetch_one(row, output, proxy, expanded, *, budget_override=None):
+    path, total = row["path"], row["size"]
+    expected = row["lfs"]["oid"]
+    name = Path(path).stem
+    budget = EXPANDED_LIMIT_PER_FILE if expanded else LIMIT_PER_FILE
+    fetch, log = range_reader(row, proxy, budget if budget_override is None else budget_override)
     position = 0
     boxes = []
     metadata = None
