@@ -28,7 +28,7 @@ def ray_samples(rgb):
                       where=total[..., None] > 0)
     valid = (pixels.min(axis=-1) >= 4) & (pixels.max(axis=-1) <= 249)
     ys, xs = np.indices(strength.shape)
-    origins, directions, marks = [], [], []
+    origins, directions, marks, dark_marks = [], [], [], []
     for first, second in (
         ((slice(None), slice(None, -2)), (slice(None), slice(2, None))),
         ((slice(None, -2), slice(None)), (slice(2, None), slice(None))),
@@ -43,19 +43,27 @@ def ray_samples(rgb):
         directions.append(ray[use] / length[use, None])
         marks.append(np.column_stack((np.where(swap, ys[second], ys[first])[use],
                                       np.where(swap, xs[second], xs[first])[use])))
-    return preview, np.concatenate(origins), np.concatenate(directions), np.concatenate(marks)
+        dark_marks.append(np.column_stack((np.where(swap, ys[first], ys[second])[use],
+                                           np.where(swap, xs[first], xs[second])[use])))
+    return (preview, np.concatenate(origins), np.concatenate(directions), np.concatenate(marks),
+            np.concatenate(dark_marks))
 
 
 def locate(rgb):
-    preview, origin, ray, mark = ray_samples(rgb)
-    bins = (4 * mark[:, 0] // preview.height) * 4 + 4 * mark[:, 1] // preview.width
+    preview, origin, ray, mark, _ = ray_samples(rgb)
+    report, support = fit_rays(preview.size, origin, ray, mark)
+    return report, preview, mark[support]
+
+
+def fit_rays(size, origin, ray, mark):
+    width, height = size
+    bins = (4 * mark[:, 0] // height) * 4 + 4 * mark[:, 1] // width
     counts = np.bincount(bins, minlength=16)
     support = counts[bins] >= 16
     r = {"candidate_pairs": len(bins), "support_pairs": int(support.sum()),
          "support_tiles": int((counts >= 16).sum()), "usable": False}
-    keep = mark[support]
     if r["support_pairs"] < 128 or r["support_tiles"] < 4:
-        return {**r, "reason": "coverage"}, preview, keep
+        return {**r, "reason": "coverage"}, support
 
     origin, ray = origin[support], ray[support]
     weights = 1. / counts[bins[support]]
@@ -65,7 +73,7 @@ def locate(rgb):
     minimum = float(np.linalg.eigvalsh(system)[0])
     r["smallest_eigenvalue"] = minimum
     if minimum < .10:
-        return {**r, "reason": "directions"}, preview, keep
+        return {**r, "reason": "directions"}, support
 
     position = np.linalg.solve(system, normals.T @ (weights * np.sum(normals * origin, axis=1)))
     displacement = position - origin
@@ -77,7 +85,7 @@ def locate(rgb):
     r["usable"] = bool((position >= 0).all() and position.sum() <= 1 and forward >= .55 and distance <= .025)
     if not r["usable"]:
         r["reason"] = "convergence"
-    return r, preview, keep
+    return r, support
 
 
 def synthetic_check():
