@@ -28,6 +28,32 @@ def read_checked(folder, family, role, verified):
     return decode_image(path)
 
 
+def case_metrics(origin, authored, variants, references):
+    regions = target_regions(origin, np.zeros(origin.shape[:2], dtype=bool))
+    masks = {name: regions[name] for name in ('whole', 'neutral_proxy')}
+    same_style, distinguish, errors, separations = {}, {}, {}, {}
+    for style, renders in variants.items():
+        a, b = renders.values()
+        same_style[style] = {name: float(np.abs(a[mask] - b[mask]).mean()) if mask.any() else None
+                             for name, mask in masks.items()}
+        errors[style] = score(origin, authored[style], {'original': origin, **renders}, masks['whole'])
+    for a, b in combinations(STYLES, 2):
+        key = f'{a}-{b}'
+        delta = authored[b] - authored[a]
+        separations[key] = float(np.abs(delta).mean())
+        distinguish[key] = {ref: {name: projection(variants[b][ref] - variants[a][ref], delta, mask)
+                                  for name, mask in masks.items()} for ref in references}
+    swap_limit = max(2., .5 * min(separations.values()))
+    stable = all(row['whole'] <= swap_limit for row in same_style.values())
+    responds = all((metric['whole'] or 0.) >= .5 for row in distinguish.values() for metric in row.values())
+    whole_errors = [regions['whole']['methods'] for regions in errors.values()]
+    fidelity = all(methods[ref]['mae'] <= methods['original']['mae'] - 1
+                   for methods in whole_errors for ref in references)
+    return dict(same_filter_swaps=same_style, author_style_differences=separations,
+                style_projections=distinguish, fidelity=errors, swap_limit=swap_limit,
+                gates=dict(stable=stable, responds=responds, fidelity=fidelity))
+
+
 def run(folder, evidence, out):
     verified = json.loads(evidence.read_text(encoding='utf-8'))
     groups = [name for name, case in verified['cases'].items()
@@ -59,8 +85,6 @@ def run(folder, evidence, out):
     report = {}
     for group, references in refs.items():
         origin = read_checked(folder, group, 'Origin', verified)
-        masks = target_regions(origin, np.zeros(origin.shape[:2], dtype=bool))
-        masks = {name: masks[name] for name in ('whole', 'neutral_proxy')}
         variants = {}
         authored = {}
         for style in STYLES:
@@ -68,27 +92,7 @@ def run(folder, evidence, out):
             authored[style] = finish_spatial(origin, edit, .8).astype(np.int16)
             variants[style] = {ref: decode_image(out / group / f'{ref}-{style}.png').astype(np.int16)
                                for ref in references}
-        same_style, distinguish, errors, separations = {}, {}, {}, {}
-        for style, renders in variants.items():
-            a, b = renders.values()
-            same_style[style] = {name: float(np.abs(a[mask] - b[mask]).mean()) if mask.any() else None
-                                 for name, mask in masks.items()}
-            errors[style] = score(origin, authored[style], {'original': origin, **renders}, masks['whole'])
-        for a, b in combinations(STYLES, 2):
-            key = f'{a}-{b}'
-            delta = authored[b] - authored[a]
-            separations[key] = float(np.abs(delta).mean())
-            distinguish[key] = {ref: {name: projection(variants[b][ref] - variants[a][ref], delta, mask)
-                                      for name, mask in masks.items()} for ref in references}
-        swap_limit = max(2., .5 * min(separations.values()))
-        stable = all(row['whole'] <= swap_limit for row in same_style.values())
-        responds = all((metric['whole'] or 0.) >= .5 for row in distinguish.values() for metric in row.values())
-        whole_errors = [regions['whole']['methods'] for regions in errors.values()]
-        fidelity = all(methods[ref]['mae'] <= methods['original']['mae'] - 1
-                       for methods in whole_errors for ref in references)
-        report[group] = dict(same_filter_swaps=same_style, author_style_differences=separations,
-                             style_projections=distinguish, fidelity=errors, swap_limit=swap_limit,
-                             gates=dict(stable=stable, responds=responds, fidelity=fidelity))
+        report[group] = case_metrics(origin, authored, variants, references)
     count = sum(all(item['gates'].values()) for item in report.values())
     result = dict(count=count, eligible=count >= 6, references=refs, exclusions=exclusions, cases=report,
                   artifacts=artifacts, checkpoint_sha256=CHECKPOINT, data_sha256=digest(evidence),
