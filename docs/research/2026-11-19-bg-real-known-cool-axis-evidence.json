@@ -1,0 +1,944 @@
+{
+  "cases": {
+    "785-3553": {
+      "scores": {
+        "baseline": {
+          "person": {
+            "pixels": 6816,
+            "swap_mae": [
+              4.114778951486698,
+              2.939651799687011
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.354215571205008,
+            "response": {
+              "C1": {
+                "projection": 0.43888653811279693,
+                "error": 4.148180751173709
+              },
+              "F1": {
+                "projection": 0.4246496504060126,
+                "error": 4.59883607198748
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 5.2862731734652515,
+                "cool": 2.7726709363592543,
+                "other_chroma": 4.324741086435384
+              },
+              "cool": {
+                "brightness": 3.560009835787207,
+                "cool": 2.2857706605691406,
+                "other_chroma": 3.445020081652589
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 1479,
+            "swap_mae": [
+              5.007888212756367,
+              3.2501690331304935
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.8347982871309443,
+            "response": {
+              "C1": {
+                "projection": 0.6964339087714411,
+                "error": 2.713545188190219
+              },
+              "F1": {
+                "projection": 0.691593612433874,
+                "error": 3.8275862068965516
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 7.907933583230843,
+                "cool": 1.545970312435409,
+                "other_chroma": 4.859795750844817
+              },
+              "cool": {
+                "brightness": 4.939344845154342,
+                "cool": 1.3883011547150979,
+                "other_chroma": 3.408624674399091
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              5.1802927652994795,
+              5.1319834391276045
+            ],
+            "control_mae": 6.9997507731119795,
+            "interaction_mae": 1.3228352864583333,
+            "response": {
+              "C1": {
+                "projection": 0.6812517507373155,
+                "error": 2.6438700358072915
+              },
+              "F1": {
+                "projection": 0.6324638716914298,
+                "error": 3.4222310384114585
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 8.006168973056838,
+                "cool": 2.2797240522532642,
+                "other_chroma": 3.696854112803549
+              },
+              "cool": {
+                "brightness": 7.883130720750523,
+                "cool": 2.4964397359460446,
+                "other_chroma": 3.328360697576316
+              }
+            }
+          }
+        },
+        "candidate": {
+          "person": {
+            "pixels": 6816,
+            "swap_mae": [
+              3.855242566510172,
+              2.772544992175274
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.4623924100156493,
+            "response": {
+              "C1": {
+                "projection": 0.9693658193797982,
+                "error": 1.1314064945226916
+              },
+              "F1": {
+                "projection": 0.982105976344476,
+                "error": 1.5616197183098592
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 5.348973421019596,
+                "cool": 0.5965649578158815,
+                "other_chroma": 4.3257102822602
+              },
+              "cool": {
+                "brightness": 3.592876460370108,
+                "cool": 0.5009896522235844,
+                "other_chroma": 3.4823406470626748
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 1479,
+            "swap_mae": [
+              5.120576966418751,
+              3.2242506197881453
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.9202163624070319,
+            "response": {
+              "C1": {
+                "projection": 1.0050347207108388,
+                "error": 1.3734505296371422
+              },
+              "F1": {
+                "projection": 1.011021250293813,
+                "error": 2.8208248816768084
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 8.02786767506695,
+                "cool": 0.3441109488596402,
+                "other_chroma": 4.784419085571658
+              },
+              "cool": {
+                "brightness": 4.848390527342661,
+                "cool": 0.31704505237214115,
+                "other_chroma": 3.4126714757428114
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              4.901601155598958,
+              4.6867828369140625
+            ],
+            "control_mae": 6.9997507731119795,
+            "interaction_mae": 1.2161712646484375,
+            "response": {
+              "C1": {
+                "projection": 0.9971238296298532,
+                "error": 0.8751169840494791
+              },
+              "F1": {
+                "projection": 0.9991204151640426,
+                "error": 1.7605794270833333
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 8.079075021055166,
+                "cool": 0.3483356474925174,
+                "other_chroma": 3.674365699578737
+              },
+              "cool": {
+                "brightness": 7.756511114151668,
+                "cool": 0.37667990617753705,
+                "other_chroma": 3.449607207902993
+              }
+            }
+          }
+        }
+      },
+      "conditions": {
+        "baseline": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": true
+        },
+        "candidate": {
+          "person_cold": true,
+          "whole_cold": true,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": true
+        }
+      },
+      "adjustments": {
+        "C1": {
+          "limited_ratio": 0.00909423828125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "7bcd18235ee8772c4673422fe3b8af87336578a1340ab518ab9b7f1d283a0e5a"
+        },
+        "F1": {
+          "limited_ratio": 0.0065460205078125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "633bdc7845a65ef7cd96056b81f24add998386b05539ce125ae6b28310bc7df6"
+        },
+        "C1-cool": {
+          "limited_ratio": 0.0222625732421875,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "7473874bd932a58ec6a91c33e8179d4c3e575187dc5c77b92f1a3e53e9e29d17"
+        },
+        "F1-cool": {
+          "limited_ratio": 0.009002685546875,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "5c13ce977952dad06d3973b058bdac12e89c84f2ec746d4ad378b61786cb1ed0"
+        }
+      },
+      "passed": false,
+      "panel_sha256": "e749da33161f61bda85a664eaea49a3b7b2978df7739b1686bc423c99edd0c5c"
+    },
+    "9483-19432": {
+      "scores": {
+        "baseline": {
+          "person": {
+            "pixels": 8008,
+            "swap_mae": [
+              3.8997668997668997,
+              3.981185481185481
+            ],
+            "control_mae": 6.996919746919747,
+            "interaction_mae": 0.7825507825507826,
+            "response": {
+              "C1": {
+                "projection": 0.4728760724591525,
+                "error": 3.873751248751249
+              },
+              "F1": {
+                "projection": 0.43525032893572807,
+                "error": 4.041250416250416
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 4.949105295050345,
+                "cool": 4.339658756483336,
+                "other_chroma": 2.909028896555406
+              },
+              "cool": {
+                "brightness": 4.741372070485912,
+                "cool": 4.960496263556331,
+                "other_chroma": 3.1820251379907964
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 610,
+            "swap_mae": [
+              2.7442622950819673,
+              2.7311475409836063
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 0.9092896174863389,
+            "response": {
+              "C1": {
+                "projection": 0.5911770913952016,
+                "error": 3.044262295081967
+              },
+              "F1": {
+                "projection": 0.6319214803349047,
+                "error": 2.722950819672131
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 4.017474466258579,
+                "cool": 1.9381669752696162,
+                "other_chroma": 1.8572233031245708
+              },
+              "cool": {
+                "brightness": 3.804411623982684,
+                "cool": 1.817149582723104,
+                "other_chroma": 2.1706336916605062
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              2.805475870768229,
+              2.973749796549479
+            ],
+            "control_mae": 6.996612548828125,
+            "interaction_mae": 0.8443400065104166,
+            "response": {
+              "C1": {
+                "projection": 0.6330809803098314,
+                "error": 2.8052520751953125
+              },
+              "F1": {
+                "projection": 0.662063782298786,
+                "error": 2.584019978841146
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 4.0133881123205555,
+                "cool": 2.2331384086253085,
+                "other_chroma": 1.923286249387894
+              },
+              "cool": {
+                "brightness": 4.167209669881678,
+                "cool": 2.4802862705292976,
+                "other_chroma": 2.0314079241962
+              }
+            }
+          }
+        },
+        "candidate": {
+          "person": {
+            "pixels": 8008,
+            "swap_mae": [
+              3.290001665001665,
+              3.9865967365967365
+            ],
+            "control_mae": 6.996919746919747,
+            "interaction_mae": 2.1683732933732935,
+            "response": {
+              "C1": {
+                "projection": 0.8982776314054001,
+                "error": 1.1734515484515484
+              },
+              "F1": {
+                "projection": 0.6553498835991091,
+                "error": 2.9431401931401933
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 4.8743225669788535,
+                "cool": 1.2997546269004818,
+                "other_chroma": 2.9319480039978822
+              },
+              "cool": {
+                "brightness": 4.829561750248642,
+                "cool": 4.865476177891049,
+                "other_chroma": 3.1582785781252727
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 610,
+            "swap_mae": [
+              2.4240437158469947,
+              2.459016393442623
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 0.9366120218579235,
+            "response": {
+              "C1": {
+                "projection": 0.9953000773939351,
+                "error": 1.073224043715847
+              },
+              "F1": {
+                "projection": 0.9960318018715261,
+                "error": 1.380327868852459
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 4.033373690220973,
+                "cool": 0.31861372173558095,
+                "other_chroma": 1.8545332557982348
+              },
+              "cool": {
+                "brightness": 3.6906747942060036,
+                "cool": 0.3196707193716149,
+                "other_chroma": 2.2575079356037753
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              2.454071044921875,
+              2.7023213704427085
+            ],
+            "control_mae": 6.996612548828125,
+            "interaction_mae": 1.059417724609375,
+            "response": {
+              "C1": {
+                "projection": 0.9793720607005281,
+                "error": 1.1484171549479167
+              },
+              "F1": {
+                "projection": 0.9352087522813427,
+                "error": 1.3949483235677083
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 4.018240965495902,
+                "cool": 0.47600895399792137,
+                "other_chroma": 1.9411215311265837
+              },
+              "cool": {
+                "brightness": 4.1096076435639555,
+                "cool": 1.1747979573824603,
+                "other_chroma": 2.0739855716046747
+              }
+            }
+          }
+        }
+      },
+      "conditions": {
+        "baseline": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": true
+        },
+        "candidate": {
+          "person_cold": false,
+          "whole_cold": true,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": false
+        }
+      },
+      "adjustments": {
+        "C1": {
+          "limited_ratio": 0.0058135986328125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "126f5e227dbea3c892c43b7ae5aa914e84ee99afd7cab40ba02855660ece0196"
+        },
+        "F1": {
+          "limited_ratio": 0.0394287109375,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "6d5012ac24ff1f5f5f0cf4ee029f7dc586cec5d863f0fe77c42e6bf7bd0ad3a5"
+        },
+        "C1-cool": {
+          "limited_ratio": 0.0538330078125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "c3ae3ada27c44607a50b2afa89e0589fdefcef164fdfa7caf04ceaeb6d27883d"
+        },
+        "F1-cool": {
+          "limited_ratio": 0.112579345703125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "64993753b2210c63cfe02bb6cff31dc5a4d54c0ef6331744af39aeabad125946"
+        }
+      },
+      "passed": false,
+      "panel_sha256": "e6c9bcdddf212ac2ad9a7ebb62f3cb40560cdd09c8ead359a3d08e764bad5019"
+    },
+    "872-1268": {
+      "scores": {
+        "baseline": {
+          "person": {
+            "pixels": 12299,
+            "swap_mae": [
+              4.677670271295769,
+              3.328563297829092
+            ],
+            "control_mae": 6.360869447380546,
+            "interaction_mae": 2.6100767000027103,
+            "response": {
+              "C1": {
+                "projection": 0.39850826406288214,
+                "error": 4.074667317126053
+              },
+              "F1": {
+                "projection": 0.7177255384180434,
+                "error": 2.391224218771174
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 6.352790453142819,
+                "cool": 4.5597056724500975,
+                "other_chroma": 2.887430239471148
+              },
+              "cool": {
+                "brightness": 4.967374093059846,
+                "cool": 1.4400937488113734,
+                "other_chroma": 3.0304143705698876
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 3908,
+            "swap_mae": [
+              4.843995223473217,
+              3.645428181508018
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 2.85755714773115,
+            "response": {
+              "C1": {
+                "projection": 0.44111451803497614,
+                "error": 4.18654042988741
+              },
+              "F1": {
+                "projection": 0.7852715459868829,
+                "error": 2.0406857727737973
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 6.371149619212935,
+                "cool": 4.916392929742428,
+                "other_chroma": 3.3688214469754403
+              },
+              "cool": {
+                "brightness": 5.237839391161416,
+                "cool": 1.2168427844091145,
+                "other_chroma": 3.8842363385650502
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              5.492624918619792,
+              5.0419769287109375
+            ],
+            "control_mae": 6.8791147867838545,
+            "interaction_mae": 2.8437652587890625,
+            "response": {
+              "C1": {
+                "projection": 0.48905529919101626,
+                "error": 3.7028910319010415
+              },
+              "F1": {
+                "projection": 0.7744335216697709,
+                "error": 2.519648234049479
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 8.892762116663018,
+                "cool": 3.27534111900601,
+                "other_chroma": 4.4800553056820664
+              },
+              "cool": {
+                "brightness": 8.310430713659988,
+                "cool": 2.3564520432449196,
+                "other_chroma": 4.067141983265653
+              }
+            }
+          }
+        },
+        "candidate": {
+          "person": {
+            "pixels": 12299,
+            "swap_mae": [
+              3.8072743041439683,
+              3.101173537143941
+            ],
+            "control_mae": 6.360869447380546,
+            "interaction_mae": 1.6916551481150228,
+            "response": {
+              "C1": {
+                "projection": 0.9521601176489959,
+                "error": 1.9332737078895303
+              },
+              "F1": {
+                "projection": 0.9636993252129717,
+                "error": 1.3948830528227227
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 6.414960264800341,
+                "cool": 0.3405087412602974,
+                "other_chroma": 2.90644328355224
+              },
+              "cool": {
+                "brightness": 4.9657736182480745,
+                "cool": 0.37184965405457404,
+                "other_chroma": 3.049393998990102
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 3908,
+            "swap_mae": [
+              3.9415728420334357,
+              3.4730467417263733
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.746417604912999,
+            "response": {
+              "C1": {
+                "projection": 0.9899556758228966,
+                "error": 2.0443534629819173
+              },
+              "F1": {
+                "projection": 0.996582337979538,
+                "error": 1.1109689525759125
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 6.426722109916949,
+                "cool": 0.3307703718954254,
+                "other_chroma": 3.4456341722118724
+              },
+              "cool": {
+                "brightness": 5.259021965806011,
+                "cool": 0.3281486877091393,
+                "other_chroma": 3.903951927057123
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              4.958506266276042,
+              4.532023111979167
+            ],
+            "control_mae": 6.8791147867838545,
+            "interaction_mae": 1.613433837890625,
+            "response": {
+              "C1": {
+                "projection": 0.9881722433928629,
+                "error": 1.14910888671875
+              },
+              "F1": {
+                "projection": 0.9902343074514276,
+                "error": 1.1490275065104167
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 8.96770012076059,
+                "cool": 0.32312789215290055,
+                "other_chroma": 4.524043881759777
+              },
+              "cool": {
+                "brightness": 8.245245341094378,
+                "cool": 0.38460159131904414,
+                "other_chroma": 4.0615989860636095
+              }
+            }
+          }
+        }
+      },
+      "conditions": {
+        "baseline": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": false
+        },
+        "candidate": {
+          "person_cold": true,
+          "whole_cold": true,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": false
+        }
+      },
+      "adjustments": {
+        "C1": {
+          "limited_ratio": 0.0127105712890625,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "44f7ccb6fa82833c90dd9f59fdd8fe3abee273bc86e0e1babc74239ce417598e"
+        },
+        "F1": {
+          "limited_ratio": 0.0100860595703125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "c82fe7ee4a64d95fcc0db120797e1778d967e41e7df6bc79b41785225dc0f75b"
+        },
+        "C1-cool": {
+          "limited_ratio": 0.0481414794921875,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "171a1d1b2803268dd4fb915ad653895f359dc0acf4496c098651a458d5ceec02"
+        },
+        "F1-cool": {
+          "limited_ratio": 0.0627288818359375,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "9f667d8669d51abf51554fd7dc4620f80582383898fcace22a0e8bf44115b0ba"
+        }
+      },
+      "passed": false,
+      "panel_sha256": "8fa0c6dd21fe70926f81cea4e9083b8c04dafdc168a63ee3567c9d83afedf8a3"
+    },
+    "8021-8690": {
+      "scores": {
+        "baseline": {
+          "person": {
+            "pixels": 24235,
+            "swap_mae": [
+              10.91847878412764,
+              11.293404855236917
+            ],
+            "control_mae": 6.815047108176879,
+            "interaction_mae": 2.212763908947115,
+            "response": {
+              "C1": {
+                "projection": 0.6430217160777739,
+                "error": 3.6689636201086584
+              },
+              "F1": {
+                "projection": 0.5799133958265965,
+                "error": 3.374884808472595
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 10.779276627304075,
+                "cool": 17.727781991261388,
+                "other_chroma": 3.595099400457163
+              },
+              "cool": {
+                "brightness": 9.835272797514461,
+                "cool": 18.752043373982787,
+                "other_chroma": 3.89198529158992
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 142,
+            "swap_mae": [
+              28.220657276995304,
+              22.058685446009388
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 6.476525821596244,
+            "response": {
+              "C1": {
+                "projection": 0.9504019827117209,
+                "error": 4.309859154929577
+              },
+              "F1": {
+                "projection": 0.6352233573112495,
+                "error": 3.3732394366197185
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 38.55725978716885,
+                "cool": 33.89801786734881,
+                "other_chroma": 11.614863432003133
+              },
+              "cool": {
+                "brightness": 29.452266634158892,
+                "cool": 29.51497178788335,
+                "other_chroma": 7.108300024460628
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              23.425674438476562,
+              19.654144287109375
+            ],
+            "control_mae": 6.925343831380208,
+            "interaction_mae": 5.0980885823567705,
+            "response": {
+              "C1": {
+                "projection": 1.129251277121289,
+                "error": 5.304840087890625
+              },
+              "F1": {
+                "projection": 0.6490058691126475,
+                "error": 3.197382609049479
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 22.591266812218723,
+                "cool": 40.915868737419686,
+                "other_chroma": 4.853723099084411
+              },
+              "cool": {
+                "brightness": 18.090888738454012,
+                "cool": 34.58127435104435,
+                "other_chroma": 3.789064014655015
+              }
+            }
+          }
+        },
+        "candidate": {
+          "person": {
+            "pixels": 24235,
+            "swap_mae": [
+              6.333113265937693,
+              5.969809504160649
+            ],
+            "control_mae": 6.815047108176879,
+            "interaction_mae": 2.1301423560965547,
+            "response": {
+              "C1": {
+                "projection": 0.9986877498631568,
+                "error": 1.4678632831304588
+              },
+              "F1": {
+                "projection": 0.8837553043701326,
+                "error": 1.5507461660133415
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 10.907915322307627,
+                "cool": 1.4289410910681413,
+                "other_chroma": 3.6295100302478773
+              },
+              "cool": {
+                "brightness": 9.961691332299043,
+                "cool": 2.4631643025935657,
+                "other_chroma": 4.000646987292949
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 142,
+            "swap_mae": [
+              21.938967136150236,
+              16.272300469483568
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 5.755868544600939,
+            "response": {
+              "C1": {
+                "projection": 1.0132080033851176,
+                "error": 3.3826291079812205
+              },
+              "F1": {
+                "projection": 0.9868524451429608,
+                "error": 2.4389671361502345
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 38.636998696478884,
+                "cool": 0.3281173187683701,
+                "other_chroma": 11.525273005634714
+              },
+              "cool": {
+                "brightness": 29.305018257244164,
+                "cool": 0.30845170357680346,
+                "other_chroma": 7.119272856891195
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              12.588160196940104,
+              10.064020792643229
+            ],
+            "control_mae": 6.925343831380208,
+            "interaction_mae": 3.3335062662760415,
+            "response": {
+              "C1": {
+                "projection": 1.0066000941540627,
+                "error": 2.1891632080078125
+              },
+              "F1": {
+                "projection": 0.9383711479202582,
+                "error": 1.8416900634765625
+              }
+            },
+            "axis_means": {
+              "base": {
+                "brightness": 22.61800647257165,
+                "cool": 1.803206818435607,
+                "other_chroma": 4.874418702330345
+              },
+              "cool": {
+                "brightness": 17.992394089216965,
+                "cool": 2.197428306731669,
+                "other_chroma": 3.902800441826038
+              }
+            }
+          }
+        }
+      },
+      "conditions": {
+        "baseline": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": null,
+          "interaction": false
+        },
+        "candidate": {
+          "person_cold": true,
+          "whole_cold": true,
+          "person_swap": false,
+          "neutral_person_swap": null,
+          "interaction": false
+        }
+      },
+      "adjustments": {
+        "C1": {
+          "limited_ratio": 0.006988525390625,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "194e688b7c3d03a6eeaaf7176ab95192d99dc3a9109fd68af3a1f790f00bf6e0"
+        },
+        "F1": {
+          "limited_ratio": 0.1288604736328125,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "dfc6d387c3d234b2d9d10ce20dc8553ad2fe128e7527c479810a9b532ce7b737"
+        },
+        "C1-cool": {
+          "limited_ratio": 0.00848388671875,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "6b496f1fa5f39acdabda66dce66eda9f4d824bbc091ae5727bd598147776e76f"
+        },
+        "F1-cool": {
+          "limited_ratio": 0.146484375,
+          "max_rounded_y_delta": 0.46000000000000013,
+          "output_sha256": "a1b54a6298debcd257ce2e2103dbc0e1697a805e1d719f0ddfeaafa37af51979"
+        }
+      },
+      "passed": false,
+      "panel_sha256": "69ed0747462b71cadb19dc6d7b93dcaea88b96fc990c3d84c77dba4826ffb9d4"
+    }
+  },
+  "passed": false,
+  "parent_sha256": "b824303d1a13792fb896db79ef1465a7da12be7c1834d701840272e2dbf7bb36",
+  "source_sha256": "0ea746e28878ea0248b3ce2eb403b37cf5c6856b8914045c6dd1f96cbd5ae600",
+  "protocol_sha256": "ade9e3d43ba93a50e5349b07407179bb09c661b45765967e75a9bfc683d2fb50"
+}
