@@ -78,13 +78,14 @@ def record(data, encoding):
 
 
 class Catalog:
-    def __init__(self, ranges=None, offline=False, new_limit=PAGE_BUDGET):
+    def __init__(self, ranges=None, offline=False, new_limit=PAGE_BUDGET, read_limit=PAGE_BUDGET):
         self.read_bytes = 0
         self.network_bytes = 0
         self.cache = {}
         self.ranges = ranges
         self.offline = offline
         self.new_limit = new_limit
+        self.read_limit = read_limit
         head = self.fetch(DB_START - 512, 512)
         item = TarInfo.frombuf(head, "utf-8", "strict")
         if not item.isfile() or Path(item.name).name != "fivek.lrcat" or item.size != DB_SIZE:
@@ -98,8 +99,8 @@ class Catalog:
         self.encoding = {1: "utf-8", 2: "utf-16-le", 3: "utf-16-be"}[integer(first[56:60])]
 
     def fetch(self, offset, size):
-        if self.read_bytes + size > PAGE_BUDGET:
-            raise ValueError("Remote page budget exceeded")
+        if self.read_bytes + size > self.read_limit:
+            raise RangeUnavailable("Page inspection budget exceeded")
         end = offset + size - 1
         file = self.ranges / f"{offset}-{size}.bin" if self.ranges is not None else None
         if file is not None and file.exists():
@@ -161,12 +162,54 @@ class Catalog:
                     raise ValueError("Record exceeds local inspection budget")
                 yield rowid, record(self.payload(data, ptr, size), self.encoding)
 
-    def payload(self, data, pos, size):
+    def index(self, number, reverse=False, image=None):
+        """Visit the specified numeric-leading index, including interior records."""
+        from bisect import bisect_left, bisect_right
+
+        data = self.page(number)
+        tag = data[0]
+        if tag not in (2, 10):
+            raise ValueError("Expected a SQLite index page")
+        inside = tag == 2
+        count = integer(data[3:5])
+        base = 12 if inside else 8
+        slots = [integer(data[i:i + 2]) for i in range(base, base + 2 * count, 2)]
+        entries = []
+        for cell in slots:
+            size, pos = varint(data, cell + (4 if inside else 0))
+            keys = record(self.payload(data, pos, size, indexed=True), self.encoding)
+            if len(keys) not in (2, 3) or not isinstance(keys[0], int) or not isinstance(keys[-1], int):
+                raise ValueError("Unexpected SQLite numeric index key")
+            entries.append(keys)
+        if image is None:
+            left, right = 0, len(entries)
+        else:
+            leading = [row[0] for row in entries]
+            left, right = bisect_left(leading, image), bisect_right(leading, image)
+        if not inside:
+            selected = entries[left:right]
+            yield from reversed(selected) if reverse else selected
+            return
+
+        children = [integer(data[cell:cell + 4]) for cell in slots] + [integer(data[8:12])]
+        if reverse:
+            yield from self.index(children[right], True, image)
+            for i in range(right - 1, left - 1, -1):
+                yield entries[i]
+                yield from self.index(children[i], True, image)
+        else:
+            for i in range(left, right):
+                yield from self.index(children[i], False, image)
+                yield entries[i]
+            yield from self.index(children[right], False, image)
+
+    def payload(self, data, pos, size, indexed=False):
         minimum = ((self.usable - 12) * 32 // 255) - 23
+        maximum = ((self.usable - 12) * 64 // 255) - 23 if indexed else self.usable - 35
         local = size
-        if size > self.usable - 35:
+        if size > maximum:
             candidate = minimum + (size - minimum) % (self.usable - 4)
-            local = candidate if candidate <= self.usable - 35 else minimum
+            local = candidate if candidate <= maximum else minimum
         result = bytearray(data[pos:pos + local])
         following = integer(data[pos + local:pos + local + 4]) if size > local else 0
         while len(result) < size:
@@ -259,26 +302,37 @@ def snapshot(value):
     return parsed
 
 
-def snapshot_changes(image_groups):
+def adjacent_states(group):
+    from collections import Counter
     from itertools import pairwise
 
+    ordered = sorted(group, key=lambda row: row["dateCreated"])
+    parsed = []
+    for row in ordered:
+        try:
+            state = snapshot(row["text"])
+        except (ValueError, AttributeError):
+            state = None
+        parsed.append((row["dateCreated"], state))
+    times = Counter(time for time, _ in parsed)
+    pairs = [(before, after) for (before_time, before), (after_time, after) in pairwise(parsed)
+             if times[before_time] == times[after_time] == 1 and before is not None and after is not None]
+    return sum(state is not None for _, state in parsed), pairs
+
+
+def different_fields(before, after):
+    missing = object()
+    return {k for k in before.keys() | after.keys() if before.get(k, missing) != after.get(k, missing)}
+
+
+def snapshot_changes(image_groups):
     differences = []
     parsed_rows = 0
-    missing = object()
     for group in image_groups.values():
-        ordered = sorted(group, key=lambda row: row["dateCreated"])
-        parsed = []
-        for row in ordered:
-            try:
-                state = snapshot(row["text"])
-            except (ValueError, AttributeError):
-                state = None
-            parsed.append((row["dateCreated"], state))
-            parsed_rows += state is not None
-        for (before_time, before), (after_time, after) in pairwise(parsed):
-            if before_time == after_time or before is None or after is None:
-                continue
-            changed = {k for k in before.keys() | after.keys() if before.get(k, missing) != after.get(k, missing)}
+        count, pairs = adjacent_states(group)
+        parsed_rows += count
+        for before, after in pairs:
+            changed = different_fields(before, after)
             differences.append({
                 "changed_top_level_fields": len(changed),
                 "known_color_fields_changed": sorted(changed.intersection(KNOWN_COLOR)),
