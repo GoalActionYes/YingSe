@@ -1,0 +1,160 @@
+{
+  "manifest": {
+    "project": "https://hdm-stuttgart.de/vmlab/hdm-hdr-2014",
+    "license_sha256": "0cfe0db7d8c8a5b8b0ccb44d70896e27017ea819e7150993420b82ddd78f071a",
+    "cases": {
+      "showgirl_01": {
+        "counts": {
+          "original": 776,
+          "graded": 776
+        },
+        "selected_ordinal_zero_based": 388,
+        "files": {
+          "original": {
+            "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/showgirl_01/showgirl_01_000571.exr",
+            "bytes": 6127684,
+            "frame": 571,
+            "number_range": [
+              183,
+              958
+            ],
+            "sha256": "25de638926f25c78f1d88dd643a3086e3447546fa05171eb0ea4b9b4dc420d3b",
+            "file": "showgirl_01-original.exr"
+          },
+          "graded": {
+            "official_path": "/HdM-HDR-2014_Color-Graded-for-HDR/showgirl_01/showgirl_01_236024.tif",
+            "bytes": 12441782,
+            "frame": 236024,
+            "number_range": [
+              235636,
+              236411
+            ],
+            "sha256": "6e23c12a2172f2364a4f2cc4a98575231c10cab93b12df8ef10c56ca8ba42a3b",
+            "file": "showgirl_01-graded.tif"
+          }
+        }
+      },
+      "poker_fullshot": {
+        "counts": {
+          "original": 600,
+          "graded": 600
+        },
+        "selected_ordinal_zero_based": 300,
+        "files": {
+          "original": {
+            "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/poker_fullshot/poker_fullshot_000670.exr",
+            "bytes": 6638860,
+            "frame": 670,
+            "number_range": [
+              370,
+              969
+            ],
+            "sha256": "679b0aba8ef3b44e9edbde4683c4dde7d5dca0121f5d44deb6f5f25d50160393",
+            "file": "poker_fullshot-original.exr"
+          },
+          "graded": {
+            "official_path": "/HdM-HDR-2014_Color-Graded-for-HDR/poker_fullshot/poker_fullshot_046087.tif",
+            "bytes": 12441782,
+            "frame": 46087,
+            "number_range": [
+              45787,
+              46386
+            ],
+            "sha256": "623eb9ac036027097dc6e8145deffefba4d623931c0b8b38f1de1c162f403b8b",
+            "file": "poker_fullshot-graded.tif"
+          }
+        }
+      }
+    },
+    "selected_bytes": 37650108,
+    "fetched": true
+  },
+  "registration": {
+    "manifest_sha256": "2e4cc59b231c44ddc489842bdbdeb9482930d270b9574ef87b207a38d06bf751",
+    "opencv": "4.11.0",
+    "cases": {
+      "showgirl_01": {
+        "source_frames": {
+          "original": {
+            "shape": [
+              1080,
+              1920,
+              3
+            ],
+            "dtype": "float32",
+            "range": [
+              -0.00562286376953125,
+              662.5
+            ]
+          },
+          "graded": {
+            "shape": [
+              1080,
+              1920,
+              3
+            ],
+            "dtype": "uint16",
+            "range": [
+              0.0,
+              59150.0
+            ]
+          }
+        },
+        "registration": {
+          "zero": 0.7307719164085368,
+          "peak": 0.7307719164085368,
+          "peak_offset_y_x": [
+            0,
+            0
+          ],
+          "passed": true
+        }
+      },
+      "poker_fullshot": {
+        "source_frames": {
+          "original": {
+            "shape": [
+              1080,
+              1920,
+              3
+            ],
+            "dtype": "float32",
+            "range": [
+              -0.00446319580078125,
+              571.5
+            ]
+          },
+          "graded": {
+            "shape": [
+              1080,
+              1920,
+              3
+            ],
+            "dtype": "uint16",
+            "range": [
+              0.0,
+              59150.0
+            ]
+          }
+        },
+        "registration": {
+          "zero": 0.6772179300723224,
+          "peak": 0.6772179300723224,
+          "peak_offset_y_x": [
+            0,
+            0
+          ],
+          "passed": true
+        }
+      }
+    }
+  },
+  "conversion_source_notes": {
+    "original": "d6ed3fb53f6899fd86886c629a423226c167053576fb407cc01e7885833314b8",
+    "graded": "4bd818176f53f06017931f411c72046a8e8a0c941187cdb5ec8f6a1c5a666f96"
+  },
+  "source_sha256": {
+    "audit": "e3d1bcd7a474aa6ec2f44e191bff8eb40cfbc843265aebeb5511da747dbe48c8",
+    "fetch": "091c4f1259808d0605cec13d1489656985e6677bc2ade5c1188494dc87315d40"
+  }
+}
