@@ -6,6 +6,7 @@ import html
 import json
 from pathlib import Path, PurePosixPath
 import re
+from shutil import disk_usage
 from urllib.request import ProxyHandler, build_opener
 
 PROJECT = "https://hdm-stuttgart.de/vmlab/hdm-hdr-2014"
@@ -50,7 +51,7 @@ def entries(ftp, directory, room):
     return selected
 
 
-def run(output, proxy, list_only):
+def run(output, proxy, list_only, showgirl_light=False):
     host, username, password = remote_credentials(proxy)
     output.mkdir()
     with FTP(host, timeout=16) as ftp:
@@ -71,7 +72,8 @@ def run(output, proxy, list_only):
         rows = {}
         total = 0
         metadata_budget = [256*1024]
-        for scene in SCENES:
+        samples = {"showgirl_02": (68, 272)} if showgirl_light else dict.fromkeys(SCENES, (None,))
+        for scene, ordinals in samples.items():
             paths = {role: f"/{directory}/{scene}" for role, directory in FOLDERS.items()}
             by_role = {role: entries(ftp, path, metadata_budget) for role, path in paths.items()}
             numbers = {role: sorted(items) for role, items in by_role.items()}
@@ -80,22 +82,28 @@ def run(output, proxy, list_only):
             for seq in numbers.values():
                 if not seq or seq != list(range(seq[0], seq[-1] + 1)):
                     raise ValueError(f"Frame numbers are not contiguous: {scene}")
-            ordinal = len(numbers["original"]) // 2
-            files = {}
-            for role, path in paths.items():
-                frame = numbers[role][ordinal]
-                remote = path + "/" + by_role[role][frame]
-                size = ftp.size(remote)
-                if size is None or size < 1:
-                    raise ValueError("File size unavailable")
-                files[role] = {"official_path": remote, "bytes": size, "frame": frame,
-                               "number_range": [numbers[role][0], numbers[role][-1]]}
-                total += size
-            rows[scene] = {"counts": {role: len(items) for role, items in by_role.items()},
-                           "selected_ordinal_zero_based": ordinal, "files": files}
+            if showgirl_light and len(numbers["original"]) != 341:
+                raise ValueError("Unexpected Showgirl 2 frame count")
+            for sample in ordinals:
+                ordinal = len(numbers["original"]) // 2 if sample is None else sample
+                label = scene if sample is None else f"{scene}-{ordinal:03d}"
+                files = {}
+                for role, path in paths.items():
+                    frame = numbers[role][ordinal]
+                    remote = path + "/" + by_role[role][frame]
+                    size = ftp.size(remote)
+                    if size is None or size < 1:
+                        raise ValueError("File size unavailable")
+                    files[role] = {"official_path": remote, "bytes": size, "frame": frame,
+                                   "number_range": [numbers[role][0], numbers[role][-1]]}
+                    total += size
+                rows[label] = {"counts": {role: len(items) for role, items in by_role.items()},
+                               "selected_ordinal_zero_based": ordinal, "files": files}
 
         if total > 64*1024**2:
             raise ValueError(f"Selected source would exceed the download budget: {total}")
+        if not list_only and disk_usage(output).free < 2 * total:
+            raise ValueError("Insufficient local room for source and analysis")
         result = {"project": PROJECT, "license_sha256": sha256(license_buffer).hexdigest(),
                   "cases": rows, "selected_bytes": total, "fetched": not list_only}
         if not list_only:
@@ -114,7 +122,9 @@ def run(output, proxy, list_only):
                     if target.stat().st_size != record["bytes"]:
                         raise ValueError("Source read was truncated")
                     record.update(sha256=checksum.hexdigest(), file=target.name)
-    (output/"manifest.json").write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
+    # Keep the frozen Showgirl annotation's Windows manifest bytes reproducible.
+    newline = "\r\n" if showgirl_light else None
+    (output/"manifest.json").write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8", newline=newline)
     print(json.dumps(result, indent=2))
 
 
@@ -123,5 +133,6 @@ if __name__ == "__main__":
     parser.add_argument("output", type=Path)
     parser.add_argument("--proxy")
     parser.add_argument("--list-only", action="store_true")
+    parser.add_argument("--showgirl-light", action="store_true", help="Fetch fixed Showgirl 2 ordinals")
     args = parser.parse_args()
-    run(args.output, args.proxy, args.list_only)
+    run(args.output, args.proxy, args.list_only, args.showgirl_light)
