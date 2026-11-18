@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 import time
 
-import cv2
 import numpy as np
 from PIL import Image, ImageOps
 
@@ -20,6 +19,8 @@ def feature(module, path, expected_sha):
     blue_minus_red = rgb[..., 2].astype(np.int16) - rgb[..., 0]
     # In the legacy predictor a large reference can have a reduced mask.
     if weights.shape != rgb.shape[:2]:
+        import cv2
+
         weights = cv2.resize(weights, (rgb.shape[1], rgb.shape[0]), interpolation=cv2.INTER_LINEAR)
     selected = weights >= .8
     count = int(selected.sum())
