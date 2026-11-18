@@ -1,0 +1,1465 @@
+{
+  "summary": {
+    "original_chroma": {
+      "background": {
+        "person_pass": 0,
+        "person_total": 8,
+        "neutral_gain": 0.7169205966675822,
+        "neutral_max_increase": -0.7631079620511585,
+        "whole_pass": 4,
+        "whole_total": 12,
+        "proceed": false
+      },
+      "local": 0,
+      "whole": 0,
+      "no_person": 2,
+      "authored": 0,
+      "authored_safe": true,
+      "max_luma_error": 0.5,
+      "passed": false
+    },
+    "retain_saturation": {
+      "background": {
+        "person_pass": 0,
+        "person_total": 8,
+        "neutral_gain": 0.6210533742023537,
+        "neutral_max_increase": -0.7631640046435288,
+        "whole_pass": 6,
+        "whole_total": 12,
+        "proceed": false
+      },
+      "local": 0,
+      "whole": 0,
+      "no_person": 2,
+      "authored": 0,
+      "authored_safe": true,
+      "max_luma_error": 0.4998,
+      "passed": false
+    }
+  },
+  "comparison_sha256": "fc370c2a185e0e82d162e2545c23071bb8b689a556f6e99b78e75ea5093a7a67",
+  "background_sha256": "d7dac2996d03cdf8d5a08c3e0200272772bfd8c6f7fe0d81931c84db01cd33dc",
+  "local_sha256": "437681478dfde0362c953b0210598fbc4f23f1d043e7be8514f4a49d4df5857a",
+  "authored_sha256": "8e3f455399879e457af2fe5444e28806affa5114f29067a2087324584ad410b6",
+  "source_sha256": "6b2b3fa3820c52d30c90a537fe74a87050e899fb784ed8be29432c92e2aa9764",
+  "protocol_sha256": "3d7e57f67e07acd08c67298c9f513720878c6f06ff9a7b8489586ce9f9ebd25d",
+  "selected": {
+    "original_chroma": {
+      "background_jersey": {
+        "background_green_100": {
+          "baseline": {
+            "person": 4.105509933056888,
+            "background": 8.414636437064448,
+            "neutral_proxy": 6.365231414288018,
+            "whole": 7.6059519449869795
+          },
+          "candidate": {
+            "person": 3.2746293736618153,
+            "background": 1.9237810795749823,
+            "neutral_proxy": 2.1513304305757135,
+            "whole": 2.1772918701171875
+          }
+        },
+        "background_magenta_100": {
+          "baseline": {
+            "person": 8.631162425129414,
+            "background": 7.802023655227254,
+            "neutral_proxy": 9.910433800999838,
+            "whole": 7.9576263427734375
+          },
+          "candidate": {
+            "person": 1.5159769086917636,
+            "background": 1.7184101282942315,
+            "neutral_proxy": 1.281567489114659,
+            "whole": 1.680419921875
+          }
+        }
+      },
+      "local_jersey": {
+        "local": {
+          "person": {
+            "observed": {
+              "pixels": 12299,
+              "rgb_mae": 0.6015394205490961,
+              "rgb_mean_delta": [
+                -0.5384177575412635,
+                -0.5384990649646313,
+                -0.5384177575412635
+              ],
+              "luminance_mean_delta": -0.5384654849987803,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 12299,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.6015394205490961,
+            "projection": null
+          },
+          "background": {
+            "observed": {
+              "pixels": 53237,
+              "rgb_mae": 0.8233371527321224,
+              "rgb_mean_delta": [
+                -0.6787009035069594,
+                -0.6787009035069594,
+                -0.6787009035069594
+              ],
+              "luminance_mean_delta": -0.6787009035069592,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 53237,
+              "rgb_mae": 5.739285334134781,
+              "rgb_mean_delta": [
+                -5.269549373555986,
+                0.4833104795536939,
+                11.464996149294663
+              ],
+              "luminance_mean_delta": 0.01511754982437037,
+              "saturation_range_mean_delta": -5.066795649642166,
+              "sensitive_over_one_code": true
+            },
+            "error": 6.033892468270814,
+            "projection": -0.02535567644680403
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 10335,
+              "rgb_mae": 0.8262215771649734,
+              "rgb_mean_delta": [
+                -0.8093855829704887,
+                -0.8093855829704887,
+                -0.8093855829704887
+              ],
+              "luminance_mean_delta": -0.8093855829704885,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 10335,
+              "rgb_mae": 3.493114013868731,
+              "rgb_mean_delta": [
+                -3.3039187227866473,
+                0.3127237542331882,
+                6.862699564586357
+              ],
+              "luminance_mean_delta": -0.021955104015481314,
+              "saturation_range_mean_delta": 1.096758587324625,
+              "sensitive_over_one_code": true
+            },
+            "error": 3.9605547492339945,
+            "projection": -0.0349431692010208
+          },
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 0.7817128499348959,
+              "rgb_mean_delta": [
+                -0.652374267578125,
+                -0.6523895263671875,
+                -0.652374267578125
+              ],
+              "luminance_mean_delta": -0.6523832244873046,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 4.6622060139973955,
+              "rgb_mean_delta": [
+                -4.2806243896484375,
+                0.392608642578125,
+                9.313385009765625
+              ],
+              "luminance_mean_delta": 0.012280471801757894,
+              "saturation_range_mean_delta": -4.1159210205078125,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.014414469401042,
+            "projection": -0.02535567644680403
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 41808,
+              "rgb_mae": 0.8818647148871029,
+              "rgb_mean_delta": [
+                -0.7263920780711826,
+                -0.7263920780711826,
+                -0.7263920780711826
+              ],
+              "luminance_mean_delta": -0.7263920780711823,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 41808,
+              "rgb_mae": 6.822187141216992,
+              "rgb_mean_delta": [
+                -6.267341178721776,
+                0.5756314580941446,
+                13.623588786835056
+              ],
+              "luminance_mean_delta": 0.01704977516264842,
+              "saturation_range_mean_delta": -5.8023584003061615,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.093546689628779,
+            "projection": -0.02508021411891321
+          },
+          "untouched": {
+            "observed": {
+              "pixels": 17676,
+              "rgb_mae": 0.5843139473485706,
+              "rgb_mean_delta": [
+                -0.5123331070377913,
+                -0.5123896809232859,
+                -0.5123331070377913
+              ],
+              "luminance_mean_delta": -0.5123663159085764,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 17676,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.5843139473485706,
+            "projection": null
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 3908,
+              "rgb_mae": 0.6161719549641761,
+              "rgb_mean_delta": [
+                -0.5813715455475946,
+                -0.5813715455475946,
+                -0.5813715455475946
+              ],
+              "luminance_mean_delta": -0.5813715455475944,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 3908,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 0.6161719549641761,
+            "projection": null
+          },
+          "neutral_edited": {
+            "observed": {
+              "pixels": 4923,
+              "rgb_mae": 1.0312817387771684,
+              "rgb_mean_delta": [
+                -1.030875482429413,
+                -1.030875482429413,
+                -1.030875482429413
+              ],
+              "luminance_mean_delta": -1.0308754824294128,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 4923,
+              "rgb_mae": 6.933780215315864,
+              "rgb_mean_delta": [
+                -6.558399349989844,
+                0.6164940077188706,
+                13.626447288238879
+              ],
+              "luminance_mean_delta": -0.04566443225675389,
+              "saturation_range_mean_delta": 2.2750355474304285,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.277405376125668,
+            "projection": -0.03450296791644752
+          }
+        },
+        "whole": {
+          "person": {
+            "observed": {
+              "pixels": 12299,
+              "rgb_mae": 0.7312518632951188,
+              "rgb_mean_delta": [
+                -0.5680136596471258,
+                -0.5680136596471258,
+                -0.5680949670704936
+              ],
+              "luminance_mean_delta": -0.5680229286933896,
+              "saturation_range_mean_delta": -8.130742336775348e-05,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 12299,
+              "rgb_mae": 6.872970702225113,
+              "rgb_mean_delta": [
+                -6.439791852996178,
+                0.5827303032766892,
+                13.596389950402472
+              ],
+              "luminance_mean_delta": -0.033446621676558944,
+              "saturation_range_mean_delta": 4.672575006098056,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.095292300187007,
+            "projection": -0.01956879575431426
+          },
+          "background": {
+            "observed": {
+              "pixels": 53237,
+              "rgb_mae": 0.9895749196987058,
+              "rgb_mean_delta": [
+                -0.871837256043729,
+                -0.871837256043729,
+                -0.871837256043729
+              ],
+              "luminance_mean_delta": -0.8718372560437287,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 53237,
+              "rgb_mae": 6.818077652760298,
+              "rgb_mean_delta": [
+                -6.270713977121175,
+                0.5685331630257152,
+                13.614985818134004
+              ],
+              "luminance_mean_delta": 0.010893870804140096,
+              "saturation_range_mean_delta": -6.001765689276255,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.13424873678081,
+            "projection": -0.030211175868810895
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 10335,
+              "rgb_mae": 0.9850024189646831,
+              "rgb_mean_delta": [
+                -0.9561683599419448,
+                -0.9561683599419448,
+                -0.9561683599419448
+              ],
+              "luminance_mean_delta": -0.9561683599419445,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 10335,
+              "rgb_mae": 6.903854217061764,
+              "rgb_mean_delta": [
+                -6.4903725205612,
+                0.6251572327044025,
+                13.59603289791969
+              ],
+              "luminance_mean_delta": -0.02370633768746964,
+              "saturation_range_mean_delta": 2.550943396226415,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.226447347202064,
+            "projection": -0.03231929969830965
+          },
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 0.9410959879557291,
+              "rgb_mean_delta": [
+                -0.8148193359375,
+                -0.8148193359375,
+                -0.8148345947265625
+              ],
+              "luminance_mean_delta": -0.814821075439453,
+              "saturation_range_mean_delta": -1.52587890625e-05,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.828379313151042,
+              "rgb_mean_delta": [
+                -6.3024444580078125,
+                0.571197509765625,
+                13.611495971679688
+              ],
+              "luminance_mean_delta": 0.0025725860595704284,
+              "saturation_range_mean_delta": -3.99853515625,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.1269378662109375,
+            "projection": -0.028201589587961214
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 41808,
+              "rgb_mae": 1.011289705319556,
+              "rgb_mean_delta": [
+                -0.8989188672024493,
+                -0.8989188672024493,
+                -0.8989188672024493
+              ],
+              "luminance_mean_delta": -0.898918867202449,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 41808,
+              "rgb_mae": 6.822187141216992,
+              "rgb_mean_delta": [
+                -6.267341178721776,
+                0.5756314580941446,
+                13.623588786835056
+              ],
+              "luminance_mean_delta": 0.01704977516264842,
+              "saturation_range_mean_delta": -5.8023584003061615,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.145745630820258,
+            "projection": -0.03117216699784352
+          },
+          "untouched": {
+            "observed": {
+              "pixels": 17676,
+              "rgb_mae": 0.7760617032511126,
+              "rgb_mean_delta": [
+                -0.6272912423625254,
+                -0.6272912423625254,
+                -0.6273478162480199
+              ],
+              "luminance_mean_delta": -0.6272976917854716,
+              "saturation_range_mean_delta": -5.657388549445576e-05,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 17676,
+              "rgb_mae": 6.849004299615298,
+              "rgb_mean_delta": [
+                -6.394885720751301,
+                0.5676057931658747,
+                13.584521384928717
+              ],
+              "luminance_mean_delta": -0.03025079203439681,
+              "saturation_range_mean_delta": 1.0713396696085087,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.089273591310251,
+            "projection": -0.021622553237725443
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 3908,
+              "rgb_mae": 0.849539406345957,
+              "rgb_mean_delta": [
+                -0.8029682702149437,
+                -0.8029682702149437,
+                -0.8029682702149437
+              ],
+              "luminance_mean_delta": -0.8029682702149434,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "expected": {
+              "pixels": 3908,
+              "rgb_mae": 6.854657113613102,
+              "rgb_mean_delta": [
+                -6.396622313203685,
+                0.6228249744114637,
+                13.544524053224155
+              ],
+              "luminance_mean_delta": -0.002916069600818713,
+              "saturation_range_mean_delta": 2.6473899692937564,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.129136813374275,
+            "projection": -0.027717507251376512
+          },
+          "neutral_edited": {
+            "observed": {
+              "pixels": 4923,
+              "rgb_mae": 1.0735323989437335,
+              "rgb_mean_delta": [
+                -1.0528133252082064,
+                -1.0528133252082064,
+                -1.0528133252082064
+              ],
+              "luminance_mean_delta": -1.052813325208206,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 4923,
+              "rgb_mae": 6.933780215315864,
+              "rgb_mean_delta": [
+                -6.558399349989844,
+                0.6164940077188706,
+                13.626447288238879
+              ],
+              "luminance_mean_delta": -0.04566443225675389,
+              "saturation_range_mean_delta": 2.2750355474304285,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.287020109689214,
+            "projection": -0.03502715986086372
+          }
+        }
+      },
+      "local_gates": {
+        "785-3553": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "9483-19432": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "872-1268": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "8021-8690": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "285-1993": {
+          "positive": false,
+          "checks": {
+            "whole_response": false,
+            "no_person": true
+          }
+        },
+        "2149-2592": {
+          "positive": false,
+          "checks": {
+            "whole_response": false,
+            "no_person": true
+          }
+        }
+      },
+      "authored": {
+        "portrait": {
+          "metrics": {
+            "whole": {
+              "pixels": 760320,
+              "region_pixels": 760320,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 9.387941480780022,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 15.459186044472503,
+                  "projection": -0.1546922192004834
+                },
+                "candidate": {
+                  "mae": 13.019614109848485,
+                  "projection": -0.12159842381542628
+                }
+              }
+            },
+            "neutral_proxy": {
+              "pixels": 177766,
+              "region_pixels": 177766,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 7.601867998754917,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 16.771300473656378,
+                  "projection": -0.7661827386711317
+                },
+                "candidate": {
+                  "mae": 13.641661885099888,
+                  "projection": -0.41257685688790796
+                }
+              }
+            }
+          },
+          "gate": false,
+          "sha256": "64509d176bcf460bf775fa560b6007c3ea03721aeb2d504afbd298817006f482",
+          "same_image": false,
+          "compressed": 0.0006878682659932659,
+          "max_luma_error": 0.4998
+        },
+        "tower": {
+          "metrics": {
+            "whole": {
+              "pixels": 760320,
+              "region_pixels": 760320,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 11.38734918630752,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 15.027565148007856,
+                  "projection": 1.1287527307182503
+                },
+                "candidate": {
+                  "mae": 15.927385837542088,
+                  "projection": 0.31148792342067333
+                }
+              }
+            },
+            "neutral_proxy": {
+              "pixels": 68714,
+              "region_pixels": 68714,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 11.933890231005812,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 15.910823607028165,
+                  "projection": 0.11447452159347545
+                },
+                "candidate": {
+                  "mae": 16.71362943990065,
+                  "projection": -0.2252552498208711
+                }
+              }
+            }
+          },
+          "gate": false,
+          "sha256": "421aba77eee3efc3a3a6373223012322e6d17d0b3ed90d5cc3db4740b3fc4894",
+          "same_image": false,
+          "compressed": 0.0039641203703703705,
+          "max_luma_error": 0.4998
+        }
+      }
+    },
+    "retain_saturation": {
+      "background_jersey": {
+        "background_green_100": {
+          "baseline": {
+            "person": 4.105509933056888,
+            "background": 8.414636437064448,
+            "neutral_proxy": 6.365231414288018,
+            "whole": 7.6059519449869795
+          },
+          "candidate": {
+            "person": 3.6523294576794862,
+            "background": 6.916411518304939,
+            "neutral_proxy": 2.5964521851314304,
+            "whole": 6.3038482666015625
+          }
+        },
+        "background_magenta_100": {
+          "baseline": {
+            "person": 8.631162425129414,
+            "background": 7.802023655227254,
+            "neutral_proxy": 9.910433800999838,
+            "whole": 7.9576263427734375
+          },
+          "candidate": {
+            "person": 3.8708025042686396,
+            "background": 4.113630244629362,
+            "neutral_proxy": 1.670246734397678,
+            "whole": 4.0680592854817705
+          }
+        }
+      },
+      "local_jersey": {
+        "local": {
+          "person": {
+            "observed": {
+              "pixels": 12299,
+              "rgb_mae": 2.472829769357942,
+              "rgb_mean_delta": [
+                -2.5776892430278884,
+                -0.3003496219204813,
+                3.536628994227173
+              ],
+              "luminance_mean_delta": -0.5438586063907634,
+              "saturation_range_mean_delta": 2.468655988291731,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 12299,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 2.472829769357942,
+            "projection": null
+          },
+          "background": {
+            "observed": {
+              "pixels": 53237,
+              "rgb_mae": 2.3577962695118058,
+              "rgb_mean_delta": [
+                -0.8779983845821515,
+                -0.9272498450325901,
+                2.751019028119541
+              ],
+              "luminance_mean_delta": -0.493201006818566,
+              "saturation_range_mean_delta": -5.039690440858801,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 53237,
+              "rgb_mae": 5.739285334134781,
+              "rgb_mean_delta": [
+                -5.269549373555986,
+                0.4833104795536939,
+                11.464996149294663
+              ],
+              "luminance_mean_delta": 0.01511754982437037,
+              "saturation_range_mean_delta": -5.066795649642166,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.424930029866446,
+            "projection": 0.18814515557718567
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 10335,
+              "rgb_mae": 1.018932430253185,
+              "rgb_mean_delta": [
+                -0.8979196903725205,
+                -0.8627963231736817,
+                -0.08427672955974842
+              ],
+              "luminance_mean_delta": -0.784546976294146,
+              "saturation_range_mean_delta": -0.08756652152878568,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 10335,
+              "rgb_mae": 3.493114013868731,
+              "rgb_mean_delta": [
+                -3.3039187227866473,
+                0.3127237542331882,
+                6.862699564586357
+              ],
+              "luminance_mean_delta": -0.021955104015481314,
+              "saturation_range_mean_delta": 1.096758587324625,
+              "sensitive_over_one_code": true
+            },
+            "error": 4.07824544428318,
+            "projection": -0.011634342405990893
+          },
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 2.3793843587239585,
+              "rgb_mean_delta": [
+                -1.1969757080078125,
+                -0.809600830078125,
+                2.8984527587890625
+              ],
+              "luminance_mean_delta": -0.5027078094482421,
+              "saturation_range_mean_delta": -3.630615234375,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 4.6622060139973955,
+              "rgb_mean_delta": [
+                -4.2806243896484375,
+                0.392608642578125,
+                9.313385009765625
+              ],
+              "luminance_mean_delta": 0.012280471801757894,
+              "saturation_range_mean_delta": -4.1159210205078125,
+              "sensitive_over_one_code": true
+            },
+            "error": 4.8709157307942705,
+            "projection": 0.18814515557718567
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 41808,
+              "rgb_mae": 2.3642205638474296,
+              "rgb_mean_delta": [
+                -0.8459146574818217,
+                -1.0073670110983544,
+                2.6913030998851895
+              ],
+              "luminance_mean_delta": -0.537444364714887,
+              "saturation_range_mean_delta": -5.005764446995791,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 41808,
+              "rgb_mae": 6.822187141216992,
+              "rgb_mean_delta": [
+                -6.267341178721776,
+                0.5756314580941446,
+                13.623588786835056
+              ],
+              "luminance_mean_delta": 0.01704977516264842,
+              "saturation_range_mean_delta": -5.8023584003061615,
+              "sensitive_over_one_code": true
+            },
+            "error": 6.1150656971552495,
+            "projection": 0.18315936577532338
+          },
+          "untouched": {
+            "observed": {
+              "pixels": 17676,
+              "rgb_mae": 2.4463113826657614,
+              "rgb_mean_delta": [
+                -2.1565965150486535,
+                -0.37282190540846344,
+                3.411235573659199
+              ],
+              "luminance_mean_delta": -0.4747879610771667,
+              "saturation_range_mean_delta": 0.12565059968318623,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 17676,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 2.4463113826657614,
+            "projection": null
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 3908,
+              "rgb_mae": 1.0191914022517912,
+              "rgb_mean_delta": [
+                -0.823439099283521,
+                -0.638689866939611,
+                0.6568577277379734
+              ],
+              "luminance_mean_delta": -0.5462374616171954,
+              "saturation_range_mean_delta": 0.26074718526100304,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 3908,
+              "rgb_mae": 0.0,
+              "rgb_mean_delta": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "luminance_mean_delta": 0.0,
+              "saturation_range_mean_delta": 0.0,
+              "sensitive_over_one_code": false
+            },
+            "error": 1.0191914022517912,
+            "projection": null
+          },
+          "neutral_edited": {
+            "observed": {
+              "pixels": 4923,
+              "rgb_mae": 1.0679802288577425,
+              "rgb_mean_delta": [
+                -1.0034531789559211,
+                -1.0885638838106846,
+                -0.6231972374568353
+              ],
+              "luminance_mean_delta": -1.0100639853747715,
+              "saturation_range_mean_delta": -0.32256754011781436,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 4923,
+              "rgb_mae": 6.933780215315864,
+              "rgb_mean_delta": [
+                -6.558399349989844,
+                0.6164940077188706,
+                13.626447288238879
+              ],
+              "luminance_mean_delta": -0.04566443225675389,
+              "saturation_range_mean_delta": 2.2750355474304285,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.170018281535649,
+            "projection": -0.011293551908703974
+          }
+        },
+        "whole": {
+          "person": {
+            "observed": {
+              "pixels": 12299,
+              "rgb_mae": 2.988102013713852,
+              "rgb_mean_delta": [
+                -3.094316611106594,
+                -0.2715667940482966,
+                4.121391983088056
+              ],
+              "luminance_mean_delta": -0.6147716887551833,
+              "saturation_range_mean_delta": 1.9179608098219367,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 12299,
+              "rgb_mae": 6.872970702225113,
+              "rgb_mean_delta": [
+                -6.439791852996178,
+                0.5827303032766892,
+                13.596389950402472
+              ],
+              "luminance_mean_delta": -0.033446621676558944,
+              "saturation_range_mean_delta": 4.672575006098056,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.020028728622924,
+            "projection": 0.33220903509612426
+          },
+          "background": {
+            "observed": {
+              "pixels": 53237,
+              "rgb_mae": 3.2793358002892723,
+              "rgb_mean_delta": [
+                -1.2393636005034092,
+                -1.2313240791179068,
+                3.9896688393410598
+              ],
+              "luminance_mean_delta": -0.6385347033078498,
+              "saturation_range_mean_delta": -7.242575652271916,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 53237,
+              "rgb_mae": 6.818077652760298,
+              "rgb_mean_delta": [
+                -6.270713977121175,
+                0.5685331630257152,
+                13.614985818134004
+              ],
+              "luminance_mean_delta": 0.010893870804140096,
+              "saturation_range_mean_delta": -6.001765689276255,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.87771662565509,
+            "projection": 0.2714943537403869
+          },
+          "neutral_proxy": {
+            "observed": {
+              "pixels": 10335,
+              "rgb_mae": 1.180228995323335,
+              "rgb_mean_delta": [
+                -1.0685050798258346,
+                -1.0074504112239961,
+                -0.1521044992743106
+              ],
+              "luminance_mean_delta": -0.9281963231736816,
+              "saturation_range_mean_delta": -0.0791485244315433,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 10335,
+              "rgb_mae": 6.903854217061764,
+              "rgb_mean_delta": [
+                -6.4903725205612,
+                0.6251572327044025,
+                13.59603289791969
+              ],
+              "luminance_mean_delta": -0.02370633768746964,
+              "saturation_range_mean_delta": 2.550943396226415,
+              "sensitive_over_one_code": true
+            },
+            "error": 6.939945170133849,
+            "projection": 0.018442052716061533
+          },
+          "whole": {
+            "observed": {
+              "pixels": 65536,
+              "rgb_mae": 3.2246805826822915,
+              "rgb_mean_delta": [
+                -1.5874786376953125,
+                -1.05120849609375,
+                4.0143890380859375
+              ],
+              "luminance_mean_delta": -0.6340751495361328,
+              "saturation_range_mean_delta": -5.5234375,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 65536,
+              "rgb_mae": 6.828379313151042,
+              "rgb_mean_delta": [
+                -6.3024444580078125,
+                0.571197509765625,
+                13.611495971679688
+              ],
+              "luminance_mean_delta": 0.0025725860595704284,
+              "saturation_range_mean_delta": -3.99853515625,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.716756184895833,
+            "projection": 0.282959025118968
+          },
+          "edited_core": {
+            "observed": {
+              "pixels": 41808,
+              "rgb_mae": 3.2844750605944637,
+              "rgb_mean_delta": [
+                -1.1462160352085726,
+                -1.2980530042097207,
+                3.963356295445848
+              ],
+              "luminance_mean_delta": -0.6528530903176425,
+              "saturation_range_mean_delta": -7.211442786069652,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 41808,
+              "rgb_mae": 6.822187141216992,
+              "rgb_mean_delta": [
+                -6.267341178721776,
+                0.5756314580941446,
+                13.623588786835056
+              ],
+              "luminance_mean_delta": 0.01704977516264842,
+              "saturation_range_mean_delta": -5.8023584003061615,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.931320959306034,
+            "projection": 0.2672847105144398
+          },
+          "untouched": {
+            "observed": {
+              "pixels": 17676,
+              "rgb_mae": 3.0891793015010935,
+              "rgb_mean_delta": [
+                -2.716621407558271,
+                -0.4594365241004752,
+                4.143867390812401
+              ],
+              "luminance_mean_delta": -0.6095581579542881,
+              "saturation_range_mean_delta": -0.914856302330844,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 17676,
+              "rgb_mae": 6.849004299615298,
+              "rgb_mean_delta": [
+                -6.394885720751301,
+                0.5676057931658747,
+                13.584521384928717
+              ],
+              "luminance_mean_delta": -0.03025079203439681,
+              "saturation_range_mean_delta": 1.0713396696085087,
+              "sensitive_over_one_code": true
+            },
+            "error": 5.179565512559402,
+            "projection": 0.3229063033516881
+          },
+          "neutral_person": {
+            "observed": {
+              "pixels": 3908,
+              "rgb_mae": 1.2643295803480041,
+              "rgb_mean_delta": [
+                -1.105424769703173,
+                -0.8705220061412487,
+                0.5857215967246674
+              ],
+              "luminance_mean_delta": -0.7747461617195496,
+              "saturation_range_mean_delta": 0.32139201637666326,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 3908,
+              "rgb_mae": 6.854657113613102,
+              "rgb_mean_delta": [
+                -6.396622313203685,
+                0.6228249744114637,
+                13.544524053224155
+              ],
+              "luminance_mean_delta": -0.002916069600818713,
+              "saturation_range_mean_delta": 2.6473899692937564,
+              "sensitive_over_one_code": true
+            },
+            "error": 6.589986352780621,
+            "projection": 0.06400616423743662
+          },
+          "neutral_edited": {
+            "observed": {
+              "pixels": 4923,
+              "rgb_mae": 1.1175435032839054,
+              "rgb_mean_delta": [
+                -1.0134064594759293,
+                -1.1013609587649806,
+                -0.6073532398943734
+              ],
+              "luminance_mean_delta": -1.0187456835263051,
+              "saturation_range_mean_delta": -0.3534430225472273,
+              "sensitive_over_one_code": true
+            },
+            "expected": {
+              "pixels": 4923,
+              "rgb_mae": 6.933780215315864,
+              "rgb_mean_delta": [
+                -6.558399349989844,
+                0.6164940077188706,
+                13.626447288238879
+              ],
+              "luminance_mean_delta": -0.04566443225675389,
+              "saturation_range_mean_delta": 2.2750355474304285,
+              "sensitive_over_one_code": true
+            },
+            "error": 7.169205768840138,
+            "projection": -0.00990484104078178
+          }
+        }
+      },
+      "local_gates": {
+        "785-3553": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "9483-19432": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "872-1268": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": false,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "8021-8690": {
+          "positive": true,
+          "checks": {
+            "local_background_direction": false,
+            "local_background_error": false,
+            "local_person_protection": true,
+            "local_neutral_person": true,
+            "whole_response": false,
+            "no_person": null
+          }
+        },
+        "285-1993": {
+          "positive": false,
+          "checks": {
+            "whole_response": false,
+            "no_person": true
+          }
+        },
+        "2149-2592": {
+          "positive": false,
+          "checks": {
+            "whole_response": false,
+            "no_person": true
+          }
+        }
+      },
+      "authored": {
+        "portrait": {
+          "metrics": {
+            "whole": {
+              "pixels": 760320,
+              "region_pixels": 760320,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 9.387941480780022,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 15.459186044472503,
+                  "projection": -0.1546922192004834
+                },
+                "candidate": {
+                  "mae": 13.54644009539843,
+                  "projection": -0.1408974854764174
+                }
+              }
+            },
+            "neutral_proxy": {
+              "pixels": 177766,
+              "region_pixels": 177766,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 7.601867998754917,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 16.771300473656378,
+                  "projection": -0.7661827386711317
+                },
+                "candidate": {
+                  "mae": 13.885431784855747,
+                  "projection": -0.4623012444031945
+                }
+              }
+            }
+          },
+          "gate": false,
+          "sha256": "7f7f940b13599ca4a2dedff48faa80a51cff1f627a669ac9f2b433cfd91cc8e3",
+          "same_image": false,
+          "compressed": 0.0,
+          "max_luma_error": 0.4986
+        },
+        "tower": {
+          "metrics": {
+            "whole": {
+              "pixels": 760320,
+              "region_pixels": 760320,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 11.38734918630752,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 15.027565148007856,
+                  "projection": 1.1287527307182503
+                },
+                "candidate": {
+                  "mae": 15.689359304854097,
+                  "projection": 1.0476783366122064
+                }
+              }
+            },
+            "neutral_proxy": {
+              "pixels": 68714,
+              "region_pixels": 68714,
+              "coverage": 1.0,
+              "methods": {
+                "original": {
+                  "mae": 11.933890231005812,
+                  "projection": 0.0
+                },
+                "current13": {
+                  "mae": 15.910823607028165,
+                  "projection": 0.11447452159347545
+                },
+                "candidate": {
+                  "mae": 16.499466387247626,
+                  "projection": -0.1938759567320779
+                }
+              }
+            }
+          },
+          "gate": false,
+          "sha256": "3bf685041070c064b68546bfd9e3a54ddb02bc0d31cae7e57a610890ab8c947b",
+          "same_image": false,
+          "compressed": 6.313131313131313e-05,
+          "max_luma_error": 0.4986
+        }
+      }
+    }
+  },
+  "png_sha256": {
+    "original_chroma/background/785-3553/identity.png": "f67e9b8fe24c39bfb62f772178518ec59a6cf3439217790ab5e9b32969043a12",
+    "original_chroma/background/785-3553/background_green_100.png": "89adc88d24a69bfafa4b29d4a50657cb45412f0dd46dc8eb4bce7b029975db0c",
+    "original_chroma/background/785-3553/background_magenta_100.png": "29d125bb30edbb039e40f43c278e641c8c3a1cc9d41ea1877e91e30cecdc7b6e",
+    "original_chroma/background/785-3553/whole_green.png": "562a2ba1a56e3f2cdfd9d1f74e0b6393d6204eca84b35f61a1bde136c2c5eddf",
+    "original_chroma/background/785-3553/whole_magenta.png": "aba03e7e565a227efafdad3e8e5ae3635f7dd048d9c7abccd09e9cd88c1a7ca9",
+    "original_chroma/background/785-3553/whole_contrast.png": "7d77e853a84cb7e5ac4266de3dfbdbe9d4d53c8071e57ccbca6af48eadf1d968",
+    "original_chroma/background/785-3553/whole_desaturate.png": "94ff1f8f00218e1ff2a1c3d3c690f285ce3bc8e05924187b04d8a95f3dd993c8",
+    "original_chroma/background/9483-19432/identity.png": "9ff9a05c825054ffc0800a07942399baff7cd0217c8deff3cd4e7ce98dbc3301",
+    "original_chroma/background/9483-19432/background_green_100.png": "2ceb9e894cc3cd74818d70e612fa3fa7ea1ccf2f5ae405fa77fa712c1b305f63",
+    "original_chroma/background/9483-19432/background_magenta_100.png": "8b1ed2d5eefb523310c1f4d9b46159c86cea0c3ef16a06df569257ae458c189a",
+    "original_chroma/background/9483-19432/whole_green.png": "7bd86167365edd56f8ea1c1543633bf6e41c52bed0530a6c6f1c85bf9485696e",
+    "original_chroma/background/9483-19432/whole_magenta.png": "fb44d4613a97cb4c50ee155976086f171bf0c2d68f5d29598a555250aee9db7e",
+    "original_chroma/background/9483-19432/whole_contrast.png": "10894c368a07965bbd8c930da9dc2bc42a1a605b888e8505e09cc465aa265dd7",
+    "original_chroma/background/9483-19432/whole_desaturate.png": "57a2d3a4079b5b26d707525cc6ffc219ed35b22fb2b06905deba412394d8ef10",
+    "original_chroma/background/872-1268/identity.png": "26e6a471df4e3b7b45f4d43094643f5c5eeb2d6667d2f60d92f638c8e457acf3",
+    "original_chroma/background/872-1268/background_green_100.png": "46ae0afebfa7200c04e55442eeeab82877961a6e46bdbd779c8de22a61f638b6",
+    "original_chroma/background/872-1268/background_magenta_100.png": "467f8446504f4ad36d35cf08f70d631eef553ea16e3393dd49c8d143ff8da7c3",
+    "original_chroma/background/872-1268/whole_green.png": "e984574a91c15a996b0374525ea3652d40a23fac7907ceeedc11b03126daaa23",
+    "original_chroma/background/872-1268/whole_magenta.png": "5e29e7b01ed4b18d0e1d8520ad000554fcd56fbe6b7c0cec27189b8d68ce4609",
+    "original_chroma/background/872-1268/whole_contrast.png": "bdebb79e1fce7aedbf306ca7846d2649896d559c293bb9cb7b00bfbc2ca9976b",
+    "original_chroma/background/872-1268/whole_desaturate.png": "1c3a83a0e6558fe6c5021edf007a19e77d8b4e0b8ec18084a9b8e8fbaa492c86",
+    "original_chroma/background/8021-8690/identity.png": "6b045185be76fae790481a7579cbb88d492bb7afce86b8d1160088811c5e51d5",
+    "original_chroma/background/8021-8690/background_green_100.png": "854b0896f2659c94d57e70ace153284e97e86440c23d754864ce98291ff47250",
+    "original_chroma/background/8021-8690/background_magenta_100.png": "88bdd00137b41a97edf862e3ab4b5b68fa8e9f4c60319f9de1298a42f9c8124f",
+    "original_chroma/background/8021-8690/whole_green.png": "7ad9a6e50ffd503db0fd6dedda910911f0b3b188659ae69d92bed5aee42d143a",
+    "original_chroma/background/8021-8690/whole_magenta.png": "9195fd57d102189209f58a716624795322ba462560bbd1f4f343edf38b58042e",
+    "original_chroma/background/8021-8690/whole_contrast.png": "a5c9c7edea293e741889938121fa9cb19a946dcc06430f39564c7fa1408f7fd1",
+    "original_chroma/background/8021-8690/whole_desaturate.png": "e8b5ab13c89f1c36541b114fdeb6add83ea80e0f162f8f1c8a51a16bfc05f4f6",
+    "original_chroma/background/285-1993/identity.png": "1a040c7d3892e7a0e4878325a3e1b9590da49337ac76e1b7222a87517e897374",
+    "original_chroma/background/285-1993/background_green_100.png": "ae33defd9e947a127e7cf7b08c099842eff8d3859de93fc0567b65e90daea579",
+    "original_chroma/background/285-1993/background_magenta_100.png": "30075445d12f2e7ed224a4d48bb6ed78b413634087cb0927ae6faa60fccc9b13",
+    "original_chroma/background/285-1993/whole_green.png": "ae33defd9e947a127e7cf7b08c099842eff8d3859de93fc0567b65e90daea579",
+    "original_chroma/background/285-1993/whole_magenta.png": "30075445d12f2e7ed224a4d48bb6ed78b413634087cb0927ae6faa60fccc9b13",
+    "original_chroma/background/285-1993/whole_contrast.png": "84e397398f3b4cf4aed92f0b35c3e7e56a24b01d5efb5906cc5ccf36c7de2dc5",
+    "original_chroma/background/285-1993/whole_desaturate.png": "d9b2596a439eee3a2ea2827189aa93174c39c502d30200f4ac4a0456d1015bbe",
+    "original_chroma/background/2149-2592/identity.png": "16d1bbd5e52da5c23b6efcf5e1ae0faa7583e322489c7316ddec6ea45c829160",
+    "original_chroma/background/2149-2592/background_green_100.png": "242f413c33421a256b11c175ae24a5a470d232516084f3f84fcb75b166ea2737",
+    "original_chroma/background/2149-2592/background_magenta_100.png": "7eacc89001a4f82a94c15ef99f1dc42248d2e619279079ac722306b7f83b2f47",
+    "original_chroma/background/2149-2592/whole_green.png": "242f413c33421a256b11c175ae24a5a470d232516084f3f84fcb75b166ea2737",
+    "original_chroma/background/2149-2592/whole_magenta.png": "7eacc89001a4f82a94c15ef99f1dc42248d2e619279079ac722306b7f83b2f47",
+    "original_chroma/background/2149-2592/whole_contrast.png": "0c828e1fba387fa8eeda1d7a56cd7cc96fe68e22fc4d3364b80d6728cf03e2ab",
+    "original_chroma/background/2149-2592/whole_desaturate.png": "8e4ba1846a95b9dbfa1858f3c3bbb4ced9ca2833ea9b4d0c65fc18f5b2229253",
+    "original_chroma/local/785-3553-base.png": "67beec5dd3b77bfed731d11bc7c5f861693f4542cd0e6bf7e1356c2ae984926a",
+    "original_chroma/local/785-3553-local.png": "d8f8a6eb4ba0b393268fdd610004687d26527207f8fec83b20ac938ef87c7846",
+    "original_chroma/local/785-3553-whole.png": "058520557f507704286827f13cc831fd6c073ec6df4bf38ee33e310f4eb51f71",
+    "original_chroma/local/9483-19432-base.png": "138d32f6950e37be8fb63e535a6ec955ee05e664ebb20006f2e9d89a20ce9834",
+    "original_chroma/local/9483-19432-local.png": "433b529b06eaa4f674ad6f4e54e6c1aa58d77fe7bd590051aa7c186bf42343ca",
+    "original_chroma/local/9483-19432-whole.png": "f80c6fb359cd77af9244b550eca0c98b007400c26de922740db5ebf6257d9c51",
+    "original_chroma/local/872-1268-base.png": "4765fed476169e5b97a21c44a9b891bdf6e380472f282d5059984890e27099c5",
+    "original_chroma/local/872-1268-local.png": "1cba6dd84fd9c646e916671711e6ffa249b7c543a1745beceb02f88c7263e233",
+    "original_chroma/local/872-1268-whole.png": "8ef4292d5b8d3d9979f8d926d9f79d0eaa6a9f2bcb956568cae1f65300a6dc40",
+    "original_chroma/local/8021-8690-base.png": "5d2ab1dcd29745cbc4533d6a5a9cfe8f55eacd057986dd64233b988868f0e880",
+    "original_chroma/local/8021-8690-local.png": "28c077a685ae64fd5dd6d65cf90cbff81efa6011a3bd5ca334d8f38b3e3ba9d3",
+    "original_chroma/local/8021-8690-whole.png": "b4e1341255db61f10093cb4d62c91b456b6d999bc48ae63975a8dc0d3b8fe43a",
+    "original_chroma/local/285-1993-base.png": "8a94da39f9cf636b1f98cd8fd2705955c852eeb3b00dc55c9316480fac2cc951",
+    "original_chroma/local/285-1993-local.png": "8a94da39f9cf636b1f98cd8fd2705955c852eeb3b00dc55c9316480fac2cc951",
+    "original_chroma/local/285-1993-whole.png": "dc9e2ec3097613546653c03253802815397747dc2539d5669e30547c2672423e",
+    "original_chroma/local/2149-2592-base.png": "ca59226f0f7cfa9528ab32a68959cb1cb274d1c22ff8a7095e040787cdcbcd8c",
+    "original_chroma/local/2149-2592-local.png": "ca59226f0f7cfa9528ab32a68959cb1cb274d1c22ff8a7095e040787cdcbcd8c",
+    "original_chroma/local/2149-2592-whole.png": "b55ceaac47c301ca541ff02ebac0d6aed862c582b9119d83cb655a31c4d0a105",
+    "original_chroma/authored/psbench-portrait.png": "64509d176bcf460bf775fa560b6007c3ea03721aeb2d504afbd298817006f482",
+    "original_chroma/authored/psbench-tower.png": "421aba77eee3efc3a3a6373223012322e6d17d0b3ed90d5cc3db4740b3fc4894",
+    "retain_saturation/background/785-3553/identity.png": "ba702db635163f6a8f49e097ac6b16b73906d28ee5d39a2a13395d7577fb9fb1",
+    "retain_saturation/background/785-3553/background_green_100.png": "8b34275992046e967be4f56cefad4d36415211ed3c50437fe0c9737b7bdaf143",
+    "retain_saturation/background/785-3553/background_magenta_100.png": "2c616c56a3f1c9d2977ac0cba179347b660c44b33e47c5f9410066fee04ae2d3",
+    "retain_saturation/background/785-3553/whole_green.png": "7c03f403e63a5b7e679ab9ff4ac5d88c967ce4f69c0035721016a119f74328c3",
+    "retain_saturation/background/785-3553/whole_magenta.png": "0621b05c7e4decd63f6494d5125a1e625597ce203de3e97a519c49630ed9cc5d",
+    "retain_saturation/background/785-3553/whole_contrast.png": "9d424f4a0054bd531e7aa8d4e6e16e5ef7025a707c94f1df25dce05b3c061b4a",
+    "retain_saturation/background/785-3553/whole_desaturate.png": "f158f0383fb85c1314667bcdb3d9df74b0a5d6e8b51116e899ca2f94b08a15b3",
+    "retain_saturation/background/9483-19432/identity.png": "9a2ba0fe45c0cd4c9002e90e86094f1e2c3e342bf5008692f949e37f2b0317ae",
+    "retain_saturation/background/9483-19432/background_green_100.png": "d2c0c1c7419652f4acec2eaa74fca2f29ff0bb6ce2ed2a3787f60eafe3a9bf3a",
+    "retain_saturation/background/9483-19432/background_magenta_100.png": "83151b336efc0c82611494095ceca39e818a1ac06f44f58a4f9c536174a206c9",
+    "retain_saturation/background/9483-19432/whole_green.png": "ef694875f0561cbd64869608e7b830e7b9cf2ebe1cbb5b219a60339e8ad34ad4",
+    "retain_saturation/background/9483-19432/whole_magenta.png": "4c02b642d9092f642a1996c9883ae38d83760897935b571f8cbda15b45b7edb8",
+    "retain_saturation/background/9483-19432/whole_contrast.png": "0ad4e3f85e1c837a5aef8e1d052390088ed378475793fdb4c1c10b30bf5ffa41",
+    "retain_saturation/background/9483-19432/whole_desaturate.png": "12dd47996854452078a4ea7f26b5266159179cb5aa4564e02466faec269ab8e1",
+    "retain_saturation/background/872-1268/identity.png": "b2ef198a5b8c8b8d802f959ed01de80ad22dd59b23f9338edea32c9b812bfc27",
+    "retain_saturation/background/872-1268/background_green_100.png": "63cb17c2931070da9996e983411088482cb786325abfdff9535383ac70d054c1",
+    "retain_saturation/background/872-1268/background_magenta_100.png": "884b188fc6c586c16bcccd61f65abfd62072a1157b0fbb89e43fe32cbede8d0d",
+    "retain_saturation/background/872-1268/whole_green.png": "a3c786864d6d64f0b2ee83c168c3e31b2ea3abec43c2a02324c281a21a9ec46b",
+    "retain_saturation/background/872-1268/whole_magenta.png": "ca686449c383759379b071c823d6f7a255f964e72bba2898367896b7ee859340",
+    "retain_saturation/background/872-1268/whole_contrast.png": "b7eb9725d8624de9988fe125a1258284b5e2f12012d125a44deb9818bf6ab1d0",
+    "retain_saturation/background/872-1268/whole_desaturate.png": "941fb538483c9a5b3e445714850b558b78aff1964789e5f6a1de14500a3f9562",
+    "retain_saturation/background/8021-8690/identity.png": "272dcd1e654eadc8f9d838665a65b32d6081d4b32f9268d43aa999072ac85e73",
+    "retain_saturation/background/8021-8690/background_green_100.png": "fe649713257a4969a78bd252047903590dfa50c18545dc7c8a7183e26cfd1922",
+    "retain_saturation/background/8021-8690/background_magenta_100.png": "80e1dd3fe52d47d6d9f8c7889cbd0dc8488adb5cb49e3ce1694082b99769edbb",
+    "retain_saturation/background/8021-8690/whole_green.png": "5885fab8f57b13463d843e6b59c620b2112b67e21bc8dadaa09a023a44b130d3",
+    "retain_saturation/background/8021-8690/whole_magenta.png": "1ef419f6399e762a3cac71987ea44d104e20998d629e4183551d35675d57facb",
+    "retain_saturation/background/8021-8690/whole_contrast.png": "ad2b61ac86edb33f06399f9e7f3cf44d6e00c46ea1ef3f3d9d8c2b2c7723708d",
+    "retain_saturation/background/8021-8690/whole_desaturate.png": "7d3176b8e265fd95d694e6aa65a500fecce5d32ed4a00297bf2fd8719a444eab",
+    "retain_saturation/background/285-1993/identity.png": "b096e55f9a36009872bbd589bab9848e25c31b4340f44c78375262e64318337e",
+    "retain_saturation/background/285-1993/background_green_100.png": "1ed57a53e27e61def562daf8c3dc32407da2b0d8db56bc1729739ce47da6266d",
+    "retain_saturation/background/285-1993/background_magenta_100.png": "a14a4fba0cc70d18c69ebea594893363b23e79d741302d2057eb5588ca8ec5b9",
+    "retain_saturation/background/285-1993/whole_green.png": "1ed57a53e27e61def562daf8c3dc32407da2b0d8db56bc1729739ce47da6266d",
+    "retain_saturation/background/285-1993/whole_magenta.png": "a14a4fba0cc70d18c69ebea594893363b23e79d741302d2057eb5588ca8ec5b9",
+    "retain_saturation/background/285-1993/whole_contrast.png": "4abb841ed0740b11fb053a81235bba73432d947051071d61dc011bef453542ec",
+    "retain_saturation/background/285-1993/whole_desaturate.png": "294da2dfc04e291463c88145beda8c50e3fcfcc066f717662c55a82341dbec28",
+    "retain_saturation/background/2149-2592/identity.png": "74f806cdea005f63c59c325c42caa46d2cb92744d250da8a2ec5d835c1c1939c",
+    "retain_saturation/background/2149-2592/background_green_100.png": "b2f9d7dd037abeb06e8b7999b18c7db84c396cda8a4ff7b9c5d3b748806d6795",
+    "retain_saturation/background/2149-2592/background_magenta_100.png": "a32b98f05361834de03af3edf03b84d2dc886e005b756ae2d9d673f29b6485c9",
+    "retain_saturation/background/2149-2592/whole_green.png": "b2f9d7dd037abeb06e8b7999b18c7db84c396cda8a4ff7b9c5d3b748806d6795",
+    "retain_saturation/background/2149-2592/whole_magenta.png": "a32b98f05361834de03af3edf03b84d2dc886e005b756ae2d9d673f29b6485c9",
+    "retain_saturation/background/2149-2592/whole_contrast.png": "c564b95abdc51cb654ef62fafd72400870595532bd3ba49a0197a7ef60481e39",
+    "retain_saturation/background/2149-2592/whole_desaturate.png": "3b63873786742e23d7cb9efaa5cb621a5818f9ef8f66f3ef830ddce52db1f193",
+    "retain_saturation/local/785-3553-base.png": "a0bbe2c951ad074ba389238d4be6a2a8e924707cd54f6050cd7e0c8d413bac7d",
+    "retain_saturation/local/785-3553-local.png": "3d4b9db6110ba19bf989676ec342cfb0b8a1923d34ea8350e2659e2d344eaf53",
+    "retain_saturation/local/785-3553-whole.png": "6991b6e0f031217c43fed76ddffa25a148791120ff37d263853368aad701748e",
+    "retain_saturation/local/9483-19432-base.png": "f526ddbfd0cea95ddd16bc332d15b1e4caafe7a8349a0cf6cdb687b70a25c0de",
+    "retain_saturation/local/9483-19432-local.png": "45dc1aa3f0b9192bf2e225f789f3863e5872b8ea472721d75e3e0f36050b8d36",
+    "retain_saturation/local/9483-19432-whole.png": "b59f4620b3132d7b7e16922bd34cd9bb047c8b6936cf9453714107f98148a9f2",
+    "retain_saturation/local/872-1268-base.png": "de96c001a28578afceef0cbb120b4d513fa7cc6916a3183d1ddf211c3f81bd72",
+    "retain_saturation/local/872-1268-local.png": "41cee712796813822d9ac61fef8076555861f9aa9bd385cbc02e52960717e8c1",
+    "retain_saturation/local/872-1268-whole.png": "d580d3687f65f1ea139d6c88154c010cdf1424a638ef9c1da8df42134be52528",
+    "retain_saturation/local/8021-8690-base.png": "bf1bec80e054ccaf0508ff81c48aef64f72fc7aa89be24cd0b40257ab8ff0987",
+    "retain_saturation/local/8021-8690-local.png": "dc3ac2c2531f65c5ae3b78d8afd516eb4746505f4946733ccbbe072fb423364d",
+    "retain_saturation/local/8021-8690-whole.png": "d35b3489fdc50613148633fb1491f58eec7c8cf7a4723b987b04d3c2a77493f6",
+    "retain_saturation/local/285-1993-base.png": "e6a3ab4920f03d6c84782a3af22daacadd75bd5ef7f528e868e859d46e27e5aa",
+    "retain_saturation/local/285-1993-local.png": "e6a3ab4920f03d6c84782a3af22daacadd75bd5ef7f528e868e859d46e27e5aa",
+    "retain_saturation/local/285-1993-whole.png": "41a115b36233fe8a281dbac14bd1fba439e294f26b8c4575c73bcb846b06c8a8",
+    "retain_saturation/local/2149-2592-base.png": "2c7b5dde07fe0e20d7ae1660585f136d3ce6fe87a117d300f7b891755adc13bc",
+    "retain_saturation/local/2149-2592-local.png": "2c7b5dde07fe0e20d7ae1660585f136d3ce6fe87a117d300f7b891755adc13bc",
+    "retain_saturation/local/2149-2592-whole.png": "31bd1424c2a14c3c898f6766d218b952496fb27779532ea7f0e9b4f7d20f8915",
+    "retain_saturation/authored/psbench-portrait.png": "7f7f940b13599ca4a2dedff48faa80a51cff1f627a669ac9f2b433cfd91cc8e3",
+    "retain_saturation/authored/psbench-tower.png": "3bf685041070c064b68546bfd9e3a54ddb02bc0d31cae7e57a610890ab8c947b"
+  },
+  "result_sha256": "9bce73c1fc6794258451fb5f9db0bcfdb8f5708c9256559066998e3c93ed59ff",
+  "verification": {
+    "png_count": 124,
+    "repeat_and_initial_pngs_identical": true,
+    "independent_exact_luma": true,
+    "half_code_ties": 11
+  }
+}
