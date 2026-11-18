@@ -57,13 +57,18 @@ def fixed_sets():
     return [pair(folder, train[k]) for k in sorted(train)], dev, saved
 
 
-def solve(fitting, local):
+def training_levels(fitting, local):
     targets = [descriptor(refs["C1"], local) for refs in fitting]
     levels = {}
     for group, refs in enumerate(fitting):
         assigned = targets[(group + 1) % len(fitting)]
         for role, name in product(ROLES, EDITS):
             levels[group, role, name] = feature(assigned, descriptor(grade(refs[role], EDITS[name]), local))
+    return levels
+
+
+def solve(fitting, local):
+    levels = training_levels(fitting, local)
     x = np.stack(list(levels.values()))
     y = np.asarray([EDITS[name] for _, _, name in levels], dtype=np.float64)
     center, spread, intercept = x.mean(axis=0), x.std(axis=0), y.mean(axis=0)
@@ -96,9 +101,13 @@ def estimate(model, target_features, reference_features):
     return np.clip(((features - center) / scale) @ weights + intercept, (-1., 0.), (1., 1.))
 
 
-def run(out, local=True):
+def run(out, local=True, fit_models=None, candidate="paired"):
     train, dev, registered = fixed_sets()
-    models, audit = solve(train, local)
+    if fit_models is None:
+        models, audit = solve(train, local)
+        feature_audit = None
+    else:
+        models, audit, feature_audit = fit_models(train, local)
     out.mkdir()
     cases = {}
     deepest = -np.inf
@@ -132,16 +141,20 @@ def run(out, local=True):
                 outputs[f"{arm} / {role}"] = photos[role]
             values[arm] = {**scores(photos, truth, person, neutral), "coefficients": picks, "hashes": hashes}
         for role, name in product(ROLES, EDITS):
-            left, right = (values[arm]["styles"][name]["response"][role]["target_mae"] for arm in ARMS)
+            left, right = (values[arm]["styles"][name]["response"][role]["target_mae"]
+                           for arm in ("per-image", candidate))
             deepest = max(deepest, right - left)
         picture = folder / "comparison.png"
         panel(picture, outputs)
         cases[key] = {**values, "comparison_sha256": digest(picture)}
-    count = {arm: sum(row[arm]["passed"] for row in cases.values()) for arm in ARMS}
+        if feature_audit is not None:
+            cases[key]["feature_audit"] = feature_audit(observed)
+    count = {arm: sum(row[arm]["passed"] for row in cases.values()) for arm in models}
     json_to(out / "results.json", {"inputs": {"fit": FIT_SHA, "held": HELD_SHA, "analysis_parent": PARENT_SHA},
                                    "training": audit, "cases": cases, "passed_by_arm": count,
                                    "worst_target_regression": deepest,
-                                   "passed": count["paired"] >= 3 and count["paired"] > count["per-image"] and deepest <= 2})
+                                   "passed": count[candidate] >= 3 and count[candidate] > count["per-image"]
+                                   and deepest <= 2})
 
 
 if __name__ == "__main__":
