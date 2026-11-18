@@ -1,0 +1,584 @@
+{
+  "inputs_sha256": "61e88e0dddeb88202313917c55d4a27d745c9c6a67e054c12b5a2b1d651813f6",
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "source_sha256": "37f3dde9c41b29061c2836ee9ac187c195c210a63de20463589834224729b8a4",
+  "cases": {
+    "4_2": {
+      "reference": "7_4",
+      "calibration": [
+        "15_3",
+        "19_1"
+      ],
+      "classified": 1,
+      "mean_scores": {
+        "generic": {
+          "all_mae": 10.95301988389757,
+          "human_mae": 9.45301873886428,
+          "background_mae": 11.400324848725647
+        },
+        "oracle": {
+          "all_mae": 10.869140625,
+          "human_mae": 10.248230181067138,
+          "background_mae": 11.054298033182254
+        },
+        "candidate": {
+          "all_mae": 11.71291266547309,
+          "human_mae": 10.530328117396609,
+          "background_mae": 12.065563022731212
+        },
+        "current13": {
+          "all_mae": 14.587190416124132,
+          "human_mae": 13.27152513151568,
+          "background_mae": 14.979525859204243
+        }
+      },
+      "records": {
+        "a": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "4546bbaa7578dc8e332e1d9ccbddfd53f5435b367e3b141eee41bc6a2b8bca5c",
+            "oracle": "875b3b9763728cfbbc20131cdc42c19ecd09b4e888d42a903e6dd354e532e288",
+            "candidate": "b858ecc4466277841deeb8125be4fb8b808151bd54578636fec52bde70da53c9",
+            "current13": "4a82262d9c708fac067e3399fea9e14eab46081c466530b9e6474e77e0e791a1"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 13.023849487304688,
+              "human_mae": 13.339036147549495,
+              "background_mae": 12.929859853735472
+            },
+            "oracle": {
+              "all_mae": 13.369837443033854,
+              "human_mae": 14.060068716848999,
+              "background_mae": 13.164008349716546
+            },
+            "candidate": {
+              "all_mae": 14.496551513671875,
+              "human_mae": 15.48991511468496,
+              "background_mae": 14.2003274260544
+            },
+            "current13": {
+              "all_mae": 16.167394002278645,
+              "human_mae": 18.877813981711398,
+              "background_mae": 15.359138410218694
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 14.496551513671875,
+            "b": 10.836461385091146,
+            "c": 8.763682047526041
+          }
+        },
+        "b": {
+          "guess": "b",
+          "output_sha256": {
+            "generic": "4546bbaa7578dc8e332e1d9ccbddfd53f5435b367e3b141eee41bc6a2b8bca5c",
+            "oracle": "29b0187dd72f87c280ea58584b925375543872786d60ed155f82a50e786b94a3",
+            "candidate": "29b0187dd72f87c280ea58584b925375543872786d60ed155f82a50e786b94a3",
+            "current13": "07a644769c4ea18da2e6ccac47270703a704d77641baa16541b82c0f6a18c4a0"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 9.90533447265625,
+              "human_mae": 7.501284707062475,
+              "background_mae": 10.622229522639701
+            },
+            "oracle": {
+              "all_mae": 10.473902384440104,
+              "human_mae": 9.577959966808622,
+              "background_mae": 10.741075174896702
+            },
+            "candidate": {
+              "all_mae": 10.473902384440104,
+              "human_mae": 9.577959966808622,
+              "background_mae": 10.741075174896702
+            },
+            "current13": {
+              "all_mae": 13.358332316080729,
+              "human_mae": 10.861003987063837,
+              "background_mae": 14.103043321184845
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 12.394541422526041,
+            "b": 10.473902384440104,
+            "c": 10.168284098307291
+          }
+        },
+        "c": {
+          "guess": "b",
+          "output_sha256": {
+            "generic": "4546bbaa7578dc8e332e1d9ccbddfd53f5435b367e3b141eee41bc6a2b8bca5c",
+            "oracle": "b858ecc4466277841deeb8125be4fb8b808151bd54578636fec52bde70da53c9",
+            "candidate": "29b0187dd72f87c280ea58584b925375543872786d60ed155f82a50e786b94a3",
+            "current13": "190e923580331145503cd1dfa34cd8a9f1ad30964cbde769230c176d62e921ac"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 9.929875691731771,
+              "human_mae": 7.518735361980868,
+              "background_mae": 10.648885169801773
+            },
+            "oracle": {
+              "all_mae": 8.763682047526041,
+              "human_mae": 7.106661859543789,
+              "background_mae": 9.257810574933512
+            },
+            "candidate": {
+              "all_mae": 10.168284098307291,
+              "human_mae": 6.523109270696244,
+              "background_mae": 11.255286467242533
+            },
+            "current13": {
+              "all_mae": 14.235844930013021,
+              "human_mae": 10.075757425771803,
+              "background_mae": 15.476395846209188
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 12.394541422526041,
+            "b": 10.473902384440104,
+            "c": 10.168284098307291
+          }
+        }
+      },
+      "oracle_pass": false,
+      "candidate_pass": false
+    },
+    "7_4": {
+      "reference": "15_3",
+      "calibration": [
+        "4_2",
+        "19_1"
+      ],
+      "classified": 1,
+      "mean_scores": {
+        "generic": {
+          "all_mae": 22.5353274875217,
+          "human_mae": 22.54301634541596,
+          "background_mae": 22.53382990661261
+        },
+        "oracle": {
+          "all_mae": 23.44119432237413,
+          "human_mae": 23.81840484962622,
+          "background_mae": 23.36772394587761
+        },
+        "candidate": {
+          "all_mae": 20.899878607855904,
+          "human_mae": 23.805920780019942,
+          "background_mae": 20.333860437421958
+        },
+        "current13": {
+          "all_mae": 22.058883666992188,
+          "human_mae": 32.43223766809706,
+          "background_mae": 20.038435750162176
+        }
+      },
+      "records": {
+        "a": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "7a90d68860e5291327d90e3b3a967810f043684db94c39a73162cff5a21623c5",
+            "oracle": "4b3a6d79cc7f1daea16fa7bd9842a508fa4993bf20162df66e0cd33a18f585fe",
+            "candidate": "2e1c96a0ac83eabbb97e03ca45d821b1b542557b7a4200124eb1606e6f3d59ec",
+            "current13": "095a58a155f792d7993562c603a5e1fe7cdfeafb12008d2b7db7b4e0b536d4b4"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 17.110631306966145,
+              "human_mae": 18.793417419383886,
+              "background_mae": 16.782870228442963
+            },
+            "oracle": {
+              "all_mae": 20.643569946289062,
+              "human_mae": 18.768641986547014,
+              "background_mae": 21.008755043612805
+            },
+            "candidate": {
+              "all_mae": 14.316233317057291,
+              "human_mae": 15.463714062402117,
+              "background_mae": 14.092735200509106
+            },
+            "current13": {
+              "all_mae": 12.263722737630209,
+              "human_mae": 11.9160392391781,
+              "background_mae": 12.331442050023183
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 14.316233317057291,
+            "b": 22.769785563151043,
+            "c": 25.613616943359375
+          }
+        },
+        "b": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "7a90d68860e5291327d90e3b3a967810f043684db94c39a73162cff5a21623c5",
+            "oracle": "30c1fa81ba7bcb9098891931f688f4eae900d55a6832cfe20ecd8d1495176b5b",
+            "candidate": "2e1c96a0ac83eabbb97e03ca45d821b1b542557b7a4200124eb1606e6f3d59ec",
+            "current13": "8a67cbba105826e9fc21a37e68e77c493107ed479b203b85c0ebb2b8ffdeed60"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 23.959152221679688,
+              "human_mae": 22.60423787626073,
+              "background_mae": 24.223052775578957
+            },
+            "oracle": {
+              "all_mae": 24.066396077473957,
+              "human_mae": 22.409050176580216,
+              "background_mae": 24.389202093018287
+            },
+            "candidate": {
+              "all_mae": 22.769785563151043,
+              "human_mae": 25.67652589190628,
+              "background_mae": 22.203631410755026
+            },
+            "current13": {
+              "all_mae": 26.14941914876302,
+              "human_mae": 39.567065122274954,
+              "background_mae": 23.53602575130861
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 14.316233317057291,
+            "b": 22.769785563151043,
+            "c": 25.613616943359375
+          }
+        },
+        "c": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "7a90d68860e5291327d90e3b3a967810f043684db94c39a73162cff5a21623c5",
+            "oracle": "2e1c96a0ac83eabbb97e03ca45d821b1b542557b7a4200124eb1606e6f3d59ec",
+            "candidate": "2e1c96a0ac83eabbb97e03ca45d821b1b542557b7a4200124eb1606e6f3d59ec",
+            "current13": "af283ff452454aa806ed911f8f3f53de598533bc6ecf81451d887c849f798488"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 26.53619893391927,
+              "human_mae": 26.23139374060327,
+              "background_mae": 26.59556671581591
+            },
+            "oracle": {
+              "all_mae": 25.613616943359375,
+              "human_mae": 30.277522385751425,
+              "background_mae": 24.705214701001744
+            },
+            "candidate": {
+              "all_mae": 25.613616943359375,
+              "human_mae": 30.277522385751425,
+              "background_mae": 24.705214701001744
+            },
+            "current13": {
+              "all_mae": 27.763509114583332,
+              "human_mae": 45.813608642838126,
+              "background_mae": 24.247839449154736
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 14.316233317057291,
+            "b": 22.769785563151043,
+            "c": 25.613616943359375
+          }
+        }
+      },
+      "oracle_pass": false,
+      "candidate_pass": false
+    },
+    "15_3": {
+      "reference": "19_1",
+      "calibration": [
+        "4_2",
+        "7_4"
+      ],
+      "classified": 1,
+      "mean_scores": {
+        "generic": {
+          "all_mae": 27.63851759168837,
+          "human_mae": 37.824892454466095,
+          "background_mae": 25.73874099064442
+        },
+        "oracle": {
+          "all_mae": 27.631813897026912,
+          "human_mae": 37.97795827306884,
+          "background_mae": 25.70224000431165
+        },
+        "candidate": {
+          "all_mae": 32.03875393337674,
+          "human_mae": 44.05321967442663,
+          "background_mae": 29.798035208966215
+        },
+        "current13": {
+          "all_mae": 31.844636705186634,
+          "human_mae": 38.661571540758594,
+          "background_mae": 30.573266520413217
+        }
+      },
+      "records": {
+        "a": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "2e003a3a7e56d71666eb36e2210a9480e0330377863db48da7412f09b73094b9",
+            "oracle": "cc63b7eb3a7d9375ba2bbddebf1802b5a638f538adee0232f4daf5496bff44d3",
+            "candidate": "eb95684969300544cc0262e07372b20755fd196d5a64eb0d450e73ddc232ec14",
+            "current13": "f9003bc8da2ba6a72d422905b9d899c9660241306e9458503903e73e99e1fea3"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 31.063827514648438,
+              "human_mae": 42.30989800442559,
+              "background_mae": 28.966415838956053
+            },
+            "oracle": {
+              "all_mae": 26.20781962076823,
+              "human_mae": 34.45513123596384,
+              "background_mae": 24.66968168267609
+            },
+            "candidate": {
+              "all_mae": 35.53654988606771,
+              "human_mae": 48.37745785884162,
+              "background_mae": 33.14169825028348
+            },
+            "current13": {
+              "all_mae": 37.04289245605469,
+              "human_mae": 44.68488686939902,
+              "background_mae": 35.6176472272706
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 35.53654988606771,
+            "b": 30.801534016927082,
+            "c": 29.778177897135418
+          }
+        },
+        "b": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "2e003a3a7e56d71666eb36e2210a9480e0330377863db48da7412f09b73094b9",
+            "oracle": "0f287d163dc7dc3bca3e0d7a604f36ce9fcaaa3e8d4909365ce0f7c5aade5e4b",
+            "candidate": "eb95684969300544cc0262e07372b20755fd196d5a64eb0d450e73ddc232ec14",
+            "current13": "0521c4f74c803af4372c5232aab8e0146cdc672c145a47bf769e6417b1fe57a7"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 26.266708374023438,
+              "human_mae": 37.905865437105945,
+              "background_mae": 24.095985369795624
+            },
+            "oracle": {
+              "all_mae": 26.909444173177082,
+              "human_mae": 39.94070963175358,
+              "background_mae": 24.479090535725636
+            },
+            "candidate": {
+              "all_mae": 30.801534016927082,
+              "human_mae": 44.24416721294917,
+              "background_mae": 28.294459582081927
+            },
+            "current13": {
+              "all_mae": 31.420878092447918,
+              "human_mae": 40.02057029608892,
+              "background_mae": 29.81702056268466
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 35.53654988606771,
+            "b": 30.801534016927082,
+            "c": 29.778177897135418
+          }
+        },
+        "c": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "2e003a3a7e56d71666eb36e2210a9480e0330377863db48da7412f09b73094b9",
+            "oracle": "eb95684969300544cc0262e07372b20755fd196d5a64eb0d450e73ddc232ec14",
+            "candidate": "eb95684969300544cc0262e07372b20755fd196d5a64eb0d450e73ddc232ec14",
+            "current13": "8bea54586b16b9e4b7655e8663fc7883badce02b519f820c8e12115d6dfcf987"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 25.58501688639323,
+              "human_mae": 33.25891392186676,
+              "background_mae": 24.15382176318159
+            },
+            "oracle": {
+              "all_mae": 29.778177897135418,
+              "human_mae": 39.5380339514891,
+              "background_mae": 27.957947794533236
+            },
+            "candidate": {
+              "all_mae": 29.778177897135418,
+              "human_mae": 39.5380339514891,
+              "background_mae": 27.957947794533236
+            },
+            "current13": {
+              "all_mae": 27.070139567057293,
+              "human_mae": 31.279257456787853,
+              "background_mae": 26.285131771284398
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 35.53654988606771,
+            "b": 30.801534016927082,
+            "c": 29.778177897135418
+          }
+        }
+      },
+      "oracle_pass": false,
+      "candidate_pass": false
+    },
+    "19_1": {
+      "reference": "4_2",
+      "calibration": [
+        "7_4",
+        "15_3"
+      ],
+      "classified": 1,
+      "mean_scores": {
+        "generic": {
+          "all_mae": 16.416687011718746,
+          "human_mae": 15.38618029180593,
+          "background_mae": 17.436184195168043
+        },
+        "oracle": {
+          "all_mae": 18.16060723198785,
+          "human_mae": 15.943138906786933,
+          "background_mae": 20.354384980590606
+        },
+        "candidate": {
+          "all_mae": 15.425983005099825,
+          "human_mae": 12.370898512453794,
+          "background_mae": 18.448428152974014
+        },
+        "current13": {
+          "all_mae": 10.946144951714409,
+          "human_mae": 7.965932810182426,
+          "background_mae": 13.894517655805354
+        }
+      },
+      "records": {
+        "a": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "f195392a0e30524fc20a2ee82fb6203078d742d2ab3ac1a242a4ef829eba0e57",
+            "oracle": "855a92a2c650083d7ccb148095b1ac1dca01d96453c33dc7e33dbd78b38f7cda",
+            "candidate": "8201e87fc233516fc2d073263b26db867d0e36a6c39d5d5b03bcaa9f4e343c70",
+            "current13": "b174246a220ad0aa30f673335383a991e5bdc498375ff2aa0aa2a23ae3e0627d"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 17.53021240234375,
+              "human_mae": 17.180467490838907,
+              "background_mae": 17.876220774065064
+            },
+            "oracle": {
+              "all_mae": 20.87408447265625,
+              "human_mae": 20.548429815310257,
+              "background_mae": 21.19625996120568
+            },
+            "candidate": {
+              "all_mae": 16.003463745117188,
+              "human_mae": 13.764029487951559,
+              "background_mae": 18.218972750136942
+            },
+            "current13": {
+              "all_mae": 9.710784912109375,
+              "human_mae": 7.826523153448488,
+              "background_mae": 11.57491594465471
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 16.003463745117188,
+            "b": 15.850535074869791,
+            "c": 14.4239501953125
+          }
+        },
+        "b": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "f195392a0e30524fc20a2ee82fb6203078d742d2ab3ac1a242a4ef829eba0e57",
+            "oracle": "8c1b68e08c491374de71f20de28dd6716625de722f032e6c42e7a127b8e961a6",
+            "candidate": "8201e87fc233516fc2d073263b26db867d0e36a6c39d5d5b03bcaa9f4e343c70",
+            "current13": "1c38042359bb1bc420fb9443e836e9b4aa3eec7cff9dbdecad131195d96558cf"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 17.29822285970052,
+              "human_mae": 16.487686327640652,
+              "background_mae": 18.100099931970075
+            },
+            "oracle": {
+              "all_mae": 19.183787027994793,
+              "human_mae": 17.092826284312352,
+              "background_mae": 21.252408753302543
+            },
+            "candidate": {
+              "all_mae": 15.850535074869791,
+              "human_mae": 13.16050542867164,
+              "background_mae": 18.51182548152151
+            },
+            "current13": {
+              "all_mae": 13.581298828125,
+              "human_mae": 8.521300314303653,
+              "background_mae": 18.587238268806086
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 16.003463745117188,
+            "b": 15.850535074869791,
+            "c": 14.4239501953125
+          }
+        },
+        "c": {
+          "guess": "c",
+          "output_sha256": {
+            "generic": "f195392a0e30524fc20a2ee82fb6203078d742d2ab3ac1a242a4ef829eba0e57",
+            "oracle": "8201e87fc233516fc2d073263b26db867d0e36a6c39d5d5b03bcaa9f4e343c70",
+            "candidate": "8201e87fc233516fc2d073263b26db867d0e36a6c39d5d5b03bcaa9f4e343c70",
+            "current13": "a56951c3bfb1a5def2618c430e47bc421d725f99f3e0c241d68b729b0eef12f0"
+          },
+          "scores": {
+            "generic": {
+              "all_mae": 14.421625773111979,
+              "human_mae": 12.490387056938234,
+              "background_mae": 16.33223187946899
+            },
+            "oracle": {
+              "all_mae": 14.4239501953125,
+              "human_mae": 10.188160620738184,
+              "background_mae": 18.61448622726359
+            },
+            "candidate": {
+              "all_mae": 14.4239501953125,
+              "human_mae": 10.188160620738184,
+              "background_mae": 18.61448622726359
+            },
+            "current13": {
+              "all_mae": 9.546351114908854,
+              "human_mae": 7.549974962795135,
+              "background_mae": 11.521398753955266
+            }
+          },
+          "candidate_error_by_goal": {
+            "a": 16.003463745117188,
+            "b": 15.850535074869791,
+            "c": 14.4239501953125
+          }
+        }
+      },
+      "oracle_pass": false,
+      "candidate_pass": false
+    }
+  },
+  "oracle_folds": 0,
+  "candidate_folds": 0,
+  "proceeded": false,
+  "verification": {
+    "report_sha256": "3597e0a7fbf832441ffbdf4ee64e46ec9823f1ae8e80652ed743d4d83f3467f7",
+    "repeated_pngs": 48,
+    "independently_recomputed_region_scores": 144,
+    "goal_comparisons": 36
+  }
+}
