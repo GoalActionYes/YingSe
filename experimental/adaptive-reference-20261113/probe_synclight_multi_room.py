@@ -3,11 +3,12 @@ import argparse
 import json
 import math
 from pathlib import Path
+import shutil
 import sys
 import time
 
 import numpy as np
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 
 from audit_bg_real_skin_regions import BASE, ROOT, digest
 from audit_synclight_existing_direction import BASELINE_SHA
@@ -17,9 +18,10 @@ from probe_synclight_real_pixels import registration, shot
 from probe_synclight_warm_support import warmth_weight
 
 KEYS = ('shape','black','white','pattern','flip','matrix_field','matrix','capture')
+PREVIOUS_SHA = '0340e8564e2f1fcceb66c66c388faefe2e8b4e0cb15028dceffa147a3a12b78b'
 
 
-def prepare(decoder, sources, out):
+def prepare(decoder, sources, out, previous=None):
     started=time.monotonic()
     sys.path.insert(0,str(decoder.resolve()))
     import rawpy
@@ -27,21 +29,43 @@ def prepare(decoder, sources, out):
     assert rawpy.__version__=='0.28.0'
     intake_path=sources/'intake.json'
     intake=json.loads(intake_path.read_bytes())
-    assert intake['selected']==['scene22','scene18','scene37','scene24']
+    assert intake['selected']==(['scene18','scene23','scene36'] if previous is not None
+                                else ['scene22','scene18','scene37','scene24'])
     out.mkdir()
     result={}
+    if previous is not None:
+        pinned=previous/'prepared.json'
+        assert digest(pinned)==PREVIOUS_SHA
+        frozen=json.loads(pinned.read_bytes())['records']
+        for scene,row in frozen.items():
+            if not row['qualified']:
+                continue
+            for suffix,identity in [('png','png_sha256'),('npy','label_sha256')]:
+                filename=f'{scene}.{suffix}'
+                assert digest(previous/filename)==row[identity]
+                shutil.copyfile(previous/filename,out/filename)
+            result[scene]=row
     for scene in intake['selected']:
         if scene in intake['omitted']:
-            result[scene]=dict(qualified=False, reason='missing fixed DNG pair')
+            result[scene]=dict(qualified=False, reason='missing fixed RAW pair')
             continue
-        paths=[sources/f'{scene}_1_{role}.DNG' for role in ('0_ambient','1_camvis')]
+        members={Path(name).stem:name for name in intake['files']}
+        paths=[sources/members[f'{scene}_1_{role}'] for role in ('0_ambient','1_camvis')]
         assert all(digest(p)==intake['files'][p.name]['sha256'] for p in paths)
-        with rawpy.imread(str(paths[0])) as raw:
-            wb=list(raw.camera_whitebalance)
-            if raw.color_desc==b'RGBG' and wb[3]==0:
-                wb[3]=wb[1]
-        assert len(wb)==4 and min(wb)>0
-        first,second=[shot(rawpy,path,wb) for path in paths]
+        try:
+            with rawpy.imread(str(paths[0])) as raw:
+                wb=list(raw.camera_whitebalance)
+                if raw.color_desc==b'RGBG' and wb[3]==0:
+                    wb[3]=wb[1]
+            if len(wb)!=4 or not np.isfinite(wb).all() or min(wb)<=0:
+                result[scene]=dict(qualified=False,reason='invalid camera white balance')
+                continue
+            first,second=[shot(rawpy,path,wb) for path in paths]
+        except (rawpy.LibRawError,UnidentifiedImageError,KeyError,ValueError) as exc:
+            if previous is None:
+                raise
+            result[scene]=dict(qualified=False,reason=f'RAW calibration or decode: {type(exc).__name__}')
+            continue
         capture_match=all(first[1][key]==second[1][key] for key in KEYS)
         ambient,lamp=first[0],second[0]
         aligned=registration(ambient,lamp) if capture_match else None
@@ -66,6 +90,8 @@ def prepare(decoder, sources, out):
                    png_sha256=digest(png),label_sha256=digest(labels))
     assert time.monotonic()-started<=120
     report=dict(records=result,intake_sha256=digest(intake_path))
+    if previous is not None:
+        report['previous_prepared_sha256']=PREVIOUS_SHA
     (out/'prepared.json').write_text(json.dumps(report,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     print({name:(row['qualified'],row.get('coverage'),row.get('alignment')) for name,row in result.items()})
 
@@ -121,10 +147,11 @@ def fit(train_dir,out):
                            passed=ok and mae<=.85*control,prediction_sha256=digest(result))
     assert time.monotonic()-started<=120
     source=Path(__file__)
+    protocol = 'synclight-multi-room-extension-protocol.md' if 'previous_prepared_sha256' in decoded else 'synclight-multi-room-protocol.md'
     record=dict(eligible_training_rooms=eligible,sampled_pixels=len(y),training=rows,held=results,
                 passed=all(row['passed'] for row in results.values()),prepared_sha256=digest(prepared),
                 parent_sha256=BASELINE_SHA,source_sha256=digest(source),
-                protocol_sha256=digest(source.with_name('synclight-multi-room-protocol.md')))
+                protocol_sha256=digest(source.with_name(protocol)))
     (out/'results.json').write_text(json.dumps(record,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     print(results)
 
@@ -135,11 +162,12 @@ if __name__=='__main__':
     preparation=sub.add_parser('prepare')
     for name in ('decoder','sources','out'):
         preparation.add_argument(name,type=Path)
+    preparation.add_argument('--previous',type=Path)
     training=sub.add_parser('fit')
     for name in ('train','out'):
         training.add_argument(name,type=Path)
     args=parser.parse_args()
     if args.phase=='prepare':
-        prepare(args.decoder,args.sources,args.out)
+        prepare(args.decoder,args.sources,args.out,args.previous)
     else:
         fit(args.train,args.out)

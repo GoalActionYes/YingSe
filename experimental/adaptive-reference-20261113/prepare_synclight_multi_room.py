@@ -9,16 +9,17 @@ from audit_synclight_real_intake import REVISION, archive_index
 from fetch_synclight_real_pixels import fetch
 
 
-def run(source, out, proxy):
+def run(source, out, proxy, extend=False):
     manifest_path = source/'manifest.jsonl'
     manifest = [json.loads(line) for line in manifest_path.read_bytes().splitlines()]
     train = json.loads((source/'train.json').read_bytes())
     meta = json.loads((source/'meta.json').read_bytes())
     assert meta['sha']==REVISION and meta['cardData']['license']=='cc-by-4.0' and not meta['gated']
     tree = {row['path']:row for row in train}
-    selection = sorted((r for r in manifest if r['source']=='real' and r['split']=='train' and r['n_raw']>=4
-                        and r['scene'] not in ('scene35','scene25')),key=lambda row:(row['bytes'],row['scene']))[:4]
-    assert len(selection)==4
+    pool = sorted((r for r in manifest if r['source']=='real' and r['split']=='train' and r['n_raw']>=4
+                   and r['scene'] not in ('scene35','scene25')),key=lambda row:(row['bytes'],row['scene']))
+    assert [r['scene'] for r in pool[:6]]==['scene22','scene18','scene37','scene24','scene23','scene36']
+    selection = [pool[1],*pool[4:6]] if extend else pool[:4]
     for row in selection:
         released=tree[row['path']]
         assert released['size']==row['bytes'] and released['lfs']['oid']==row['sha256']
@@ -28,9 +29,12 @@ def run(source, out, proxy):
     omitted=[]
     for row,index in zip(selection,indexed,strict=True):
         scene=row['scene']
-        required={f'{scene}_1_{role}.DNG' for role in ('0_ambient','1_camvis')}
-        matches=[member for member in index['file_members'] if Path(member['path']).name in required]
-        if len(matches)==2 and {Path(m['path']).name for m in matches}==required:
+        required = {f'{scene}_1_{role}' for role in ('0_ambient','1_camvis')}
+        formats = ('.DNG','.CR2') if extend else ('.DNG',)
+        matches = [m for m in index['file_members']
+                   if Path(m['path']).stem in required and Path(m['path']).suffix.upper() in formats]
+        matched_paths = [Path(m['path']) for m in matches]
+        if len(matches)==2 and {p.stem for p in matched_paths}==required and len({p.suffix for p in matched_paths})==1:
             tasks.extend((index,member) for member in matches)
         else:
             omitted.append(scene)
@@ -53,5 +57,6 @@ if __name__=='__main__':
     parser.add_argument('source',type=Path)
     parser.add_argument('out',type=Path)
     parser.add_argument('--proxy')
+    parser.add_argument('--extend',action='store_true')
     args=parser.parse_args()
-    run(args.source,args.out,args.proxy)
+    run(args.source,args.out,args.proxy,args.extend)
