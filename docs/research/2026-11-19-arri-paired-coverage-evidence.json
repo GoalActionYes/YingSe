@@ -1,0 +1,138 @@
+{
+  "source_sha256": "34fb0882f660aa8aac7cb7d72fd10e47572d49f78f0a1107f3d6e9f87f6f3b60",
+  "radius": 6.0,
+  "neighbors": 8,
+  "passed": false,
+  "cases": {
+    "poker_fullshot": {
+      "reference": "sparks_4592",
+      "reference_colors": 65943,
+      "distance_percentiles_50_80_95": [
+        4.123105625617661,
+        8.774964387392123,
+        12.328828005937952
+      ],
+      "arms": {
+        "supported": {
+          "sha256": "567736484dea711e73d33f04b01e6e6d38823e498aa455f22e2e391c2ef8a582",
+          "whole": {
+            "projection": 0.8783168034969484,
+            "response_mae": 0.9754118742766203,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.9754118742766203,
+            "original_matches_authored_mae": 3.2981929072627314,
+            "passed": true,
+            "pixels": 147456,
+            "coverage": 0.6273396809895834,
+            "supported_mae": 0.4076320198908167,
+            "unsupported_mae": 1.9312175089322001
+          },
+          "shared_neutral": {
+            "projection": 0.9938379494446167,
+            "response_mae": 0.2739248015353747,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.2739248015353747,
+            "original_matches_authored_mae": 6.302233272267295,
+            "passed": true,
+            "pixels": 7642,
+            "coverage": 0.9950274797173515,
+            "supported_mae": 0.2398299140803086,
+            "unsupported_mae": 7.0964912280701755
+          }
+        },
+        "extend": {
+          "sha256": "f4e64094e026cbbf2f5ac54f8d913a4a2dbac8d6aff1dc55bc2731cdff6f3d49",
+          "whole": {
+            "projection": 1.033793294475665,
+            "response_mae": 0.6321026837384259,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.6321026837384259,
+            "original_matches_authored_mae": 3.2981929072627314,
+            "passed": true,
+            "pixels": 147456,
+            "coverage": 0.6273396809895834,
+            "supported_mae": 0.4076320198908167,
+            "unsupported_mae": 1.0099785869835551
+          },
+          "shared_neutral": {
+            "projection": 0.99976035987695,
+            "response_mae": 0.24116723370845328,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.24116723370845328,
+            "original_matches_authored_mae": 6.302233272267295,
+            "passed": true,
+            "pixels": 7642,
+            "coverage": 0.9950274797173515,
+            "supported_mae": 0.2398299140803086,
+            "unsupported_mae": 0.5087719298245614
+          }
+        }
+      }
+    },
+    "sparks_4592": {
+      "reference": "poker_fullshot",
+      "reference_colors": 49759,
+      "distance_percentiles_50_80_95": [
+        3.7416573867739413,
+        8.06225774829855,
+        12.68857754044952
+      ],
+      "arms": {
+        "supported": {
+          "sha256": "426fe8848ff006cb40ac382cc9be214c233e3bc3ea3bc6cb4de4e98b9d880a44",
+          "whole": {
+            "projection": 0.5559107937576111,
+            "response_mae": 2.9212528935185187,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 2.9212528935185187,
+            "original_matches_authored_mae": 6.771064814814815,
+            "passed": false,
+            "pixels": 138240,
+            "coverage": 0.6888888888888889,
+            "supported_mae": 0.3192694332437276,
+            "unsupported_mae": 8.682787698412698
+          },
+          "shared_neutral": {
+            "projection": 0.4496044459506515,
+            "response_mae": 4.361809746398298,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 4.361809746398298,
+            "original_matches_authored_mae": 8.19385239706515,
+            "passed": false,
+            "pixels": 57334,
+            "coverage": 0.5533191474517738,
+            "supported_mae": 0.3055205312486866,
+            "unsupported_mae": 9.386476636730444
+          }
+        },
+        "extend": {
+          "sha256": "d86ff254d07903dc92ca0d6b05071434364f5ea232556a1888986ecdfd0429c9",
+          "whole": {
+            "projection": 0.9860969413684328,
+            "response_mae": 0.4156225887345679,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.4156225887345679,
+            "original_matches_authored_mae": 6.771064814814815,
+            "passed": true,
+            "pixels": 138240,
+            "coverage": 0.6888888888888889,
+            "supported_mae": 0.3192694332437276,
+            "unsupported_mae": 0.6289760044642857
+          },
+          "shared_neutral": {
+            "projection": 0.9799147284925857,
+            "response_mae": 0.4556400506970849,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.4556400506970849,
+            "original_matches_authored_mae": 8.19385239706515,
+            "passed": true,
+            "pixels": 57334,
+            "coverage": 0.5533191474517738,
+            "supported_mae": 0.3055205312486866,
+            "unsupported_mae": 0.6415983339841208
+          }
+        }
+      }
+    }
+  }
+}
