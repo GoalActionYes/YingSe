@@ -1,0 +1,1113 @@
+{
+  "cases": {
+    "785-3553": {
+      "reference_stats": {
+        "C1": {
+          "cold_rgb_range": [
+            2.7882352843880653,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "cold_y_sha256": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "chroma_hist_l1": [
+            1.455413818359375,
+            1.151641845703125
+          ]
+        },
+        "F1": {
+          "cold_rgb_range": [
+            0.9999999403953552,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "6699ae4d99a4417f3078b41c7f0e541739cb103837a73715b09c3ebeb999376c",
+          "cold_y_sha256": "6699ae4d99a4417f3078b41c7f0e541739cb103837a73715b09c3ebeb999376c",
+          "chroma_hist_l1": [
+            1.342071533203125,
+            0.885467529296875
+          ]
+        }
+      },
+      "y_histogram_sha256": {
+        "per_background_y": {
+          "C1": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "F1": "6699ae4d99a4417f3078b41c7f0e541739cb103837a73715b09c3ebeb999376c",
+          "C1-cool": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "F1-cool": "6699ae4d99a4417f3078b41c7f0e541739cb103837a73715b09c3ebeb999376c"
+        },
+        "common_background_y": {
+          "C1": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "F1": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "C1-cool": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388",
+          "F1-cool": "c5d4bc59b3d754de4acc3b65539645bba6208bbb709546197d8eb7d333f8f388"
+        }
+      },
+      "output_sha256": {
+        "per_background_y": {
+          "C1": "1bb934abd126fd0ca08176c148db4febe245cd6d8ecce5464f7c2aee6864dece",
+          "F1": "0ceac6ef5462602ab6b2e32d1b1283db0e10a0a48af9f06819a9d1010f19db97",
+          "C1-cool": "0be31ca645bbcc30e8e89e54897b2c51baa243ddbe2e1606e167f75da4b943a6",
+          "F1-cool": "8005e095aba64daa71d5e998c2344db9b67a9c5dee2272ff5ac2f233f5d19bd9"
+        },
+        "common_background_y": {
+          "C1": "1bb934abd126fd0ca08176c148db4febe245cd6d8ecce5464f7c2aee6864dece",
+          "F1": "b64f8c4b0fd98f5084fe7b5d6bb4f310666843b84f333ac57bb5cef0a59a3d58",
+          "C1-cool": "0be31ca645bbcc30e8e89e54897b2c51baa243ddbe2e1606e167f75da4b943a6",
+          "F1-cool": "2c4d34f771e671241c35da16c610caee6514858dcd644d2d4b43fb9415d2674f"
+        }
+      },
+      "scores": {
+        "per_background_y": {
+          "person": {
+            "pixels": 6816,
+            "swap_mae": [
+              3.343114241001565,
+              3.136199139280125
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 0.7761639280125195,
+            "response": {
+              "C1": {
+                "projection": 0.5010679239960507,
+                "error": 3.6415297339593113
+              },
+              "F1": {
+                "projection": 0.4563882760079792,
+                "error": 3.921606025039124
+              }
+            }
+          },
+          "background": {
+            "pixels": 58720,
+            "swap_mae": [
+              2.8759763851044506,
+              4.713652361489555
+            ],
+            "control_mae": 6.999721843778383,
+            "interaction_mae": 2.1645152134423253,
+            "response": {
+              "C1": {
+                "projection": 0.8514813742453733,
+                "error": 1.3482459128065396
+              },
+              "F1": {
+                "projection": 0.6966111979301249,
+                "error": 2.9567211625794734
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 38738,
+            "swap_mae": [
+              2.765897396182904,
+              4.321381244944671
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 2.0631679487841397,
+            "response": {
+              "C1": {
+                "projection": 0.9084460213291581,
+                "error": 1.0482816183936532
+              },
+              "F1": {
+                "projection": 0.745874286529712,
+                "error": 2.6711755898600855
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              2.924560546875,
+              4.549591064453125
+            ],
+            "control_mae": 6.9997507731119795,
+            "interaction_mae": 2.0201212565104165,
+            "response": {
+              "C1": {
+                "projection": 0.8150338535371394,
+                "error": 1.5867563883463542
+              },
+              "F1": {
+                "projection": 0.6716249141127651,
+                "error": 3.057072957356771
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 1479,
+            "swap_mae": [
+              2.58034708136128,
+              2.686049132296597
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.0229885057471264,
+            "response": {
+              "C1": {
+                "projection": 0.7427881615869671,
+                "error": 2.0912778904665315
+              },
+              "F1": {
+                "projection": 0.6647775582039831,
+                "error": 2.6765832769889566
+              }
+            }
+          }
+        },
+        "common_background_y": {
+          "person": {
+            "pixels": 6816,
+            "swap_mae": [
+              3.1149256651017216,
+              3.312255477308294
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 0.8765160406885759,
+            "response": {
+              "C1": {
+                "projection": 0.5010679239960507,
+                "error": 3.6415297339593113
+              },
+              "F1": {
+                "projection": 0.4774741078804731,
+                "error": 3.9843016431924885
+              }
+            }
+          },
+          "background": {
+            "pixels": 58720,
+            "swap_mae": [
+              4.555228201634877,
+              4.495532470481381
+            ],
+            "control_mae": 6.999721843778383,
+            "interaction_mae": 1.8356267029972753,
+            "response": {
+              "C1": {
+                "projection": 0.8514813742453733,
+                "error": 1.3482459128065396
+              },
+              "F1": {
+                "projection": 0.706285375783628,
+                "error": 2.937505676657584
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 38738,
+            "swap_mae": [
+              4.460030633142306,
+              4.79481818025367
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.9882027982859207,
+            "response": {
+              "C1": {
+                "projection": 0.9084460213291581,
+                "error": 1.0482816183936532
+              },
+              "F1": {
+                "projection": 0.77918356331087,
+                "error": 2.68857452630492
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              4.4054311116536455,
+              4.372467041015625
+            ],
+            "control_mae": 6.9997507731119795,
+            "interaction_mae": 1.7358754475911458,
+            "response": {
+              "C1": {
+                "projection": 0.8150338535371394,
+                "error": 1.5867563883463542
+              },
+              "F1": {
+                "projection": 0.6824860512450186,
+                "error": 3.0463765462239585
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 1479,
+            "swap_mae": [
+              2.495379761099842,
+              3.212756366914582
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.6103222898354743,
+            "response": {
+              "C1": {
+                "projection": 0.7427881615869671,
+                "error": 2.0912778904665315
+              },
+              "F1": {
+                "projection": 0.7276723920291811,
+                "error": 2.9894072571557357
+              }
+            }
+          }
+        }
+      },
+      "checks": {
+        "per_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": true
+        },
+        "common_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": true
+        }
+      },
+      "old_person_interaction": 1.354215571205008
+    },
+    "9483-19432": {
+      "reference_stats": {
+        "C1": {
+          "cold_rgb_range": [
+            0.9999999403953552,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "cold_y_sha256": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "chroma_hist_l1": [
+            1.256072998046875,
+            1.213470458984375
+          ]
+        },
+        "F1": {
+          "cold_rgb_range": [
+            0.9999999403953552,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "588ea6f09fcba30e1b03be80739645d0f5b3837bfe8403f6a3fe29caf77ded4c",
+          "cold_y_sha256": "588ea6f09fcba30e1b03be80739645d0f5b3837bfe8403f6a3fe29caf77ded4c",
+          "chroma_hist_l1": [
+            1.315338134765625,
+            1.39556884765625
+          ]
+        }
+      },
+      "y_histogram_sha256": {
+        "per_background_y": {
+          "C1": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "F1": "588ea6f09fcba30e1b03be80739645d0f5b3837bfe8403f6a3fe29caf77ded4c",
+          "C1-cool": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "F1-cool": "588ea6f09fcba30e1b03be80739645d0f5b3837bfe8403f6a3fe29caf77ded4c"
+        },
+        "common_background_y": {
+          "C1": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "F1": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "C1-cool": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8",
+          "F1-cool": "9dd6a2f86775ebdb436341532917515236e3cf1e1c09680fc6357877d114dad8"
+        }
+      },
+      "output_sha256": {
+        "per_background_y": {
+          "C1": "dc66cb9c89c153f097fbab626d35a7be831df16a998ff783abd34623cf77f7ae",
+          "F1": "d48f7b62cfb3b060620f02f088791a1acdb2453c6a0db5e58ff9baadd350a7ae",
+          "C1-cool": "3d42b6a486fca77515eacba931b80ad3315a93e0a3134fc203f92d32ada92d36",
+          "F1-cool": "9737bf5c08003d10d02c994bcd739c1b83415a2c479620da2ad1dc70cb53189e"
+        },
+        "common_background_y": {
+          "C1": "dc66cb9c89c153f097fbab626d35a7be831df16a998ff783abd34623cf77f7ae",
+          "F1": "9a0102b06f5684d5b5ec3ed618842bc837a253f52dfcb357db3212a480d91fc0",
+          "C1-cool": "3d42b6a486fca77515eacba931b80ad3315a93e0a3134fc203f92d32ada92d36",
+          "F1-cool": "cfa266e4f425453535a9d6ca389949b671d9af5cb0d56c1fdc88279ba77b77ac"
+        }
+      },
+      "scores": {
+        "per_background_y": {
+          "person": {
+            "pixels": 8008,
+            "swap_mae": [
+              3.516983016983017,
+              2.9105477855477857
+            ],
+            "control_mae": 6.996919746919747,
+            "interaction_mae": 0.9756493506493507,
+            "response": {
+              "C1": {
+                "projection": 0.4073484295262575,
+                "error": 4.358391608391608
+              },
+              "F1": {
+                "projection": 0.49904080518747995,
+                "error": 3.713161838161838
+              }
+            }
+          },
+          "background": {
+            "pixels": 57528,
+            "swap_mae": [
+              3.070574329022389,
+              2.298984842163816
+            ],
+            "control_mae": 6.996569786306957,
+            "interaction_mae": 1.0046586010290641,
+            "response": {
+              "C1": {
+                "projection": 0.6567255231267747,
+                "error": 2.75927664209892
+              },
+              "F1": {
+                "projection": 0.6931250931501522,
+                "error": 2.879670189588838
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 41635,
+            "swap_mae": [
+              3.1490492774508625,
+              2.295264400944718
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.0214963372162844,
+            "response": {
+              "C1": {
+                "projection": 0.6963422673334738,
+                "error": 2.4604699571674473
+              },
+              "F1": {
+                "projection": 0.7157457178185035,
+                "error": 2.756518954405348
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              3.1251220703125,
+              2.373713175455729
+            ],
+            "control_mae": 6.996612548828125,
+            "interaction_mae": 1.0011138916015625,
+            "response": {
+              "C1": {
+                "projection": 0.626241114020143,
+                "error": 2.954676310221354
+              },
+              "F1": {
+                "projection": 0.6693997992588807,
+                "error": 2.9815165201822915
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 610,
+            "swap_mae": [
+              2.9852459016393444,
+              2.3863387978142074
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.073224043715847,
+            "response": {
+              "C1": {
+                "projection": 0.561507070991346,
+                "error": 3.3491803278688526
+              },
+              "F1": {
+                "projection": 0.647562091043411,
+                "error": 2.995081967213115
+              }
+            }
+          }
+        },
+        "common_background_y": {
+          "person": {
+            "pixels": 8008,
+            "swap_mae": [
+              0.739010989010989,
+              0.6658341658341659
+            ],
+            "control_mae": 6.996919746919747,
+            "interaction_mae": 1.0183150183150182,
+            "response": {
+              "C1": {
+                "projection": 0.4073484295262575,
+                "error": 4.358391608391608
+              },
+              "F1": {
+                "projection": 0.5148999574286931,
+                "error": 3.575840825840826
+              }
+            }
+          },
+          "background": {
+            "pixels": 57528,
+            "swap_mae": [
+              0.8390406990219256,
+              0.9087980345802623
+            ],
+            "control_mae": 6.996569786306957,
+            "interaction_mae": 0.9474632642655171,
+            "response": {
+              "C1": {
+                "projection": 0.6567255231267747,
+                "error": 2.75927664209892
+              },
+              "F1": {
+                "projection": 0.6859227756490344,
+                "error": 3.062369628702545
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 41635,
+            "swap_mae": [
+              0.8461951082822945,
+              0.9050878667787519
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 0.927088587326368,
+            "response": {
+              "C1": {
+                "projection": 0.6963422673334738,
+                "error": 2.4604699571674473
+              },
+              "F1": {
+                "projection": 0.7085872473380198,
+                "error": 2.9363516272367
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              0.8268178304036459,
+              0.8791097005208334
+            ],
+            "control_mae": 6.996612548828125,
+            "interaction_mae": 0.9561208089192709,
+            "response": {
+              "C1": {
+                "projection": 0.626241114020143,
+                "error": 2.954676310221354
+              },
+              "F1": {
+                "projection": 0.665016566975556,
+                "error": 3.1251118977864585
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 610,
+            "swap_mae": [
+              0.8442622950819673,
+              0.985792349726776
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 0.9065573770491804,
+            "response": {
+              "C1": {
+                "projection": 0.561507070991346,
+                "error": 3.3491803278688526
+              },
+              "F1": {
+                "projection": 0.6352845986069091,
+                "error": 3.1868852459016392
+              }
+            }
+          }
+        }
+      },
+      "checks": {
+        "per_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": true
+        },
+        "common_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": true,
+          "neutral_person_swap": true,
+          "interaction": true
+        }
+      },
+      "old_person_interaction": 0.7825507825507826
+    },
+    "872-1268": {
+      "reference_stats": {
+        "C1": {
+          "cold_rgb_range": [
+            4.5764706283807755,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "cold_y_sha256": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "chroma_hist_l1": [
+            1.032470703125,
+            1.151947021484375
+          ]
+        },
+        "F1": {
+          "cold_rgb_range": [
+            0.9999999403953552,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "c3ff8872e7afa93bb11a1dafa6a73e47405c1a32c4cc45f8e4c97abe8167fcea",
+          "cold_y_sha256": "c3ff8872e7afa93bb11a1dafa6a73e47405c1a32c4cc45f8e4c97abe8167fcea",
+          "chroma_hist_l1": [
+            1.089752197265625,
+            0.954315185546875
+          ]
+        }
+      },
+      "y_histogram_sha256": {
+        "per_background_y": {
+          "C1": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "F1": "c3ff8872e7afa93bb11a1dafa6a73e47405c1a32c4cc45f8e4c97abe8167fcea",
+          "C1-cool": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "F1-cool": "c3ff8872e7afa93bb11a1dafa6a73e47405c1a32c4cc45f8e4c97abe8167fcea"
+        },
+        "common_background_y": {
+          "C1": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "F1": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "C1-cool": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d",
+          "F1-cool": "ceedfcaf889ed183ed469307d7f6a00ce9a3ad6d71560edcef5e5882bed4e83d"
+        }
+      },
+      "output_sha256": {
+        "per_background_y": {
+          "C1": "959f23364056eed8ce7c32b1e26577b46f670c8430807bafcb1b880753ba393f",
+          "F1": "849cc4afc8bf6e911a59a8d3a9ab4aeb6d20765b523a787dcd1a0a425c7c78df",
+          "C1-cool": "03e0ad59172c989bc88ac00d0041dbd8c99240144fc5cad7c6f157740e2beaec",
+          "F1-cool": "bfbdbfeb833f7cfa543afea76c9b5d4947a2adfae7ac8563b8950aadf6df4748"
+        },
+        "common_background_y": {
+          "C1": "959f23364056eed8ce7c32b1e26577b46f670c8430807bafcb1b880753ba393f",
+          "F1": "a160bd19d4ca684e46952e70d339f6c07f7c03a6ded6fe0530af080d2823314b",
+          "C1-cool": "03e0ad59172c989bc88ac00d0041dbd8c99240144fc5cad7c6f157740e2beaec",
+          "F1-cool": "dae395bc74ba82068bd614e752f9306aa8b45e4f1356afe483bbd7f2903cdb35"
+        }
+      },
+      "scores": {
+        "per_background_y": {
+          "person": {
+            "pixels": 12299,
+            "swap_mae": [
+              5.176382903759113,
+              2.938612895357346
+            ],
+            "control_mae": 6.360869447380546,
+            "interaction_mae": 3.246415697753205,
+            "response": {
+              "C1": {
+                "projection": 0.4458204607892233,
+                "error": 3.8769276634956773
+              },
+              "F1": {
+                "projection": 0.8276030181690112,
+                "error": 1.9072011274629375
+              }
+            }
+          },
+          "background": {
+            "pixels": 53237,
+            "swap_mae": [
+              4.6291927293674195,
+              4.372153452172988
+            ],
+            "control_mae": 6.9988416577443004,
+            "interaction_mae": 3.033116065894021,
+            "response": {
+              "C1": {
+                "projection": 0.5413060914042062,
+                "error": 3.4252806631979014
+              },
+              "F1": {
+                "projection": 0.8677624144146991,
+                "error": 2.142876821258398
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 10335,
+            "swap_mae": [
+              5.4049669408159975,
+              3.8302854378326074
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 3.0499274310595066,
+            "response": {
+              "C1": {
+                "projection": 0.4226842825433804,
+                "error": 4.228447024673439
+              },
+              "F1": {
+                "projection": 0.7895226645570803,
+                "error": 1.8341557813255926
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              4.731882731119792,
+              4.1031239827473955
+            ],
+            "control_mae": 6.8791147867838545,
+            "interaction_mae": 3.073145548502604,
+            "response": {
+              "C1": {
+                "projection": 0.5253385875472311,
+                "error": 3.510040283203125
+              },
+              "F1": {
+                "projection": 0.8610467933278736,
+                "error": 2.0986480712890625
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 3908,
+            "swap_mae": [
+              5.024138519276697,
+              3.05424769703173
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 3.3323950870010237,
+            "response": {
+              "C1": {
+                "projection": 0.4874649118568272,
+                "error": 3.985841009894234
+              },
+              "F1": {
+                "projection": 0.8809386270487303,
+                "error": 1.4605083589218697
+              }
+            }
+          }
+        },
+        "common_background_y": {
+          "person": {
+            "pixels": 12299,
+            "swap_mae": [
+              2.7413881887416323,
+              2.1155920535544896
+            ],
+            "control_mae": 6.360869447380546,
+            "interaction_mae": 1.6882673388080331,
+            "response": {
+              "C1": {
+                "projection": 0.4458204607892233,
+                "error": 3.8769276634956773
+              },
+              "F1": {
+                "projection": 0.6547185094366976,
+                "error": 2.93148494457544
+              }
+            }
+          },
+          "background": {
+            "pixels": 53237,
+            "swap_mae": [
+              3.4734489171065235,
+              3.2998228049414253
+            ],
+            "control_mae": 6.9988416577443004,
+            "interaction_mae": 2.082774511461327,
+            "response": {
+              "C1": {
+                "projection": 0.5413060914042062,
+                "error": 3.4252806631979014
+              },
+              "F1": {
+                "projection": 0.7169017350996945,
+                "error": 2.6097576247096317
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 10335,
+            "swap_mae": [
+              2.793581680374133,
+              2.5863570391872277
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.9790678922754394,
+            "response": {
+              "C1": {
+                "projection": 0.4226842825433804,
+                "error": 4.228447024673439
+              },
+              "F1": {
+                "projection": 0.6550755692872463,
+                "error": 2.769230769230769
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              3.336064656575521,
+              3.077580769856771
+            ],
+            "control_mae": 6.8791147867838545,
+            "interaction_mae": 2.0087381998697915,
+            "response": {
+              "C1": {
+                "projection": 0.5253385875472311,
+                "error": 3.510040283203125
+              },
+              "F1": {
+                "projection": 0.7065031977572888,
+                "error": 2.670135498046875
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 3908,
+            "swap_mae": [
+              2.722534970999659,
+              2.125298532923917
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.6849198225861481,
+            "response": {
+              "C1": {
+                "projection": 0.4874649118568272,
+                "error": 3.985841009894234
+              },
+              "F1": {
+                "projection": 0.6940215075491674,
+                "error": 2.8875810303650633
+              }
+            }
+          }
+        }
+      },
+      "checks": {
+        "per_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": false
+        },
+        "common_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": false,
+          "interaction": false
+        }
+      },
+      "old_person_interaction": 2.6100767000027103
+    },
+    "8021-8690": {
+      "reference_stats": {
+        "C1": {
+          "cold_rgb_range": [
+            1.8941176123917103,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "cold_y_sha256": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "chroma_hist_l1": [
+            1.09661865234375,
+            0.9180908203125
+          ]
+        },
+        "F1": {
+          "cold_rgb_range": [
+            0.9999999403953552,
+            254.00000005960464
+          ],
+          "raw_luma_max_difference": 5.960464477539063e-08,
+          "base_y_sha256": "16cabea0f5e17f5f2af5778407516a26e5ad90f5f28458d3870fe978753f68ce",
+          "cold_y_sha256": "16cabea0f5e17f5f2af5778407516a26e5ad90f5f28458d3870fe978753f68ce",
+          "chroma_hist_l1": [
+            1.00201416015625,
+            0.857391357421875
+          ]
+        }
+      },
+      "y_histogram_sha256": {
+        "per_background_y": {
+          "C1": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "F1": "16cabea0f5e17f5f2af5778407516a26e5ad90f5f28458d3870fe978753f68ce",
+          "C1-cool": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "F1-cool": "16cabea0f5e17f5f2af5778407516a26e5ad90f5f28458d3870fe978753f68ce"
+        },
+        "common_background_y": {
+          "C1": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "F1": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "C1-cool": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8",
+          "F1-cool": "e10322736be6e37bda635eaff728bcece67705efe81794986a950f81da9965f8"
+        }
+      },
+      "output_sha256": {
+        "per_background_y": {
+          "C1": "e21ac86798214d673619210b67ac130eab169999f700443fd6c2b47477865922",
+          "F1": "95d80610a69ff85717366776383b796aab16d40137f21b9517e1a868f650d74e",
+          "C1-cool": "a1ec2edc07430b487bf7d0fa82d200c4a36ee8a7375f3d6c65596001f03ba1f9",
+          "F1-cool": "361e6aeff8854df275a9472df8412e2f63476136d15595cfbdb82ef55b7b6551"
+        },
+        "common_background_y": {
+          "C1": "e21ac86798214d673619210b67ac130eab169999f700443fd6c2b47477865922",
+          "F1": "94f92e79026a1202512565708ff024bbec7b72a780f8404822f5827c5ecb95b6",
+          "C1-cool": "a1ec2edc07430b487bf7d0fa82d200c4a36ee8a7375f3d6c65596001f03ba1f9",
+          "F1-cool": "bbcaa7256ab2e1a860bdd9bb30a2d77a39c0753ab053f9c984668d831cd7c2d1"
+        }
+      },
+      "scores": {
+        "per_background_y": {
+          "person": {
+            "pixels": 24235,
+            "swap_mae": [
+              9.780757857093734,
+              10.422529399628637
+            ],
+            "control_mae": 6.815047108176879,
+            "interaction_mae": 1.5652293514888935,
+            "response": {
+              "C1": {
+                "projection": 0.715210287000522,
+                "error": 2.9077229901657384
+              },
+              "F1": {
+                "projection": 0.6924523938990486,
+                "error": 2.9904683309263462
+              }
+            }
+          },
+          "background": {
+            "pixels": 41301,
+            "swap_mae": [
+              23.87811433137212,
+              19.92666037141958
+            ],
+            "control_mae": 6.990064808761693,
+            "interaction_mae": 4.642462248694543,
+            "response": {
+              "C1": {
+                "projection": 1.3349157011652615,
+                "error": 5.0270857041395285
+              },
+              "F1": {
+                "projection": 0.84466568711719,
+                "error": 1.89620913133661
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 673,
+            "swap_mae": [
+              20.047052996532937,
+              18.705794947994058
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 1.8692421991084696,
+            "response": {
+              "C1": {
+                "projection": 0.9655058064269271,
+                "error": 2.631996037642397
+              },
+              "F1": {
+                "projection": 0.8768055404983133,
+                "error": 1.4779593858345716
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              18.664957682291668,
+              16.412063598632812
+            ],
+            "control_mae": 6.925343831380208,
+            "interaction_mae": 3.504511515299479,
+            "response": {
+              "C1": {
+                "projection": 1.1084178750101517,
+                "error": 4.2433522542317705
+              },
+              "F1": {
+                "projection": 0.78903283441364,
+                "error": 2.3008626302083335
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 142,
+            "swap_mae": [
+              17.586854460093896,
+              15.967136150234742
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 2.032863849765258,
+            "response": {
+              "C1": {
+                "projection": 0.8934594692619234,
+                "error": 2.6502347417840375
+              },
+              "F1": {
+                "projection": 0.8380583932781237,
+                "error": 1.5422535211267605
+              }
+            }
+          }
+        },
+        "common_background_y": {
+          "person": {
+            "pixels": 24235,
+            "swap_mae": [
+              7.328450587992573,
+              8.969671962038374
+            ],
+            "control_mae": 6.815047108176879,
+            "interaction_mae": 2.268743552713018,
+            "response": {
+              "C1": {
+                "projection": 0.715210287000522,
+                "error": 2.9077229901657384
+              },
+              "F1": {
+                "projection": 0.8947220952645908,
+                "error": 3.0248676157073104
+              }
+            }
+          },
+          "background": {
+            "pixels": 41301,
+            "swap_mae": [
+              20.29423016391855,
+              18.327586902657725
+            ],
+            "control_mae": 6.990064808761693,
+            "interaction_mae": 4.437624593431959,
+            "response": {
+              "C1": {
+                "projection": 1.3349157011652615,
+                "error": 5.0270857041395285
+              },
+              "F1": {
+                "projection": 1.034285931324702,
+                "error": 2.409433185637152
+              }
+            }
+          },
+          "neutral_proxy": {
+            "pixels": 673,
+            "swap_mae": [
+              14.977711738484398,
+              16.512134720158496
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 3.610698365527489,
+            "response": {
+              "C1": {
+                "projection": 0.9655058064269271,
+                "error": 2.631996037642397
+              },
+              "F1": {
+                "projection": 0.9910719410237933,
+                "error": 2.537890044576523
+              }
+            }
+          },
+          "whole": {
+            "pixels": 65536,
+            "swap_mae": [
+              15.499526977539062,
+              14.867060343424479
+            ],
+            "control_mae": 6.925343831380208,
+            "interaction_mae": 3.6355794270833335,
+            "response": {
+              "C1": {
+                "projection": 1.1084178750101517,
+                "error": 4.2433522542317705
+              },
+              "F1": {
+                "projection": 0.9832763633026287,
+                "error": 2.637018839518229
+              }
+            }
+          },
+          "neutral_person": {
+            "pixels": 142,
+            "swap_mae": [
+              10.492957746478874,
+              12.211267605633802
+            ],
+            "control_mae": 7.0,
+            "interaction_mae": 3.1173708920187795,
+            "response": {
+              "C1": {
+                "projection": 0.8934594692619234,
+                "error": 2.6502347417840375
+              },
+              "F1": {
+                "projection": 0.9160974430272623,
+                "error": 2.3544600938967135
+              }
+            }
+          }
+        }
+      },
+      "checks": {
+        "per_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": null,
+          "interaction": false
+        },
+        "common_background_y": {
+          "person_cold": false,
+          "whole_cold": false,
+          "person_swap": false,
+          "neutral_person_swap": null,
+          "interaction": false
+        }
+      },
+      "old_person_interaction": 2.212763908947115
+    }
+  },
+  "comparison_sha256": "0a5b7a2b240ac9a8821ed2c97d1f3cf87c0d7917cccb49e3b974812810d618b0",
+  "model_y_weights": [
+    0.2125999927520752,
+    0.7152000069618225,
+    0.0722000002861023
+  ],
+  "reference_cool_rgb8": [
+    -8.0,
+    0.661912739276886,
+    17.0
+  ],
+  "cross_sha256": "b824303d1a13792fb896db79ef1465a7da12be7c1834d701840272e2dbf7bb36",
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "source_sha256": "26dc8ddad39aa8c722280c35b22abb7488c72de17e1d22c093c2093dd98a6d84",
+  "protocol_sha256": "12fc77fff577c39eabf082224a792ac5291e04043b457a3a5386621881caf245",
+  "verified": {
+    "output_files": 32,
+    "y_histograms_recomputed": 8,
+    "region_scores_recomputed": 40,
+    "eligible_groups": {
+      "per_background_y": 0,
+      "common_background_y": 0
+    },
+    "repeated_report_and_outputs_byte_identical": true
+  }
+}
