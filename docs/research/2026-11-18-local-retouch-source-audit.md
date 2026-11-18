@@ -17,3 +17,9 @@
 两套发布 API 响应加两个只读文本文件共 307,763 字节。PowerShell 与 Python 分别统计原图哈希，均得出 4 个重复组。Python 另核对四类文件的配对文件名及 EditChromin 加载清单身份。[小型证据](2026-11-18-local-retouch-source-audit-evidence.json)保存请求结果哈希，无原图、修图、蒙版或指令内容。复核可从 Hugging Face 的 `/api/datasets/<repo>` 确定版本，再读取 `/api/datasets/<repo>/tree/<revision>?recursive=true`。本机响应位于 `outputs/adaptive-reference-20261113/local-retouch-source-metadata-v1`。
 
 本轮仍未取得合格的跨场景同款局部调色配对。若来源后续提供可核验的分组和许可，可以先做小样身份、局部调色差分和拍摄组核查。当前未消费独立样张，未训练或升级软件。
+
+## 2026-11-19 核查 RefRetouch 的独立配对来源
+
+RefRetouch 的 VCIRB 有 25 个留出组，每组使用一个 Lightroom 预设。作者先按语义和色彩分布把照片聚为相似组，并在挑选预设时排除涉及蒙版的操作。若后续数据可获得，可用于相似内容上的全局颜色与明暗迁移对照。当前白球服与白墙问题还需要不同场景的受控比较，以及分区编辑依据。论文另用 PPR10K 的 21 个专家 A 人像组，与本项目已核查的人像数据同源，后续仍须核对拍摄分组和已消费记录。[作者论文第 6、7 节](https://arxiv.org/html/2602.17044v1#S6)
+
+作者仓库提交 `886252c835f10a86200617016d37bcba224522b1` 对应的递归树未截断，仅有 README。项目页和源码仓库均未提供可核验的 VCIRB 配对下载、分组清单或素材许可。当前只登记论文中的数据构成，未准入新照片或运行模型。[作者仓库固定版本](https://github.com/tememuruts/RefRetouch/tree/886252c835f10a86200617016d37bcba224522b1) · [项目页](https://tememuruts.github.io/RefRetouch-Project-Page/)
