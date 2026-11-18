@@ -29,8 +29,11 @@ def prepare(decoder, sources, out, previous=None):
     assert rawpy.__version__=='0.28.0'
     intake_path=sources/'intake.json'
     intake=json.loads(intake_path.read_bytes())
-    assert intake['selected']==(['scene18','scene23','scene36'] if previous is not None
-                                else ['scene22','scene18','scene37','scene24'])
+    if intake.get('batch')=='next':
+        assert previous is not None and intake['selected']==['scene2','scene21','scene1','scene12']
+    else:
+        assert intake['selected']==(['scene18','scene23','scene36'] if previous is not None
+                                    else ['scene22','scene18','scene37','scene24'])
     out.mkdir()
     result={}
     if previous is not None:
@@ -92,6 +95,8 @@ def prepare(decoder, sources, out, previous=None):
     report=dict(records=result,intake_sha256=digest(intake_path))
     if previous is not None:
         report['previous_prepared_sha256']=PREVIOUS_SHA
+    if intake.get('batch')=='next':
+        report['batch']='next'
     (out/'prepared.json').write_text(json.dumps(report,indent=2,allow_nan=False)+'\n',encoding='utf-8')
     print({name:(row['qualified'],row.get('coverage'),row.get('alignment')) for name,row in result.items()})
 
@@ -147,7 +152,12 @@ def fit(train_dir,out):
                            passed=ok and mae<=.85*control,prediction_sha256=digest(result))
     assert time.monotonic()-started<=120
     source=Path(__file__)
-    protocol = 'synclight-multi-room-extension-protocol.md' if 'previous_prepared_sha256' in decoded else 'synclight-multi-room-protocol.md'
+    if decoded.get('batch')=='next':
+        protocol='synclight-multi-room-next-protocol.md'
+    elif 'previous_prepared_sha256' in decoded:
+        protocol='synclight-multi-room-extension-protocol.md'
+    else:
+        protocol='synclight-multi-room-protocol.md'
     record=dict(eligible_training_rooms=eligible,sampled_pixels=len(y),training=rows,held=results,
                 passed=all(row['passed'] for row in results.values()),prepared_sha256=digest(prepared),
                 parent_sha256=BASELINE_SHA,source_sha256=digest(source),
