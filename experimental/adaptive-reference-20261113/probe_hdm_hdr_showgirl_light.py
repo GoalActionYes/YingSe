@@ -4,11 +4,9 @@ from hashlib import sha256
 import json
 from pathlib import Path
 
-import cv2
 import numpy as np
 from PIL import Image, ImageDraw
 
-from audit_hdm_hdr_still_alignment import gradients, registration, verified_image
 from probe_hdm_hdr_display import REC2020_TO_REC709, SOURCE_TO_REC709, decode_pq, digest, display, json_to
 from probe_hdm_hdr_equal_luminance import Y_WEIGHTS, uv
 
@@ -32,6 +30,9 @@ def material_measurement(linear, box):
 
 
 def run(source, regions, output):
+    import cv2
+    from audit_hdm_hdr_still_alignment import gradients, registration, verified_image
+
     cv2.setNumThreads(1)
     manifest_path = source / "manifest.json"
     manifest = json.loads(manifest_path.read_bytes())
