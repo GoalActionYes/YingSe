@@ -54,24 +54,28 @@ def pool(rows):
     return torch.from_numpy(np.stack(rows).reshape(shape).mean(axis=(2, 4)).astype(np.float32) / 255)
 
 
-def fit(features, expanded, C10, truth, active):
+def fit(features, expanded, C10, truth, active, *, paired_targets=True):
     difference = C10 - expanded
     light = (difference * torch.tensor(LUMA, dtype=torch.float32)).sum(-1, keepdim=True)
     residual = difference - light
     bias = torch.full((2,), float(np.log(1. / 9)), requires_grad=True)
     slope = torch.zeros((features.shape[1], 2), requires_grad=True)
     optimizer = torch.optim.Adam([bias, slope] if active else [bias], lr=.04)
-    train_delta = truth.reshape(64, 4, 32, 32, 3)
-    train_delta = train_delta[:, 1:] - train_delta[:, :1]
+    if paired_targets:
+        train_delta = truth.reshape(64, 4, 32, 32, 3)
+        train_delta = train_delta[:, 1:] - train_delta[:, :1]
     losses = []
     for step in range(180):
         optimizer.zero_grad()
         logits = bias + (features @ slope if active else torch.zeros((features.shape[0], 2)))
         weights = logits.sigmoid()[:, None, None, :]
         prediction = (expanded + weights[..., :1] * light + weights[..., 1:] * residual).clamp(0, 1)
-        stack = prediction.reshape(64, 4, 32, 32, 3)
         rgb = (prediction - truth).abs().mean()
-        paired = (stack[:, 1:] - stack[:, :1] - train_delta).abs().mean()
+        if paired_targets:
+            stack = prediction.reshape(64, 4, 32, 32, 3)
+            paired = (stack[:, 1:] - stack[:, :1] - train_delta).abs().mean()
+        else:
+            paired = rgb.new_zeros(())
         loss = rgb + .5 * paired + (.002 * slope.square().sum() if active else 0)
         if step == 0 or step == 179:
             losses.append([rgb.item(), paired.item(), loss.item()])
