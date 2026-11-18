@@ -1,0 +1,1803 @@
+{
+  "inputs_sha256": "7e5137f4e559daf39e4f4f09a7500637beb897713257c4d7101de20a0d9dbf97",
+  "edits_sha256": "5ab0a185c1e4ed6010e196597e5e44875ce9974ba5fa8d7ae742854b07a3aa28",
+  "locator_sha256": "c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0",
+  "opencv": "5.0.0",
+  "negative_pixel_exact": 15,
+  "groups_passing": {
+    "global": 0,
+    "face": 0
+  },
+  "groups": [
+    {
+      "group": 1,
+      "fit": {
+        "nominal": {
+          "constant_only": [
+            3.4564002403846152,
+            -0.5466271033653847,
+            -5.988138521634616
+          ],
+          "constant_with_face": [
+            -0.007966587346753692,
+            0.013588482661465012,
+            0.025199823792731807
+          ],
+          "face": [
+            11.75031879605575,
+            -1.9001197210531395,
+            -20.395831648575335
+          ]
+        },
+        "ue1": {
+          "constant_only": [
+            3.0308819110576923,
+            -0.47383563701923076,
+            -5.243659855769231
+          ],
+          "constant_with_face": [
+            -0.02295783562965103,
+            0.013142802126165913,
+            0.04777552523890737
+          ],
+          "face": [
+            11.233445165078233,
+            -1.791333549394424,
+            -19.464364252115306
+          ]
+        },
+        "oe1": {
+          "constant_only": [
+            2.2088040865384615,
+            -0.3145057091346154,
+            -3.7945988581730767
+          ],
+          "constant_with_face": [
+            0.07395696184257451,
+            -0.0011599373617862253,
+            -0.11882107580399826
+          ],
+          "face": [
+            7.0806968616582315,
+            -1.0392811724735629,
+            -12.19153723313161
+          ]
+        }
+      },
+      "edit": {
+        "global": {
+          "nominal": {
+            "source": {
+              "pixels": 33784,
+              "qualified": true,
+              "luma_delta": 0.07514826545110077,
+              "mean_log_chroma_change": [
+                0.17916258516258707,
+                -0.5402764685574986
+              ],
+              "chroma_norm": 0.5692081292454483,
+              "mean_absolute_log_chroma_change": 0.35971952686004277
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.327,
+              "mean_log_chroma_change": [
+                0.03456977834034389,
+                -0.12209443321512474
+              ],
+              "chroma_norm": 0.12689412987456536,
+              "mean_absolute_log_chroma_change": 0.0783321057777343
+            },
+            "outside_rgb_change": 2.6646243162617425,
+            "projection": 0.3111337704032097,
+            "increment_rgb_mae": 6.094916144731567,
+            "passes": false
+          },
+          "ue1": {
+            "source": {
+              "pixels": 29417,
+              "qualified": true,
+              "luma_delta": 0.07497100316143691,
+              "mean_log_chroma_change": [
+                0.2259043146464702,
+                -0.7951712781494606
+              ],
+              "chroma_norm": 0.8266378414818295,
+              "mean_absolute_log_chroma_change": 0.5105377963979654
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.1419999999999999,
+              "mean_log_chroma_change": [
+                0.023103026460282252,
+                -0.09713487013529704
+              ],
+              "chroma_norm": 0.09984454330520783,
+              "mean_absolute_log_chroma_change": 0.060118948297789646
+            },
+            "outside_rgb_change": 1.9991206546867686,
+            "projection": 0.24414543716277098,
+            "increment_rgb_mae": 6.760891506629613,
+            "passes": false
+          },
+          "oe1": {
+            "source": {
+              "pixels": 17096,
+              "qualified": true,
+              "luma_delta": 0.10108575105287754,
+              "mean_log_chroma_change": [
+                0.1750440823858738,
+                -0.5111065396708995
+              ],
+              "chroma_norm": 0.5402502435655844,
+              "mean_absolute_log_chroma_change": 0.3430753110283866
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.25599999999999995,
+              "mean_log_chroma_change": [
+                0.023103026460282252,
+                -0.0724521867367181
+              ],
+              "chroma_norm": 0.07604649363748978,
+              "mean_absolute_log_chroma_change": 0.04777760659850018
+            },
+            "outside_rgb_change": 1.666174989717333,
+            "projection": 0.18662134507915323,
+            "increment_rgb_mae": 7.093975970246243,
+            "passes": false
+          }
+        },
+        "face": {
+          "nominal": {
+            "source": {
+              "pixels": 33784,
+              "qualified": true,
+              "luma_delta": 0.07514826545110077,
+              "mean_log_chroma_change": [
+                0.17916258516258707,
+                -0.5402764685574986
+              ],
+              "chroma_norm": 0.5692081292454483,
+              "mean_absolute_log_chroma_change": 0.35971952686004277
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": -0.22090679829109477,
+              "mean_log_chroma_change": [
+                0.1323451387529321,
+                -0.37153673628597966
+              ],
+              "chroma_norm": 0.39440433841626343,
+              "mean_absolute_log_chroma_change": 0.2519409375194559
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.9676681807258679,
+            "increment_rgb_mae": 0.5880514883791669,
+            "passes": true
+          },
+          "ue1": {
+            "source": {
+              "pixels": 29417,
+              "qualified": true,
+              "luma_delta": 0.07497100316143691,
+              "mean_log_chroma_change": [
+                0.2259043146464702,
+                -0.7951712781494606
+              ],
+              "chroma_norm": 0.8266378414818295,
+              "mean_absolute_log_chroma_change": 0.5105377963979654
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.2669624414119209,
+              "mean_log_chroma_change": [
+                0.11703866882143145,
+                -0.3822759241229707
+              ],
+              "chroma_norm": 0.39979111066101,
+              "mean_absolute_log_chroma_change": 0.24965729647220106
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.9809242875590978,
+            "increment_rgb_mae": 0.3730349661951968,
+            "passes": true
+          },
+          "oe1": {
+            "source": {
+              "pixels": 17096,
+              "qualified": true,
+              "luma_delta": 0.10108575105287754,
+              "mean_log_chroma_change": [
+                0.1750440823858738,
+                -0.5111065396708995
+              ],
+              "chroma_norm": 0.5402502435655844,
+              "mean_absolute_log_chroma_change": 0.3430753110283866
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.05235192251856137,
+              "mean_log_chroma_change": [
+                0.08367308587443267,
+                -0.22516909114150113
+              ],
+              "chroma_norm": 0.24021304066440652,
+              "mean_absolute_log_chroma_change": 0.1544210885079669
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.5891186956576195,
+            "increment_rgb_mae": 3.2735907752291675,
+            "passes": false
+          }
+        }
+      },
+      "exposure_on": {
+        "global": {
+          "ue1": {
+            "pixels": 48293,
+            "qualified": true,
+            "luma_delta": -0.18500000000000003,
+            "mean_log_chroma_change": [
+              -0.011484458089122653,
+              0.025058888627974694
+            ],
+            "chroma_norm": 0.027565207724050515,
+            "mean_absolute_log_chroma_change": 0.018271673358548672
+          },
+          "oe1": {
+            "pixels": 48293,
+            "qualified": true,
+            "luma_delta": -0.07099999999999995,
+            "mean_log_chroma_change": [
+              -0.011484458089122653,
+              0.04983541532252856
+            ],
+            "chroma_norm": 0.05114158188763552,
+            "mean_absolute_log_chroma_change": 0.03065993670582561
+          }
+        },
+        "face": {
+          "ue1": {
+            "pixels": 48218,
+            "qualified": true,
+            "luma_delta": 0.4878692397030154,
+            "mean_log_chroma_change": [
+              -0.015306469931500677,
+              -0.01073918783699104
+            ],
+            "chroma_norm": 0.018698079504647278,
+            "mean_absolute_log_chroma_change": 0.01673691920355378
+          },
+          "oe1": {
+            "pixels": 48218,
+            "qualified": true,
+            "luma_delta": 0.2732587208096562,
+            "mean_log_chroma_change": [
+              -0.04867205287849945,
+              0.14636764514447848
+            ],
+            "chroma_norm": 0.15424803491956524,
+            "mean_absolute_log_chroma_change": 0.09751984901148897
+          }
+        }
+      },
+      "output_sha256": {
+        "nominal-global": "565fc095ed0af9b6148fd932489b481724a1e7908f83b232c6cf8bab18d7adc5",
+        "nominal-face": "aaddcd8c012b782b1585b9b97002d357a3a2b6ce13527b2cb134d2b95665773e",
+        "ue1-global": "67c69aea428ec14f597eac451fb2781a45f91104cd94cff7c9344d09c724f5d5",
+        "ue1-face": "653641f2b6b689f540528016603acc0fdd109150ecbca812b5d280971b8d7c7c",
+        "oe1-global": "d822f72221fda53a7f5ab4fff8d7e7a028391a5a2c22adfa66c617e6c3e7a5b4",
+        "oe1-face": "0de34b16f51385ee5f95972ce7abf24bc3c5aa3daa2d855f7fe0797aa694278e"
+      },
+      "passes": {
+        "global": false,
+        "face": false
+      }
+    },
+    {
+      "group": 2,
+      "fit": {
+        "nominal": {
+          "constant_only": [
+            3.6224233774038463,
+            -0.5754807692307692,
+            -6.278425480769231
+          ],
+          "constant_with_face": [
+            -0.0012048215404802463,
+            0.013205876200494689,
+            0.015386603341047092
+          ],
+          "face": [
+            11.861058443617118,
+            -1.9269213956529336,
+            -20.601250697994942
+          ]
+        },
+        "ue1": {
+          "constant_only": [
+            3.284149639423077,
+            -0.5147836538461539,
+            -5.68369140625
+          ],
+          "constant_with_face": [
+            -0.020344700183916268,
+            0.014068451239216653,
+            0.044693905809300674
+          ],
+          "face": [
+            11.319102655185644,
+            -1.8115120353283065,
+            -19.621816451157425
+          ]
+        },
+        "oe1": {
+          "constant_only": [
+            2.6625901442307693,
+            -0.39332181490384616,
+            -4.574444110576923
+          ],
+          "constant_with_face": [
+            0.05809239002036926,
+            0.0017888375882743834,
+            -0.09068582761410252
+          ],
+          "face": [
+            8.585561772044814,
+            -1.302457223578011,
+            -14.780424996360058
+          ]
+        }
+      },
+      "edit": {
+        "global": {
+          "nominal": {
+            "source": {
+              "pixels": 38109,
+              "qualified": true,
+              "luma_delta": 0.07149657561205978,
+              "mean_log_chroma_change": [
+                0.19526078644169606,
+                -0.5234046299836901
+              ],
+              "chroma_norm": 0.558640475986294,
+              "mean_absolute_log_chroma_change": 0.3593327082126931
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.327,
+              "mean_log_chroma_change": [
+                0.03456977834034389,
+                -0.12209443321512474
+              ],
+              "chroma_norm": 0.12689412987456536,
+              "mean_absolute_log_chroma_change": 0.0783321057777343
+            },
+            "outside_rgb_change": 2.6646243162617425,
+            "projection": 0.3111337704032097,
+            "increment_rgb_mae": 6.094916144731567,
+            "passes": false
+          },
+          "ue1": {
+            "source": {
+              "pixels": 32187,
+              "qualified": true,
+              "luma_delta": 0.07232230403579047,
+              "mean_log_chroma_change": [
+                0.253446335639099,
+                -0.7584822699882758
+              ],
+              "chroma_norm": 0.7997064454757474,
+              "mean_absolute_log_chroma_change": 0.5059643028136874
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.327,
+              "mean_log_chroma_change": [
+                0.03456977834034389,
+                -0.12209443321512474
+              ],
+              "chroma_norm": 0.12689412987456536,
+              "mean_absolute_log_chroma_change": 0.0783321057777343
+            },
+            "outside_rgb_change": 2.6646243162617425,
+            "projection": 0.3111337704032097,
+            "increment_rgb_mae": 6.094916144731567,
+            "passes": false
+          },
+          "oe1": {
+            "source": {
+              "pixels": 21835,
+              "qualified": true,
+              "luma_delta": 0.09780929700022864,
+              "mean_log_chroma_change": [
+                0.18088571643215975,
+                -0.46287548072778306
+              ],
+              "chroma_norm": 0.4969641366015781,
+              "mean_absolute_log_chroma_change": 0.3218805985799715
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.1419999999999999,
+              "mean_log_chroma_change": [
+                0.023103026460282252,
+                -0.09713487013529704
+              ],
+              "chroma_norm": 0.09984454330520783,
+              "mean_absolute_log_chroma_change": 0.060118948297789646
+            },
+            "outside_rgb_change": 1.9991206546867686,
+            "projection": 0.24414543716277098,
+            "increment_rgb_mae": 6.760891506629613,
+            "passes": false
+          }
+        },
+        "face": {
+          "nominal": {
+            "source": {
+              "pixels": 38109,
+              "qualified": true,
+              "luma_delta": 0.07149657561205978,
+              "mean_log_chroma_change": [
+                0.19526078644169606,
+                -0.5234046299836901
+              ],
+              "chroma_norm": 0.558640475986294,
+              "mean_absolute_log_chroma_change": 0.3593327082126931
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": -0.23761578663569638,
+              "mean_log_chroma_change": [
+                0.13293163616590767,
+                -0.371583833869247
+              ],
+              "chroma_norm": 0.3946458735204429,
+              "mean_absolute_log_chroma_change": 0.25225773501757737
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.9682290128576966,
+            "increment_rgb_mae": 0.5889847498168043,
+            "passes": true
+          },
+          "ue1": {
+            "source": {
+              "pixels": 32187,
+              "qualified": true,
+              "luma_delta": 0.07232230403579047,
+              "mean_log_chroma_change": [
+                0.253446335639099,
+                -0.7584822699882758
+              ],
+              "chroma_norm": 0.7997064454757474,
+              "mean_absolute_log_chroma_change": 0.5059643028136874
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.2644760670289104,
+              "mean_log_chroma_change": [
+                0.11713300824786686,
+                -0.38354021643368374
+              ],
+              "chroma_norm": 0.40102772877095644,
+              "mean_absolute_log_chroma_change": 0.2503366123407753
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.9839433325334334,
+            "increment_rgb_mae": 0.3558145644088653,
+            "passes": true
+          },
+          "oe1": {
+            "source": {
+              "pixels": 21835,
+              "qualified": true,
+              "luma_delta": 0.09780929700022864,
+              "mean_log_chroma_change": [
+                0.18088571643215975,
+                -0.46287548072778306
+              ],
+              "chroma_norm": 0.4969641366015781,
+              "mean_absolute_log_chroma_change": 0.3218805985799715
+            },
+            "expected": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.5364211912563771,
+              "mean_log_chroma_change": [
+                0.12769347313649412,
+                -0.38694488118513537
+              ],
+              "chroma_norm": 0.40747020033008435,
+              "mean_absolute_log_chroma_change": 0.25731917716081476
+            },
+            "actual": {
+              "pixels": 48218,
+              "qualified": true,
+              "luma_delta": 0.11843929652826736,
+              "mean_log_chroma_change": [
+                0.09529405021375091,
+                -0.27701295536020765
+              ],
+              "chroma_norm": 0.292945615163527,
+              "mean_absolute_log_chroma_change": 0.18615350278697929
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.7188806923150275,
+            "increment_rgb_mae": 2.2844304340011337,
+            "passes": false
+          }
+        }
+      },
+      "exposure_on": {
+        "global": {
+          "ue1": {
+            "pixels": 48293,
+            "qualified": true,
+            "luma_delta": 0.0,
+            "mean_log_chroma_change": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "mean_absolute_log_chroma_change": 0.0
+          },
+          "oe1": {
+            "pixels": 48293,
+            "qualified": true,
+            "luma_delta": -0.18500000000000003,
+            "mean_log_chroma_change": [
+              -0.011484458089122653,
+              0.025058888627974694
+            ],
+            "chroma_norm": 0.027565207724050515,
+            "mean_absolute_log_chroma_change": 0.018271673358548672
+          }
+        },
+        "face": {
+          "ue1": {
+            "pixels": 48218,
+            "qualified": true,
+            "luma_delta": 0.5020918536646064,
+            "mean_log_chroma_change": [
+              -0.01579862791804082,
+              -0.011956382564436723
+            ],
+            "chroma_norm": 0.019812918213122095,
+            "mean_absolute_log_chroma_change": 0.016928210472445013
+          },
+          "oe1": {
+            "pixels": 48218,
+            "qualified": true,
+            "luma_delta": 0.3560550831639637,
+            "mean_log_chroma_change": [
+              -0.037637585952156764,
+              0.09457087850903936
+            ],
+            "chroma_norm": 0.10178525894390343,
+            "mean_absolute_log_chroma_change": 0.06610423223059807
+          }
+        }
+      },
+      "output_sha256": {
+        "nominal-global": "565fc095ed0af9b6148fd932489b481724a1e7908f83b232c6cf8bab18d7adc5",
+        "nominal-face": "aa75abc55f5a70e34fc9fc32a0f14403aaf1ba058daafbd2e50161c48ceb0b00",
+        "ue1-global": "565fc095ed0af9b6148fd932489b481724a1e7908f83b232c6cf8bab18d7adc5",
+        "ue1-face": "aee1c8ef77748cd1b50be2cb227d3f140c865d72ee23a86afbb3f0a0973ea21a",
+        "oe1-global": "67c69aea428ec14f597eac451fb2781a45f91104cd94cff7c9344d09c724f5d5",
+        "oe1-face": "77e39bc7b88bc44e6ff436ca08fde4c4b25ab28d32d2adcc6bef903d861dfbc4"
+      },
+      "passes": {
+        "global": false,
+        "face": false
+      }
+    },
+    {
+      "group": 3,
+      "fit": {
+        "nominal": {
+          "constant_only": [
+            4.377058293269231,
+            -0.6990159254807692,
+            -7.59326171875
+          ],
+          "constant_with_face": [
+            0.002945833940080393,
+            0.016889834776867223,
+            0.012542547585155762
+          ],
+          "face": [
+            12.033600284903116,
+            -1.969524981513918,
+            -20.924292467854286
+          ]
+        },
+        "ue1": {
+          "constant_only": [
+            4.4964017427884615,
+            -0.7160081129807693,
+            -7.796612079326923
+          ],
+          "constant_with_face": [
+            0.004896317698471891,
+            0.016898381127986924,
+            0.009629388656973752
+          ],
+          "face": [
+            11.932648176661427,
+            -1.9471234058266598,
+            -20.73895591869425
+          ]
+        },
+        "oe1": {
+          "constant_only": [
+            2.4979642427884614,
+            -0.34870042067307694,
+            -4.271439302884615
+          ],
+          "constant_with_face": [
+            0.0544581187148484,
+            0.002459962135316225,
+            -0.08666080546401396
+          ],
+          "face": [
+            6.731917780514436,
+            -0.9674552486486275,
+            -11.529164791834027
+          ]
+        }
+      },
+      "edit": {
+        "global": {
+          "nominal": {
+            "source": {
+              "pixels": 48109,
+              "qualified": true,
+              "luma_delta": 0.07192654181130315,
+              "mean_log_chroma_change": [
+                0.16525191551165574,
+                -0.5072793765260257
+              ],
+              "chroma_norm": 0.5335171613255799,
+              "mean_absolute_log_chroma_change": 0.33626564601884074
+            },
+            "expected": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": 0.5285550922168424,
+              "mean_log_chroma_change": [
+                0.13941577850312833,
+                -0.39712629176837155
+              ],
+              "chroma_norm": 0.4208872187526382,
+              "mean_absolute_log_chroma_change": 0.26827103513574996
+            },
+            "actual": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": -0.07500000000000005,
+              "mean_log_chroma_change": [
+                0.07024831299393823,
+                -0.1325931054007378
+              ],
+              "chroma_norm": 0.15005251440181025,
+              "mean_absolute_log_chroma_change": 0.10142070919733803
+            },
+            "outside_rgb_change": 3.5843507631217792,
+            "projection": 0.3525335799802446,
+            "increment_rgb_mae": 5.05118804399541,
+            "passes": false
+          },
+          "ue1": {
+            "source": {
+              "pixels": 47848,
+              "qualified": true,
+              "luma_delta": 0.07228022069887945,
+              "mean_log_chroma_change": [
+                0.22546429803974632,
+                -0.8804139382998095
+              ],
+              "chroma_norm": 0.9088249844954398,
+              "mean_absolute_log_chroma_change": 0.5529391181697779
+            },
+            "expected": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": 0.5285550922168424,
+              "mean_log_chroma_change": [
+                0.13941577850312833,
+                -0.39712629176837155
+              ],
+              "chroma_norm": 0.4208872187526382,
+              "mean_absolute_log_chroma_change": 0.26827103513574996
+            },
+            "actual": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": -0.07500000000000005,
+              "mean_log_chroma_change": [
+                0.07024831299393823,
+                -0.1325931054007378
+              ],
+              "chroma_norm": 0.15005251440181025,
+              "mean_absolute_log_chroma_change": 0.10142070919733803
+            },
+            "outside_rgb_change": 3.5843507631217792,
+            "projection": 0.3525335799802446,
+            "increment_rgb_mae": 5.05118804399541,
+            "passes": false
+          },
+          "oe1": {
+            "source": {
+              "pixels": 13520,
+              "qualified": true,
+              "luma_delta": 0.08659193786982214,
+              "mean_log_chroma_change": [
+                0.1441286697164799,
+                -0.38947454031740386
+              ],
+              "chroma_norm": 0.4152872391365947,
+              "mean_absolute_log_chroma_change": 0.2668016050169419
+            },
+            "expected": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": 0.5285550922168424,
+              "mean_log_chroma_change": [
+                0.13941577850312833,
+                -0.39712629176837155
+              ],
+              "chroma_norm": 0.4208872187526382,
+              "mean_absolute_log_chroma_change": 0.26827103513574996
+            },
+            "actual": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": 0.2559999999999999,
+              "mean_log_chroma_change": [
+                0.025504572144547363,
+                -0.07467807554921467
+              ],
+              "chroma_norm": 0.07891323189434479,
+              "mean_absolute_log_chroma_change": 0.05009132384688101
+            },
+            "outside_rgb_change": 1.6647445252587574,
+            "projection": 0.18748578830683793,
+            "increment_rgb_mae": 7.046262349220565,
+            "passes": false
+          }
+        },
+        "face": {
+          "nominal": {
+            "source": {
+              "pixels": 48109,
+              "qualified": true,
+              "luma_delta": 0.07192654181130315,
+              "mean_log_chroma_change": [
+                0.16525191551165574,
+                -0.5072793765260257
+              ],
+              "chroma_norm": 0.5335171613255799,
+              "mean_absolute_log_chroma_change": 0.33626564601884074
+            },
+            "expected": {
+              "pixels": 35709,
+              "qualified": true,
+              "luma_delta": 0.5285291943207594,
+              "mean_log_chroma_change": [
+                0.13932208312252964,
+                -0.3964870984235163
+              ],
+              "chroma_norm": 0.4202530928641694,
+              "mean_absolute_log_chroma_change": 0.26790459077302303
+            },
+            "actual": {
+              "pixels": 35709,
+              "qualified": true,
+              "luma_delta": -0.08729160715785957,
+              "mean_log_chroma_change": [
+                0.15494171593874553,
+                -0.405005991842909
+              ],
+              "chroma_norm": 0.43363208918010365,
+              "mean_absolute_log_chroma_change": 0.27997385389082724
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 1.0314461661489018,
+            "increment_rgb_mae": 0.5873309249768965,
+            "passes": true
+          },
+          "ue1": {
+            "source": {
+              "pixels": 47848,
+              "qualified": true,
+              "luma_delta": 0.07228022069887945,
+              "mean_log_chroma_change": [
+                0.22546429803974632,
+                -0.8804139382998095
+              ],
+              "chroma_norm": 0.9088249844954398,
+              "mean_absolute_log_chroma_change": 0.5529391181697779
+            },
+            "expected": {
+              "pixels": 35711,
+              "qualified": true,
+              "luma_delta": 0.528526840469323,
+              "mean_log_chroma_change": [
+                0.1393288801211562,
+                -0.39654358302796455
+              ],
+              "chroma_norm": 0.42030863669031565,
+              "mean_absolute_log_chroma_change": 0.26793623157456037
+            },
+            "actual": {
+              "pixels": 35711,
+              "qualified": true,
+              "luma_delta": -0.08438117106773844,
+              "mean_log_chroma_change": [
+                0.15428832299302386,
+                -0.4038338233081076
+              ],
+              "chroma_norm": 0.4323038786081424,
+              "mean_absolute_log_chroma_change": 0.2790610731505657
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 1.0281625649717538,
+            "increment_rgb_mae": 0.5791306133497615,
+            "passes": true
+          },
+          "oe1": {
+            "source": {
+              "pixels": 13520,
+              "qualified": true,
+              "luma_delta": 0.08659193786982214,
+              "mean_log_chroma_change": [
+                0.1441286697164799,
+                -0.38947454031740386
+              ],
+              "chroma_norm": 0.4152872391365947,
+              "mean_absolute_log_chroma_change": 0.2668016050169419
+            },
+            "expected": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": 0.5285550922168424,
+              "mean_log_chroma_change": [
+                0.13941577850312833,
+                -0.39712629176837155
+              ],
+              "chroma_norm": 0.4208872187526382,
+              "mean_absolute_log_chroma_change": 0.26827103513574996
+            },
+            "actual": {
+              "pixels": 35731,
+              "qualified": true,
+              "luma_delta": -0.102343875066469,
+              "mean_log_chroma_change": [
+                0.08028940570659965,
+                -0.2053102063942143
+              ],
+              "chroma_norm": 0.2204510592361802,
+              "mean_absolute_log_chroma_change": 0.14279980605040699
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.523453333865926,
+            "increment_rgb_mae": 3.8551118076740085,
+            "passes": false
+          }
+        }
+      },
+      "exposure_on": {
+        "global": {
+          "ue1": {
+            "pixels": 35841,
+            "qualified": true,
+            "luma_delta": 0.0,
+            "mean_log_chroma_change": [
+              0.0,
+              0.0
+            ],
+            "chroma_norm": 0.0,
+            "mean_absolute_log_chroma_change": 0.0
+          },
+          "oe1": {
+            "pixels": 35841,
+            "qualified": true,
+            "luma_delta": 0.331,
+            "mean_log_chroma_change": [
+              -0.04490427792423183,
+              0.058400044606206965
+            ],
+            "chroma_norm": 0.07366789929069253,
+            "mean_absolute_log_chroma_change": 0.051652161265219404
+          }
+        },
+        "face": {
+          "ue1": {
+            "pixels": 35709,
+            "qualified": true,
+            "luma_delta": 0.0029032736845053067,
+            "mean_log_chroma_change": [
+              -0.0006600236089569066,
+              0.0012269652065667969
+            ],
+            "chroma_norm": 0.0013932245987298682,
+            "mean_absolute_log_chroma_change": 0.001207338031326212
+          },
+          "oe1": {
+            "pixels": 35709,
+            "qualified": true,
+            "luma_delta": -0.015042622308101498,
+            "mean_log_chroma_change": [
+              -0.07470884369008131,
+              0.19996714120430498
+            ],
+            "chroma_norm": 0.21346725483532936,
+            "mean_absolute_log_chroma_change": 0.13733799244719316
+          }
+        }
+      },
+      "output_sha256": {
+        "nominal-global": "ffe2cce184bdcb25c13c687068df123f6d83609749f22c9fa39964e6cadd410a",
+        "nominal-face": "fa2f223cdbbc5c06536599afe59c1126c8f7073730745e0e14d26ca7dc668ad4",
+        "ue1-global": "ffe2cce184bdcb25c13c687068df123f6d83609749f22c9fa39964e6cadd410a",
+        "ue1-face": "a983b410f9ca4f15814a6f932bff347c2f3f96b63f4d250694c13b36b97a7e57",
+        "oe1-global": "586e106e371452a6bb3c455fa77e1819b26f6cfcc72df1ee05abedbd7758f245",
+        "oe1-face": "ce487a0cafa5a96c9893b4479fd2062f28d1b9450be367f6c002e4674d580fc9"
+      },
+      "passes": {
+        "global": false,
+        "face": false
+      }
+    },
+    {
+      "group": 4,
+      "fit": {
+        "nominal": {
+          "constant_only": [
+            3.2520282451923075,
+            -0.51513671875,
+            -5.63251953125
+          ],
+          "constant_with_face": [
+            0.001967885985664237,
+            0.012599823285588082,
+            0.009508678636488554
+          ],
+          "face": [
+            12.028358726058123,
+            -1.9531343233277745,
+            -20.88094735188876
+          ]
+        },
+        "ue1": {
+          "constant_only": [
+            3.208856670673077,
+            -0.5040790264423077,
+            -5.551908052884615
+          ],
+          "constant_with_face": [
+            0.00028057785838812003,
+            0.012781760598479226,
+            0.01170803490219286
+          ],
+          "face": [
+            11.747453160853917,
+            -1.8923652457677271,
+            -20.36988293424398
+          ]
+        },
+        "oe1": {
+          "constant_only": [
+            2.5939152644230767,
+            -0.3853590745192308,
+            -4.444486177884615
+          ],
+          "constant_with_face": [
+            0.03152282613367471,
+            0.006310377789120631,
+            -0.04680313587404722
+          ],
+          "face": [
+            9.544888529677447,
+            -1.4589651479219687,
+            -16.381329338009483
+          ]
+        }
+      },
+      "edit": {
+        "global": {
+          "nominal": {
+            "source": {
+              "pixels": 35533,
+              "qualified": true,
+              "luma_delta": 0.08117808797455851,
+              "mean_log_chroma_change": [
+                0.17942029031555473,
+                -0.5173817822614819
+              ],
+              "chroma_norm": 0.5476089381967623,
+              "mean_absolute_log_chroma_change": 0.3484010362885184
+            },
+            "expected": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.5349357844942355,
+              "mean_log_chroma_change": [
+                0.1387704234947821,
+                -0.41595319565346633
+              ],
+              "chroma_norm": 0.4384909251184704,
+              "mean_absolute_log_chroma_change": 0.2773618095741242
+            },
+            "actual": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.32700000000000007,
+              "mean_log_chroma_change": [
+                0.03727349217550688,
+                -0.13037416845131117
+              ],
+              "chroma_norm": 0.13559770285048503,
+              "mean_absolute_log_chroma_change": 0.08382383031340902
+            },
+            "outside_rgb_change": 2.6148790361915912,
+            "projection": 0.3089441123735927,
+            "increment_rgb_mae": 6.092655015154519,
+            "passes": false
+          },
+          "ue1": {
+            "source": {
+              "pixels": 32572,
+              "qualified": true,
+              "luma_delta": 0.07818135208154207,
+              "mean_log_chroma_change": [
+                0.24028275268213412,
+                -0.8430610828960106
+              ],
+              "chroma_norm": 0.8766343540669038,
+              "mean_absolute_log_chroma_change": 0.5416719177890724
+            },
+            "expected": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.5349357844942355,
+              "mean_log_chroma_change": [
+                0.1387704234947821,
+                -0.41595319565346633
+              ],
+              "chroma_norm": 0.4384909251184704,
+              "mean_absolute_log_chroma_change": 0.2773618095741242
+            },
+            "actual": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.4409999999999999,
+              "mean_log_chroma_change": [
+                0.03727349217550688,
+                -0.10361133980491857
+              ],
+              "chroma_norm": 0.11011186564184568,
+              "mean_absolute_log_chroma_change": 0.07044241599021273
+            },
+            "outside_rgb_change": 2.296284102363997,
+            "projection": 0.25104721925030493,
+            "increment_rgb_mae": 6.425988348487853,
+            "passes": false
+          },
+          "oe1": {
+            "source": {
+              "pixels": 17922,
+              "qualified": true,
+              "luma_delta": 0.10535950228769077,
+              "mean_log_chroma_change": [
+                0.15052280481776023,
+                -0.39301416027404457
+              ],
+              "chroma_norm": 0.42085299683632754,
+              "mean_absolute_log_chroma_change": 0.27176848254590236
+            },
+            "expected": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.5349357844942355,
+              "mean_log_chroma_change": [
+                0.1387704234947821,
+                -0.41595319565346633
+              ],
+              "chroma_norm": 0.4384909251184704,
+              "mean_absolute_log_chroma_change": 0.2773618095741242
+            },
+            "actual": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.14199999999999993,
+              "mean_log_chroma_change": [
+                0.024918320094435426,
+                -0.10361133980491857
+              ],
+              "chroma_norm": 0.10656562491018878,
+              "mean_absolute_log_chroma_change": 0.064264829949677
+            },
+            "outside_rgb_change": 1.9776891685364029,
+            "projection": 0.24213010168114427,
+            "increment_rgb_mae": 6.759321681821186,
+            "passes": false
+          }
+        },
+        "face": {
+          "nominal": {
+            "source": {
+              "pixels": 35533,
+              "qualified": true,
+              "luma_delta": 0.08117808797455851,
+              "mean_log_chroma_change": [
+                0.17942029031555473,
+                -0.5173817822614819
+              ],
+              "chroma_norm": 0.5476089381967623,
+              "mean_absolute_log_chroma_change": 0.3484010362885184
+            },
+            "expected": {
+              "pixels": 35206,
+              "qualified": true,
+              "luma_delta": 0.5349452650116456,
+              "mean_log_chroma_change": [
+                0.1383955229604924,
+                -0.4132949231443916
+              ],
+              "chroma_norm": 0.43585090830745865,
+              "mean_absolute_log_chroma_change": 0.27584522305244197
+            },
+            "actual": {
+              "pixels": 35206,
+              "qualified": true,
+              "luma_delta": -0.08920911208316784,
+              "mean_log_chroma_change": [
+                0.15568030307760666,
+                -0.4223595575407842
+              ],
+              "chroma_norm": 0.4501377040555284,
+              "mean_absolute_log_chroma_change": 0.2890199303091954
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 1.0323136934954629,
+            "increment_rgb_mae": 0.5947944479160749,
+            "passes": true
+          },
+          "ue1": {
+            "source": {
+              "pixels": 32572,
+              "qualified": true,
+              "luma_delta": 0.07818135208154207,
+              "mean_log_chroma_change": [
+                0.24028275268213412,
+                -0.8430610828960106
+              ],
+              "chroma_norm": 0.8766343540669038,
+              "mean_absolute_log_chroma_change": 0.5416719177890724
+            },
+            "expected": {
+              "pixels": 35288,
+              "qualified": true,
+              "luma_delta": 0.5349968544547721,
+              "mean_log_chroma_change": [
+                0.13870191471378582,
+                -0.4156445034258984
+              ],
+              "chroma_norm": 0.43817641923480094,
+              "mean_absolute_log_chroma_change": 0.27717320906984216
+            },
+            "actual": {
+              "pixels": 35288,
+              "qualified": true,
+              "luma_delta": -0.2073835581500795,
+              "mean_log_chroma_change": [
+                0.1446452377568305,
+                -0.39825991853217896
+              ],
+              "chroma_norm": 0.42371359137392306,
+              "mean_absolute_log_chroma_change": 0.2714525781445047
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.966658831241466,
+            "increment_rgb_mae": 0.5797816065895867,
+            "passes": true
+          },
+          "oe1": {
+            "source": {
+              "pixels": 17922,
+              "qualified": true,
+              "luma_delta": 0.10535950228769077,
+              "mean_log_chroma_change": [
+                0.15052280481776023,
+                -0.39301416027404457
+              ],
+              "chroma_norm": 0.42085299683632754,
+              "mean_absolute_log_chroma_change": 0.27176848254590236
+            },
+            "expected": {
+              "pixels": 35299,
+              "qualified": true,
+              "luma_delta": 0.5349896031049037,
+              "mean_log_chroma_change": [
+                0.1387617085036659,
+                -0.4159201124501275
+              ],
+              "chroma_norm": 0.4384567842870983,
+              "mean_absolute_log_chroma_change": 0.2773409104768967
+            },
+            "actual": {
+              "pixels": 35299,
+              "qualified": true,
+              "luma_delta": 0.27895855406668735,
+              "mean_log_chroma_change": [
+                0.11516716893496168,
+                -0.3250128436643022
+              ],
+              "chroma_norm": 0.3448141895967307,
+              "mean_absolute_log_chroma_change": 0.22009000629963194
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.786291874287917,
+            "increment_rgb_mae": 1.6419728604209751,
+            "passes": true
+          }
+        }
+      },
+      "exposure_on": {
+        "global": {
+          "ue1": {
+            "pixels": 37083,
+            "qualified": true,
+            "luma_delta": 0.11400000000000002,
+            "mean_log_chroma_change": [
+              0.0,
+              0.02682604616117432
+            ],
+            "chroma_norm": 0.02682604616117432,
+            "mean_absolute_log_chroma_change": 0.01341302308058716
+          },
+          "oe1": {
+            "pixels": 37083,
+            "qualified": true,
+            "luma_delta": -0.18500000000000003,
+            "mean_log_chroma_change": [
+              -0.0123390149976935,
+              0.02682604616117432
+            ],
+            "chroma_norm": 0.02952775040118635,
+            "mean_absolute_log_chroma_change": 0.019582530579433908
+          }
+        },
+        "face": {
+          "ue1": {
+            "pixels": 35201,
+            "qualified": true,
+            "luma_delta": -0.1180399704553848,
+            "mean_log_chroma_change": [
+              -0.011387711222995969,
+              0.02638133935229239
+            ],
+            "chroma_norm": 0.028734213629733447,
+            "mean_absolute_log_chroma_change": 0.019529708805271592
+          },
+          "oe1": {
+            "pixels": 35205,
+            "qualified": true,
+            "luma_delta": 0.3681171424513563,
+            "mean_log_chroma_change": [
+              -0.04082816316686904,
+              0.09917889477821261
+            ],
+            "chroma_norm": 0.10725386742215057,
+            "mean_absolute_log_chroma_change": 0.07000352897254083
+          }
+        }
+      },
+      "output_sha256": {
+        "nominal-global": "8a1518b502d956eaa629c4632461d079a10fa8eeec911604beb5d3fd71d2cb6e",
+        "nominal-face": "b6a9275d932cfe4e1410b5abd071ba5ec164ced8096e7205243818e13061679d",
+        "ue1-global": "76d7028b3e9315580fdf59c53374ed2813580c710495b4a16484332132374795",
+        "ue1-face": "b21b1c0c3ed853025a3fdebcb2c1036f1066a1379ade00f897f29893a5bba2be",
+        "oe1-global": "9ee77acb44df09a7ad21fbddb386102951522f50184f4a7d453508e3d9f3e76c",
+        "oe1-face": "4bd07313d4305dbbdf11fdd9e24e3a8497848ebbcd9d5503f3044f2b8b5463b9"
+      },
+      "passes": {
+        "global": false,
+        "face": false
+      }
+    },
+    {
+      "group": 5,
+      "fit": {
+        "nominal": {
+          "constant_only": [
+            3.263934795673077,
+            -0.5165940504807692,
+            -5.652283653846154
+          ],
+          "constant_with_face": [
+            0.002248517907622064,
+            0.013059472909255018,
+            0.009619951577522231
+          ],
+          "face": [
+            12.03324771488328,
+            -1.9540358904104207,
+            -20.888302190893135
+          ]
+        },
+        "ue1": {
+          "constant_only": [
+            3.2380408653846153,
+            -0.5091421274038461,
+            -5.604071514423077
+          ],
+          "constant_with_face": [
+            -0.0008742837081832632,
+            0.013541588157033012,
+            0.014789848008830299
+          ],
+          "face": [
+            11.857228079290202,
+            -1.9134740317208003,
+            -20.569887648624494
+          ]
+        },
+        "oe1": {
+          "constant_only": [
+            2.3996844951923078,
+            -0.3488506610576923,
+            -4.105701622596154
+          ],
+          "constant_with_face": [
+            0.046378643734408954,
+            0.003799167755717945,
+            -0.07169533146439958
+          ],
+          "face": [
+            8.485848659047962,
+            -1.2716294718325145,
+            -14.546331432008499
+          ]
+        }
+      },
+      "edit": {
+        "global": {
+          "nominal": {
+            "source": {
+              "pixels": 35764,
+              "qualified": true,
+              "luma_delta": 0.08203637736271076,
+              "mean_log_chroma_change": [
+                0.17826849923878646,
+                -0.49176949443050916
+              ],
+              "chroma_norm": 0.5230840214279995,
+              "mean_absolute_log_chroma_change": 0.3350189968346478
+            },
+            "expected": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.5349357844942355,
+              "mean_log_chroma_change": [
+                0.1387704234947821,
+                -0.41595319565346633
+              ],
+              "chroma_norm": 0.4384909251184704,
+              "mean_absolute_log_chroma_change": 0.2773618095741242
+            },
+            "actual": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.32700000000000007,
+              "mean_log_chroma_change": [
+                0.03727349217550688,
+                -0.13037416845131117
+              ],
+              "chroma_norm": 0.13559770285048503,
+              "mean_absolute_log_chroma_change": 0.08382383031340902
+            },
+            "outside_rgb_change": 2.6148790361915912,
+            "projection": 0.3089441123735927,
+            "increment_rgb_mae": 6.092655015154519,
+            "passes": false
+          },
+          "ue1": {
+            "source": {
+              "pixels": 33621,
+              "qualified": true,
+              "luma_delta": 0.07922432408316196,
+              "mean_log_chroma_change": [
+                0.24818155227856054,
+                -0.7772291022682533
+              ],
+              "chroma_norm": 0.8158916351477755,
+              "mean_absolute_log_chroma_change": 0.5127053272734068
+            },
+            "expected": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.5349357844942355,
+              "mean_log_chroma_change": [
+                0.1387704234947821,
+                -0.41595319565346633
+              ],
+              "chroma_norm": 0.4384909251184704,
+              "mean_absolute_log_chroma_change": 0.2773618095741242
+            },
+            "actual": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.4409999999999999,
+              "mean_log_chroma_change": [
+                0.03727349217550688,
+                -0.10361133980491857
+              ],
+              "chroma_norm": 0.11011186564184568,
+              "mean_absolute_log_chroma_change": 0.07044241599021273
+            },
+            "outside_rgb_change": 2.296284102363997,
+            "projection": 0.25104721925030493,
+            "increment_rgb_mae": 6.425988348487853,
+            "passes": false
+          },
+          "oe1": {
+            "source": {
+              "pixels": 16314,
+              "qualified": true,
+              "luma_delta": 0.10964466102733815,
+              "mean_log_chroma_change": [
+                0.15122078003369901,
+                -0.38309858034546546
+              ],
+              "chroma_norm": 0.4118643545837773,
+              "mean_absolute_log_chroma_change": 0.26715968018958225
+            },
+            "expected": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.5349357844942355,
+              "mean_log_chroma_change": [
+                0.1387704234947821,
+                -0.41595319565346633
+              ],
+              "chroma_norm": 0.4384909251184704,
+              "mean_absolute_log_chroma_change": 0.2773618095741242
+            },
+            "actual": {
+              "pixels": 35303,
+              "qualified": true,
+              "luma_delta": 0.25599999999999995,
+              "mean_log_chroma_change": [
+                0.024918320094435426,
+                -0.07720359310845586
+              ],
+              "chroma_norm": 0.08112531950744328,
+              "mean_absolute_log_chroma_change": 0.05106095660144564
+            },
+            "outside_rgb_change": 1.654537768672975,
+            "projection": 0.18500136882883264,
+            "increment_rgb_mae": 7.092655015154519,
+            "passes": false
+          }
+        },
+        "face": {
+          "nominal": {
+            "source": {
+              "pixels": 35764,
+              "qualified": true,
+              "luma_delta": 0.08203637736271076,
+              "mean_log_chroma_change": [
+                0.17826849923878646,
+                -0.49176949443050916
+              ],
+              "chroma_norm": 0.5230840214279995,
+              "mean_absolute_log_chroma_change": 0.3350189968346478
+            },
+            "expected": {
+              "pixels": 35206,
+              "qualified": true,
+              "luma_delta": 0.5349452650116456,
+              "mean_log_chroma_change": [
+                0.1383955229604924,
+                -0.4132949231443916
+              ],
+              "chroma_norm": 0.43585090830745865,
+              "mean_absolute_log_chroma_change": 0.27584522305244197
+            },
+            "actual": {
+              "pixels": 35206,
+              "qualified": true,
+              "luma_delta": -0.08910839061523626,
+              "mean_log_chroma_change": [
+                0.15569292219700262,
+                -0.42239800772028835
+              ],
+              "chroma_norm": 0.4501781457915418,
+              "mean_absolute_log_chroma_change": 0.2890454649586455
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 1.032406540069513,
+            "increment_rgb_mae": 0.5948891287469938,
+            "passes": true
+          },
+          "ue1": {
+            "source": {
+              "pixels": 33621,
+              "qualified": true,
+              "luma_delta": 0.07922432408316196,
+              "mean_log_chroma_change": [
+                0.24818155227856054,
+                -0.7772291022682533
+              ],
+              "chroma_norm": 0.8158916351477755,
+              "mean_absolute_log_chroma_change": 0.5127053272734068
+            },
+            "expected": {
+              "pixels": 35287,
+              "qualified": true,
+              "luma_delta": 0.5349956074475017,
+              "mean_log_chroma_change": [
+                0.13869576534320327,
+                -0.41562019924289656
+              ],
+              "chroma_norm": 0.4381514182823581,
+              "mean_absolute_log_chroma_change": 0.27715798229304994
+            },
+            "actual": {
+              "pixels": 35287,
+              "qualified": true,
+              "luma_delta": -0.2281465695581944,
+              "mean_log_chroma_change": [
+                0.14547088806967254,
+                -0.3981380391605663
+              ],
+              "chroma_norm": 0.42388167865856125,
+              "mean_absolute_log_chroma_change": 0.27180446361511945
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.9670467344899716,
+            "increment_rgb_mae": 0.5832081692030116,
+            "passes": true
+          },
+          "oe1": {
+            "source": {
+              "pixels": 16314,
+              "qualified": true,
+              "luma_delta": 0.10964466102733815,
+              "mean_log_chroma_change": [
+                0.15122078003369901,
+                -0.38309858034546546
+              ],
+              "chroma_norm": 0.4118643545837773,
+              "mean_absolute_log_chroma_change": 0.26715968018958225
+            },
+            "expected": {
+              "pixels": 35300,
+              "qualified": true,
+              "luma_delta": 0.5349590368271954,
+              "mean_log_chroma_change": [
+                0.1387581193745492,
+                -0.4158951456948863
+              ],
+              "chroma_norm": 0.4384319649671227,
+              "mean_absolute_log_chroma_change": 0.2773266325347178
+            },
+            "actual": {
+              "pixels": 35300,
+              "qualified": true,
+              "luma_delta": 0.11760104815864016,
+              "mean_log_chroma_change": [
+                0.10391039675262784,
+                -0.29401408121090084
+              ],
+              "chroma_norm": 0.31183593523450553,
+              "mean_absolute_log_chroma_change": 0.19896223898176432
+            },
+            "outside_rgb_change": 0.0,
+            "projection": 0.71114140054144,
+            "increment_rgb_mae": 2.3005665722379605,
+            "passes": false
+          }
+        }
+      },
+      "exposure_on": {
+        "global": {
+          "ue1": {
+            "pixels": 37083,
+            "qualified": true,
+            "luma_delta": 0.11400000000000002,
+            "mean_log_chroma_change": [
+              0.0,
+              0.02682604616117432
+            ],
+            "chroma_norm": 0.02682604616117432,
+            "mean_absolute_log_chroma_change": 0.01341302308058716
+          },
+          "oe1": {
+            "pixels": 37083,
+            "qualified": true,
+            "luma_delta": -0.07099999999999997,
+            "mean_log_chroma_change": [
+              -0.0123390149976935,
+              0.053277260890472515
+            ],
+            "chroma_norm": 0.05468745577465437,
+            "mean_absolute_log_chroma_change": 0.032808137944083014
+          }
+        },
+        "face": {
+          "ue1": {
+            "pixels": 35201,
+            "qualified": true,
+            "luma_delta": -0.13892716116019432,
+            "mean_log_chroma_change": [
+              -0.01056886212458563,
+              0.02651239196612316
+            ],
+            "chroma_norm": 0.028541334488314533,
+            "mean_absolute_log_chroma_change": 0.019141807334685065
+          },
+          "oe1": {
+            "pixels": 35205,
+            "qualified": true,
+            "luma_delta": 0.20671859110921745,
+            "mean_log_chroma_change": [
+              -0.052066478540579456,
+              0.1299969143935526
+            ],
+            "chroma_norm": 0.1400361236947855,
+            "mean_absolute_log_chroma_change": 0.09103169646706602
+          }
+        }
+      },
+      "output_sha256": {
+        "nominal-global": "8a1518b502d956eaa629c4632461d079a10fa8eeec911604beb5d3fd71d2cb6e",
+        "nominal-face": "437e40809c7b54081bf5c44c7a7ca59a8b6c43a08aa0bdbc481ebfabb31feb29",
+        "ue1-global": "76d7028b3e9315580fdf59c53374ed2813580c710495b4a16484332132374795",
+        "ue1-face": "89339893ca6d24d00dc0875a9b3fa56d5e93b23c7117a92065c35661bfe87637",
+        "oe1-global": "4be936d5f038b8e261a3d10365058e1e52009286671c650c2c9b0ab7b9bc169d",
+        "oe1-face": "d37c1f33e6f2907c64d759abe9e0b411db24b1075f887f6ed68790347ba693a6"
+      },
+      "passes": {
+        "global": false,
+        "face": false
+      }
+    }
+  ]
+}
