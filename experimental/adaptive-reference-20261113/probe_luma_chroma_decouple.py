@@ -30,8 +30,11 @@ def encoded(x):
 
 
 def combine(full, chroma):
+    return combine_linear(full, linear(chroma))
+
+
+def combine_linear(full, base):
     wanted = linear(full) @ LUMA
-    base = linear(chroma)
     level = base @ LUMA
     ratio = np.divide(wanted, level, out=np.zeros_like(wanted), where=level > 1e-12)
     neutral = wanted[..., None]
@@ -80,7 +83,7 @@ def film_response(anchor, edited, original, truth, region):
                            p_rgb is not None and .75 <= p_rgb <= 1.25 and error <= 3)}
 
 
-def dast(engine, prep, replay, cube, out):
+def dast(engine, prep, replay, cube, out, renderer_factory):
     plan = json.loads((prep / "inputs.json").read_bytes())
     old = json.loads((replay / "results.json").read_bytes())
     records = []
@@ -95,7 +98,7 @@ def dast(engine, prep, replay, cube, out):
         refs = {key: verified_png(prep / str(index) / f"{key}.png", group["frames"][key]) for key in STATES}
         refs["film_a"] = apply_film(refs["nominal"], cube)
         truth = finish_spatial(rgb, apply_film(rgb, cube), .8)
-        transform = renderer(engine, rgb)
+        transform = renderer_factory(engine, rgb)
         before, after, artifacts, diagnostics = {}, {}, {}, {}
         for key, ref in refs.items():
             name = key if key == "nominal" else f"{key}-full"
@@ -121,7 +124,7 @@ def dast(engine, prep, replay, cube, out):
     return records
 
 
-def background(engine, folder, out):
+def background(engine, folder, out, renderer_factory):
     source = ROOT / "docs/research/2026-11-18-bg-real-pixel-pilot-evidence.json"
     if (digest(source), digest(PARENT / "results.json")) != (HELD_SHA, PARENT_SHA):
         raise ValueError("Background groups changed")
@@ -133,7 +136,7 @@ def background(engine, folder, out):
         person = mask_for(targets[key], key.split("-")[0])
         path = folder / key
         known = {"off": target, "on": verified_png(path / "expected-on.png", detail["artifacts"]["expected-on.png"])}
-        apply = renderer(engine, target)
+        apply = renderer_factory(engine, target)
         dest = out / key
         dest.mkdir()
         baseline, candidate, artifacts, diagnostics = {}, {}, {}, {}
@@ -155,7 +158,7 @@ def background(engine, folder, out):
 
 
 @torch.inference_mode()
-def run(prep, replay, cube_path, editor, out):
+def run(prep, replay, cube_path, editor, out, *, renderer_factory=renderer):
     actual = (digest(prep / "inputs.json"), digest(replay / "results.json"),
               digest(cube_path), digest(editor / "results.json"))
     if actual != (INPUTS_SHA, DAST_SHA, CUBE_SHA, EDITOR_SHA):
@@ -164,8 +167,8 @@ def run(prep, replay, cube_path, editor, out):
     torch.set_num_threads(4)
     engine = SpatialEngine("multiref-v1")
     out.mkdir()
-    portraits = dast(engine, prep, replay, cube, out)
-    swaps = background(engine, editor, out)
+    portraits = dast(engine, prep, replay, cube, out, renderer_factory)
+    swaps = background(engine, editor, out, renderer_factory)
     exposure = [row["exposure"][key] for row in portraits for key in STATES[2:]]
     eligible = [row for row in exposure if row["baseline"] is not None]
     gains = sum(row["candidate"] <= .75 * row["baseline"] for row in eligible)
@@ -185,7 +188,7 @@ def run(prep, replay, cube_path, editor, out):
     first_frame = json.loads((prep / "inputs.json").read_bytes())["groups"][0]["frames"]["nominal"]
     same = verified_png(prep / "1/nominal.png", first_frame)
     unguarded = finish_spatial(same, engine.prepare(same, same).apply(same), .8)
-    recombined, _ = renderer(engine, same)(same, unguarded)
+    recombined, _ = renderer_factory(engine, same)(same, unguarded)
     np.testing.assert_array_equal(unguarded, recombined)
     passed = (len(eligible) == 20 and gains >= 16 and portrait_increase <= .03 and worst_luma <= 1
               and film_passes["candidate"] >= 3 and swap_passes["candidate"] >= 3
