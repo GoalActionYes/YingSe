@@ -1,0 +1,481 @@
+{
+  "cases": {
+    "785-3553": {
+      "reference_sizes": {
+        "C1": [
+          768,
+          576
+        ],
+        "F1": [
+          768,
+          576
+        ]
+      },
+      "histogram_on_off_total_variation": {
+        "control": {
+          "C1": [
+            0.1213226318359375,
+            0.077606201171875,
+            0.047943115234375
+          ],
+          "F1": [
+            0.151947021484375,
+            0.1102752685546875,
+            0.119537353515625
+          ]
+        },
+        "native": {
+          "C1": [
+            0.11540843546390533,
+            0.0982123389840126,
+            0.04937969520688057
+          ],
+          "F1": [
+            0.1435411274433136,
+            0.12127912044525146,
+            0.13668256998062134
+          ]
+        }
+      },
+      "metrics": {
+        "control": {
+          "expected_mean_abs_delta": {
+            "luma": 5.09556883239746,
+            "chroma": 0.28669548815927715
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.1556356355986747,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.2594250617020253,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.114778951486698,
+              "neutral": 5.418908221040494,
+              "neutral_person": 5.007888212756367
+            },
+            "on": {
+              "person": 4.143045774647887,
+              "neutral": 8.24108110898859,
+              "neutral_person": 6.397791300428217
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 8.24108110898859
+        },
+        "native": {
+          "expected_mean_abs_delta": {
+            "luma": 5.09556883239746,
+            "chroma": 0.28669548815927715
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.12366500178128403,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.29885782977927355,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.8526017214397497,
+              "neutral": 5.917479821708228,
+              "neutral_person": 5.693711967545639
+            },
+            "on": {
+              "person": 4.102503912363067,
+              "neutral": 8.754117404099334,
+              "neutral_person": 7.064683344602209
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 8.754117404099334
+        }
+      },
+      "hashes": {
+        "C1-off-native.png": "ce1b59d4d9ab4b6f9e9f566ad6d6028d55671a33a2425c93d0c87b53cf79f562",
+        "C1-on-native.png": "eef0700509e0ebb46e7ccfb38c2fe4f7106b06df649a966bbfa6a2170195ed5f",
+        "comparison.png": "71655c9da1af2a781983970da442e75df943fccca775fb1cbe6b74382c9f7f83",
+        "F1-off-native.png": "413aa51b7c2d7cb4d12add3c3148a9ca2fbbac362ffb93b1aa1740ebb66c5d7f",
+        "F1-on-native.png": "0759f56afb6e085b8325182a8dbe77b70cdefb00842043b9a7c84ff05e7db889"
+      }
+    },
+    "9483-19432": {
+      "reference_sizes": {
+        "C1": [
+          768,
+          512
+        ],
+        "F1": [
+          768,
+          512
+        ]
+      },
+      "histogram_on_off_total_variation": {
+        "control": {
+          "C1": [
+            0.1145477294921875,
+            0.10906982421875,
+            0.108245849609375
+          ],
+          "F1": [
+            0.1053924560546875,
+            0.0641021728515625,
+            0.0689544677734375
+          ]
+        },
+        "native": {
+          "C1": [
+            0.1135457381606102,
+            0.1242574006319046,
+            0.11626941710710526
+          ],
+          "F1": [
+            0.11367034912109375,
+            0.0723215788602829,
+            0.075775146484375
+          ]
+        }
+      },
+      "metrics": {
+        "control": {
+          "expected_mean_abs_delta": {
+            "luma": 6.700823196411132,
+            "chroma": 0.9192225430069891
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.3044341444639756,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.10416273674869242,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.8997668997668997,
+              "neutral": 2.58131379848685,
+              "neutral_person": 2.7442622950819673
+            },
+            "on": {
+              "person": 3.1095154845154847,
+              "neutral": 2.669885112685641,
+              "neutral_person": 3.209289617486339
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 3.8997668997668997
+        },
+        "native": {
+          "expected_mean_abs_delta": {
+            "luma": 6.700823196411132,
+            "chroma": 0.9192225430069891
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.2936695487916238,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.08828616699391463,
+              "chroma": null
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.9676989676989676,
+              "neutral": 2.789023657980065,
+              "neutral_person": 2.6699453551912566
+            },
+            "on": {
+              "person": 3.141317016317016,
+              "neutral": 2.767038949601697,
+              "neutral_person": 3.1972677595628416
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 3.9676989676989676
+        }
+      },
+      "hashes": {
+        "C1-off-native.png": "24c630bb4571ac7f6354a7eda90321c5bcf9f8ed415de15aef60245584dfab53",
+        "C1-on-native.png": "1500a762a2113537998c10521f517b3ae28f9af0be9fa72632533f65ad4c1aa9",
+        "comparison.png": "2d8cfc09d1becf61029929e2dc37a56831391e3375d466e582c6a0f824126dc9",
+        "F1-off-native.png": "ffb3f2bc713faaa152c2a788be75497bdcf4464d887478d9f144cf63c9c58f04",
+        "F1-on-native.png": "ad5b18f3689d6dd547b8f523b3f99e79e3c1443f482f732518f530750168ddcd"
+      }
+    },
+    "872-1268": {
+      "reference_sizes": {
+        "C1": [
+          576,
+          768
+        ],
+        "F1": [
+          576,
+          768
+        ]
+      },
+      "histogram_on_off_total_variation": {
+        "control": {
+          "C1": [
+            0.0894012451171875,
+            0.0757598876953125,
+            0.0527496337890625
+          ],
+          "F1": [
+            0.0830535888671875,
+            0.0924224853515625,
+            0.1060943603515625
+          ]
+        },
+        "native": {
+          "C1": [
+            0.08222340047359467,
+            0.0942518413066864,
+            0.05420374125242233
+          ],
+          "F1": [
+            0.08159495890140533,
+            0.10943378508090973,
+            0.11068612337112427
+          ]
+        }
+      },
+      "metrics": {
+        "control": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.22093199638862257,
+              "chroma": 0.1586716745429196
+            },
+            "F1": {
+              "luma": 0.2545125485280661,
+              "chroma": 0.08970502743969601
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.677670271295769,
+              "neutral": 6.102564102564102,
+              "neutral_person": 4.843995223473217
+            },
+            "on": {
+              "person": 6.2547361574111715,
+              "neutral": 7.679535558780842,
+              "neutral_person": 6.304674172637325
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 7.679535558780842
+        },
+        "native": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.31069912404627464,
+              "chroma": 0.16717157218808526
+            },
+            "F1": {
+              "luma": 0.2510272348179493,
+              "chroma": 0.11318434363568873
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 7.777705504512562,
+              "neutral": 9.4707305273343,
+              "neutral_person": 7.685261003070624
+            },
+            "on": {
+              "person": 8.764316882131338,
+              "neutral": 9.96297371391711,
+              "neutral_person": 8.55058000682361
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 9.96297371391711
+        }
+      },
+      "hashes": {
+        "C1-off-native.png": "623b14be69da94ba51d01c9de0289e081cce51152e5b349a6042eaa2362e39a2",
+        "C1-on-native.png": "da6758e1161ab0cf43a343fc102cbecefdd85c5336ad0d832e0a643261b08c85",
+        "comparison.png": "e4848c04f249fe8cba6c1893db036a9a264d6bcfc5d2b721525a20709b24a944",
+        "F1-off-native.png": "6e1f144deb5feaae298af585b799db555a4bc04df71a1620d0975ab44e49a00b",
+        "F1-on-native.png": "91a278c8797fc555ecee038ecae71308dded0b12ee2da49a80e9ee0060049b6d"
+      }
+    },
+    "8021-8690": {
+      "reference_sizes": {
+        "C1": [
+          768,
+          576
+        ],
+        "F1": [
+          768,
+          576
+        ]
+      },
+      "histogram_on_off_total_variation": {
+        "control": {
+          "C1": [
+            0.1054840087890625,
+            0.121124267578125,
+            0.097503662109375
+          ],
+          "F1": [
+            0.094940185546875,
+            0.0885772705078125,
+            0.1017303466796875
+          ]
+        },
+        "native": {
+          "C1": [
+            0.09953251481056213,
+            0.11648447066545486,
+            0.09159568697214127
+          ],
+          "F1": [
+            0.09602412581443787,
+            0.09170645475387573,
+            0.10033048689365387
+          ]
+        }
+      },
+      "metrics": {
+        "control": {
+          "expected_mean_abs_delta": {
+            "luma": 2.5851414642333985,
+            "chroma": 3.1992151400947453
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.24308525797741656,
+              "chroma": 0.16298575234525906
+            },
+            "F1": {
+              "luma": 0.5264374158071898,
+              "chroma": 0.570133122831698
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 10.91847878412764,
+              "neutral": 30.740465577018327,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 10.428732549343236,
+              "neutral": 32.20406141654284,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 32.20406141654284
+        },
+        "native": {
+          "expected_mean_abs_delta": {
+            "luma": 2.5851414642333985,
+            "chroma": 3.1992151400947453
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.2596000798514474,
+              "chroma": 0.17628990928200095
+            },
+            "F1": {
+              "luma": 0.547979999172879,
+              "chroma": 0.5646359453236743
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 10.8613300323224,
+              "neutral": 31.102526002971768,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 10.371872635994773,
+              "neutral": 31.620108964834078,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 31.620108964834078
+        }
+      },
+      "hashes": {
+        "C1-off-native.png": "c5ec45b67cd7571f0cf052851cd6f0a91272872fb5b103ac181bdd35b08d0d1b",
+        "C1-on-native.png": "34df973457d156ebd626b34888ff5f9b693fb21d7b6186048874f8ece33f4bb7",
+        "comparison.png": "eaf1754bcbffae35672afa36f89ce0d41f81c9b48cb53be12e96b5c16b76bb59",
+        "F1-off-native.png": "4fede11cf0ad93ddf133c0384861bf31e55ec4a6a2174e385ff908d7683b2b0b",
+        "F1-on-native.png": "54336cba9da976d9dfcf8168ed0472413327cc31454b96f20ea6743f151de3f0"
+      }
+    }
+  },
+  "luma_improved_at_least_point_two": 0,
+  "max_protected_regression": 3.368166424770198,
+  "native_passing_cases": 0,
+  "native_max_protected_swap": 31.620108964834078,
+  "promising_resize_loss": false,
+  "passed": false,
+  "model_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "source_sha256": "fda1131f3a19bda522a106882c3105d7f478d7969cbf365568e99c3b52b09c70",
+  "protocol_sha256": "8bdfeecc977b44029fc15b791e6879bcb8794b06aadcfdffd079ab92d4e84750"
+}
