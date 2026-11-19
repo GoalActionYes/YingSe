@@ -32,7 +32,7 @@ def representative():
     return root
 
 
-def fit(split, frozen):
+def fit(split, frozen, extra_labels=None):
     root = representative()
     protected = {root(family(path, role)) for row in split["development"]
                  for role, path in [("content", row["content"]), ("gt", row["same_truth"]),
@@ -60,7 +60,8 @@ def fit(split, frozen):
                     root(family(author_path, "gt"))} & protected:
                 raise ValueError("Development source entered fitting")
             reference, ref_shape = read(ref)
-            original, donor_shape = read(next(iter(originals)))
+            original_path, = originals
+            original, donor_shape = read(original_path)
             author, author_shape = read(author_path)
             if ref_shape != donor_shape or target_shape != author_shape:
                 continue
@@ -79,7 +80,10 @@ def fit(split, frozen):
             teacher_delta = get_color(teacher)[area] - source
             author_delta = get_color(blended)[area] - source
             design.append(features(target, reference, base, area))
-            assigned.append(np.column_stack((author_delta, .5 * (author_delta + teacher_delta))))
+            labels = [author_delta, .5 * (author_delta + teacher_delta)]
+            if extra_labels is not None:
+                labels.append(extra_labels(original_path, ref, target, train, area, author_delta, teacher_delta))
+            assigned.append(np.column_stack(labels))
             slots.append([index, slot])
     x, y = np.concatenate(design), np.concatenate(assigned)
     coef = np.linalg.solve(x.T @ x + .01 * len(x) * np.eye(x.shape[1]), x.T @ y)
@@ -105,7 +109,7 @@ def grade(target, reference, baseline, coef, area, arms=ARMS):
 
 
 @torch.inference_mode()
-def run(out):
+def run(out, fit_coefficients=fit, arms=ARMS):
     torch.set_num_threads(4)
     split = load(SPLIT / "private-assignment.json", SPLIT_SHA)
     archive = BASE / "reference-equivalence-development-baseline-v1"
@@ -114,7 +118,7 @@ def run(out):
     ready = {row["index"] for row in assay["cases"] if row["aligned"] and row["one_state_protects_pixels"] >= 256}
     if len(split["training"]) != 82 or len(split["development"]) != 24 or len(ready) != 5:
         raise ValueError("Published cohort changed")
-    coef, training = fit(split, frozen)
+    coef, training = fit_coefficients(split, frozen)
     out.mkdir()
     results = {}
     for index, tensors in enumerate(tensor_samples(split["development"])):
@@ -122,15 +126,15 @@ def run(out):
         area = neutral(target)
         baseline = [checked_rgb(archive / f"{index}-{i}.png", frozen["predictions"][f"{index}-{i}.png"])
                     for i in range(3)]
-        attempts = [grade(target, ref, frame, coef, area) for ref, frame in zip(refs, baseline, strict=True)]
-        for name in ARMS:
-            np.testing.assert_array_equal(grade(target, target, baseline[0], coef, area)[name], target)
+        attempts = [grade(target, ref, frame, coef, area, arms) for ref, frame in zip(refs, baseline, strict=True)]
+        for name in arms:
+            np.testing.assert_array_equal(grade(target, target, baseline[0], coef, area, arms)[name], target)
             np.testing.assert_array_equal(
-                grade(target, refs[0], baseline[0], coef, np.zeros_like(area))[name], baseline[0]
+                grade(target, refs[0], baseline[0], coef, np.zeros_like(area), arms)[name], baseline[0]
             )
         selected = masks(target, (truths[0], truths[2])) if index in ready else None
         rows = {}
-        for name in ("13", *ARMS):
+        for name in ("13", *arms):
             frames = baseline if name == "13" else [arm[name] for arm in attempts]
             scores = {"whole": whole(frames, baseline, truths)}
             if selected is not None:
@@ -145,12 +149,12 @@ def run(out):
             rows[name] = scores
         results[str(index)] = rows
     summary = {}
-    for name in ("13", *ARMS):
-        arms = [row[name] for row in results.values()]
-        summary[name] = {"whole_pass": sum(row["whole"]["passed"] for row in arms),
-                         "local_pass": sum(row.get("local", {}).get("passed", False) for row in arms),
-                         "worst_regression": max(row["whole"]["worst_regression"] for row in arms)}
-    candidate = summary["donor"]
+    for name in ("13", *arms):
+        rows = [row[name] for row in results.values()]
+        summary[name] = {"whole_pass": sum(row["whole"]["passed"] for row in rows),
+                         "local_pass": sum(row.get("local", {}).get("passed", False) for row in rows),
+                         "worst_regression": max(row["whole"]["worst_regression"] for row in rows)}
+    candidate = summary[arms[-1]]
     passed = (candidate["local_pass"] >= 3 and candidate["local_pass"] >= summary["author"]["local_pass"] + 2
               and candidate["whole_pass"] >= 7 and candidate["worst_regression"] <= 2)
     json_to(out / "results.json", {"training": training, "cases": results, "summary": summary,
