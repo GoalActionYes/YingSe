@@ -1,0 +1,1212 @@
+{
+  "parent_sha256": "e17a15cbe8402153f34f113334f34e7c6de7cdb217ab15c05c0db74d3db89e77",
+  "strength": 0.8,
+  "cases": {
+    "background": {
+      "785-3553": {
+        "decision": {
+          "route": "cubic",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9945676478674138,
+            "holdout_mae": 1.8804600298810101,
+            "holdout_p95": 5.561744374933098,
+            "holdout_pixels": 32768,
+            "max_tile_mae": 7.188583418049568,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 0.508514404296875,
+            "holdout_p95": 2.0,
+            "max_tile_mae": 2.1145833333333335,
+            "holdout_pixels": 32768
+          }
+        },
+        "baseline": {
+          "luma": {
+            "projection": 1.443685187979203,
+            "component_mae": 4.120264862060546,
+            "passed": false
+          },
+          "chroma": {
+            "projection": 0.21783785514562964,
+            "component_mae": 0.7701839438385862,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "luma": {
+              "projection": 0.9886203504937059,
+              "component_mae": 0.4163667755126953,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.802559304568276,
+              "component_mae": 0.2022189896099572,
+              "passed": true
+            }
+          },
+          "from_target": {
+            "luma": {
+              "projection": 0.9886203504937059,
+              "component_mae": 0.4163667755126953,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.802559304568276,
+              "component_mae": 0.2022189896099572,
+              "passed": true
+            }
+          },
+          "protected_pixels": 1479,
+          "off_protected_mae_rgb8": 0.0,
+          "on_protected_mae_rgb8": 0.9301329727293216
+        },
+        "baseline_protected_mae": 11.69416272256029,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.9997304165248891,
+              "holdout_mae": 0.2545253538886842,
+              "holdout_p95": 0.4648978335718479,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 0.37674043454287237,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8501648697040578,
+                  0.0006138015775695783,
+                  0.0003475808209076236
+                ],
+                [
+                  0.00046244754094346835,
+                  0.852019027565001,
+                  0.0002863859430666249
+                ],
+                [
+                  -0.000588284903364461,
+                  -0.0027778675381354145,
+                  0.8492143979190944
+                ],
+                [
+                  0.04704824418309538,
+                  0.04719622112641397,
+                  0.04714295180062644
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": 0.013938837264084486
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.997229505610998,
+              "holdout_mae": 3.378160198821451,
+              "holdout_p95": 33.59054864817329,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 18.239656047272486,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 3.1006062825520835,
+              "holdout_p95": 33.0,
+              "max_tile_mae": 16.677083333333332,
+              "holdout_pixels": 32768
+            }
+          }
+        },
+        "output_sha256": "3077012196d8e859dc0d6e955ac353817f670eabb0c13b4853907a38d6df4820",
+        "panel_sha256": "e9e4612041337b50ddac3fbfd39e3f240e2981c2e56d69edb73f95e79ba84d52"
+      },
+      "9483-19432": {
+        "decision": {
+          "route": "cubic",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9868395515374417,
+            "holdout_mae": 2.867808107606949,
+            "holdout_p95": 7.1604967659232654,
+            "holdout_pixels": 32768,
+            "max_tile_mae": 6.730736600654129,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 0.923675537109375,
+            "holdout_p95": 3.0,
+            "max_tile_mae": 3.0104166666666665,
+            "holdout_pixels": 32768
+          }
+        },
+        "baseline": {
+          "luma": {
+            "projection": 0.8015530543232324,
+            "component_mae": 2.8111565246582026,
+            "passed": true
+          },
+          "chroma": {
+            "projection": 0.26727545161460503,
+            "component_mae": 1.0013541662314869,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "luma": {
+              "projection": 0.9858179953727454,
+              "component_mae": 0.6862303314208984,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.898596860230505,
+              "component_mae": 0.3504933139177012,
+              "passed": true
+            }
+          },
+          "from_target": {
+            "luma": {
+              "projection": 0.9858179953727454,
+              "component_mae": 0.6862303314208984,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.898596860230505,
+              "component_mae": 0.3504933139177012,
+              "passed": true
+            }
+          },
+          "protected_pixels": 610,
+          "off_protected_mae_rgb8": 0.0,
+          "on_protected_mae_rgb8": 0.9918032786885246
+        },
+        "baseline_protected_mae": 3.954098360655738,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.9994802569026062,
+              "holdout_mae": 0.2504591912446377,
+              "holdout_p95": 0.45909071407507535,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 0.2939128369939976,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8501209344354477,
+                  0.0001500489433417803,
+                  -0.00040333096524695705
+                ],
+                [
+                  -0.00031090994549620027,
+                  0.8497777941081042,
+                  0.000645464028135978
+                ],
+                [
+                  0.0002516136207625086,
+                  8.543914593533986e-05,
+                  0.8497252573157102
+                ],
+                [
+                  0.047032554826428846,
+                  0.04707611473019324,
+                  0.04708921381756043
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": 0.02567926705557697
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.9915322457111455,
+              "holdout_mae": 7.046975750887747,
+              "holdout_p95": 41.49675354367444,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 22.619819833115308,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 6.479156494140625,
+              "holdout_p95": 38.0,
+              "max_tile_mae": 20.46875,
+              "holdout_pixels": 32768
+            }
+          }
+        },
+        "output_sha256": "a8868ea014c6071713a63e5dc01c6d6959396f8b90b9fffc84327d1e3e697055",
+        "panel_sha256": "45b877ddbf455caa6aeb90381d4a27f1899d4f1cdbba0ece04c7a394d0b65a65"
+      },
+      "872-1268": {
+        "decision": {
+          "route": "cubic",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9914954915754735,
+            "holdout_mae": 3.335640247151332,
+            "holdout_p95": 7.615289819069925,
+            "holdout_pixels": 32768,
+            "max_tile_mae": 9.576828928210997,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 0.9641215006510416,
+            "holdout_p95": 3.0,
+            "max_tile_mae": 4.666666666666667,
+            "holdout_pixels": 32768
+          }
+        },
+        "baseline": {
+          "luma": {
+            "projection": 1.0011223005992422,
+            "component_mae": 3.0049472503662105,
+            "passed": true
+          },
+          "chroma": {
+            "projection": 0.15750275221853205,
+            "component_mae": 1.5029053401234242,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "luma": {
+              "projection": 0.9819220753851257,
+              "component_mae": 0.6429700317382812,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.8937364118239575,
+              "component_mae": 0.45761809817370613,
+              "passed": true
+            }
+          },
+          "from_target": {
+            "luma": {
+              "projection": 0.9819220753851257,
+              "component_mae": 0.6429700317382812,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.8937364118239575,
+              "component_mae": 0.45761809817370613,
+              "passed": true
+            }
+          },
+          "protected_pixels": 3908,
+          "off_protected_mae_rgb8": 0.0,
+          "on_protected_mae_rgb8": 1.10661890139884
+        },
+        "baseline_protected_mae": 4.614039576936199,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.9998196006521236,
+              "holdout_mae": 0.24841675283764095,
+              "holdout_p95": 0.46414970037229886,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 0.2861031357620355,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8504543541772713,
+                  -0.00021923694936458116,
+                  0.00011432576564149708
+                ],
+                [
+                  -4.822772947193216e-05,
+                  0.8498738048308678,
+                  -6.598359122034214e-05
+                ],
+                [
+                  -0.00022145899372104372,
+                  0.00031348342646714267,
+                  0.8499634661681255
+                ],
+                [
+                  0.04700468755385974,
+                  0.04708136525483375,
+                  0.04706995940198458
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": -0.0009751060789351919
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.9961997579953781,
+              "holdout_mae": 6.599485065413031,
+              "holdout_p95": 46.523965657585336,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 22.262533442670417,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 5.907501220703125,
+              "holdout_p95": 38.0,
+              "max_tile_mae": 18.796875,
+              "holdout_pixels": 32768
+            }
+          }
+        },
+        "output_sha256": "f339fbeb126f7927a674ba4621f069c258eb46f15cd8aba71df7d5cc3a310e7e",
+        "panel_sha256": "d67c6f48363506548dbf2deb8a027a44657431caa519b0c0f8a9642b032371a0"
+      },
+      "8021-8690": {
+        "decision": {
+          "route": "cubic",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9934537714783681,
+            "holdout_mae": 2.526938767673425,
+            "holdout_p95": 7.37186341022404,
+            "holdout_pixels": 32768,
+            "max_tile_mae": 7.717402012806016,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 0.8368326822916666,
+            "holdout_p95": 3.0,
+            "max_tile_mae": 3.2604166666666665,
+            "holdout_pixels": 32768
+          }
+        },
+        "baseline": {
+          "luma": {
+            "projection": 0.12053234451740776,
+            "component_mae": 3.0546154327392574,
+            "passed": false
+          },
+          "chroma": {
+            "projection": 0.27088258164472406,
+            "component_mae": 2.6075468902625234,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "luma": {
+              "projection": 0.941481404966521,
+              "component_mae": 0.5603331146240234,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.981434097719848,
+              "component_mae": 0.44412542254639864,
+              "passed": true
+            }
+          },
+          "from_target": {
+            "luma": {
+              "projection": 0.941481404966521,
+              "component_mae": 0.5603331146240234,
+              "passed": true
+            },
+            "chroma": {
+              "projection": 0.981434097719848,
+              "component_mae": 0.44412542254639864,
+              "passed": true
+            }
+          },
+          "protected_pixels": 142,
+          "off_protected_mae_rgb8": null,
+          "on_protected_mae_rgb8": null
+        },
+        "baseline_protected_mae": null,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.9996250838555488,
+              "holdout_mae": 0.24849883437647327,
+              "holdout_p95": 0.4724389555536885,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 0.38264782148032295,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8497369017841472,
+                  -0.0003362330852434452,
+                  -0.00036245108472892886
+                ],
+                [
+                  -0.0010554325978354498,
+                  0.8507178346858026,
+                  0.0007469280623502716
+                ],
+                [
+                  0.000923950774578651,
+                  -0.0006975341843350469,
+                  0.8491250711011464
+                ],
+                [
+                  0.047154984492310835,
+                  0.04718763600257225,
+                  0.04727759035550713
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": 0.00898395382419283
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.991041131015308,
+              "holdout_mae": 5.127691727355909,
+              "holdout_p95": 33.07229527734436,
+              "holdout_pixels": 32768,
+              "max_tile_mae": 23.45271605080547,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 4.241058349609375,
+              "holdout_p95": 28.0,
+              "max_tile_mae": 21.9375,
+              "holdout_pixels": 32768
+            }
+          }
+        },
+        "output_sha256": "080c66856dfa564a63eda5a4a3c62b4efffbd94f93620540cc7ac9222fc9af61",
+        "panel_sha256": "743bda50299a496e3398acfe92eed99255b3c371955d366cdf9875ecd47a2af6"
+      }
+    },
+    "film_b": {
+      "poker_fullshot": {
+        "decision": {
+          "route": "cubic",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9956554202621143,
+            "holdout_mae": 2.151025578368436,
+            "holdout_p95": 7.278640090850105,
+            "holdout_pixels": 18432,
+            "max_tile_mae": 7.4239667816596135,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 1.0793366608796295,
+            "holdout_p95": 4.0,
+            "max_tile_mae": 4.619791666666667,
+            "holdout_pixels": 18432
+          }
+        },
+        "baseline": {
+          "whole": {
+            "projection": 0.6408097897439881,
+            "response_mae": 3.330471462673611,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 3.330471462673611,
+            "original_matches_authored_mae": 5.3788022641782405,
+            "passed": false
+          },
+          "neutral": {
+            "projection": 0.667890683087926,
+            "response_mae": 4.039449257425742,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 4.039449257425742,
+            "original_matches_authored_mae": 8.138510726072607,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "whole": {
+              "projection": 0.9103899416555123,
+              "response_mae": 0.7826944986979166,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 0.7826944986979166,
+              "original_matches_authored_mae": 5.3788022641782405,
+              "passed": true
+            },
+            "neutral": {
+              "projection": 0.9044114013093516,
+              "response_mae": 1.5553836633663367,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 1.5553836633663367,
+              "original_matches_authored_mae": 8.138510726072607,
+              "passed": true
+            }
+          },
+          "from_target": {
+            "whole": {
+              "projection": 0.9103899416555123,
+              "response_mae": 0.7826944986979166,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 0.7826944986979166,
+              "original_matches_authored_mae": 5.3788022641782405,
+              "passed": true
+            },
+            "neutral": {
+              "projection": 0.9044114013093516,
+              "response_mae": 1.5553836633663367,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 1.5553836633663367,
+              "original_matches_authored_mae": 8.138510726072607,
+              "passed": true
+            }
+          },
+          "protected_pixels": 6464,
+          "off_protected_mae_rgb8": 0.0,
+          "on_protected_mae_rgb8": 1.5553836633663367
+        },
+        "baseline_protected_mae": 4.039449257425742,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.9996698763697087,
+              "holdout_mae": 0.3131839504185801,
+              "holdout_p95": 0.7487703435514506,
+              "holdout_pixels": 18432,
+              "max_tile_mae": 0.3887511834612135,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8490848333245522,
+                  0.00010329615392852486,
+                  -0.0014689174286245167
+                ],
+                [
+                  7.322296032273579e-05,
+                  0.8466421033500566,
+                  0.0008639095377798722
+                ],
+                [
+                  0.000586143689236639,
+                  0.0029970500738693007,
+                  0.850374312861434
+                ],
+                [
+                  0.04729909420579079,
+                  0.047334365280104485,
+                  0.047349863851658514
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": 0.10345063343853754
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.9963909721619926,
+              "holdout_mae": 6.111956918506446,
+              "holdout_p95": 41.71999799616778,
+              "holdout_pixels": 18432,
+              "max_tile_mae": 19.614764501789143,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 5.587348090277778,
+              "holdout_p95": 33.0,
+              "max_tile_mae": 19.786458333333332,
+              "holdout_pixels": 18432
+            }
+          }
+        },
+        "output_sha256": "fd21c5c1247f6b32123c7286d3f3064962a8cd81d91e39274f6e6565d70cde56",
+        "panel_sha256": "c0c7e2db15a86f1d1d74f17314ca9e1846d498f7f6eb8d62376ff1cf3eb4e052"
+      },
+      "hdr_testimage": {
+        "decision": {
+          "route": "original_fallback",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9955490654812024,
+            "holdout_mae": 2.2669877204042193,
+            "holdout_p95": 8.0,
+            "holdout_pixels": 18432,
+            "max_tile_mae": 6.199321154239815,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 1.1269892939814814,
+            "holdout_p95": 5.0,
+            "max_tile_mae": 4.364583333333333,
+            "holdout_pixels": 18432
+          }
+        },
+        "baseline": {
+          "whole": {
+            "projection": 0.5900796564330111,
+            "response_mae": 3.0756067346643516,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 3.0756067346643516,
+            "original_matches_authored_mae": 4.791234899450232,
+            "passed": false
+          },
+          "neutral": {
+            "projection": 0.4810919111984185,
+            "response_mae": 5.397944944817962,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 5.397944944817962,
+            "original_matches_authored_mae": 8.914351558205421,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "whole": {
+              "projection": 0.5900796564330111,
+              "response_mae": 3.0756067346643516,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 3.0756067346643516,
+              "original_matches_authored_mae": 4.791234899450232,
+              "passed": false
+            },
+            "neutral": {
+              "projection": 0.4810919111984185,
+              "response_mae": 5.397944944817962,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 5.397944944817962,
+              "original_matches_authored_mae": 8.914351558205421,
+              "passed": false
+            }
+          },
+          "from_target": {
+            "whole": {
+              "projection": 0.5900796564330111,
+              "response_mae": 3.0756067346643516,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 3.0756067346643516,
+              "original_matches_authored_mae": 4.791234899450232,
+              "passed": false
+            },
+            "neutral": {
+              "projection": 0.4810919111984185,
+              "response_mae": 5.397944944817962,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 5.397944944817962,
+              "original_matches_authored_mae": 8.914351558205421,
+              "passed": false
+            }
+          },
+          "protected_pixels": 15766,
+          "off_protected_mae_rgb8": 0.0,
+          "on_protected_mae_rgb8": 5.397944944817962
+        },
+        "baseline_protected_mae": 5.397944944817962,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.9997861695211655,
+              "holdout_mae": 0.25130619622824474,
+              "holdout_p95": 0.6937190068454226,
+              "holdout_pixels": 18432,
+              "max_tile_mae": 0.4122392197127226,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8492375452109088,
+                  0.00020810580024808998,
+                  7.98881962529631e-05
+                ],
+                [
+                  0.00010544354646524479,
+                  0.8489152390010835,
+                  -0.0002470102005474595
+                ],
+                [
+                  0.00046152314764688444,
+                  0.00034173200831250083,
+                  0.8499151095098502
+                ],
+                [
+                  0.047263593303085404,
+                  0.04729217822319576,
+                  0.047233232406545866
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": 0.013239316392192531
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.9971195839966912,
+              "holdout_mae": 7.911746443457424,
+              "holdout_p95": 38.42368052561178,
+              "holdout_pixels": 18432,
+              "max_tile_mae": 15.54158237482039,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 7.970540364583333,
+              "holdout_p95": 37.0,
+              "max_tile_mae": 15.979166666666666,
+              "holdout_pixels": 18432
+            }
+          }
+        },
+        "output_sha256": "06e655bf6d5bb4451a97a20d402c1da84f65f4818c515223c89646aea867d752",
+        "panel_sha256": "9c25a754e4b2b90d7eecd134b35b5d5f59dc5341d64de083d675b71ad463e6fa"
+      },
+      "sparks_4592": {
+        "decision": {
+          "route": "cubic",
+          "affine": {
+            "accepted": false,
+            "gradient_correlation": 0.9966233664002058,
+            "holdout_mae": 2.2920802561217912,
+            "holdout_p95": 9.019007345541961,
+            "holdout_pixels": 17280,
+            "max_tile_mae": 11.14289500560004,
+            "native_policy": false,
+            "reason": "Independent spatial holdout failed"
+          },
+          "cubic": {
+            "holdout_mae": 0.8268518518518518,
+            "holdout_p95": 3.0,
+            "max_tile_mae": 2.5885416666666665,
+            "holdout_pixels": 17280
+          }
+        },
+        "baseline": {
+          "whole": {
+            "projection": 0.8972656780738313,
+            "response_mae": 4.158224826388889,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 4.158224826388889,
+            "original_matches_authored_mae": 7.795563271604938,
+            "passed": false
+          },
+          "neutral": {
+            "projection": 1.12565126144145,
+            "response_mae": 3.614888045309677,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 3.614888045309677,
+            "original_matches_authored_mae": 9.545922061400837,
+            "passed": false
+          }
+        },
+        "candidate": {
+          "native_off": {
+            "whole": {
+              "projection": 0.9665047382945212,
+              "response_mae": 0.6591290509259259,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 0.6591290509259259,
+              "original_matches_authored_mae": 7.795563271604938,
+              "passed": true
+            },
+            "neutral": {
+              "projection": 0.9866851878692989,
+              "response_mae": 0.651583741025693,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 0.651583741025693,
+              "original_matches_authored_mae": 9.545922061400837,
+              "passed": true
+            }
+          },
+          "from_target": {
+            "whole": {
+              "projection": 0.9665047382945212,
+              "response_mae": 0.6591290509259259,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 0.6591290509259259,
+              "original_matches_authored_mae": 7.795563271604938,
+              "passed": true
+            },
+            "neutral": {
+              "projection": 0.9866851878692989,
+              "response_mae": 0.651583741025693,
+              "off_matches_original_mae": 0.0,
+              "on_matches_authored_mae": 0.651583741025693,
+              "original_matches_authored_mae": 9.545922061400837,
+              "passed": true
+            }
+          },
+          "protected_pixels": 49261,
+          "off_protected_mae_rgb8": 0.0,
+          "on_protected_mae_rgb8": 0.651583741025693
+        },
+        "baseline_protected_mae": 3.614888045309677,
+        "negative_routes": {
+          "identity": {
+            "route": "identity"
+          },
+          "uniform": {
+            "route": "affine",
+            "affine": {
+              "accepted": true,
+              "gradient_correlation": 0.999499479729736,
+              "holdout_mae": 0.31761994059069215,
+              "holdout_p95": 0.7628820829639827,
+              "holdout_pixels": 17280,
+              "max_tile_mae": 0.3973996654471713,
+              "native_policy": false,
+              "matrix": [
+                [
+                  0.8495336475335439,
+                  -9.928809253742854e-05,
+                  -3.686242107282927e-05
+                ],
+                [
+                  5.963080348211913e-05,
+                  0.8474652143258835,
+                  0.0020598233921429454
+                ],
+                [
+                  0.0003228507442849752,
+                  0.0025951018403896353,
+                  0.8479227519749076
+                ],
+                [
+                  0.04717746947511882,
+                  0.047211618358620866,
+                  0.04713380703990816
+                ]
+              ],
+              "version": "aligned-affine-trial-v1"
+            }
+          },
+          "mirror": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "reason": "Spatial structure differs",
+              "gradient_correlation": 0.0038422120244514463
+            }
+          },
+          "local": {
+            "route": "original_fallback",
+            "affine": {
+              "accepted": false,
+              "gradient_correlation": 0.9963776308675495,
+              "holdout_mae": 7.179177641866029,
+              "holdout_p95": 42.861945416202474,
+              "holdout_pixels": 17280,
+              "max_tile_mae": 17.68554936271689,
+              "native_policy": false,
+              "reason": "Independent spatial holdout failed"
+            },
+            "cubic": {
+              "holdout_mae": 6.921161265432099,
+              "holdout_p95": 41.0,
+              "max_tile_mae": 18.729166666666668,
+              "holdout_pixels": 17280
+            }
+          }
+        },
+        "output_sha256": "651f06d429a2a2448c40bb98a7bee89765eaad4ca1003b03894123762372e957",
+        "panel_sha256": "67dd496097bec5f343eec1308ced96ff429c125e75a7772e4b7fda622bb92c72"
+      }
+    }
+  },
+  "cross_content": {
+    "785-3553": {
+      "C1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "C1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    },
+    "9483-19432": {
+      "C1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "C1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    },
+    "872-1268": {
+      "C1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "C1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    },
+    "8021-8690": {
+      "C1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "C1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "F1-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    },
+    "poker_fullshot": {
+      "hdr_testimage-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Spatial structure differs",
+          "gradient_correlation": 0.038898323024447866
+        }
+      },
+      "hdr_testimage-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Spatial structure differs",
+          "gradient_correlation": 0.03593584067543981
+        }
+      },
+      "sparks_4592-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "sparks_4592-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    },
+    "hdr_testimage": {
+      "poker_fullshot-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Spatial structure differs",
+          "gradient_correlation": 0.038898323024447866
+        }
+      },
+      "poker_fullshot-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Spatial structure differs",
+          "gradient_correlation": 0.03897148935119311
+        }
+      },
+      "sparks_4592-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "sparks_4592-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    },
+    "sparks_4592": {
+      "poker_fullshot-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "poker_fullshot-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "hdr_testimage-off": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      },
+      "hdr_testimage-on": {
+        "route": "original_fallback",
+        "affine": {
+          "accepted": false,
+          "reason": "Different aspect ratios"
+        }
+      }
+    }
+  },
+  "passing_cases": {
+    "background": 4,
+    "film_b": 2
+  },
+  "negative_cubic_activations": 0,
+  "negative_cases": 56,
+  "max_protected_increase": -2.4840655940594054,
+  "passed": true
+}

@@ -21,7 +21,7 @@ RAW = "frozen-same-content-control-v2"
 RAW_SHA = "6c316efe4692b7fd67f11335ffb80fdf5be55d1157ff25dc70a0960a36224c92"
 
 
-def cross_certification(cases):
+def cross_certification(cases, certify=fit_aligned):
     bg = manifest(BASE, "bg-real-editor-look")["cases"]
     prep = manifest(BASE, "arri-two-looks-v2")
     pairs = manifest(BASE, "arri-film-b-crossed-v1")["cases"].values()
@@ -37,7 +37,7 @@ def cross_certification(cases):
             refs = {f"{row['reference']}-{role}": rgb for row in pairs if row["target"] == name
                     for role, rgb in zip(("off", "on"), endpoints(BASE / "arri-two-looks-v2", prep,
                                                                    row["reference"]), strict=True)}
-        results[name] = {label: fit_aligned(target, ref) for label, ref in refs.items()}
+        results[name] = {label: certify(target, ref) for label, ref in refs.items()}
     return results
 
 
