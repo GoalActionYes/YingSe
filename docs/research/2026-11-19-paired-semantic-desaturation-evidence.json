@@ -1,0 +1,263 @@
+{
+  "parent_sha256": "6dbe4870e44c81bd7614a779febb7c1806a51662d5e5d25c675e91280b4c540b",
+  "encoder": {
+    "repository": "facebook/dinov2-small",
+    "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "weight_sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+    "preprocessing": "Whole RGB, long edge <=448, nearest multiple14 (min14), bilinear; ImageNet mean/std",
+    "limitation": "Correspondence descriptor, not trained grading model; semantic similarity not material or lighting identity"
+  },
+  "cases": {
+    "145": {
+      "donor": "248",
+      "reference_grid": [
+        32,
+        26
+      ],
+      "reference_cells": {
+        "desaturated": 218,
+        "retained": 0
+      },
+      "weights": {
+        "desaturated": {
+          "mean": 0.0,
+          "majority_fraction": 0.0
+        },
+        "retained": {
+          "mean": 0.0,
+          "majority_fraction": 0.0
+        }
+      },
+      "whole_chroma_mae": {
+        "global": 3.6512819780137797,
+        "matched": 12.014894027709962,
+        "unchanged": 12.014894027709962
+      },
+      "metrics": {
+        "global": {
+          "regions": {
+            "desaturated": {
+              "pixels": 108486,
+              "projection": 0.8035866243349709,
+              "response_mae": 2.734865878239281,
+              "response_magnitude": 11.223756494540002,
+              "absolute_chroma_errors": {
+                "identity": 13.943693934701255,
+                "off": 13.943693934701255,
+                "on": 2.734865878239281
+              }
+            },
+            "retained": {
+              "pixels": 2982,
+              "projection": 15.665386395317366,
+              "response_mae": 36.850168768164544,
+              "response_magnitude": 37.04045128549072,
+              "absolute_chroma_errors": {
+                "identity": 0.4336407556449811,
+                "off": 0.4336407556449811,
+                "on": 36.850168768164544
+              }
+            }
+          },
+          "whole_luma_response": 0.18515446573893227,
+          "passed": false,
+          "peak_luma_error": 0.4984000000000002,
+          "limited_fraction": 0.0,
+          "sha256": "77f1205da5c8623241eeb0fcad166dffa7ade93b17b233506192591852f4c322"
+        },
+        "matched": {
+          "regions": {
+            "desaturated": {
+              "pixels": 108486,
+              "projection": 0.0,
+              "response_mae": 13.943693934701255,
+              "response_magnitude": 0.0,
+              "absolute_chroma_errors": {
+                "identity": 13.943693934701255,
+                "off": 13.943693934701255,
+                "on": 13.943693934701255
+              }
+            },
+            "retained": {
+              "pixels": 2982,
+              "projection": 0.0,
+              "response_mae": 0.4336407556449811,
+              "response_magnitude": 0.0,
+              "absolute_chroma_errors": {
+                "identity": 0.4336407556449811,
+                "off": 0.4336407556449811,
+                "on": 0.4336407556449811
+              }
+            }
+          },
+          "whole_luma_response": 0.0,
+          "passed": false,
+          "peak_luma_error": 0.0,
+          "limited_fraction": 0.0,
+          "sha256": "1d955e2eb10010e400fbc38761f8d670240ec954a31415bf2a6ed67118eaf38a"
+        },
+        "unchanged": {
+          "regions": {
+            "desaturated": {
+              "pixels": 108486,
+              "projection": 0.0,
+              "response_mae": 13.943693934701255,
+              "response_magnitude": 0.0,
+              "absolute_chroma_errors": {
+                "identity": 13.943693934701255,
+                "off": 13.943693934701255,
+                "on": 13.943693934701255
+              }
+            },
+            "retained": {
+              "pixels": 2982,
+              "projection": 0.0,
+              "response_mae": 0.4336407556449811,
+              "response_magnitude": 0.0,
+              "absolute_chroma_errors": {
+                "identity": 0.4336407556449811,
+                "off": 0.4336407556449811,
+                "on": 0.4336407556449811
+              }
+            }
+          },
+          "whole_luma_response": 0.0,
+          "passed": false,
+          "peak_luma_error": 0.0,
+          "limited_fraction": 0.0,
+          "sha256": "1d955e2eb10010e400fbc38761f8d670240ec954a31415bf2a6ed67118eaf38a"
+        }
+      },
+      "absolute_gate": false,
+      "unchanged_exact": true,
+      "panel_sha256": "84f3bb0c914d1f8bdf084c96208532f5f873ba92373ac65b8522a7135b55583d",
+      "passed": false
+    },
+    "248": {
+      "donor": "145",
+      "reference_grid": [
+        24,
+        32
+      ],
+      "reference_cells": {
+        "desaturated": 421,
+        "retained": 9
+      },
+      "weights": {
+        "desaturated": {
+          "mean": 1.0,
+          "majority_fraction": 1.0
+        },
+        "retained": {
+          "mean": 1.0,
+          "majority_fraction": 1.0
+        }
+      },
+      "whole_chroma_mae": {
+        "global": 1.1347154366742884,
+        "matched": 1.1347154366742884,
+        "unchanged": 4.083072373602643
+      },
+      "metrics": {
+        "global": {
+          "regions": {
+            "desaturated": {
+              "pixels": 54747,
+              "projection": 0.802951764761933,
+              "response_mae": 1.7357538349133284,
+              "response_magnitude": 7.112699343038583,
+              "absolute_chroma_errors": {
+                "identity": 8.84572927831662,
+                "off": 8.84572927831662,
+                "on": 1.7357538349133284
+              }
+            },
+            "retained": {
+              "pixels": 1150,
+              "projection": -3.7270207719357233,
+              "response_mae": 7.914123942028985,
+              "response_magnitude": 6.392320405797101,
+              "absolute_chroma_errors": {
+                "identity": 1.5450362318840578,
+                "off": 1.5450362318840578,
+                "on": 7.914123942028985
+              }
+            }
+          },
+          "whole_luma_response": 0.19661969607469512,
+          "passed": false,
+          "peak_luma_error": 0.4751999999999994,
+          "limited_fraction": 0.0,
+          "sha256": "1e0a091ad48c76ada152aef8252934701dc19d85fa6ce3f7bc22ce2e4dda2ccf"
+        },
+        "matched": {
+          "regions": {
+            "desaturated": {
+              "pixels": 54747,
+              "projection": 0.802951764761933,
+              "response_mae": 1.7357538349133284,
+              "response_magnitude": 7.112699343038583,
+              "absolute_chroma_errors": {
+                "identity": 8.84572927831662,
+                "off": 8.84572927831662,
+                "on": 1.7357538349133284
+              }
+            },
+            "retained": {
+              "pixels": 1150,
+              "projection": -3.7270207719357233,
+              "response_mae": 7.914123942028985,
+              "response_magnitude": 6.392320405797101,
+              "absolute_chroma_errors": {
+                "identity": 1.5450362318840578,
+                "off": 1.5450362318840578,
+                "on": 7.914123942028985
+              }
+            }
+          },
+          "whole_luma_response": 0.19661969607469512,
+          "passed": false,
+          "peak_luma_error": 0.4751999999999994,
+          "limited_fraction": 0.0,
+          "sha256": "1e0a091ad48c76ada152aef8252934701dc19d85fa6ce3f7bc22ce2e4dda2ccf"
+        },
+        "unchanged": {
+          "regions": {
+            "desaturated": {
+              "pixels": 54747,
+              "projection": 0.0,
+              "response_mae": 8.84572927831662,
+              "response_magnitude": 0.0,
+              "absolute_chroma_errors": {
+                "identity": 8.84572927831662,
+                "off": 8.84572927831662,
+                "on": 8.84572927831662
+              }
+            },
+            "retained": {
+              "pixels": 1150,
+              "projection": 0.0,
+              "response_mae": 1.5450362318840578,
+              "response_magnitude": 0.0,
+              "absolute_chroma_errors": {
+                "identity": 1.5450362318840578,
+                "off": 1.5450362318840578,
+                "on": 1.5450362318840578
+              }
+            }
+          },
+          "whole_luma_response": 0.0,
+          "passed": false,
+          "peak_luma_error": 0.0,
+          "limited_fraction": 0.0,
+          "sha256": "1058f885356fa3fc9a95b67351b232f77869de9d56482f839f13317b6993599b"
+        }
+      },
+      "absolute_gate": false,
+      "unchanged_exact": true,
+      "panel_sha256": "63abcf68d7fbdcde53aaa8c748af0e59b0dffe4dc5d9af9fb9e39cce36763349",
+      "passed": false
+    }
+  },
+  "passed": false
+}
