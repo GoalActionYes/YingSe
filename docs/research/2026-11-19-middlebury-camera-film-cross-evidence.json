@@ -1,0 +1,345 @@
+{
+  "source": {
+    "archive": "https://vision.middlebury.edu/color/data/checker/zip/checker24s-RAW-JPG.zip",
+    "size": 42359108,
+    "etag": "\"sha256-420534c8d56cfdd896241b2e96ed34e69df8e6de6a519e56489fe7de7826df74\"",
+    "files": {
+      "canon": {
+        "member": "checker24s/CanonEOS1DsMarkII/wb1i1e3-jpg.png",
+        "bytes": 93439,
+        "crc32": "9d70d673",
+        "sha256": "b28f72b54b166c44dc2dc8fb46ae0f6908c143fe6abf7caf5b54a7c75a4904f2"
+      },
+      "nikon": {
+        "member": "checker24s/NikonD70/wb1i1e3-jpg.png",
+        "bytes": 101162,
+        "crc32": "886aaf48",
+        "sha256": "eaf84334485d7b62f00af91dea4f0541e74fd6456690aec9b53bd833aefd823e"
+      }
+    },
+    "range_bytes": 291934
+  },
+  "target_ledger_sha256": "e09286501decd0d41cf727bce645d9920298da166f6bdaf4bab20385d27d730e",
+  "look_sha256": "cee155989194d1a63eb07454d894a400c9716248aa14b99e902cae8b66e33fa5",
+  "model_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "inputs": {
+    "canon": {
+      "shape": [
+        260,
+        390,
+        3
+      ],
+      "profile": "untagged assumed sRGB",
+      "film_edit_mae": 9.624273504273503,
+      "edited_sha256": "4a42742da56dbbf3f116b2830c6085c74d3a0011fcd592c3374e9e81690bcf93"
+    },
+    "nikon": {
+      "shape": [
+        260,
+        390,
+        3
+      ],
+      "profile": "untagged assumed sRGB",
+      "film_edit_mae": 9.281617357001972,
+      "edited_sha256": "52bd646c0bfb68214d3ba1f491532f386042a80a1b01a65f6fd02850990c8713"
+    }
+  },
+  "input_camera_mae": 49.4836291913215,
+  "results": {
+    "poker_fullshot": {
+      "hashes": {
+        "canon": {
+          "off": "04544953c791e5515acf9ed00e395bc4b817bf02050a86f667b8a7a41863e4ec",
+          "on": "701ef2899885ac8b5b32df3eff479d85ca7feca8d3aa6eefa28e0b066fdd2ea5"
+        },
+        "nikon": {
+          "off": "66698bfce3d34f7cff8a4dca5ddcf025e50cb69b0d0ada06c68cf77261c769e1",
+          "on": "8ccd1f8f0fc0458568cde18054f3ec7df43802b1d3d5c0c6a62312ae62b97d2f"
+        }
+      },
+      "regions": {
+        "whole": {
+          "pixels": 147456,
+          "style": {
+            "canon": {
+              "projection": 0.39324397805573436,
+              "response_mae": 5.2552919741030095,
+              "off_matches_original_mae": 30.671581127025462,
+              "on_matches_authored_mae": 26.64347556785301,
+              "original_matches_authored_mae": 3.2981929072627314,
+              "passed": false
+            },
+            "nikon": {
+              "projection": 0.6201597530759207,
+              "response_mae": 3.783985279224537,
+              "off_matches_original_mae": 11.152863679108796,
+              "on_matches_authored_mae": 12.682535807291666,
+              "original_matches_authored_mae": 3.2981929072627314,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 23.02515552662037,
+              "luma_mae": 24.24035875922309,
+              "chroma_mae": 3.9661219310619207
+            },
+            "on": {
+              "rgb_mae": 20.691096553096063,
+              "luma_mae": 21.060646120876736,
+              "chroma_mae": 6.454775008138021
+            }
+          }
+        },
+        "neutral": {
+          "pixels": 7642,
+          "style": {
+            "canon": {
+              "projection": 0.3865759854548864,
+              "response_mae": 4.541088720230306,
+              "off_matches_original_mae": 25.71255343278374,
+              "on_matches_authored_mae": 22.896144115850998,
+              "original_matches_authored_mae": 6.302233272267295,
+              "passed": false
+            },
+            "nikon": {
+              "projection": 0.1571457472126641,
+              "response_mae": 6.825918171508331,
+              "off_matches_original_mae": 6.528744656721626,
+              "on_matches_authored_mae": 11.959565558754253,
+              "original_matches_authored_mae": 6.302233272267295,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 24.765070225944342,
+              "luma_mae": 25.99117385501178,
+              "chroma_mae": 3.0108256215650355
+            },
+            "on": {
+              "rgb_mae": 27.67844368838873,
+              "luma_mae": 26.319045406961532,
+              "chroma_mae": 6.18699918869406
+            }
+          }
+        },
+        "cloth_left": {
+          "pixels": 303,
+          "style": {
+            "canon": {
+              "projection": 0.8842803815844048,
+              "response_mae": 1.5819581958195819,
+              "off_matches_original_mae": 12.877887788778878,
+              "on_matches_authored_mae": 11.427942794279428,
+              "original_matches_authored_mae": 1.592959295929593,
+              "passed": true
+            },
+            "nikon": {
+              "projection": -0.7057237660721692,
+              "response_mae": 3.957095709570957,
+              "off_matches_original_mae": 21.015401540154016,
+              "on_matches_authored_mae": 24.86028602860286,
+              "original_matches_authored_mae": 1.592959295929593,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 9.077007700770077,
+              "luma_mae": 10.781774257425742,
+              "chroma_mae": 2.4025293729372934
+            },
+            "on": {
+              "rgb_mae": 14.07920792079208,
+              "luma_mae": 13.673753135313529,
+              "chroma_mae": 1.3109887788778882
+            }
+          }
+        },
+        "cloth_right": {
+          "pixels": 625,
+          "style": {
+            "canon": {
+              "projection": 0.4562444769780662,
+              "response_mae": 3.1157333333333335,
+              "off_matches_original_mae": 11.255466666666667,
+              "on_matches_authored_mae": 9.041066666666667,
+              "original_matches_authored_mae": 5.638933333333333,
+              "passed": false
+            },
+            "nikon": {
+              "projection": -0.34348909903849956,
+              "response_mae": 7.900266666666667,
+              "off_matches_original_mae": 12.4624,
+              "on_matches_authored_mae": 19.189333333333334,
+              "original_matches_authored_mae": 5.638933333333333,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 15.839466666666667,
+              "luma_mae": 17.362028480000003,
+              "chroma_mae": 2.076471573333333
+            },
+            "on": {
+              "rgb_mae": 21.261866666666666,
+              "luma_mae": 20.06629696,
+              "chroma_mae": 1.9751876266666666
+            }
+          }
+        }
+      },
+      "passed": false
+    },
+    "hdr_testimage": {
+      "hashes": {
+        "canon": {
+          "off": "171b6d27bf832eb10ff979ef056f2d574240e0b3d1aa4668b6824e7135318524",
+          "on": "f61d3a78e55424d5e18728462e86e76e06fc1dd98d79c4c16484210f58c660b6"
+        },
+        "nikon": {
+          "off": "190536b0fd58ef45c963fcf8d3eb6a309be7ceafa3b90d05c444e0a641f2d86b",
+          "on": "55c453e16ac5abe26a420432e9e021a25460603b26fc3983020199712388217b"
+        }
+      },
+      "regions": {
+        "whole": {
+          "pixels": 147456,
+          "style": {
+            "canon": {
+              "projection": 0.5389985962709768,
+              "response_mae": 4.48558666087963,
+              "off_matches_original_mae": 37.923574942129626,
+              "on_matches_authored_mae": 35.024929470486114,
+              "original_matches_authored_mae": 3.96160888671875,
+              "passed": false
+            },
+            "nikon": {
+              "projection": 0.26541769817193556,
+              "response_mae": 4.110846625434028,
+              "off_matches_original_mae": 16.13139964916088,
+              "on_matches_authored_mae": 19.17970558449074,
+              "original_matches_authored_mae": 3.96160888671875,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 26.756684479890048,
+              "luma_mae": 28.401166828070743,
+              "chroma_mae": 3.511058400698061
+            },
+            "on": {
+              "rgb_mae": 23.20082374855324,
+              "luma_mae": 23.65285576171875,
+              "chroma_mae": 3.741566178385417
+            }
+          }
+        },
+        "neutral": {
+          "pixels": 18836,
+          "style": {
+            "canon": {
+              "projection": 0.3371452642593678,
+              "response_mae": 5.330926594464501,
+              "off_matches_original_mae": 23.717349755786792,
+              "on_matches_authored_mae": 20.018970765201388,
+              "original_matches_authored_mae": 7.929337438946698,
+              "passed": false
+            },
+            "nikon": {
+              "projection": 0.02183637625518817,
+              "response_mae": 7.692503716287959,
+              "off_matches_original_mae": 9.468570821830538,
+              "on_matches_authored_mae": 15.675975083174064,
+              "original_matches_authored_mae": 7.929337438946698,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 29.827705811566503,
+              "luma_mae": 31.70182624761095,
+              "chroma_mae": 3.7980289870460817
+            },
+            "on": {
+              "rgb_mae": 31.60398527642104,
+              "luma_mae": 30.152860246336797,
+              "chroma_mae": 3.85796086925745
+            }
+          }
+        },
+        "skin_left": {
+          "pixels": 124,
+          "style": {
+            "canon": {
+              "projection": 0.3549432739059968,
+              "response_mae": 2.524193548387097,
+              "off_matches_original_mae": 27.612903225806452,
+              "on_matches_authored_mae": 25.38978494623656,
+              "original_matches_authored_mae": 1.956989247311828,
+              "passed": false
+            },
+            "nikon": {
+              "projection": -0.025526742301458672,
+              "response_mae": 2.2795698924731185,
+              "off_matches_original_mae": 9.341397849462366,
+              "on_matches_authored_mae": 8.830645161290322,
+              "original_matches_authored_mae": 1.956989247311828,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 24.282258064516128,
+              "luma_mae": 26.40323387096774,
+              "chroma_mae": 7.158604838709676
+            },
+            "on": {
+              "rgb_mae": 23.586021505376344,
+              "luma_mae": 23.43951774193548,
+              "chroma_mae": 6.732527419354839
+            }
+          }
+        },
+        "skin_right": {
+          "pixels": 122,
+          "style": {
+            "canon": {
+              "projection": 0.2028950799606184,
+              "response_mae": 8.117486338797814,
+              "off_matches_original_mae": 19.543715846994534,
+              "on_matches_authored_mae": 15.043715846994536,
+              "original_matches_authored_mae": 10.117486338797814,
+              "passed": false
+            },
+            "nikon": {
+              "projection": 0.027327638966499028,
+              "response_mae": 9.770491803278688,
+              "off_matches_original_mae": 21.89344262295082,
+              "on_matches_authored_mae": 26.937158469945356,
+              "original_matches_authored_mae": 10.117486338797814,
+              "passed": false
+            }
+          },
+          "camera_effect": {
+            "off": {
+              "rgb_mae": 24.3224043715847,
+              "luma_mae": 28.182303278688522,
+              "chroma_mae": 5.52524863387978
+            },
+            "on": {
+              "rgb_mae": 25.975409836065573,
+              "luma_mae": 26.30375737704918,
+              "chroma_mae": 3.1364524590163936
+            }
+          }
+        }
+      },
+      "passed": false
+    }
+  },
+  "passed": false
+}
