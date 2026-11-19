@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+已核查三套真人或混合光采集库。HumanOLAT 有彩光实拍但需审批，BecomingLit 以交错白光为主；暂未取得可直接使用的肤色换灯对照小样。[实拍数据准入](research/2026-11-19-portrait-light-source-eligibility.md)
+
 把冻结扩展版成片压成全图通用色表后，四组人像的最差保护区色差全部增加，Film B 和 FACD 均未过门槛。停止这套重建，稳定版 1.3 继续用于演示。[全图色表重建对照](research/2026-11-19-global-render-refit.md)
 
 [最新画质交接](research/2026-11-19-quality-handoff.md)记录阶段未达成项、停止范围、课程入口和 132 份已核对开发产物。用于下一候选复查，独立验收条件仍保持。
