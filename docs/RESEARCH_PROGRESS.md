@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+曝光对照允许任意共享二维线性色度修正，原版与曝光归一版仍各有 0/5 能同时达到稳定和暖调门槛。结束固定方向保护。[方向分离边界](research/2026-11-19-dast-directional-protection-bound.md)
+
 在 DAST 的两套冻结成片上，同一目标所有参考共用一个脸部色度保护系数时，稳定与暖调两项无共同可行区间。[统一肤色保护的取舍](research/2026-11-19-dast-uniform-protection-bound.md)
 
 固定参考曝光缩小了实拍人像的肤色波动范围，但 20 项仍全部超限，暖调不足。停止固定全图曝光归一。[实拍曝光归一对照](research/2026-11-19-dast-reference-exposure-normalization.md)
