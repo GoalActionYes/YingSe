@@ -33,13 +33,13 @@ def save(path, rgb):
     return digest(path)
 
 
-def panel(path, refs, target, answers, results):
+def panel(path, refs, target, answers, results, output_label="13 output"):
     board = Image.new("RGB", (1000, 490), "#222730")
     draw = ImageDraw.Draw(board)
     for index, (side, guide) in enumerate(refs.items()):
         y = index * 245
         for col, (label, rgb) in enumerate(zip(
-            (f"Reference / {side}", "Unchanged target", "Expected layout", "13 output"),
+            (f"Reference / {side}", "Unchanged target", "Expected layout", output_label),
             (guide, target, answers[side], results[side]), strict=True,
         )):
             x = col * 250 + 5
