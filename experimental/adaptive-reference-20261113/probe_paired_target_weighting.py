@@ -69,7 +69,7 @@ def passing(row):
     return .75 <= score['projection'] <= 1.25 and score['response_mae'] <= 3
 
 
-def measure(out, key, row, archive, history, old_pair):
+def measure(out, key, row, archive, history, old_pair, renderer, method):
     source_dir = BASE / 'bg-real-editor-look' / key
     switch_dir = BASE / 'bg-real-two-look-switch-v3' / key
     film_dir = BASE / 'bg-real-film-b-qualification-v1'
@@ -100,8 +100,8 @@ def measure(out, key, row, archive, history, old_pair):
                             old_pair['cases'][key]['roles'][role]['frame_a_sha256'])
         old_b = checked_rgb(film_dir / f'paired-{key}-{role}-on.png',
                             history['comparison']['paired']['cases'][key]['outputs'][f'{role}-on'])
-        new_a, counts_a = render(original, reference_a, target, old_a)
-        new_b, counts_b = render(original, reference_b, target, old_b)
+        new_a, counts_a = renderer(original, reference_a, target, old_a)
+        new_b, counts_b = renderer(original, reference_b, target, old_b)
         np.testing.assert_array_equal(counts_a, counts_b)
         old = readings(known_a, known_b, old_a, old_b, areas, holdout)
         new = readings(known_a, known_b, new_a, new_b, areas, holdout)
@@ -120,19 +120,21 @@ def measure(out, key, row, archive, history, old_pair):
             if worse > .25 or (passing(before) and not passing(after)):
                 regressions.append(label)
         hashes = {style: save(out / f'{role}-{style}.png', rgb) for style, rgb in (('a', new_a), ('b', new_b))}
-        results[role] = dict(old=old, weighted=new, white_passes=white_passes, regressions=regressions,
-                             represented_pixels=support, hashes=hashes)
+        results[role] = {
+            'old': old, method: new, 'white_passes': white_passes, 'regressions': regressions,
+            'represented_pixels': support, 'hashes': hashes,
+        }
         board[f'{role} old'] = {'target': target, 'A': old_a, 'B': old_b, 'known A': known_a, 'known B': known_b}
-        board[f'{role} weighted'] = {'target': target, 'A': new_a, 'B': new_b, 'known A': known_a, 'known B': known_b}
+        board[f'{role} {method}'] = {'target': target, 'A': new_a, 'B': new_b, 'known A': known_a, 'known B': known_b}
     return dict(roles=results, panel_sha256=panel(out / 'comparison.png', board))
 
 
-def run(out):
+def run(out, renderer=render, method='weighted'):
     archive = checked_json(BASE / 'bg-real-two-look-switch-v3/results.json', SWITCH_SHA)
     history = checked_json(BASE / 'bg-real-film-b-qualification-v1/results.json', archive['film_b_report_sha256'])
     old_pair = checked_json(BASE / 'bg-real-paired-two-look-v1/results.json', PARENT)
     out.mkdir()
-    cases = {key: measure(out / key, key, row, archive, history, old_pair)
+    cases = {key: measure(out / key, key, row, archive, history, old_pair, renderer, method)
              for key, row in manifest(BASE, 'bg-real-editor-look')['cases'].items()}
     passed = (all(role['white_passes'] is True for role in cases['872-1268']['roles'].values())
               and all(not role['regressions'] for case in cases.values() for role in case['roles'].values()))
