@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+给定作者去色区域后，两组实图用固定 80% 去色都过区域门槛；从另一张参考估力度无收益。下一候选优先验证编辑范围，尚非自动画质成绩。[局部去色幅度与区域对照](research/2026-11-19-psbench-desaturation-oracle-amount.md)
+
 真实鸟照 211 个相同 RGB 同时出现在应去色与应保色区域。普通色表在这些共有像素上不能同时达到预设误差；人像无共有颜色，保留为缺测。[局部去色的 CUBE 边界](research/2026-11-19-psbench-desaturation-location-bound.md)
 
 分区编辑差的八个覆盖外人物误差全部变差；覆盖不足时回退，恢复白球服，但仍与原整图同为 1/4。[颜色覆盖归因](research/2026-11-19-film-b-regional-support.md)
