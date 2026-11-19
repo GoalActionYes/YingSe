@@ -52,16 +52,17 @@ def save_images(folder, prefix, images):
     return hashes
 
 
-def panel(folder, guides, outputs, target, expected):
+def panel(folder, guides, outputs, target, expected, output_label="13 (80%)"):
     board = Image.new("RGB", (1040, 432), "#242933")
     draw = ImageDraw.Draw(board)
     rows = (guides, outputs, {"target original": target, "author 80%": expected})
+    labels = ("reference", output_label, "target")
     for row, images in enumerate(rows):
         for col, (label, pixels) in enumerate(images.items()):
             x, y = col * 260 + 6, row * 144
             thumb = Image.fromarray(pixels)
             thumb.thumbnail((246, 120))
-            draw.text((x, y + 4), f"{('reference', '13 (80%)', 'target')[row]} / {label}", fill="white")
+            draw.text((x, y + 4), f"{labels[row]} / {label}", fill="white")
             board.paste(thumb, (x, y + 20))
     path = folder / "comparison.png"
     board.save(path)
