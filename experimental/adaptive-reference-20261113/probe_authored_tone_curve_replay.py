@@ -33,6 +33,17 @@ def measured(reference):
     return np.array([np.median(difference[assignment == i], axis=0) for i in range(len(CENTERS))]), counts
 
 
+def render_shifts(baseline, shifts):
+    midpoint = .5 * (get_color(baseline[0]) + get_color(baseline[1]))
+    output, clipped = {}, {}
+    for name, shift in shifts.items():
+        pairs = [render(midpoint + sign * .5 * shift, image @ LUMA)
+                 for sign, image in zip((-1, 1), baseline, strict=True)]
+        output[name] = [frame for frame, _ in pairs]
+        clipped[name] = [amount for _, amount in pairs]
+    return output, clipped
+
+
 def replay(target, references, baseline):
     profile, counts = measured(references)
     if profile is None:
@@ -42,18 +53,12 @@ def replay(target, references, baseline):
     curve = np.stack([np.interp(rank, CENTERS, profile[:, index]) for index in range(2)], axis=2)
     curve += (mean - curve.mean(axis=(0, 1)))
     np.testing.assert_allclose(curve.mean(axis=(0, 1)), mean, atol=1e-10, rtol=0)
-    midpoint = .5 * (get_color(baseline[0]) + get_color(baseline[1]))
-    output, clipped = {}, {}
-    for name, shift in zip(ARMS, (mean, curve), strict=True):
-        pairs = [render(midpoint + sign * .5 * shift, image @ LUMA)
-                 for sign, image in zip((-1, 1), baseline, strict=True)]
-        output[name] = [frame for frame, _ in pairs]
-        clipped[name] = [amount for _, amount in pairs]
+    output, clipped = render_shifts(baseline, dict(zip(ARMS, (mean, curve), strict=True)))
     return output, {"applied": True, "counts": counts, "chroma_profile": profile.tolist(),
                     "spread_mean_chroma": mean.tolist(), "gamut_fraction": clipped}
 
 
-def run(out):
+def run(out, predict=replay, arms=ARMS):
     split = load(SPLIT / "private-assignment.json", SPLIT_SHA)["development"]
     catalog = look_catalog()
     entries = {row["original_path"]: row for row in load(MANIFEST, HASHES[2])["files"]}
@@ -78,7 +83,7 @@ def run(out):
             earlier = value["arms"]["13"]
             ordinary = [checked_rgb(parent / f"{key}-{slot}-13-{i}.png", digest)
                         for i, digest in enumerate(earlier["hashes"])]
-            candidates, audit = replay(target, references, ordinary)
+            candidates, audit = predict(target, references, ordinary)
             scores = {}
             for name, frames in candidates.items():
                 metrics = {area: measure(frames, authored, mask) for area, mask in regions.items()}
@@ -92,12 +97,13 @@ def run(out):
     if len(tested) != 7 or sum(map(len, tested.values())) != 10:
         raise ValueError("Frozen cohort changed")
     summaries = {}
-    for name in ARMS:
+    control, candidate = arms
+    for name in arms:
         groups = [[record["arms"][name] for record in slots.values()] for slots in tested.values()]
         summaries[name] = {"groups_pass": sum(all(slot["passed"] for slot in group) for group in groups),
                            "worst_added_mae": max(slot["worst_added_mae"] for group in groups for slot in group)}
-    passed = (summaries["curve"]["groups_pass"] >= summaries["constant"]["groups_pass"] + 2
-              and summaries["curve"]["worst_added_mae"] <= 2)
+    passed = (summaries[candidate]["groups_pass"] >= summaries[control]["groups_pass"] + 2
+              and summaries[candidate]["worst_added_mae"] <= 2)
     json_to(out / "results.json", {"parent_sha256": FIXED, "summary": summaries, "cases": tested, "passed": passed})
 
 
