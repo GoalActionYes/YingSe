@@ -208,9 +208,17 @@ async function restore(){
     showMedia('target',project.target);showMedia('reference',project.reference);$('frame-time').value=project.analysis_time;
     state.mapping=project.mapping_id;$('strength').value=Math.round(project.strength*100);$('format').value=project.output_settings.kind;
     $('clone-enabled').checked=project.output_settings.clone_enabled!==false;
+    if(project.needs_analysis)state.mapping=null;
     if(manualVersion===restoreManualVersion)controls.restore(project.output_settings.adjustments);
     else scheduleSave();
     syncStrength();
+    if(project.needs_analysis){
+      $('diagnostics').hidden=true;setButtons();
+      await Promise.all([showFrame('target'),showFrame('reference')]);
+      if(gen!==state.generation)return;
+      status('素材和微调已恢复，正在重新分析更新后的调色效果。','busy');
+      await analyze();return;
+    }
     $('diagnostics').href='/api/diagnostics/'+state.mapping;$('diagnostics').hidden=false;setButtons();requestPreview();
     await Promise.all([showFrame('target'),showFrame('reference')]);if(gen===state.generation)$('save-state').textContent='已恢复上次项目 · 映射缓存有效';
   }catch(error){if(gen===state.generation && !state.target){$('save-state').textContent='尚无可恢复的有效项目';if(!error.message.includes('不存在'))status('上次项目无法恢复，请重新导入与分析。','error');}}

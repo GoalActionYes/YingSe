@@ -56,7 +56,7 @@ class SpatialStore(Store):
 
     def decode(self,record,time_seconds=0.):
         if record['kind']=='video':return media.decode_frame(record['path'],time_seconds)
-        media.decode_image(record['path'])  # Preserve the app's precision checks.
+        media.decode_image(record['path'], normalize_icc=False)  # Validate before the strict spatial color preparation.
         with Image.open(record['path']) as image:
             oriented=ImageOps.exif_transpose(image);profile_bytes=oriented.info.get('icc_profile')
             # The upload contract permits ordinary RGBA/palette/gray inputs.

@@ -16,7 +16,7 @@ from urllib.parse import unquote, urlsplit, quote
 from PIL import Image
 from . import media, pipeline
 from .lut import apply_mapping
-from .storage import Store, _json
+from .storage import Store, _json, StaleMappingError
 from .jobs import JobManager
 from .adjustments import normalize, compose
 from .preview import PreviewFrames
@@ -170,9 +170,20 @@ class Handler(BaseHTTPRequestHandler):
             if len(parts) == 3 and parts[:2] == ['api', 'projects']:
                 project_id = json.loads((store.root / 'latest-project.json').read_text(encoding='utf-8'))['project_id'] if parts[2] == 'latest' else self.identifier(parts[2])
                 project = json.loads(store._record('projects', self.identifier(project_id)).read_text(encoding='utf-8'))
-                mapping_id = project['mapping']['id']; store.get_mapping(mapping_id)
+                mapping_id = project['mapping']['id']
+                needs_analysis = False
+                try:
+                    store.get_mapping(mapping_id)
+                except StaleMappingError:
+                    needs_analysis = True
                 record = store.get_mapping_record(mapping_id)
-                return self.json(dict(id=project['id'], mapping_id=mapping_id, strength=project['strength'], output_settings=project['output_settings'], analysis_time=record['analysis_time'], target=public_media(store.get_media(record['target_id'])), reference=public_media(store.get_media(record['reference_id']))))
+                response = dict(id=project['id'], mapping_id=mapping_id, strength=project['strength'],
+                                output_settings=project['output_settings'], analysis_time=record['analysis_time'],
+                                target=public_media(store.get_media(record['target_id'])),
+                                reference=public_media(store.get_media(record['reference_id'])))
+                if needs_analysis:
+                    response['needs_analysis'] = True
+                return self.json(response)
             raise RequestError(404, '接口不存在')
         if path == '/api/media':
             if self.headers.get_content_type() != 'application/octet-stream':

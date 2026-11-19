@@ -3,8 +3,9 @@
 8/10-bit SDR video is decoded to RGB8 before feature analysis or mapping.
 10-bit import is a compatibility conversion, not native decode equivalence.
 
-No profile-managed/native decode equivalence is claimed. FFmpeg frame PTS is
-reported in the demuxer's timeline; it is not a promise of native frame selection.
+Usable embedded RGB ICC profiles are converted to sRGB for SDR images.
+FFmpeg frame PTS is reported in the demuxer's timeline; it is not a promise
+of native frame selection.
 """
 from io import BytesIO
 from functools import lru_cache
@@ -93,11 +94,34 @@ def _video_precision(stream):
     return name,list(formats[name]) if name in formats else None
 
 
-def decode_image(path) -> np.ndarray:
+def _image_working_rgb(image):
+    rgb = image.convert('RGB')
+    embedded = image.info.get('icc_profile')
+    if not embedded or image.mode not in ('RGB', 'RGBA', 'RGBX', 'P', 'PA'):
+        return rgb
+    try:
+        from PIL import ImageCms
+    except ImportError:
+        return rgb
+    try:
+        source = ImageCms.ImageCmsProfile(BytesIO(embedded))
+        if source.profile.xcolor_space.strip() != 'RGB':
+            return rgb
+        return ImageCms.profileToProfile(
+            rgb, source, ImageCms.createProfile('sRGB'),
+            renderingIntent=ImageCms.Intent.RELATIVE_COLORIMETRIC, outputMode='RGB',
+        )
+    except (ImageCms.PyCMSError, OSError, ValueError):
+        return rgb
+
+
+def decode_image(path, *, normalize_icc=True) -> np.ndarray:
     try:
         with Image.open(path) as im:
             _validate_image_mode(im)
-            return np.array(ImageOps.exif_transpose(im).convert('RGB'),dtype=np.uint8)
+            oriented = ImageOps.exif_transpose(im)
+            rgb = _image_working_rgb(oriented) if normalize_icc else oriented.convert('RGB')
+            return np.array(rgb,dtype=np.uint8)
     except UnsupportedImageError:raise
     except (OSError,ValueError,Image.DecompressionBombError) as exc:
         raise ValueError('Invalid or unsupported image input') from exc
@@ -116,7 +140,7 @@ def probe_media(path) -> dict:
             with Image.open(path) as check:check.verify()
             return dict(kind='image',width=width,height=height,duration_seconds=None,
                         has_audio=False,exif_orientation=orientation,
-                        color_management='Pillow RGB conversion; ICC color management unvalidated')
+                        color_management='Usable embedded RGB ICC to sRGB; otherwise Pillow RGB')
     except UnsupportedImageError:raise
     except (OSError,ValueError,Image.DecompressionBombError):pass
     _,_,log=_run(['-i',path])

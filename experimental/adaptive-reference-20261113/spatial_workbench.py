@@ -58,16 +58,6 @@ def assets(enhanced=False):
     html=html.replace('分析帧','预览帧')
     js=(WEB/'app.js').read_text(encoding='utf-8').replace('图片、视频和 CUBE 导出','图片和视频导出').replace('导出使用相同映射与当前强度','图片导出包含当前局部效果；视频逐帧自适应处理')
     js=js.replace('原尺寸视频（奇数边补齐偶数）；H.264 / AAC 有损编码，保留首条可用音轨。','局部调色视频 · 统一30fps（可补帧／丢帧）；原尺寸，奇数边补齐偶数；H.264 / AAC 有损编码，保留首条可用音轨。')
-    restore_line="$('diagnostics').href='/api/diagnostics/'+state.mapping;$('diagnostics').hidden=false;setButtons();requestPreview();"
-    if js.count(restore_line)!=1:raise ValueError('工程恢复脚本发生变化，需重新适配')
-    js=js.replace(restore_line,"""if(project.needs_analysis){
-      $('diagnostics').hidden=true;setButtons();
-      await Promise.all([showFrame('target'),showFrame('reference')]);
-      if(gen!==state.generation)return;
-      status('素材和微调已恢复，正在重新分析更新后的调色效果。','busy');
-      await analyze();return;
-    }
-    """+restore_line)
     if enhanced:
         html=html.replace('局部参考调色研究版','自适应参考调色研究版').replace('局部参考调色（课程研究）','自适应参考调色（课程研究）')
         html=html.replace('图片保留原尺寸；视频导出为30fps。局部效果请导出图片或视频。','图片保留原尺寸；视频以30fps导出并平滑色彩过渡，静帧预览可能略有差异。')

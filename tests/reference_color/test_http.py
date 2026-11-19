@@ -14,7 +14,7 @@ from unittest.mock import patch
 from urllib.parse import quote
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageCms
 from reference_color_app import jobs, media
 from reference_color_app.server import make_server, MAX_UPLOAD
 
@@ -119,6 +119,66 @@ class HttpTests(unittest.TestCase):
         code, _, raw = self.request('GET', '/api/diagnostics/'+self.mapping)
         self.assertEqual(code, 200); self.assertIn('algorithm_fingerprint', json.loads(raw))
 
+    def test_display_p3_uses_the_same_working_pixels_for_upload_analysis_and_export(self):
+        # Compact ICC Profiles, DisplayP3-v4, CC0, blob 4ee40fb5eeb6dfde851c989ecc7c3ebd496ba9fc.
+        profile = base64.b64decode(
+            'AAAB4GxjbXMEIAAAbW50clJHQiBYWVogB+IAAwAUAAkADgAdYWNzcE1TRlQAAAAAc2F3c2N0cmwA'
+            'AAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1oYW5kwzc6zlf4VsuhS9h6V6sQYQAAAAAAAAAAAAAAAAAA'
+            'AAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAAAiY3BydAAAASAAAAAid3RwdAAAAUQAAAAUY2hhZAAA'
+            'AVgAAAAsclhZWgAAAYQAAAAUZ1hZWgAAAZgAAAAUYlhZWgAAAawAAAAUclRSQwAAAcAAAAAgZ1RSQwAA'
+            'AcAAAAAgYlRSQwAAAcAAAAAgbWx1YwAAAAAAAAABAAAADGVuVVMAAAAGAAAAHABzAFAAMwAAbWx1YwAA'
+            'AAAAAAABAAAADGVuVVMAAAAGAAAAHABDAEMAMAAAWFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAAB'
+            'DEIAAAXe///zJQAAB5MAAP2Q///7of///aIAAAPcAADAblhZWiAAAAAAAACD3wAAPb////+7WFlaIAAA'
+            'AAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABEKAADIuXBhcmEAAAAAAAMAAAACZmkAAPKnAAANWQAA'
+            'E9AAAApb')
+        self.assertEqual(len(profile), 480)
+        wide = ImageCms.ImageCmsProfile(io.BytesIO(profile))
+        srgb = ImageCms.createProfile('sRGB')
+
+        def upload_versions(p3_values, name):
+            image = Image.fromarray(p3_values)
+            expected = np.asarray(ImageCms.profileToProfile(image, wide, srgb,
+                                  renderingIntent=ImageCms.Intent.RELATIVE_COLORIMETRIC, outputMode='RGB'))
+            self.assertGreater(np.abs(p3_values.astype(int) - expected).mean(), 2)
+            stream = io.BytesIO()
+            image.save(stream, format='PNG', icc_profile=profile)
+            p3_record = self.upload(stream.getvalue(), name + '-p3.png')
+            srgb_record = self.upload(self.encode(expected), name + '-srgb.png')
+            return p3_record, srgb_record, expected
+
+        def read_preview(data):
+            return np.array(Image.open(io.BytesIO(base64.b64decode(data.split(',')[1]))))
+
+        targets = upload_versions(self.rgb, 'target')
+        references = upload_versions(np.roll(self.rgb, 1, axis=-1), 'reference')
+        exported = []
+        for target, reference in zip(targets[:2], references[:2], strict=True):
+            original = self.post('/api/frame', dict(media_id=target['id']))
+            np.testing.assert_array_equal(read_preview(original['image']), targets[2])
+            visible_reference = self.post('/api/frame', dict(media_id=reference['id']))
+            np.testing.assert_array_equal(read_preview(visible_reference['image']), references[2])
+            mapping = self.post('/api/analyze', dict(target_id=target['id'], reference_id=reference['id']))
+            preview = self.post('/api/preview', dict(mapping_id=mapping['mapping_id'], strength=.8))
+            job = self.post('/api/export', dict(mapping_id=mapping['mapping_id'], media_id=target['id'],
+                                               strength=.8, kind='png'), 202)
+            done = self.wait(job['id'])
+            self.assertEqual(done['status'], 'done', done)
+            code, _, raw = self.request('GET', done['result_url'])
+            self.assertEqual(code, 200)
+            result = np.array(Image.open(io.BytesIO(raw)))
+            np.testing.assert_array_equal(result, read_preview(preview['after']))
+            exported.append(result)
+        np.testing.assert_array_equal(exported[0], exported[1])
+
+    def test_unusable_image_profile_retains_legacy_pixels(self):
+        for profile in (b'invalid ICC bytes', ImageCms.ImageCmsProfile(ImageCms.createProfile('LAB')).tobytes()):
+            stream = io.BytesIO()
+            Image.fromarray(self.rgb).save(stream, format='PNG', icc_profile=profile)
+            record = self.upload(stream.getvalue(), 'unusable-profile.png')
+            original = self.post('/api/frame', dict(media_id=record['id']))
+            raw = base64.b64decode(original['image'].split(',')[1])
+            np.testing.assert_array_equal(np.array(Image.open(io.BytesIO(raw))), self.rgb)
+
     def test_project_restore_validates_owned_mapping_across_restart(self):
         # UI's serialized writer can finish an older snapshot before submitting
         # the latest; a new server must restore that final strength AND format.
@@ -132,6 +192,25 @@ class HttpTests(unittest.TestCase):
             self.assertEqual(restored['output_settings'], {'kind':'cube', 'clone_enabled':False})
             self.assertEqual(restored['target']['id'], self.target['id']); self.assertNotIn('path', restored['target'])
         finally: second.shutdown(); second.server_close(); thread.join()
+
+    def test_restore_intact_project_after_decoder_cache_changes(self):
+        parameters = {'target_id': self.target['id'], 'reference_id': self.reference['id']}
+        settings = {'kind': 'png', 'adjustments': {'basic': {'brightness': 12}}}
+        with patch('reference_color_app.pipeline.algorithm_fingerprint', return_value='legacy-decoder'):
+            legacy = self.post('/api/analyze', parameters)['mapping_id']
+            saved = self.post('/api/projects', dict(mapping_id=legacy, strength=.37, output_settings=settings), 201)
+        restored = self.post('/api/analyze', parameters)['mapping_id']
+        self.assertNotEqual(restored, legacy)
+        code, _, raw = self.request('GET', '/api/projects/'+saved['project_id'])
+        self.assertEqual(code, 200, raw)
+        project = json.loads(raw)
+        self.assertTrue(project['needs_analysis'])
+        self.assertEqual(project['target']['id'], parameters['target_id'])
+        self.assertEqual(project['reference']['id'], parameters['reference_id'])
+        self.assertAlmostEqual(project['strength'], .37, places=6)
+        self.assertEqual(project['output_settings']['adjustments']['basic']['brightness'], 12)
+        self.post('/api/preview', dict(mapping_id=legacy, strength=.37), 400)
+        self.post('/api/preview', dict(mapping_id=restored, strength=.37))
 
     def test_clone_enable_setting_is_optional_and_strictly_boolean(self):
         for settings in ({'kind':'png'}, {'kind':'mp4', 'clone_enabled':True}):

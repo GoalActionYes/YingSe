@@ -7,6 +7,10 @@ from .contracts import Mapping
 
 VERSION=1
 
+
+class StaleMappingError(ValueError):
+    """An intact project's mapping needs to be analyzed again."""
+
 def _id(): return uuid.uuid4().hex
 
 def _json(path, value):
@@ -74,7 +78,7 @@ class Store:
     def get_mapping(self,mapping_id):
         record=self.get_mapping_record(mapping_id)
         identity,key=self._identity(self.get_media(record['target_id']),self.get_media(record['reference_id']),record['analysis_time'])
-        if key!=record['cache_key'] or identity!=record['identity']: raise ValueError('Mapping is stale; analyze again')
+        if key!=record['cache_key'] or identity!=record['identity']: raise StaleMappingError('Mapping is stale; analyze again')
         return self._load(key,identity)
     def save_project(self,mapping_id,strength,output_settings=None):
         from .lut import _strength
