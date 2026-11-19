@@ -87,17 +87,17 @@ def fit(split, frozen):
                   "unmeasurable_registration": flat}
 
 
-def grade(target, reference, baseline, coef, area):
+def grade(target, reference, baseline, coef, area, arms=ARMS):
     if np.array_equal(target, reference):
-        return {key: target.copy() for key in ARMS}
-    outputs = {key: baseline.copy() for key in ARMS}
+        return {key: target.copy() for key in arms}
+    outputs = {key: baseline.copy() for key in arms}
     if not area.any():
         return outputs
     delta = features(target, reference, baseline, area) @ coef
     original = get_color(target)[area]
     length_limit = 2 * np.linalg.norm(get_color(baseline)[area] - original, axis=1)
     light = (baseline @ LUMA)[area]
-    for name, vectors in zip(ARMS, np.split(delta, 2, axis=1), strict=True):
+    for name, vectors in zip(arms, np.split(delta, len(arms), axis=1), strict=True):
         length = np.linalg.norm(vectors, axis=1)
         factor = np.divide(length_limit, length, out=np.ones_like(length), where=length > 0)
         outputs[name][area], _ = render(original + vectors * np.minimum(factor, 1)[:, None], light)

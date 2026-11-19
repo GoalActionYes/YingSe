@@ -47,16 +47,21 @@ def measure(frames, authored, region):
     return result
 
 
-@torch.inference_mode()
-def run(out):
-    torch.set_num_threads(4)
-    split = load(SPLIT / "private-assignment.json", SPLIT_SHA)
-    ready = {row["original_path"] for row in load(MANIFEST, HASHES[2])["files"]}
+def look_catalog():
     catalog = defaultdict(set)
     for row in load(INDEX, HASHES[0]):
         for role in ("reference", "gt"):
             path = row[role]
             catalog[family(path, role), edit_number(path)].add(path)
+    return catalog
+
+
+@torch.inference_mode()
+def run(out):
+    torch.set_num_threads(4)
+    split = load(SPLIT / "private-assignment.json", SPLIT_SHA)
+    ready = {row["original_path"] for row in load(MANIFEST, HASHES[2])["files"]}
+    catalog = look_catalog()
     _, read = donor_assets()
     engine = SpatialEngine("multiref-v1")
     archive = BASE / "reference-equivalence-development-baseline-v1"
