@@ -81,7 +81,7 @@ def descriptor(rgb):
     return result.ravel()
 
 
-def samples(base, scenes, transforms):
+def samples(base, scenes, transforms, describe=descriptor):
     cohorts = capture_groups(base)
     data = {}
     for domain, groups in cohorts.items():
@@ -92,10 +92,10 @@ def samples(base, scenes, transforms):
                 guide = Image.fromarray(rgb)
                 guide.thumbnail((512, 512), Image.Resampling.BILINEAR)
                 original = np.array(guide)
-                data[domain][group][name] = {"off": descriptor(original)} | {
-                    label: descriptor(render_style(original, transform)) for label, transform in transforms.items()
+                data[domain][group][name] = {"off": describe(original)} | {
+                    label: describe(render_style(original, transform)) for label, transform in transforms.items()
                 }
-    data["arri"] = {scene: {"native": {label: descriptor(rgb) for label, rgb in states.items()}}
+    data["arri"] = {scene: {"native": {label: describe(rgb) for label, rgb in states.items()}}
                     for scene, states in scenes.items()}
     return data
 
