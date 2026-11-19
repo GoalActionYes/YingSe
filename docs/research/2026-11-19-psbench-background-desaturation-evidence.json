@@ -1,0 +1,220 @@
+{
+  "revision": "929d0710eb7c86a988f8a69a74619052b60ac293",
+  "input_files": {
+    "145_start.jpg": {
+      "path": "145/145_start.jpg",
+      "bytes": 670619,
+      "sha256": "37b92a57e3ed26597e05390ed6c6e411988c4a588ae5550da7b1925ba3e68687"
+    },
+    "145_end.jpg": {
+      "path": "145/145_end.jpg",
+      "bytes": 537853,
+      "sha256": "bbd2b802558e54bc19bcd77f94356e19c168ff05c670531b98a61cad1d87c4b9"
+    },
+    "248_start.jpg": {
+      "path": "248/248_start.jpg",
+      "bytes": 1143808,
+      "sha256": "c22db1e0bb3628f33930a95974d0467c41d26f922207cc3f2fe8b89ad35780f0"
+    },
+    "248_end.jpg": {
+      "path": "248/248_end.jpg",
+      "bytes": 2012124,
+      "sha256": "33ad1f1cef7d95866e720cef0e80cb8e1009b076d15a557e21c066f53e1fde94"
+    }
+  },
+  "model_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "checks": {
+    "145": {
+      "images": {
+        "145_start.jpg": {
+          "size": [
+            1440,
+            1080
+          ],
+          "color": "untagged assumed sRGB"
+        },
+        "145_end.jpg": {
+          "size": [
+            1440,
+            1080
+          ],
+          "color": "untagged assumed sRGB"
+        }
+      },
+      "eligible": true,
+      "registration": [
+        {
+          "zero": 0.9901181167858059,
+          "peak": 0.9901181167858059,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.981677521649759,
+          "peak": 0.981677521649759,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.9940570075895966,
+          "peak": 0.9940570075895966,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.984660620940954,
+          "peak": 0.984660620940954,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.9839017017185963,
+          "peak": 0.9839017017185963,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        }
+      ],
+      "region_pixels": {
+        "desaturated": 108486,
+        "retained": 2982
+      }
+    },
+    "248": {
+      "images": {
+        "248_start.jpg": {
+          "size": [
+            2576,
+            3220
+          ],
+          "color": "embedded ICC to sRGB"
+        },
+        "248_end.jpg": {
+          "size": [
+            2576,
+            3220
+          ],
+          "color": "embedded ICC to sRGB"
+        }
+      },
+      "eligible": true,
+      "registration": [
+        {
+          "zero": 0.9697250973902389,
+          "peak": 0.9697250973902389,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.943263094873408,
+          "peak": 0.943263094873408,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.9795980150170216,
+          "peak": 0.9795980150170216,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.9853229174879882,
+          "peak": 0.9853229174879882,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        },
+        {
+          "zero": 0.9759272080663196,
+          "peak": 0.9759272080663196,
+          "dy": 0,
+          "dx": 0,
+          "peak_gain": 0.0
+        }
+      ],
+      "region_pixels": {
+        "desaturated": 54747,
+        "retained": 1150
+      }
+    }
+  },
+  "results": {
+    "145": {
+      "reference": "248",
+      "hashes": {
+        "off": "d42f12d06824a58dc044d8247ccc9246c62741e1f2a20984afc986eb1e96fab5",
+        "on": "263abc37874afd6dc647c6e0f1d5971bccf08bb5fb3b9f07db4468b71119840b"
+      },
+      "regions": {
+        "desaturated": {
+          "pixels": 108486,
+          "projection": 0.20553109775961312,
+          "response_mae": 11.173640611077312,
+          "response_magnitude": 2.9127795813899184,
+          "absolute_chroma_errors": {
+            "identity": 13.943693934701255,
+            "off": 9.42483911472448,
+            "on": 6.719452762568443
+          }
+        },
+        "retained": {
+          "pixels": 2982,
+          "projection": 3.717904033547303,
+          "response_mae": 9.175444533869888,
+          "response_magnitude": 9.36483252850436,
+          "absolute_chroma_errors": {
+            "identity": 0.4336407556449811,
+            "off": 16.072236194947465,
+            "on": 25.43491316789627
+          }
+        }
+      },
+      "whole_luma_response": 2.448144690958659,
+      "passed": false,
+      "panel_sha256": "8a95be88d4c5233d9afdb442d03ae9b025fff70e25bbe7d942c0a862e163b205"
+    },
+    "248": {
+      "reference": "145",
+      "hashes": {
+        "off": "d558866e8831a064145e5d2d407e8a9a42a391d34ccea50e8dbf2d708cb9144c",
+        "on": "1a5cd279fd3c38b9e3561adbaf21bcbb800625d4044b252d6855a030e858f27d"
+      },
+      "regions": {
+        "desaturated": {
+          "pixels": 54747,
+          "projection": 1.080748265092561,
+          "response_mae": 2.680182088516266,
+          "response_magnitude": 10.567139968704527,
+          "absolute_chroma_errors": {
+            "identity": 8.84572927831662,
+            "off": 17.998673781820617,
+            "on": 7.436211940989156
+          }
+        },
+        "retained": {
+          "pixels": 1150,
+          "projection": -5.042241184552281,
+          "response_mae": 10.426714782608695,
+          "response_magnitude": 8.90681315942029,
+          "absolute_chroma_errors": {
+            "identity": 1.5450362318840578,
+            "off": 6.335597333333333,
+            "on": 3.5462380869565218
+          }
+        }
+      },
+      "whole_luma_response": 2.9647816015625,
+      "passed": false,
+      "panel_sha256": "485b6a63da5a0da66e90259e3675b98d3b2c96411a906870bccafb4eb810e3ad"
+    }
+  },
+  "passed": false
+}
