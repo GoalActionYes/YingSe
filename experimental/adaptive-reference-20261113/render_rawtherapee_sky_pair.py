@@ -13,14 +13,14 @@ SOURCES = {
                  "eb44da59228162de892a3cf1d7d0db38dc2d3744cf096d3bfd5b4b2b8916b899"),
 }
 SECTION = re.compile(rb"(?ms)^\[Locallab\]\r?\n(.*?)(?=^\[|\Z)")
-ENABLED = re.compile(rb"(?m)^Enabled=(true)(?=\r?$)")
 
 
-def disabled(data):
+def disabled(data, key=b"Enabled"):
     local = list(SECTION.finditer(data))
     if len(local) != 1:
         raise ValueError("Expected one local-adjustment section")
-    field = list(ENABLED.finditer(local[0][1]))
+    pattern = re.compile(rb"(?m)^" + re.escape(key) + rb"=(true)(?=\r?$)")
+    field = list(pattern.finditer(local[0][1]))
     if len(field) != 1:
         raise ValueError("Expected one enabled local-adjustment switch")
     start = local[0].start(1) + field[0].start(1)
@@ -35,6 +35,16 @@ def check(path, expected):
     return value
 
 
+def render(cli, original, profile, output, env):
+    process = subprocess.run(
+        [str(cli), "-o", str(output), "-q", "-p", str(profile), "-n", "-b8", "-c", str(original)],
+        cwd=cli.parent, env=env, capture_output=True, timeout=120,
+    )
+    output.with_suffix(".log").write_bytes(process.stdout + b"\n" + process.stderr)
+    if process.returncode or not output.is_file():
+        raise RuntimeError(f"CLI exited {process.returncode}: {original.name} / {profile.name}")
+
+
 def run(source, cli, out, state, threads):
     source, cli, out = source.resolve(strict=True), cli.resolve(strict=True), out.resolve()
     out.mkdir(exist_ok=False)
@@ -47,13 +57,7 @@ def run(source, cli, out, state, threads):
         profile = out / f"{name}-{state}.pp3"
         profile.write_bytes(prior if state == "on" else disabled(prior))
         output = out / f"{name}-{state}.png"
-        process = subprocess.run(
-            [str(cli), "-o", str(output), "-q", "-p", str(profile), "-n", "-b8", "-c", str(original)],
-            cwd=cli.parent, env=env, capture_output=True, timeout=120,
-        )
-        (out / f"{name}-{state}.log").write_bytes(process.stdout + b"\n" + process.stderr)
-        if process.returncode or not output.is_file():
-            raise RuntimeError(f"CLI exited {process.returncode}: {name} {state}")
+        render(cli, original, profile, output, env)
 
 
 if __name__ == "__main__":
