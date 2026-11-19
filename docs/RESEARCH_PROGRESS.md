@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+对参考图施加小幅已知色偏，可以测到 13 号的近同向响应，但焊工两组 Film B 仍反向，重点肤色 0/6。关闭以统一色偏探针纠正实际风格方向。[普通两图响应实验](research/2026-11-20-reference-chroma-orientation.md)
+
 稳定工作台的 ICC 解码修复已进入独立候选分支 `codex/image-icc-candidate`，提交 `736a32d` 已核对远端。实拍的编码偏差 0.8551 → 0.0259 RGB8，预览与 PNG 导出一致。实际 13 号工作台此前已有独立 ICC 转换，保持其严格处理。工程候选未替换现有版本，跨场景风格主目标仍待验收。[候选说明](https://github.com/GoalActionYes/YingSe/blob/736a32dfcc8b2a2efac5f2a6577c8c2eb7aef7b7/docs/research/2026-11-20-image-icc-candidate.md)
 
 同一参考改存带标签的 Display P3 后，旧解码使 13/16 张成片明显变化；按 ICC 转回 sRGB 后，13 张全部过编码一致性门槛。取得可做独立图片解码候选的工程证据，跨场景风格问题仍在。[实拍参考的色域编码对照](research/2026-11-20-reference-icc-invariance.md)
