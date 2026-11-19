@@ -1,0 +1,359 @@
+{
+  "source_sha256": "881bf466bd4456ba5b6a4ffe5a3126ddb7fb3de25912291a5790b9fb83813e16",
+  "strength": 0.8,
+  "donor_checks": {
+    "pooled": {
+      "poker_fullshot": {
+        "in_fit": true,
+        "mae": 1.2675419560185186,
+        "p95": 5.0
+      },
+      "hdr_testimage": {
+        "in_fit": true,
+        "mae": 1.1471354166666667,
+        "p95": 6.0
+      },
+      "sparks_4592": {
+        "in_fit": true,
+        "mae": 1.2998263888888888,
+        "p95": 5.0
+      }
+    },
+    "without-poker_fullshot": {
+      "poker_fullshot": {
+        "in_fit": false,
+        "mae": 1.4071361400462963,
+        "p95": 6.0
+      },
+      "hdr_testimage": {
+        "in_fit": true,
+        "mae": 1.1630316840277777,
+        "p95": 5.0
+      },
+      "sparks_4592": {
+        "in_fit": true,
+        "mae": 1.1978587962962963,
+        "p95": 5.0
+      }
+    },
+    "without-hdr_testimage": {
+      "poker_fullshot": {
+        "in_fit": true,
+        "mae": 1.2308666087962963,
+        "p95": 5.0
+      },
+      "hdr_testimage": {
+        "in_fit": false,
+        "mae": 1.3339662905092593,
+        "p95": 6.0
+      },
+      "sparks_4592": {
+        "in_fit": true,
+        "mae": 1.2510416666666666,
+        "p95": 5.0
+      }
+    },
+    "without-sparks_4592": {
+      "poker_fullshot": {
+        "in_fit": true,
+        "mae": 1.2427662037037037,
+        "p95": 5.0
+      },
+      "hdr_testimage": {
+        "in_fit": true,
+        "mae": 1.1524703414351851,
+        "p95": 6.0
+      },
+      "sparks_4592": {
+        "in_fit": false,
+        "mae": 1.6146797839506173,
+        "p95": 6.0
+      }
+    }
+  },
+  "cases": {
+    "785-3553": {
+      "single_reference_mae": {
+        "C1": {
+          "whole": 0.8690439860026041,
+          "person": 2.761101330203443,
+          "neutral": 0.8388404150962879
+        },
+        "F1": {
+          "whole": 1.9457550048828125,
+          "person": 2.3039906103286385,
+          "neutral": 2.3173714010360196
+        }
+      },
+      "candidate": {
+        "pooled": {
+          "absolute_mae": {
+            "whole": 1.3909556070963542,
+            "person": 3.4708528951486697,
+            "neutral": 1.3315951606519008
+          },
+          "projection": {
+            "luma": 1.0089756937644914,
+            "chroma": 0.9492190669610707
+          },
+          "passed": false,
+          "sha256": "412d7b76bd7816167c5907f158651f10d23d40fc1ff9c93371365b98da1ae7c6"
+        },
+        "without-poker_fullshot": {
+          "absolute_mae": {
+            "whole": 1.1615397135416667,
+            "person": 3.581181533646322,
+            "neutral": 0.9795291445092674
+          },
+          "projection": {
+            "luma": 0.982224613498591,
+            "chroma": 0.8717373219623321
+          },
+          "passed": false,
+          "sha256": "1c3d8ecfbf980cd4cdf1da5d3363ed4070a998b5f5a4241e1ef70ecf274475a1"
+        },
+        "without-hdr_testimage": {
+          "absolute_mae": {
+            "whole": 1.4676106770833333,
+            "person": 2.5604949139280127,
+            "neutral": 1.6621319290274839
+          },
+          "projection": {
+            "luma": 1.0686267617856147,
+            "chroma": 1.091708887267985
+          },
+          "passed": true,
+          "sha256": "079236625c0942e563c1a67b2313b068afdaa03c4e709fdf82a330b02e6b3b01"
+        },
+        "without-sparks_4592": {
+          "absolute_mae": {
+            "whole": 1.5044352213541667,
+            "person": 3.959164710485133,
+            "neutral": 1.4048307432839418
+          },
+          "projection": {
+            "luma": 0.9575722150754971,
+            "chroma": 0.9048344567352642
+          },
+          "passed": false,
+          "sha256": "63c59f70fdd292ef042cad7724e7b17a410896f18ce43fd793419f48fe185b42"
+        }
+      },
+      "leave_one_neutral_max_change": 0.9533963205809971,
+      "panel_sha256": "9b3597a92b27337a1a274be288bd7ed25b40b95798173178efac415f23eb7c1c"
+    },
+    "9483-19432": {
+      "single_reference_mae": {
+        "C1": {
+          "whole": 1.4789377848307292,
+          "person": 1.3886113886113887,
+          "neutral": 1.283863736439694
+        },
+        "F1": {
+          "whole": 1.971954345703125,
+          "person": 2.2505411255411256,
+          "neutral": 1.7118610143709219
+        }
+      },
+      "candidate": {
+        "pooled": {
+          "absolute_mae": {
+            "whole": 1.9410044352213542,
+            "person": 1.8505661005661005,
+            "neutral": 1.8597974460590048
+          },
+          "projection": {
+            "luma": 0.8771072820781042,
+            "chroma": 0.8085475265369662
+          },
+          "passed": true,
+          "sha256": "14c1fd8b0686230c1a2908ccda1c3e3136010c4fc9dc00598ac6d0da97262407"
+        },
+        "without-poker_fullshot": {
+          "absolute_mae": {
+            "whole": 1.8723907470703125,
+            "person": 1.8078171828171827,
+            "neutral": 1.7526520155318042
+          },
+          "projection": {
+            "luma": 0.8597845834859608,
+            "chroma": 0.7731232970768074
+          },
+          "passed": true,
+          "sha256": "ffbe88235b981bd0a1cf7eb5e8a194c71d68ce280e714b35dc211b58eb85ff7d"
+        },
+        "without-hdr_testimage": {
+          "absolute_mae": {
+            "whole": 1.8263448079427083,
+            "person": 1.7265651015651016,
+            "neutral": 1.796821584404147
+          },
+          "projection": {
+            "luma": 0.9275119253026901,
+            "chroma": 0.889548705313398
+          },
+          "passed": true,
+          "sha256": "15f9294fdf7a16430ba5b1d5f5dcf8af30cd31c461109d2bc93c46ce9d4dcebe"
+        },
+        "without-sparks_4592": {
+          "absolute_mae": {
+            "whole": 2.132354736328125,
+            "person": 2.19517982017982,
+            "neutral": 1.9400104079100116
+          },
+          "projection": {
+            "luma": 0.8398159050317935,
+            "chroma": 0.7822353020460457
+          },
+          "passed": true,
+          "sha256": "96582e861028eb79139f86aa4a0137f67b699e20a0229dd010daeaa352a1b870"
+        }
+      },
+      "leave_one_neutral_max_change": 0.6712541531563989,
+      "panel_sha256": "28e4a7f0b20063e287d6e23dba2dcd2f2c51a3873537c92b4767a3dc5d574e92"
+    },
+    "872-1268": {
+      "single_reference_mae": {
+        "C1": {
+          "whole": 1.628662109375,
+          "person": 1.134211453505705,
+          "neutral": 1.5261731978713111
+        },
+        "F1": {
+          "whole": 2.155003865559896,
+          "person": 1.6159579369596444,
+          "neutral": 1.518142235123367
+        }
+      },
+      "candidate": {
+        "pooled": {
+          "absolute_mae": {
+            "whole": 1.7341969807942708,
+            "person": 1.6968046182616472,
+            "neutral": 1.7513949363005967
+          },
+          "projection": {
+            "luma": 0.9811395872282052,
+            "chroma": 0.9415780818221394
+          },
+          "passed": true,
+          "sha256": "78982ba38c02790da64f20c3b9c24009532086f25650d0d37b5eaee0c62d0dfc"
+        },
+        "without-poker_fullshot": {
+          "absolute_mae": {
+            "whole": 1.7081502278645833,
+            "person": 1.5473615741117164,
+            "neutral": 1.696210288663119
+          },
+          "projection": {
+            "luma": 0.9927215527481945,
+            "chroma": 0.9570433715934384
+          },
+          "passed": true,
+          "sha256": "570e2eb2669db6bf17731a62ccc1ec70a79a4597cb060777910f8a0b2bcadc6e"
+        },
+        "without-hdr_testimage": {
+          "absolute_mae": {
+            "whole": 1.8906758626302083,
+            "person": 2.0721196845271974,
+            "neutral": 1.965166908563135
+          },
+          "projection": {
+            "luma": 0.9287060894157937,
+            "chroma": 0.8516173791493564
+          },
+          "passed": true,
+          "sha256": "06ad17dc813594aa82b41708b9cbdce0114e029e0eff489780502e169e3574f7"
+        },
+        "without-sparks_4592": {
+          "absolute_mae": {
+            "whole": 1.7806854248046875,
+            "person": 1.830148792584763,
+            "neutral": 1.883115626511853
+          },
+          "projection": {
+            "luma": 1.0041877031974293,
+            "chroma": 0.9496968796987916
+          },
+          "passed": true,
+          "sha256": "df69ba210f9f7ed0b0fdc98f94d75ed0b39e75489ee9906002ac2fabcf21efee"
+        }
+      },
+      "leave_one_neutral_max_change": 0.7380099983873569,
+      "panel_sha256": "9be553695ea733986fa658a33b979b4b723c7ca178bc1b04783197241f553a32"
+    },
+    "8021-8690": {
+      "single_reference_mae": {
+        "C1": {
+          "whole": 1.6051432291666667,
+          "person": 0.9490268894849048,
+          "neutral": 2.4170381376919265
+        },
+        "F1": {
+          "whole": 1.7458852132161458,
+          "person": 1.353593287944433,
+          "neutral": 1.7483902922238732
+        }
+      },
+      "candidate": {
+        "pooled": {
+          "absolute_mae": {
+            "whole": 1.6627248128255208,
+            "person": 1.1455745822158037,
+            "neutral": 1.7117384843982169
+          },
+          "projection": {
+            "luma": 0.8182378477444305,
+            "chroma": 0.8579672450458321
+          },
+          "passed": true,
+          "sha256": "ad5e99ae67b63d15a6e418e837c08e9913aa4359f21d7c9b85b558a5ca3031e8"
+        },
+        "without-poker_fullshot": {
+          "absolute_mae": {
+            "whole": 1.6283518473307292,
+            "person": 1.2080187057286293,
+            "neutral": 1.6478454680534917
+          },
+          "projection": {
+            "luma": 0.8358921930468229,
+            "chroma": 0.8945772036645533
+          },
+          "passed": true,
+          "sha256": "589a8eb9ce7137160c19bfc79b245bfe4bcc403400b04e6a7680f78f946c4fda"
+        },
+        "without-hdr_testimage": {
+          "absolute_mae": {
+            "whole": 2.372833251953125,
+            "person": 0.9635375833849116,
+            "neutral": 1.5894006934125804
+          },
+          "projection": {
+            "luma": 0.8962630411120368,
+            "chroma": 0.6711829115177091
+          },
+          "passed": false,
+          "sha256": "bbc0d562b689c8975a62b094107bba51b6ed43d3564d9067d88da7da0770dc4d"
+        },
+        "without-sparks_4592": {
+          "absolute_mae": {
+            "whole": 2.0672505696614585,
+            "person": 1.2564060243449557,
+            "neutral": 1.9995047052996533
+          },
+          "projection": {
+            "luma": 0.7120453530724542,
+            "chroma": 0.8825263976167051
+          },
+          "passed": false,
+          "sha256": "7df0601765b6a1ef6b3b46d7eaac4d47aef6c9c5226467f20e300ab92a69c81f"
+        }
+      },
+      "leave_one_neutral_max_change": 0.5725606736007924,
+      "panel_sha256": "df4d2ace3c824120be1596dad4bccdd1469fbcda292cfeb0063db13e820993ab"
+    }
+  },
+  "passing_cases": 3,
+  "worst_protected_regression": 0.938306924882629,
+  "passed": true
+}
