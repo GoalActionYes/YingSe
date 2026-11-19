@@ -1,0 +1,784 @@
+{
+  "parent_sha256": "4088e7ebcc2c4cb995be2a5a3312c35c3431d4dd444dfa1ce79a5dceabaa43bc",
+  "reference": {
+    "coefficients": [
+      [
+        1.1908294571922633,
+        0.15004740399633246,
+        0.14259122946840133
+      ],
+      [
+        -0.16722335191020257,
+        0.9726906203632526,
+        -0.14861438586007836
+      ],
+      [
+        0.13368860209914787,
+        0.04025913874233755,
+        1.0681143902378403
+      ],
+      [
+        40.08637424039618,
+        34.222937511459364,
+        33.36426183513502
+      ]
+    ],
+    "fit_cells": [
+      0,
+      2,
+      4,
+      7,
+      9,
+      11,
+      12,
+      14,
+      16,
+      19,
+      21,
+      23
+    ],
+    "holdout_cells": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      10,
+      13,
+      15,
+      17,
+      18,
+      20,
+      22
+    ],
+    "holdout_mae_before": 50.67926742169166,
+    "holdout_mae_after": 8.81580961126416,
+    "clipped_off": 3.944773175542406e-05,
+    "clipped_style_first": 0.08240631163708087,
+    "qualified": true,
+    "order_difference": 9.069861932938856,
+    "reference_diff_from_canon": {
+      "off": 7.150309007232084,
+      "calibrate_first": 7.900637738330046,
+      "style_first": 16.045384615384616
+    },
+    "sha256": {
+      "off": "0112e780f9ee033c5f51c18694e1f123f2c8c4d230a44da98d1481bf19fdfa56",
+      "calibrate_first": "5d87987305961210572aee9ef236899dc45c037f7cbe6272f103cd5f26ec3c93",
+      "style_first": "5ab6b03263efe98ee9b98fc42fa37f00b2af57633bfb79ea7c4e7b877ee75a31"
+    }
+  },
+  "cases": {
+    "poker_fullshot": {
+      "hashes": {
+        "off": "fc0fec5b98ebc946867037770d825e4e170cd8df644cdbf43485ba9271bb92cf",
+        "calibrate_first": "59403c91769eac8f615506fc6fbfadf5a9054e9189a5031a6ad61f30e9d6b2ac",
+        "style_first": "c8644436009bdffb053a9e0b2d7a51d7167f9825d4fd8cfae29375bc379ecc7a"
+      },
+      "regions": {
+        "whole": {
+          "baseline": {
+            "pixels": 147456,
+            "style": {
+              "canon": {
+                "projection": 0.39324397805573436,
+                "response_mae": 5.2552919741030095,
+                "off_matches_original_mae": 30.671581127025462,
+                "on_matches_authored_mae": 26.64347556785301,
+                "original_matches_authored_mae": 3.2981929072627314,
+                "passed": false
+              },
+              "nikon": {
+                "projection": 0.6201597530759207,
+                "response_mae": 3.783985279224537,
+                "off_matches_original_mae": 11.152863679108796,
+                "on_matches_authored_mae": 12.682535807291666,
+                "original_matches_authored_mae": 3.2981929072627314,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 23.02515552662037,
+                "luma_mae": 24.24035875922309,
+                "chroma_mae": 3.9661219310619207
+              },
+              "on": {
+                "rgb_mae": 20.691096553096063,
+                "luma_mae": 21.060646120876736,
+                "chroma_mae": 6.454775008138021
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.33397685921791775,
+                "response_mae": 2.821144386574074,
+                "off_matches_original_mae": 30.582863136574073,
+                "on_matches_authored_mae": 30.93496365017361,
+                "original_matches_authored_mae": 3.2981929072627314,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.628056278935185,
+                  "luma": 2.173117363823785,
+                  "chroma": 1.785505173972801
+                },
+                "on": {
+                  "rgb": 5.336667661313657,
+                  "luma": 5.151617948404947,
+                  "chroma": 2.819202430103443
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.5238056782561756,
+                "response_mae": 2.6243919089988426,
+                "off_matches_original_mae": 30.582863136574073,
+                "on_matches_authored_mae": 30.69503445095486,
+                "original_matches_authored_mae": 3.2981929072627314,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.628056278935185,
+                  "luma": 2.173117363823785,
+                  "chroma": 1.785505173972801
+                },
+                "on": {
+                  "rgb": 5.819168655960648,
+                  "luma": 5.452593607584635,
+                  "chroma": 3.608072441496673
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.2993548357928242,
+            "luma": 0.7519396782769098,
+            "chroma": 1.1145283998842592
+          }
+        },
+        "neutral": {
+          "baseline": {
+            "pixels": 7642,
+            "style": {
+              "canon": {
+                "projection": 0.3865759854548864,
+                "response_mae": 4.541088720230306,
+                "off_matches_original_mae": 25.71255343278374,
+                "on_matches_authored_mae": 22.896144115850998,
+                "original_matches_authored_mae": 6.302233272267295,
+                "passed": false
+              },
+              "nikon": {
+                "projection": 0.1571457472126641,
+                "response_mae": 6.825918171508331,
+                "off_matches_original_mae": 6.528744656721626,
+                "on_matches_authored_mae": 11.959565558754253,
+                "original_matches_authored_mae": 6.302233272267295,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 24.765070225944342,
+                "luma_mae": 25.99117385501178,
+                "chroma_mae": 3.0108256215650355
+              },
+              "on": {
+                "rgb_mae": 27.67844368838873,
+                "luma_mae": 26.319045406961532,
+                "chroma_mae": 6.18699918869406
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.31901223119715,
+                "response_mae": 4.538995027479717,
+                "off_matches_original_mae": 24.04296431998604,
+                "on_matches_authored_mae": 24.352525516880398,
+                "original_matches_authored_mae": 6.302233272267295,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.592733141411498,
+                  "luma": 2.141497068830149,
+                  "chroma": 1.4617937974352264
+                },
+                "on": {
+                  "rgb": 1.7173078600715346,
+                  "luma": 1.8800328709761842,
+                  "chroma": 1.027681950623746
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.444396979492536,
+                "response_mae": 4.236281950623746,
+                "off_matches_original_mae": 24.04296431998604,
+                "on_matches_authored_mae": 24.637616679752245,
+                "original_matches_authored_mae": 6.302233272267295,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.592733141411498,
+                  "luma": 2.141497068830149,
+                  "chroma": 1.4617937974352264
+                },
+                "on": {
+                  "rgb": 2.6211724679403297,
+                  "luma": 2.5383085579691183,
+                  "chroma": 1.6323038122655498
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.6416295908575416,
+            "luma": 0.8298382098926981,
+            "chroma": 1.3782342144290325
+          }
+        },
+        "cloth_left": {
+          "baseline": {
+            "pixels": 303,
+            "style": {
+              "canon": {
+                "projection": 0.8842803815844048,
+                "response_mae": 1.5819581958195819,
+                "off_matches_original_mae": 12.877887788778878,
+                "on_matches_authored_mae": 11.427942794279428,
+                "original_matches_authored_mae": 1.592959295929593,
+                "passed": true
+              },
+              "nikon": {
+                "projection": -0.7057237660721692,
+                "response_mae": 3.957095709570957,
+                "off_matches_original_mae": 21.015401540154016,
+                "on_matches_authored_mae": 24.86028602860286,
+                "original_matches_authored_mae": 1.592959295929593,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 9.077007700770077,
+                "luma_mae": 10.781774257425742,
+                "chroma_mae": 2.4025293729372934
+              },
+              "on": {
+                "rgb_mae": 14.07920792079208,
+                "luma_mae": 13.673753135313529,
+                "chroma_mae": 1.3109887788778882
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.6970136872666943,
+                "response_mae": 1.375137513751375,
+                "off_matches_original_mae": 8.925192519251926,
+                "on_matches_authored_mae": 7.7634763476347635,
+                "original_matches_authored_mae": 1.592959295929593,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 4.166116611661166,
+                  "luma": 3.0240323432343232,
+                  "chroma": 1.8034844884488446
+                },
+                "on": {
+                  "rgb": 3.77007700770077,
+                  "luma": 3.803507590759075,
+                  "chroma": 0.7402627062706271
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 1.1445458316051431,
+                "response_mae": 2.937293729372937,
+                "off_matches_original_mae": 8.925192519251926,
+                "on_matches_authored_mae": 6.007700770077007,
+                "original_matches_authored_mae": 1.592959295929593,
+                "passed": true
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 4.166116611661166,
+                  "luma": 3.0240323432343232,
+                  "chroma": 1.8034844884488446
+                },
+                "on": {
+                  "rgb": 5.558855885588559,
+                  "luma": 5.881500330033003,
+                  "chroma": 1.6896376237623763
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.8437843784378438,
+            "luma": 2.077992739273928,
+            "chroma": 1.0482875687568758
+          }
+        },
+        "cloth_right": {
+          "baseline": {
+            "pixels": 625,
+            "style": {
+              "canon": {
+                "projection": 0.4562444769780662,
+                "response_mae": 3.1157333333333335,
+                "off_matches_original_mae": 11.255466666666667,
+                "on_matches_authored_mae": 9.041066666666667,
+                "original_matches_authored_mae": 5.638933333333333,
+                "passed": false
+              },
+              "nikon": {
+                "projection": -0.34348909903849956,
+                "response_mae": 7.900266666666667,
+                "off_matches_original_mae": 12.4624,
+                "on_matches_authored_mae": 19.189333333333334,
+                "original_matches_authored_mae": 5.638933333333333,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 15.839466666666667,
+                "luma_mae": 17.362028480000003,
+                "chroma_mae": 2.076471573333333
+              },
+              "on": {
+                "rgb_mae": 21.261866666666666,
+                "luma_mae": 20.06629696,
+                "chroma_mae": 1.9751876266666666
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.46663765019322334,
+                "response_mae": 2.9674666666666667,
+                "off_matches_original_mae": 10.021866666666666,
+                "on_matches_authored_mae": 7.7434666666666665,
+                "original_matches_authored_mae": 5.638933333333333,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.416533333333333,
+                  "luma": 1.5472275199999999,
+                  "chroma": 1.5673898666666668
+                },
+                "on": {
+                  "rgb": 1.7573333333333334,
+                  "luma": 1.70427584,
+                  "chroma": 0.6727065600000001
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.5317400651551721,
+                "response_mae": 2.9184,
+                "off_matches_original_mae": 10.021866666666666,
+                "on_matches_authored_mae": 7.386133333333333,
+                "original_matches_authored_mae": 5.638933333333333,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.416533333333333,
+                  "luma": 1.5472275199999999,
+                  "chroma": 1.5673898666666668
+                },
+                "on": {
+                  "rgb": 2.432533333333333,
+                  "luma": 2.513064,
+                  "chroma": 1.0558855466666666
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.2917333333333334,
+            "luma": 0.86117024,
+            "chroma": 1.05543904
+          }
+        }
+      }
+    },
+    "hdr_testimage": {
+      "hashes": {
+        "off": "1133a7349f541db8c6df5f7c514053a221e861bb91838a188f416e39c7f947bc",
+        "calibrate_first": "a325307e809db555847789c1d13901eef47856ce3cec2b750fb8b765ead4887d",
+        "style_first": "ced73be8a1b0e37f47d370bb483d01c2c8b0feb7e9eca69b27efa03db526ca58"
+      },
+      "regions": {
+        "whole": {
+          "baseline": {
+            "pixels": 147456,
+            "style": {
+              "canon": {
+                "projection": 0.5389985962709768,
+                "response_mae": 4.48558666087963,
+                "off_matches_original_mae": 37.923574942129626,
+                "on_matches_authored_mae": 35.024929470486114,
+                "original_matches_authored_mae": 3.96160888671875,
+                "passed": false
+              },
+              "nikon": {
+                "projection": 0.26541769817193556,
+                "response_mae": 4.110846625434028,
+                "off_matches_original_mae": 16.13139964916088,
+                "on_matches_authored_mae": 19.17970558449074,
+                "original_matches_authored_mae": 3.96160888671875,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 26.756684479890048,
+                "luma_mae": 28.401166828070743,
+                "chroma_mae": 3.511058400698061
+              },
+              "on": {
+                "rgb_mae": 23.20082374855324,
+                "luma_mae": 23.65285576171875,
+                "chroma_mae": 3.741566178385417
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.1704486648293832,
+                "response_mae": 3.7049153645833335,
+                "off_matches_original_mae": 38.33847158926505,
+                "on_matches_authored_mae": 38.80768274377893,
+                "original_matches_authored_mae": 3.96160888671875,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 4.942787452980324,
+                  "luma": 3.042656003146701,
+                  "chroma": 3.859097911241319
+                },
+                "on": {
+                  "rgb": 4.874586317274305,
+                  "luma": 4.604282059733072,
+                  "chroma": 1.6118445732964413
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.20938722695212242,
+                "response_mae": 3.850429958767361,
+                "off_matches_original_mae": 38.33847158926505,
+                "on_matches_authored_mae": 38.943472403067126,
+                "original_matches_authored_mae": 3.96160888671875,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 4.942787452980324,
+                  "luma": 3.042656003146701,
+                  "chroma": 3.859097911241319
+                },
+                "on": {
+                  "rgb": 5.071641710069445,
+                  "luma": 4.989783985731337,
+                  "chroma": 1.9594699367947053
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.3360437463831019,
+            "luma": 1.0653781792534724,
+            "chroma": 0.8725670554832177
+          }
+        },
+        "neutral": {
+          "baseline": {
+            "pixels": 18836,
+            "style": {
+              "canon": {
+                "projection": 0.3371452642593678,
+                "response_mae": 5.330926594464501,
+                "off_matches_original_mae": 23.717349755786792,
+                "on_matches_authored_mae": 20.018970765201388,
+                "original_matches_authored_mae": 7.929337438946698,
+                "passed": false
+              },
+              "nikon": {
+                "projection": 0.02183637625518817,
+                "response_mae": 7.692503716287959,
+                "off_matches_original_mae": 9.468570821830538,
+                "on_matches_authored_mae": 15.675975083174064,
+                "original_matches_authored_mae": 7.929337438946698,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 29.827705811566503,
+                "luma_mae": 31.70182624761095,
+                "chroma_mae": 3.7980289870460817
+              },
+              "on": {
+                "rgb_mae": 31.60398527642104,
+                "luma_mae": 30.152860246336797,
+                "chroma_mae": 3.85796086925745
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.35464609543570424,
+                "response_mae": 5.121823458625327,
+                "off_matches_original_mae": 21.497327811991223,
+                "on_matches_authored_mae": 19.919710483471366,
+                "original_matches_authored_mae": 7.929337438946698,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.7947724216040206,
+                  "luma": 2.8501842854109154,
+                  "chroma": 1.5871917179868336
+                },
+                "on": {
+                  "rgb": 1.737470800594606,
+                  "luma": 1.5248357825440644,
+                  "chroma": 1.1168540454448928
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.3736175554389021,
+                "response_mae": 5.036401925391095,
+                "off_matches_original_mae": 21.497327811991223,
+                "on_matches_authored_mae": 20.221455369151272,
+                "original_matches_authored_mae": 7.929337438946698,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 2.7947724216040206,
+                  "luma": 2.8501842854109154,
+                  "chroma": 1.5871917179868336
+                },
+                "on": {
+                  "rgb": 1.880087775182275,
+                  "luma": 1.8046340411977069,
+                  "chroma": 1.305658950944999
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 0.7566893183266086,
+            "luma": 0.5879228923338289,
+            "chroma": 0.7496175054859489
+          }
+        },
+        "skin_left": {
+          "baseline": {
+            "pixels": 124,
+            "style": {
+              "canon": {
+                "projection": 0.3549432739059968,
+                "response_mae": 2.524193548387097,
+                "off_matches_original_mae": 27.612903225806452,
+                "on_matches_authored_mae": 25.38978494623656,
+                "original_matches_authored_mae": 1.956989247311828,
+                "passed": false
+              },
+              "nikon": {
+                "projection": -0.025526742301458672,
+                "response_mae": 2.2795698924731185,
+                "off_matches_original_mae": 9.341397849462366,
+                "on_matches_authored_mae": 8.830645161290322,
+                "original_matches_authored_mae": 1.956989247311828,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 24.282258064516128,
+                "luma_mae": 26.40323387096774,
+                "chroma_mae": 7.158604838709676
+              },
+              "on": {
+                "rgb_mae": 23.586021505376344,
+                "luma_mae": 23.43951774193548,
+                "chroma_mae": 6.732527419354839
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.5842787682333873,
+                "response_mae": 1.6290322580645162,
+                "off_matches_original_mae": 26.803763440860216,
+                "on_matches_authored_mae": 26.841397849462364,
+                "original_matches_authored_mae": 1.956989247311828,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 4.169354838709677,
+                  "luma": 0.5722145161290323,
+                  "chroma": 4.352560752688172
+                },
+                "on": {
+                  "rgb": 2.817204301075269,
+                  "luma": 2.253103225806452,
+                  "chroma": 2.09205376344086
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.43476499189627227,
+                "response_mae": 3.086021505376344,
+                "off_matches_original_mae": 26.803763440860216,
+                "on_matches_authored_mae": 26.905913978494624,
+                "original_matches_authored_mae": 1.956989247311828,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 4.169354838709677,
+                  "luma": 0.5722145161290323,
+                  "chroma": 4.352560752688172
+                },
+                "on": {
+                  "rgb": 1.553763440860215,
+                  "luma": 2.659496774193548,
+                  "chroma": 1.7090795698924732
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.6989247311827957,
+            "luma": 0.4427387096774193,
+            "chroma": 1.7608666666666668
+          }
+        },
+        "skin_right": {
+          "baseline": {
+            "pixels": 122,
+            "style": {
+              "canon": {
+                "projection": 0.2028950799606184,
+                "response_mae": 8.117486338797814,
+                "off_matches_original_mae": 19.543715846994534,
+                "on_matches_authored_mae": 15.043715846994536,
+                "original_matches_authored_mae": 10.117486338797814,
+                "passed": false
+              },
+              "nikon": {
+                "projection": 0.027327638966499028,
+                "response_mae": 9.770491803278688,
+                "off_matches_original_mae": 21.89344262295082,
+                "on_matches_authored_mae": 26.937158469945356,
+                "original_matches_authored_mae": 10.117486338797814,
+                "passed": false
+              }
+            },
+            "camera_effect": {
+              "off": {
+                "rgb_mae": 24.3224043715847,
+                "luma_mae": 28.182303278688522,
+                "chroma_mae": 5.52524863387978
+              },
+              "on": {
+                "rgb_mae": 25.975409836065573,
+                "luma_mae": 26.30375737704918,
+                "chroma_mae": 3.1364524590163936
+              }
+            }
+          },
+          "arms": {
+            "calibrate_first": {
+              "style": {
+                "projection": 0.2892152949628802,
+                "response_mae": 7.191256830601093,
+                "off_matches_original_mae": 17.636612021857925,
+                "on_matches_authored_mae": 15.28688524590164,
+                "original_matches_authored_mae": 10.117486338797814,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 1.907103825136612,
+                  "luma": 0.7101163934426229,
+                  "chroma": 1.7343852459016396
+                },
+                "on": {
+                  "rgb": 1.7404371584699454,
+                  "luma": 2.4165377049180323,
+                  "chroma": 2.212616393442623
+                }
+              }
+            },
+            "style_first": {
+              "style": {
+                "projection": 0.24523030254649955,
+                "response_mae": 7.601092896174864,
+                "off_matches_original_mae": 17.636612021857925,
+                "on_matches_authored_mae": 16.653005464480874,
+                "original_matches_authored_mae": 10.117486338797814,
+                "passed": false
+              },
+              "camera_difference": {
+                "off": {
+                  "rgb": 1.907103825136612,
+                  "luma": 0.7101163934426229,
+                  "chroma": 1.7343852459016396
+                },
+                "on": {
+                  "rgb": 2.057377049180328,
+                  "luma": 2.422049180327868,
+                  "chroma": 2.4822131147540984
+                }
+              }
+            }
+          },
+          "order_difference": {
+            "rgb": 1.5081967213114753,
+            "luma": 0.252672131147541,
+            "chroma": 1.5108437158469945
+          }
+        }
+      }
+    }
+  },
+  "joint_gates": {
+    "calibrate_first": false,
+    "style_first": false
+  },
+  "passed": false
+}
