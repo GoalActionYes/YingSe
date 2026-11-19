@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+用均匀已知颜色样本拟合同一三次色表后，白球服留出区换款投影 0.537／0.606 → 0.914，通过局部门槛；手臂和整图仍未过。保留拟合覆盖证据。[白球服与浅墙对照](research/2026-11-20-paired-operator-support.md)
+
 追加 25 张后续开发图到封存身份交叉核查。BG-REAL 与 PST50 共 2,350 对无预警，封存状态和独立验收条件均不改变。[追加来源与哈希](research/2026-11-20-reserve-recent-source-crosscheck.md)
 
 40 张原始导出 JPEG 中只有一组的三个滤镜含与原图不同的色彩字段，但三个滤镜的字段和值完全相同；四个 PSBench 编辑无可用差异。[内嵌编辑字段检查](research/2026-11-20-reference-embedded-edit.md)
