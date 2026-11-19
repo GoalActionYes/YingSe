@@ -16,10 +16,10 @@ LEVELS = (213, 241)
 LIMIT = 20 * 1024**2
 
 
-def source_members():
+def source_members(scenes=SCENES):
     return {
         f"{scene}-{light}-{level}": f"{PART}/{scene}-F_90-SS_200-x_{xy}-B_{level}.png"
-        for scene, (light, xy), level in product(SCENES, LIGHTS.items(), LEVELS)
+        for scene, (light, xy), level in product(scenes, LIGHTS.items(), LEVELS)
     }
 
 
@@ -35,20 +35,35 @@ def read_bytes(session, url, size):
     return bytes(content)
 
 
-def fetch(out):
+def fetch(out, scenes=SCENES, budget=LIMIT):
     import requests
+    from urllib.parse import urljoin, urlparse
 
     with requests.Session() as session:
         api = f"https://huggingface.co/api/datasets/priubrogent/CHROMA-MILL/tree/{REVISION}/{PART}"
-        index = json.loads(read_bytes(session, api, 600_000))
-        by_path = {row["path"]: row for row in index}
+        wanted = source_members(scenes)
+        by_path = {}
+        for _ in range(3):
+            with session.get(api, stream=True, timeout=(10, 30)) as page:
+                if page.status_code != 200:
+                    raise RuntimeError(f"HTTP {page.status_code} for the frozen CHROMA-MILL index")
+                data = page.raw.read(600_001, decode_content=True)
+                if len(data) > 600_000:
+                    raise ValueError("Index exceeds its request budget")
+                by_path.update({row["path"]: row for row in json.loads(data)})
+                link = page.links.get("next")
+                if set(wanted.values()) <= by_path.keys() or link is None:
+                    break
+                api = urljoin(api, link["url"])
+                if urlparse(api).netloc != "huggingface.co" or not api.startswith("https://"):
+                    raise ValueError("Unexpected CHROMA-MILL index host")
         files = {}
-        for name, member in source_members().items():
+        for name, member in wanted.items():
             row = by_path[member]
             if row["lfs"]["size"] != row["size"]:
                 raise ValueError(f"Inconsistent published size: {member}")
             files[name] = {"path": member, "bytes": row["size"], "sha256": row["lfs"]["oid"]}
-        if sum(row["bytes"] for row in files.values()) > LIMIT:
+        if sum(row["bytes"] for row in files.values()) > budget:
             raise ValueError("Selected assets exceed budget")
         out.mkdir(exist_ok=True)
         for name, row in files.items():
@@ -63,6 +78,22 @@ def fetch(out):
                 path.write_bytes(content)
     receipt = {"revision": REVISION, "files": files, "bytes": sum(row["bytes"] for row in files.values())}
     (out / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+
+def decode_rgb8(filename):
+    import cv2
+    import numpy as np
+    from probe_arri_shared_look import quantize
+
+    linear = cv2.imdecode(np.frombuffer(filename.read_bytes(), np.uint8), cv2.IMREAD_UNCHANGED)
+    if linear is None or linear.ndim != 3 or linear.shape[2] != 3 or linear.dtype not in (np.uint8, np.uint16):
+        raise ValueError("Expected an 8- or 16-bit color PNG")
+    height, width = linear.shape[:2]
+    scale = min(1, 512 / max(height, width))
+    rgb = linear[..., ::-1].astype(np.float32) / np.iinfo(linear.dtype).max
+    rgb = cv2.resize(rgb, (round(width * scale), round(height * scale)), interpolation=cv2.INTER_AREA)
+    encoded = quantize(np.where(rgb <= .0031308, 12.92 * rgb, 1.055 * rgb ** (1 / 2.4) - .055))
+    return encoded, {"shape": list(linear.shape), "dtype": str(linear.dtype)}
 
 
 def run(media, base, out):
@@ -104,21 +135,12 @@ def run(media, base, out):
             spec = receipt["files"][key]
             if filename.stat().st_size != spec["bytes"] or digest(filename) != spec["sha256"]:
                 raise ValueError(f"Changed capture: {key}")
-            data = np.frombuffer(filename.read_bytes(), np.uint8)
-            linear = cv2.imdecode(data, cv2.IMREAD_UNCHANGED)
-            if linear is None or linear.ndim != 3 or linear.shape[2] != 3 or linear.dtype not in (np.uint8, np.uint16):
-                raise ValueError("Expected an 8- or 16-bit color PNG")
-            height, width = linear.shape[:2]
-            scale = min(1, 512 / max(height, width))
-            rgb = linear[..., ::-1].astype(np.float32) / np.iinfo(linear.dtype).max
-            rgb = cv2.resize(rgb, (round(width * scale), round(height * scale)), interpolation=cv2.INTER_AREA)
-            encoded = quantize(np.where(rgb <= .0031308, 12.92 * rgb, 1.055 * rgb ** (1 / 2.4) - .055))
+            encoded, format_info = decode_rgb8(filename)
             log = converted(encoded.astype(np.float32) / 255, inverse)
             np.testing.assert_array_equal(encoded, quantize(converted(log, view)))
             styled = quantize(converted(converted(log, look), view))
             captures[scene][light, level] = {"off": encoded, "on": styled}
-            prep[scene][f"{light}-{level}"] = {
-                "shape": list(linear.shape), "dtype": str(linear.dtype),
+            prep[scene][f"{light}-{level}"] = format_info | {
                 "hashes": {state: save(f"{key}-{state}", image)
                            for state, image in captures[scene][light, level].items()},
             }
