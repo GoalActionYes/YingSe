@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+在原照片上直接导出全覆盖调色，两个高权重折的色差中位数相对原蒙版比例拟合仅改变 0.244／0.302 RGB8，低于 1.00。过渡区 MAE 最高 0.854，保留原范围限制和本机编辑器全覆盖成片。[两次导出与分区复核](research/2026-11-20-playraw-mask-response.md)
+
 用同一项编辑处理两条曲线下关态相同或接近的合成色卡。12 块合格肤色无一超过 3.00 色度误差，两块中性灰为 3.57／4.57。这个构造未重现实拍肤色失败。[两遍编辑器输出与复算](research/2026-11-20-playraw-matched-tone-context.md)
 
 《Cuckoo》两处肤色的亮度有参考支持，但分别在 272 和 1,056 个像素中没有 RGB 距离至多 2 的双分区匹配。混合光原片内部对应覆盖约 82%。两份新成片均精确回退，停止单张参考的直接近色重放。[覆盖、复算与限制](research/2026-11-20-playraw-rgb-support.md)
@@ -80,7 +82,7 @@
 
 对参考图施加小幅已知色偏，可以测到 13 号的近同向响应，但焊工两组 Film B 仍反向，重点肤色 0/6。关闭以统一色偏探针纠正实际风格方向。[普通两图响应实验](research/2026-11-20-reference-chroma-orientation.md)
 
-稳定工作台的 ICC 解码修复已进入独立候选分支 `codex/image-icc-candidate`，提交 `736a32d` 已核对远端。实拍的编码偏差 0.8551 → 0.0259 RGB8，预览与 PNG 导出一致。实际 13 号工作台此前已有独立 ICC 转换，保持其严格处理。工程候选未替换现有版本，跨场景风格主目标仍待验收。[候选说明](https://github.com/GoalActionYes/YingSe/blob/736a32dfcc8b2a2efac5f2a6577c8c2eb7aef7b7/docs/research/2026-11-20-image-icc-candidate.md)
+稳定工作台的 ICC 解码修复保存在独立候选分支 `codex/image-icc-candidate`。原实拍编码偏差 0.8551 → 0.0259 RGB8，三张外部原始 JPEG 作图像目标和参考时，六组带标签成片与正确转换的 sRGB 基准一致。提交 `323a523` 已核对远端。工程候选未替换现有版本，跨场景风格主目标仍待验收。[候选说明](https://github.com/GoalActionYes/YingSe/blob/323a523560de732b99674987e6bde0c0340d6d53/docs/research/2026-11-20-image-icc-candidate.md)
 
 同一参考改存带标签的 Display P3 后，旧解码使 13/16 张成片明显变化；按 ICC 转回 sRGB 后，13 张全部过编码一致性门槛。取得可做独立图片解码候选的工程证据，跨场景风格问题仍在。[实拍参考的色域编码对照](research/2026-11-20-reference-icc-invariance.md)
 
