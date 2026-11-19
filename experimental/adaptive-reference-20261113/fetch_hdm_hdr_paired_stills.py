@@ -51,8 +51,8 @@ def entries(ftp, directory, room):
     return selected
 
 
-def run(output, proxy, list_only, showgirl_light=False, bistro=False):
-    if showgirl_light and bistro:
+def run(output, proxy, list_only, showgirl_light=False, bistro=False, hdr_chart=False):
+    if sum((showgirl_light, bistro, hdr_chart)) > 1:
         raise ValueError("Select one fixed frame set")
     host, username, password = remote_credentials(proxy)
     output.mkdir()
@@ -76,12 +76,16 @@ def run(output, proxy, list_only, showgirl_light=False, bistro=False):
         metadata_budget = [256*1024]
         if bistro:
             samples = {"bistro": (None, 332, 334)}
+        elif hdr_chart:
+            samples = {"hdr_testimage": (None,)}
         elif showgirl_light:
             samples = {"showgirl_02": (68, 272)}
         else:
             samples = dict.fromkeys(SCENES, (None,))
         for scene, ordinals in samples.items():
             paths = {role: f"/{directory}/{scene}" for role, directory in FOLDERS.items()}
+            if hdr_chart:
+                del paths["graded"]
             if bistro:
                 segments = [entries(ftp, f"{paths['original']}_{number:02}", metadata_budget)
                             for number in (1, 2, 3)]
@@ -103,6 +107,8 @@ def run(output, proxy, list_only, showgirl_light=False, bistro=False):
                     raise ValueError(f"Frame numbers are not contiguous: {scene}")
             if showgirl_light and len(numbers["original"]) != 341:
                 raise ValueError("Unexpected Showgirl 2 frame count")
+            if hdr_chart and numbers["original"] != list(range(1020, 1500)):
+                raise ValueError("Unexpected HDR Testimage frame count")
             for sample in ordinals:
                 ordinal = len(numbers["original"]) // 2 if sample is None else sample
                 if bistro and sample is None:
@@ -123,7 +129,8 @@ def run(output, proxy, list_only, showgirl_light=False, bistro=False):
                 rows[label] = {"counts": {role: len(items) for role, items in by_role.items()},
                                "selected_ordinal_zero_based": ordinal, "files": files}
 
-        if total > (48 if bistro else 64)*1024**2:
+        budget_mib = 24 if hdr_chart else 48 if bistro else 64
+        if total > budget_mib*1024**2:
             raise ValueError(f"Selected source would exceed the download budget: {total}")
         if not list_only and disk_usage(output).free < 2 * total:
             raise ValueError("Insufficient local room for source and analysis")
@@ -159,5 +166,6 @@ if __name__ == "__main__":
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--showgirl-light", action="store_true", help="Fetch fixed Showgirl 2 ordinals")
     mode.add_argument("--bistro", action="store_true", help="Fetch the Bistro middle pair and original neighbors")
+    mode.add_argument("--hdr-chart", action="store_true", help="Fetch the HDR Testimage middle original frame")
     args = parser.parse_args()
-    run(args.output, args.proxy, args.list_only, args.showgirl_light, args.bistro)
+    run(args.output, args.proxy, args.list_only, args.showgirl_light, args.bistro, args.hdr_chart)

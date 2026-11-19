@@ -1,0 +1,363 @@
+{
+  "source": {
+    "project": "https://hdm-stuttgart.de/vmlab/hdm-hdr-2014",
+    "license_sha256": "0cfe0db7d8c8a5b8b0ccb44d70896e27017ea819e7150993420b82ddd78f071a",
+    "cases": {
+      "hdr_testimage": {
+        "counts": {
+          "original": 480
+        },
+        "selected_ordinal_zero_based": 240,
+        "files": {
+          "original": {
+            "official_path": "/HdM-HDR-2014_Original-HDR-Camera-Footage/hdr_testimage/hdr_testimage_001260.exr",
+            "bytes": 6869862,
+            "frame": 1260,
+            "number_range": [
+              1020,
+              1499
+            ],
+            "sha256": "4309b691687b428f1243bdbba539673aa5dd908829a8ede10d199bbdc49d6fd3",
+            "file": "hdr_testimage-original.exr"
+          }
+        }
+      }
+    },
+    "selected_bytes": 6869862,
+    "fetched": true
+  },
+  "prepared": {
+    "archive_sha256": "b49ed9589b6bb61c3663e76504644a004e0ff04cf415f1c2cda750cad9fcefb3",
+    "look_sha256": "cee155989194d1a63eb07454d894a400c9716248aa14b99e902cae8b66e33fa5",
+    "chart": {
+      "source_sha256": "4309b691687b428f1243bdbba539673aa5dd908829a8ede10d199bbdc49d6fd3",
+      "input_log_outside_unit_fraction": 0.0017338505497685186,
+      "display_outside_unit_fraction": {
+        "off": 0.0006329571759259259,
+        "on": 0.0002690067997685185
+      },
+      "shared_neutral_pixels": 18836,
+      "known_edit_rgb_mae": 4.922693323206018,
+      "alignment": {
+        "zero": 0.9935501984687458,
+        "peak": 0.9935501984687458,
+        "dy": 0,
+        "dx": 0,
+        "peak_gain": 0.0
+      },
+      "images": {
+        "off": "752ce02caf8f4b6bb000620eb76370415d8bcfc262cbeb91de59107f1a2ceac3",
+        "on": "a963d14a6642c657c6f0015b43c5f1eea6f3b18b9698d6dd7da8e6b5550a66bc"
+      }
+    },
+    "display": {
+      "ocio": "2.5.2",
+      "config": "studio-config-v4.0.0_aces-v2.0_ocio-v2.5",
+      "config_id": "12a5d7a6302447587097869da6884a20:6001c324468d497f99aa06d3014798d8",
+      "display": "sRGB - Display",
+      "view": "ACES 2.0 - SDR 100 nits (Rec.709)"
+    }
+  },
+  "result": {
+    "qualified": true,
+    "prepared_sha256": "7039971cb5af10a4c5ceaf8a4f64117f6bf2b47e885a2faf84f6320fa4ef460a",
+    "regions": {
+      "gray_1": [
+        [
+          118,
+          257
+        ],
+        [
+          127,
+          257
+        ],
+        [
+          127,
+          267
+        ],
+        [
+          118,
+          267
+        ]
+      ],
+      "gray_2": [
+        [
+          136,
+          257
+        ],
+        [
+          146,
+          257
+        ],
+        [
+          146,
+          267
+        ],
+        [
+          136,
+          267
+        ]
+      ],
+      "gray_3": [
+        [
+          154,
+          257
+        ],
+        [
+          164,
+          257
+        ],
+        [
+          164,
+          267
+        ],
+        [
+          154,
+          267
+        ]
+      ],
+      "gray_4": [
+        [
+          172,
+          257
+        ],
+        [
+          182,
+          257
+        ],
+        [
+          182,
+          267
+        ],
+        [
+          172,
+          267
+        ]
+      ],
+      "gray_5": [
+        [
+          191,
+          257
+        ],
+        [
+          200,
+          257
+        ],
+        [
+          200,
+          267
+        ],
+        [
+          191,
+          267
+        ]
+      ],
+      "skin_left": [
+        [
+          93,
+          68
+        ],
+        [
+          102,
+          67
+        ],
+        [
+          106,
+          75
+        ],
+        [
+          101,
+          80
+        ],
+        [
+          95,
+          77
+        ]
+      ],
+      "skin_right": [
+        [
+          248,
+          67
+        ],
+        [
+          255,
+          66
+        ],
+        [
+          259,
+          73
+        ],
+        [
+          256,
+          80
+        ],
+        [
+          249,
+          77
+        ]
+      ]
+    },
+    "valid_pixels": {
+      "gray_1": 110,
+      "gray_2": 121,
+      "gray_3": 121,
+      "gray_4": 121,
+      "gray_5": 110,
+      "skin_left": 124,
+      "skin_right": 122
+    },
+    "weight_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "reference_sha256": {
+      "off": "ec8dca293d07c87fb7920b61475d3b4bfa2b9f34e2f107d015e9326debf0e725",
+      "on": "18a1de72d16d48f7f378ef7808fb1457d93961931c3674ea8c13d272bc6e2b66"
+    },
+    "metrics": {
+      "gray_1": {
+        "pixels": 110,
+        "off_mean_chroma_shift": [
+          4.509539999999993,
+          -3.917732727272734
+        ],
+        "off_chroma_mae": 4.213636363636364,
+        "known_chroma_change_mae": 1.758987272727287,
+        "response_projection": -0.05142823484315107,
+        "response_chroma_mae": 2.246740000000003,
+        "luma_median": {
+          "target": 196.0052,
+          "13-off": 205.1364,
+          "13-on": 209.99599999999998,
+          "expected": 203.99999999999997
+        },
+        "passed": false
+      },
+      "gray_2": {
+        "pixels": 121,
+        "off_mean_chroma_shift": [
+          6.277446280991748,
+          -3.631644628099172
+        ],
+        "off_chroma_mae": 4.954545454545454,
+        "known_chroma_change_mae": 0.49294049586777383,
+        "response_projection": -0.3764363534071943,
+        "response_chroma_mae": 1.921487603305785,
+        "luma_median": {
+          "target": 178.21779999999998,
+          "13-off": 192.4894,
+          "13-on": 197.706,
+          "expected": 188.21779999999998
+        },
+        "passed": false
+      },
+      "gray_3": {
+        "pixels": 121,
+        "off_mean_chroma_shift": [
+          6.656871074380172,
+          -3.1861041322314048
+        ],
+        "off_chroma_mae": 4.921487603305785,
+        "known_chroma_change_mae": 1.3296991735537174,
+        "response_projection": 0.8883692462115745,
+        "response_chroma_mae": 1.7792991735537191,
+        "luma_median": {
+          "target": 156.9382,
+          "13-off": 176.48940000000002,
+          "13-on": 181.0682,
+          "expected": 165.72039999999998
+        },
+        "passed": true
+      },
+      "gray_4": {
+        "pixels": 121,
+        "off_mean_chroma_shift": [
+          6.813961983471069,
+          -2.8306661157024857
+        ],
+        "off_chroma_mae": 4.822314049586777,
+        "known_chroma_change_mae": 2.3145173553719016,
+        "response_projection": 0.628619071577172,
+        "response_chroma_mae": 1.3378512396694153,
+        "luma_median": {
+          "target": 122.2282,
+          "13-off": 147.282,
+          "13-on": 152.2138,
+          "expected": 128.2992
+        },
+        "passed": false
+      },
+      "gray_5": {
+        "pixels": 110,
+        "off_mean_chroma_shift": [
+          4.444250909090917,
+          -2.6284763636363593
+        ],
+        "off_chroma_mae": 3.536363636363636,
+        "known_chroma_change_mae": 7.681818181818182,
+        "response_projection": 0.24315612733492836,
+        "response_chroma_mae": 6.25,
+        "luma_median": {
+          "target": 82.4428,
+          "13-off": 111.93679999999999,
+          "13-on": 115.5078,
+          "expected": 77.9614
+        },
+        "passed": false
+      },
+      "skin_left": {
+        "pixels": 124,
+        "off_mean_chroma_shift": [
+          8.197188709677421,
+          5.543962903225806
+        ],
+        "off_chroma_mae": 6.8705758064516145,
+        "known_chroma_change_mae": 1.752732258064516,
+        "response_projection": 0.5346521796114467,
+        "response_chroma_mae": 1.1748435483870965,
+        "luma_median": {
+          "target": 76.5068,
+          "13-off": 97.8522,
+          "13-on": 99.71180000000001,
+          "expected": 77.0764
+        },
+        "passed": false
+      },
+      "skin_right": {
+        "pixels": 122,
+        "off_mean_chroma_shift": [
+          9.105726229508184,
+          5.917201639344252
+        ],
+        "off_chroma_mae": 7.51146393442622,
+        "known_chroma_change_mae": 0.3811475409836119,
+        "response_projection": 1.2454082495914152,
+        "response_chroma_mae": 1.3712295081967207,
+        "luma_median": {
+          "target": 150.23449999999997,
+          "13-off": 164.3338,
+          "13-on": 168.6954,
+          "expected": 160.1623
+        },
+        "passed": true
+      }
+    },
+    "source_luma_order": [
+      "gray_5",
+      "gray_4",
+      "gray_3",
+      "gray_2",
+      "gray_1"
+    ],
+    "gray_inversions": {
+      "target": 0,
+      "13-off": 0,
+      "13-on": 0,
+      "expected": 0
+    },
+    "outputs_sha256": {
+      "target": "752ce02caf8f4b6bb000620eb76370415d8bcfc262cbeb91de59107f1a2ceac3",
+      "13-off": "2812214373c05c3bb1c18297dee5e2e531fcda8524fb8ef9f5f4df13c89f1bf0",
+      "13-on": "69c99aea7425ec1669f01b20b86cf20202555d5f4166838e2d82777c8e38e435",
+      "expected": "b19d83a13f10dbb528e243b54caa42a3a92bb3bd2ef87b411812831093e6f44c"
+    },
+    "comparison_sha256": "93c04622778211c8128105b72221d8fad43885de562e23ac463703e4dac9cc69"
+  }
+}
