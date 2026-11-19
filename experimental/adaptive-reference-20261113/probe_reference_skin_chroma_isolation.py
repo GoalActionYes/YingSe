@@ -45,7 +45,16 @@ def grade(engine, target, reference, baseline, *, model):
     if guide_weight is None:
         return baseline.copy(), {"route": "no_reference_skin"}
     guide_y = reference @ LUMA
-    guide, _ = render(chroma(reference, guide_y) * guide_weight[..., None], guide_y)
+    gray_guide_color = chroma(reference, guide_y) * guide_weight[..., None]
+    grade_rgb, direct, limited = render_branch(engine, target, baseline, target_weight, gray_guide_color, guide_y)
+    return grade_rgb, {"route": "applied", "target_weight_above_half": float((target_weight > .5).mean()),
+                       "reference_weight_above_half": float((guide_weight > .5).mean()),
+                       "max_luma_error": direct, "gamut_limited_fraction": limited,
+                       "changed_pixels": int(np.any(grade_rgb != baseline, axis=-1).sum())}
+
+
+def render_branch(engine, target, baseline, target_weight, guide_color, guide_y):
+    guide, _ = render(guide_color, guide_y)
     alternate = finish_spatial(target, engine.prepare(target, guide).apply(target), STRENGTH)
     old_y = baseline @ LUMA
     old_color = chroma(baseline, old_y)
@@ -55,10 +64,7 @@ def grade(engine, target, reference, baseline, *, model):
     direct = np.abs((grade_rgb.astype(np.int32) - baseline) @ LUMA_INTEGER) / 10000
     if direct.max() > .5:
         raise ValueError("Luminance changed beyond RGB8 quantization")
-    return grade_rgb, {"route": "applied", "target_weight_above_half": float((target_weight > .5).mean()),
-                       "reference_weight_above_half": float((guide_weight > .5).mean()),
-                       "max_luma_error": float(direct.max()), "gamut_limited_fraction": limited,
-                       "changed_pixels": int(np.any(grade_rgb != baseline, axis=-1).sum())}
+    return grade_rgb, float(direct.max()), limited
 
 
 def skin_boxes(out, suite):
