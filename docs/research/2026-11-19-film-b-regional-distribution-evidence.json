@@ -1,0 +1,655 @@
+{
+  "cases": {
+    "785-3553": {
+      "scores": {
+        "global": {
+          "expected_mean_abs_delta": {
+            "luma": 8.634206970214844,
+            "chroma": 1.8743800592356918
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.31561197055610285,
+              "chroma": -0.4116976498156169
+            },
+            "F1": {
+              "luma": 0.16568080429761864,
+              "chroma": -0.34234034255353774
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.834311424100156,
+              "neutral": 14.084628358029153,
+              "neutral_person": 3.153256704980843
+            },
+            "on": {
+              "person": 3.361991392801252,
+              "neutral": 15.488366289775758,
+              "neutral_person": 3.477349560513861
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 15.488366289775758
+        },
+        "region": {
+          "expected_mean_abs_delta": {
+            "luma": 8.634206970214844,
+            "chroma": 1.8743800592356918
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.2519859840581699,
+              "chroma": -0.33179025978152704
+            },
+            "F1": {
+              "luma": 0.09956888590094902,
+              "chroma": -0.34653609242715117
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 2.519806338028169,
+              "neutral": 12.247431462646498,
+              "neutral_person": 2.137705656975434
+            },
+            "on": {
+              "person": 2.204225352112676,
+              "neutral": 13.524988383499407,
+              "neutral_person": 1.6806400721208024
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 13.524988383499407
+        }
+      },
+      "supports": {
+        "target": [
+          5120,
+          56987
+        ],
+        "reference": [
+          39302,
+          393548
+        ]
+      },
+      "outputs": {
+        "C1-off": {
+          "global": {
+            "sha256": "5a492adf8e552280138c241e8edbc31eb3936f3335b52bf902fac372be94c6e6",
+            "mae": {
+              "person_core": 37.6654296875,
+              "background_core": 70.2512268880037,
+              "boundary": 62.60124428890833
+            }
+          },
+          "region": {
+            "sha256": "897c75b116f8764ef598f5f89a2e3d28f94da746810b154e0e5ead30cb6fb893",
+            "mae": {
+              "person_core": 16.335807291666665,
+              "background_core": 79.53668965436562,
+              "boundary": 49.83824244191698
+            }
+          }
+        },
+        "C1-on": {
+          "global": {
+            "sha256": "5295eca41c077e3db11461393e49cc748b08a02765cd31df01dce58ac8d166c4",
+            "mae": {
+              "person_core": 35.167578125,
+              "background_core": 75.18125771374758,
+              "boundary": 64.79527559055119
+            }
+          },
+          "region": {
+            "sha256": "9e626bbcbe9a285fc5d50e5273a3121daf9e5d9416bdc5928e3df891542bcdf1",
+            "mae": {
+              "person_core": 13.687890625,
+              "background_core": 85.18181924532496,
+              "boundary": 50.93895207543501
+            }
+          }
+        },
+        "F1-off": {
+          "global": {
+            "sha256": "3321de346c75479480a2f0f5ce120595408dff581ed082ba87f41b197d1063a7",
+            "mae": {
+              "person_core": 33.84127604166667,
+              "background_core": 85.79391206181526,
+              "boundary": 67.87421016817342
+            }
+          },
+          "region": {
+            "sha256": "d79d29033767020468cf23fdb29f5f6a5aefafd3c4a03182c6c1685139632c28",
+            "mae": {
+              "person_core": 15.706640625,
+              "background_core": 94.3967981001515,
+              "boundary": 50.33411101390104
+            }
+          }
+        },
+        "F1-on": {
+          "global": {
+            "sha256": "d2c05e72776afecdba5e6a2db65c10550e4812133627fa9ffcf92c49b3d59b07",
+            "mae": {
+              "person_core": 33.10266927083333,
+              "background_core": 92.20836916021783,
+              "boundary": 71.45795664430835
+            }
+          },
+          "region": {
+            "sha256": "0e589dee24f7b901a3d5d026b2cf3d4c366dd81585411be446be10d24ad346bf",
+            "mae": {
+              "person_core": 13.198697916666667,
+              "background_core": 101.50768888810899,
+              "boundary": 52.2151258870419
+            }
+          }
+        }
+      },
+      "comparison_sha256": "9a969c081d81b4a6f48626fc9089893624c2db56c2f13e8186bad08b41550ff7"
+    },
+    "9483-19432": {
+      "scores": {
+        "global": {
+          "expected_mean_abs_delta": {
+            "luma": 7.8987154846191405,
+            "chroma": 3.9433162104234603
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.6251009277860506,
+              "chroma": 0.5669983568946265
+            },
+            "F1": {
+              "luma": 0.2559300363048102,
+              "chroma": 0.40094628310469627
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 10.923742923742923,
+              "neutral": 14.50736960089668,
+              "neutral_person": 13.339344262295082
+            },
+            "on": {
+              "person": 13.910381285381286,
+              "neutral": 13.01250550418318,
+              "neutral_person": 14.637704918032787
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 14.637704918032787
+        },
+        "region": {
+          "expected_mean_abs_delta": {
+            "luma": 7.8987154846191405,
+            "chroma": 3.9433162104234603
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.4481981617435969,
+              "chroma": 0.49387385380378207
+            },
+            "F1": {
+              "luma": 0.1804046223408848,
+              "chroma": 0.40973324063926486
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 0.672993672993673,
+              "neutral": 17.46960489972379,
+              "neutral_person": 2.8
+            },
+            "on": {
+              "person": 0.825008325008325,
+              "neutral": 16.55409311076418,
+              "neutral_person": 2.857377049180328
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 17.46960489972379
+        }
+      },
+      "supports": {
+        "target": [
+          6644,
+          56197
+        ],
+        "reference": [
+          59078,
+          325511
+        ]
+      },
+      "outputs": {
+        "C1-off": {
+          "global": {
+            "sha256": "99674a3af9625dafc0a52ba1ae6745603c65520d2431087dc099729962751607",
+            "mae": {
+              "person_core": 7.216486052578768,
+              "background_core": 23.244455516605274,
+              "boundary": 16.842795299938157
+            }
+          },
+          "region": {
+            "sha256": "2a4b6add097f835318628cfdd9af29146f29233d92f864a54f9bf71fbe621e6f",
+            "mae": {
+              "person_core": 101.58508930363234,
+              "background_core": 16.805576810150008,
+              "boundary": 56.42980828695114
+            }
+          }
+        },
+        "C1-on": {
+          "global": {
+            "sha256": "cae950d9f5791b472fc6faa7023044399bf68b6b62b76e6ee95278cb779eec22",
+            "mae": {
+              "person_core": 10.143738711619505,
+              "background_core": 24.867003576703382,
+              "boundary": 20.260111317254175
+            }
+          },
+          "region": {
+            "sha256": "460e131b22f7d198e4ca1fa0ed7703ceea31b1f0372db84788b8ee6ef7aa459d",
+            "mae": {
+              "person_core": 116.98434677904876,
+              "background_core": 13.901756321511824,
+              "boundary": 63.40952380952381
+            }
+          }
+        },
+        "F1-off": {
+          "global": {
+            "sha256": "fc216dff0ca7c3a7c05cb7ef4a567b2e68a287381ea512b3adabf84bdec6260f",
+            "mae": {
+              "person_core": 17.14805338149709,
+              "background_core": 36.96075116702552,
+              "boundary": 29.193073593073592
+            }
+          },
+          "region": {
+            "sha256": "86331b15beb27d270765bf711b996d6f4ba73c0286a10757415aba9e6910556c",
+            "mae": {
+              "person_core": 101.69862532610877,
+              "background_core": 27.074416783814083,
+              "boundary": 62.03945578231293
+            }
+          }
+        },
+        "F1-on": {
+          "global": {
+            "sha256": "8323077b3152fbd86d4a06886308d065df6f0b8ae180fcf364ea42caea91b238",
+            "mae": {
+              "person_core": 23.961719847481437,
+              "background_core": 38.125166823851806,
+              "boundary": 33.67730364873222
+            }
+          },
+          "region": {
+            "sha256": "10fb23dad3d81cfc9d695eb5a287b39e0612773b9ad6e52707c3285f5df0bff1",
+            "mae": {
+              "person_core": 117.13591210114389,
+              "background_core": 25.46523835791946,
+              "boundary": 69.5356833642548
+            }
+          }
+        }
+      },
+      "comparison_sha256": "07885d0fe2559276158dc054f20e232ddc632cedd1f8d0d83296ca87c89a7cf4"
+    },
+    "872-1268": {
+      "scores": {
+        "global": {
+          "expected_mean_abs_delta": {
+            "luma": 7.977868957519531,
+            "chroma": 3.994704383496344
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.5902433682019997,
+              "chroma": 0.6844714131986389
+            },
+            "F1": {
+              "luma": 0.43602646461320116,
+              "chroma": 0.5806601009111474
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 6.488169769899992,
+              "neutral": 8.674697629414611,
+              "neutral_person": 6.020726714431935
+            },
+            "on": {
+              "person": 7.306393473724151,
+              "neutral": 9.523786486050637,
+              "neutral_person": 7.409160696008188
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 9.523786486050637
+        },
+        "region": {
+          "expected_mean_abs_delta": {
+            "luma": 7.977868957519531,
+            "chroma": 3.994704383496344
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.3394031112028553,
+              "chroma": 0.4524497890087769
+            },
+            "F1": {
+              "luma": 0.25445430830445315,
+              "chroma": 0.39765497004201594
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 0.5718622110198661,
+              "neutral": 9.433510724076761,
+              "neutral_person": 0.4409757761856022
+            },
+            "on": {
+              "person": 0.5317776512995637,
+              "neutral": 10.184873407514917,
+              "neutral_person": 0.4630672125554418
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 10.184873407514917
+        }
+      },
+      "supports": {
+        "target": [
+          9692,
+          50893
+        ],
+        "reference": [
+          87501,
+          338683
+        ]
+      },
+      "outputs": {
+        "C1-off": {
+          "global": {
+            "sha256": "ef22bdddc312f2b9bbc6651899f36d5fb373cb52f3dce0f868101e4a119d5990",
+            "mae": {
+              "person_core": 13.64482734901637,
+              "background_core": 9.469783008796233,
+              "boundary": 11.295630512354407
+            }
+          },
+          "region": {
+            "sha256": "d9342dd3548c3a59b94451b8ca25a8aaf84339f1eef6d492ca928c8b5fd55e0d",
+            "mae": {
+              "person_core": 103.32724583849223,
+              "background_core": 17.99288048782085,
+              "boundary": 46.433313135393526
+            }
+          }
+        },
+        "C1-on": {
+          "global": {
+            "sha256": "649891717f3d852ef43c019bb4c2a6bc77c509ae308163ebfc058cd05fcc66db",
+            "mae": {
+              "person_core": 14.124329343788691,
+              "background_core": 11.855009529797812,
+              "boundary": 13.605466909041944
+            }
+          },
+          "region": {
+            "sha256": "156800604d302a539ef4bbf27697fa25e07bab4d2f4259b024198841b25323bd",
+            "mae": {
+              "person_core": 112.1392901361948,
+              "background_core": 20.034248324916984,
+              "boundary": 52.3179155726116
+            }
+          }
+        },
+        "F1-off": {
+          "global": {
+            "sha256": "71bf9908e8b22d44c3afbf4df651bf142d791d878c44f2a6add8f049df25104a",
+            "mae": {
+              "person_core": 17.654010180217362,
+              "background_core": 16.883363134419273,
+              "boundary": 17.36430350770888
+            }
+          },
+          "region": {
+            "sha256": "749474ef9338f37aad39887ed576b484c8ebbdbced39bdee4fca73409c1f46fe",
+            "mae": {
+              "person_core": 103.33384922272664,
+              "background_core": 11.281531841314129,
+              "boundary": 48.21840705581364
+            }
+          }
+        },
+        "F1-on": {
+          "global": {
+            "sha256": "7cb52c87c0e1f72dcbf0f9296db24aa19bc9dbc5c95b581f6d302d8336c9f804",
+            "mae": {
+              "person_core": 19.600632824322464,
+              "background_core": 19.012568853607895,
+              "boundary": 20.543257254426717
+            }
+          },
+          "region": {
+            "sha256": "a9a097cfce9cd48ac3114e1ae80c9d98e4216d41b70163a50445c6585cd9a8ee",
+            "mae": {
+              "person_core": 112.15789654698033,
+              "background_core": 12.13818534310547,
+              "boundary": 54.2603514441527
+            }
+          }
+        }
+      },
+      "comparison_sha256": "e7e56cdf12efa0e0702b807062ee7620fe73cf86ba2c69ea6165cc85520d22b3"
+    },
+    "8021-8690": {
+      "scores": {
+        "global": {
+          "expected_mean_abs_delta": {
+            "luma": 4.036025039672851,
+            "chroma": 2.8754827901793694
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.5764765915487525,
+              "chroma": 0.37991776553400136
+            },
+            "F1": {
+              "luma": 0.7254750031318361,
+              "chroma": 0.49459797066518724
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 22.09486280173303,
+              "neutral": 41.225359088657754,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 21.552933085757513,
+              "neutral": 40.77265973254086,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 41.225359088657754
+        },
+        "region": {
+          "expected_mean_abs_delta": {
+            "luma": 4.036025039672851,
+            "chroma": 2.8754827901793694
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.40627856504525434,
+              "chroma": 0.36928552295757683
+            },
+            "F1": {
+              "luma": 0.537462976057513,
+              "chroma": 0.3992814697306817
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 1.0886596520184306,
+              "neutral": 33.16592372461615,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 1.0891685578708479,
+              "neutral": 32.9470034670629,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 33.16592372461615
+        }
+      },
+      "supports": {
+        "target": [
+          21965,
+          39202
+        ],
+        "reference": [
+          54082,
+          378055
+        ]
+      },
+      "outputs": {
+        "C1-off": {
+          "global": {
+            "sha256": "37654e2f0e19e091875334b60cde0ad0dd1711922aa280a0039b2cb8f52c62e6",
+            "mae": {
+              "person_core": 10.304772744517793,
+              "background_core": 33.53464959270786,
+              "boundary": 26.561913481345847
+            }
+          },
+          "region": {
+            "sha256": "50d8123eea8ec5f03c463e422635564eb7b77ff369c1522d49ac69a5d30f6625",
+            "mae": {
+              "person_core": 15.334395629410425,
+              "background_core": 37.90744519837423,
+              "boundary": 29.36415655756466
+            }
+          }
+        },
+        "C1-on": {
+          "global": {
+            "sha256": "57eaf63330338962599739860f3a6e557de7b58ebe00ded0f642bcdb5a3fe426",
+            "mae": {
+              "person_core": 9.583488883830336,
+              "background_core": 33.656973283676,
+              "boundary": 25.806591897459374
+            }
+          },
+          "region": {
+            "sha256": "1008f52bc62ca12df5d389f9100d026bcd6cf1a1f43e8b591600e2ccc3483edd",
+            "mae": {
+              "person_core": 16.27502845435921,
+              "background_core": 37.88492083737224,
+              "boundary": 31.17006179903868
+            }
+          }
+        },
+        "F1-off": {
+          "global": {
+            "sha256": "3f8b522cc447ccd5d12a3c2f137aace43dd51aaed2792c108227d633261d2c73",
+            "mae": {
+              "person_core": 15.092859852796115,
+              "background_core": 15.149031511997688,
+              "boundary": 16.060654612039368
+            }
+          },
+          "region": {
+            "sha256": "6b5d5f8733991b586736b0e44abb8e9f1a7162755f9cd5f21c16e6a6e8e26cdb",
+            "mae": {
+              "person_core": 15.244191516807042,
+              "background_core": 11.453055116235566,
+              "boundary": 14.641641870756084
+            }
+          }
+        },
+        "F1-on": {
+          "global": {
+            "sha256": "0388b1e51a89a7d28ea9410da5aae709d9787db872fd55a2848627b8fb47b497",
+            "mae": {
+              "person_core": 13.513696031565368,
+              "background_core": 12.691920480247607,
+              "boundary": 14.327077134355688
+            }
+          },
+          "region": {
+            "sha256": "d64577e9bb7d3320e847225381a3c38a01fd29be26b5d2a6ac6705ddbaea67ed",
+            "mae": {
+              "person_core": 16.170331588132637,
+              "background_core": 9.924570174991072,
+              "boundary": 15.492484931715877
+            }
+          }
+        }
+      },
+      "comparison_sha256": "bcd2b91d97347ab14125b0fcf0d995eecab0269c5fbbf4ca42b6e780480b2d60"
+    }
+  },
+  "summary": {
+    "global": {
+      "passing_cases": 0,
+      "worst_protected_swap": 41.225359088657754,
+      "passed": false
+    },
+    "region": {
+      "passing_cases": 0,
+      "worst_protected_swap": 33.16592372461615,
+      "passed": false
+    }
+  },
+  "source_sha256": "881bf466bd4456ba5b6a4ffe5a3126ddb7fb3de25912291a5790b9fb83813e16",
+  "mask_evidence_sha256": "83be16a13691b50cd3449375df656b0cedabdbf3b31e63639b43d6e42f3c68d9",
+  "report_sha256": "b54f47b347a5cd29f1c799319539927e7e1f0d5184ec7a43b70ad9e41973d6f0"
+}
