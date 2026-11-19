@@ -1,6 +1,7 @@
 """Cross reference luminance and chromaticity in their shared SDR gamut."""
 
 import argparse
+from itertools import product
 from pathlib import Path
 
 import cv2
@@ -16,9 +17,39 @@ from spatial_render import SpatialEngine, finish_spatial
 
 
 ORDER = ("low_raw", "high_raw", "low_grade", "high_grade")
+MATCH_Y_LIMIT = .005
+ADJACENT = np.array(tuple(product((0, 1), repeat=3)), dtype=bool)
 
 
-def prepare_references(raw, grade):
+def rounding_options(linear):
+    values = np.clip(linear, 0, 1)
+    codes = np.where(values <= .0031308, 12.92 * values, 1.055 * values**(1 / 2.4) - .055) * 255
+    variants = np.where(ADJACENT[None], np.ceil(codes)[:, None], np.floor(codes)[:, None]).astype(np.uint8)
+    error = ((variants - codes[:, None])**2).sum(-1)
+    return variants, error, linear_rgb(variants) @ Y_WEIGHTS
+
+
+def jointly_round(first, second, encoded_first, encoded_second):
+    delta = (linear_rgb(encoded_first) - linear_rgb(encoded_second)) @ Y_WEIGHTS
+    bad = np.abs(delta) > MATCH_Y_LIMIT
+    count = int(bad.sum())
+    if count == 0:
+        return {"above_limit": 0, "resolved": 0}
+    first_codes, first_cost, first_y = rounding_options(first[bad])
+    second_codes, second_cost, second_y = rounding_options(second[bad])
+    valid = np.abs(first_y[:, :, None] - second_y[:, None, :]) <= MATCH_Y_LIMIT
+    cost = np.where(valid, first_cost[:, :, None] + second_cost[:, None, :], np.inf)
+    choice = cost.reshape(count, -1).argmin(-1)
+    feasible = valid.any(axis=(1, 2))
+    positions = np.flatnonzero(feasible)
+    replace = bad.copy()
+    replace[bad] = feasible
+    encoded_first[replace] = first_codes[positions, choice[feasible] // len(ADJACENT)]
+    encoded_second[replace] = second_codes[positions, choice[feasible] % len(ADJACENT)]
+    return {"above_limit": count, "resolved": int(feasible.sum())}
+
+
+def prepare_references(raw, grade, *, joint_rounding=False):
     first, last = map(linear_rgb, (raw, grade))
     raw_y, grade_y = (image @ Y_WEIGHTS for image in (first, last))
     ratios = [np.divide(image, y[..., None], out=np.zeros_like(image), where=y[..., None] > 0)
@@ -35,12 +66,19 @@ def prepare_references(raw, grade):
         if image.min() < 0 or image.max() > 1 + 1e-12:
             raise ValueError("Common-gamut construction failed")
     guides = {name: encode(image) for name, image in floating.items()}
+    rounding = {}
+    if joint_rounding:
+        for level in ("low", "high"):
+            a, b = f"{level}_raw", f"{level}_grade"
+            rounding[level] = jointly_round(floating[a], floating[b], guides[a], guides[b])
     linear = {name: linear_rgb(image) for name, image in guides.items()}
     y_error = max(float(np.abs((linear[f"{level}_raw"] - linear[f"{level}_grade"]) @ Y_WEIGHTS).max())
                   for level in ("low", "high"))
     support = low >= .01
     coverage = float(support.mean())
     stats = {"support_fraction": coverage, "matched_y_max_difference": y_error}
+    if joint_rounding:
+        stats["rounding"] = rounding
     if not support.any():
         return guides, stats | {"qualified": False}
     points = {name: uv(image[support]) for name, image in linear.items()}
@@ -51,7 +89,7 @@ def prepare_references(raw, grade):
     color_drift = max(float(np.median(np.linalg.norm(points[f"high_{color}"] - points[f"low_{color}"], axis=1)))
                       for color in ("raw", "grade"))
     stats.update(mean_y_gap_min=y_gap, color_gap_median_min=color_gap, color_drift_median_max=color_drift,
-                 qualified=coverage >= .25 and y_error <= .005 and y_gap >= .02
+                 qualified=coverage >= .25 and y_error <= MATCH_Y_LIMIT and y_gap >= .02
                  and color_gap >= .005 and color_drift <= .002)
     return guides, stats
 

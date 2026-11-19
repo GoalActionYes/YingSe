@@ -68,7 +68,7 @@ def panel(folder, guides, outputs, target, expected):
     return digest(path)
 
 
-def run(aligned, evidence, assignment_path, out):
+def run(aligned, evidence, assignment_path, out, joint_rounding=False):
     source = json.loads(evidence.read_bytes())
     assignments = json.loads(assignment_path.read_bytes())
     groups = [key for key, case in source["cases"].items()
@@ -87,7 +87,7 @@ def run(aligned, evidence, assignment_path, out):
         rows = {}
         for style in STYLES:
             donor_grade = read_checked(aligned, donor, style, source)
-            guides, support = prepare_references(donor_original, donor_grade)
+            guides, support = prepare_references(donor_original, donor_grade, joint_rounding=joint_rounding)
             summary = {"reference_support": support}
             rows[style] = summary
             if not support["qualified"]:
@@ -123,4 +123,5 @@ if __name__ == "__main__":
     cli = argparse.ArgumentParser(description=__doc__)
     for name in ("aligned", "evidence", "assignment_path", "out"):
         cli.add_argument(name, type=Path)
+    cli.add_argument("--joint-rounding", action="store_true")
     run(**vars(cli.parse_args()))
