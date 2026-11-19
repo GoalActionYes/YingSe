@@ -26,4 +26,6 @@
 
 复现时在候选根目录设置 `PYTHONPATH`，用已有视觉环境运行 `scripts/probe_reference_icc_video.py <原运动视频> <带标签 P3 原参考> <新输出目录>`。视频 SHA256 为 `ed5095191a8c5f142e59f8fc5807ba3a35c8dd0eff05b45c57f65b7bf03ca759`，参考 SHA256 为 `c1634e0f981bf62874c8d9581c5f6920d5b52c97876caf5071d76273a12bdd02`。本机记录在 `outputs/image-icc-candidate-video-v2`，媒体不随 Git 分发。
 
-候选尚未合并或替换现有版本。没有真实第三方宽色域来源评估，未做跨场景独立画质及自然度评价。本机对照输出位于 `outputs/image-icc-candidate-real`。阶段标记为图片解码工程修复，不能当作自动调色主目标通过。
+补充测试三张 WebKit 原始 JPEG，涵盖两份不同 Display P3 配置及一份 Adobe RGB (1998)。每张分别作目标和参考，六项带标签成片均与按标签转换的 sRGB 基准逐像素一致。本机外部 JPEG 验证与自制样张结果参考[第三方 JPEG 验证](2026-11-20-external-icc-jpeg.md)。
+
+候选尚未合并或替换现有版本。未做跨场景独立画质及自然度评价。本机原对照输出位于 `outputs/image-icc-candidate-real`。阶段标记为图片解码工程修复，不能当作自动调色主目标通过。
