@@ -6,7 +6,7 @@
 
 ## 先看当前状态
 
-已核查三套真人或混合光采集库。HumanOLAT 有彩光实拍但需审批，BecomingLit 以交错白光为主；暂未取得可直接使用的肤色换灯对照小样。[实拍数据准入](research/2026-11-19-portrait-light-source-eligibility.md)
+补查两个真人肤色数据来源：PolyU 有前景、背景分别受光的实拍设计，但未核验获取和配对条件；另一个数据集的成对照片只增减灰卡，不换灯。暂未取得可用的肤色换灯小样。[实拍数据准入](research/2026-11-19-portrait-light-source-eligibility.md)
 
 把冻结扩展版成片压成全图通用色表后，四组人像的最差保护区色差全部增加，Film B 和 FACD 均未过门槛。停止这套重建，稳定版 1.3 继续用于演示。[全图色表重建对照](research/2026-11-19-global-render-refit.md)
 

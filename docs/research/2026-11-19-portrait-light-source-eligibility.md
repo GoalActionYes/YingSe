@@ -9,3 +9,9 @@
 | Shadows & Lumination | 每图带两个光源的测量和区域标注，覆盖室内外与多个相机。 | 作者的公开资料未给出本实验需要的同人物、同姿态换灯组及有意调色前后图。只适合作为混合光识别线索，不将区域标注当成需要迁移的风格。见[作者介绍](https://ilijad.github.io/shal.html)和[原论文](https://www.sciencedirect.com/science/article/pii/S095741742300547X)。 |
 
 这次没有发现能直接补齐缺口的小批人像。已有 POLAR 检查结论仍有效：[公开预览核查](2026-11-19-polar-preview-intake.md)。下一次若取得许可明确的实拍小样，先核对脸部位姿和灯色，再把每个场景的重复拍摄、实际换灯、受控后期染色分开编号。采集条件和作者前后图只用于离线判定；软件仍只接收目标和参考两张图。静物开发对照可以继续用于筛错，不能代替肤色、白墙的独立验收。
+
+补查了两个直接研究肤色和灯光的来源。**优先保留 PolyU Face Color Constancy 作为候选。** [原论文](https://library.imaging.org/admin/apis/public/api/ist/website/downloadArticle/cic/33/1/15)报告八名真人、1,299 张图，分别测量前景和背景的两个光源，并调节人像前方 LED，尽量不影响背景。这样的采集设计与主体和背景分开受光的问题贴近。但[学校的论文记录](https://research.polyu.edu.hk/en/publications/facial-centric-color-constancy-dataset-to-improve-scenario-specif/)、[实验室出版目录](https://www.polyucolorlab.com/publication.html)和论文未提供可核对的原图下载、使用许可或按人物与场景对应的公开配对索引。论文插图不代替原图。即使以后拿到数据，1,299 张图也不能当作 1,299 个独立人像，首先按原始拍摄和参与者分组。
+
+**排除《Color Constancy Using Faces》的配对作为换灯验证。** [作者论文 §II](https://htchen.github.io/awb/awb_single.pdf)的 472 对照片是一人一组，区别是取景里有没有灰卡，两张在同一灯光下拍摄。灰卡给的是灯色测量，可用于另一类问题；不能将有卡／无卡当白灯／彩灯对照。
+
+至此结束从这些公开预览和论文寻找立即可用的肤色换灯素材。恢复此项取样需要带明确许可的小组原图和可核对的换灯顺序；具备这些条件后，再做成片对照。未下载图片、未运行新成片，以上是数据准入结果。
