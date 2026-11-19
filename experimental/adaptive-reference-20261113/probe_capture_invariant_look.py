@@ -152,7 +152,7 @@ def renderings(scenes, transforms):
     return results
 
 
-def evaluate(cohort, domain, model, prepared, out):
+def evaluate(cohort, domain, model, prepared, out, decide=guess):
     observations, stability = {}, {}
     all_hits = identity_count = passed_views = count_views = 0
     for group, views in cohort.items():
@@ -162,7 +162,7 @@ def evaluate(cohort, domain, model, prepared, out):
             count_views += 1
             stems, estimates = {}, {}
             for label, data in samples.items():
-                chosen, values = guess(data, model)
+                chosen, values = decide(data, model)
                 result = actual[chosen]
                 path = out / f"{group}-{view}-{label}.png"
                 Image.fromarray(result).save(path)
