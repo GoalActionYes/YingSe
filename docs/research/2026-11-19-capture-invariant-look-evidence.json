@@ -1,0 +1,402 @@
+{
+  "sources": 24,
+  "passing_domains": {
+    "ridge": 0,
+    "paired": 0
+  },
+  "passed": false,
+  "labels": [
+    "off",
+    "film_a",
+    "film_b"
+  ],
+  "full_report_sha256": "4ca6ff449f9e92cadd9e5560fe97a57809447e279fdf071983bb2ed9cc3e62ff",
+  "arms": {
+    "ridge": {
+      "folds": {
+        "dast": {
+          "correct": 15,
+          "states": 45,
+          "off_identity": 4,
+          "style_views_passed": 0,
+          "views": 15,
+          "worst_same_style_neutral_mae": 6.2750630517023955,
+          "passed": false,
+          "train_states": 27,
+          "train_differences": 9,
+          "choices_by_case": {
+            "1-nominal": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "1-ue1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "1-oe1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "2-nominal": [
+              "off",
+              "off",
+              "off"
+            ],
+            "2-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "2-oe1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "3-nominal": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "3-ue1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "3-oe1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "4-nominal": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "4-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "4-oe1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "5-nominal": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ],
+            "5-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "5-oe1": [
+              "film_a",
+              "film_a",
+              "film_a"
+            ]
+          }
+        },
+        "mls": {
+          "correct": 4,
+          "states": 12,
+          "off_identity": 4,
+          "style_views_passed": 0,
+          "views": 4,
+          "worst_same_style_neutral_mae": 0.0,
+          "passed": false,
+          "train_states": 60,
+          "train_differences": 48,
+          "choices_by_case": {
+            "02-standard": [
+              "off",
+              "off",
+              "off"
+            ],
+            "02-blue": [
+              "off",
+              "off",
+              "off"
+            ],
+            "03-standard": [
+              "off",
+              "off",
+              "off"
+            ],
+            "03-blue": [
+              "off",
+              "off",
+              "off"
+            ]
+          }
+        },
+        "middlebury": {
+          "correct": 2,
+          "states": 6,
+          "off_identity": 0,
+          "style_views_passed": 0,
+          "views": 2,
+          "worst_same_style_neutral_mae": 0.0,
+          "passed": false,
+          "train_states": 66,
+          "train_differences": 51,
+          "choices_by_case": {
+            "chart-canon": [
+              "film_b",
+              "film_b",
+              "film_b"
+            ],
+            "chart-nikon": [
+              "film_b",
+              "film_b",
+              "film_b"
+            ]
+          }
+        },
+        "arri": {
+          "correct": 3,
+          "states": 9,
+          "off_identity": 3,
+          "style_views_passed": 0,
+          "views": 3,
+          "worst_same_style_neutral_mae": 0,
+          "passed": false,
+          "train_states": 63,
+          "train_differences": 54,
+          "choices_by_case": {
+            "poker_fullshot-native": [
+              "off",
+              "off",
+              "off"
+            ],
+            "hdr_testimage-native": [
+              "off",
+              "off",
+              "off"
+            ],
+            "sparks_4592-native": [
+              "off",
+              "off",
+              "off"
+            ]
+          }
+        }
+      },
+      "confusion_rows_truth_cols_prediction": [
+        [
+          11,
+          11,
+          2
+        ],
+        [
+          11,
+          11,
+          2
+        ],
+        [
+          11,
+          11,
+          2
+        ]
+      ]
+    },
+    "paired": {
+      "folds": {
+        "dast": {
+          "correct": 16,
+          "states": 45,
+          "off_identity": 15,
+          "style_views_passed": 0,
+          "views": 15,
+          "worst_same_style_neutral_mae": 6.2750630517023955,
+          "passed": false,
+          "train_states": 27,
+          "train_differences": 9,
+          "choices_by_case": {
+            "1-nominal": [
+              "off",
+              "off",
+              "off"
+            ],
+            "1-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "1-oe1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "2-nominal": [
+              "off",
+              "off",
+              "off"
+            ],
+            "2-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "2-oe1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "3-nominal": [
+              "off",
+              "film_a",
+              "film_a"
+            ],
+            "3-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "3-oe1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "4-nominal": [
+              "off",
+              "off",
+              "off"
+            ],
+            "4-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "4-oe1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "5-nominal": [
+              "off",
+              "off",
+              "off"
+            ],
+            "5-ue1": [
+              "off",
+              "off",
+              "off"
+            ],
+            "5-oe1": [
+              "off",
+              "off",
+              "off"
+            ]
+          }
+        },
+        "mls": {
+          "correct": 4,
+          "states": 12,
+          "off_identity": 4,
+          "style_views_passed": 0,
+          "views": 4,
+          "worst_same_style_neutral_mae": 0.0,
+          "passed": false,
+          "train_states": 60,
+          "train_differences": 48,
+          "choices_by_case": {
+            "02-standard": [
+              "off",
+              "off",
+              "off"
+            ],
+            "02-blue": [
+              "off",
+              "off",
+              "off"
+            ],
+            "03-standard": [
+              "off",
+              "off",
+              "off"
+            ],
+            "03-blue": [
+              "off",
+              "off",
+              "off"
+            ]
+          }
+        },
+        "middlebury": {
+          "correct": 2,
+          "states": 6,
+          "off_identity": 0,
+          "style_views_passed": 0,
+          "views": 2,
+          "worst_same_style_neutral_mae": 0.0,
+          "passed": false,
+          "train_states": 66,
+          "train_differences": 51,
+          "choices_by_case": {
+            "chart-canon": [
+              "film_b",
+              "film_b",
+              "film_b"
+            ],
+            "chart-nikon": [
+              "film_b",
+              "film_b",
+              "film_b"
+            ]
+          }
+        },
+        "arri": {
+          "correct": 3,
+          "states": 9,
+          "off_identity": 3,
+          "style_views_passed": 0,
+          "views": 3,
+          "worst_same_style_neutral_mae": 0,
+          "passed": false,
+          "train_states": 63,
+          "train_differences": 54,
+          "choices_by_case": {
+            "poker_fullshot-native": [
+              "off",
+              "off",
+              "off"
+            ],
+            "hdr_testimage-native": [
+              "off",
+              "off",
+              "off"
+            ],
+            "sparks_4592-native": [
+              "off",
+              "off",
+              "off"
+            ]
+          }
+        }
+      },
+      "confusion_rows_truth_cols_prediction": [
+        [
+          22,
+          0,
+          2
+        ],
+        [
+          21,
+          1,
+          2
+        ],
+        [
+          21,
+          1,
+          2
+        ]
+      ]
+    }
+  }
+}
