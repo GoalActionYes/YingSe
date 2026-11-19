@@ -1,5 +1,7 @@
 # 按 ICC 读取图片可以消除一类参考调色偏差
 
+工程接入核对发现，实际 13 号工作台已有独立严格 ICC 转换。本试验为控制输入直接调用共用解码与 13 号渲染，反映的是共用解码缺口。后续候选修复的是稳定工作台，13 号保持原策略。[工程验证](https://github.com/GoalActionYes/YingSe/blob/736a32dfcc8b2a2efac5f2a6577c8c2eb7aef7b7/docs/research/2026-11-20-image-icc-candidate.md)
+
 现有图片解码会校验位深、按 EXIF 摆正图片并转换到 Pillow 的 RGB 模式，但未使用嵌入的色域定义。这意味着同一种显示颜色用 sRGB 或 Display P3 保存，映色可能读取出不同的颜色。这轮把四组实拍的 16 张参考从冻结的 sRGB 工作编码改存为带 Display P3 标签的 RGB8 PNG。固定目标、13 号、80% 强度和既有编辑状态，比较直接读取 P3 数值与按嵌入配置换回 sRGB 的成片。所有原 sRGB 成片逐像素复现。[事前协议](../../experimental/adaptive-reference-20261113/reference-icc-invariance-protocol.md) · [Pillow ICC 转换接口](https://pillow.readthedocs.io/en/stable/reference/ImageCms.html#PIL.ImageCms.profileToProfile)
 
 | 只换参考文件编码时的成片区域 | 忽略 ICC | 按 ICC 转换 |
