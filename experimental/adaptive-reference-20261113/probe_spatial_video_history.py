@@ -35,7 +35,7 @@ def decode(path, cfr=True):
     return np.frombuffer(data, np.uint8).reshape(-1, *SHAPE)
 
 
-def fixture(root, output):
+def fixture(root, output, relight=False):
     shots = {}
     for key, (name, sha, _) in ASSETS.items():
         checked(root, name, sha)
@@ -47,6 +47,10 @@ def fixture(root, output):
     blocked[START:STOP, :, :SHAPE[1]//2] = 40
     joined = np.concatenate([shots['audio'][:CUT], clean])
     prepared = {'clean': clean, 'cut': joined, 'occluded': blocked}
+    if relight:
+        bright = clean.copy()
+        bright[START:STOP] = np.clip(clean[START:STOP].astype(np.int16) + 48, 0, 255)
+        prepared['relit'] = bright
     paths = {}
     for name, pixels in prepared.items():
         path = output / f'{name}-input.mp4'
@@ -57,10 +61,11 @@ def fixture(root, output):
     return paths
 
 
-def export(server, url, data, ref, folder, indices):
+def export(url, data, ref, folder, indices, temporal_class):
     reasons = []
+    holds = []
     captured = {}
-    original_smooth, original_grade = TemporalGrid.smooth, spatial_jobs.grade_video_frame
+    original_smooth, original_grade = temporal_class.smooth, spatial_jobs.grade_video_frame
     index = 0
 
     def observe(self, prepared, frame):
@@ -68,6 +73,8 @@ def export(server, url, data, ref, folder, indices):
         reason = result.diagnostics['temporal_reset_reason']
         if reason is not None:
             reasons.append([index, reason])
+        if result.diagnostics.get('temporal_occlusion_hold'):
+            holds.append(index)
         return result
 
     def mark(*args, **kwargs):
@@ -81,7 +88,7 @@ def export(server, url, data, ref, folder, indices):
     guide = request(url, '/api/media', ref, 'reference.png')['id']
     target = request(url, '/api/media', data.read_bytes(), data.name)['id']
     mapping = request(url, '/api/analyze', {'target_id': target, 'reference_id': guide})
-    with patch.object(TemporalGrid, 'smooth', observe), patch.object(spatial_jobs, 'grade_video_frame', mark):
+    with patch.object(temporal_class, 'smooth', observe), patch.object(spatial_jobs, 'grade_video_frame', mark):
         job = request(url, '/api/export', {'mapping_id': mapping['mapping_id'], 'media_id': target,
                                           'strength': .8, 'kind': 'mp4'})
         end = time.monotonic() + 120
@@ -107,7 +114,10 @@ def export(server, url, data, ref, folder, indices):
     if b'#tb 0: 1/30' not in md5 or sum(x.startswith(b'0,') for x in md5.splitlines()) != frames:
         raise ValueError('Unexpected encoded sequence')
     (folder / 'frames.md5').write_bytes(md5)
-    return captured, {'frames': frames, 'resets': reasons, 'pngs': pngs, 'md5_sha256': digest(md5)}
+    report = {'frames': frames, 'resets': reasons, 'pngs': pngs, 'md5_sha256': digest(md5)}
+    if temporal_class is not TemporalGrid:
+        report['hold_frames'] = holds
+    return captured, report
 
 
 def region_diff(a, b):
@@ -116,22 +126,34 @@ def region_diff(a, b):
     return {'mae': mae, 'p95': p95, 'passed': mae <= 1 and p95 <= 3}
 
 
-def run(root, out, without_temporal=False):
+def run(root, out, without_temporal=False, with_relight=False, hold=False):
+    if without_temporal and hold:
+        raise ValueError('Holding the grid requires temporal state')
     torch.set_num_threads(4)
     out.mkdir()
     ref = checked(root, *REFERENCE)
-    paths = fixture(root, out)
+    paths = fixture(root, out, with_relight)
+    if hold:
+        from temporal_occlusion_hold import OcclusionHold
+        temporal_class = OcclusionHold
+    else:
+        temporal_class = TemporalGrid
     all_frames, details = {}, {}
-    for name, indices in {'clean': KEY_FRAMES, 'cut': range(CUT, CUT + 5), 'occluded': range(START, STOP + 5)}.items():
+    saved = {'clean': KEY_FRAMES, 'cut': range(CUT, CUT + 5), 'occluded': range(START, STOP + 5)}
+    if with_relight:
+        saved['relit'] = range(START, STOP + 5)
+    for name, indices in saved.items():
         server = make_spatial_workbench(out / f'{name}-store', enhanced=True)
         if server.store.engine.checkpoint_sha != CHECKPOINT:
             raise ValueError('Changed checkpoint')
         if without_temporal:
             server.manager.temporal_enabled = False
+        if hold:
+            server.manager.temporal_state = temporal_class
         worker = threading.Thread(target=server.serve_forever, daemon=True)
         worker.start()
         try:
-            frames, row = export(server, f'http://127.0.0.1:{server.server_port}', paths[name], ref, out / name, indices)
+            frames, row = export(f'http://127.0.0.1:{server.server_port}', paths[name], ref, out / name, indices, temporal_class)
         finally:
             server.shutdown()
             server.server_close()
@@ -154,4 +176,6 @@ if __name__ == '__main__':
     parser.add_argument('root', type=Path)
     parser.add_argument('out', type=Path)
     parser.add_argument('--without-temporal', action='store_true')
+    parser.add_argument('--with-relight', action='store_true')
+    parser.add_argument('--hold', action='store_true')
     run(**vars(parser.parse_args()))
