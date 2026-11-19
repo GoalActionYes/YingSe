@@ -18,7 +18,7 @@ SOURCE_SHA = "83be16a13691b50cd3449375df656b0cedabdbf3b31e63639b43d6e42f3c68d9"
 ARMS = ("matched", "reversed")
 
 
-def shade_pair(engine, target, reference, baseline):
+def shade_pair(engine, target, reference, baseline, support_weights=None):
     if np.array_equal(target, reference):
         return {name: target.copy() for name in ARMS}, {"identity": True}
     target_light = target @ LUMA
@@ -30,12 +30,22 @@ def shade_pair(engine, target, reference, baseline):
     mass = float(lower.float().mean())
     if min(mass, 1 - mass) < .10 or highlight - shadow < 8:
         return {name: baseline.copy() for name in ARMS}, {"applied": False, "dark_fraction": mass}
+    selected = (lower, ~lower)
+    metadata = {"dark_fraction": mass}
+    histogram_values = ys
+    if support_weights is not None:
+        selected, detail = support_weights(lower)
+        metadata.update(detail)
+        if selected is None:
+            return {name: baseline.copy() for name in ARMS}, {"applied": False, **metadata}
+        histogram_values = ys.cpu()
     low = engine.api["TF"].resize(content, (64, 64), antialias=True)
     target_hist = histogram(yc)
     full_reference = histogram(ys)
     framed = []
-    for selector in (lower, ~lower):
-        subset = weighted_histogram(ys, selector.float())
+    for selector in selected:
+        weights = selector.to(device=histogram_values.device, dtype=torch.float32)
+        subset = weighted_histogram(histogram_values, weights).to(ys.device)
         reference_hist = torch.cat((full_reference[:, :1], subset[:, 1:]), dim=1)
         grid = engine.api["lowpass"](engine.model.apply_grid(low, torch.cat((target_hist, reference_hist), dim=1)))
         finite_output(grid, (1, 13, 8, 16, 16))
@@ -50,7 +60,7 @@ def shade_pair(engine, target, reference, baseline):
         change = (1 - weight) * low_color + weight * high_color - origin
         change -= change.mean(axis=(0, 1))
         outputs[name], fractions[name] = render(origin + change, luma)
-    return outputs, {"applied": True, "dark_fraction": mass, "gamut_fractions": fractions}
+    return outputs, {"applied": True, **metadata, "gamut_fractions": fractions}
 
 
 def switch_error(frames, truth, area):
@@ -61,7 +71,7 @@ def switch_error(frames, truth, area):
 
 
 @torch.inference_mode()
-def run(out):
+def run(out, predict=shade_pair):
     torch.set_num_threads(4)
     engine = SpatialEngine("multiref-v1")
     source = load(ROOT / "docs/research/2026-11-18-bg-real-pixel-pilot-evidence.json", SOURCE_SHA)
@@ -71,10 +81,10 @@ def run(out):
     if engine.checkpoint_sha != source["checkpoint_sha256"]:
         raise ValueError("Baseline weights changed")
     flat = np.full((32, 32, 3), 128, np.uint8)
-    for output in shade_pair(engine, flat, flat.copy(), 255 - flat)[0].values():
+    for output in predict(engine, flat, flat.copy(), 255 - flat)[0].values():
         np.testing.assert_array_equal(output, flat)
     flat_ref = 255 - flat
-    for output in shade_pair(engine, flat, flat_ref, flat_ref)[0].values():
+    for output in predict(engine, flat, flat_ref, flat_ref)[0].values():
         np.testing.assert_array_equal(output, flat_ref)
     out.mkdir()
     cases = {}
@@ -99,7 +109,7 @@ def run(out):
                 control = finish_spatial(target, engine.prepare(target, refs[style]).apply(target), .8)
                 np.testing.assert_array_equal(control, baseline)
                 frames["13"][style] = baseline
-                changed, metadata[style] = shade_pair(engine, target, refs[style], baseline)
+                changed, metadata[style] = predict(engine, target, refs[style], baseline)
                 hashes[style] = {}
                 for name, img in changed.items():
                     frames[name][style] = img
