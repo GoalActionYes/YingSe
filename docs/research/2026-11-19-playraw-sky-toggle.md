@@ -18,3 +18,16 @@
 因此尚无可用于测量的暗天空、前景或色边对照。保留两张原片、逐字节开关和失败日志。这个输入构建步骤可在另一套经验证能读相同 XMP 的官方运行环境复查。先用两张无 XMP 的原片及未经修改的作者 XMP 验证导出，再按原协议出图。此时不把 B 的默认直出当作作者关闭态，不用模拟曝光代替。既有软件、模型和独立验收状态保持原状。
 
 本机目录为 `outputs/adaptive-reference-20261113/playraw-sky-toggle-v1`，正控和作者 XMP 原样对照日志在 `identity-control`。用 `prepare_playraw_sky_toggle.py <上轮 XMP 目录> <输出目录>` 重建开关。用 `render_playraw_sky_toggle.ps1 -Cli <darktable-cli.exe> -InputDirectory <RAW 与开关 XMP 目录> -OutputDirectory <空目录> -State off` 复现此次 CLI 路径。保留 `on` 调用以供可用运行环境运行，根据协议先从关态登记区域。
+
+## Windows 5.4.1 补丁版复查
+
+用官方 5.4.1 Windows x64 包复查，大小 125,643,994 字节，SHA256 `df3b9f2f9f1375b9166c2fb2f1503455c3ceaa44c702b8a9144419e65e0cfdf9`。在相同 ASCII 路径下隔离展开到 `runtime-5.4.1`，版本命令确认 5.4.1。继续使用 CPU 两线程、长边 1024、sRGB8 PNG、禁用 OpenCL 和用户预设。两份作者 XMP 逐字节与档案一致。[官方补丁版](https://github.com/darktable-org/darktable/releases/tag/release-5.4.1)
+
+| 输入 | 5.4.0 | 5.4.1 |
+| --- | --- | --- |
+| A，无 XMP | `0xC0000005` | `0xC0000005` |
+| B，无 XMP | 1024 × 769 RGB PNG | 1024 × 769 RGB PNG |
+| A，原作者 XMP | `0xC0000005` | `0xC0000005` |
+| B，原作者 XMP | `0xC0000005` | `0xC0000005` |
+
+两版 B 无 XMP 的解码像素逐值相同。三项失败均列出了导出尺寸，但没有落盘图像。B 加作者 XMP 的管线列出了 `exposure.1`。A 无 XMP 已失败，排除了两图都单由开关文件引起的解释。保存四项日志及退出状态于 `identity-control-5.4.1`。结束在本机 Windows 上换同系列版本的复查。以后可在已有可用的独立运行环境复核已冻结的原件，或取得编辑者提供的同图开关成片，此次不增加运行环境。素材尚未达到开关成片资格，没有改变映色算法或独立画质进度。
