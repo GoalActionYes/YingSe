@@ -31,7 +31,7 @@ def candidate(engine, target, reference, baseline):
     return result, {"max_luma_error": float(error), "gamut_limited_fraction": limited}
 
 
-def chart(engine, out):
+def chart(engine, out, grade=candidate, label="hybrid"):
     result = BASE / "hdm-chart-pilot-v1"
     report = json.loads((result / "results.json").read_bytes())
     prep = verified_json(BASE / "hdm-chart-prepared-v1" / "prepared.json", report["prepared_sha256"])
@@ -49,9 +49,9 @@ def chart(engine, out):
     out.mkdir()
     outputs = {}
     for role, ref in reference.items():
-        label = f"13-{role}"
-        result_rgb, audit = candidate(engine, target, ref, original[label])
-        candidate_images[label] = result_rgb
+        key = f"13-{role}"
+        result_rgb, audit = grade(engine, target, ref, original[key])
+        candidate_images[key] = result_rgb
         outputs[role] = dict(audit, sha256=save(out / f"{role}.png", result_rgb))
     metrics = {}
     for name, polygon in rois["regions"].items():
@@ -65,7 +65,7 @@ def chart(engine, out):
     max_off = max(row["off_chroma_mae"] for row in metrics.values())
     comparison = panel(out / "comparison.png", {
         role: {"target": target, "reference": ref, "13": original[f"13-{role}"],
-               "hybrid": candidate_images[f"13-{role}"],
+               label: candidate_images[f"13-{role}"],
                "expected": original["expected"] if role == "on" else target}
         for role, ref in reference.items()
     })
