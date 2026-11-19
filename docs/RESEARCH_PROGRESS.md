@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+在 DAST 的两套冻结成片上，同一目标所有参考共用一个脸部色度保护系数时，稳定与暖调两项无共同可行区间。[统一肤色保护的取舍](research/2026-11-19-dast-uniform-protection-bound.md)
+
 固定参考曝光缩小了实拍人像的肤色波动范围，但 20 项仍全部超限，暖调不足。停止固定全图曝光归一。[实拍曝光归一对照](research/2026-11-19-dast-reference-exposure-normalization.md)
 
 按区域像素比例保留小块参考色后，两图自动去色仍误改保色区；12 个空操作保持原样，实图 0/2。[小区域对应对照](research/2026-11-19-psbench-selective-fractional.md)
