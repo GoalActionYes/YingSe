@@ -22,10 +22,11 @@ FACTORIAL_SHA = "b5c381bf6c619c66b27a5ee938897505f8d98b7c1fa0d174c830f123c92a77a
 
 
 @torch.inference_mode()
-def prepare(engine, target, reference, *, neutral_target):
+def prepare(engine, target, reference, *, neutral_target, histogram_image=None):
     api = engine.api
     content, guide = engine.analysis(target), engine.analysis(reference)
-    target_stats = api["srgb_to_ycbcr"](content)
+    stats_input = content if histogram_image is None else engine.analysis(histogram_image)
+    target_stats = api["srgb_to_ycbcr"](stats_input)
     original_y = target_stats[:, :1].clone()
     if neutral_target:
         target_stats[:, 1:] = 0
