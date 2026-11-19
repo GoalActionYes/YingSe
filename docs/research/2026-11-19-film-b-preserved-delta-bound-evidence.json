@@ -1,0 +1,685 @@
+{
+  "cases": {
+    "785-3553": {
+      "expanded": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 8.634206970214844,
+            "chroma": 1.8743800592356918
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.3983826435198315,
+              "chroma": 0.803951921275743
+            },
+            "F1": {
+              "luma": 0.31506493249939044,
+              "chroma": 0.870490876686277
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.7195813771518,
+              "neutral": 8.94985974151135,
+              "neutral_person": 4.733378408834798
+            },
+            "on": {
+              "person": 2.475449921752739,
+              "neutral": 9.707384652451513,
+              "neutral_person": 2.9134550371872887
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 9.707384652451513
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 8.634206970214844,
+            "chroma": 1.8743800592356918
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.3983826435198315,
+              "chroma": 0.803951921275743
+            },
+            "F1": {
+              "luma": 0.31506493249939044,
+              "chroma": 0.870490876686277
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 0.9669894366197183,
+              "neutral": 1.083664618720636,
+              "neutral_person": 1.6202389001577642
+            },
+            "on": {
+              "person": 1.1691607981220657,
+              "neutral": 1.2037276059682998,
+              "neutral_person": 1.5889114266396214
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 1.6202389001577642
+        },
+        "best_possible_lower_bound": {
+          "person": 1.068075117370892,
+          "neutral": 1.143696112344468,
+          "neutral_person": 1.6045751633986929
+        },
+        "outputs": {
+          "C1-off": "56927046f4c47536b14356661b4a5ecf6d032e9903f597698d4071ad2c40d55b",
+          "C1-on": "d9090961bd8d93517ed9614559a0d04348251aa69f2088a5ee040a19e60d2cad",
+          "F1-off": "035c937a443cd09e04bd92b8693235a3da4efaae477046e0460f44dd4f75ebc8",
+          "F1-on": "53bdc00d945de143ea441ef99affc87c43622be69c267026b3a33d142b8a8aa4"
+        },
+        "comparison_sha256": "5b0c03d6cf4852e86948f8a94459995ea0dfce214f4f843a97414cf666d3abb7"
+      },
+      "replay": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 8.634206970214844,
+            "chroma": 1.8743800592356918
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.28346671016592917,
+              "chroma": 0.6306867738854389
+            },
+            "F1": {
+              "luma": 0.3679564064642497,
+              "chroma": 0.6464735912033087
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.7195813771518,
+              "neutral": 8.94985974151135,
+              "neutral_person": 4.733378408834798
+            },
+            "on": {
+              "person": 1.9593603286384977,
+              "neutral": 8.10311150119607,
+              "neutral_person": 2.7218841559612352
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 8.94985974151135
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 8.634206970214844,
+            "chroma": 1.8743800592356918
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.28346671016592917,
+              "chroma": 0.6306867738854389
+            },
+            "F1": {
+              "luma": 0.3679564064642497,
+              "chroma": 0.6464735912033087
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 1.049491392801252,
+              "neutral": 0.9155007141996662,
+              "neutral_person": 1.6130268199233717
+            },
+            "on": {
+              "person": 1.2259878716744914,
+              "neutral": 1.0363295300049908,
+              "neutral_person": 1.6520171286905567
+            }
+          },
+          "region_pixels": {
+            "person": 6816,
+            "neutral": 38738,
+            "neutral_person": 1479
+          },
+          "passed": false,
+          "max_protected_swap": 1.6520171286905567
+        },
+        "best_possible_lower_bound": {
+          "person": 1.1377396322378717,
+          "neutral": 0.9759151221023284,
+          "neutral_person": 1.632521974306964
+        },
+        "outputs": {
+          "C1-off": "50da03070c7acc48caf54ef97b73f84c87f5bffda6b1eb82f56ee24cfdfd03be",
+          "C1-on": "7cb744395a2b7bca182adb25501d64462809b57c30278de98daa70d89ba9be6c",
+          "F1-off": "61cd3fe0e224e940f9263682899bd7f4cac024fd003969cb1e902fc176aa500f",
+          "F1-on": "43dfd5612d544bbb9b60291a5f0acd07bb4469b14c6a40ecc73877c782c5b638"
+        },
+        "comparison_sha256": "fc39dc660e33e3c749fcf51f7ca97802019fcc2388d3ba2d789cfc3cc9aa4e8a"
+      }
+    },
+    "9483-19432": {
+      "expanded": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 7.8987154846191405,
+            "chroma": 3.9433162104234603
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.9031421072447503,
+              "chroma": 0.9260453171088324
+            },
+            "F1": {
+              "luma": 0.4738144509207381,
+              "chroma": 0.5137514859109114
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.687312687312687,
+              "neutral": 5.95860053640767,
+              "neutral_person": 5.410382513661202
+            },
+            "on": {
+              "person": 5.087995337995338,
+              "neutral": 5.903670789800248,
+              "neutral_person": 6.557923497267759
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 6.557923497267759
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 7.8987154846191405,
+            "chroma": 3.9433162104234603
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.9031421072447503,
+              "chroma": 0.9260453171088324
+            },
+            "F1": {
+              "luma": 0.4738144509207381,
+              "chroma": 0.5137514859109114
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 1.0577339327339328,
+              "neutral": 2.286377647011729,
+              "neutral_person": 2.3546448087431693
+            },
+            "on": {
+              "person": 1.2885864135864136,
+              "neutral": 2.320235378887955,
+              "neutral_person": 2.379781420765027
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 2.379781420765027
+        },
+        "best_possible_lower_bound": {
+          "person": 1.173160173160173,
+          "neutral": 2.303306512949842,
+          "neutral_person": 2.3672131147540982
+        },
+        "outputs": {
+          "C1-off": "8f668c92a846c9889aafcf948875d5920a39e0db93177764795d958438bdb6be",
+          "C1-on": "989033f8ce7c8510de9caa0d8b71842526432147fc0efeee6075d2cf353a3c8c",
+          "F1-off": "708fbe6375146b720dc25651aefb15cf6ecd690ef21c32703f12526050f1b206",
+          "F1-on": "b523994771ddde30dc385baade3e9de4f09d81d073bd17d8d6eb52d55df10cc0"
+        },
+        "comparison_sha256": "85001861b4b2931b6bebb9e4be71d21d210f8293e838a9045351818e8147fe05"
+      },
+      "replay": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 7.8987154846191405,
+            "chroma": 3.9433162104234603
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.7155740115143862,
+              "chroma": 0.7851048611537688
+            },
+            "F1": {
+              "luma": 0.5720940708987046,
+              "chroma": 0.6257164775334877
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.687312687312687,
+              "neutral": 5.95860053640767,
+              "neutral_person": 5.410382513661202
+            },
+            "on": {
+              "person": 4.567141192141192,
+              "neutral": 5.6811656859213,
+              "neutral_person": 5.666120218579235
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 5.95860053640767
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 7.8987154846191405,
+            "chroma": 3.9433162104234603
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.7155740115143862,
+              "chroma": 0.7851048611537688
+            },
+            "F1": {
+              "luma": 0.5720940708987046,
+              "chroma": 0.6257164775334877
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 0.3927322677322677,
+              "neutral": 0.786125455346063,
+              "neutral_person": 0.8994535519125683
+            },
+            "on": {
+              "person": 0.7817182817182817,
+              "neutral": 1.0507025339257836,
+              "neutral_person": 1.1398907103825138
+            }
+          },
+          "region_pixels": {
+            "person": 8008,
+            "neutral": 41635,
+            "neutral_person": 610
+          },
+          "passed": false,
+          "max_protected_swap": 1.1398907103825138
+        },
+        "best_possible_lower_bound": {
+          "person": 0.5872252747252747,
+          "neutral": 0.9184139946359233,
+          "neutral_person": 1.019672131147541
+        },
+        "outputs": {
+          "C1-off": "8728d1f7c96938f268ea9576c8fac5af398ec073692fb14202091c0c422303a6",
+          "C1-on": "d8774ecdaf3acfe15fbe64b521fd5504792377099dc7275355a02f903dc92e64",
+          "F1-off": "9360c807c20be010566a06fd6389d5fd78bbe3d57aa205c27b30e59bc2603fa9",
+          "F1-on": "5b21d6a1b320ae3d9739e268e4dd2fe3a83c2fe3064ffa382a5863388d63d5d8"
+        },
+        "comparison_sha256": "b12fa8d8184cfd437a8d4391e83c55d601556bd0fb0c9b00923957c0464cc505"
+      }
+    },
+    "872-1268": {
+      "expanded": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 7.977868957519531,
+            "chroma": 3.994704383496344
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.4229132199368379,
+              "chroma": 0.7454653840944959
+            },
+            "F1": {
+              "luma": 0.4806824555426846,
+              "chroma": 0.812107373451443
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.8369786161476545,
+              "neutral": 3.784228350266086,
+              "neutral_person": 4.388689866939611
+            },
+            "on": {
+              "person": 3.049190991137491,
+              "neutral": 3.4118690533784872,
+              "neutral_person": 3.26927669737291
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 4.388689866939611
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 7.977868957519531,
+            "chroma": 3.994704383496344
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.4229132199368379,
+              "chroma": 0.7454653840944959
+            },
+            "F1": {
+              "luma": 0.4806824555426846,
+              "chroma": 0.812107373451443
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 0.6759086104561346,
+              "neutral": 0.7130785357200452,
+              "neutral_person": 0.7348174684408052
+            },
+            "on": {
+              "person": 0.9197495731360273,
+              "neutral": 0.9482341557813256,
+              "neutral_person": 0.9669907881269192
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 0.9669907881269192
+        },
+        "best_possible_lower_bound": {
+          "person": 0.797829091796081,
+          "neutral": 0.8306563457506854,
+          "neutral_person": 0.8509041282838622
+        },
+        "outputs": {
+          "C1-off": "f59acc564781f82a7f2afea137d8c395236ecb05936fb51508cf428d81286277",
+          "C1-on": "4f24b395d59debfe4762f924c267c59ee27be70f72f2521197c3d7ff80ddcff7",
+          "F1-off": "54bbc0753f5934193987fc5a8c9acab2dba26098fc94992ca292fee6d6896d9a",
+          "F1-on": "dc253e942b2f5fce987726159e727299497bf5b433c064a2ed6b0042b3a5410b"
+        },
+        "comparison_sha256": "68562bd6077dad392431824d80fea119ec25826d5d146497981f52725584bfd8"
+      },
+      "replay": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 7.977868957519531,
+            "chroma": 3.994704383496344
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.34230519978488416,
+              "chroma": 0.6365820282732583
+            },
+            "F1": {
+              "luma": 0.47569079639935147,
+              "chroma": 0.7721943855256008
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 3.8369786161476545,
+              "neutral": 3.784228350266086,
+              "neutral_person": 4.388689866939611
+            },
+            "on": {
+              "person": 3.0371845949535192,
+              "neutral": 3.013513949363006,
+              "neutral_person": 2.994029341521665
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 4.388689866939611
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 7.977868957519531,
+            "chroma": 3.994704383496344
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.34230519978488416,
+              "chroma": 0.6365820282732583
+            },
+            "F1": {
+              "luma": 0.47569079639935147,
+              "chroma": 0.7721943855256008
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 1.0453424397647506,
+              "neutral": 0.9422028705047573,
+              "neutral_person": 1.1153190037529854
+            },
+            "on": {
+              "person": 1.2021031520177792,
+              "neutral": 1.1760361232059344,
+              "neutral_person": 1.3097065847833504
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 1.3097065847833504
+        },
+        "best_possible_lower_bound": {
+          "person": 1.1237227958912648,
+          "neutral": 1.059119496855346,
+          "neutral_person": 1.212512794268168
+        },
+        "outputs": {
+          "C1-off": "8321dbf57e00b4e9292844dfb78db9d439457a0d2e66c9556d6b817ee42e625d",
+          "C1-on": "a96c4ffc93fd9ec9d10b6639540c378cc0bc6543f917de7feae89251ae67c5d5",
+          "F1-off": "e583fff216af5b56833a5f8630a5570e4e011b56cf62dca2e7290d2587f1ec98",
+          "F1-on": "7b1ecf8a539898059a7d922bb1378c5ec84477a26a93de7e6a1b6d954bf92713"
+        },
+        "comparison_sha256": "1326873017d626cb02455b7975385370fcd9180857d8a4ccb09c6d83b75ae30b"
+      }
+    },
+    "8021-8690": {
+      "expanded": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 4.036025039672851,
+            "chroma": 2.8754827901793694
+          },
+          "projection": {
+            "C1": {
+              "luma": 1.3088705197741966,
+              "chroma": 0.5642358906746859
+            },
+            "F1": {
+              "luma": 0.1541483572002017,
+              "chroma": 0.7046740284978724
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 9.589821882951654,
+              "neutral": 26.0,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 8.515810466955505,
+              "neutral": 23.802377414561665,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 26.0
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 4.036025039672851,
+            "chroma": 2.8754827901793694
+          },
+          "projection": {
+            "C1": {
+              "luma": 1.3088705197741966,
+              "chroma": 0.5642358906746859
+            },
+            "F1": {
+              "luma": 0.1541483572002017,
+              "chroma": 0.7046740284978724
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 1.2507255346950004,
+              "neutral": 4.197622585438336,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 1.5654769273089884,
+              "neutral": 4.201089648340763,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 4.201089648340763
+        },
+        "best_possible_lower_bound": {
+          "person": 1.4081012310019945,
+          "neutral": 4.1993561168895495
+        },
+        "outputs": {
+          "C1-off": "965acc7580461efa72330db653bd27cfd569f525f1d1ceb200ea7217106006f0",
+          "C1-on": "81fbc7ae06c4c8c1a29e28c50861c5500df55e9ad2dac994f8b26f7d23728461",
+          "F1-off": "dbdb2b18ac4919c67dde4e6dcb4a6ac94397e072cdcc6d8cd4a94c281447e126",
+          "F1-on": "8ef20eaa1c6e16212a0f294784aa85f980b7dd9ac9a638964dfe53302382ae10"
+        },
+        "comparison_sha256": "a52052200fcc8d1da35aa36727b47ee83260ba025d4bb32b185bdfc6c1d22271"
+      },
+      "replay": {
+        "original": {
+          "expected_mean_abs_delta": {
+            "luma": 4.036025039672851,
+            "chroma": 2.8754827901793694
+          },
+          "projection": {
+            "C1": {
+              "luma": 1.4947061641750776,
+              "chroma": 0.7472991853566822
+            },
+            "F1": {
+              "luma": 0.24212736875623161,
+              "chroma": 0.9064145103704729
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 9.589821882951654,
+              "neutral": 26.0,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 9.131063888315797,
+              "neutral": 24.32639920752848,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 26.0
+        },
+        "balanced": {
+          "expected_mean_abs_delta": {
+            "luma": 4.036025039672851,
+            "chroma": 2.8754827901793694
+          },
+          "projection": {
+            "C1": {
+              "luma": 1.4947061641750776,
+              "chroma": 0.7472991853566822
+            },
+            "F1": {
+              "luma": 0.24212736875623161,
+              "chroma": 0.9064145103704729
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 1.327460284712193,
+              "neutral": 4.425953442298168,
+              "neutral_person": null
+            },
+            "on": {
+              "person": 1.5645003782408362,
+              "neutral": 4.411589895988113,
+              "neutral_person": null
+            }
+          },
+          "region_pixels": {
+            "person": 24235,
+            "neutral": 673,
+            "neutral_person": 142
+          },
+          "passed": false,
+          "max_protected_swap": 4.425953442298168
+        },
+        "best_possible_lower_bound": {
+          "person": 1.4459803314765147,
+          "neutral": 4.4187716691431405
+        },
+        "outputs": {
+          "C1-off": "7ddde624a6024b80a776b0e7e21db1c195cbbb2f37fc33f8131c45c5b8abdd5d",
+          "C1-on": "907674597d7253529c2ad2544b97a598a042f6e160fdc4f9e7656c7135f7e03a",
+          "F1-off": "662c1c8c760db9d41523dea0e7f8e5ad99276844b922403ca8a1a70cfcb31e05",
+          "F1-on": "d0c65b7fa9c4816d92a8ed4ffd30de2e08490623143953eded9571d19b687ec6"
+        },
+        "comparison_sha256": "6d3eb1339596a735e58cd5dea206ff83c3da8176c464121ed429fb499f8232f1"
+      }
+    }
+  },
+  "source_sha256": "881bf466bd4456ba5b6a4ffe5a3126ddb7fb3de25912291a5790b9fb83813e16",
+  "donor_weight_sha256": "cde15ae2d5295de709b14c8a4fe6e72e3cd7343fa5766d6ac30a9c8858db3ee1",
+  "report_sha256": "56ba5258c9856bf164d4ea93f457bcfa07092aac54181e1870eeba6042b8f5f7"
+}
