@@ -1,0 +1,108 @@
+{
+  "baseline_sha256": "add480d14eeee078b9108c4a1575719199637010bdacc92f21de0717ffe34754",
+  "controls": {
+    "02": {
+      "support_pixels": 1096888,
+      "gain": [
+        0.9472123883023883,
+        0.8509759448707007,
+        0.4371795334956541
+      ],
+      "out_of_gamut_pixel_fraction": 0.0,
+      "reference_hashes": {
+        "off": "65b7d547ba282074fc54ad6610493b24c2a32c9c77ef7585737fe3e6fb32d1b3",
+        "on": "1e03b9a6b51af64782ff04737616cc109628a0aad2ca915466bd582ff7f38c2f"
+      },
+      "mean_reference_error_before": 16.782100107658948,
+      "mean_reference_error_after": 2.6845040864910765
+    },
+    "03": {
+      "support_pixels": 1088152,
+      "gain": [
+        0.8813290966977092,
+        0.7896039000578777,
+        0.4061939309218613
+      ],
+      "out_of_gamut_pixel_fraction": 0.0,
+      "reference_hashes": {
+        "off": "da402379edaed0ba32065bc9d61806b30950e44662464699e540a5afeee86595",
+        "on": "068867952be783b84a930d70d074ca906b376978b4f16bd42dcee02701c21566"
+      },
+      "mean_reference_error_before": 19.16884016436944,
+      "mean_reference_error_after": 2.849553139547226
+    }
+  },
+  "cases": {
+    "02": {
+      "donor": "03",
+      "response": {
+        "whole": {
+          "projection": 0.5404070474463569,
+          "response_mae": 3.762155908353425,
+          "off_matches_original_mae": 3.7663900893114377,
+          "on_matches_authored_mae": 3.3850884774598553,
+          "original_matches_authored_mae": 7.779057150222141,
+          "passed": false
+        },
+        "neutral": {
+          "projection": 0.2732294854511282,
+          "response_mae": 4.175423668722967,
+          "off_matches_original_mae": 4.238388995249238,
+          "on_matches_authored_mae": 4.740409841877614,
+          "original_matches_authored_mae": 5.842515776785081,
+          "passed": false
+        }
+      },
+      "neutral_lamp_spill_mae": {
+        "off": 1.3912642700134723,
+        "on": 0.6551797489895766
+      },
+      "original_lamp_spill_mae": {
+        "off": 4.181096220662271,
+        "on": 9.160320499184571
+      },
+      "outputs_sha256": {
+        "off": "6116fbd08090a74b2c1995be8497243403b13f6f22b31934c63d85500b59ab8e",
+        "on": "13965ef2e9109ff093010631109b496e575096d482ce9f0232eddcdc2ea4420b"
+      },
+      "corrected_arm_passed": false,
+      "passed": false
+    },
+    "03": {
+      "donor": "02",
+      "response": {
+        "whole": {
+          "projection": 0.8114149584487749,
+          "response_mae": 2.960133739707956,
+          "off_matches_original_mae": 8.703096028749489,
+          "on_matches_authored_mae": 9.664504086491077,
+          "original_matches_authored_mae": 6.843429923122413,
+          "passed": true
+        },
+        "neutral": {
+          "projection": -0.10231778075113608,
+          "response_mae": 6.753688010043942,
+          "off_matches_original_mae": 5.550533584431889,
+          "on_matches_authored_mae": 12.031622724419334,
+          "original_matches_authored_mae": 5.979362837413685,
+          "passed": false
+        }
+      },
+      "neutral_lamp_spill_mae": {
+        "off": 0.5703075957313245,
+        "on": 0.4315756434400502
+      },
+      "original_lamp_spill_mae": {
+        "off": 8.621782799748901,
+        "on": 9.618016321406152
+      },
+      "outputs_sha256": {
+        "off": "c2b0557060359b698a200ae3cd2e5cd7237bae58657dc39085fcf5eba8f3b947",
+        "on": "c64d3b72680865537cb9ea5108372a59094aa606049211de0b0df04aeeb6e5be"
+      },
+      "corrected_arm_passed": false,
+      "passed": false
+    }
+  },
+  "all_passed": false
+}
