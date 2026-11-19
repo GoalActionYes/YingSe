@@ -1,6 +1,7 @@
 """Run the fixed expanded checkpoint through all four photo-development suites."""
 
 import argparse
+from functools import partial
 from pathlib import Path
 
 import numpy as np
@@ -24,15 +25,16 @@ LABEL = "Expanded epoch 4"
 COUNTS = {"background": 40, "facd": 70, "film_b": 18, "chart": 4}
 
 
-def grade(engine, target, reference, baseline):
+def grade(engine, target, reference, baseline, *, disable_appearance=False):
     if np.array_equal(target, reference):
         return target.copy(), {"identity": True}
-    grid = appearance_grid(engine.model, engine.api, engine.analysis(target), engine.analysis(reference))
+    grid = appearance_grid(engine.model, engine.api, engine.analysis(target), engine.analysis(reference),
+                           disable_appearance=disable_appearance)
     result = finish_spatial(target, PreparedSpatial(engine, grid, {}).apply(target), STRENGTH)
     return result, {"change_from_13_rgb8": float(np.abs(result.astype(np.int16) - baseline).mean())}
 
 
-def film_b(engine, out):
+def film_b(engine, out, render=grade, label=LABEL):
     source = "arri-two-looks-v2"
     crossed = "arri-film-b-crossed-v1"
     preparation = manifest(BASE, source)
@@ -55,10 +57,10 @@ def film_b(engine, out):
         for state, reference in zip(("off", "film_b"), scenes[donor], strict=True):
             tag = f"{prefix}-{state}.png"
             base_image = verified(BASE / crossed / tag, row["output_sha256"][state])
-            result, change = grade(engine, original, reference, base_image)
+            result, change = render(engine, original, reference, base_image)
             outputs.append(result)
             artifacts[state] = change | {"sha256": save(out / tag, result)}
-            comparisons[state] = {"target": original, "reference": reference, "13": base_image, LABEL: result,
+            comparisons[state] = {"target": original, "reference": reference, "13": base_image, label: result,
                                   "expected": expected if state == "film_b" else original}
         measurements = {region: metrics(original, expected, *outputs, mask)
                         for region, mask in (("whole", whole), ("neutral", neutral))}
@@ -70,7 +72,7 @@ def film_b(engine, out):
 
 
 @torch.inference_mode()
-def run(out):
+def run(out, *, disable_appearance=False):
     checked = verify(BASE, COUNTS)
     if digest(WEIGHT) != WEIGHT_SHA256:
         raise ValueError("Expanded checkpoint changed")
@@ -85,23 +87,29 @@ def run(out):
     engine.model.load_state_dict(state, strict=True)
     engine.model.eval().requires_grad_(False)
     sample = np.array([[[4, 20, 200], [255, 0, 128]]], dtype=np.uint8)
-    same, _ = grade(engine, sample, sample.copy(), 255 - sample)
+    render = partial(grade, disable_appearance=disable_appearance)
+    label = "Expanded / statistics only" if disable_appearance else LABEL
+    same, _ = render(engine, sample, sample.copy(), 255 - sample)
     np.testing.assert_array_equal(same, sample)
     out.mkdir()
     suites = {
-        "background": background(engine, out / "background", grade, LABEL),
-        "facd": facd(engine, out / "facd", grade, LABEL),
-        "film_b": film_b(engine, out / "film_b"),
-        "chart": chart(engine, out / "chart", grade, LABEL),
+        "background": background(engine, out / "background", render, label),
+        "facd": facd(engine, out / "facd", render, label),
+        "film_b": film_b(engine, out / "film_b", render, label),
+        "chart": chart(engine, out / "chart", render, label),
     }
-    json_to(out / "results.json", {
+    report = {
         "baseline_sha256": CHECKPOINT, "candidate_sha256": WEIGHT_SHA256, "inputs": MANIFESTS,
         "preflight_counts": checked, "strength": STRENGTH, "identity_passed": True, "suites": suites,
         "passed": all(row["passed"] for row in suites.values()),
-    })
+    }
+    if disable_appearance:
+        report["reference_appearance"] = "disabled"
+    json_to(out / "results.json", report)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("out", type=Path)
-    run(parser.parse_args().out)
+    parser.add_argument("--disable-appearance", action="store_true")
+    run(**vars(parser.parse_args()))
