@@ -14,6 +14,7 @@ from fetch_mls_light_pilot import HOST
 
 ARCHIVE = '/mls-dataset/images_16bit_color.zip'
 SIZE = 2000043792
+INDEX_SHA = '8a290dcaaf81d8e0bbacba7a6433e942bf8770137605e98b165cec36f194a5a8'
 SCENES = ('02', '03')
 LIGHTS = ('2HAL_DESK', '2HAL_DESK_LED-B025')
 BUDGET = 32*1024**2
@@ -32,7 +33,7 @@ def fetch(first, length):
     return value
 
 
-def run(out):
+def run(out, scenes=SCENES):
     out.mkdir(exist_ok=True)
     eocd = fetch(SIZE-22, 22)
     sig, disk, start_disk, disk_count, count, length, offset, comment = struct.unpack('<4s4H2LH', eocd)
@@ -40,11 +41,13 @@ def run(out):
     assert offset + length + 22 == SIZE and length < 512*1024
     index = fetch(offset, length+22)
     assert index[-22:] == eocd
+    if hashlib.sha256(index).hexdigest() != INDEX_SHA:
+        raise ValueError('Official 16-bit archive index changed')
     with ZipFile(io.BytesIO(index)) as zip_file:
         entries = zip_file.infolist()
     assert len(entries) == count
     members = {Path(entry.filename).name: entry for entry in entries if not entry.is_dir()}
-    fixed = [members[f'{scene}_{light}.png'] for scene in SCENES for light in LIGHTS]
+    fixed = [members[f'{scene}_{light}.png'] for scene in scenes for light in LIGHTS]
     total = 22 + len(index) + sum(entry.compress_size+1024 for entry in fixed)
     assert total <= BUDGET
     records = {}
@@ -78,4 +81,6 @@ def run(out):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('out', type=Path)
-    run(parser.parse_args().out)
+    parser.add_argument('--wood', action='store_true', help='Read the fixed 13/22 wood scenes instead of 02/03')
+    args = parser.parse_args()
+    run(args.out, ('13', '22') if args.wood else SCENES)
