@@ -15,6 +15,10 @@ EVIDENCE = Path(__file__).resolve().parents[2] / 'docs/research/2026-11-18-inret
 RADIUS = 3
 
 
+class UnmeasurableRegistration(ValueError):
+    """At least one required window has no gradient variation."""
+
+
 def gradient(rgb):
     luma = rgb.astype(np.float64) @ [.299, .587, .114]
     return np.stack([luma[1:, :-1] - luma[:-1, :-1], luma[:-1, 1:] - luma[:-1, :-1]], axis=-1)
@@ -37,7 +41,8 @@ def shifts(first, second):
                 moving = second[top+dy:bottom+dy, left+dx:right+dx].ravel()
                 y = moving - moving.mean()
                 denominator = scales * np.linalg.norm(y)
-                assert denominator > 0
+                if denominator <= 0:
+                    raise UnmeasurableRegistration("No gradient variation in registration window")
                 values.append((float(np.dot(x, y) / denominator), dy, dx))
         peak, dy, dx = max(values)
         zero = next(score for score, y, x in values if x == 0 and y == 0)

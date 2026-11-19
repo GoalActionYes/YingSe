@@ -42,8 +42,7 @@ def score(frame, target, truth, base, holdout, region):
             "extra_mae": extra, "projection": projection, "passed": passed}
 
 
-def run(out):
-    rows = load(SPLIT / "private-assignment.json", SPLIT_SHA)["development"]
+def donor_assets():
     manifest = {row["original_path"]: row for row in load(MANIFEST, HASHES[2])["files"]}
     source_by_family = defaultdict(set)
     for row in load(INDEX, HASHES[0]):
@@ -57,6 +56,12 @@ def run(out):
         image = checked_rgb(COHORT.parent / item["prepared_path"], item["sha256"])
         return np.asarray(Image.fromarray(image).resize((256, 256), Image.Resampling.BILINEAR)), image.shape
 
+    return source_by_family, read
+
+
+def run(out):
+    rows = load(SPLIT / "private-assignment.json", SPLIT_SHA)["development"]
+    source_by_family, read = donor_assets()
     archive = BASE / "reference-equivalence-development-baseline-v1"
     frozen = load(archive / "results.json", RENDER_SHA)
     yy, xx = np.indices((256, 256))
