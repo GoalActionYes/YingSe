@@ -62,13 +62,15 @@ def fit(path):
     }, {'rows': len(x), 'edit': int(edit.sum()), 'preserve': int(preserve.sum())}
 
 
-def grade(target, guide, baseline, coefficients, scope):
+def grade(target, guide, baseline, coefficients, scope, decision_override=None):
     if np.array_equal(target, guide):
         return dict.fromkeys(ARMS, target.copy()), np.zeros_like(scope)
     x = features(target, guide, baseline, scope)
     original = get_color(target)[scope]
     base = get_color(baseline)[scope] - original
     edit = x @ coefficients['decision'] >= .5
+    if decision_override is not None:
+        edit = decision_override[scope]
     mask = np.zeros_like(scope)
     mask[scope] = edit
     cases = {'direct': x @ coefficients['direct'], 'gate': base * edit[:, None],
