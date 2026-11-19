@@ -42,7 +42,7 @@ def qualified(scores, whole_delta):
             and scores["style_delta_mae"] <= 3 and whole_delta <= 2)
 
 
-def run(out):
+def frozen_cases():
     archived = load(BASE.parent / "tst-neutral-switch-renders-v1/results.json", FROZEN)
     assignments = load(SPLIT / "private-assignment.json", SPLIT_SHA)["development"]
     entries = {item["original_path"]: item for item in load(MANIFEST, HASHES[2])["files"]}
@@ -54,8 +54,6 @@ def run(out):
         value = checked_rgb(COHORT.parent / row["prepared_path"], row["sha256"])
         return np.asarray(Image.fromarray(value).resize((256, 256), Image.Resampling.BILINEAR))
 
-    out.mkdir()
-    records = {}
     for key, archive in archived["cases"].items():
         assignment = assignments[int(key)]
         original = rgb(assignment["content"])
@@ -64,12 +62,19 @@ def run(out):
         protection = masks(original, (first_truth, other_truth))
         if [int(area.sum()) for area in protection] != archive["protect_counts"]:
             raise ValueError(f"Frozen regions changed: {key}")
-        selected = protection[0] | protection[1]
         names = [f"{key}-{slot}.png" for slot in range(3)]
         first, second, other = (checked_rgb(directory / name, predictions[name]) for name in names)
         baseline_scores = measure((first, second, other), (first_truth, other_truth), protection)
         if baseline_scores != archive["scores"]["13"]:
             raise ValueError(f"Frozen scores changed: {key}")
+        yield key, original, (first_truth, other_truth), (first, second, other), protection, baseline_scores
+
+
+def run(out):
+    out.mkdir()
+    records = {}
+    for key, _, (first_truth, other_truth), (first, second, other), protection, baseline_scores in frozen_cases():
+        selected = protection[0] | protection[1]
         e0, e1 = (get_color(frame)[selected] - get_color(first_truth)[selected] for frame in (first, second))
         shared = ((np.sign(e0) == np.sign(e1)) & (np.minimum(np.abs(e0), np.abs(e1)) > 1))
         report, board = {}, {"13 first": first, "13 second": second, "author": first_truth}
