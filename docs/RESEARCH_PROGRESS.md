@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+拆开同一参考的 Film B 明暗与色度后，焊工两组仅色度均反向，色卡方向仅明暗也反向，无法归于单一分量。单分量均未过六方向风格门槛。[真实参考开关对照](research/2026-11-20-film-b-reference-components.md)
+
 对参考图施加小幅已知色偏，可以测到 13 号的近同向响应，但焊工两组 Film B 仍反向，重点肤色 0/6。关闭以统一色偏探针纠正实际风格方向。[普通两图响应实验](research/2026-11-20-reference-chroma-orientation.md)
 
 稳定工作台的 ICC 解码修复已进入独立候选分支 `codex/image-icc-candidate`，提交 `736a32d` 已核对远端。实拍的编码偏差 0.8551 → 0.0259 RGB8，预览与 PNG 导出一致。实际 13 号工作台此前已有独立 ICC 转换，保持其严格处理。工程候选未替换现有版本，跨场景风格主目标仍待验收。[候选说明](https://github.com/GoalActionYes/YingSe/blob/736a32dfcc8b2a2efac5f2a6577c8c2eb7aef7b7/docs/research/2026-11-20-image-icc-candidate.md)
