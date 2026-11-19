@@ -10,6 +10,8 @@
 
 这次没有发现能直接补齐缺口的小批人像。已有 POLAR 检查结论仍有效：[公开预览核查](2026-11-19-polar-preview-intake.md)。下一次若取得许可明确的实拍小样，先核对脸部位姿和灯色，再把每个场景的重复拍摄、实际换灯、受控后期染色分开编号。采集条件和作者前后图只用于离线判定；软件仍只接收目标和参考两张图。静物开发对照可以继续用于筛错，不能代替肤色、白墙的独立验收。
 
+近场 near_ps 两组真人可按文件取用，作者标定中最近的两个灯位仍相距 105 毫米，无法用这些实拍配对隔离换灯色。Meyer 等有同位置滤片采集，待核实原图入口与使用范围。[标定核查](2026-11-19-near-ps-portrait-intake.md)
+
 补查了两个直接研究肤色和灯光的来源。**优先保留 PolyU Face Color Constancy 作为候选。** [原论文](https://library.imaging.org/admin/apis/public/api/ist/website/downloadArticle/cic/33/1/15)报告八名真人、1,299 张图，分别测量前景和背景的两个光源，并调节人像前方 LED，尽量不影响背景。这样的采集设计与主体和背景分开受光的问题贴近。但[学校的论文记录](https://research.polyu.edu.hk/en/publications/facial-centric-color-constancy-dataset-to-improve-scenario-specif/)、[实验室出版目录](https://www.polyucolorlab.com/publication.html)和论文未提供可核对的原图下载、使用许可或按人物与场景对应的公开配对索引。论文插图不代替原图。即使以后拿到数据，1,299 张图也不能当作 1,299 个独立人像，首先按原始拍摄和参与者分组。
 
 **排除《Color Constancy Using Faces》的配对作为换灯验证。** [作者论文 §II](https://htchen.github.io/awb/awb_single.pdf)的 472 对照片是一人一组，区别是取景里有没有灰卡，两张在同一灯光下拍摄。灰卡给的是灯色测量，可用于另一类问题；不能将有卡／无卡当白灯／彩灯对照。
