@@ -10,7 +10,7 @@ from probe_paired_cubic_cross_content import apply, paired_fit
 from probe_paired_target_weighting import bins, run
 
 
-def render(original, edited, target, archived):
+def render(original, edited, target, archived, _style):
     table, _ = paired_fit(original, edited)
     np.testing.assert_array_equal(apply(target, table), archived)
     thumbnail, _ = thumbnail_pair(original, edited)

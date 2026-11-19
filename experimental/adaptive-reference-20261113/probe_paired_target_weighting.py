@@ -50,7 +50,7 @@ def weighted_learn(original, edited, train, weight):
     return np.stack(coefficients, axis=1)
 
 
-def render(original, edited, target, archived):
+def render(original, edited, target, archived, _style):
     if original.shape != edited.shape:
         raise ValueError("Verified reference pair has different sizes")
     a, b = thumbnail_pair(original, edited)
@@ -100,8 +100,8 @@ def measure(out, key, row, archive, history, old_pair, renderer, method):
                             old_pair['cases'][key]['roles'][role]['frame_a_sha256'])
         old_b = checked_rgb(film_dir / f'paired-{key}-{role}-on.png',
                             history['comparison']['paired']['cases'][key]['outputs'][f'{role}-on'])
-        new_a, counts_a = renderer(original, reference_a, target, old_a)
-        new_b, counts_b = renderer(original, reference_b, target, old_b)
+        new_a, counts_a = renderer(original, reference_a, target, old_a, 'film_a')
+        new_b, counts_b = renderer(original, reference_b, target, old_b, 'film_b')
         np.testing.assert_array_equal(counts_a, counts_b)
         old = readings(known_a, known_b, old_a, old_b, areas, holdout)
         new = readings(known_a, known_b, new_a, new_b, areas, holdout)
