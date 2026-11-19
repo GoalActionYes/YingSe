@@ -12,13 +12,11 @@ SOURCES = {
     "R6_06283": ("CR3", "a737bc15d5bf22b6936bca3e6602dd14ed71c92e858066a79c420cb7e994f284",
                  "eb44da59228162de892a3cf1d7d0db38dc2d3744cf096d3bfd5b4b2b8916b899"),
 }
-SECTION = re.compile(rb"(?ms)^\[Locallab\]\r?\n(.*?)(?=^\[|\Z)")
-
-
-def disabled(data, key=b"Enabled"):
-    local = list(SECTION.finditer(data))
+def disabled(data, key=b"Enabled", section=b"Locallab"):
+    pattern = re.compile(rb"(?ms)^\[" + re.escape(section) + rb"\]\r?\n(.*?)(?=^\[|\Z)")
+    local = list(pattern.finditer(data))
     if len(local) != 1:
-        raise ValueError("Expected one local-adjustment section")
+        raise ValueError("Expected one processing-profile section")
     pattern = re.compile(rb"(?m)^" + re.escape(key) + rb"=(true)(?=\r?$)")
     field = list(pattern.finditer(local[0][1]))
     if len(field) != 1:
