@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+固定参考曝光缩小了实拍人像的肤色波动范围，但 20 项仍全部超限，暖调不足。停止固定全图曝光归一。[实拍曝光归一对照](research/2026-11-19-dast-reference-exposure-normalization.md)
+
 按区域像素比例保留小块参考色后，两图自动去色仍误改保色区；12 个空操作保持原样，实图 0/2。[小区域对应对照](research/2026-11-19-psbench-selective-fractional.md)
 
 给定作者去色区域后，两组实图用固定 80% 去色都过区域门槛；从另一张参考估力度无收益。下一候选优先验证编辑范围，尚非自动画质成绩。[局部去色幅度与区域对照](research/2026-11-19-psbench-desaturation-oracle-amount.md)
