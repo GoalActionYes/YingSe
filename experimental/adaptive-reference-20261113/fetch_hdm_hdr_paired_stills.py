@@ -1,4 +1,4 @@
-"""Fetch four ordinal-matched HdM HDR stills for local academic comparison."""
+"""Fetch fixed ordinal-matched HdM HDR stills for local academic comparison."""
 import argparse
 from ftplib import FTP
 from hashlib import sha256
@@ -51,7 +51,9 @@ def entries(ftp, directory, room):
     return selected
 
 
-def run(output, proxy, list_only, showgirl_light=False):
+def run(output, proxy, list_only, showgirl_light=False, bistro=False):
+    if showgirl_light and bistro:
+        raise ValueError("Select one fixed frame set")
     host, username, password = remote_credentials(proxy)
     output.mkdir()
     with FTP(host, timeout=16) as ftp:
@@ -72,10 +74,27 @@ def run(output, proxy, list_only, showgirl_light=False):
         rows = {}
         total = 0
         metadata_budget = [256*1024]
-        samples = {"showgirl_02": (68, 272)} if showgirl_light else dict.fromkeys(SCENES, (None,))
+        if bistro:
+            samples = {"bistro": (None, 332, 334)}
+        elif showgirl_light:
+            samples = {"showgirl_02": (68, 272)}
+        else:
+            samples = dict.fromkeys(SCENES, (None,))
         for scene, ordinals in samples.items():
             paths = {role: f"/{directory}/{scene}" for role, directory in FOLDERS.items()}
-            by_role = {role: entries(ftp, path, metadata_budget) for role, path in paths.items()}
+            if bistro:
+                segments = [entries(ftp, f"{paths['original']}_{number:02}", metadata_budget)
+                            for number in (1, 2, 3)]
+                grades = entries(ftp, paths["graded"], metadata_budget)
+                indexes = [sorted(frames) for frames in (*segments, grades)]
+                if [len(seq) for seq in indexes] != [151, 648, 170, 969] or any(
+                    seq != list(range(seq[0], seq[-1] + 1)) for seq in indexes
+                ):
+                    raise ValueError("Unexpected Bistro release layout")
+                paths["original"] += "_02"
+                by_role = {"original": segments[1], "graded": {key: grades[key] for key in indexes[-1][151:799]}}
+            else:
+                by_role = {role: entries(ftp, path, metadata_budget) for role, path in paths.items()}
             numbers = {role: sorted(items) for role, items in by_role.items()}
             if len({len(seq) for seq in numbers.values()}) != 1:
                 raise ValueError(f"Frame counts differ: {scene}")
@@ -86,9 +105,13 @@ def run(output, proxy, list_only, showgirl_light=False):
                 raise ValueError("Unexpected Showgirl 2 frame count")
             for sample in ordinals:
                 ordinal = len(numbers["original"]) // 2 if sample is None else sample
+                if bistro and sample is None:
+                    ordinal = 333
                 label = scene if sample is None else f"{scene}-{ordinal:03d}"
                 files = {}
                 for role, path in paths.items():
+                    if bistro and sample is not None and role == "graded":
+                        continue
                     frame = numbers[role][ordinal]
                     remote = path + "/" + by_role[role][frame]
                     size = ftp.size(remote)
@@ -100,7 +123,7 @@ def run(output, proxy, list_only, showgirl_light=False):
                 rows[label] = {"counts": {role: len(items) for role, items in by_role.items()},
                                "selected_ordinal_zero_based": ordinal, "files": files}
 
-        if total > 64*1024**2:
+        if total > (48 if bistro else 64)*1024**2:
             raise ValueError(f"Selected source would exceed the download budget: {total}")
         if not list_only and disk_usage(output).free < 2 * total:
             raise ValueError("Insufficient local room for source and analysis")
@@ -133,6 +156,8 @@ if __name__ == "__main__":
     parser.add_argument("output", type=Path)
     parser.add_argument("--proxy")
     parser.add_argument("--list-only", action="store_true")
-    parser.add_argument("--showgirl-light", action="store_true", help="Fetch fixed Showgirl 2 ordinals")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--showgirl-light", action="store_true", help="Fetch fixed Showgirl 2 ordinals")
+    mode.add_argument("--bistro", action="store_true", help="Fetch the Bistro middle pair and original neighbors")
     args = parser.parse_args()
-    run(args.output, args.proxy, args.list_only, args.showgirl_light)
+    run(args.output, args.proxy, args.list_only, args.showgirl_light, args.bistro)
