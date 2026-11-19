@@ -38,7 +38,7 @@ def off_state(source):
     return result
 
 
-def export(cli, raw, xmp, out, label, mask):
+def export(cli, raw, xmp, out, label, mask, *, env=None):
     config, cache = out / f'config-{label}', out / f'cache-{label}'
     config.mkdir()
     cache.mkdir()
@@ -49,7 +49,7 @@ def export(cli, raw, xmp, out, label, mask):
         '--cachedir', cache.as_posix(), '--disable-opencl', '-t', '2', '--conf', 'write_sidecar_files=never',
         '--conf', 'plugins/imageio/format/tiff/bpp=8']
     with (out / f'{label}.log').open('wb') as log:
-        subprocess.run(args, stdout=log, stderr=subprocess.STDOUT, timeout=180, check=True, cwd=cli.parent)
+        subprocess.run(args, stdout=log, stderr=subprocess.STDOUT, timeout=180, check=True, cwd=cli.parent, env=env)
     return destination
 
 
