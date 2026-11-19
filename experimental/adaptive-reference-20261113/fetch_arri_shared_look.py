@@ -61,7 +61,7 @@ class RangeReader(io.RawIOBase):
         return data
 
 
-def fetch(output, proxy):
+def fetch(output, proxy, second_film=False):
     with requests.Session() as session:
         if proxy:
             session.proxies.update({"http": proxy, "https": proxy})
@@ -71,16 +71,21 @@ def fetch(output, proxy):
                           if re.fullmatch(r"\d+ Film.*\.cube", Path(name).name, re.IGNORECASE))
             if not film or film[0] != MEMBER or archive.namelist().count(MEMBER) != 1:
                 raise ValueError("Fixed official look unavailable")
-            info = archive.getinfo(MEMBER)
+            if second_film and len(film) < 2:
+                raise ValueError("Second Film look unavailable")
+            member = film[1] if second_film else MEMBER
+            if archive.namelist().count(member) != 1:
+                raise ValueError("Duplicate Film look member")
+            info = archive.getinfo(member)
             if info.file_size > 3 * 1024**2 or info.flag_bits & 1:
                 raise ValueError("Invalid official look member")
             index_bytes = remote.total
             data = archive.read(info)
     output.mkdir()
-    (output / "film-a.cube").write_bytes(data)
+    (output / ("second-film.cube" if second_film else "film-a.cube")).write_bytes(data)
     receipt = {
         "archive_size": SIZE, "archive_etag": ETAG, "film_members": len(film), "index_bytes": index_bytes,
-        "member": MEMBER, "member_bytes": len(data), "member_crc32": f"{info.CRC:08x}",
+        "member": member, "member_bytes": len(data), "member_crc32": f"{info.CRC:08x}",
         "member_sha256": sha256(data).hexdigest(), "ranges_total_bytes": remote.total, "ranges": remote.requests,
     }
     (output / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8", newline="\n")
@@ -91,5 +96,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--proxy")
+    parser.add_argument("--second-film", action="store_true", help="Select the next official Film profile")
     args = parser.parse_args()
-    fetch(args.output, args.proxy)
+    fetch(args.output, args.proxy, args.second_film)
