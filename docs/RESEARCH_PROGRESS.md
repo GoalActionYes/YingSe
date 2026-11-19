@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+追加 25 张后续开发图到封存身份交叉核查。BG-REAL 与 PST50 共 2,350 对无预警，封存状态和独立验收条件均不改变。[追加来源与哈希](research/2026-11-20-reserve-recent-source-crosscheck.md)
+
 40 张原始导出 JPEG 中只有一组的三个滤镜含与原图不同的色彩字段，但三个滤镜的字段和值完全相同；四个 PSBench 编辑无可用差异。[内嵌编辑字段检查](research/2026-11-20-reference-embedded-edit.md)
 
 已知参考两款编辑前后图时，联合色表将 9483 前额反向与浅墙过强改回，但白球服响应不足，完整联合仍 0/4。保留配对数据作局部诊断。[两款配对成片](research/2026-11-20-bg-real-paired-two-look.md)
