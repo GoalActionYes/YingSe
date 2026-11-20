@@ -1,0 +1,1818 @@
+{
+  "clip": {
+    "prepared_sha256": "18993fdadb70dad9ed06593ca2eebfea8639b66bc5309cb99664a25b1f7fe9ec",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "stable_fingerprint": "c1d65198cfa49ea4655d4eceb03421f6cb6c688131576cee4ce9c36f77aa2ee1",
+    "strength": 0.8,
+    "headroom": false,
+    "linear_bounds": [
+      -0.1727464024623833,
+      3.0458495238069156
+    ],
+    "inputs": {
+      "MIXED_organic-6": {
+        "image_sha256": "99d014d86c573011ab6f6dd05b4bd82277fbf22e1cf8fecc7708a941c3e25728",
+        "gamut_limited_fraction": 0.8460299173990885
+      },
+      "MIXED_organic-13": {
+        "image_sha256": "2159f820cf4680765a803f60bd2c2741a8b967ea92b443d95a0834b775dc67e1",
+        "gamut_limited_fraction": 0.567590077718099
+      },
+      "WHITE_rich-6": {
+        "image_sha256": "7152ca3c62b2fa67310eb59c07579ea0bedb260c18012af7ca9c272e47a56f49",
+        "gamut_limited_fraction": 0.9223683675130209
+      },
+      "WHITE_rich-13": {
+        "image_sha256": "22b4281407b7b4265f4f2acc345ec01c0e4ce748ccb97ae8af803a766b6d8e32",
+        "gamut_limited_fraction": 0.5451367696126302
+      }
+    },
+    "cases": {
+      "MIXED_organic-6-from-WHITE_rich": {
+        "outputs_sha256": {
+          "MIXED_organic-6-from-WHITE_rich-6-stable.png": "c39124508d0f963b74055df511a8a324c4442dba670604b41081f04b9625b773",
+          "MIXED_organic-6-from-WHITE_rich-6-spatial13.png": "13f43957fb2e9f81d33e86cbc9257e41ae4fc6b3bea89d17513fc13d112204c6",
+          "MIXED_organic-6-from-WHITE_rich-13-stable.png": "d00788d92b355243f900901b03b8b926c6970660e89f70585658d308dd346d52",
+          "MIXED_organic-6-from-WHITE_rich-13-spatial13.png": "7ef3b072c812a1bd054c9d9d9c51780b0b8d71fccf0b43465c6ab8cf8fe3c439"
+        },
+        "panel_sha256": "ed51a99f6013fd5c8aa531d21fbea68f0aa8ae223fc5fcc0102e12fe6f5dad4c",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 354.3399267478617,
+                "output_span": 82.79334340392349,
+                "projection_ratio": 0.23282905353100772,
+                "orthogonal": 6.955846394683538,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.4875283446712018
+                  ],
+                  "output": [
+                    0.036281179138321996,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "20": {
+                "reference_span": 333.9371657310399,
+                "output_span": 81.33808971742575,
+                "projection_ratio": 0.24205884124870394,
+                "orthogonal": 9.05543676532375,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.7891156462585034
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "21": {
+                "reference_span": 299.8963367503511,
+                "output_span": 81.33808971742575,
+                "projection_ratio": 0.2684228018598039,
+                "orthogonal": 11.653043655990826,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.8775510204081632
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "22": {
+                "reference_span": 230.0016322724689,
+                "output_span": 79.32217429269069,
+                "projection_ratio": 0.34417646544781233,
+                "orthogonal": 5.051717372683823,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.8276643990929705
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.9977324263038548
+                }
+              },
+              "23": {
+                "reference_span": 168.75606775544398,
+                "output_span": 76.56797656540233,
+                "projection_ratio": 0.4534205385842618,
+                "orthogonal": 2.7806940088560594,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9614512471655329
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.9705215419501134
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              16.44885974460178,
+              44.939025455050995
+            ],
+            "mean_rgb8_change_between_outputs": 36.20601569281684
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 354.3399267478617,
+                "output_span": 161.93973123196173,
+                "projection_ratio": 0.4563703053787486,
+                "orthogonal": 8.618649091222816,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.4875283446712018
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "20": {
+                "reference_span": 333.9371657310399,
+                "output_span": 154.8719123078165,
+                "projection_ratio": 0.46021811031487253,
+                "orthogonal": 19.145716453010998,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.7891156462585034
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "21": {
+                "reference_span": 299.8963367503511,
+                "output_span": 181.20754390830422,
+                "projection_ratio": 0.6042335861315025,
+                "orthogonal": 0.19496726837565567,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.8775510204081632
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "22": {
+                "reference_span": 230.0016322724689,
+                "output_span": 184.8684026266252,
+                "projection_ratio": 0.8000785758828252,
+                "orthogonal": 17.697306666885925,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.8276643990929705
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.9977324263038548
+                }
+              },
+              "23": {
+                "reference_span": 168.75606775544398,
+                "output_span": 159.25249195312458,
+                "projection_ratio": 0.9343802799198676,
+                "orthogonal": 22.307740115774983,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9614512471655329
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.9705215419501134
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              20.336661020914715,
+              64.21885638766818
+            ],
+            "mean_rgb8_change_between_outputs": 72.22261471218533
+          }
+        }
+      },
+      "MIXED_organic-13-from-WHITE_rich": {
+        "outputs_sha256": {
+          "MIXED_organic-13-from-WHITE_rich-6-stable.png": "ef55a83811643f2700adc4696c26fc72f6e7e00f2a586f994deb285e14853d98",
+          "MIXED_organic-13-from-WHITE_rich-6-spatial13.png": "447787b5f700a0d9702da44973cff3999ee39c1d6b55223801d3487ea66f6b99",
+          "MIXED_organic-13-from-WHITE_rich-13-stable.png": "2bac18b0cf8a184d1a36d203425c6798aa38a28b4189c0365d80c553cf457ec9",
+          "MIXED_organic-13-from-WHITE_rich-13-spatial13.png": "e4fa11777b9a0998f007ad768fa4d2e7dc3fc32fa8a03cffaf837634a5b01629"
+        },
+        "panel_sha256": "72199760823dc04d32fa727763c5ca3c72bfcbd26b3e2ba4d3888e4d138c0768",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 354.3399267478617,
+                "output_span": 70.6761486522858,
+                "projection_ratio": 0.198575660557371,
+                "orthogonal": 6.642748685920387,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.4875283446712018
+                  ],
+                  "output": [
+                    0.0,
+                    1.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "20": {
+                "reference_span": 333.9371657310399,
+                "output_span": 74.19399448688552,
+                "projection_ratio": 0.22130597104020946,
+                "orthogonal": 6.572711663080789,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.7891156462585034
+                  ],
+                  "output": [
+                    0.0,
+                    0.9705215419501134
+                  ],
+                  "target": 0.9705215419501134
+                }
+              },
+              "21": {
+                "reference_span": 299.8963367503511,
+                "output_span": 72.25489796629707,
+                "projection_ratio": 0.2406065838689715,
+                "orthogonal": 3.759368867140755,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.8775510204081632
+                  ],
+                  "output": [
+                    0.0,
+                    0.981859410430839
+                  ],
+                  "target": 0.963718820861678
+                }
+              },
+              "22": {
+                "reference_span": 230.0016322724689,
+                "output_span": 67.29589791569765,
+                "projection_ratio": 0.292278940531986,
+                "orthogonal": 3.096213873580404,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.8276643990929705
+                  ],
+                  "output": [
+                    0.0,
+                    0.8843537414965986
+                  ],
+                  "target": 0.873015873015873
+                }
+              },
+              "23": {
+                "reference_span": 168.75606775544398,
+                "output_span": 64.96765830103467,
+                "projection_ratio": 0.38469232539918863,
+                "orthogonal": 2.5097318131049153,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9614512471655329
+                  ],
+                  "output": [
+                    0.0,
+                    0.9115646258503401
+                  ],
+                  "target": 0.9115646258503401
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              33.059604220920136,
+              6.624092949761285
+            ],
+            "mean_rgb8_change_between_outputs": 39.50864495171441
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 354.3399267478617,
+                "output_span": 225.96463106840415,
+                "projection_ratio": 0.63684188578913,
+                "orthogonal": 11.758088279090972,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.4875283446712018
+                  ],
+                  "output": [
+                    0.0,
+                    1.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "20": {
+                "reference_span": 333.9371657310399,
+                "output_span": 234.91942997266105,
+                "projection_ratio": 0.7025310834405536,
+                "orthogonal": 12.222819332470959,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.7891156462585034
+                  ],
+                  "output": [
+                    0.0,
+                    0.9705215419501134
+                  ],
+                  "target": 0.9705215419501134
+                }
+              },
+              "21": {
+                "reference_span": 299.8963367503511,
+                "output_span": 229.8148395288694,
+                "projection_ratio": 0.7627130426764981,
+                "orthogonal": 22.25376397882588,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.8775510204081632
+                  ],
+                  "output": [
+                    0.0,
+                    0.963718820861678
+                  ],
+                  "target": 0.963718820861678
+                }
+              },
+              "22": {
+                "reference_span": 230.0016322724689,
+                "output_span": 202.89269289474177,
+                "projection_ratio": 0.8800485626558947,
+                "orthogonal": 13.949258293604371,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.8276643990929705
+                  ],
+                  "output": [
+                    0.0,
+                    0.9342403628117913
+                  ],
+                  "target": 0.873015873015873
+                }
+              },
+              "23": {
+                "reference_span": 168.75606775544398,
+                "output_span": 167.48769076538133,
+                "projection_ratio": 0.9919322955278229,
+                "orthogonal": 5.583598033757289,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9614512471655329
+                  ],
+                  "output": [
+                    0.0,
+                    0.9115646258503401
+                  ],
+                  "target": 0.9115646258503401
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              62.0810292561849,
+              20.009635501437717
+            ],
+            "mean_rgb8_change_between_outputs": 80.90808571709528
+          }
+        }
+      },
+      "WHITE_rich-6-from-MIXED_organic": {
+        "outputs_sha256": {
+          "WHITE_rich-6-from-MIXED_organic-6-stable.png": "940207c1395dfd03d87305529f9b1d3186da647f7c1d2d80ae60ac1060fb1c7d",
+          "WHITE_rich-6-from-MIXED_organic-6-spatial13.png": "256df951c5a3f22961ee236bd9cf47ec12b804fcbce3dbef4b693a1ad20729f6",
+          "WHITE_rich-6-from-MIXED_organic-13-stable.png": "3ba4dc019757368aa40597492e53d1302ff0c5797c931f22ad73cb33fe62fb49",
+          "WHITE_rich-6-from-MIXED_organic-13-spatial13.png": "8a9f7d08a50fc77407302367bbfe66ad939a56db6b0ad44cc5c30a6cc09a656e"
+        },
+        "panel_sha256": "22b052f1c08e546c09429b7741e38005ef53fce4a4afb4ac8ebedac7cb5d3877",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 366.8693476349312,
+                "output_span": 43.18715387334526,
+                "projection_ratio": 0.11618140616910486,
+                "orthogonal": 6.955308361886693,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    1.0
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "20": {
+                "reference_span": 353.0098024816308,
+                "output_span": 53.17348737369028,
+                "projection_ratio": 0.13949805402350293,
+                "orthogonal": 20.060669146831515,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9705215419501134
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "21": {
+                "reference_span": 290.4243659218007,
+                "output_span": 59.066747697160366,
+                "projection_ratio": 0.18929946153638263,
+                "orthogonal": 21.596082818981454,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.963718820861678
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "22": {
+                "reference_span": 216.50563299387846,
+                "output_span": 45.94206485346517,
+                "projection_ratio": 0.20058752494581084,
+                "orthogonal": 14.988447489226354,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.873015873015873
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 0.9977324263038548
+                }
+              },
+              "23": {
+                "reference_span": 150.61341212030223,
+                "output_span": 44.57364725126271,
+                "projection_ratio": 0.2875280049676432,
+                "orthogonal": 10.556386585903253,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9705215419501134,
+                    0.9115646258503401
+                  ],
+                  "output": [
+                    1.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              36.36566585964627,
+              52.3395029703776
+            ],
+            "mean_rgb8_change_between_outputs": 24.95541212293837
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 366.8693476349312,
+                "output_span": 107.87703426160732,
+                "projection_ratio": 0.29321632248153967,
+                "orthogonal": 8.105672230201062,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    1.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "20": {
+                "reference_span": 353.0098024816308,
+                "output_span": 92.12841060758619,
+                "projection_ratio": 0.2601917069963818,
+                "orthogonal": 7.1540588923123805,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9705215419501134
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "21": {
+                "reference_span": 290.4243659218007,
+                "output_span": 87.5589881960727,
+                "projection_ratio": 0.30132696234317796,
+                "orthogonal": 2.846955820405961,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.963718820861678
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              },
+              "22": {
+                "reference_span": 216.50563299387846,
+                "output_span": 84.57343967629554,
+                "projection_ratio": 0.39060898445634257,
+                "orthogonal": 0.862121373254197,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.873015873015873
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.9977324263038548
+                }
+              },
+              "23": {
+                "reference_span": 150.61341212030223,
+                "output_span": 68.5157406273916,
+                "projection_ratio": 0.45490435095593623,
+                "orthogonal": 0.37825807662831673,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9705215419501134,
+                    0.9115646258503401
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 1.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              18.12273703681098,
+              72.63426844278972
+            ],
+            "mean_rgb8_change_between_outputs": 72.10559760199652
+          }
+        }
+      },
+      "WHITE_rich-13-from-MIXED_organic": {
+        "outputs_sha256": {
+          "WHITE_rich-13-from-MIXED_organic-6-stable.png": "682ccb9ef565543e43ad354e98ffcf9faeee51dbf03ab074bd57184ce725c6a8",
+          "WHITE_rich-13-from-MIXED_organic-6-spatial13.png": "600193307eb74a1f10e994ad9a61b02279f8903782317845489fe40b89650ebe",
+          "WHITE_rich-13-from-MIXED_organic-13-stable.png": "c74a939137a3d25128c620c4143a3889f91678fc34faf215abc026cf151692cd",
+          "WHITE_rich-13-from-MIXED_organic-13-spatial13.png": "4d82029886e108edf8805df5efd322f82f1cac7b437d70682c5baf337061182c"
+        },
+        "panel_sha256": "7e008e122d5631a3af561ae38eeb135831a19a70274d3354e05c3a9189e13141",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 366.8693476349312,
+                "output_span": 29.290691481766014,
+                "projection_ratio": 0.0785184747881418,
+                "orthogonal": 5.306385374800153,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    1.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.671201814058957
+                  ],
+                  "target": 0.4875283446712018
+                }
+              },
+              "20": {
+                "reference_span": 353.0098024816308,
+                "output_span": 37.21178035407605,
+                "projection_ratio": 0.1032408581360033,
+                "orthogonal": 7.5150532561275245,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9705215419501134
+                  ],
+                  "output": [
+                    0.0,
+                    0.981859410430839
+                  ],
+                  "target": 0.7891156462585034
+                }
+              },
+              "21": {
+                "reference_span": 290.4243659218007,
+                "output_span": 38.5355841933141,
+                "projection_ratio": 0.13082877265141715,
+                "orthogonal": 6.426944689765008,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.963718820861678
+                  ],
+                  "output": [
+                    0.0,
+                    1.0
+                  ],
+                  "target": 0.8775510204081632
+                }
+              },
+              "22": {
+                "reference_span": 216.50563299387846,
+                "output_span": 31.474579121570475,
+                "projection_ratio": 0.14169696218759817,
+                "orthogonal": 7.035464379327314,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.873015873015873
+                  ],
+                  "output": [
+                    0.0,
+                    0.9977324263038548
+                  ],
+                  "target": 0.8276643990929705
+                }
+              },
+              "23": {
+                "reference_span": 150.61341212030223,
+                "output_span": 25.173424865917628,
+                "projection_ratio": 0.1611031481888659,
+                "orthogonal": 6.704126700241242,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9705215419501134,
+                    0.9115646258503401
+                  ],
+                  "output": [
+                    0.0,
+                    1.0
+                  ],
+                  "target": 0.9614512471655329
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              58.03967157999674,
+              40.58077621459961
+            ],
+            "mean_rgb8_change_between_outputs": 23.297584533691406
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 366.8693476349312,
+                "output_span": 161.72592410222921,
+                "projection_ratio": 0.4406817324722741,
+                "orthogonal": 4.151934956331926,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    1.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.4875283446712018
+                }
+              },
+              "20": {
+                "reference_span": 353.0098024816308,
+                "output_span": 129.77071225002965,
+                "projection_ratio": 0.3675004162788802,
+                "orthogonal": 3.200108860408054,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.9705215419501134
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.7891156462585034
+                }
+              },
+              "21": {
+                "reference_span": 290.4243659218007,
+                "output_span": 101.41963802183481,
+                "projection_ratio": 0.3476753176315333,
+                "orthogonal": 9.503618613540077,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    1.0,
+                    0.963718820861678
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.8775510204081632
+                }
+              },
+              "22": {
+                "reference_span": 216.50563299387846,
+                "output_span": 75.62000180163976,
+                "projection_ratio": 0.3454630040943361,
+                "orthogonal": 11.141793490489803,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9977324263038548,
+                    0.873015873015873
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.8276643990929705
+                }
+              },
+              "23": {
+                "reference_span": 150.61341212030223,
+                "output_span": 50.79745416731039,
+                "projection_ratio": 0.32929075579274464,
+                "orthogonal": 10.984415462087922,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.9705215419501134,
+                    0.9115646258503401
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.9614512471655329
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              89.35982767740886,
+              19.002257029215496
+            ],
+            "mean_rgb8_change_between_outputs": 70.4229113260905
+          }
+        }
+      }
+    },
+    "report_sha256": "7325b3bda90f0eaf12ac107980fbd2d531187d1dcdf410aa209c8f84723755bd"
+  },
+  "headroom": {
+    "prepared_sha256": "7be05c1099aba26b79b79e25b2d3124bf993b734fc230a607b146ef17b2b23d5",
+    "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "stable_fingerprint": "c1d65198cfa49ea4655d4eceb03421f6cb6c688131576cee4ce9c36f77aa2ee1",
+    "strength": 0.8,
+    "headroom": true,
+    "linear_bounds": [
+      -0.1727464024623833,
+      3.0458495238069156
+    ],
+    "inputs": {
+      "MIXED_organic-6": {
+        "image_sha256": "3b4fdc8a8d3af6bf8ebe51945ddbe8b82a21527c416e84eba80b0ee90977db11",
+        "gamut_limited_fraction": 0.8460299173990885
+      },
+      "MIXED_organic-13": {
+        "image_sha256": "7549727669885e551f3afbd47d7375e06baf2d47538dab924dcd633015dbc1dc",
+        "gamut_limited_fraction": 0.567590077718099
+      },
+      "WHITE_rich-6": {
+        "image_sha256": "8e0019f3a7a4f972f459739ec4334bc90e12b918eea3cb999ee9fa0d189ae0e9",
+        "gamut_limited_fraction": 0.9223683675130209
+      },
+      "WHITE_rich-13": {
+        "image_sha256": "3ec02a17e90aa4d12966aafee3a3d007f91d25cd7d556076be45f113cc7a0d0b",
+        "gamut_limited_fraction": 0.5451367696126302
+      }
+    },
+    "cases": {
+      "MIXED_organic-6-from-WHITE_rich": {
+        "outputs_sha256": {
+          "MIXED_organic-6-from-WHITE_rich-6-stable.png": "37e236707f71b884eebbb4cdc311cf1c3cb05052cc3a8869a071b5d858f4e4a7",
+          "MIXED_organic-6-from-WHITE_rich-6-spatial13.png": "53f83cbdaf35dbb742058aac2355df144cd4d823997b55d69852755c9b323c16",
+          "MIXED_organic-6-from-WHITE_rich-13-stable.png": "9c71152f2477f63cec474c063f22785f163876195d733f44da221181901b14d2",
+          "MIXED_organic-6-from-WHITE_rich-13-spatial13.png": "da6d375738fedf0fc64af381b86d73f39cb83f243179c464940ef02c2a22d6b3"
+        },
+        "panel_sha256": "1aa20a43dc8d1e6dc5ccaf41a9973051b5ac32e9cb601849e863b134d5470edd",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 162.6570237901825,
+                "output_span": 64.4330329529815,
+                "projection_ratio": 0.39412578433658574,
+                "orthogonal": 6.4704211830105285,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.67980325401484,
+                "output_span": 66.77293605855594,
+                "projection_ratio": 0.5146434302208329,
+                "orthogonal": 2.1330070376016392,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 96.34557782316737,
+                "output_span": 54.18221825359312,
+                "projection_ratio": 0.5623180026077785,
+                "orthogonal": 0.7624871958024972,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 62.79426078615784,
+                "output_span": 57.69353572212402,
+                "projection_ratio": 0.9187705251921506,
+                "orthogonal": 0.04775054185711699,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 36.2898400657815,
+                "output_span": 75.37760677203808,
+                "projection_ratio": 2.075459022404887,
+                "orthogonal": 2.995168179509183,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              12.75640869140625,
+              23.7754881117079
+            ],
+            "mean_rgb8_change_between_outputs": 36.017791748046875
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 162.6570237901825,
+                "output_span": 61.791611105391965,
+                "projection_ratio": 0.3798378400612188,
+                "orthogonal": 1.013883661155494,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.67980325401484,
+                "output_span": 67.57209873905057,
+                "projection_ratio": 0.5207323596009481,
+                "orthogonal": 2.427812888327075,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 96.34557782316737,
+                "output_span": 68.92322657914384,
+                "projection_ratio": 0.7152306577978017,
+                "orthogonal": 1.3849257229882173,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 62.79426078615784,
+                "output_span": 69.17353527122927,
+                "projection_ratio": 1.1009852092232306,
+                "orthogonal": 2.2920260091410625,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 36.2898400657815,
+                "output_span": 67.57209873905057,
+                "projection_ratio": 1.859190510571584,
+                "orthogonal": 3.718139809045902,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              14.150775061713325,
+              23.25069808959961
+            ],
+            "mean_rgb8_change_between_outputs": 36.03976186116537
+          }
+        }
+      },
+      "MIXED_organic-13-from-WHITE_rich": {
+        "outputs_sha256": {
+          "MIXED_organic-13-from-WHITE_rich-6-stable.png": "bdc7f0d8e3b918fdc8a2c7c31d0757eda0b0ab0ccc38076742ad48527d31a8be",
+          "MIXED_organic-13-from-WHITE_rich-6-spatial13.png": "66d519c56f37ed3c6a08f5cb2e53d33d4f21d50a1b12a7aaa1b8f64f17367360",
+          "MIXED_organic-13-from-WHITE_rich-13-stable.png": "b4ffa8b780aca985d7cb44e4dc1811efac1a12ce96903cc526b0ed8691d4d95b",
+          "MIXED_organic-13-from-WHITE_rich-13-spatial13.png": "eb1c10bacf9ddf6e95490d37dc208fb1942ffede037d220df234cde794976d29"
+        },
+        "panel_sha256": "2dc55189e584a96ead6f8673c2f9002b5aae408d0d7104d1347b2676b621b886",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 162.6570237901825,
+                "output_span": 49.55893127298045,
+                "projection_ratio": 0.30335013300693114,
+                "orthogonal": 4.631604906642171,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.67980325401484,
+                "output_span": 69.04935229442779,
+                "projection_ratio": 0.5324242905130196,
+                "orthogonal": 0.8034904558987223,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 96.34557782316737,
+                "output_span": 81.83628125275489,
+                "projection_ratio": 0.8493932258735151,
+                "orthogonal": 0.40458504267072193,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 62.79426078615784,
+                "output_span": 89.0151659714231,
+                "projection_ratio": 1.416846248932963,
+                "orthogonal": 2.8411572404977514,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 36.2898400657815,
+                "output_span": 88.21415015018849,
+                "projection_ratio": 2.426653486904978,
+                "orthogonal": 5.1640830681192975,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              32.779182857937286,
+              11.009676615397135
+            ],
+            "mean_rgb8_change_between_outputs": 42.35968229505751
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 162.6570237901825,
+                "output_span": 65.9748606995119,
+                "projection_ratio": 0.40550712209332923,
+                "orthogonal": 1.4655227465793073,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.67980325401484,
+                "output_span": 67.57209873905057,
+                "projection_ratio": 0.5207323596009481,
+                "orthogonal": 2.4278128883270904,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 96.34557782316737,
+                "output_span": 66.53486336260111,
+                "projection_ratio": 0.6905643487216444,
+                "orthogonal": 0.5212922665180306,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 62.79426078615784,
+                "output_span": 63.8243747554177,
+                "projection_ratio": 1.0161894427841425,
+                "orthogonal": 1.3131399010703941,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 36.2898400657815,
+                "output_span": 62.229943540710366,
+                "projection_ratio": 1.7133267434524888,
+                "orthogonal": 2.5820415340596297,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              23.376176622178818,
+              8.854084014892578
+            ],
+            "mean_rgb8_change_between_outputs": 31.980611589219833
+          }
+        }
+      },
+      "WHITE_rich-6-from-MIXED_organic": {
+        "outputs_sha256": {
+          "WHITE_rich-6-from-MIXED_organic-6-stable.png": "638622cd2b5be00f57dd8a9047513e5151170ed1018069679822eb2f64f882b3",
+          "WHITE_rich-6-from-MIXED_organic-6-spatial13.png": "1a33d7f28f58b8ff1648bffaa733730058ff86920460badbe74db89b03e982a6",
+          "WHITE_rich-6-from-MIXED_organic-13-stable.png": "7756fffbd65b3bcd5d2ef11203e058ae0e286747b5874ffe301226681f13c7ec",
+          "WHITE_rich-6-from-MIXED_organic-13-spatial13.png": "0bf6315364616f7295865023540fb3cea956c736b4ea3e01155b313d374a34ba"
+        },
+        "panel_sha256": "b0a4df21d51b042424bda672293f1af51547a7a71a1c79bd18fb78a70bd39729",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 173.43292314113836,
+                "output_span": 12.493705295067587,
+                "projection_ratio": 0.07040457332077224,
+                "orthogonal": 2.645197741775553,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.89703500665442,
+                "output_span": 19.16597811018264,
+                "projection_ratio": 0.14559869710186668,
+                "orthogonal": 3.104711874507317,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 91.24476613483098,
+                "output_span": 24.987410590135184,
+                "projection_ratio": 0.2681003380257059,
+                "orthogonal": 5.093566637146249,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 54.42844025250035,
+                "output_span": 23.750454031028546,
+                "projection_ratio": 0.43282807295842907,
+                "orthogonal": 3.0161746880298046,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 29.031872052625197,
+                "output_span": 24.2091456701801,
+                "projection_ratio": 0.8239881382144802,
+                "orthogonal": 3.7181398090459443,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              26.438147650824654,
+              27.54157935248481
+            ],
+            "mean_rgb8_change_between_outputs": 10.0213623046875
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 173.43292314113836,
+                "output_span": 25.205306980872102,
+                "projection_ratio": 0.14497559790012268,
+                "orthogonal": 1.7634651611837147,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.89703500665442,
+                "output_span": 26.01496715892603,
+                "projection_ratio": 0.19974939638514594,
+                "orthogonal": 1.8812938124337877,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 91.24476613483098,
+                "output_span": 25.511122929420413,
+                "projection_ratio": 0.278147752384028,
+                "orthogonal": 2.587860468872684,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 54.42844025250035,
+                "output_span": 27.148974197932414,
+                "projection_ratio": 0.49702949822419734,
+                "orthogonal": 2.2862328685522666,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 29.031872052625197,
+                "output_span": 26.82667189794515,
+                "projection_ratio": 0.9186574408334847,
+                "orthogonal": 2.891886518146859,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              8.50956556532118,
+              23.621769375271267
+            ],
+            "mean_rgb8_change_between_outputs": 15.915941874186197
+          }
+        }
+      },
+      "WHITE_rich-13-from-MIXED_organic": {
+        "outputs_sha256": {
+          "WHITE_rich-13-from-MIXED_organic-6-stable.png": "0598a555d95fe5715b08ea16b97312c1ab8302f1d3b4fb162c1ba3639bcc6603",
+          "WHITE_rich-13-from-MIXED_organic-6-spatial13.png": "88d8b6a171c3ff456edb5084ed482b9463efababd40c8118b57ddf5215d4d2b5",
+          "WHITE_rich-13-from-MIXED_organic-13-stable.png": "f84e8f48f9cd3f1fe2277d8ccded9639421840234ad15e467fd92276eb605c60",
+          "WHITE_rich-13-from-MIXED_organic-13-spatial13.png": "2fc761bc2e814b9b65108d9235929505016c12f377c0b52f0759163b1d5a2ccf"
+        },
+        "panel_sha256": "d16324579eda316f5bafd60d0f77eb315b76fe85825e9ada1b28607ee5c46deb",
+        "pipelines": {
+          "stable": {
+            "patches": {
+              "19": {
+                "reference_span": 173.43292314113836,
+                "output_span": 17.45903526315243,
+                "projection_ratio": 0.10066379821420546,
+                "orthogonal": 0.14695543009864603,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.89703500665442,
+                "output_span": 19.0434100937831,
+                "projection_ratio": 0.14658425584293827,
+                "orthogonal": 0.3116253554338474,
+                "measurable": true,
+                "carried": false,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 91.24476613483098,
+                "output_span": 20.12000392345886,
+                "projection_ratio": 0.21980575147582684,
+                "orthogonal": 1.6020088616831059,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 54.42844025250035,
+                "output_span": 19.165978110182635,
+                "projection_ratio": 0.34920650712127305,
+                "orthogonal": 2.4652752016316444,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 29.031872052625197,
+                "output_span": 18.74055794260139,
+                "projection_ratio": 0.6279861612502268,
+                "orthogonal": 4.337829777220291,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              23.07986577351888,
+              14.151144239637587
+            ],
+            "mean_rgb8_change_between_outputs": 10.379439883761936
+          },
+          "spatial13": {
+            "patches": {
+              "19": {
+                "reference_span": 173.43292314113836,
+                "output_span": 37.29317395341941,
+                "projection_ratio": 0.2141444057791567,
+                "orthogonal": 3.3799748922687987,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "20": {
+                "reference_span": 129.89703500665442,
+                "output_span": 33.78604936952529,
+                "projection_ratio": 0.25999662885633107,
+                "orthogonal": 0.9464177461323501,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "21": {
+                "reference_span": 91.24476613483098,
+                "output_span": 31.6377344795736,
+                "projection_ratio": 0.3465371676505513,
+                "orthogonal": 1.068005907788746,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "22": {
+                "reference_span": 54.42844025250035,
+                "output_span": 28.688719223416022,
+                "projection_ratio": 0.5270905391459288,
+                "orthogonal": 0.01377248715994429,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              },
+              "23": {
+                "reference_span": 29.031872052625197,
+                "output_span": 26.29642892257426,
+                "projection_ratio": 0.9053306973809956,
+                "orthogonal": 0.8262532908991005,
+                "measurable": true,
+                "carried": true,
+                "endpoint_fractions": {
+                  "reference": [
+                    0.0,
+                    0.0
+                  ],
+                  "output": [
+                    0.0,
+                    0.0
+                  ],
+                  "target": 0.0
+                }
+              }
+            },
+            "mean_rgb8_change_from_target": [
+              24.14322026570638,
+              7.06728998819987
+            ],
+            "mean_rgb8_change_between_outputs": 17.077308654785156
+          }
+        }
+      }
+    },
+    "report_sha256": "ad2b10f42558ec951c430ae823438444e783b568d1c05ec16e13c099d03ffa1e"
+  }
+}
