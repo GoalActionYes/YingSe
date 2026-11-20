@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+冻结参考外观与全图统计的单图判别，两臂都能分开 7／7 训练配对，CHROMA-MILL 和 Beyond RGB 留出共 0／6。结束该固定线性判别。[逐组误判与复现](research/2026-11-20-appearance-light-source-probe.md)
+
 Beyond RGB 同色偏对照中，扩展第 4 轮开启参考外观，四个目标串色下降而有意染色误差均升高，联合仍 0／4。结束直接使用该冻结分支。[外观开关成片与复现](research/2026-11-20-beyond-rgb-appearance-ablation.md)
 
 Beyond RGB 两组同方向实拍光色与数字染色配对均合格。稳定版和空间版联合各 0／4，空间版换灯与有意染色的成片差仅 0.803–1.901 RGB8。近灰空间离散度两组均未过，结束固定判据。[成片、反例与复现](research/2026-11-20-beyond-rgb-matched-cast.md)
