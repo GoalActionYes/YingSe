@@ -1,0 +1,1263 @@
+{
+  "parent": "dab8451e0a2b8278442c9b9778bbad57af9cd1ae3dfc2f193f41f42c28edaaf5",
+  "script_sha": "8815669ac017f0777dd5807a5f5fbd33e549c1ecd556de8508e951645356acd5",
+  "protocol_sha": "24b38ec814a825366d2f7ffdde94fcc4c7db4281ae609fdc64e4759ca620cef0",
+  "report_sha": "811dd6a68d6823e15c2af715c5ead0f770772e9febdb81ce0b4f37ac27cf8249",
+  "counts": {
+    "old": 29,
+    "new": 34,
+    "lost": 0,
+    "added": 5,
+    "regression_limit": 0
+  },
+  "cases": {
+    "01-from-02": {
+      "decisions": {
+        "cold": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.3858528909282246,
+              "coverage": 0.7937062937062938
+            },
+            "cheek_right": {
+              "gain": 1.082800138691752,
+              "coverage": 1.0
+            },
+            "screen_left": {
+              "gain": 0.9858592522403072,
+              "coverage": 0.9447222222222222
+            },
+            "screen_right": {
+              "gain": 1.0391915788084058,
+              "coverage": 0.9997222222222222
+            }
+          },
+          "clipped_fraction": 0.0
+        },
+        "warm": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.5955232509883537,
+              "coverage": 0.8601398601398601
+            },
+            "cheek_right": {
+              "gain": 1.0264153199806154,
+              "coverage": 0.9967532467532467
+            },
+            "screen_left": {
+              "gain": 1.003803786866588,
+              "coverage": 0.9858333333333333
+            },
+            "screen_right": {
+              "gain": 0.9798380061711263,
+              "coverage": 1.0
+            }
+          },
+          "clipped_fraction": 0.0
+        }
+      },
+      "hashes": {
+        "cold": "003b38f83ea1e8aeeb40af56150d9b8dcf1c3f2a856c0c325398f19dbfb8bc2d",
+        "warm": "7ca39e32352e884f27e5583e9a8e25e1953adc99e4e1ba7094603e82e7db6d43"
+      },
+      "panel_sha": "14d4e793a0229f50ab8a5cb1fb1dfa16c277b0785e20ad535bda94efd77255c9",
+      "regions": {
+        "whole": {
+          "cold": {
+            "direction": [
+              5.155503167046441,
+              0.47332274647443356,
+              false
+            ],
+            "strength": [
+              5.153119405110677,
+              0.47383712656565374,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              5.891665988498264,
+              0.4100411562398574,
+              false
+            ],
+            "strength": [
+              5.893247816297743,
+              0.41014705042321015,
+              false
+            ]
+          }
+        },
+        "cheek_left": {
+          "cold": {
+            "direction": [
+              1.504079254079254,
+              0.5670053833657185,
+              false
+            ],
+            "strength": [
+              1.3735431235431235,
+              0.7290478769152359,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.837995337995338,
+              0.4287580033765489,
+              false
+            ],
+            "strength": [
+              2.308857808857809,
+              0.6695123116618354,
+              false
+            ]
+          }
+        },
+        "cheek_right": {
+          "cold": {
+            "direction": [
+              0.9042207792207793,
+              0.8773788503041005,
+              true
+            ],
+            "strength": [
+              0.9042207792207793,
+              0.8773788503041005,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.0508658008658007,
+              1.2802737994026987,
+              false
+            ],
+            "strength": [
+              2.0508658008658007,
+              1.2802737994026987,
+              false
+            ]
+          }
+        },
+        "screen_left": {
+          "cold": {
+            "direction": [
+              1.2637037037037038,
+              1.0233152215279884,
+              true
+            ],
+            "strength": [
+              1.2637037037037038,
+              1.0233152215279884,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.1035185185185186,
+              0.9258586638214796,
+              true
+            ],
+            "strength": [
+              1.1035185185185186,
+              0.9258586638214796,
+              true
+            ]
+          }
+        },
+        "screen_right": {
+          "cold": {
+            "direction": [
+              0.9116666666666666,
+              0.9814655904104663,
+              true
+            ],
+            "strength": [
+              0.715,
+              1.0151487203752194,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.2744444444444445,
+              0.9902198626209485,
+              true
+            ],
+            "strength": [
+              1.2744444444444445,
+              0.9902198626209485,
+              true
+            ]
+          }
+        }
+      },
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.47383712656565374,
+            "response_mae": 5.153119405110677,
+            "off_matches_original_mae": 3.599726359049479,
+            "on_matches_authored_mae": 6.271069844563802,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.41014705042321015,
+            "response_mae": 5.893247816297743,
+            "off_matches_original_mae": 3.119517856174045,
+            "on_matches_authored_mae": 6.364523145887587,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.6103524102105036,
+          "on": 1.4565039740668402
+        },
+        "passed": false
+      }
+    },
+    "01-from-03": {
+      "decisions": {
+        "cold": {
+          "regions": {
+            "cheek_left": {
+              "gain": 2.1079215671683174,
+              "coverage": 0.9982517482517482
+            },
+            "cheek_right": {
+              "gain": 2.462552875912854,
+              "coverage": 0.9724025974025974
+            },
+            "screen_left": {
+              "gain": 0.9902401423737301,
+              "coverage": 0.9886111111111111
+            },
+            "screen_right": {
+              "gain": 1.0,
+              "coverage": 0.0
+            }
+          },
+          "clipped_fraction": 0.0
+        },
+        "warm": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.5336574790864794,
+              "coverage": 0.9475524475524476
+            },
+            "cheek_right": {
+              "gain": 1.0,
+              "coverage": 0.6834415584415584
+            },
+            "screen_left": {
+              "gain": 0.9979054884513872,
+              "coverage": 0.9997222222222222
+            },
+            "screen_right": {
+              "gain": 1.0,
+              "coverage": 0.0
+            }
+          },
+          "clipped_fraction": 0.0
+        }
+      },
+      "hashes": {
+        "cold": "877276788f700d19d66d98fe31bcdc57cbfe7bddb9d7eb92e2e8d3c96eabc476",
+        "warm": "f801a068bba7ea218aecb5da472bdbeff1b80bb0e175b49adc1191f6a2fbfc33"
+      },
+      "panel_sha": "7936376cf7d7f97eab737432b4213a99547e91ffafc3337db978535ba1434306",
+      "regions": {
+        "whole": {
+          "cold": {
+            "direction": [
+              5.499499003092448,
+              0.46202514463769995,
+              false
+            ],
+            "strength": [
+              5.494158426920573,
+              0.46248410064508627,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              6.233911302354601,
+              0.3880030210887716,
+              false
+            ],
+            "strength": [
+              6.234553866916233,
+              0.38808483196834576,
+              false
+            ]
+          }
+        },
+        "cheek_left": {
+          "cold": {
+            "direction": [
+              2.26981351981352,
+              0.3533908833179371,
+              false
+            ],
+            "strength": [
+              1.5635198135198136,
+              0.5909279138661485,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.23018648018648,
+              0.2924218774886121,
+              false
+            ],
+            "strength": [
+              2.61013986013986,
+              0.4915108463670245,
+              false
+            ]
+          }
+        },
+        "cheek_right": {
+          "cold": {
+            "direction": [
+              2.867424242424242,
+              0.4002790312384191,
+              false
+            ],
+            "strength": [
+              0.849025974025974,
+              0.9885335600462145,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.445887445887446,
+              0.7969611754190918,
+              true
+            ],
+            "strength": [
+              2.445887445887446,
+              0.7969611754190918,
+              true
+            ]
+          }
+        },
+        "screen_left": {
+          "cold": {
+            "direction": [
+              0.6988888888888889,
+              0.9962696980905822,
+              true
+            ],
+            "strength": [
+              0.6988888888888889,
+              0.9962696980905822,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.2464814814814815,
+              0.9437403437459522,
+              true
+            ],
+            "strength": [
+              1.2464814814814815,
+              0.9437403437459522,
+              true
+            ]
+          }
+        },
+        "screen_right": {
+          "cold": {
+            "direction": [
+              1.049537037037037,
+              0.9680752096173356,
+              true
+            ],
+            "strength": [
+              1.049537037037037,
+              0.9680752096173356,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.0523148148148147,
+              0.9258710497507849,
+              true
+            ],
+            "strength": [
+              2.0523148148148147,
+              0.9258710497507849,
+              true
+            ]
+          }
+        }
+      },
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.46248410064508627,
+            "response_mae": 5.494158426920573,
+            "off_matches_original_mae": 4.997369554307726,
+            "on_matches_authored_mae": 7.512249416775173,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.38808483196834576,
+            "response_mae": 6.234553866916233,
+            "off_matches_original_mae": 4.316152784559462,
+            "on_matches_authored_mae": 7.8293711344401045,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.8187832302517362,
+          "on": 1.3170522054036458
+        },
+        "passed": false
+      }
+    },
+    "02-from-01": {
+      "decisions": {
+        "cold": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.0826243446819925,
+              "coverage": 0.98989898989899
+            },
+            "cheek_right": {
+              "gain": 2.5511435344435904,
+              "coverage": 0.8993506493506493
+            },
+            "screen_left": {
+              "gain": 1.0416656783463416,
+              "coverage": 0.9327777777777778
+            },
+            "screen_right": {
+              "gain": 1.0797354173261946,
+              "coverage": 0.9972222222222222
+            }
+          },
+          "clipped_fraction": 0.0
+        },
+        "warm": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.0,
+              "coverage": 0.5740740740740741
+            },
+            "cheek_right": {
+              "gain": 1.0,
+              "coverage": 0.6006493506493507
+            },
+            "screen_left": {
+              "gain": 1.0,
+              "coverage": 0.3636111111111111
+            },
+            "screen_right": {
+              "gain": 1.0,
+              "coverage": 0.3238888888888889
+            }
+          },
+          "clipped_fraction": 0.0
+        }
+      },
+      "hashes": {
+        "cold": "bec39d67c5d3e9e7fc4d0732f5f140e0f390ea703a0c2b317d80cccdd5eaecee",
+        "warm": "b988b9f5489488fc69dc16d22726cba40255419965db0957c66afdb802d6aadc"
+      },
+      "panel_sha": "a6b0eaace00b3a908a639713ae994af12df1980ec78fe9f62d5e730716a85a52",
+      "regions": {
+        "whole": {
+          "cold": {
+            "direction": [
+              3.2567062377929688,
+              0.690563755555373,
+              false
+            ],
+            "strength": [
+              3.24629635281033,
+              0.6931484799754878,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              3.8275239732530384,
+              0.6246633973678691,
+              false
+            ],
+            "strength": [
+              3.8275239732530384,
+              0.6246633973678691,
+              false
+            ]
+          }
+        },
+        "cheek_left": {
+          "cold": {
+            "direction": [
+              1.8170594837261504,
+              0.6796326390648995,
+              false
+            ],
+            "strength": [
+              1.8170594837261504,
+              0.6796326390648995,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.9820426487093155,
+              0.30129858512367125,
+              false
+            ],
+            "strength": [
+              2.9820426487093155,
+              0.30129858512367125,
+              false
+            ]
+          }
+        },
+        "cheek_right": {
+          "cold": {
+            "direction": [
+              2.4507575757575757,
+              0.33079804745147007,
+              false
+            ],
+            "strength": [
+              1.5568181818181819,
+              0.8855337344382639,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              4.096861471861472,
+              0.2392250350020812,
+              false
+            ],
+            "strength": [
+              4.096861471861472,
+              0.2392250350020812,
+              false
+            ]
+          }
+        },
+        "screen_left": {
+          "cold": {
+            "direction": [
+              1.8333333333333333,
+              0.9411681847739797,
+              true
+            ],
+            "strength": [
+              1.9559259259259258,
+              0.974516173808871,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.363796296296296,
+              0.8851932056805772,
+              true
+            ],
+            "strength": [
+              2.363796296296296,
+              0.8851932056805772,
+              true
+            ]
+          }
+        },
+        "screen_right": {
+          "cold": {
+            "direction": [
+              1.3462962962962963,
+              0.9159477797703488,
+              true
+            ],
+            "strength": [
+              0.7277777777777777,
+              1.0000889965472017,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              3.7649074074074074,
+              0.8455662321672333,
+              false
+            ],
+            "strength": [
+              3.7649074074074074,
+              0.8455662321672333,
+              false
+            ]
+          }
+        }
+      },
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.6931484799754878,
+            "response_mae": 3.24629635281033,
+            "off_matches_original_mae": 6.3162282307942705,
+            "on_matches_authored_mae": 4.229932149251302,
+            "original_matches_authored_mae": 9.901817321777344,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.6246633973678691,
+            "response_mae": 3.8275239732530384,
+            "off_matches_original_mae": 6.6306957668728295,
+            "on_matches_authored_mae": 5.243925306532118,
+            "original_matches_authored_mae": 9.901817321777344,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 0.8568683200412326,
+          "on": 1.5808012220594618
+        },
+        "passed": false
+      }
+    },
+    "02-from-03": {
+      "decisions": {
+        "cold": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.2430677339969645,
+              "coverage": 1.0
+            },
+            "cheek_right": {
+              "gain": 1.8717193521821944,
+              "coverage": 0.9594155844155844
+            },
+            "screen_left": {
+              "gain": 1.0057399368190671,
+              "coverage": 1.0
+            },
+            "screen_right": {
+              "gain": 0.9724535256577379,
+              "coverage": 0.8841666666666667
+            }
+          },
+          "clipped_fraction": 0.0
+        },
+        "warm": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.1123049142309058,
+              "coverage": 0.9781144781144782
+            },
+            "cheek_right": {
+              "gain": 1.0,
+              "coverage": 0.6266233766233766
+            },
+            "screen_left": {
+              "gain": 1.0075606107062642,
+              "coverage": 1.0
+            },
+            "screen_right": {
+              "gain": 0.9976487181778869,
+              "coverage": 0.9697222222222223
+            }
+          },
+          "clipped_fraction": 0.0
+        }
+      },
+      "hashes": {
+        "cold": "5d30b8b196374effaa13b6a0225ba1ae45605861d3f7f189134a870f05e11008",
+        "warm": "135a31f848af687af29b1d03e4b1ffa7ddd886d59b7bdfc979daf951b72bd801"
+      },
+      "panel_sha": "5c54bd9c70a218a76ac1fb2b6101e6fefaaf9c7bb80afb137e4e9bce13f3e3e1",
+      "regions": {
+        "whole": {
+          "cold": {
+            "direction": [
+              4.7028554280598955,
+              0.5427936872015909,
+              false
+            ],
+            "strength": [
+              4.7007598876953125,
+              0.5430698596865285,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              4.843872918023004,
+              0.5230948393258683,
+              false
+            ],
+            "strength": [
+              4.843872918023004,
+              0.5230948393258683,
+              false
+            ]
+          }
+        },
+        "cheek_left": {
+          "cold": {
+            "direction": [
+              2.2160493827160495,
+              0.6521103871900765,
+              false
+            ],
+            "strength": [
+              1.8771043771043772,
+              0.7583379303147317,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.947250280583614,
+              0.3537638095806062,
+              false
+            ],
+            "strength": [
+              2.947250280583614,
+              0.3537638095806062,
+              false
+            ]
+          }
+        },
+        "cheek_right": {
+          "cold": {
+            "direction": [
+              2.0936147186147185,
+              0.4055322208347523,
+              false
+            ],
+            "strength": [
+              1.530844155844156,
+              0.8112158020206607,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.044372294372294,
+              0.9021833730654255,
+              true
+            ],
+            "strength": [
+              2.044372294372294,
+              0.9021833730654255,
+              true
+            ]
+          }
+        },
+        "screen_left": {
+          "cold": {
+            "direction": [
+              0.8911111111111111,
+              0.9267349398990876,
+              true
+            ],
+            "strength": [
+              0.8911111111111111,
+              0.9267349398990876,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              0.8769444444444444,
+              0.9566359899812439,
+              true
+            ],
+            "strength": [
+              0.8769444444444444,
+              0.9566359899812439,
+              true
+            ]
+          }
+        },
+        "screen_right": {
+          "cold": {
+            "direction": [
+              0.947037037037037,
+              1.018290463317363,
+              true
+            ],
+            "strength": [
+              0.947037037037037,
+              1.018290463317363,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.5096296296296297,
+              0.9529442466743395,
+              true
+            ],
+            "strength": [
+              1.5096296296296297,
+              0.9529442466743395,
+              true
+            ]
+          }
+        }
+      },
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.5430698596865285,
+            "response_mae": 4.7007598876953125,
+            "off_matches_original_mae": 6.378271314832899,
+            "on_matches_authored_mae": 3.6333389282226562,
+            "original_matches_authored_mae": 9.901817321777344,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.5230948393258683,
+            "response_mae": 4.843872918023004,
+            "off_matches_original_mae": 7.11167738172743,
+            "on_matches_authored_mae": 3.548986646864149,
+            "original_matches_authored_mae": 9.901817321777344,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.9288101196289062,
+          "on": 2.239742702907986
+        },
+        "passed": false
+      }
+    },
+    "03-from-01": {
+      "decisions": {
+        "cold": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.26509072617522,
+              "coverage": 0.9821428571428571
+            },
+            "cheek_right": {
+              "gain": 1.184154644555441,
+              "coverage": 0.754320987654321
+            },
+            "screen_left": {
+              "gain": 1.0416656783463416,
+              "coverage": 0.9963888888888889
+            },
+            "screen_right": {
+              "gain": 1.0,
+              "coverage": 0.0
+            }
+          },
+          "clipped_fraction": 0.0
+        },
+        "warm": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.063308515906837,
+              "coverage": 0.7773809523809524
+            },
+            "cheek_right": {
+              "gain": 1.0402687589796642,
+              "coverage": 0.9506172839506173
+            },
+            "screen_left": {
+              "gain": 1.0,
+              "coverage": 0.6830555555555555
+            },
+            "screen_right": {
+              "gain": 1.0,
+              "coverage": 0.0
+            }
+          },
+          "clipped_fraction": 0.0
+        }
+      },
+      "hashes": {
+        "cold": "11694693f60e5a449014a861babb8f808f785ccb02e35a20a33cab4e48424c24",
+        "warm": "1251cd43bbe86cef2bd05bb5a3e5f5e69dbcc3f522e903ccc3bb107fbb37f135"
+      },
+      "panel_sha": "debe7b9834e9a0f97f97ce018f43db8d4065b06d83cff93377112cf2029fc5c3",
+      "regions": {
+        "whole": {
+          "cold": {
+            "direction": [
+              4.853865729437934,
+              0.5270272530103072,
+              false
+            ],
+            "strength": [
+              4.849608527289496,
+              0.5277634704816203,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              4.314910040961371,
+              0.5848298080648242,
+              false
+            ],
+            "strength": [
+              4.314910040961371,
+              0.5848298080648242,
+              false
+            ]
+          }
+        },
+        "cheek_left": {
+          "cold": {
+            "direction": [
+              1.7384920634920635,
+              0.47517781971258527,
+              false
+            ],
+            "strength": [
+              1.4845238095238096,
+              0.6427638263898969,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.607142857142857,
+              0.3770685150239512,
+              false
+            ],
+            "strength": [
+              2.607142857142857,
+              0.3770685150239512,
+              false
+            ]
+          }
+        },
+        "cheek_right": {
+          "cold": {
+            "direction": [
+              1.2732510288065844,
+              0.6994670085008771,
+              false
+            ],
+            "strength": [
+              1.3506172839506172,
+              0.9312171097017946,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.8674897119341565,
+              0.96420860882472,
+              true
+            ],
+            "strength": [
+              1.8674897119341565,
+              0.96420860882472,
+              true
+            ]
+          }
+        },
+        "screen_left": {
+          "cold": {
+            "direction": [
+              1.3832407407407408,
+              0.8926903060050307,
+              true
+            ],
+            "strength": [
+              1.113611111111111,
+              0.9262442683778651,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              3.1333333333333333,
+              0.8273898525894752,
+              false
+            ],
+            "strength": [
+              3.1333333333333333,
+              0.8273898525894752,
+              false
+            ]
+          }
+        },
+        "screen_right": {
+          "cold": {
+            "direction": [
+              2.0219444444444443,
+              0.9365937643683512,
+              true
+            ],
+            "strength": [
+              2.0219444444444443,
+              0.9365937643683512,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.8785185185185185,
+              0.9467885795152611,
+              true
+            ],
+            "strength": [
+              1.8785185185185185,
+              0.9467885795152611,
+              true
+            ]
+          }
+        }
+      },
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.5277634704816203,
+            "response_mae": 4.849608527289496,
+            "off_matches_original_mae": 9.892394171820747,
+            "on_matches_authored_mae": 6.349811130099827,
+            "original_matches_authored_mae": 9.871635437011719,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.5848298080648242,
+            "response_mae": 4.314910040961371,
+            "off_matches_original_mae": 9.593572828504774,
+            "on_matches_authored_mae": 7.188317192925347,
+            "original_matches_authored_mae": 9.871635437011719,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 0.7654978434244791,
+          "on": 1.4288601345486112
+        },
+        "passed": false
+      }
+    },
+    "03-from-02": {
+      "decisions": {
+        "cold": {
+          "regions": {
+            "cheek_left": {
+              "gain": 0.9782069765079826,
+              "coverage": 0.9833333333333333
+            },
+            "cheek_right": {
+              "gain": 1.0320719034026185,
+              "coverage": 0.9222222222222223
+            },
+            "screen_left": {
+              "gain": 0.982533308665864,
+              "coverage": 1.0
+            },
+            "screen_right": {
+              "gain": 0.9792205582393871,
+              "coverage": 0.8094444444444444
+            }
+          },
+          "clipped_fraction": 0.0
+        },
+        "warm": {
+          "regions": {
+            "cheek_left": {
+              "gain": 1.1369816501277727,
+              "coverage": 0.969047619047619
+            },
+            "cheek_right": {
+              "gain": 1.0425783888848343,
+              "coverage": 0.9222222222222223
+            },
+            "screen_left": {
+              "gain": 1.0191709528688069,
+              "coverage": 1.0
+            },
+            "screen_right": {
+              "gain": 1.0,
+              "coverage": 0.015
+            }
+          },
+          "clipped_fraction": 0.0
+        }
+      },
+      "hashes": {
+        "cold": "3f0ee7d6064a0d259632f3a9325736b8030980eba22b8d32497e2312a1f6a8d0",
+        "warm": "35ceb158ccada7da72d6ea0da358c064f143d209095e2b885b40c84e4075b2cf"
+      },
+      "panel_sha": "4016044aa005b56b3e1b5387698e1d0abb1290e732a9d9d514dd7f1d7092bbcb",
+      "regions": {
+        "whole": {
+          "cold": {
+            "direction": [
+              3.2839736938476562,
+              0.6818039634391596,
+              false
+            ],
+            "strength": [
+              3.2839736938476562,
+              0.6818039634391596,
+              false
+            ]
+          },
+          "warm": {
+            "direction": [
+              3.4169743855794272,
+              0.6700195400499456,
+              false
+            ],
+            "strength": [
+              3.418676588270399,
+              0.6700715524719998,
+              false
+            ]
+          }
+        },
+        "cheek_left": {
+          "cold": {
+            "direction": [
+              1.4384920634920635,
+              0.756604732181739,
+              true
+            ],
+            "strength": [
+              1.4384920634920635,
+              0.756604732181739,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.3452380952380953,
+              0.5897626651183046,
+              false
+            ],
+            "strength": [
+              2.9833333333333334,
+              0.6821744810567572,
+              false
+            ]
+          }
+        },
+        "cheek_right": {
+          "cold": {
+            "direction": [
+              1.0148148148148148,
+              0.7968222911887735,
+              true
+            ],
+            "strength": [
+              1.0148148148148148,
+              0.7968222911887735,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              2.22962962962963,
+              1.114626905950614,
+              true
+            ],
+            "strength": [
+              2.22962962962963,
+              1.114626905950614,
+              true
+            ]
+          }
+        },
+        "screen_left": {
+          "cold": {
+            "direction": [
+              0.8943518518518518,
+              0.9659144284124265,
+              true
+            ],
+            "strength": [
+              0.8943518518518518,
+              0.9659144284124265,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.0064814814814815,
+              0.936749270214945,
+              true
+            ],
+            "strength": [
+              1.0064814814814815,
+              0.936749270214945,
+              true
+            ]
+          }
+        },
+        "screen_right": {
+          "cold": {
+            "direction": [
+              0.7489814814814815,
+              0.9920826356551395,
+              true
+            ],
+            "strength": [
+              0.7489814814814815,
+              0.9920826356551395,
+              true
+            ]
+          },
+          "warm": {
+            "direction": [
+              1.2571296296296297,
+              0.9913564296446747,
+              true
+            ],
+            "strength": [
+              1.2571296296296297,
+              0.9913564296446747,
+              true
+            ]
+          }
+        }
+      },
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.6818039634391596,
+            "response_mae": 3.2839736938476562,
+            "off_matches_original_mae": 8.654301961263021,
+            "on_matches_authored_mae": 6.347282409667969,
+            "original_matches_authored_mae": 9.871635437011719,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.6700715524719998,
+            "response_mae": 3.418676588270399,
+            "off_matches_original_mae": 7.578824361165364,
+            "on_matches_authored_mae": 5.315321180555555,
+            "original_matches_authored_mae": 9.871635437011719,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.8841188218858507,
+          "on": 2.0570110744900174
+        },
+        "passed": false
+      }
+    }
+  }
+}
