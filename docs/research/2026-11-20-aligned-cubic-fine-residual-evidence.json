@@ -1,0 +1,583 @@
+{
+  "archive_sha256": "b0ab4559c6194e6c204d94582c332bcc709c3fbf4e294fbca28346c051d53b52",
+  "script_sha256": "ca2ff62b9738c0ad9126e35bb3eaff0da33b8940fbdc01c60a39a578a752354e",
+  "positive_cubic_retained": 8,
+  "passed": true,
+  "negatives": {
+    "DAST-1-repeat": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-1-ue1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-1-ue2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-1-oe1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-1-oe2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-2-repeat": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-2-ue1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-2-ue2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-2-oe1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-2-oe2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-3-repeat": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-3-ue1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-3-ue2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-3-oe1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-3-oe2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-4-repeat": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-4-ue1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-4-ue2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-4-oe1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-4-oe2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-5-repeat": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-5-ue1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-5-ue2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-5-oe1": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "DAST-5-oe2": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene1_a-white-241-to-anchor": {
+      "route_before": "cubic",
+      "route_after": "legacy13",
+      "residual": {
+        "blocks": 4994,
+        "deviations": [
+          1.5639797059605343,
+          1.6134570328831865
+        ],
+        "correlation": 0.2860980742398431,
+        "reason": "low_correlation",
+        "passed": false
+      },
+      "jpeg": {
+        "route": "cubic",
+        "residual": {
+          "blocks": 4530,
+          "deviations": [
+            0.876586761349735,
+            0.8751003671477665
+          ],
+          "correlation": 0.41079131748710923,
+          "reason": "low_correlation",
+          "passed": false
+        }
+      },
+      "sha256": "6113b205c4ca1755a5616a9879f6ed8f15b4dc9616b8eb3a34f872e5cc2484bf",
+      "matches_normal": true,
+      "comparison_sha256": "e49646a81b92b42bdeebd41deaf0acbb71a06aed046c0ce6f44ff65a2dc10801"
+    },
+    "CHROMA-Scene1_a-white-241-from-anchor": {
+      "route_before": "affine",
+      "route_after": "affine"
+    },
+    "CHROMA-Scene1_a-blue-213-to-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene1_a-blue-213-from-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene1_a-blue-241-to-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene1_a-blue-241-from-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-white-241-to-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-white-241-from-anchor": {
+      "route_before": "cubic",
+      "route_after": "legacy13",
+      "residual": {
+        "blocks": 4254,
+        "deviations": [
+          1.8946888923204923,
+          1.71215369684195
+        ],
+        "correlation": 0.2510384343431885,
+        "reason": "low_correlation",
+        "passed": false
+      },
+      "jpeg": {
+        "route": "cubic",
+        "residual": {
+          "blocks": 3811,
+          "deviations": [
+            0.8952269185962074,
+            0.80698410079989
+          ],
+          "correlation": 0.31337607142012147,
+          "reason": "low_correlation",
+          "passed": false
+        }
+      },
+      "sha256": "2eb81d5b070cab9e3b909826f35726f3b65fed5019dc35af76bea7b41ed24fd0",
+      "matches_normal": true,
+      "comparison_sha256": "0ac2a012d1f3d93322c3989613bd91e1b0083b65503530f6e2961b927fce2675"
+    },
+    "CHROMA-Scene2_a-blue-213-to-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-blue-213-from-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-blue-241-to-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-blue-241-from-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "MLS-02-blue-to-anchor": {
+      "route_before": "affine",
+      "route_after": "affine"
+    },
+    "MLS-02-blue-from-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "MLS-03-blue-to-anchor": {
+      "route_before": "affine",
+      "route_after": "affine"
+    },
+    "MLS-03-blue-from-anchor": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene1_a-from-Scene2_a": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-from-Scene1_a": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "MLS-02-from-03": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "MLS-03-from-02": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "Showgirl-showgirl_02-068-from-showgirl_02-272": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "Showgirl-showgirl_02-272-from-showgirl_02-068": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    }
+  },
+  "positives": {
+    "CHROMA-Scene1_a-white-213": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 5001,
+        "deviations": [
+          1.70346084407168,
+          1.7207180663368542
+        ],
+        "correlation": 0.9480306490862945,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "cubic",
+        "residual": {
+          "blocks": 4464,
+          "deviations": [
+            0.9006293929537426,
+            0.884592065919087
+          ],
+          "correlation": 0.4141970025475297,
+          "reason": "low_correlation",
+          "passed": false
+        }
+      },
+      "sha256": "3602fb1dd813459c998d0c17fdcf3cf17a39cf8c5a276b49c370d2f79bcd6516",
+      "scores": {
+        "whole": {
+          "projection": 0.9779376724895978,
+          "response_mae": 0.6130616904936461,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.6130616904936461,
+          "original_matches_authored_mae": 8.726948161045943,
+          "passed": true
+        },
+        "neutral": {
+          "projection": 0.9776764575542132,
+          "response_mae": 0.5063262454205537,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.5063262454205537,
+          "original_matches_authored_mae": 8.64014049930128,
+          "passed": true
+        }
+      }
+    },
+    "CHROMA-Scene1_a-white-241": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene1_a-blue-213": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 5108,
+        "deviations": [
+          2.3567434943015098,
+          2.4142607291397336
+        ],
+        "correlation": 0.9599233327421756,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "original_fallback",
+        "residual": null
+      },
+      "sha256": "7ebe28962ff648847e870c774021e5258982e59da99b68adca0236d718daf577",
+      "scores": {
+        "whole": {
+          "projection": 0.9655437638411531,
+          "response_mae": 0.8765827376588465,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.8765827376588465,
+          "original_matches_authored_mae": 6.86445350684262,
+          "passed": true
+        },
+        "neutral": null
+      }
+    },
+    "CHROMA-Scene1_a-blue-241": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 5110,
+        "deviations": [
+          2.292591200519035,
+          2.3246461631753976
+        ],
+        "correlation": 0.9551690973326449,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "original_fallback",
+        "residual": null
+      },
+      "sha256": "39dba58ed148f3255d04c6fa7dffda782853ce21fd8f1cf844db0e3c1ec6869c",
+      "scores": {
+        "whole": {
+          "projection": 0.9687630767599757,
+          "response_mae": 0.8990064455034213,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.8990064455034213,
+          "original_matches_authored_mae": 7.106692555596285,
+          "passed": true
+        },
+        "neutral": null
+      }
+    },
+    "CHROMA-Scene2_a-white-213": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 4595,
+        "deviations": [
+          1.9612841602759223,
+          1.8967373639210008
+        ],
+        "correlation": 0.9503864036686078,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "original_fallback",
+        "residual": null
+      },
+      "sha256": "e1ae769f9b7268f2606733da6819ca2176f5229b6901b51dcfd9aa8aec06c117",
+      "scores": {
+        "whole": {
+          "projection": 0.954996253529463,
+          "response_mae": 0.9323470338465298,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.9323470338465298,
+          "original_matches_authored_mae": 8.851554863147605,
+          "passed": true
+        },
+        "neutral": {
+          "projection": 0.9794446773103042,
+          "response_mae": 0.6811146161934806,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.6811146161934806,
+          "original_matches_authored_mae": 8.83540483701367,
+          "passed": true
+        }
+      }
+    },
+    "CHROMA-Scene2_a-white-241": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "CHROMA-Scene2_a-blue-213": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 4922,
+        "deviations": [
+          2.3369030005788165,
+          2.307341041763093
+        ],
+        "correlation": 0.9516161570483032,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "original_fallback",
+        "residual": null
+      },
+      "sha256": "79eac8d49e5cafb7b839c620fc4f87d9a951a0fe5cbbf9c598bde06211ee3a6c",
+      "scores": {
+        "whole": {
+          "projection": 0.9554230165683542,
+          "response_mae": 1.0714503910068427,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 1.0714503910068427,
+          "original_matches_authored_mae": 7.2245845552297165,
+          "passed": true
+        },
+        "neutral": {
+          "projection": 1.04537984000997,
+          "response_mae": 1.5225563909774436,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 1.5225563909774436,
+          "original_matches_authored_mae": 5.447681704260652,
+          "passed": true
+        }
+      }
+    },
+    "CHROMA-Scene2_a-blue-241": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 5008,
+        "deviations": [
+          2.230346407323906,
+          2.1800506145892014
+        ],
+        "correlation": 0.9428655523819744,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "original_fallback",
+        "residual": null
+      },
+      "sha256": "7799883205491b93e4423051aa8bf5ec0a0e5a5cf59ba632599e2a1fa2549f14",
+      "scores": {
+        "whole": {
+          "projection": 0.9555080238638379,
+          "response_mae": 1.0709196297653958,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 1.0709196297653958,
+          "original_matches_authored_mae": 7.452397589809384,
+          "passed": true
+        },
+        "neutral": {
+          "projection": 1.0368325340607447,
+          "response_mae": 1.511874105865522,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 1.511874105865522,
+          "original_matches_authored_mae": 5.3768240343347635,
+          "passed": true
+        }
+      }
+    },
+    "MLS-02-standard": {
+      "route_before": "affine",
+      "route_after": "affine"
+    },
+    "MLS-02-blue": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 57739,
+        "deviations": [
+          2.653458643155639,
+          2.664542014915863
+        ],
+        "correlation": 0.9709625893563316,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "cubic",
+        "residual": {
+          "blocks": 55977,
+          "deviations": [
+            0.6343364575924489,
+            0.6430690993600695
+          ],
+          "correlation": 0.12573740128224037,
+          "reason": "low_correlation",
+          "passed": false
+        }
+      },
+      "sha256": "e09d1dd6536687661222b5137c6c661f0e33b79024c09c96d770f52c50bba249",
+      "scores": {
+        "whole": {
+          "projection": 0.9947812615414868,
+          "response_mae": 0.3491776979180882,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.3491776979180882,
+          "original_matches_authored_mae": 8.766928384054346,
+          "passed": true
+        },
+        "neutral": {
+          "projection": 0.9909566621921525,
+          "response_mae": 0.4474216050589999,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.4474216050589999,
+          "original_matches_authored_mae": 7.214625650768816,
+          "passed": true
+        }
+      }
+    },
+    "MLS-03-standard": {
+      "route_before": "affine",
+      "route_after": "affine"
+    },
+    "MLS-03-blue": {
+      "route_before": "cubic",
+      "route_after": "cubic",
+      "residual": {
+        "blocks": 56792,
+        "deviations": [
+          2.765701615316141,
+          2.719141070112198
+        ],
+        "correlation": 0.9685752526867734,
+        "reason": "matched",
+        "passed": true
+      },
+      "jpeg": {
+        "route": "cubic",
+        "residual": {
+          "blocks": 55179,
+          "deviations": [
+            0.6400585362555495,
+            0.6565533817171184
+          ],
+          "correlation": 0.12799640813383123,
+          "reason": "low_correlation",
+          "passed": false
+        }
+      },
+      "sha256": "7540dbca8f8a1414a5d0e573e460939691378a282b46cbe7558783bc2fb356ac",
+      "scores": {
+        "whole": {
+          "projection": 0.9940377352432354,
+          "response_mae": 0.3436961894797495,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.3436961894797495,
+          "original_matches_authored_mae": 8.14584542601101,
+          "passed": true
+        },
+        "neutral": {
+          "projection": 0.9848457316194725,
+          "response_mae": 0.4860806807923828,
+          "off_matches_original_mae": 0.0,
+          "on_matches_authored_mae": 0.4860806807923828,
+          "original_matches_authored_mae": 5.91739132407042,
+          "passed": true
+        }
+      }
+    },
+    "Showgirl-showgirl_02-068-frame": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    },
+    "Showgirl-showgirl_02-272-frame": {
+      "route_before": "original_fallback",
+      "route_after": "original_fallback"
+    }
+  }
+}
