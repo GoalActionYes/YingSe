@@ -1,0 +1,86 @@
+{
+  "source_sha256": "ea207d3efd2effff9a9bb2b2fd06fcaa6d64b707bc5ec85adcdc637c743fc6bb",
+  "reference_sha256": "d4059fdfa51be5d5b5a971827f7a3dc419bec1101b3192edf9409491102ab367",
+  "working_rgb_sha256": "0b2c7a22df0bf60fac4cfa489c3b261ecec7099ef928bf81affa8bda77fcc45a",
+  "stress_colors": true,
+  "input_yuv_sha256": {
+    "709-limited": "bb29f4ec9303f8ef3a8e20f334c66e97bd7ffe474706b7abc61e4daa748abaf4",
+    "709-full": "9548752d83234974fbefd9d1e9cb8a15123192adb4a985c3b86da81fd1df5377",
+    "601-limited": "095aaedeee2c41cb5276a98214d34c69757207e51fd856e43e14a3bc7aff4b30",
+    "wrong-label": "095aaedeee2c41cb5276a98214d34c69757207e51fd856e43e14a3bc7aff4b30"
+  },
+  "input_sha256": {
+    "709-limited": "b0fc9b719d1b71d8145ba012bb7fd06be90f8a832c01989a7766e0c648f7eaac",
+    "709-full": "b5221d35a4841e1beb5a55561f206004299f0083f8270a30c9ee5ab261ee3a6b",
+    "601-limited": "de8ddd8f4df0d45ab436f99162eb83375932e5e9b08908228d1b65a995eb3802",
+    "wrong-label": "d1ead70213547db89780698357b8cf096738efa5ec1e83e8e6d20a8009552bed"
+  },
+  "results": {
+    "stable": {
+      "cases": {
+        "709-limited": {
+          "decode_vs_original": 0.30366319444444445,
+          "export_frames": 8,
+          "export_frames_sha256": "337a832cc5130092f31f94640662bdda99f3243e74eaa9250cce976b4daa19ef",
+          "preview_sha256": "78ee7b5ad09b1937c16b5b7ba58c7b6e4bfeb8f3a80f100f843b1b4e7e4d7cbb",
+          "grade_vs_709_limited": 0.0
+        },
+        "709-full": {
+          "decode_vs_original": 0.1945601851851852,
+          "export_frames": 8,
+          "export_frames_sha256": "808dd146f266f5e9cf00f15b680b27a1ce403c1540577488b43d73be8ff94721",
+          "preview_sha256": "00e249605c27997cb84e38d6ee4a42656f00e78c31694cb23714417197cb5e5c",
+          "grade_vs_709_limited": 1.2209584780092593
+        },
+        "601-limited": {
+          "decode_vs_original": 0.23865162037037038,
+          "export_frames": 8,
+          "export_frames_sha256": "2e6fb016f098af9de5d96d5a57d284af0d8aae828869e262a64e196ebac24bd1",
+          "preview_sha256": "b60ae1f572df6c8073b7716c5571440d1cd1638b43c02d0f3495e4fc04a7baf1",
+          "grade_vs_709_limited": 1.241277488425926
+        },
+        "wrong-label": {
+          "decode_vs_original": 7.9904166666666665,
+          "export_frames": 8,
+          "export_frames_sha256": "e7101f06e2ea103469531999918969ac849ccbd11f8d009a7ce548ee69a51734",
+          "preview_sha256": "7414072c551e311b2377248010d1485b8bc1bb9844f3103cf6e05321d7172305",
+          "grade_vs_709_limited": 10.469867621527778
+        }
+      },
+      "passed": true
+    },
+    "spatial": {
+      "cases": {
+        "709-limited": {
+          "decode_vs_original": 0.30366319444444445,
+          "export_frames": 8,
+          "export_frames_sha256": "ec6ad1f3adcbade4397ca08f479f54dd018443549b20d7754b90c59ce591ff31",
+          "preview_sha256": "a352792c7d213150ce0993e13b98750aa10952f539864be10a67eecdd7db24c1",
+          "grade_vs_709_limited": 0.0
+        },
+        "709-full": {
+          "decode_vs_original": 0.1945601851851852,
+          "export_frames": 8,
+          "export_frames_sha256": "ca1729dd8c1749e03d253e310cdb4762981f2aa6bfd4ec97cc31ba320551f268",
+          "preview_sha256": "7fecbe06325bf0bf6b904b6576220ab0083b73bba887996c571ae182db237673",
+          "grade_vs_709_limited": 1.0002105034722222
+        },
+        "601-limited": {
+          "decode_vs_original": 0.23865162037037038,
+          "export_frames": 8,
+          "export_frames_sha256": "77ec22ea866c01e746171448d814f63c64e1e0d8d8050da39f43e0402378eaa4",
+          "preview_sha256": "239d48b87109e86fee59047cc2ada9b75dac9907b6043fcd8c239c9a5cd4f35a",
+          "grade_vs_709_limited": 1.091046730324074
+        },
+        "wrong-label": {
+          "decode_vs_original": 7.9904166666666665,
+          "export_frames": 8,
+          "export_frames_sha256": "4a99540f2e1386c3a21df6bfc431652bee4dd043d413fd76f08f48cabdea3a1a",
+          "preview_sha256": "58bc218bb55e0082f83dd65ff607ce0f651b491fe18a6a09ca41edc39fdbaf92",
+          "grade_vs_709_limited": 10.89064453125
+        }
+      },
+      "passed": true
+    }
+  }
+}
