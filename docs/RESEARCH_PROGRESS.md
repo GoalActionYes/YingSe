@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+普通两图将参考水平翻转后，58 张 13 号成片像素均不变。已核对这条路径从参考读取整图颜色直方图，未读取参考位置。背景及真实滤镜联合均未过线，结束翻转平均。[成片和复现](research/2026-11-21-reference-mirror-chroma.md)
+
 关闭混合光作者流程的 Filmic RGB 后，两个高权重区与 sRGB 的响应差由 3.34／3.29 增至 3.56／3.53 RGB8，裁切仍在限内。结束 Filmic 单模块假设。[四态对照和读数](research/2026-11-21-playraw-filmic-response.md)
 
 混合光采用同一作者蒙版时，RAW 全覆盖合成的两折误差为 0.52／0.51，sRGB 为 3.25／3.20 RGB8。满权重也有同类差距，优先定位处理管线而非蒙版比例。[对照与复现](research/2026-11-21-playraw-pipeline-mask-attribution.md)
