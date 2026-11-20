@@ -35,7 +35,7 @@ def decode(path, cfr=True):
     return np.frombuffer(data, np.uint8).reshape(-1, *SHAPE)
 
 
-def fixture(root, output, relight=False):
+def fixture(root, output, relight=False, stress=False):
     shots = {}
     for key, (name, sha, _) in ASSETS.items():
         checked(root, name, sha)
@@ -51,6 +51,11 @@ def fixture(root, output, relight=False):
         bright = clean.copy()
         bright[START:STOP] = np.clip(clean[START:STOP].astype(np.int16) + 48, 0, 255)
         prepared['relit'] = bright
+    if stress:
+        opposite, long = clean.copy(), clean.copy()
+        opposite[28:STOP, :, SHAPE[1]//2:] = 64
+        long[START:50, :, :SHAPE[1]//2] = 40
+        prepared.update(opposite=opposite, long=long)
     paths = {}
     for name, pixels in prepared.items():
         path = output / f'{name}-input.mp4'
@@ -126,29 +131,36 @@ def region_diff(a, b):
     return {'mae': mae, 'p95': p95, 'passed': mae <= 1 and p95 <= 3}
 
 
-def run(root, out, without_temporal=False, with_relight=False, hold=False):
-    if without_temporal and hold:
-        raise ValueError('Holding the grid requires temporal state')
+def run(root, out, without_temporal=False, with_relight=False, hold=False, episode=False, with_stress=False):
+    if sum((without_temporal, hold, episode)) > 1:
+        raise ValueError('Choose at most one temporal control')
     torch.set_num_threads(4)
     out.mkdir()
     ref = checked(root, *REFERENCE)
-    paths = fixture(root, out, with_relight)
+    paths = fixture(root, out, with_relight, with_stress)
     if hold:
         from temporal_occlusion_hold import OcclusionHold
         temporal_class = OcclusionHold
+    elif episode:
+        from temporal_occlusion_hold import OcclusionEpisode
+        temporal_class = OcclusionEpisode
     else:
         temporal_class = TemporalGrid
     all_frames, details = {}, {}
     saved = {'clean': KEY_FRAMES, 'cut': range(CUT, CUT + 5), 'occluded': range(START, STOP + 5)}
     if with_relight:
         saved['relit'] = range(START, STOP + 5)
+    if with_stress:
+        saved['clean'] += tuple(range(50, 55))
+        saved['opposite'] = range(28, STOP + 5)
+        saved['long'] = range(50, 55)
     for name, indices in saved.items():
         server = make_spatial_workbench(out / f'{name}-store', enhanced=True)
         if server.store.engine.checkpoint_sha != CHECKPOINT:
             raise ValueError('Changed checkpoint')
         if without_temporal:
             server.manager.temporal_enabled = False
-        if hold:
+        if hold or episode:
             server.manager.temporal_state = temporal_class
         worker = threading.Thread(target=server.serve_forever, daemon=True)
         worker.start()
@@ -166,6 +178,12 @@ def run(root, out, without_temporal=False, with_relight=False, hold=False):
     checks = {'cut': [region_diff(cut[CUT+i], clean[i]) for i in range(5)],
               'visible': [region_diff(blocked[i][right], clean[i][right]) for i in range(START, STOP)],
               'uncovered': [region_diff(blocked[i], clean[i]) for i in range(STOP, STOP+5)]}
+    if with_stress:
+        opposite, long = all_frames['opposite'], all_frames['long']
+        left = np.s_[:, :SHAPE[1]//2]
+        checks['opposite_visible'] = [region_diff(opposite[i][left], clean[i][left]) for i in range(28, STOP)]
+        checks['opposite_uncovered'] = [region_diff(opposite[i], clean[i]) for i in range(STOP, STOP+5)]
+        checks['long_uncovered'] = [region_diff(long[i], clean[i]) for i in range(50, 55)]
     cut_reset = any(frame == CUT and reason.startswith('scene_cut') for frame, reason in details['cut']['resets'])
     (out / 'results.json').write_text(json.dumps({'exports': details, 'checks': checks, 'cut_reset': cut_reset}, indent=2)
                                       + '\n', encoding='utf-8', newline='\n')
@@ -178,4 +196,6 @@ if __name__ == '__main__':
     parser.add_argument('--without-temporal', action='store_true')
     parser.add_argument('--with-relight', action='store_true')
     parser.add_argument('--hold', action='store_true')
+    parser.add_argument('--episode', action='store_true')
+    parser.add_argument('--with-stress', action='store_true')
     run(**vars(parser.parse_args()))
