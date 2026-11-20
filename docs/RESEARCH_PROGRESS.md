@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+MLS 本机线性原图按场景留出后，只有白背景有足够同材质场景。补两场景的预算下最多再覆盖蓝纸棱柱，暂缓多材质训练。课堂补讲已加入普通两图与额外拍摄配对的结果差异。[素材核查](research/2026-11-21-mls-local-scene-coverage.md) · [课堂讲稿](CLASSROOM_RESEARCH_UPDATE.zh-CN.txt)
+
 两图描述直接回归二次编辑系数时，整图风格无一通过且原参考偏色超线 11／12。已知答案拟合可达标，结束固定描述回归。[成片和复现](research/2026-11-21-gros-two-image-edit-regression.md)
 
 用普通单参考的旧分数连续混合预设，所有原片对照偏色超 3 RGB8，风格均未过，结束固定评分软力度。[成片与复现](research/2026-11-21-gros-continuous-style-replay.md)
