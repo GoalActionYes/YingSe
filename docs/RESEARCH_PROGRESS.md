@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+CHROMA-MILL 从参考前后估计同款数字染色，在目标原图上 6／6 通过；在 13 号白灯基底上增量 4／6，最终成片误差仍 11.942–38.031 RGB8。后续须同时核对底色与增量。[受控成片和复现](research/2026-11-20-chromamill-target-base.md)
+
 CHROMA-MILL 理想参考替换逐像素消除六组换灯差，有意风格仍只有 1／6 通过。白灯反例兼有外推与强校正误判，停止将参考前处理作为唯一修复。[成片及增益归因](research/2026-11-20-chromamill-oracle-reference.md)
 
 CHROMA-MILL 按布景留出双机，使用匹配数字染色监督参考校正。联合仍 0／6，尼康白灯误改最坏 22.096 RGB8，停止该固定映射。[成片、反例与复现](research/2026-11-20-chromamill-matched-supervision.md)
