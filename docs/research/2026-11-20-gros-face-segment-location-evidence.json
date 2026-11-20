@@ -1,0 +1,407 @@
+{
+  "parent_sha": "b6ea7a97e1e94058b0f7c4afd4526931c89a8014105dc9b32e7c5d2c352f711d",
+  "model_sha": "c6748b1253a99067ef71f7e26ca71096cd449baefa8f101900ea23016507e0e0",
+  "opencv": "4.11.0",
+  "script_sha": "366503db9508460f7b0d18a1d7a82ea0a94d53bef3df8e3e9b77271618a7f2ca",
+  "protocol_sha": "d4d3c7444886c8e0cfc7b9f8f02516e738076dacafdaf75190f6d24cb976cd34",
+  "faces": {
+    "01": [
+      [
+        296,
+        171,
+        184,
+        245
+      ]
+    ],
+    "02": [
+      [
+        603,
+        110,
+        84,
+        188
+      ],
+      [
+        291,
+        180,
+        188,
+        246
+      ]
+    ],
+    "03": [
+      [
+        298,
+        162,
+        182,
+        221
+      ]
+    ]
+  },
+  "controls": {
+    "no_face": {
+      "faces": [],
+      "passed": true
+    },
+    "two_faces": {
+      "faces": [
+        [
+          1158,
+          231,
+          69,
+          72
+        ],
+        [
+          390,
+          234,
+          69,
+          69
+        ],
+        [
+          363,
+          308,
+          63,
+          21
+        ],
+        [
+          1131,
+          308,
+          63,
+          21
+        ]
+      ],
+      "passed": false
+    }
+  },
+  "cases": {
+    "01-from-02": {
+      "old": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.15231679654388405,
+            "response_mae": 11.592074592074592,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 11.592074592074592,
+            "original_matches_authored_mae": 14.354895104895105,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": 0.10560590905593599,
+            "response_mae": 16.08874458874459,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 16.08874458874459,
+            "original_matches_authored_mae": 18.301948051948052,
+            "passed": false
+          }
+        },
+        "outside_mae": 3.594736080903945,
+        "passed": false
+      },
+      "old_joint": false,
+      "trace": {
+        "status": "face_count"
+      },
+      "local": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.15231679654388405,
+            "response_mae": 11.592074592074592,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 11.592074592074592,
+            "original_matches_authored_mae": 14.354895104895105,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": 0.10560590905593599,
+            "response_mae": 16.08874458874459,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 16.08874458874459,
+            "original_matches_authored_mae": 18.301948051948052,
+            "passed": false
+          }
+        },
+        "outside_mae": 3.594736080903945,
+        "passed": false
+      },
+      "joint": false,
+      "output_sha": "d568d3d2c82109b1781b7dad9d0a38ac1ea0ad1bb4f2af48eea1227633eabe7a",
+      "panel_sha": "863ab0a0c67f701be6100943d4c04e93a6e97219c9e74f866a0681ef7d490753"
+    },
+    "01-from-03": {
+      "old": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.9993960191350754,
+            "response_mae": 0.006993006993006993,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.006993006993006993,
+            "original_matches_authored_mae": 13.454545454545455,
+            "passed": true
+          },
+          "cheek_right": {
+            "projection": 0.9989672230127429,
+            "response_mae": 0.016233766233766232,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.016233766233766232,
+            "original_matches_authored_mae": 17.103896103896105,
+            "passed": true
+          }
+        },
+        "outside_mae": 0.0026902685325541713,
+        "passed": true
+      },
+      "old_joint": true,
+      "trace": {
+        "status": "face",
+        "samples": 14539,
+        "delta": [
+          0.7163065340268249,
+          -0.42097046034646257
+        ]
+      },
+      "local": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.9784399865381379,
+            "response_mae": 0.3537296037296037,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.3537296037296037,
+            "original_matches_authored_mae": 13.454545454545455,
+            "passed": true
+          },
+          "cheek_right": {
+            "projection": 0.9864662078900631,
+            "response_mae": 0.2527056277056277,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.2527056277056277,
+            "original_matches_authored_mae": 17.103896103896105,
+            "passed": true
+          }
+        },
+        "outside_mae": 0.022789933873766998,
+        "passed": true
+      },
+      "joint": true,
+      "output_sha": "36ecdc1da5beeefa63ec0d1c22603fd17a158790a2f42840f59aa83f186c4417",
+      "panel_sha": "41a7d4698607b925dfcbe3ea2b64217ff90018490a5ae8efcfb3d076eb6f4926"
+    },
+    "02-from-01": {
+      "old": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.16269401932052535,
+            "response_mae": 9.340628507295174,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 9.340628507295174,
+            "original_matches_authored_mae": 11.946127946127946,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": 0.273227538791772,
+            "response_mae": 10.930194805194805,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 10.930194805194805,
+            "original_matches_authored_mae": 15.994588744588745,
+            "passed": false
+          }
+        },
+        "outside_mae": 6.1521199252988135,
+        "passed": false
+      },
+      "old_joint": false,
+      "trace": {
+        "status": "face_count"
+      },
+      "local": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.16269401932052535,
+            "response_mae": 9.340628507295174,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 9.340628507295174,
+            "original_matches_authored_mae": 11.946127946127946,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": 0.273227538791772,
+            "response_mae": 10.930194805194805,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 10.930194805194805,
+            "original_matches_authored_mae": 15.994588744588745,
+            "passed": false
+          }
+        },
+        "outside_mae": 6.1521199252988135,
+        "passed": false
+      },
+      "joint": false,
+      "output_sha": "75a42e12680f77257349a4d1fca4f56be92405220beae0b3a0d6bdefe57c4799",
+      "panel_sha": "02d056bb081933c120e7b4edf1f4c882b2f21b21c437f46c3aee34639226fc74"
+    },
+    "02-from-03": {
+      "old": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.8260965080899395,
+            "response_mae": 7.9219977553310885,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 7.9219977553310885,
+            "original_matches_authored_mae": 11.902918069584736,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": 0.8447538159528865,
+            "response_mae": 8.247294372294371,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 8.247294372294371,
+            "original_matches_authored_mae": 15.9512987012987,
+            "passed": false
+          }
+        },
+        "outside_mae": 5.73196177056939,
+        "passed": false
+      },
+      "old_joint": false,
+      "trace": {
+        "status": "face_count"
+      },
+      "local": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.8260965080899395,
+            "response_mae": 7.9219977553310885,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 7.9219977553310885,
+            "original_matches_authored_mae": 11.902918069584736,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": 0.8447538159528865,
+            "response_mae": 8.247294372294371,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 8.247294372294371,
+            "original_matches_authored_mae": 15.9512987012987,
+            "passed": false
+          }
+        },
+        "outside_mae": 5.73196177056939,
+        "passed": false
+      },
+      "joint": false,
+      "output_sha": "c9293adc97e020526714ab1b19e45a821752f5083dc7c5a0a80fa7d83ca37f90",
+      "panel_sha": "eda520bc8e0c3c0187d17d64ebc833b5671ad21c051cda3b04932ee102b478b1"
+    },
+    "03-from-01": {
+      "old": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.9989995778706625,
+            "response_mae": 0.011904761904761904,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.011904761904761904,
+            "original_matches_authored_mae": 12.317063492063491,
+            "passed": true
+          },
+          "cheek_right": {
+            "projection": 0.9985287763302678,
+            "response_mae": 0.02139917695473251,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.02139917695473251,
+            "original_matches_authored_mae": 14.904938271604939,
+            "passed": true
+          }
+        },
+        "outside_mae": 0.00024040799126967834,
+        "passed": true
+      },
+      "old_joint": true,
+      "trace": {
+        "status": "face",
+        "samples": 9367,
+        "delta": [
+          0.6995726013898331,
+          -0.46968278745339714
+        ]
+      },
+      "local": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": 0.998821453930561,
+            "response_mae": 0.013888888888888888,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.013888888888888888,
+            "original_matches_authored_mae": 12.317063492063491,
+            "passed": true
+          },
+          "cheek_right": {
+            "projection": 0.9981211721506631,
+            "response_mae": 0.026748971193415638,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.026748971193415638,
+            "original_matches_authored_mae": 14.904938271604939,
+            "passed": true
+          }
+        },
+        "outside_mae": 0.005076480354975455,
+        "passed": true
+      },
+      "joint": true,
+      "output_sha": "8d47f3c0be12de41015ebe953d9e03956e162281a0d4e2c4360c188640199348",
+      "panel_sha": "9b30351e3beaf7eeea4b3a209988d96b056cfa2166a314ad969ecb48e6a3dbaa"
+    },
+    "03-from-02": {
+      "old": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": -0.1529011700726185,
+            "response_mae": 14.579761904761904,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 14.579761904761904,
+            "original_matches_authored_mae": 13.096428571428572,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": -0.16296561384538824,
+            "response_mae": 18.334156378600824,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 18.334156378600824,
+            "original_matches_authored_mae": 15.921810699588477,
+            "passed": false
+          }
+        },
+        "outside_mae": 8.051995656448877,
+        "passed": false
+      },
+      "old_joint": false,
+      "trace": {
+        "status": "face_count"
+      },
+      "local": {
+        "cheeks": {
+          "cheek_left": {
+            "projection": -0.1529011700726185,
+            "response_mae": 14.579761904761904,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 14.579761904761904,
+            "original_matches_authored_mae": 13.096428571428572,
+            "passed": false
+          },
+          "cheek_right": {
+            "projection": -0.16296561384538824,
+            "response_mae": 18.334156378600824,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 18.334156378600824,
+            "original_matches_authored_mae": 15.921810699588477,
+            "passed": false
+          }
+        },
+        "outside_mae": 8.051995656448877,
+        "passed": false
+      },
+      "joint": false,
+      "output_sha": "80f0358470812b707439909170b278574c14a670061bd8105ecd9b972dd513a0",
+      "panel_sha": "6fc3855adf6c9c7c48745f7d03d7397258bb16f06b3c316bcc3375a6ca502cba"
+    }
+  },
+  "count": 2,
+  "retained_old_passes": true,
+  "passed": false
+}
