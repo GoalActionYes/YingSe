@@ -1,0 +1,136 @@
+{
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "source_sha256": "199f6989fac3f78ed3a526d15057b08ceab22af65ebd64bcd4c442988cc7a789",
+  "protocol_sha256": "56eaf280d93bf093b13b45e6bb961ec0eb32f5e1f2537dbc0c67e7ea30133695",
+  "strength": 0.8,
+  "square_exact": true,
+  "identity_exact": true,
+  "psbench": {
+    "102": {
+      "size_wh": [
+        1080,
+        1920
+      ],
+      "sha256": {
+        "stretched": "95d1f6a7bd6cec7453e7e17eaa3ed96a4697586cf4df12ebf4e39f20c6c6507b",
+        "padded": "3884a88170083ee0e33af8dfbe05cc8b77200b90ab278dc2e7b60be57b4b7c38"
+      },
+      "score": {
+        "stretched": {
+          "whole": {
+            "mae": 28.899561631944444,
+            "projection": 0.0677009336279526
+          },
+          "neutral_proxy": {
+            "mae": 37.45179602881689,
+            "projection": -0.06901051619319583
+          }
+        },
+        "padded": {
+          "whole": {
+            "mae": 29.196720679012344,
+            "projection": 0.050543643587812735
+          },
+          "neutral_proxy": {
+            "mae": 37.82566414625234,
+            "projection": -0.09097985444630317
+          }
+        }
+      },
+      "passed": false
+    },
+    "105": {
+      "size_wh": [
+        1440,
+        1080
+      ],
+      "sha256": {
+        "stretched": "db49a77ce9e90ae5e342dbc720d23bcb9dc8585185f82b0f113a47c5c6ffdd1c",
+        "padded": "9d2abc6624f8327689fabf7a3632cc90080804b3c4a7c6f3438bad858a4f3c42"
+      },
+      "score": {
+        "stretched": {
+          "whole": {
+            "mae": 18.2281419324417,
+            "projection": -0.3632188259631644
+          },
+          "neutral_proxy": {
+            "mae": 15.630359738128051,
+            "projection": -0.18891353320064824
+          }
+        },
+        "padded": {
+          "whole": {
+            "mae": 18.007192429698218,
+            "projection": -0.35187342070197103
+          },
+          "neutral_proxy": {
+            "mae": 15.403892081248001,
+            "projection": -0.18546137461914383
+          }
+        }
+      },
+      "passed": false
+    }
+  },
+  "playraw": {
+    "size_wh": [
+      1024,
+      702
+    ],
+    "sha256": {
+      "stretched": {
+        "off": "1932e7069e9802466034a751a9ddf18ff1b9661c5177718ea2e45f8664a97a67",
+        "on": "4e41104df1c8bf300b13d22d203d6f70ea4cfe3bf73561d27e22e5a770ed381c"
+      },
+      "padded": {
+        "off": "1ea939c709c0f00a79975ebc627aa3932ead4d70c25ae94f3a22cc642d3cbb76",
+        "on": "552bc9411de98b74048624b0ba33d15c0fb33bc5cb65611148fd22cb5a76f365"
+      }
+    },
+    "score": {
+      "stretched": {
+        "author": {
+          "pixels": 5824,
+          "projection": 0.012155519343850866,
+          "response_mae": 19.228794642857142,
+          "response_p95": 22.5
+        },
+        "protected": {
+          "pixels": 651445,
+          "projection": null,
+          "response_mae": 0.18068423120908136,
+          "response_p95": 0.7151999999999958
+        },
+        "neutral": {
+          "pixels": 47423,
+          "projection": null,
+          "response_mae": 0.16968131497374692,
+          "response_p95": 0.7151999999999816
+        }
+      },
+      "padded": {
+        "author": {
+          "pixels": 5824,
+          "projection": 0.010143678212397558,
+          "response_mae": 19.27335164835165,
+          "response_p95": 22.5
+        },
+        "protected": {
+          "pixels": 651445,
+          "projection": null,
+          "response_mae": 0.18133767823837776,
+          "response_p95": 0.7151999999999958
+        },
+        "neutral": {
+          "pixels": 47423,
+          "projection": null,
+          "response_mae": 0.16863881660797506,
+          "response_p95": 0.7151999999999958
+        }
+      }
+    },
+    "passed": false
+  },
+  "passed": false
+}
