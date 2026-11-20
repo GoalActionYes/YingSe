@@ -13,6 +13,7 @@ SCENES = ('MIXED_organic', 'WHITE_rich')
 LIGHTS = (6, 13)
 PATCHES = tuple(range(19, 24))
 CAPTURE_AUDIT = '21560ea26bfcfa90adcb5dd1bcdad326ea7f3ec1e9f889274c1a16ee9435fd75'
+BATCH_CAPTURE_AUDIT = '0417b3008047042e1e9684da7c55bcea62779b4dd6757b2fb071e4dca2cdf873'
 STRENGTH = .8
 LUMA = np.array([.2126, .7152, .0722])
 XYZ_TO_SRGB = np.array([[3.2404542, -1.5371385, -.4985314],
@@ -35,19 +36,22 @@ def save(path, rgb):
     return digest(path)
 
 
-def prepare(source, evidence, out, headroom=False):
+def prepare(source, evidence, out, headroom=False, *, batch=False):
     import h5py
 
     audit_bytes = evidence.read_bytes().replace(b'\r\n', b'\n')
-    if sha256(audit_bytes).hexdigest() != CAPTURE_AUDIT:
+    audit_sha = BATCH_CAPTURE_AUDIT if batch else CAPTURE_AUDIT
+    if sha256(audit_bytes).hexdigest() != audit_sha:
         raise ValueError('Changed source audit')
     selection = json.loads(audit_bytes)
     out.mkdir()
     records = {}
     matrices = []
     linear_images = {}
-    for scene in SCENES:
-        for light in LIGHTS:
+    scenes = ('WHITE_green', 'BLUE_red') if batch else SCENES
+    lights = (1, 8) if batch else LIGHTS
+    for scene in scenes:
+        for light in lights:
             key = f'{scene}-{light}'
             folder = source / f'{scene}-light{light}'
             audit = selection[scene]['captures'][str(light)]
@@ -80,7 +84,7 @@ def prepare(source, evidence, out, headroom=False):
                             gamut_limited_fraction=float(gamut.mean()))
     if any(not np.array_equal(matrix, matrices[0]) for matrix in matrices):
         raise ValueError('The captures do not share one D65 calibration')
-    write_json(out / 'inputs.json', dict(source_sha256=CAPTURE_AUDIT, records=records,
+    write_json(out / 'inputs.json', dict(source_sha256=audit_sha, records=records,
                                           headroom=headroom, linear_bounds=bounds))
 
 
@@ -191,5 +195,6 @@ if __name__ == '__main__':
             entry.add_argument(argument, type=Path)
         if command == 'prepare':
             entry.add_argument('--headroom', action='store_true')
+            entry.add_argument('--batch', action='store_true')
     args = vars(parser.parse_args())
     {'prepare': prepare, 'render': run}[args.pop('command')](**args)

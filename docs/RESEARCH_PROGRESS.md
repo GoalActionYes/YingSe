@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+Beyond RGB 两组同方向实拍光色与数字染色配对均合格。稳定版和空间版联合各 0／4，空间版换灯与有意染色的成片差仅 0.803–1.901 RGB8。近灰空间离散度两组均未过，结束固定判据。[成片、反例与复现](research/2026-11-20-beyond-rgb-matched-cast.md)
+
 Beyond RGB 批量预筛锁定 WHITE_green 与 BLUE_red 两组同灯实拍。四张 Oppo 原片已核对曝光、色卡和裁切边界，进入成片比较前的开发素材范围。[取片、原片与复现](research/2026-11-20-beyond-rgb-batch-intake.md)
 
 Beyond RGB 两新场景的 Oppo 曝光设置相同，但 WHITE_red 实测照度差 17.5% 超过上限，暂只保留 WHITE_green，未取图。更正原目录计数为每场景 12 条。[预检和更正](research/2026-11-20-beyond-rgb-exposure-precheck.md)
