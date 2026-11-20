@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+CHROMA-MILL 三个布景的尼康／手机白绿实拍共六组，均通过位移与同色偏数字染色检查。发布 PNG 实为 8 位，官方留出像素仍未读取。[双相机成片、数值及限制](research/2026-11-20-chromamill-camera-pairs.md)
+
 CHROMA-MILL 固定双相机目录已按布景家族归组，四灯训练计划需新增约 304 MB 且缺两份尼康资料。保留原清单，三个完整场景的双灯像素资格预检约 139 MB。[两机清单、角色与预算](research/2026-11-20-chromamill-camera-sources.md)
 
 冻结参考外观与全图统计的单图判别，两臂都能分开 7／7 训练配对，CHROMA-MILL 和 Beyond RGB 留出共 0／6。结束该固定线性判别。[逐组误判与复现](research/2026-11-20-appearance-light-source-probe.md)
