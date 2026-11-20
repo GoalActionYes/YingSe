@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+AceTone 编解码器已用正确 Film B 色表出图。六张真人、30 个评分范围全部通过。继续核对公开 BF16 预览模型的本机架构和量化路径，尚无两图预测结果。[出图与运行条件](research/2026-11-21-acetone-vq-film-b.md)
+
 MLS 将供体换灯的线性相机 RGB 增量加到目标原片代表值，四个可评分场景均比原固定色度更差。停止固定材质增量解释。[出图对照与复现](research/2026-11-21-mls-camera-additive-response.md)
 
 MLS 材质内色度分布做六场景留出重放，30 张成片。综合 3／6；05 和 06 对错位敏感，04 欠量、06 过量。停止已知材质固定中位增益。[成片和依据](research/2026-11-21-mls-unpaired-material-response.md)

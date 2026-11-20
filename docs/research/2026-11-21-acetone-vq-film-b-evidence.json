@@ -1,0 +1,687 @@
+{
+  "source_sha256": "9b903d7af823738ed6f57e276fd20776fc5f73b4be1ce173342da47506f4c711",
+  "assets": {
+    "vq.py": "cefaee8ff214c60f65b95feb511a70958a3fa53ad3ae5e1d72ae7ad646b3d372",
+    "acetone-vqvae-d64.pt": "115e4e8c147655fe0ae0c7fd494ec6cd3a8ff5a441ce536a886edb1ea556ef92"
+  },
+  "parent_sha256": "4413ee3468586d3ab5e715013c5e86d9c24412781e8385e75d5664b6e50df260",
+  "color_table_ids": {
+    "off": [
+      88,
+      126,
+      170,
+      238,
+      236,
+      216,
+      191,
+      48,
+      157,
+      139,
+      131,
+      78,
+      62,
+      22,
+      131,
+      2,
+      221,
+      116,
+      216,
+      182,
+      127,
+      119,
+      164,
+      58,
+      145,
+      195,
+      147,
+      239,
+      89,
+      167,
+      178,
+      146,
+      100,
+      224,
+      122,
+      72,
+      165,
+      236,
+      223,
+      139,
+      150,
+      216,
+      224,
+      193,
+      72,
+      119,
+      114,
+      71,
+      224,
+      115,
+      86,
+      52,
+      134,
+      8,
+      89,
+      83,
+      22,
+      219,
+      225,
+      236,
+      2,
+      105,
+      198,
+      30
+    ],
+    "on": [
+      112,
+      16,
+      223,
+      46,
+      255,
+      187,
+      157,
+      33,
+      189,
+      68,
+      86,
+      86,
+      118,
+      153,
+      101,
+      68,
+      97,
+      111,
+      40,
+      125,
+      119,
+      107,
+      114,
+      92,
+      157,
+      223,
+      147,
+      239,
+      134,
+      166,
+      195,
+      97,
+      78,
+      252,
+      89,
+      80,
+      150,
+      191,
+      202,
+      36,
+      68,
+      216,
+      252,
+      236,
+      106,
+      24,
+      116,
+      53,
+      219,
+      73,
+      95,
+      23,
+      162,
+      52,
+      100,
+      86,
+      100,
+      189,
+      233,
+      238,
+      192,
+      60,
+      180,
+      50
+    ]
+  },
+  "cases": {
+    "01-cold": {
+      "full_grid": {
+        "regions": {
+          "whole": {
+            "response_mae": 0.1117519802517361,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.1117519802517361,
+            "projection": 0.9948284464394522,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 0.04079254079254079,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.04079254079254079,
+            "projection": 1.0059885961838626,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 0.024350649350649352,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.024350649350649352,
+            "projection": 1.0020055370261374,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 0.02351851851851852,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.02351851851851852,
+            "projection": 0.9982800684233649,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 0.011111111111111112,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.011111111111111112,
+            "projection": 0.999198020715125,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+          "on": "dc4ac6f0047666288ccfad9216ac8e3033ceedad0830323cb554dfb1e441d35e"
+        },
+        "passed": true
+      },
+      "vq": {
+        "regions": {
+          "whole": {
+            "response_mae": 2.7840983072916665,
+            "off_matches_original_mae": 0.7017033894856771,
+            "on_matches_authored_mae": 2.6174036661783853,
+            "projection": 0.9363363328022578,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 1.881118881118881,
+            "off_matches_original_mae": 0.7668997668997669,
+            "on_matches_authored_mae": 2.3344988344988344,
+            "projection": 0.9045328576434237,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 1.0156926406926408,
+            "off_matches_original_mae": 0.564935064935065,
+            "on_matches_authored_mae": 1.5600649350649352,
+            "projection": 0.9061103481350685,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 2.6749074074074075,
+            "off_matches_original_mae": 0.6128703703703704,
+            "on_matches_authored_mae": 2.6077777777777778,
+            "projection": 0.9766600744858567,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 2.6375,
+            "off_matches_original_mae": 0.6744444444444444,
+            "on_matches_authored_mae": 2.626574074074074,
+            "projection": 0.9797707408550971,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "2471e146ba06c2d5e75da8a1d8e1009d37c68730f4c1d53a765e076d28bd477f",
+          "on": "955bb3d8c2e59208fb589364f36d85ff6a845b0e7d08bf31b8e5205f22c02dbd"
+        },
+        "passed": true
+      }
+    },
+    "01-warm": {
+      "full_grid": {
+        "regions": {
+          "whole": {
+            "response_mae": 0.11627960205078125,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.11627960205078125,
+            "projection": 0.9926383987326415,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 0.06177156177156177,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.06177156177156177,
+            "projection": 1.0063061392119976,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 0.0367965367965368,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.0367965367965368,
+            "projection": 1.003644834201151,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 0.09324074074074074,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.09324074074074074,
+            "projection": 1.006227270957294,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 0.12166666666666667,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.12166666666666667,
+            "projection": 0.989445234549568,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "07c434051a4412224053b142287b7e595c301838a1c173e94354e200a4cc5cd1",
+          "on": "5744290b03dd463329248c7635317dce1f7efacaf37b8b243fea7181d77a2382"
+        },
+        "passed": true
+      },
+      "vq": {
+        "regions": {
+          "whole": {
+            "response_mae": 2.507359822591146,
+            "off_matches_original_mae": 1.1533118353949652,
+            "on_matches_authored_mae": 2.0941009521484375,
+            "projection": 0.9924369218810789,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 1.314102564102564,
+            "off_matches_original_mae": 0.8065268065268065,
+            "on_matches_authored_mae": 2.1182983682983685,
+            "projection": 0.8747515964070904,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 1.097943722943723,
+            "off_matches_original_mae": 0.6883116883116883,
+            "on_matches_authored_mae": 1.678030303030303,
+            "projection": 0.8995752260893396,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 1.8138888888888889,
+            "off_matches_original_mae": 1.2499074074074075,
+            "on_matches_authored_mae": 1.796574074074074,
+            "projection": 1.0610816180215206,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 2.5588888888888888,
+            "off_matches_original_mae": 1.0035185185185185,
+            "on_matches_authored_mae": 2.231851851851852,
+            "projection": 0.9774878192772934,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "0e90061cc8f0e7467053801f4edde1b55275712ec2b336c2283f59b082202674",
+          "on": "b938478c19d115e63e0453c30805e95cfa16e1ed3d9e4dc664f3b2bb81fd9d5f"
+        },
+        "passed": true
+      }
+    },
+    "02-cold": {
+      "full_grid": {
+        "regions": {
+          "whole": {
+            "response_mae": 0.12264760335286458,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.12264760335286458,
+            "projection": 0.9979240595556813,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 0.06397306397306397,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.06397306397306397,
+            "projection": 1.0050691038122643,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 0.025432900432900432,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.025432900432900432,
+            "projection": 1.001589283687138,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 0.07407407407407407,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.07407407407407407,
+            "projection": 1.0016410738914032,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 0.02675925925925926,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.02675925925925926,
+            "projection": 1.0018662509033485,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+          "on": "776c5fd12416557efe58b135c1834f001115d22aa0473fae317ff8e3e5e4498d"
+        },
+        "passed": true
+      },
+      "vq": {
+        "regions": {
+          "whole": {
+            "response_mae": 2.6626968383789062,
+            "off_matches_original_mae": 0.5962236192491319,
+            "on_matches_authored_mae": 2.24766116672092,
+            "projection": 1.0050520359948472,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 2.019079685746352,
+            "off_matches_original_mae": 0.6425364758698092,
+            "on_matches_authored_mae": 2.3922558922558923,
+            "projection": 0.8733022229511129,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 1.4047619047619047,
+            "off_matches_original_mae": 0.5800865800865801,
+            "on_matches_authored_mae": 1.9101731601731602,
+            "projection": 0.7825708555643849,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 2.546388888888889,
+            "off_matches_original_mae": 0.33740740740740743,
+            "on_matches_authored_mae": 2.2171296296296297,
+            "projection": 1.0083339202451764,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 2.4273148148148147,
+            "off_matches_original_mae": 0.35,
+            "on_matches_authored_mae": 2.1106481481481483,
+            "projection": 0.9987105537860336,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "39f22385556103e24c488e348d03e2cc029f2f0a4f75ea35033f326ea68d0769",
+          "on": "225d1ac852d4a3000765d2d936fd88bf480d7246e44d2def85cef873201b6efa"
+        },
+        "passed": true
+      }
+    },
+    "02-warm": {
+      "full_grid": {
+        "regions": {
+          "whole": {
+            "response_mae": 0.19819810655381945,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.19819810655381945,
+            "projection": 0.9861668075223353,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 0.04264870931537598,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.04264870931537598,
+            "projection": 1.0030313124583612,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 0.058982683982683984,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.058982683982683984,
+            "projection": 1.0071682951328647,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 0.038148148148148146,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.038148148148148146,
+            "projection": 0.9971579404788652,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 0.22018518518518518,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.22018518518518518,
+            "projection": 0.9781134401972873,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "aad44854c04e674db249ae009af44f17524595189fc1dae3435df89ec5eb0b6e",
+          "on": "dd121056c2bac613fcad3cd76ade39c59694013badaff0c37cf1ab02fc4fdf09"
+        },
+        "passed": true
+      },
+      "vq": {
+        "regions": {
+          "whole": {
+            "response_mae": 2.443540785047743,
+            "off_matches_original_mae": 0.7990960015190972,
+            "on_matches_authored_mae": 2.27010260687934,
+            "projection": 1.011712047943558,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 2.0078563411896746,
+            "off_matches_original_mae": 1.0662177328843996,
+            "on_matches_authored_mae": 3.0235690235690234,
+            "projection": 0.968454363757495,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 1.2635281385281385,
+            "off_matches_original_mae": 0.75,
+            "on_matches_authored_mae": 1.9994588744588744,
+            "projection": 0.8863802392475573,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 2.595925925925926,
+            "off_matches_original_mae": 0.7648148148148148,
+            "on_matches_authored_mae": 2.477592592592593,
+            "projection": 0.9862235789366056,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 1.9390740740740742,
+            "off_matches_original_mae": 0.6487037037037037,
+            "on_matches_authored_mae": 1.9127777777777777,
+            "projection": 1.0012676741065851,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "e1c53f614924820eb71a7fd7afc85b7a66c68d645f695dd7d2bbc52e701a42e1",
+          "on": "6c43e954584d88ed1e7388043cbc63c53fdae924f8597fb182b976f82e22fb11"
+        },
+        "passed": true
+      }
+    },
+    "03-cold": {
+      "full_grid": {
+        "regions": {
+          "whole": {
+            "response_mae": 0.121490478515625,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.121490478515625,
+            "projection": 1.0002912554382233,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 0.038492063492063494,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.038492063492063494,
+            "projection": 1.0034112353026563,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 0.027983539094650206,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.027983539094650206,
+            "projection": 1.0036094993927944,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 0.08,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.08,
+            "projection": 0.9982820274364189,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 0.18833333333333332,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.18833333333333332,
+            "projection": 1.0013421203783146,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+          "on": "02c1bffc7af9ac18b49c6f522367807be6431393e2205c52a3e72d034e8257cd"
+        },
+        "passed": true
+      },
+      "vq": {
+        "regions": {
+          "whole": {
+            "response_mae": 2.5560370551215277,
+            "off_matches_original_mae": 0.6040089925130209,
+            "on_matches_authored_mae": 2.443630642361111,
+            "projection": 1.0397460990232235,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 1.9507936507936507,
+            "off_matches_original_mae": 0.667063492063492,
+            "on_matches_authored_mae": 2.4694444444444446,
+            "projection": 0.9578676150384671,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 1.3905349794238684,
+            "off_matches_original_mae": 0.7296296296296296,
+            "on_matches_authored_mae": 2.0090534979423866,
+            "projection": 0.7896370260423694,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 2.6060185185185185,
+            "off_matches_original_mae": 0.43064814814814817,
+            "on_matches_authored_mae": 2.3653703703703703,
+            "projection": 0.9898691433824074,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 2.827685185185185,
+            "off_matches_original_mae": 0.3335185185185185,
+            "on_matches_authored_mae": 2.494537037037037,
+            "projection": 1.0284437849227028,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "6fbda5c30ced2336bd6e129fe50dcfaf51b909bf1cb1aff850b95dfd0fcf7cf2",
+          "on": "f1293630470b791eb45e4596f89a1c280cace57b871d8789d164cf2e6cc492e1"
+        },
+        "passed": true
+      }
+    },
+    "03-warm": {
+      "full_grid": {
+        "regions": {
+          "whole": {
+            "response_mae": 0.1658876207139757,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.1658876207139757,
+            "projection": 0.9913830932116326,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 0.046031746031746035,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.046031746031746035,
+            "projection": 1.0024622104226437,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 0.05432098765432099,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.05432098765432099,
+            "projection": 1.0078881319469344,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 0.017685185185185186,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.017685185185185186,
+            "projection": 0.998629966458519,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 0.09861111111111111,
+            "off_matches_original_mae": 0.0,
+            "on_matches_authored_mae": 0.09861111111111111,
+            "projection": 0.9919728343267773,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "19833c95339aeff4499bd8913605880000c3a00a2e702cf065c94f17580fcc02",
+          "on": "d5d925098f400dc27429dab79cef53c040145c7154728bf12597085f4dcc01c7"
+        },
+        "passed": true
+      },
+      "vq": {
+        "regions": {
+          "whole": {
+            "response_mae": 2.4238594902886286,
+            "off_matches_original_mae": 0.79351806640625,
+            "on_matches_authored_mae": 2.5096647474500866,
+            "projection": 1.0538191664156102,
+            "passed": true
+          },
+          "cheek_left": {
+            "response_mae": 1.9694444444444446,
+            "off_matches_original_mae": 1.0492063492063493,
+            "on_matches_authored_mae": 2.945634920634921,
+            "projection": 0.9412923393140068,
+            "passed": true
+          },
+          "cheek_right": {
+            "response_mae": 1.3576131687242798,
+            "off_matches_original_mae": 0.7189300411522633,
+            "on_matches_authored_mae": 2.0691358024691358,
+            "projection": 0.9157215376195957,
+            "passed": true
+          },
+          "screen_left": {
+            "response_mae": 2.4400925925925927,
+            "off_matches_original_mae": 0.9393518518518519,
+            "on_matches_authored_mae": 2.1683333333333334,
+            "projection": 1.0167491816309797,
+            "passed": true
+          },
+          "screen_right": {
+            "response_mae": 2.397777777777778,
+            "off_matches_original_mae": 0.6801851851851852,
+            "on_matches_authored_mae": 2.4116666666666666,
+            "projection": 1.0929859098097277,
+            "passed": true
+          }
+        },
+        "outputs": {
+          "off": "a92328810e7ee1fd077291a4b3aa883976bf5defdafd661b97abd41225c2273b",
+          "on": "425af5329018b41e00df8ce8229a3886ba087108de64f2bf9f73de42664ca02e"
+        },
+        "passed": true
+      }
+    }
+  },
+  "uncompressed_comparator_valid": true,
+  "passed": true,
+  "full_report_sha256": "50eb9d746c153781d32850e6fd407634f806ec93b00adc6b3158a5f1a9ce5322"
+}
