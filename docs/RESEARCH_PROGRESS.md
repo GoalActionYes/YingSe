@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+禁用研究 CLI 的自动锐化后，三个 sRGB 关态由最大偏差 64–71 恢复到逐像素一致。《Cuckoo》局部收益保留，混合光两折仍超线。结束固定端点直放。[归因、成片和复现](research/2026-11-21-playraw-disable-import-sharpen.md)
+
 真实作者参数直接用于已导出照片，将《Cuckoo》两处肤色误差降至 0.559／0.608 RGB8，但模块关态最大偏差 64–71，混合光高权重区两折超线。停止此端点直放，保留三张成片及管线反例。[成片和复现](research/2026-11-20-playraw-rendered-input-operator.md)
 
 真实局部编辑按线性通道比例重放后，《Cuckoo》胸口由过强变为偏弱，误差 4.502 → 7.365 RGB8。供样两折也均超线，结束固定比例，保留四张成片。[成片、反例与复现](research/2026-11-20-playraw-relative-channel-edit.md)
