@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+CHROMA-MILL 按布景留出双机，使用匹配数字染色监督参考校正。联合仍 0／6，尼康白灯误改最坏 22.096 RGB8，停止该固定映射。[成片、反例与复现](research/2026-11-20-chromamill-matched-supervision.md)
+
 CHROMA-MILL 三个布景的尼康／手机白绿实拍共六组，均通过位移与同色偏数字染色检查。发布 PNG 实为 8 位，官方留出像素仍未读取。[双相机成片、数值及限制](research/2026-11-20-chromamill-camera-pairs.md)
 
 CHROMA-MILL 固定双相机目录已按布景家族归组，四灯训练计划需新增约 304 MB 且缺两份尼康资料。保留原清单，三个完整场景的双灯像素资格预检约 139 MB。[两机清单、角色与预算](research/2026-11-20-chromamill-camera-sources.md)
