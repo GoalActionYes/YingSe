@@ -38,14 +38,17 @@ def read_range(url, total, etag, start, length):
     return data
 
 
-def extract(scene, out):
+def extract(scene, out, directions=DIRECTIONS):
     total, etag = SCENES[scene]
     url = f'https://data.csail.mit.edu/multilum/{scene}/{scene}_mip2_jpg.zip'
     start = total - TAIL
     tail = read_range(url, total, etag, start, TAIL)
     archive = ZipFile(ArchiveWindow(start, tail))
     rows = {}
-    for direction in DIRECTIONS:
+    member_names = [f'{scene}/dir_{direction}_mip2.jpg' for direction in directions]
+    if sum(archive.getinfo(name).compress_size + 4096 for name in member_names) > 4 * 1024**2:
+        raise ValueError('Scene exceeds the member download budget')
+    for direction in directions:
         name = f'{scene}/dir_{direction}_mip2.jpg'
         member = archive.getinfo(name)
         span = member.compress_size + 4096
@@ -65,14 +68,18 @@ def extract(scene, out):
     return dict(etag=etag, archive_bytes=total, index_sha=sha256(tail).hexdigest(), members=rows)
 
 
-def run(out):
+def run(out, directions=DIRECTIONS):
     out.mkdir()
     with ThreadPoolExecutor(max_workers=2) as pool:
-        data = dict(zip(SCENES, pool.map(lambda name: extract(name, out), SCENES), strict=True))
+        data = dict(zip(SCENES, pool.map(lambda name: extract(name, out, directions), SCENES), strict=True))
     (out / 'results.json').write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('out', type=Path)
-    run(parser.parse_args().out)
+    parser.add_argument('--directions', type=int, nargs='+', default=DIRECTIONS, choices=range(25))
+    args = parser.parse_args()
+    if len(set(args.directions)) != len(args.directions):
+        parser.error('Directions must be unique')
+    run(args.out, args.directions)
