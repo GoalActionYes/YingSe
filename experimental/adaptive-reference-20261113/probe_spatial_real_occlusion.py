@@ -1,6 +1,7 @@
 """Run the frozen video candidate on real person-to-person occlusion."""
 
 import argparse
+from dataclasses import dataclass
 import json
 from pathlib import Path
 import threading
@@ -15,17 +16,30 @@ from temporal_grid import TemporalGrid
 from temporal_occlusion_hold import OcclusionEpisode
 
 
-SOURCE_SHA = '1be76d5d19b066e8ad7c565d88a98e11a8f8d456a707508a7aa35390def70e30'
-SHAPE = (540, 960, 3)
-WINDOWS = {'before': (4, 20), 'occlusion': (40, 104), 'recovery': (120, 136), 'motion': (160, 176)}
-AREAS = {'wall': np.s_[115:220, 730:785], 'right': np.s_[150:280, 815:890]}
+@dataclass(frozen=True)
+class Fixture:
+    sha256: str
+    shape: tuple
+    frames: int
+    windows: dict
+    areas: dict
 
 
-def source_frames(path, resample):
+FIXTURES = {
+    'bedroom': Fixture('1be76d5d19b066e8ad7c565d88a98e11a8f8d456a707508a7aa35390def70e30', (540, 960, 3), 200,
+                       {'before': (4, 20), 'occlusion': (40, 104), 'recovery': (120, 136), 'motion': (160, 176)},
+                       {'wall': np.s_[115:220, 730:785], 'right': np.s_[150:280, 815:890]}),
+    'street': Fixture('aeba09546f01df7d14964f809592fb0d603cdf1e593eff6b35cdc4f3e9bf73e5', (360, 640, 3), 86,
+                      {'before': (0, 12), 'occlusion': (19, 65), 'recovery': (66, 79)},
+                      {'left_sign': np.s_[12:42, 20:66], 'left_wall': np.s_[18:52, 80:122]}),
+}
+
+
+def source_frames(path, resample, fixture):
     modes = ('-vf', 'fps=30') if resample else ('-fps_mode', 'passthrough')
     raw = ffmpeg('-i', path, '-map', '0:v:0', *modes, '-pix_fmt', 'rgb24', '-f', 'rawvideo', 'pipe:1')
-    pixels = np.frombuffer(raw, np.uint8).reshape(-1, *SHAPE)
-    if len(pixels) != 200:
+    pixels = np.frombuffer(raw, np.uint8).reshape(-1, *fixture.shape)
+    if len(pixels) != fixture.frames:
         raise ValueError('Changed shot count')
     return pixels
 
@@ -46,11 +60,11 @@ def arm(root, label, temporal_class, source, ref, indices):
         worker.join()
 
 
-def measure(source, frames, decoded):
+def measure(source, frames, decoded, fixture):
     result = {}
-    for name, (start, stop) in WINDOWS.items():
+    for name, (start, stop) in fixture.windows.items():
         rows = {}
-        for region, area in AREAS.items():
+        for region, area in fixture.areas.items():
             inputs = np.stack([source[i][area] for i in range(start, stop)]).astype(np.int16)
             qualifier = np.abs(np.diff(inputs, axis=0)).mean(axis=(1, 2, 3)) <= 1.
             expected = np.stack([frames[i][area] for i in range(start, stop)]).astype(np.int16)
@@ -64,23 +78,24 @@ def measure(source, frames, decoded):
     return result
 
 
-def run(root, source, out):
+def run(root, source, out, profile='bedroom'):
     torch.set_num_threads(4)
-    checked(source.parent, source.name, SOURCE_SHA)
+    fixture = FIXTURES[profile]
+    checked(source.parent, source.name, fixture.sha256)
     ref = checked(root, *REFERENCE)
-    pixels = source_frames(source, True)
-    indices = [i for start, stop in WINDOWS.values() for i in range(start, stop)]
+    pixels = source_frames(source, True, fixture)
+    indices = [i for start, stop in fixture.windows.values() for i in range(start, stop)]
     out.mkdir()
     results = {}
     for label, temporal_class in [('baseline', TemporalGrid), ('episode', OcclusionEpisode)]:
         frames, report = arm(out, label, temporal_class, source, ref, indices)
         if report['frames'] != len(pixels):
             raise ValueError('Output frame count changed')
-        decoded = source_frames(out / label / 'result.mp4', False)
-        results[label] = {'export': report, 'scores': measure(pixels, frames, decoded)}
+        decoded = source_frames(out / label / 'result.mp4', False, fixture)
+        results[label] = {'export': report, 'scores': measure(pixels, frames, decoded, fixture)}
     base, candidate = results['baseline']['scores'], results['episode']['scores']
     decisions = {}
-    for name in AREAS:
+    for name in fixture.areas:
         before, after = [data['occlusion'][name] for data in (base, candidate)]
         gain = before['preencode']['maximum'] - after['preencode']['maximum'] if before['preencode'] else None
         eligible = before['eligible_pairs'] >= 32 and before['preencode']['maximum'] >= 1
@@ -90,8 +105,9 @@ def run(root, source, out):
                            'passed': eligible and gain >= max(.25, .25*before['preencode']['maximum'])
                            and recovery is not None and recovery <= .25}
     holds = results['episode']['export']['hold_frames']
-    false_holds = [i for i in holds if any(WINDOWS[key][0] <= i < WINDOWS[key][1] for key in ('before','motion'))]
-    report = {'source_sha256': SOURCE_SHA, 'results': results, 'decisions': decisions, 'false_holds': false_holds,
+    controls = [fixture.windows[key] for key in ('before', 'motion') if key in fixture.windows]
+    false_holds = [i for i in holds if any(start <= i < stop for start, stop in controls)]
+    report = {'source_sha256': fixture.sha256, 'results': results, 'decisions': decisions, 'false_holds': false_holds,
               'passed': not false_holds and all(row['passed'] for row in decisions.values())}
     (out / 'results.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8', newline='\n')
 
@@ -101,4 +117,5 @@ if __name__ == '__main__':
     parser.add_argument('root', type=Path)
     parser.add_argument('source', type=Path)
     parser.add_argument('out', type=Path)
+    parser.add_argument('--profile', choices=FIXTURES, default='bedroom')
     run(**vars(parser.parse_args()))
