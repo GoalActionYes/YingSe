@@ -24,7 +24,7 @@ def sample_mask(image):
     return (x // 16 + y // 16) % 2 == 0
 
 
-def fit(frames, lights, identity=False):
+def training_pairs(frames, lights, identity=False):
     originals, authored = [], []
     quota = TRAIN_PIXELS // (len(lights) * len(LEVELS))
     for light, level in product(lights, LEVELS):
@@ -36,7 +36,11 @@ def fit(frames, lights, identity=False):
         pixels = available[np.linspace(0, len(available), quota, endpoint=False, dtype=int)]
         originals.append(original.reshape(-1, 3)[pixels])
         authored.append(edited.reshape(-1, 3)[pixels])
-    a, b = np.concatenate(originals), np.concatenate(authored)
+    return np.concatenate(originals), np.concatenate(authored)
+
+
+def fit(frames, lights, identity=False):
+    a, b = training_pairs(frames, lights, identity)
     weights = learn(a, b, np.ones(len(a), dtype=bool))
     if weights is None:
         raise ValueError('Could not fit color mapping')
