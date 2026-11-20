@@ -1,0 +1,403 @@
+{
+  "prior": "e5ea6d809e495ab3cd9a7b0ea30e11b00a17292491961bb921f6bd8b6e0ee550",
+  "render_parent": "9f1ca17f3b643017ec42f0a0003184ac3da455e5f93c40f93fe9c02669a0811a",
+  "model": {
+    "repository": "facebook/dinov2-small",
+    "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "weight_sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+    "preprocessing": "Whole RGB, long edge <=448, nearest multiple14 (min14), bilinear; ImageNet mean/std",
+    "limitation": "Correspondence descriptor, not trained grading model; semantic similarity not material or lighting identity"
+  },
+  "script_sha": "33661bcb104d14c91d004f1bfa40266c8e046fabfa5fff08a747981c4688f311",
+  "protocol_sha": "0d16134aa21b754ea0b6327e8a7ebcef0c21c774f3c3917e55509630e507575d",
+  "decisions": {
+    "camera": {
+      "Scene3_a-nikon": {
+        "base": {
+          "capture": true,
+          "margin": 0.018122672880385673
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.02017154694267785
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.019859266841169676
+        }
+      },
+      "Scene3_a-phone": {
+        "base": {
+          "capture": true,
+          "margin": 0.015346791756216435
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.015211041379204926
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.01568705695327939
+        }
+      },
+      "Scene9_b-nikon": {
+        "base": {
+          "capture": true,
+          "margin": 0.01126293963954815
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.0123644531569128
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.011871859630955203
+        }
+      },
+      "Scene9_b-phone": {
+        "base": {
+          "capture": true,
+          "margin": 0.013167692872507311
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.013343349848289485
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.013655273487448591
+        }
+      },
+      "Scene10_a-nikon": {
+        "base": {
+          "capture": true,
+          "margin": 0.011054706540689116
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.012193099710073929
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.011168907981994311
+        }
+      },
+      "Scene10_a-phone": {
+        "base": {
+          "capture": true,
+          "margin": 0.011457106817754956
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.012246772534097186
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.012106386369067065
+        }
+      }
+    },
+    "beyond": {
+      "WHITE_green": {
+        "base": {
+          "capture": true,
+          "margin": 0.00465663655986609
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.0030975152294419606
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.004544949242409113
+        }
+      },
+      "BLUE_red": {
+        "base": {
+          "capture": true,
+          "margin": 0.017286798456026792
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.014236435103414324
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.016133783801693724
+        }
+      }
+    },
+    "gros": {
+      "01": {
+        "base": {
+          "capture": true,
+          "margin": 0.0007350080001055897
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.00023589736737174467
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.0023482336312251814
+        }
+      },
+      "02": {
+        "base": {
+          "capture": true,
+          "margin": 0.0023019042383751655
+        },
+        "captured": {
+          "capture": true,
+          "margin": 0.0012223125422055597
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.002516125457174617
+        }
+      },
+      "03": {
+        "base": {
+          "capture": false,
+          "margin": -0.0004125940398909088
+        },
+        "captured": {
+          "capture": false,
+          "margin": -0.0005395890186285224
+        },
+        "edited": {
+          "capture": true,
+          "margin": 0.0011189647140624898
+        }
+      }
+    },
+    "mid": {
+      "copyroom": {
+        "base": {
+          "capture": false,
+          "margin": -0.002412866969266368
+        },
+        "captured": {
+          "capture": false,
+          "margin": -0.004635639912536363
+        },
+        "edited": {
+          "capture": false,
+          "margin": -0.002646705749709183
+        }
+      }
+    }
+  },
+  "summaries": {
+    "camera": {
+      "base": {
+        "detected": 6,
+        "missing": 0,
+        "total": 6
+      },
+      "captured": {
+        "detected": 6,
+        "missing": 0,
+        "total": 6
+      },
+      "edited": {
+        "detected": 6,
+        "missing": 0,
+        "total": 6
+      }
+    },
+    "beyond": {
+      "base": {
+        "detected": 2,
+        "missing": 0,
+        "total": 2
+      },
+      "captured": {
+        "detected": 2,
+        "missing": 0,
+        "total": 2
+      },
+      "edited": {
+        "detected": 2,
+        "missing": 0,
+        "total": 2
+      }
+    },
+    "gros": {
+      "base": {
+        "detected": 2,
+        "missing": 0,
+        "total": 3
+      },
+      "captured": {
+        "detected": 2,
+        "missing": 0,
+        "total": 3
+      },
+      "edited": {
+        "detected": 3,
+        "missing": 0,
+        "total": 3
+      }
+    },
+    "mid": {
+      "base": {
+        "detected": 0,
+        "missing": 0,
+        "total": 1
+      },
+      "captured": {
+        "detected": 0,
+        "missing": 0,
+        "total": 1
+      },
+      "edited": {
+        "detected": 0,
+        "missing": 0,
+        "total": 1
+      }
+    }
+  },
+  "pictures": {
+    "living": {
+      "scores": {
+        "wall_left": {
+          "style": {
+            "projection": 0.6990120568748662,
+            "response_mae": 2.8172443580606847,
+            "off_matches_original_mae": 33.820213799805636,
+            "on_matches_authored_mae": 34.52181189936292,
+            "original_matches_authored_mae": 9.162563438073642,
+            "passed": false
+          },
+          "relit_delta_mae": 15.13502861462045,
+          "relit_vs_edited_output_mae": 17.336626714177733,
+          "both_pass": false
+        },
+        "wall_right": {
+          "style": {
+            "projection": 0.7231519561092723,
+            "response_mae": 2.5583480305702526,
+            "off_matches_original_mae": 33.91534391534392,
+            "on_matches_authored_mae": 34.76925338036449,
+            "original_matches_authored_mae": 8.805849500293945,
+            "passed": false
+          },
+          "relit_delta_mae": 15.72935038212816,
+          "relit_vs_edited_output_mae": 18.193930041152264,
+          "both_pass": false
+        },
+        "gray_probe": {
+          "style": {
+            "projection": 0.6464112048543286,
+            "response_mae": 2.803030303030303,
+            "off_matches_original_mae": 36.235016835016836,
+            "on_matches_authored_mae": 36.9969696969697,
+            "original_matches_authored_mae": 7.890909090909091,
+            "passed": false
+          },
+          "relit_delta_mae": 11.444781144781144,
+          "relit_vs_edited_output_mae": 13.65117845117845,
+          "both_pass": false
+        },
+        "whole": {
+          "style": {
+            "projection": 0.8116026153869157,
+            "response_mae": 1.6994482222222222,
+            "off_matches_original_mae": 18.62108977777778,
+            "on_matches_authored_mae": 18.112671333333335,
+            "original_matches_authored_mae": 4.990456,
+            "passed": true
+          },
+          "relit_delta_mae": 11.241057555555555,
+          "relit_vs_edited_output_mae": 11.235384444444444,
+          "both_pass": false
+        }
+      },
+      "passed": false,
+      "hashes": {
+        "base": "74b8f9bb85f4c5ef5f1f87b24cff5ba2081d8bf6ddb6a901bdf7e6203aeb95cf",
+        "captured": "c1059d9ec14db74f6e89b8ca5369777c9a05deeb3bfc7a19110fdd86aeb518d2",
+        "edited": "0de11abb1eb7260541fa9394e1a74d09a19bc7621049c60d10d1e838a4029e26"
+      },
+      "comparison": "0771c57a9fd12cb8b8f5be500c17ded0735dcb58639a7d06847caf3a03096acc"
+    },
+    "portrait": {
+      "scores": {
+        "whole": {
+          "style": {
+            "projection": 0.5595661289029249,
+            "response_mae": 4.716794331868489,
+            "off_matches_original_mae": 20.28839111328125,
+            "on_matches_authored_mae": 24.01127709282769,
+            "original_matches_authored_mae": 8.554751925998264,
+            "passed": false
+          },
+          "relit_delta_mae": 13.28280300564236,
+          "relit_vs_edited_output_mae": 15.727039761013454,
+          "both_pass": false
+        },
+        "cheek_left": {
+          "style": {
+            "projection": 1.1549541449379608,
+            "response_mae": 1.9772727272727273,
+            "off_matches_original_mae": 25.53846153846154,
+            "on_matches_authored_mae": 23.995920745920746,
+            "original_matches_authored_mae": 5.214452214452215,
+            "passed": true
+          },
+          "relit_delta_mae": 12.381701631701631,
+          "relit_vs_edited_output_mae": 11.93939393939394,
+          "both_pass": false
+        },
+        "cheek_right": {
+          "style": {
+            "projection": 0.9631216089421939,
+            "response_mae": 1.8284632034632036,
+            "off_matches_original_mae": 25.875,
+            "on_matches_authored_mae": 24.90909090909091,
+            "original_matches_authored_mae": 6.71969696969697,
+            "passed": true
+          },
+          "relit_delta_mae": 9.583874458874458,
+          "relit_vs_edited_output_mae": 10.027056277056277,
+          "both_pass": false
+        },
+        "screen_left": {
+          "style": {
+            "projection": 0.5645993967586397,
+            "response_mae": 5.690462962962963,
+            "off_matches_original_mae": 18.232685185185186,
+            "on_matches_authored_mae": 23.923148148148147,
+            "original_matches_authored_mae": 11.322222222222223,
+            "passed": false
+          },
+          "relit_delta_mae": 13.671111111111111,
+          "relit_vs_edited_output_mae": 17.37712962962963,
+          "both_pass": false
+        },
+        "screen_right": {
+          "style": {
+            "projection": 0.5302883799830365,
+            "response_mae": 5.977777777777778,
+            "off_matches_original_mae": 17.277962962962963,
+            "on_matches_authored_mae": 23.25574074074074,
+            "original_matches_authored_mae": 11.333333333333334,
+            "passed": false
+          },
+          "relit_delta_mae": 13.528611111111111,
+          "relit_vs_edited_output_mae": 16.984166666666667,
+          "both_pass": false
+        }
+      },
+      "passed": false,
+      "hashes": {
+        "base": "83680641e2222dddd7322b7112bec47c4dc2ea0cfd577cb10b5268a440d7aad2",
+        "captured": "8f5d2db1d61d03be54891fa13ea9260beea3ce21e42585dc3b0ceebc058c8b53",
+        "edited": "5a2472ea89472392249ba1a109c41d23945952c4b3d5ee18c4333db774af7f82"
+      },
+      "comparison": "c5d5180560054698580139eb0f2d394ca942423dcb6b14b8952ec81e5abff739"
+    }
+  },
+  "passed": false
+}
