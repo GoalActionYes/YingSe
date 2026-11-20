@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+CHROMA-MILL 理想参考替换逐像素消除六组换灯差，有意风格仍只有 1／6 通过。白灯反例兼有外推与强校正误判，停止将参考前处理作为唯一修复。[成片及增益归因](research/2026-11-20-chromamill-oracle-reference.md)
+
 CHROMA-MILL 按布景留出双机，使用匹配数字染色监督参考校正。联合仍 0／6，尼康白灯误改最坏 22.096 RGB8，停止该固定映射。[成片、反例与复现](research/2026-11-20-chromamill-matched-supervision.md)
 
 CHROMA-MILL 三个布景的尼康／手机白绿实拍共六组，均通过位移与同色偏数字染色检查。发布 PNG 实为 8 位，官方留出像素仍未读取。[双相机成片、数值及限制](research/2026-11-20-chromamill-camera-pairs.md)
