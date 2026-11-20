@@ -32,7 +32,7 @@ def pinned_report(folder, expected):
     return json.loads(path.read_bytes())
 
 
-def run(prepared, previous, edited, out):
+def run(prepared, previous, edited, out, *, fit_reference=fit_aligned):
     baseline = pinned_report(previous, BASELINE_SHA)
     edits = pinned_report(edited, EDIT_SHA)
     if edits['baseline_sha256'] != BASELINE_SHA or digest(prepared / 'inputs.json') != baseline['prepared_sha256']:
@@ -50,9 +50,9 @@ def run(prepared, previous, edited, out):
             guide = f'{scene}-{light}'
             alternate = f'{scene}-{other_light}'
             fits[guide] = {
-                'true_pair': fit_aligned(plain[guide], styled[guide]),
-                'same_image': fit_aligned(plain[guide], plain[guide]),
-                'wrong_capture': fit_aligned(plain[alternate], styled[guide]),
+                'true_pair': fit_reference(plain[guide], styled[guide]),
+                'same_image': fit_reference(plain[guide], plain[guide]),
+                'wrong_capture': fit_reference(plain[alternate], styled[guide]),
             }
 
     cases = {}
