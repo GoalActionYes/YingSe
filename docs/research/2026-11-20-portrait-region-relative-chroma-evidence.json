@@ -1,0 +1,360 @@
+{
+  "source_sha256": "a34c9c55ee98af11c548157738b9f96db3419f919ba41d592eb3662a6be1a08a",
+  "script_sha256": "67219def28431f7ac95e02349749e01a898b32f90a856bf0326727ec4d1e6df9",
+  "cheek_boxes": {
+    "cuckoo": [
+      506,
+      217,
+      520,
+      233
+    ],
+    "mixed": [
+      184,
+      263,
+      200,
+      280
+    ]
+  },
+  "cases": {
+    "cuckoo": {
+      "regions": {
+        "cheek": {
+          "bands": [
+            {
+              "pixels": 91,
+              "rank": 0.16544117647058823,
+              "brightness": 81.14699999999999,
+              "offset": [
+                2.12,
+                -1.994,
+                4.707
+              ]
+            },
+            {
+              "pixels": 91,
+              "rank": 0.5,
+              "brightness": 96.425,
+              "offset": [
+                3.1799999999999997,
+                -2.8200000000000003,
+                6.18
+              ]
+            },
+            {
+              "pixels": 90,
+              "rank": 0.8345588235294118,
+              "brightness": 109.94749999999999,
+              "offset": [
+                4.354,
+                -3.7600000000000002,
+                7.797
+              ]
+            }
+          ],
+          "fixed_offset": [
+            3.1799999999999997,
+            -2.8200000000000003,
+            6.18
+          ],
+          "qualified": true,
+          "donor_global_rank": 0.9929563786008231,
+          "target_global_rank": 0.43665414579855316,
+          "target_band_brightness": [
+            93.665,
+            110.27999999999999,
+            124.59049999999999
+          ],
+          "target_median_offset": [
+            2.348,
+            -1.8800000000000001,
+            3.234
+          ]
+        },
+        "neutral": {
+          "bands": [
+            {
+              "pixels": 12355,
+              "rank": 0.16669814375134903,
+              "brightness": 44.665,
+              "offset": [
+                1.875,
+                -1.125,
+                0.875
+              ]
+            },
+            {
+              "pixels": 12355,
+              "rank": 0.500768940211526,
+              "brightness": 52.559,
+              "offset": [
+                1.875,
+                -1.125,
+                0.875
+              ]
+            },
+            {
+              "pixels": 12354,
+              "rank": 0.8333558169652493,
+              "brightness": 59.092,
+              "offset": [
+                1.875,
+                -1.125,
+                0.875
+              ]
+            }
+          ],
+          "fixed_offset": [
+            1.875,
+            -1.125,
+            0.875
+          ],
+          "qualified": true,
+          "donor_global_rank": 0.9356995884773662,
+          "target_global_rank": 0.35175941383787795,
+          "target_band_brightness": [
+            65.92999999999999,
+            99.668,
+            130.53249999999997
+          ],
+          "target_median_offset": [
+            3.049,
+            -1.951,
+            1.761
+          ]
+        }
+      },
+      "arms": {
+        "constant": {
+          "luma_max": 0.17999999999999985,
+          "gamut_fraction": 0.0,
+          "scores": {
+            "cheek": {
+              "edited_chroma_mae": 3.4595464285714286,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 224,
+              "projection": 1.5750368725212944,
+              "response_mae": 2.1398723214285718,
+              "response_p95": 3.428999999999988
+            },
+            "neutral": {
+              "edited_chroma_mae": 3.1670706436603338,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 103160,
+              "projection": 0.4551668191411227,
+              "response_mae": 1.4828971791392012,
+              "response_p95": 3.4355999999999938
+            }
+          },
+          "sha256": "68a08396293bdb1298fd76b22141dff85efd524c27915d25ac191896af2301fd"
+        },
+        "relative_rank": {
+          "luma_max": 0.40700000000000003,
+          "gamut_fraction": 0.0,
+          "scores": {
+            "cheek": {
+              "edited_chroma_mae": 3.4595464285714286,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 224,
+              "projection": 1.6481131403712421,
+              "response_mae": 2.24675267857143,
+              "response_p95": 3.5483400000000054
+            },
+            "neutral": {
+              "edited_chroma_mae": 3.1670706436603338,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 103160,
+              "projection": 0.4551668191411227,
+              "response_mae": 1.4828971791392012,
+              "response_p95": 3.4355999999999938
+            }
+          },
+          "sha256": "2ab396111b65797e61c4c46c5c37e11aa44f4a18074e2054744634102a6586e6"
+        }
+      },
+      "untouched_pixels": 431858,
+      "comparison_sha256": "2325dfbe9beb3f2554687fde6162bb2a2414325189eced758e23e2d15a5438a9"
+    },
+    "mixed": {
+      "regions": {
+        "cheek": {
+          "bands": [
+            {
+              "pixels": 75,
+              "rank": 0.16741071428571427,
+              "brightness": 93.665,
+              "offset": [
+                2.234,
+                -1.6520000000000001,
+                2.348
+              ]
+            },
+            {
+              "pixels": 75,
+              "rank": 0.5022321428571429,
+              "brightness": 110.27999999999999,
+              "offset": [
+                2.234,
+                -1.8800000000000001,
+                3.234
+              ]
+            },
+            {
+              "pixels": 74,
+              "rank": 0.8348214285714286,
+              "brightness": 124.59049999999999,
+              "offset": [
+                2.935,
+                -2.1790000000000003,
+                3.522
+              ]
+            }
+          ],
+          "fixed_offset": [
+            2.348,
+            -1.8800000000000001,
+            3.234
+          ],
+          "qualified": true,
+          "donor_global_rank": 0.43665414579855316,
+          "target_global_rank": 0.9929563786008231,
+          "target_band_brightness": [
+            81.14699999999999,
+            96.425,
+            109.94749999999999
+          ],
+          "target_median_offset": [
+            3.1799999999999997,
+            -2.8200000000000003,
+            6.18
+          ]
+        },
+        "neutral": {
+          "bands": [
+            {
+              "pixels": 35673,
+              "rank": 0.1666728961483115,
+              "brightness": 65.92999999999999,
+              "offset": [
+                1.875,
+                -1.239,
+                1.761
+              ]
+            },
+            {
+              "pixels": 35673,
+              "rank": 0.4999953278887664,
+              "brightness": 99.668,
+              "offset": [
+                3.049,
+                -1.951,
+                1.75
+              ]
+            },
+            {
+              "pixels": 35672,
+              "rank": 0.8333364480741557,
+              "brightness": 130.53249999999997,
+              "offset": [
+                4.451,
+                -2.6630000000000003,
+                2.3369999999999997
+              ]
+            }
+          ],
+          "fixed_offset": [
+            3.049,
+            -1.951,
+            1.761
+          ],
+          "qualified": true,
+          "donor_global_rank": 0.35175941383787795,
+          "target_global_rank": 0.9356995884773662,
+          "target_band_brightness": [
+            44.665,
+            52.559,
+            59.092
+          ],
+          "target_median_offset": [
+            1.875,
+            -1.125,
+            0.875
+          ]
+        }
+      },
+      "arms": {
+        "constant": {
+          "luma_max": 0.23399999999999993,
+          "gamut_fraction": 0.0,
+          "scores": {
+            "cheek": {
+              "edited_chroma_mae": 5.677195588235293,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 272,
+              "projection": 0.5209422598939047,
+              "response_mae": 2.4267294117647054,
+              "response_p95": 5.574600000000004
+            },
+            "neutral": {
+              "edited_chroma_mae": 1.741295967190704,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 36575,
+              "projection": 1.6853598249614818,
+              "response_mae": 1.4126665700615173,
+              "response_p95": 2.1455999999999946
+            }
+          },
+          "sha256": "123464da390e06a63ad04b20eea2a99173a24246698c662b2df5729c68e6f0ad"
+        },
+        "relative_rank": {
+          "luma_max": 0.348,
+          "gamut_fraction": 0.0,
+          "scores": {
+            "cheek": {
+              "edited_chroma_mae": 5.677195588235293,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 272,
+              "projection": 0.5460988795467416,
+              "response_mae": 2.3295779411764705,
+              "response_p95": 4.859400000000014
+            },
+            "neutral": {
+              "edited_chroma_mae": 1.741295967190704,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 36575,
+              "projection": 1.725223028375077,
+              "response_mae": 1.4242883390293917,
+              "response_p95": 2.433
+            }
+          },
+          "sha256": "0b82dc59eec9e32720620a6a9db6eca02b855059ddf5a2f54faf7a5367715658"
+        }
+      },
+      "untouched_pixels": 570164,
+      "comparison_sha256": "10cf418cc5a24ab57679c8148abdc2e876eeb4301deafaa89d1c0e0ab09b7eab"
+    }
+  },
+  "failures": [
+    "cuckoo:cheek",
+    "cuckoo:neutral",
+    "mixed:cheek",
+    "mixed:neutral"
+  ],
+  "gains": [],
+  "passed": false
+}
