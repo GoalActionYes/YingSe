@@ -97,7 +97,7 @@ def _video_precision(stream):
 def _image_working_rgb(image):
     rgb = image.convert('RGB')
     embedded = image.info.get('icc_profile')
-    if not embedded or image.mode not in ('RGB', 'RGBA', 'RGBX', 'P', 'PA'):
+    if not embedded or image.mode not in ('RGB', 'RGBA', 'RGBX', 'P', 'PA', 'CMYK'):
         return rgb
     try:
         from PIL import ImageCms
@@ -105,10 +105,11 @@ def _image_working_rgb(image):
         return rgb
     try:
         source = ImageCms.ImageCmsProfile(BytesIO(embedded))
-        if source.profile.xcolor_space.strip() != 'RGB':
+        color_input = image if image.mode == 'CMYK' else rgb
+        if source.profile.xcolor_space.strip() != color_input.mode:
             return rgb
         return ImageCms.profileToProfile(
-            rgb, source, ImageCms.createProfile('sRGB'),
+            color_input, source, ImageCms.createProfile('sRGB'),
             renderingIntent=ImageCms.Intent.RELATIVE_COLORIMETRIC, outputMode='RGB',
         )
     except (ImageCms.PyCMSError, OSError, ValueError):
@@ -140,7 +141,7 @@ def probe_media(path) -> dict:
             with Image.open(path) as check:check.verify()
             return dict(kind='image',width=width,height=height,duration_seconds=None,
                         has_audio=False,exif_orientation=orientation,
-                        color_management='Usable embedded RGB ICC to sRGB; otherwise Pillow RGB')
+                        color_management='Usable embedded RGB or CMYK ICC to sRGB; otherwise Pillow RGB')
     except UnsupportedImageError:raise
     except (OSError,ValueError,Image.DecompressionBombError):pass
     _,_,log=_run(['-i',path])

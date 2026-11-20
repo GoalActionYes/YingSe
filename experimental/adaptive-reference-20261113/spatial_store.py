@@ -60,14 +60,29 @@ class SpatialStore(Store):
         with Image.open(record['path']) as image:
             oriented=ImageOps.exif_transpose(image);profile_bytes=oriented.info.get('icc_profile')
             # The upload contract permits ordinary RGBA/palette/gray inputs.
-            # Match the existing RGB conversion; honor native gray ICCs before
-            # promotion rather than applying a gray profile to RGB channels.
-            if profile_bytes and oriented.mode in ('L','LA'):
-                profile=ImageCms.ImageCmsProfile(io.BytesIO(profile_bytes))
-                if profile.profile.xcolor_space.strip()=='GRAY':
+            # Native gray and CMYK profiles need their original channels.
+            cmyk_profile = None
+            if profile_bytes and oriented.mode in ('L','LA','CMYK'):
+                try:
+                    profile = ImageCms.ImageCmsProfile(io.BytesIO(profile_bytes))
+                except (ImageCms.PyCMSError, OSError, ValueError) as exc:
+                    raise ValueError('Cannot honor embedded ICC profile') from exc
+                color_space = profile.profile.xcolor_space.strip()
+                if oriented.mode in ('L', 'LA') and color_space == 'GRAY':
                     oriented=ImageCms.profileToProfile(oriented.getchannel('L'),profile,ImageCms.createProfile('sRGB'),outputMode='RGB',renderingIntent=ImageCms.Intent.RELATIVE_COLORIMETRIC)
+                elif oriented.mode == 'CMYK' and color_space == 'CMYK':
+                    try:
+                        oriented = ImageCms.profileToProfile(
+                            oriented, profile, ImageCms.createProfile('sRGB'), outputMode='RGB',
+                            renderingIntent=ImageCms.Intent.RELATIVE_COLORIMETRIC,
+                        )
+                        cmyk_profile = ImageCms.getProfileDescription(profile).strip()
+                    except ImageCms.PyCMSError as exc:
+                        raise ValueError('Cannot honor embedded ICC profile') from exc
             normalized=oriented.convert('RGB')
             prepared,info=to_srgb(normalized)
+            if cmyk_profile is not None:
+                info.update(original_mode='CMYK', source_profile=cmyk_profile)
         return np.array(prepared),dict(record['metadata'],spatial_color_preparation=info)
 
     def analyze(self,target_id,reference_id,time_seconds=0.):

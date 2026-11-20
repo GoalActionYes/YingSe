@@ -1,0 +1,75 @@
+{
+  "source_sha256": "8e78d38839fa044bbcc0dec99c91c82561205bc691d00c4128528d89459bb7ed",
+  "profile_sha256": "48d1cfdccf06dabfecf0c2b535eacd8a5f49560f0182691cdd713b6389a30510",
+  "fixtures_sha256": {
+    "tagged.jpg": "b82fca411daa4705afecb8d7326d03e3f81b1fe7605cb5e1f9872aa3352b56b2",
+    "srgb.png": "8debae29481435f2db86d9ca18354df383db6c98d482dee34fcb658169acee1c",
+    "untagged.tif": "ce4d5b65d72b9a57eea0387cc430bfc20b1e8bee4fd388090fc33b01a0008995"
+  },
+  "workbenches": {
+    "stable": {
+      "decode_mae": {
+        "tagged.jpg": 0.0,
+        "srgb.png": 0.0,
+        "untagged.tif": 24.024159749348957
+      },
+      "export_mae": {
+        "target": {
+          "tagged.jpg": 0.0,
+          "srgb.png": 0.0,
+          "untagged.tif": 14.353983561197916
+        },
+        "reference": {
+          "tagged.jpg": 0.0,
+          "srgb.png": 0.0,
+          "untagged.tif": 6.185709635416667
+        }
+      },
+      "output_sha256": {
+        "target": {
+          "tagged.jpg": "3a633c7204c47fa4b83a413dd71a93fce3f3d0f4ecfef1cf8dec71fe23ed7fe2",
+          "srgb.png": "3a633c7204c47fa4b83a413dd71a93fce3f3d0f4ecfef1cf8dec71fe23ed7fe2",
+          "untagged.tif": "b5d14db9180919d22bd98bf24b5caf016a0a491fe6ffbc2e284c9b1986a80a79"
+        },
+        "reference": {
+          "tagged.jpg": "a49d6a432314b88cb62b050cce629c236f448d350ba014f8bd343642ec57d6f0",
+          "srgb.png": "a49d6a432314b88cb62b050cce629c236f448d350ba014f8bd343642ec57d6f0",
+          "untagged.tif": "7ab9eb88abe9ac9043d18d0c6162cffcdaff909d42da277e9ed082801dcafbe8"
+        }
+      },
+      "passed": true
+    },
+    "spatial": {
+      "decode_mae": {
+        "tagged.jpg": 0.0,
+        "srgb.png": 0.0,
+        "untagged.tif": 24.024159749348957
+      },
+      "export_mae": {
+        "target": {
+          "tagged.jpg": 0.0,
+          "srgb.png": 0.0,
+          "untagged.tif": 9.28997802734375
+        },
+        "reference": {
+          "tagged.jpg": 0.0,
+          "srgb.png": 0.0,
+          "untagged.tif": 15.735188802083334
+        }
+      },
+      "output_sha256": {
+        "target": {
+          "tagged.jpg": "c338ebbf9dd391b5d693a88fc2634cef740b16045db1250190e1612f5e88241e",
+          "srgb.png": "c338ebbf9dd391b5d693a88fc2634cef740b16045db1250190e1612f5e88241e",
+          "untagged.tif": "9b8acdf78fcb629a6f41076146c2bdb46250135aadfe59afdb2c8bb05087d47e"
+        },
+        "reference": {
+          "tagged.jpg": "9adf11d6f08ba65787ec7141b5b3b2d880c38bc788591baa51c5dc97b96b8c8a",
+          "srgb.png": "9adf11d6f08ba65787ec7141b5b3b2d880c38bc788591baa51c5dc97b96b8c8a",
+          "untagged.tif": "f6d719dfc0c1b2def1d35ac3f812f58c64310d76817c1c637e1ca17a01739d33"
+        }
+      },
+      "passed": true
+    }
+  }
+}
