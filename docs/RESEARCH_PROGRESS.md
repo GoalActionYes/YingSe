@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+AceTone 公开 BF16 真实两图首组已完成。严格色表解析 0／4，作者容错后出图五个区域联合 0／5，暖参考白幕关闭态差约 11.2 RGB8。结束此固定配置的扩大筛查，保留权重和反例。[实际成片与边界](research/2026-11-21-acetone-bf16-first-portrait.md)
+
 AceTone 发布索引 825 个名称均与本机 meta 架构对应，CPU 小模型通过两图输入、SDPA 生成和 LUT token 解析检查。完整 BF16 尚未下载，下一步验证混合设备加载。[本机预检](research/2026-11-21-acetone-architecture-preflight.md)
 
 AceTone 编解码器已用正确 Film B 色表出图。六张真人、30 个评分范围全部通过。继续核对公开 BF16 预览模型的本机架构和量化路径，尚无两图预测结果。[出图与运行条件](research/2026-11-21-acetone-vq-film-b.md)
