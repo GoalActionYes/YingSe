@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+CHROMA-MILL 固定双相机目录已按布景家族归组，四灯训练计划需新增约 304 MB 且缺两份尼康资料。保留原清单，三个完整场景的双灯像素资格预检约 139 MB。[两机清单、角色与预算](research/2026-11-20-chromamill-camera-sources.md)
+
 冻结参考外观与全图统计的单图判别，两臂都能分开 7／7 训练配对，CHROMA-MILL 和 Beyond RGB 留出共 0／6。结束该固定线性判别。[逐组误判与复现](research/2026-11-20-appearance-light-source-probe.md)
 
 Beyond RGB 同色偏对照中，扩展第 4 轮开启参考外观，四个目标串色下降而有意染色误差均升高，联合仍 0／4。结束直接使用该冻结分支。[外观开关成片与复现](research/2026-11-20-beyond-rgb-appearance-ablation.md)
