@@ -43,7 +43,7 @@ def evaluate(target, expected, archive, baseline, masks, output):
             'gain': gain, 'gamut_fraction': clipped, 'rendered_scores': scores, 'sha256': save(output, pixels)}
 
 
-def run(root, original, expanded, out):
+def run(root, original, expanded, out, evaluate_case=evaluate):
     base = checked_json(original / 'results.json', BASELINE_SHA)
     extra = checked_json(expanded / 'results.json', EXPANDED_SHA)
     region_file = Path(__file__).with_name('rawtherapee-portrait-toning-regions.json')
@@ -65,7 +65,7 @@ def run(root, original, expanded, out):
                          for state, value in expanded_item['outputs']['expanded'].items()}
         bases = {'13': (main_archive, item['scores']),
                  'expanded': (added_archive, expanded_item['scores']['expanded'])}
-        rows[name] = {arm: evaluate(target, expected, saved, scores, regions, out / f'{name}-{arm}.png')
+        rows[name] = {arm: evaluate_case(target, expected, saved, scores, regions, out / f'{name}-{arm}.png')
                       for arm, (saved, scores) in bases.items()}
     json_to(out / 'results.json', {'sources': [BASELINE_SHA, EXPANDED_SHA], 'cases': rows})
 
