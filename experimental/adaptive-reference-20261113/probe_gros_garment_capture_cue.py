@@ -88,7 +88,7 @@ def render(target, weight, evidence, clothes):
     return finish_spatial(target, shifted, STRENGTH)
 
 
-def run(gros, scope, out):
+def run(gros, scope, out, *, estimate_material=estimate, additions=None):
     source = checked_json(gros / 'results.json', ARCHIVE)
     previous = checked_json(scope / 'results.json', LOCAL)
     region_file = Path(__file__).with_name('gros-portrait-light-regions.json')
@@ -113,8 +113,10 @@ def run(gros, scope, out):
                                 'shirt': rectangles(shape, garments['gros'])}
             if state == 'cold':
                 target_regions[group] = selected
-        colors[group] = {state: estimate(guides[group]['cold'], guides[group][state], materials['cold'],
-                                         materials['warm' if state == 'warm' else 'cold']) for state in STATES}
+        colors[group] = {
+            state: estimate_material(guides[group]['cold'], guides[group][state], materials['cold'],
+                                     materials['warm' if state == 'warm' else 'cold']) for state in STATES
+        }
         weights[group] = face_weight(guides[group]['cold'], regions[group]['cold']['eyes'])
 
     author = authored(garments['authored'])
@@ -146,7 +148,8 @@ def run(gros, scope, out):
     passed = count['garment'] >= 5 and author['qualified'] and author['route'] == 'local'
     json_to(out / 'results.json', dict(gros_sha256=ARCHIVE, local_sha256=LOCAL, script_sha256=digest(Path(__file__)),
                                       garment_regions_sha256=digest(garment_file), regions_sha256=digest(region_file),
-                                      donor_measurements=colors, author=author, cases=results, counts=count, passed=passed))
+                                      donor_measurements=colors, author=author, cases=results, counts=count,
+                                      passed=passed, **(additions or {})))
 
 
 if __name__ == '__main__':
