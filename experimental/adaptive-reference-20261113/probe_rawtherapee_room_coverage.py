@@ -40,7 +40,8 @@ def labelling_support(images, query):
     return estimate(palette, np.zeros((len(palette), 2)), query)[1]
 
 
-def run(root, cli, response_report, profile_report, expansion_report, out):
+def run(root, cli, response_report, profile_report, expansion_report, out,
+        *, sources=SOURCES, output_name='room-coverage.png'):
     root, cli, out = (path.resolve() for path in (root, cli, out))
     profile = checked_json(profile_report, PROFILE_REPORT_SHA)
     expansion = checked_json(expansion_report, EXPANSION_SHA)
@@ -68,11 +69,11 @@ def run(root, cli, response_report, profile_report, expansion_report, out):
     author = check(root / 'rawtherapee-portrait-toning-inputs-v1/profile-check.pp3', PROFILE_HASH)
     on = b'\n'.join(section(author, name) for name in (b'Version', b'ColorToning', b'Resize'))
     off = disabled(on, section=b'ColorToning')
-    for relative, digest in SOURCES.items():
+    for relative, digest in sources.items():
         check(root / relative, digest)
     out.mkdir()
     inputs, supports, donors = {}, {}, {}
-    for relative, digest in SOURCES.items():
+    for relative, digest in sources.items():
         raw = root / relative
         name = raw.stem
         rgb = develop(raw, cli, off, out / f'{name}-off')
@@ -107,7 +108,7 @@ def run(root, cli, response_report, profile_report, expansion_report, out):
         filled[missing] = union
         picture = previous.copy()
         picture[filled] = replacement
-        prediction = save(out / 'room-coverage.png', picture)
+        prediction = save(out / output_name, picture)
         expected = checked_rgb(profile_dir / 'expected.png', profile['output_sha256']['expected'])
         masks = measurement_masks(before, expected, profile['measurement_boxes'])
         rows = score(before, expected, {'off': before, 'on': picture}, {k: v for k, v in masks.items() if v.any()})
