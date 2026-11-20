@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+混合光采用同一作者蒙版时，RAW 全覆盖合成的两折误差为 0.52／0.51，sRGB 为 3.25／3.20 RGB8。满权重也有同类差距，优先定位处理管线而非蒙版比例。[对照与复现](research/2026-11-21-playraw-pipeline-mask-attribution.md)
+
 禁用研究 CLI 的自动锐化后，三个 sRGB 关态由最大偏差 64–71 恢复到逐像素一致。《Cuckoo》局部收益保留，混合光两折仍超线。结束固定端点直放。[归因、成片和复现](research/2026-11-21-playraw-disable-import-sharpen.md)
 
 真实作者参数直接用于已导出照片，将《Cuckoo》两处肤色误差降至 0.559／0.608 RGB8，但模块关态最大偏差 64–71，混合光高权重区两折超线。停止此端点直放，保留三张成片及管线反例。[成片和复现](research/2026-11-20-playraw-rendered-input-operator.md)
