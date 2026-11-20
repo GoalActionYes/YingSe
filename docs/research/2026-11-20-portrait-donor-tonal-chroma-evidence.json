@@ -1,0 +1,341 @@
+{
+  "input_sha256": "a34c9c55ee98af11c548157738b9f96db3419f919ba41d592eb3662a6be1a08a",
+  "script_sha256": "cff2069413a9b0c088287565aad337bcecffd3c30957d7f86db313858766e975",
+  "cases": {
+    "cuckoo": {
+      "fit": {
+        "valid_fraction": 0.7838847736625515,
+        "band_counts": [
+          158737,
+          158737,
+          158736
+        ],
+        "fixed_offset": [
+          1.06,
+          -0.598,
+          0.587
+        ],
+        "centers": [
+          13.239,
+          17.444999999999997,
+          37.94
+        ],
+        "offsets": [
+          [
+            0.587,
+            -0.413,
+            0.587
+          ],
+          [
+            0.7010000000000001,
+            -0.41300000000000003,
+            0.587
+          ],
+          [
+            1.647,
+            -1.0110000000000001,
+            0.886
+          ]
+        ],
+        "outside_centers": 0.9534928584678167
+      },
+      "baseline": {
+        "whole": {
+          "edited_chroma_mae": 4.981911457614542,
+          "off_rgb_mae": 43.31846967167501,
+          "qualified": true,
+          "passed": false,
+          "pixels": 539100,
+          "projection": 0.17000375215519573,
+          "response_mae": 3.8033113173808197,
+          "response_p95": 10.5
+        },
+        "neutral": {
+          "edited_chroma_mae": 3.1670706436603338,
+          "off_rgb_mae": 40.50854982551377,
+          "qualified": true,
+          "passed": false,
+          "pixels": 103160,
+          "projection": 0.2962689509444663,
+          "response_mae": 2.045016834044203,
+          "response_p95": 3.723000000000013
+        },
+        "cheek": {
+          "edited_chroma_mae": 3.4595464285714286,
+          "off_rgb_mae": 38.563988095238095,
+          "qualified": true,
+          "passed": false,
+          "pixels": 224,
+          "projection": 0.40692722963728134,
+          "response_mae": 2.050488392857143,
+          "response_p95": 3.001199999999983
+        },
+        "light_material": {
+          "edited_chroma_mae": 4.621588888888889,
+          "off_rgb_mae": 50.239711934156375,
+          "qualified": true,
+          "passed": false,
+          "pixels": 648,
+          "projection": 0.21244523228279416,
+          "response_mae": 3.355733641975309,
+          "response_p95": 6.730799999999988
+        },
+        "green_background": {
+          "edited_chroma_mae": 10.934809153605013,
+          "off_rgb_mae": 50.256635318704284,
+          "qualified": true,
+          "passed": false,
+          "pixels": 1595,
+          "projection": 0.1833951726556377,
+          "response_mae": 8.45149868338558,
+          "response_p95": 11.596799999999991
+        }
+      },
+      "arms": {
+        "fixed": {
+          "luma_max": 0.342,
+          "gamut_fraction": 0.049224633648673716,
+          "scores": {
+            "whole": {
+              "edited_chroma_mae": 4.981911457614542,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 539100,
+              "projection": 0.1661464110252446,
+              "response_mae": 3.703302578371359,
+              "response_p95": 11.0154
+            },
+            "neutral": {
+              "edited_chroma_mae": 3.1670706436603338,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 103160,
+              "projection": 0.35782928967065986,
+              "response_mae": 1.7668387979837146,
+              "response_p95": 3.7229999999999848
+            },
+            "cheek": {
+              "edited_chroma_mae": 3.4595464285714286,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 224,
+              "projection": 0.39401834417467857,
+              "response_mae": 2.0291464285714285,
+              "response_p95": 2.860800000000012
+            },
+            "light_material": {
+              "edited_chroma_mae": 4.621588888888889,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 648,
+              "projection": 0.2506451023694905,
+              "response_mae": 3.1955734567901235,
+              "response_p95": 6.443399999999997
+            },
+            "green_background": {
+              "edited_chroma_mae": 10.934809153605013,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 1595,
+              "projection": 0.11438479295145257,
+              "response_mae": 9.509012288401253,
+              "response_p95": 12.88020000000003
+            }
+          },
+          "sha256": "4a5137d8b01944b4a8cb8be528b52cec789b3884f245e7aa84417f9ced953ece"
+        },
+        "tonal": {
+          "luma_max": 0.413,
+          "gamut_fraction": 0.049224633648673716,
+          "scores": {
+            "whole": {
+              "edited_chroma_mae": 4.981911457614542,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 539100,
+              "projection": 0.21709296516717788,
+              "response_mae": 3.4396108569838617,
+              "response_p95": 10.72799999999998
+            },
+            "neutral": {
+              "edited_chroma_mae": 3.1670706436603338,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 103160,
+              "projection": 0.4551668191411227,
+              "response_mae": 1.4828971791392012,
+              "response_p95": 3.4355999999999938
+            },
+            "cheek": {
+              "edited_chroma_mae": 3.4595464285714286,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 224,
+              "projection": 0.4600335695962649,
+              "response_mae": 1.747225892857142,
+              "response_p95": 2.5734000000000044
+            },
+            "light_material": {
+              "edited_chroma_mae": 4.621588888888889,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 648,
+              "projection": 0.3241966020528036,
+              "response_mae": 2.911094444444444,
+              "response_p95": 6.155999999999996
+            },
+            "green_background": {
+              "edited_chroma_mae": 10.934809153605013,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 1595,
+              "projection": 0.1495780290807214,
+              "response_mae": 9.220655297805642,
+              "response_p95": 12.592800000000011
+            }
+          },
+          "sha256": "f1b201adee3467b27ea54d5e0244f9e3ca16e3745980c2506318f855784ab22b"
+        }
+      },
+      "comparison_sha256": "891709f63685b1f8a191e73e9254327b76f4f07de246160d9cccfa4bc0033e09"
+    },
+    "mixed": {
+      "fit": {
+        "valid_fraction": 0.8365127063624559,
+        "band_counts": [
+          150322,
+          150321,
+          150321
+        ],
+        "fixed_offset": [
+          4.679,
+          -2.848,
+          1.761
+        ],
+        "centers": [
+          71.791,
+          113.79899999999999,
+          151.463
+        ],
+        "offsets": [
+          [
+            2.4619999999999997,
+            -1.538,
+            1.174
+          ],
+          [
+            4.451,
+            -2.549,
+            1.75
+          ],
+          [
+            8.674,
+            -5.098,
+            3.2119999999999997
+          ]
+        ],
+        "outside_centers": 0.9832460905349795
+      },
+      "baseline": {
+        "whole": {
+          "edited_chroma_mae": 1.0283733096296293,
+          "off_rgb_mae": 18.808958573388203,
+          "qualified": true,
+          "passed": false,
+          "pixels": 607500,
+          "projection": 1.3478889770645486,
+          "response_mae": 1.8584929425514403,
+          "response_p95": 3.288599999999999
+        },
+        "neutral": {
+          "edited_chroma_mae": 1.741295967190704,
+          "off_rgb_mae": 46.31633629528366,
+          "qualified": true,
+          "passed": false,
+          "pixels": 36575,
+          "projection": 1.8550504010140079,
+          "response_mae": 1.8433205085440871,
+          "response_p95": 3.001199999999997
+        }
+      },
+      "arms": {
+        "fixed": {
+          "luma_max": 0.196,
+          "gamut_fraction": 0.012019753086419753,
+          "scores": {
+            "whole": {
+              "edited_chroma_mae": 1.0283733096296293,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 607500,
+              "projection": 2.156529699891004,
+              "response_mae": 3.51895136691358,
+              "response_p95": 4.4382
+            },
+            "neutral": {
+              "edited_chroma_mae": 1.741295967190704,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 36575,
+              "projection": 2.462055595956594,
+              "response_mae": 2.6983240027341076,
+              "response_p95": 3.4355999999999938
+            }
+          },
+          "sha256": "ffb271fed747533abcb62ed4bafdb3b6b6a0d70afca738c25fe27a9e1b7e434f"
+        },
+        "tonal": {
+          "luma_max": 0.46199999999999997,
+          "gamut_fraction": 0.002385185185185185,
+          "scores": {
+            "whole": {
+              "edited_chroma_mae": 1.0283733096296293,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 607500,
+              "projection": 1.208167148960973,
+              "response_mae": 1.6088622515226334,
+              "response_p95": 2.433
+            },
+            "neutral": {
+              "edited_chroma_mae": 1.741295967190704,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 36575,
+              "projection": 1.3169656970821786,
+              "response_mae": 0.7456657826384141,
+              "response_p95": 1.4303999999999988
+            }
+          },
+          "sha256": "a193b271c5feb3a5fa4dd582eaa8cadfe7f8acee1782e57be226ab342ee9a448"
+        }
+      },
+      "comparison_sha256": "2f7ac748b43a3fd6c40b2f1a9f3df3072dcfa4ddb2b0998872c6bef19e425c45"
+    }
+  },
+  "improved_by_ten_percent": [
+    "cuckoo:neutral",
+    "mixed:whole",
+    "mixed:neutral"
+  ],
+  "failures": [
+    "cuckoo:whole",
+    "cuckoo:neutral",
+    "mixed:neutral"
+  ],
+  "passed": false
+}
