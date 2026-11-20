@@ -97,15 +97,17 @@ def compare(first, second, centers):
                 sensor_clip_pass=None)
 
 
-def run(source, report, preview):
+def run(source, report, preview, *, batch=False):
     results = {}
     board = Image.new('RGB', (1000, 830), '#202020')
     draw = ImageDraw.Draw(board)
     draw.text((12, 12), 'Oppo camera RGB | fixed gamma 1/2.2 | no white balance', fill='white')
-    for row, scene in enumerate(SCENES):
+    scenes = ('WHITE_green', 'BLUE_red') if batch else SCENES
+    lights = (1, 8) if batch else LIGHTS
+    for row, scene in enumerate(scenes):
         captures = {}
         centers = []
-        for column, light in enumerate(LIGHTS):
+        for column, light in enumerate(lights):
             info, points, raw = measure(source / f'{scene}-light{light}')
             captures[light] = info
             centers.append(points)
@@ -129,4 +131,5 @@ if __name__ == '__main__':
     parser = ArgumentParser(description=__doc__)
     for argument in ('source', 'report', 'preview'):
         parser.add_argument(argument, type=Path)
+    parser.add_argument('--batch', action='store_true', help='Audit the exposure-screened captures')
     run(**vars(parser.parse_args()))

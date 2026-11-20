@@ -22,7 +22,7 @@ ROLES = (PROBE, *(f'WT/{camera}_tags.json' for camera in CAMERAS))
 TAG_BYTES = 4096
 
 
-def select(path):
+def select(path, scenes=SCENES, roles=ROLES):
     data = path.read_bytes()
     if sha256(data).hexdigest() != CENTRAL_SHA:
         raise ValueError('Unexpected central directory hash')
@@ -42,7 +42,7 @@ def select(path):
             continue
         scene, _, lamp, role = match.groups()
         light = int(lamp)
-        if scene not in SCENES or light not in LIGHTS or role not in ROLES:
+        if scene not in scenes or light not in LIGHTS or role not in roles:
             continue
         offset = header[-1]
         volume, start = divmod(zip64_offset(extra) if offset == 0xffffffff else offset, SPLIT_SIZE)
@@ -51,7 +51,7 @@ def select(path):
             raise ValueError('Duplicate requested ZIP member')
         row[role] = dict(name=name, offset=start, volume=volume + 1, size=header[9],
                          compressed_bytes=header[8], crc32=f'{header[7]:08x}')
-    if len(captures) != 4 or any(set(group) != set(ROLES) for group in captures.values()):
+    if len(captures) != len(scenes) * len(LIGHTS) or any(set(group) != set(roles) for group in captures.values()):
         raise ValueError('Unexpected fixed member selection')
     return captures
 

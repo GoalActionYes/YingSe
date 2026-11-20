@@ -12,6 +12,7 @@ from audit_beyond_rgb_lab_index import SPLIT_SIZE
 
 
 SELECTION_SHA = '1225b2d32061758f0de18a050dec2e061ce172501accab0d5de2123d1bfbc741'
+BATCH_SELECTION_SHA = 'c8388374ef5bb95787a31ae65d38f7b99081db7d01a93c8ad922c291e22f377f'
 ROLES = ('WT/oppo.h5', 'WT/oppo_cc_detection.json', 'WT/oppo_tags.json')
 
 
@@ -30,9 +31,11 @@ def extract(data, offset, member):
     return raw
 
 
-def run(selection, destination, proxy):
+def run(selection, destination, proxy, *, batch=False):
     raw = selection.read_bytes().replace(b'\r\n', b'\n')
-    if sha256(raw).hexdigest() != SELECTION_SHA:
+    expected_sha = BATCH_SELECTION_SHA if batch else SELECTION_SHA
+    transfer_budget = 85_000_000 if batch else 72_000_000
+    if sha256(raw).hexdigest() != expected_sha:
         raise ValueError('Selection differs from the frozen light-pair audit')
     captures = {}
     for scene, group in json.loads(raw)['selected'].items():
@@ -47,7 +50,7 @@ def run(selection, destination, proxy):
             if not all(start <= link['offset'] < stop < SPLIT_SIZE for link in links):
                 raise ValueError('Capture range is outside its volume')
             captures[f'{scene}-light{light}'] = (links, start, stop, image['volume'])
-    if len(captures) != 4 or sum(stop - start + 1 for _, start, stop, _ in captures.values()) > 72_000_000:
+    if len(captures) != 4 or sum(stop - start + 1 for _, start, stop, _ in captures.values()) > transfer_budget:
         raise ValueError('Outside the frozen capture or transfer budget')
 
     for key, (links, start, stop, volume) in captures.items():
@@ -92,4 +95,5 @@ if __name__ == '__main__':
     parser.add_argument('selection', type=Path)
     parser.add_argument('destination', type=Path)
     parser.add_argument('--proxy', default='http://127.0.0.1:7897')
+    parser.add_argument('--batch', action='store_true', help='Read the pinned exposure-screened batch')
     run(**vars(parser.parse_args()))

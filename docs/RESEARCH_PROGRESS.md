@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+Beyond RGB 批量预筛锁定 WHITE_green 与 BLUE_red 两组同灯实拍。四张 Oppo 原片已核对曝光、色卡和裁切边界，进入成片比较前的开发素材范围。[取片、原片与复现](research/2026-11-20-beyond-rgb-batch-intake.md)
+
 Beyond RGB 两新场景的 Oppo 曝光设置相同，但 WHITE_red 实测照度差 17.5% 超过上限，暂只保留 WHITE_green，未取图。更正原目录计数为每场景 12 条。[预检和更正](research/2026-11-20-beyond-rgb-exposure-precheck.md)
 
 MIT 两个新拍摄地点的四张实拍完成取片与对照。大厅空间色偏差超过 0.03，厨房几乎无差，两组整体色偏均不足预定门槛。结束固定空间离散度筛查。[实拍、染色与资格](research/2026-11-20-multilum-spatial-cast.md)
