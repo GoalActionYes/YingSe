@@ -1,0 +1,1082 @@
+{
+  "parent": "4413ee3468586d3ab5e715013c5e86d9c24412781e8385e75d5664b6e50df260",
+  "training_pairs": 720,
+  "script_sha": "71f1b68650bfc72f8f4e1dc4803458e6910ee48c0fff99bb083c7f1ed3b59cff",
+  "protocol_sha": "464b2f974fa99e765bef5615bfb79c76b26ed4e5b152c575cdeca0bc803f67d2",
+  "report_sha": "6868a57951ec91fd0408fafe1b70a049719e355e4f0ba9a40b026eff01514dd0",
+  "counts": {
+    "reference_film_a_style": 1,
+    "reference_film_a_joint": 0,
+    "reference_film_a_whole": 0,
+    "reference_film_b_style": 0,
+    "reference_film_b_joint": 0,
+    "reference_film_b_whole": 0,
+    "reference_off": 10,
+    "two_image_film_a_style": 1,
+    "two_image_film_a_joint": 0,
+    "two_image_film_a_whole": 0,
+    "two_image_film_b_style": 0,
+    "two_image_film_b_joint": 0,
+    "two_image_film_b_whole": 0,
+    "two_image_off": 11,
+    "capacity_film_a_style": 60,
+    "capacity_film_a_joint": 6,
+    "capacity_film_a_whole": 12,
+    "capacity_film_b_style": 60,
+    "capacity_film_b_joint": 6,
+    "capacity_film_b_whole": 12,
+    "capacity_off": 0
+  },
+  "cases": {
+    "01-from-02": {
+      "hashes": {
+        "reference-cold-off": "b167700363132c1ccde84a5bcad653b5205880a962890b62880cd1270b6be4b1",
+        "reference-cold-film_a": "642bd0e4e8e916a1aa0e97557a961c56aa951c2ed679cfb6ede6a8c2909e9cf2",
+        "reference-cold-film_b": "d85311430aeba95d48382a4a2761ee0f97a17b7cc1ba2f06d63803462db3f4d3",
+        "reference-warm-off": "ce76f56ac315aea82a38078804116b9e98345a9862085fc18fc7aa351a1e7499",
+        "reference-warm-film_a": "5edf6a70463a110f1c2c760438e847a63e8939eb810e42e6ddef2ee82200a9ed",
+        "reference-warm-film_b": "aa053ec27e04c1c9f2a1711208545565843e7e6ba371107ad85ba46d47a76cf3",
+        "two_image-cold-off": "c5b4fff5dc8c76960d5d06c00dfc49567b4778cb93e2bfdb82e29e285e338942",
+        "two_image-cold-film_a": "2fbc57a75441a91e6c653006cd30385ad3b008fcc36fd444050929b22f902410",
+        "two_image-cold-film_b": "643cb0fcce1f962bed83a5fcc429234b8ba7d36cd76d72dcdf43fcf1757ceb89",
+        "two_image-warm-off": "9b47cdd5d602ffc56b2bb2b39011efafd9ef3e777845adea9589a3c5409a15b8",
+        "two_image-warm-film_a": "2adf456e2790667e50937267ccbfdaa1e7c3a5ad400c0f0e17d99e95f1d4d6ff",
+        "two_image-warm-film_b": "dd0b9e8459293a86a49c43c8cc78a82df562ae5bc3f4d8a65c10761b9d9851b1"
+      },
+      "panel_sha": "8e56ffc10240a456cfeb4fae0c3716e619e0acac67e251eacd67092a5f3dc294",
+      "whole": {
+        "reference": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.4472475309717505,
+                "response_mae": 4.7530712551540795,
+                "off_matches_original_mae": 3.074904547797309,
+                "on_matches_authored_mae": 2.298585679796007,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.1310401227017211,
+                "response_mae": 7.653466966417101,
+                "off_matches_original_mae": 7.130222744411892,
+                "on_matches_authored_mae": 2.4189690483940973,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 4.140321519639757,
+              "on": 1.1720614963107638
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.39796892401815853,
+                "response_mae": 5.821980794270833,
+                "off_matches_original_mae": 3.074904547797309,
+                "on_matches_authored_mae": 3.3532062106662326,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2247972046652534,
+                "response_mae": 7.5867563883463545,
+                "off_matches_original_mae": 7.130222744411892,
+                "on_matches_authored_mae": 3.1011581420898438,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 4.140321519639757,
+              "on": 2.3241068522135415
+            },
+            "passed": false
+          }
+        },
+        "two_image": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.47021778284503657,
+                "response_mae": 4.590176052517361,
+                "off_matches_original_mae": 5.8500171237521705,
+                "on_matches_authored_mae": 10.14166005452474,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.14882055834583008,
+                "response_mae": 7.505895826551649,
+                "off_matches_original_mae": 5.182767232259114,
+                "on_matches_authored_mae": 9.607074313693577,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 3.875418768988715,
+              "on": 1.4980155097113714
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.415281829325229,
+                "response_mae": 5.6725268893771705,
+                "off_matches_original_mae": 5.8500171237521705,
+                "on_matches_authored_mae": 11.314732869466146,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2396194371398196,
+                "response_mae": 7.420677185058594,
+                "off_matches_original_mae": 5.182767232259114,
+                "on_matches_authored_mae": 9.544809977213541,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 3.875418768988715,
+              "on": 2.085912068684896
+            },
+            "passed": false
+          }
+        },
+        "capacity": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.9794435729706814,
+                "response_mae": 0.7429012722439237,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7429012722439237,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9794435729706814,
+                "response_mae": 0.7429012722439237,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7429012722439237,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.9689358752357287,
+                "response_mae": 0.7205573187934028,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7205573187934028,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9689358752357287,
+                "response_mae": 0.7205573187934028,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7205573187934028,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          }
+        }
+      }
+    },
+    "01-from-03": {
+      "hashes": {
+        "reference-cold-off": "e791a984a2f7d7de0a0702405425a358fc47f0bca3c85bca9e5da055de085312",
+        "reference-cold-film_a": "0e9ce0db6f502d7d065cf549f5ddd6c28384218a89712a68f50856708a6758a6",
+        "reference-cold-film_b": "18f8051e4243d4a876ac8e562d62bfa2ef64b61252f3fbf0ccb8a660250f71b5",
+        "reference-warm-off": "f0bc29e284e27b10fc12fc5a329179c4619918f239970aab38caaf206ad5090c",
+        "reference-warm-film_a": "0d091fd4ce58ed3837e041ad7242196480691724fd8ae36a53c72e5068a7dc3a",
+        "reference-warm-film_b": "da7a5a28de2407a07ea32872eff6b98216466a4dd7902af0118d1754e46036b8",
+        "two_image-cold-off": "665e1346439f84f337546a0c1622d03b03511ca6ef042ab640a2cc0c2907f800",
+        "two_image-cold-film_a": "c0b638b55e002c89446b63836d5e4196d1911470d6d30a3f635b9b08f1b5630f",
+        "two_image-cold-film_b": "58f2594cac1b4ce82c2adc4b0847cdf3aa2a49400406aba50b16bc2eb597bddd",
+        "two_image-warm-off": "d5e2fc43205de0be1120b8cf5e5f025a1353ae364c62ac8c4b77bbac5c0f0895",
+        "two_image-warm-film_a": "9dcef4faaeadd5d3943dcfbf922a03a0ef805b613fcf434287f2ed4fcdb98ba2",
+        "two_image-warm-film_b": "25c7386863b2e0f7efc7ea3a01d442a47b3728d20e8aa67d36965bc41af339e5"
+      },
+      "panel_sha": "ca2c3f827c0f5e478c16878c55ac3dba2646eae1474e99674c70bb1e37318900",
+      "whole": {
+        "reference": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.31779323175325835,
+                "response_mae": 5.948827955457899,
+                "off_matches_original_mae": 1.0163616604275174,
+                "on_matches_authored_mae": 5.848878648546007,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.08446058063915064,
+                "response_mae": 8.104377746582031,
+                "off_matches_original_mae": 3.062408447265625,
+                "on_matches_authored_mae": 5.3459972805447045,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.7752727932400174,
+              "on": 0.5296452840169271
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.3517338092367414,
+                "response_mae": 6.293061150444879,
+                "off_matches_original_mae": 1.0163616604275174,
+                "on_matches_authored_mae": 6.235583835177952,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2323759959215789,
+                "response_mae": 7.463294135199653,
+                "off_matches_original_mae": 3.062408447265625,
+                "on_matches_authored_mae": 4.804139879014757,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.7752727932400174,
+              "on": 1.5027228461371527
+            },
+            "passed": false
+          }
+        },
+        "two_image": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.37617567153267656,
+                "response_mae": 5.437434726291233,
+                "off_matches_original_mae": 9.58319346110026,
+                "on_matches_authored_mae": 14.859059651692709,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.13521169595630164,
+                "response_mae": 7.6257434421115455,
+                "off_matches_original_mae": 7.287965562608507,
+                "on_matches_authored_mae": 14.828281826443142,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.42195553249783,
+              "on": 0.5344043307834201
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.423908310742808,
+                "response_mae": 5.747383965386285,
+                "off_matches_original_mae": 9.58319346110026,
+                "on_matches_authored_mae": 15.026017083062065,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2819989050587216,
+                "response_mae": 7.022124396430121,
+                "off_matches_original_mae": 7.287965562608507,
+                "on_matches_authored_mae": 14.173773023817274,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.42195553249783,
+              "on": 0.8957282172309028
+            },
+            "passed": false
+          }
+        },
+        "capacity": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.9794435729706814,
+                "response_mae": 0.7429012722439237,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7429012722439237,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9794435729706814,
+                "response_mae": 0.7429012722439237,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7429012722439237,
+                "original_matches_authored_mae": 8.89363013373481,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.9689358752357287,
+                "response_mae": 0.7205573187934028,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7205573187934028,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9689358752357287,
+                "response_mae": 0.7205573187934028,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.7205573187934028,
+                "original_matches_authored_mae": 9.90887705485026,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          }
+        }
+      }
+    },
+    "02-from-01": {
+      "hashes": {
+        "reference-cold-off": "eea6ef4507880be71a1330b6099471088bd9b748f81c29369ccd6cc50c25f09b",
+        "reference-cold-film_a": "0f0a44414158e8115589c8052f222fe46b9a0369d52d5e100a53fc0f7f40f057",
+        "reference-cold-film_b": "de7bcf05d7d71c2b546ca75cd9312bf95d12bddcee7121ab4049b0306980020a",
+        "reference-warm-off": "27017a705f14087be71d42566c8587f508d4870efecb0d79aef949777aec12f6",
+        "reference-warm-film_a": "b5a9d4e0e693950424d1c5205545e0e18aceed099e1be6b36a9a3292b9ac7b30",
+        "reference-warm-film_b": "4968365fcb79aac6b333af9b0169e6a1169342689acbb02c359bba6a0dffa260",
+        "two_image-cold-off": "100d42c81704481d7eff51ec7666f8ae64ba226494af8687ff19f4cd6c5dee63",
+        "two_image-cold-film_a": "bd60838578e37ad2c332b0aa7d088e38cb067a9ee9a8b3854c9a603fe875b7f8",
+        "two_image-cold-film_b": "f57af6ebe08e41de91ab665fa909222a28af973ff47ed58e2d00c1186caddbe6",
+        "two_image-warm-off": "d5dd931ae83a77ed42aafb4ae3c475a11aaec5654f2be99b651a235183eb2f95",
+        "two_image-warm-film_a": "3652164e1ad74d2348fd0a366e66f9254d79668c8e63bab7b22f2f3e3fb3eaba",
+        "two_image-warm-film_b": "f0d36aba7f82523e7629680ac66f05d5ebc5037c2e584eaa06ddc60d3e21f787"
+      },
+      "panel_sha": "68643694c7e45011fcf382e38ca5fd06ab02dfc228f5516fe77ed8786535dc93",
+      "whole": {
+        "reference": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.5837320744992903,
+                "response_mae": 3.627780490451389,
+                "off_matches_original_mae": 7.729893154568142,
+                "on_matches_authored_mae": 4.254822625054254,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.44630193143986513,
+                "response_mae": 4.786659240722656,
+                "off_matches_original_mae": 9.355211893717447,
+                "on_matches_authored_mae": 4.758819580078125,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.6356777615017362,
+              "on": 0.7222976684570312
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.4921626021952105,
+                "response_mae": 4.830898708767361,
+                "off_matches_original_mae": 7.729893154568142,
+                "on_matches_authored_mae": 3.053966098361545,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.38567314301813177,
+                "response_mae": 5.943757798936632,
+                "off_matches_original_mae": 9.355211893717447,
+                "on_matches_authored_mae": 3.5260187784830728,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.6356777615017362,
+              "on": 0.6356099446614584
+            },
+            "passed": false
+          }
+        },
+        "two_image": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.5466268936408425,
+                "response_mae": 3.997350904676649,
+                "off_matches_original_mae": 6.425960964626736,
+                "on_matches_authored_mae": 5.889817131890191,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.4507825774974932,
+                "response_mae": 4.754495408799913,
+                "off_matches_original_mae": 7.934657626681858,
+                "on_matches_authored_mae": 6.8134765625,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.5307523939344618,
+              "on": 1.3314895629882812
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.4605933307138997,
+                "response_mae": 5.161350674099392,
+                "off_matches_original_mae": 6.425960964626736,
+                "on_matches_authored_mae": 6.518140157063802,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.3721415874799618,
+                "response_mae": 6.07157728407118,
+                "off_matches_original_mae": 7.934657626681858,
+                "on_matches_authored_mae": 7.342347039116754,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.5307523939344618,
+              "on": 1.3448486328125
+            },
+            "passed": false
+          }
+        },
+        "capacity": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.993914750712856,
+                "response_mae": 0.3862999810112847,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3862999810112847,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.993914750712856,
+                "response_mae": 0.3862999810112847,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3862999810112847,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.9808401365817916,
+                "response_mae": 0.41185082329644096,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.41185082329644096,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9808401365817916,
+                "response_mae": 0.41185082329644096,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.41185082329644096,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          }
+        }
+      }
+    },
+    "02-from-03": {
+      "hashes": {
+        "reference-cold-off": "b740a6ddb228c9f26931e187322dcb55e8c86d9682e69ee1043a6db95548a900",
+        "reference-cold-film_a": "5789dec4fbf27f257cf31f81cee0f9854fc256ed7615d278803018ace22108a2",
+        "reference-cold-film_b": "c885bfb2a82d7c99514b188ba79b2ce93591f6d9c469c2f40d5db3b7d2cb26c1",
+        "reference-warm-off": "0ea49b53ef02822bf6265ec504e9a3a349c906dfeda789f133c3dcc9b53bae93",
+        "reference-warm-film_a": "3de3673bb5a9410987a1a50002331ccf98dc333655e698ce13e5ec769e16c6a9",
+        "reference-warm-film_b": "ea1448bac1c048a2939e207812cb13dba2761b76857a77da5099e82a4880a4e9",
+        "two_image-cold-off": "75f5e0299332c08cd6fef254ccd37cab445576d069a9351da16d6180c54225ee",
+        "two_image-cold-film_a": "eb121bf7545a9087067bb3eda30e2e5d02112d3f57fc88b177f60b256db6bbdc",
+        "two_image-cold-film_b": "0cc13913b4edab1657682da75601f6a003aee51cbfd2a2334a14e2bd8267ee1b",
+        "two_image-warm-off": "6ac59904f72997abaa4eb5c55a8b372a9bba92ffcde6be41599296df1d20ebf6",
+        "two_image-warm-film_a": "57df9e556a43103fc780540e9fc9b4799e2fce783e9b8d4bea6943350d678728",
+        "two_image-warm-film_b": "c2513ac642642f3a6708512fb36edf4d84bcbcbbd1bd1c1020c91e9ec6ba07f2"
+      },
+      "panel_sha": "34e5101cfdd464e9bd23dff168debb853789dd7f0158a0fd14b7d05e5a0237c1",
+      "whole": {
+        "reference": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.38458567293428064,
+                "response_mae": 5.2797961764865455,
+                "off_matches_original_mae": 1.0522715250651042,
+                "on_matches_authored_mae": 4.999661763509114,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.09483937631270103,
+                "response_mae": 7.6796154446072045,
+                "off_matches_original_mae": 3.0767974853515625,
+                "on_matches_authored_mae": 4.679713779025608,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.9071163601345487,
+              "on": 0.4319000244140625
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.38395837322250864,
+                "response_mae": 6.001659817165798,
+                "off_matches_original_mae": 1.0522715250651042,
+                "on_matches_authored_mae": 5.825839572482639,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.23791651802092492,
+                "response_mae": 7.393569098578559,
+                "off_matches_original_mae": 3.0767974853515625,
+                "on_matches_authored_mae": 4.565160963270399,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.9071163601345487,
+              "on": 1.3567208184136286
+            },
+            "passed": false
+          }
+        },
+        "two_image": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.4336832914557374,
+                "response_mae": 4.871727837456597,
+                "off_matches_original_mae": 5.492489284939236,
+                "on_matches_authored_mae": 9.958663940429688,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.15978318084541196,
+                "response_mae": 7.150967915852864,
+                "off_matches_original_mae": 4.681827121310764,
+                "on_matches_authored_mae": 10.003383212619358,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.420166015625,
+              "on": 0.47851308186848956
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.4473510370465092,
+                "response_mae": 5.4007152981228295,
+                "off_matches_original_mae": 5.492489284939236,
+                "on_matches_authored_mae": 10.570181104871962,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.30557583962667567,
+                "response_mae": 6.771880255805121,
+                "off_matches_original_mae": 4.681827121310764,
+                "on_matches_authored_mae": 9.743922763400608,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.420166015625,
+              "on": 0.8937191433376737
+            },
+            "passed": false
+          }
+        },
+        "capacity": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.993914750712856,
+                "response_mae": 0.3862999810112847,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3862999810112847,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.993914750712856,
+                "response_mae": 0.3862999810112847,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3862999810112847,
+                "original_matches_authored_mae": 8.500196668836805,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.9808401365817916,
+                "response_mae": 0.41185082329644096,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.41185082329644096,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9808401365817916,
+                "response_mae": 0.41185082329644096,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.41185082329644096,
+                "original_matches_authored_mae": 9.901817321777344,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          }
+        }
+      }
+    },
+    "03-from-01": {
+      "hashes": {
+        "reference-cold-off": "3990d30cdc8bac07d28ed409f7b22097b5a921436e4222074607e16430c93320",
+        "reference-cold-film_a": "552a17c61e3a4e5776aa6064b84b2236718456f1c107e5316bbefd43d20b58d7",
+        "reference-cold-film_b": "44f3e91842ecc184ed1904209154a35ece8cecc8fb292a877734d71917c0ae73",
+        "reference-warm-off": "a2d2901b646e83b8e7bc12ac6e84cd451adb022561dbfff54bf904a67792a6d5",
+        "reference-warm-film_a": "8245fb0e1a4460b69f457ee35487de10380dcfb784a4fe2401e39bb6bdd1eee0",
+        "reference-warm-film_b": "65b106edb8315c25461945a77210ac8b46cb088790c2b21d996618ffa747deab",
+        "two_image-cold-off": "0c015fdf4eeed89d81583b17e1122845b1778e38e219e8c1b10e0416ef116d91",
+        "two_image-cold-film_a": "6b01d6eb48fb4d6b9caa12cc52fa5a653c4e3fa04e6a5fa1ac634b695f3c35bd",
+        "two_image-cold-film_b": "1bb1f074bf668f3e438fd329c3eb2b9b443f60c8aa4764edb43af4a8aff7d22d",
+        "two_image-warm-off": "ecd34af65f3bf9cb3613be0c8557a5986bb483674e3674bd1aeb7c7820e605d8",
+        "two_image-warm-film_a": "75aa81cfcbf3341e531ceee7dbb96f44c928614719538f150ca9b17ea4a8ea6e",
+        "two_image-warm-film_b": "f13eeac1ea47f18003ff9b71c70bd193d3f2b87c4d62ff0e9b4b98cbe25dd26f"
+      },
+      "panel_sha": "fb907ad1ae2aa1c47e8dc91cb719ead1595a3bd8cbef72dc14409564178a761c",
+      "whole": {
+        "reference": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.5477240743435444,
+                "response_mae": 4.140167236328125,
+                "off_matches_original_mae": 7.521152072482639,
+                "on_matches_authored_mae": 4.496921115451389,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.44931486357278544,
+                "response_mae": 4.907796223958333,
+                "off_matches_original_mae": 8.981552124023438,
+                "on_matches_authored_mae": 5.174370659722222,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.5433807373046875,
+              "on": 0.7988654242621528
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.502449492371552,
+                "response_mae": 4.813691880967882,
+                "off_matches_original_mae": 7.521152072482639,
+                "on_matches_authored_mae": 3.4109920925564237,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.4092950639826949,
+                "response_mae": 5.743383619520399,
+                "off_matches_original_mae": 8.981552124023438,
+                "on_matches_authored_mae": 3.8519159952799478,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.5433807373046875,
+              "on": 0.8756535847981771
+            },
+            "passed": false
+          }
+        },
+        "two_image": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.5518070134840705,
+                "response_mae": 4.098547193739149,
+                "off_matches_original_mae": 6.146210564507379,
+                "on_matches_authored_mae": 5.0813547770182295,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.4292483690073114,
+                "response_mae": 5.069046868218316,
+                "off_matches_original_mae": 6.768970065646702,
+                "on_matches_authored_mae": 5.864087422688802,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.6617999606662326,
+              "on": 1.104320102267795
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.4812966571260075,
+                "response_mae": 4.975262112087673,
+                "off_matches_original_mae": 6.146210564507379,
+                "on_matches_authored_mae": 5.508377922905816,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.386382815177366,
+                "response_mae": 5.916546291775173,
+                "off_matches_original_mae": 6.768970065646702,
+                "on_matches_authored_mae": 6.349473741319445,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.6617999606662326,
+              "on": 1.463666280110677
+            },
+            "passed": false
+          }
+        },
+        "capacity": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.9934246167198798,
+                "response_mae": 0.2793307834201389,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.2793307834201389,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9934246167198798,
+                "response_mae": 0.2793307834201389,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.2793307834201389,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.9926838187699193,
+                "response_mae": 0.3363410101996528,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3363410101996528,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9926838187699193,
+                "response_mae": 0.3363410101996528,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3363410101996528,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          }
+        }
+      }
+    },
+    "03-from-02": {
+      "hashes": {
+        "reference-cold-off": "c16c18402c279ef55605a7d1aff34f2730146abc962409919fba822b600188d8",
+        "reference-cold-film_a": "fd1da9fdcefac75b938b4023db859b07bb447ee7560852db5545b1e0ddc682c0",
+        "reference-cold-film_b": "4d828a88c16b3646f65c65f007e9c258d0ffdb57607ac713ce42a437e3268ca7",
+        "reference-warm-off": "ec677ea7c9bb0882d4810e33e7a01458bd78b85c86c4a27b086c4e1a8d0aa3f1",
+        "reference-warm-film_a": "a3e0ffe8f6cea2ba07378b7b38087d5897c94ab67ccabfd6cf10068be5a21fbb",
+        "reference-warm-film_b": "492882ebbebe57e728dff290c19dc47081c23b15a1b93cae35187927a78e8deb",
+        "two_image-cold-off": "d111f8b21f65e3db02e46d10ee0de68c3b1b7e498c4fe7a5f79d3bb9d05b2a14",
+        "two_image-cold-film_a": "c13c875a99decb5b6bc2efb9cac900d0da09114d99ca2aff765dae249a818d9c",
+        "two_image-cold-film_b": "9142cebeb658fac5dbf7d5be97322e21be21db364af6ab6e1175eb888904d414",
+        "two_image-warm-off": "9270bee9f9c87b5b90f100ea016387bd5af004e357039cf11f1805569eb22592",
+        "two_image-warm-film_a": "780a54983ea388d64428714f74672d814e9e2ccc5ed3e078f103edf1c1077b2e",
+        "two_image-warm-film_b": "6541087954e3a18eb25de86120a93e8dcee91bff5fc5efac6beaca45d70338c4"
+      },
+      "panel_sha": "34be6692ae5ee82ad5711c23907372b8a157aad8196fa65657c650f84cfdc921",
+      "whole": {
+        "reference": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.513321258960607,
+                "response_mae": 4.371854146321614,
+                "off_matches_original_mae": 3.199387444390191,
+                "on_matches_authored_mae": 1.6646813286675348,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.14293369678616483,
+                "response_mae": 7.368385314941406,
+                "off_matches_original_mae": 7.163373311360677,
+                "on_matches_authored_mae": 1.751313951280382,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 4.2279001871744795,
+              "on": 1.0698174370659723
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.4390943601466446,
+                "response_mae": 5.452668084038629,
+                "off_matches_original_mae": 3.199387444390191,
+                "on_matches_authored_mae": 3.113399929470486,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2799184644859488,
+                "response_mae": 6.9724536471896705,
+                "off_matches_original_mae": 7.163373311360677,
+                "on_matches_authored_mae": 2.499886406792535,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 4.2279001871744795,
+              "on": 2.6726531982421875
+            },
+            "passed": false
+          }
+        },
+        "two_image": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.5095088963026393,
+                "response_mae": 4.430877685546875,
+                "off_matches_original_mae": 2.8506257798936634,
+                "on_matches_authored_mae": 4.492561340332031,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.18067618930566817,
+                "response_mae": 7.057549370659722,
+                "off_matches_original_mae": 4.943575541178386,
+                "on_matches_authored_mae": 4.003488328721788,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 3.556427001953125,
+              "on": 1.527498033311632
+            },
+            "passed": false
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.42620099236844833,
+                "response_mae": 5.5604807535807295,
+                "off_matches_original_mae": 2.8506257798936634,
+                "on_matches_authored_mae": 5.991666158040364,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.25668218959144645,
+                "response_mae": 7.192159864637587,
+                "off_matches_original_mae": 4.943575541178386,
+                "on_matches_authored_mae": 4.979668511284722,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 3.556427001953125,
+              "on": 1.9063627454969618
+            },
+            "passed": false
+          }
+        },
+        "capacity": {
+          "film_a": {
+            "response": {
+              "cold": {
+                "projection": 0.9934246167198798,
+                "response_mae": 0.2793307834201389,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.2793307834201389,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9934246167198798,
+                "response_mae": 0.2793307834201389,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.2793307834201389,
+                "original_matches_authored_mae": 8.518987867567274,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          },
+          "film_b": {
+            "response": {
+              "cold": {
+                "projection": 0.9926838187699193,
+                "response_mae": 0.3363410101996528,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3363410101996528,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": true
+              },
+              "warm": {
+                "projection": 0.9926838187699193,
+                "response_mae": 0.3363410101996528,
+                "off_matches_original_mae": 0.0,
+                "on_matches_authored_mae": 0.3363410101996528,
+                "original_matches_authored_mae": 9.871635437011719,
+                "passed": true
+              }
+            },
+            "lamp_spill": {
+              "off": 0.0,
+              "on": 0.0
+            },
+            "passed": true
+          }
+        }
+      }
+    }
+  }
+}
