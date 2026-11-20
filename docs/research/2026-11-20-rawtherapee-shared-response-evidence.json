@@ -1,0 +1,320 @@
+{
+  "cue_sha256": "971d8ef7b0132f97ab69203854ef72a35f2ee73e97e0e18d45ae2e3d983ff5f9",
+  "region_sha256": "4e9e6f405312cfe01185095086b7f2629945b7cd0c07cd346d67c2b7a7e8e098",
+  "cases": {
+    "cuckoo": {
+      "donors": [
+        "mixed",
+        "P1005231",
+        "R6_06283"
+      ],
+      "expected_sha256": "8e23197e619d2c431f53a8ef8af73f5d89116d703aad32c173c5bad59cfec605",
+      "arms": {
+        "constant": {
+          "prediction_sha256": "8fba9de12e77a25bac8d256f314eb25721e05d364ddf23d1241debd2e09d319b",
+          "gamut_limited_fraction": 0.05464848822110926,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 4.981911457614542,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 539100,
+              "projection": 0.218053150923891,
+              "response_mae": 3.4478278156186235,
+              "response_p95": 10.72799999999998
+            },
+            "neutral": {
+              "edited_chroma_mae": 3.1670706436603338,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 103160,
+              "projection": 0.4551668191411227,
+              "response_mae": 1.4828971791392012,
+              "response_p95": 3.4355999999999938
+            },
+            "cheek": {
+              "edited_chroma_mae": 3.4595464285714286,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 224,
+              "projection": 0.4600335695962649,
+              "response_mae": 1.747225892857142,
+              "response_p95": 2.5734000000000044
+            },
+            "light_material": {
+              "edited_chroma_mae": 4.621588888888889,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 648,
+              "projection": 0.32435119813479885,
+              "response_mae": 2.9099907407407404,
+              "response_p95": 6.155999999999996
+            },
+            "green_background": {
+              "edited_chroma_mae": 10.934809153605013,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 1595,
+              "projection": 0.1495780290807214,
+              "response_mae": 9.220655297805642,
+              "response_p95": 12.592800000000011
+            }
+          }
+        },
+        "pixel-color": {
+          "prediction_sha256": "856bd82d5c08e11e9e2929eada844f51fc542c59c28b10b0218d623493078a13",
+          "gamut_limited_fraction": 0.04558708959376739,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 4.981911457614542,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 539100,
+              "projection": 0.5244068462760973,
+              "response_mae": 2.5575780497124834,
+              "response_p95": 9.437999999999962
+            },
+            "neutral": {
+              "edited_chroma_mae": 3.1670706436603338,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 103160,
+              "projection": 1.1380848408782147,
+              "response_mae": 1.3293250252035673,
+              "response_p95": 2.4329999999999927
+            },
+            "cheek": {
+              "edited_chroma_mae": 3.4595464285714286,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 224,
+              "projection": 1.238964950749377,
+              "response_mae": 1.0205642857142863,
+              "response_p95": 1.685129999999984
+            },
+            "light_material": {
+              "edited_chroma_mae": 4.621588888888889,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 648,
+              "projection": 0.9236787422988383,
+              "response_mae": 1.4384391975308641,
+              "response_p95": 3.8633999999999844
+            },
+            "green_background": {
+              "edited_chroma_mae": 10.934809153605013,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 1595,
+              "projection": 0.35352936398158746,
+              "response_mae": 6.761296677115987,
+              "response_p95": 11.590199999999953
+            }
+          }
+        }
+      },
+      "empty_regions": []
+    },
+    "mixed": {
+      "donors": [
+        "cuckoo",
+        "P1005231",
+        "R6_06283"
+      ],
+      "expected_sha256": "f933add77c399d5da2cc7a8569d79fabe50216397ccf54342fc5605ff8e8336e",
+      "arms": {
+        "constant": {
+          "prediction_sha256": "2e26192e85b710f03cf2ba7bd43713da328c45f14a010decf3450c63437a677c",
+          "gamut_limited_fraction": 0.002385185185185185,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 1.0283733096296293,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 607500,
+              "projection": 1.3273629956433652,
+              "response_mae": 1.9065675186831275,
+              "response_p95": 2.7203999999999997
+            },
+            "neutral": {
+              "edited_chroma_mae": 1.741295967190704,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 36575,
+              "projection": 1.517845450688784,
+              "response_mae": 1.0713502228298017,
+              "response_p95": 1.7177999999999969
+            }
+          }
+        },
+        "pixel-color": {
+          "prediction_sha256": "8e211cbbbc201072ca20719c0b526a3dc6849ca203a1eb238118df968ad95b4a",
+          "gamut_limited_fraction": 0.0002551440329218107,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 1.0283733096296293,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 607500,
+              "projection": 0.5949270855027977,
+              "response_mae": 0.5895096773662551,
+              "response_p95": 1.1430000000000025
+            },
+            "neutral": {
+              "edited_chroma_mae": 1.741295967190704,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 36575,
+              "projection": 1.2325263726616458,
+              "response_mae": 0.592560065618592,
+              "response_p95": 1.002600000000001
+            }
+          }
+        }
+      },
+      "empty_regions": []
+    },
+    "P1005231": {
+      "donors": [
+        "cuckoo",
+        "mixed",
+        "R6_06283"
+      ],
+      "expected_sha256": "e98b2f9d2de9c89571dd0098819b3b3d47f40556c2c3e9f5a77ffd4e1f4679d6",
+      "arms": {
+        "constant": {
+          "prediction_sha256": "0f174cc3ba637b325a85e43b632ee16f0693a2f06b334952c24eded7eb62bd28",
+          "gamut_limited_fraction": 0.09343539094650206,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 2.442065257942387,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 607500,
+              "projection": 0.6537007562418892,
+              "response_mae": 1.3845701422222219,
+              "response_p95": 3.2819999999999965
+            },
+            "neutral": {
+              "edited_chroma_mae": 2.8186862749504686,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 169085,
+              "projection": 0.8221054637151499,
+              "response_mae": 1.135639900641689,
+              "response_p95": 2.8607999999999834
+            }
+          }
+        },
+        "pixel-color": {
+          "prediction_sha256": "ed1402a1be6bff4cd23a55d2f2287db3d60380bf2c593d8c9a76f97c024f832c",
+          "gamut_limited_fraction": 0.10887736625514403,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 2.442065257942387,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 607500,
+              "projection": 0.7504522198770875,
+              "response_mae": 0.8642720668312758,
+              "response_p95": 3.4355999999999938
+            },
+            "neutral": {
+              "edited_chroma_mae": 2.8186862749504686,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 169085,
+              "projection": 1.0024711520446206,
+              "response_mae": 0.5267561037348084,
+              "response_p95": 1.1429999999999936
+            }
+          }
+        }
+      },
+      "empty_regions": []
+    },
+    "R6_06283": {
+      "donors": [
+        "cuckoo",
+        "mixed",
+        "P1005231"
+      ],
+      "expected_sha256": "e6785f8eaad2b32bff3b4dc7619c3026d0f29ed473c800177d741521da585c14",
+      "arms": {
+        "constant": {
+          "prediction_sha256": "f922342c7dbd099dbb6ad995e1dca384e1ce7f7da82e38b7c91317a8a60c2f06",
+          "gamut_limited_fraction": 0.00024588648548715103,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 2.1295042277685337,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 540900,
+              "projection": 0.7984149706953491,
+              "response_mae": 1.1713500769088556,
+              "response_p95": 2.145599999999998
+            },
+            "neutral": {
+              "edited_chroma_mae": 2.256725918179713,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 142483,
+              "projection": 0.9406194246584264,
+              "response_mae": 0.7703247615505008,
+              "response_p95": 1.430400000000006
+            }
+          }
+        },
+        "pixel-color": {
+          "prediction_sha256": "dca034083420d3ae9e514561b41ccaed1eafed4fd6448d968812982429e922c2",
+          "gamut_limited_fraction": 3.327787021630615e-05,
+          "regions": {
+            "whole": {
+              "edited_chroma_mae": 2.1295042277685337,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": true,
+              "pixels": 540900,
+              "projection": 0.8766280948359779,
+              "response_mae": 0.6947155030504715,
+              "response_p95": 1.4303999999999988
+            },
+            "neutral": {
+              "edited_chroma_mae": 2.256725918179713,
+              "off_rgb_mae": 0.0,
+              "qualified": true,
+              "passed": false,
+              "pixels": 142483,
+              "projection": 1.2604930802811938,
+              "response_mae": 0.7614464701052054,
+              "response_p95": 1.430400000000006
+            }
+          }
+        }
+      },
+      "empty_regions": []
+    }
+  },
+  "regressions": [],
+  "passed": false
+}
