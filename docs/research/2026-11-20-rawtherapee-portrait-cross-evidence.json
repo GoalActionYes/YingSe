@@ -1,0 +1,108 @@
+{
+  "checkpoint_sha256": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "cli_sha256": "9172a03896f0200daf621909b024f6cd65a24837cad56d0748730b2fa6d2fb6a",
+  "operator_profile_sha256": "e6ebe23fd1e09bd8b53c7791f8f08b3ad4ad63e4467d597243f42319dd203cb0",
+  "mixed_raw_sha256": "7b4cc05a958acd8e10a161d1b2faf6cae9d25a37de28550b0680b34c14c38217",
+  "region_sha256": "4e9e6f405312cfe01185095086b7f2629945b7cd0c07cd346d67c2b7a7e8e098",
+  "results": {
+    "cuckoo": {
+      "scores": {
+        "whole": {
+          "edited_chroma_mae": 4.981911457614542,
+          "off_rgb_mae": 43.31846967167501,
+          "qualified": true,
+          "passed": false,
+          "pixels": 539100,
+          "projection": 0.17000375215519573,
+          "response_mae": 3.8033113173808197,
+          "response_p95": 10.5
+        },
+        "neutral": {
+          "edited_chroma_mae": 3.1670706436603338,
+          "off_rgb_mae": 40.50854982551377,
+          "qualified": true,
+          "passed": false,
+          "pixels": 103160,
+          "projection": 0.2962689509444663,
+          "response_mae": 2.045016834044203,
+          "response_p95": 3.723000000000013
+        },
+        "cheek": {
+          "edited_chroma_mae": 3.4595464285714286,
+          "off_rgb_mae": 38.563988095238095,
+          "qualified": true,
+          "passed": false,
+          "pixels": 224,
+          "projection": 0.40692722963728134,
+          "response_mae": 2.050488392857143,
+          "response_p95": 3.001199999999983
+        },
+        "light_material": {
+          "edited_chroma_mae": 4.621588888888889,
+          "off_rgb_mae": 50.239711934156375,
+          "qualified": true,
+          "passed": false,
+          "pixels": 648,
+          "projection": 0.21244523228279416,
+          "response_mae": 3.355733641975309,
+          "response_p95": 6.730799999999988
+        },
+        "green_background": {
+          "edited_chroma_mae": 10.934809153605013,
+          "off_rgb_mae": 50.256635318704284,
+          "qualified": true,
+          "passed": false,
+          "pixels": 1595,
+          "projection": 0.1833951726556377,
+          "response_mae": 8.45149868338558,
+          "response_p95": 11.596799999999991
+        }
+      },
+      "predictions": {
+        "off": "bf0f78096f4f00fd41891a332441f36a7e19c319c48ffeedf0ac6c84dea24eeb",
+        "on": "78bc11d9cdc8d292acf9ffaa2f16be028b3450f6601e5b929e118ffa9284448d"
+      },
+      "expected_sha256": "8e23197e619d2c431f53a8ef8af73f5d89116d703aad32c173c5bad59cfec605",
+      "inputs_rgb_sha256": {
+        "off": "34342a81e9b15ca86d15fc941de33f6837e7e7d1621c452ff3f60235699b44dd",
+        "on": "9f27480b432e39a75fb461060fc661149b0cfeb203fd39bd8f49c89f011f5bf7"
+      },
+      "passed": false
+    },
+    "mixed": {
+      "scores": {
+        "whole": {
+          "edited_chroma_mae": 1.0283733096296293,
+          "off_rgb_mae": 18.808958573388203,
+          "qualified": true,
+          "passed": false,
+          "pixels": 607500,
+          "projection": 1.3478889770645486,
+          "response_mae": 1.8584929425514403,
+          "response_p95": 3.288599999999999
+        },
+        "neutral": {
+          "edited_chroma_mae": 1.741295967190704,
+          "off_rgb_mae": 46.31633629528366,
+          "qualified": true,
+          "passed": false,
+          "pixels": 36575,
+          "projection": 1.8550504010140079,
+          "response_mae": 1.8433205085440871,
+          "response_p95": 3.001199999999997
+        }
+      },
+      "predictions": {
+        "off": "47360fc2e0571079edb6bcf000155c16c4680b641c5291230f7823f2080b1fa1",
+        "on": "06186ceb04eae6ed0daeebd01957f0ddc9d010ef4bd67e730ad571822c8e2265"
+      },
+      "expected_sha256": "f933add77c399d5da2cc7a8569d79fabe50216397ccf54342fc5605ff8e8336e",
+      "inputs_rgb_sha256": {
+        "off": "ee568c181621a4bc40fd2879e1095b55f621c2a18a89b7386fa648bfa4ec8c2d",
+        "on": "7a7464f08497fd1d3f84171767aaf7f6521e1d40e8346b6695dd0eff05fe59dc"
+      },
+      "passed": false
+    }
+  },
+  "passed": false
+}
