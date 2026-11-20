@@ -21,3 +21,5 @@
 后续补查真人换灯视频：已从固定公开索引核对 MMPD 的 33 个完整静止组，仍缺可直接使用的小样许可；COHFACE 和 CHROMA-FIT 的变化条件不能单独解释灯色。[视频采集来源核查](2026-11-19-portrait-video-source-audit.md)
 
 后续核实 Meyer 与 Oulu 两套真人换灯设计，原片和使用范围仍缺可直接查证的小样。也核对了 CI 与三套闪光对照的数据入口。[复核记录](2026-11-20-actual-portrait-light-pairs.md)
+
+后续从 Gros 的开放数据中取到三组暖／冷灯原片。白幕、主体灯与背景灯有采集说明，自动白平衡和不同灯档光量须纳入解释。[已取得的六张原片与限制](2026-11-20-gros-portrait-light-intake.md)
