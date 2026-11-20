@@ -1,0 +1,506 @@
+{
+  "model": {
+    "repository": "facebook/dinov2-small",
+    "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "weight_sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+    "preprocessing": "Whole RGB, long edge <=448, nearest multiple14 (min14), bilinear; ImageNet mean/std",
+    "limitation": "Correspondence descriptor, not trained grading model; semantic similarity not material or lighting identity"
+  },
+  "source": [
+    "197a0864b05c83c0b3c2aee346d59192784104594b658460c5b768ff5fd1c2a4",
+    "add480d14eeee078b9108c4a1575719199637010bdacc92f21de0717ffe34754"
+  ],
+  "inputs": {
+    "02": {
+      "standard:off": {
+        "sha": "cd02095b9308f428d31a430b1f24d6b08313e1b729074ac20f0829e9ef1db3f0",
+        "grid": [
+          26,
+          32
+        ]
+      },
+      "standard:on": {
+        "sha": "6e68419776913ebda63a722928b7b9de37ef6376d925b5fbacbf44dcb930b78a",
+        "grid": [
+          26,
+          32
+        ]
+      },
+      "blue:off": {
+        "sha": "3cbe6e9b5d14617673605b57bd822a4d9310e09fb93f605b637e8f69a38e567b",
+        "grid": [
+          26,
+          32
+        ]
+      },
+      "blue:on": {
+        "sha": "a72ab384ec7fdd1cdb599c8a85949cfcaa6dd693ffadac869c26fb0a8ca2d38e",
+        "grid": [
+          26,
+          32
+        ]
+      }
+    },
+    "03": {
+      "standard:off": {
+        "sha": "1841ec9bf607ae233d52b6e54e5d4b74a3f988ccd02077cadeca74331fb7f15c",
+        "grid": [
+          26,
+          32
+        ]
+      },
+      "standard:on": {
+        "sha": "121eb3bfb45453f88ff5897aff6fd10ed90e5adf53ae4562a17bc5e054bd2165",
+        "grid": [
+          26,
+          32
+        ]
+      },
+      "blue:off": {
+        "sha": "7f811c9f9c99f3df51b7c925f2b016e616e8367e1824f8c1aaecfd2637df7fa7",
+        "grid": [
+          26,
+          32
+        ]
+      },
+      "blue:on": {
+        "sha": "ecf3a32731752e300951eb5db292eec97677a7eb28bbc3fdbd130aa91c71bd6e",
+        "grid": [
+          26,
+          32
+        ]
+      }
+    }
+  },
+  "materials": [
+    "paper_prism_blue",
+    "paper_cube_green"
+  ],
+  "cases": {
+    "02": {
+      "standard:off": {
+        "dino": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                3,
+                36,
+                0
+              ],
+              "recall": 0.9230769230769231
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                11,
+                0,
+                8
+              ],
+              "recall": 0.42105263157894735
+            }
+          ],
+          "balanced": 0.6720647773279352
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                1,
+                38,
+                0
+              ],
+              "recall": 0.9743589743589743
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                2,
+                0,
+                17
+              ],
+              "recall": 0.8947368421052632
+            }
+          ],
+          "balanced": 0.9345479082321188
+        }
+      },
+      "standard:on": {
+        "dino": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                4,
+                35,
+                0
+              ],
+              "recall": 0.8974358974358975
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                9,
+                0,
+                10
+              ],
+              "recall": 0.5263157894736842
+            }
+          ],
+          "balanced": 0.7118758434547908
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                22,
+                14,
+                3
+              ],
+              "recall": 0.358974358974359
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                1,
+                0,
+                18
+              ],
+              "recall": 0.9473684210526315
+            }
+          ],
+          "balanced": 0.6531713900134952
+        }
+      },
+      "blue:off": {
+        "dino": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                3,
+                36,
+                0
+              ],
+              "recall": 0.9230769230769231
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                9,
+                0,
+                10
+              ],
+              "recall": 0.5263157894736842
+            }
+          ],
+          "balanced": 0.7246963562753037
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                23,
+                0,
+                16
+              ],
+              "recall": 0.0
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                1,
+                0,
+                18
+              ],
+              "recall": 0.9473684210526315
+            }
+          ],
+          "balanced": 0.47368421052631576
+        }
+      },
+      "blue:on": {
+        "dino": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                3,
+                36,
+                0
+              ],
+              "recall": 0.9230769230769231
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                8,
+                0,
+                11
+              ],
+              "recall": 0.5789473684210527
+            }
+          ],
+          "balanced": 0.7510121457489879
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 39,
+              "reference": 40,
+              "matches": [
+                23,
+                0,
+                16
+              ],
+              "recall": 0.0
+            },
+            {
+              "query": 19,
+              "reference": 29,
+              "matches": [
+                3,
+                0,
+                16
+              ],
+              "recall": 0.8421052631578947
+            }
+          ],
+          "balanced": 0.42105263157894735
+        }
+      }
+    },
+    "03": {
+      "standard:off": {
+        "dino": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                4,
+                36,
+                0
+              ],
+              "recall": 0.9
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                14,
+                0,
+                15
+              ],
+              "recall": 0.5172413793103449
+            }
+          ],
+          "balanced": 0.7086206896551724
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                0,
+                40,
+                0
+              ],
+              "recall": 1.0
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                6,
+                0,
+                23
+              ],
+              "recall": 0.7931034482758621
+            }
+          ],
+          "balanced": 0.896551724137931
+        }
+      },
+      "standard:on": {
+        "dino": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                6,
+                34,
+                0
+              ],
+              "recall": 0.85
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                17,
+                0,
+                12
+              ],
+              "recall": 0.41379310344827586
+            }
+          ],
+          "balanced": 0.631896551724138
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                19,
+                12,
+                9
+              ],
+              "recall": 0.3
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                15,
+                0,
+                14
+              ],
+              "recall": 0.4827586206896552
+            }
+          ],
+          "balanced": 0.3913793103448276
+        }
+      },
+      "blue:off": {
+        "dino": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                6,
+                34,
+                0
+              ],
+              "recall": 0.85
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                18,
+                0,
+                11
+              ],
+              "recall": 0.3793103448275862
+            }
+          ],
+          "balanced": 0.6146551724137931
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                20,
+                0,
+                20
+              ],
+              "recall": 0.0
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                14,
+                0,
+                15
+              ],
+              "recall": 0.5172413793103449
+            }
+          ],
+          "balanced": 0.25862068965517243
+        }
+      },
+      "blue:on": {
+        "dino": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                5,
+                35,
+                0
+              ],
+              "recall": 0.875
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                17,
+                0,
+                12
+              ],
+              "recall": 0.41379310344827586
+            }
+          ],
+          "balanced": 0.6443965517241379
+        },
+        "rgb": {
+          "materials": [
+            {
+              "query": 40,
+              "reference": 39,
+              "matches": [
+                27,
+                0,
+                13
+              ],
+              "recall": 0.0
+            },
+            {
+              "query": 29,
+              "reference": 19,
+              "matches": [
+                29,
+                0,
+                0
+              ],
+              "recall": 0.0
+            }
+          ],
+          "balanced": 0.0
+        }
+      }
+    }
+  },
+  "complete": true,
+  "improvement": 0.17877627797943135,
+  "passed": false,
+  "script_sha": "80a1cd593e4b30b482e4694f8ab2d30da1d3b4dfb72e3cb62b660fa9738fc58d",
+  "protocol_sha": "eb44c0bf046930362696b948fba1840b8178079404ac56d9eee1e60ef7f796ad"
+}
