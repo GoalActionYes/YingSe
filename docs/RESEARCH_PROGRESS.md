@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+Middlebury 相同取样加入二次 RGB 项后，Dolls 视差近中性色开启误差从 3.512 降至 3.240，仍超过 3，同机位同样未过。结束固定取样的低阶拟合，不再加阶数追这一对照。[成片与验证](research/2026-11-21-middlebury-stereo-quadratic.md)
+
 Middlebury 保持相同对应点，允许 RGB 跨通道仿射后，两场整图误差下降，Dolls 近中性色在视差和同机位两种对照中仍失败。停止线性扩展，保留实拍成片和逐通道回归复核。[结果与复现](research/2026-11-21-middlebury-stereo-affine.md)
 
 Middlebury 两组同灯实拍用发布视差配对后，Art 三个范围均过诊断门槛，Dolls 两项通过，近中性色仍失败。同机位前后图在 Dolls 的同一区域也失败。保留正确对齐带来的实拍成片收益，暂不接入自动匹配。[结果与复现](research/2026-11-21-middlebury-stereo-grade.md)
