@@ -1,0 +1,741 @@
+{
+  "parent": "b16bd8e38e07f9eb7ea70762079cb6f2780526735c6a3957e7be749fde0c677c",
+  "inputs": "7e5137f4e559daf39e4f4f09a7500637beb897713257c4d7101de20a0d9dbf97",
+  "edits": "5ab0a185c1e4ed6010e196597e5e44875ce9974ba5fa8d7ae742854b07a3aa28",
+  "cascade": "0f7d4527844eb514d4a4948e822da90fbb16a34a0bbbbc6adc6498747a5aafb0",
+  "opencv": "5.0.0",
+  "protocol": "b94ce1e5f3c6c2e0ab1fc599b5f98da03789edfb1028283e6eb7390b3d9c08e5",
+  "baseline_passed_groups": 0,
+  "report_sha256": "0336196a76eb7d8e2e4ac89ef99283db5e59dc04288fbc805bb2d82e98eedf6a",
+  "totals": {
+    "face": {
+      "directions": 0,
+      "off_preserved": 11,
+      "on_detected": 13,
+      "lost_cues": 0
+    },
+    "face_minus_surround": {
+      "directions": 1,
+      "off_preserved": 9,
+      "on_detected": 9,
+      "lost_cues": 0
+    }
+  },
+  "groups": {
+    "1": {
+      "target": "3",
+      "cues": {
+        "nominal-off": {
+          "face": 4.725529217411961,
+          "face_minus_surround": 32.09219086048707,
+          "pixels": [
+            17835,
+            27987
+          ],
+          "box": [
+            41,
+            109,
+            234,
+            234
+          ]
+        },
+        "nominal-on": {
+          "face": 30.273602759482593,
+          "face_minus_surround": 53.67782502581325,
+          "pixels": [
+            16485,
+            27827
+          ],
+          "box": [
+            42,
+            110,
+            234,
+            234
+          ]
+        },
+        "ue1-off": {
+          "face": 17.353804273354278,
+          "face_minus_surround": 31.28359677031547,
+          "pixels": [
+            16619,
+            25113
+          ],
+          "box": [
+            44,
+            110,
+            234,
+            234
+          ]
+        },
+        "ue1-on": {
+          "face": 41.29855416536454,
+          "face_minus_surround": 51.57171190698351,
+          "pixels": [
+            15571,
+            25405
+          ],
+          "box": [
+            44,
+            111,
+            234,
+            234
+          ]
+        },
+        "oe1-off": {
+          "face": -2.9725501276093134,
+          "face_minus_surround": -4.935662850575984,
+          "pixels": [
+            9378,
+            13599
+          ],
+          "box": [
+            39,
+            109,
+            236,
+            236
+          ]
+        },
+        "oe1-on": {
+          "face": 26.115033085645,
+          "face_minus_surround": 18.05757327533011,
+          "pixels": [
+            7014,
+            12753
+          ],
+          "box": [
+            39,
+            108,
+            237,
+            237
+          ]
+        }
+      },
+      "hashes": {
+        "positive": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-nominal-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face-nominal-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-ue1-off": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-ue1-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-oe1-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face-oe1-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-nominal-off": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-nominal-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-ue1-off": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-ue1-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-oe1-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face_minus_surround-oe1-on": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b"
+      },
+      "comparison": "1a9e88649c9561167f8a65e434e3f42708b0ecf2cf932ce3ea68c130833a95df",
+      "arms": {
+        "face": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": true,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": true
+          },
+          "passed": false,
+          "fit": {
+            "off": -1.748570357560469,
+            "off_samples": 9,
+            "on": 23.176349563380064,
+            "on_samples": 9,
+            "threshold": 10.713889602909799
+          }
+        },
+        "face_minus_surround": {
+          "decisions": {
+            "nominal-off": true,
+            "nominal-on": true,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": false
+          },
+          "passed": false,
+          "fit": {
+            "off": 8.989957634089233,
+            "off_samples": 9,
+            "on": 27.908056798648165,
+            "on_samples": 9,
+            "threshold": 18.4490072163687
+          }
+        }
+      }
+    },
+    "2": {
+      "target": "3",
+      "cues": {
+        "nominal-off": {
+          "face": -7.391622231433704,
+          "face_minus_surround": 30.38958498203051,
+          "pixels": [
+            18652,
+            28049
+          ],
+          "box": [
+            39,
+            109,
+            239,
+            239
+          ]
+        },
+        "nominal-on": {
+          "face": 16.794578337942387,
+          "face_minus_surround": 50.55795879049809,
+          "pixels": [
+            18517,
+            27930
+          ],
+          "box": [
+            39,
+            109,
+            239,
+            239
+          ]
+        },
+        "ue1-off": {
+          "face": 3.6858755405333934,
+          "face_minus_surround": 30.248072281733776,
+          "pixels": [
+            16498,
+            23931
+          ],
+          "box": [
+            42,
+            109,
+            234,
+            234
+          ]
+        },
+        "ue1-on": {
+          "face": 27.71139971250374,
+          "face_minus_surround": 49.87752138675421,
+          "pixels": [
+            15959,
+            23851
+          ],
+          "box": [
+            42,
+            110,
+            233,
+            233
+          ]
+        },
+        "oe1-off": {
+          "face": -15.63115644077781,
+          "face_minus_surround": -6.962484798983766,
+          "pixels": [
+            12066,
+            14591
+          ],
+          "box": [
+            38,
+            108,
+            239,
+            239
+          ]
+        },
+        "oe1-on": {
+          "face": 13.166688410232899,
+          "face_minus_surround": 14.22579846724056,
+          "pixels": [
+            9132,
+            13518
+          ],
+          "box": [
+            38,
+            108,
+            239,
+            239
+          ]
+        }
+      },
+      "hashes": {
+        "positive": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-nominal-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face-nominal-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-ue1-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face-ue1-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face-oe1-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face-oe1-on": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face_minus_surround-nominal-off": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-nominal-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-ue1-off": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-ue1-on": "d37bbe4fca104b864814f53f4738a4ca3bbffdb0c5c764436890ad04a03ad823",
+        "face_minus_surround-oe1-off": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b",
+        "face_minus_surround-oe1-on": "d435ffdc3a942e5a07b4648a424a5970b6130e1c6650d5d52b84dd7e3de8941b"
+      },
+      "comparison": "fa3b828752ab3cbb63c9d36630747d8016260471f89b89a4342be5d6fefe154a",
+      "arms": {
+        "face": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": true,
+            "ue1-off": false,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": false
+          },
+          "passed": false,
+          "fit": {
+            "off": 2.5229503640878685,
+            "off_samples": 9,
+            "on": 27.62240773558152,
+            "on_samples": 9,
+            "threshold": 15.072679049834694
+          }
+        },
+        "face_minus_surround": {
+          "decisions": {
+            "nominal-off": true,
+            "nominal-on": true,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": false
+          },
+          "passed": false,
+          "fit": {
+            "off": 9.519396780249904,
+            "off_samples": 9,
+            "on": 28.86870475016305,
+            "on_samples": 9,
+            "threshold": 19.194050765206477
+          }
+        }
+      }
+    },
+    "3": {
+      "target": "4",
+      "cues": {
+        "nominal-off": {
+          "face": 13.046661332223009,
+          "face_minus_surround": 17.38212234887192,
+          "pixels": [
+            18549,
+            29202
+          ],
+          "box": [
+            37,
+            95,
+            237,
+            237
+          ]
+        },
+        "nominal-on": {
+          "face": 37.024397005368726,
+          "face_minus_surround": 33.30038280593543,
+          "pixels": [
+            18530,
+            29493
+          ],
+          "box": [
+            36,
+            94,
+            238,
+            238
+          ]
+        },
+        "ue1-off": {
+          "face": 22.693934433878148,
+          "face_minus_surround": 18.94400866515186,
+          "pixels": [
+            17748,
+            34189
+          ],
+          "box": [
+            37,
+            96,
+            235,
+            235
+          ]
+        },
+        "ue1-on": {
+          "face": 46.640337996467366,
+          "face_minus_surround": 34.19919629621074,
+          "pixels": [
+            16617,
+            34090
+          ],
+          "box": [
+            37,
+            96,
+            235,
+            235
+          ]
+        },
+        "oe1-off": {
+          "face": -2.6564606351423223,
+          "face_minus_surround": -0.09640421319558179,
+          "pixels": [
+            11475,
+            13655
+          ],
+          "box": [
+            32,
+            95,
+            240,
+            240
+          ]
+        },
+        "oe1-on": {
+          "face": 27.78448682722721,
+          "face_minus_surround": 25.477152059309244,
+          "pixels": [
+            7088,
+            10892
+          ],
+          "box": [
+            33,
+            95,
+            241,
+            241
+          ]
+        }
+      },
+      "hashes": {
+        "positive": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face-nominal-off": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face-nominal-on": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face-ue1-off": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face-ue1-on": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face-oe1-off": "8399cb642c7dae0658dc561a30895cbc1fe2965af63b24723ba836aad8dd7931",
+        "face-oe1-on": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face_minus_surround-nominal-off": "8399cb642c7dae0658dc561a30895cbc1fe2965af63b24723ba836aad8dd7931",
+        "face_minus_surround-nominal-on": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face_minus_surround-ue1-off": "8399cb642c7dae0658dc561a30895cbc1fe2965af63b24723ba836aad8dd7931",
+        "face_minus_surround-ue1-on": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5",
+        "face_minus_surround-oe1-off": "8399cb642c7dae0658dc561a30895cbc1fe2965af63b24723ba836aad8dd7931",
+        "face_minus_surround-oe1-on": "a8221c56aebf3cc785077322ac87d5e843fb54514b902562d81124c15aabe0f5"
+      },
+      "comparison": "9bee2e305527ada7a21fd09f6154db0eaf4677b83b3242b518838b4262cc1fc6",
+      "arms": {
+        "face": {
+          "decisions": {
+            "nominal-off": true,
+            "nominal-on": true,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": true
+          },
+          "passed": false,
+          "fit": {
+            "off": -0.351928311139173,
+            "off_samples": 9,
+            "on": 24.988638327315655,
+            "on_samples": 9,
+            "threshold": 12.318355008088242
+          }
+        },
+        "face_minus_surround": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": true,
+            "ue1-off": false,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": true
+          },
+          "passed": true,
+          "fit": {
+            "off": 13.984535743298942,
+            "off_samples": 9,
+            "on": 33.9078852046739,
+            "on_samples": 9,
+            "threshold": 23.946210473986422
+          }
+        }
+      }
+    },
+    "4": {
+      "target": "1",
+      "cues": {
+        "nominal-off": {
+          "face": 3.2322649853253633,
+          "face_minus_surround": -2.739729989631601,
+          "pixels": [
+            17916,
+            13193
+          ],
+          "box": [
+            47,
+            103,
+            233,
+            233
+          ]
+        },
+        "nominal-on": {
+          "face": 26.402591035858308,
+          "face_minus_surround": 11.422874987921785,
+          "pixels": [
+            17703,
+            13164
+          ],
+          "box": [
+            48,
+            104,
+            233,
+            233
+          ]
+        },
+        "ue1-off": {
+          "face": 16.439459895480987,
+          "face_minus_surround": 32.74700225916588,
+          "pixels": [
+            17405,
+            21221
+          ],
+          "box": [
+            45,
+            101,
+            234,
+            234
+          ]
+        },
+        "ue1-on": {
+          "face": 39.45149692775153,
+          "face_minus_surround": 52.448981803941706,
+          "pixels": [
+            16633,
+            20202
+          ],
+          "box": [
+            45,
+            102,
+            233,
+            233
+          ]
+        },
+        "oe1-off": {
+          "face": -13.13471993544109,
+          "face_minus_surround": -16.518350472195092,
+          "pixels": [
+            13749,
+            15541
+          ],
+          "box": [
+            37,
+            94,
+            242,
+            242
+          ]
+        },
+        "oe1-on": {
+          "face": 15.522503171461924,
+          "face_minus_surround": 5.436797762031723,
+          "pixels": [
+            8085,
+            15577
+          ],
+          "box": [
+            37,
+            95,
+            242,
+            242
+          ]
+        }
+      },
+      "hashes": {
+        "positive": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-nominal-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face-nominal-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-ue1-off": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-ue1-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-oe1-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face-oe1-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face_minus_surround-nominal-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-nominal-on": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-ue1-off": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face_minus_surround-ue1-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face_minus_surround-oe1-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-oe1-on": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5"
+      },
+      "comparison": "f829452773af549669f07e5f1473e141f06f41e9b943de936502ba59946ba57e",
+      "arms": {
+        "face": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": true,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": true
+          },
+          "passed": false,
+          "fit": {
+            "off": 1.2011107741721498,
+            "off_samples": 9,
+            "on": 26.517752973823562,
+            "on_samples": 9,
+            "threshold": 13.859431873997856
+          }
+        },
+        "face_minus_surround": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": false,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": false
+          },
+          "passed": false,
+          "fit": {
+            "off": 11.516713745588012,
+            "off_samples": 9,
+            "on": 30.537843088377073,
+            "on_samples": 9,
+            "threshold": 21.027278416982544
+          }
+        }
+      }
+    },
+    "5": {
+      "target": "1",
+      "cues": {
+        "nominal-off": {
+          "face": -0.03920815784799448,
+          "face_minus_surround": -1.0954792946729284,
+          "pixels": [
+            19654,
+            13686
+          ],
+          "box": [
+            40,
+            97,
+            244,
+            244
+          ]
+        },
+        "nominal-on": {
+          "face": 22.511591862051752,
+          "face_minus_surround": 13.08707528091398,
+          "pixels": [
+            19170,
+            13704
+          ],
+          "box": [
+            40,
+            97,
+            242,
+            242
+          ]
+        },
+        "ue1-off": {
+          "face": 9.38218239692814,
+          "face_minus_surround": 26.363497082846468,
+          "pixels": [
+            17958,
+            22539
+          ],
+          "box": [
+            41,
+            98,
+            237,
+            237
+          ]
+        },
+        "ue1-on": {
+          "face": 32.129684138436424,
+          "face_minus_surround": 45.55431133988154,
+          "pixels": [
+            17465,
+            21450
+          ],
+          "box": [
+            41,
+            98,
+            236,
+            236
+          ]
+        },
+        "oe1-off": {
+          "face": -12.280209270811508,
+          "face_minus_surround": -11.522493343490154,
+          "pixels": [
+            11350,
+            16902
+          ],
+          "box": [
+            37,
+            99,
+            240,
+            240
+          ]
+        },
+        "oe1-on": {
+          "face": 14.896612474181575,
+          "face_minus_surround": 8.561191368649887,
+          "pixels": [
+            7148,
+            16646
+          ],
+          "box": [
+            37,
+            100,
+            239,
+            239
+          ]
+        }
+      },
+      "hashes": {
+        "positive": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-nominal-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face-nominal-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-ue1-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face-ue1-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face-oe1-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face-oe1-on": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-nominal-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-nominal-on": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-ue1-off": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face_minus_surround-ue1-on": "43deaac31ff56a96f31ed761c599b20af1d00c9c11680d83975c91d14c371b0c",
+        "face_minus_surround-oe1-off": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5",
+        "face_minus_surround-oe1-on": "3419a001f7e494cb768356243f197a49a81b762157b2de1a5f9b64251319bfc5"
+      },
+      "comparison": "7030432db98d789d53a03ad32ca7d7f9b372f4b196abc0c58a3dc7f6966a805e",
+      "arms": {
+        "face": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": true,
+            "ue1-off": false,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": false
+          },
+          "passed": false,
+          "fit": {
+            "off": 2.253804104960664,
+            "off_samples": 9,
+            "on": 27.8331643805349,
+            "on_samples": 9,
+            "threshold": 15.043484242747782
+          }
+        },
+        "face_minus_surround": {
+          "decisions": {
+            "nominal-off": false,
+            "nominal-on": false,
+            "ue1-off": true,
+            "ue1-on": true,
+            "oe1-off": false,
+            "oe1-on": false
+          },
+          "passed": false,
+          "fit": {
+            "off": 11.488202340327543,
+            "off_samples": 9,
+            "on": 30.771851595538166,
+            "on_samples": 9,
+            "threshold": 21.130026967932857
+          }
+        }
+      }
+    }
+  }
+}
