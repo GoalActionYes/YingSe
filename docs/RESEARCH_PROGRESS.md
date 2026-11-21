@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+两房间实拍中，加入单图估计深度梯度后，镜像灯位最多判对 4／10，另一房间只有 1／10。结束该固定几何统计，保留 80 张深度预览。[数值与预览位置](research/2026-11-21-multilum-depth-lateral-cue.md)
+
 两间实拍室内各十对镜像灯位，固定左右明暗差原图最多判对 5／10，Film B 后也最多 5／10，停止该线索。人像侧灯公开入口未返回范围，六个原始成员已登记，未取图。[新实拍结果](research/2026-11-21-multilum-lateral-cue.md)
 
 独立 ICC 便携候选补做可见窗口回归。图片和视频示例、同帧对比、微调撤销重做、项目恢复及 PNG／MP4 实际下载均核对。本项验证覆盖文件色彩配置修复及交互，跨场景画质仍待改进。[候选复核](https://github.com/GoalActionYes/YingSe/blob/434f1b9b100d6df8ada2f988d522951d5d744d4d/docs/research/2026-11-20-image-icc-portable.md#本机可见窗口复核)
