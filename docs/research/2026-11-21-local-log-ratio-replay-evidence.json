@@ -1,0 +1,144 @@
+{
+  "report_sha256": "4fa419d42d7f12f6a821e737ca964b5d73f5a6e109a7aa94b08997464cda2070",
+  "training_pairs": 720,
+  "protocol": "bd28f3e1f2558ebc91673fe5cd65ff5f479b8e176a8ff3f8071b2ab6e65acede",
+  "files": 61,
+  "suites": {
+    "portrait": {
+      "counts": {
+        "baseline": {
+          "style": 0,
+          "off": 23,
+          "both": 0
+        },
+        "scores": {
+          "style": 16,
+          "off": 16,
+          "both": 7
+        }
+      },
+      "passes": 0
+    },
+    "object": {
+      "counts": {
+        "baseline": {
+          "style": 0,
+          "off": 6,
+          "both": 0
+        },
+        "scores": {
+          "style": 5,
+          "off": 20,
+          "both": 5
+        }
+      },
+      "passes": 0
+    }
+  },
+  "example_01_from_02": {
+    "baseline": {
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": 0.5311185228783816,
+            "response_mae": 2.2034632034632033,
+            "off_matches_original_mae": 1.2272727272727273,
+            "on_matches_authored_mae": 3.3225108225108224,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.24670285353039914,
+            "response_mae": 3.6645021645021645,
+            "off_matches_original_mae": 1.5568181818181819,
+            "on_matches_authored_mae": 2.1563852813852815,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 2.669372294372294,
+          "on": 1.2159090909090908
+        },
+        "passed": false
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": 0.43312630947818503,
+            "response_mae": 6.3062962962962965,
+            "off_matches_original_mae": 6.37462962962963,
+            "on_matches_authored_mae": 12.680925925925926,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.24837654750443003,
+            "response_mae": 8.455833333333333,
+            "off_matches_original_mae": 5.373888888888889,
+            "on_matches_authored_mae": 10.435648148148148,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 4.394814814814815,
+          "on": 2.3900925925925924
+        },
+        "passed": false
+      }
+    },
+    "scores": {
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": 1.0214723257689708,
+            "response_mae": 0.7164502164502164,
+            "off_matches_original_mae": 1.2175324675324675,
+            "on_matches_authored_mae": 1.7629870129870129,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": true
+          },
+          "warm": {
+            "projection": 1.1291609443463475,
+            "response_mae": 0.7867965367965368,
+            "off_matches_original_mae": 1.2527056277056277,
+            "on_matches_authored_mae": 1.8176406926406927,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": true
+          }
+        },
+        "lamp_spill": {
+          "off": 0.10119047619047619,
+          "on": 0.4172077922077922
+        },
+        "passed": true
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": 1.0125910208354754,
+            "response_mae": 3.3010185185185184,
+            "off_matches_original_mae": 15.407592592592593,
+            "on_matches_authored_mae": 18.70861111111111,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": false
+          },
+          "warm": {
+            "projection": 1.1429853365150286,
+            "response_mae": 2.9953703703703702,
+            "off_matches_original_mae": 15.655277777777778,
+            "on_matches_authored_mae": 18.650648148148147,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": true
+          }
+        },
+        "lamp_spill": {
+          "off": 0.36083333333333334,
+          "on": 1.2418518518518518
+        },
+        "passed": false
+      }
+    }
+  }
+}
