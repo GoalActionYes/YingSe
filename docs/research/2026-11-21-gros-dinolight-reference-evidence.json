@@ -1,0 +1,339 @@
+{
+  "parent": "4413ee3468586d3ab5e715013c5e86d9c24412781e8385e75d5664b6e50df260",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "assets": {
+    "dinolight.pth": "da21365039dfa8e924ee544d217095ed6469aeffa1593403093c857d1b3a32ca",
+    "dinov2.pth": "73182a088cf94833c94b1666d1c99e02fe87e2007bff57b564fb6206e25dba71"
+  },
+  "dino_source": "04276715cddb29d45d05bff3a6fc132224dc27749b279ac98ad2ce4620e20d48",
+  "light_source": "c247017a6133c611532b90295dfed5de2c71a36467d66670ec8679370c2e73a8",
+  "loaded": {
+    "dinov2": 176,
+    "dinolight": 795
+  },
+  "physical": {
+    "1": {
+      "before": 107.29730902777777,
+      "after": 21.434715357497165,
+      "passed": true,
+      "clip": 0.0020140218548476696,
+      "sha": "8409b37b3cbb605e2c3a4a1c955c1b3945020f0b61bc29d4aa5f44e9dca9c55c"
+    },
+    "2": {
+      "before": 76.6579207855017,
+      "after": 21.88084055236678,
+      "passed": true,
+      "clip": 0.0015146683435887098,
+      "sha": "3caa79cdc33cd2305baf5631af0a5bdb5fac318411464c40c57938108c4f2d81"
+    }
+  },
+  "references": {
+    "cold": {
+      "off": {
+        "clip": 0.0,
+        "shift": 20.927089976615648,
+        "sha": "92f9fc54106f06ad3a312f95a943db1a60fd184754d01944598def6de4e44ee4"
+      },
+      "on": {
+        "clip": 0.0,
+        "shift": 11.28686468076814,
+        "sha": "020abd9519aec2a4c4e6b5a97c0d7ad161c63945606c9b970fc3a9a8cc3f853e"
+      },
+      "reference_edit_mae": {
+        "resize": 12.19607315582483,
+        "DINOLight": 2.9828869047619047
+      }
+    },
+    "warm": {
+      "off": {
+        "clip": 0.0,
+        "shift": 17.003739060728456,
+        "sha": "7c48d374dd9759de8d03d11992a20f007c31c22fa325f80736f315a2956ff8a8"
+      },
+      "on": {
+        "clip": 0.0,
+        "shift": 11.34387290072279,
+        "sha": "3966c1c85fbcd4a031c381edcede4c2fa493464bc9ef60ce2cfc3baf40c176d4"
+      },
+      "reference_edit_mae": {
+        "resize": 12.423758370535714,
+        "DINOLight": 2.8385427738803855
+      }
+    }
+  },
+  "scores": {
+    "resize": {
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": 0.4449619614848318,
+            "response_mae": 5.396814134385851,
+            "off_matches_original_mae": 3.6019465128580728,
+            "on_matches_authored_mae": 6.500495062934028,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.7324279684589639,
+            "response_mae": 3.529325697157118,
+            "off_matches_original_mae": 5.720663282606337,
+            "on_matches_authored_mae": 4.750124613444011,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 2.911224365234375,
+          "on": 4.259300231933594
+        },
+        "passed": false
+      },
+      "cheek_left": {
+        "response": {
+          "cold": {
+            "projection": 0.5320612875481795,
+            "response_mae": 2.2144522144522143,
+            "off_matches_original_mae": 3.8811188811188813,
+            "on_matches_authored_mae": 3.247086247086247,
+            "original_matches_authored_mae": 3.615967365967366,
+            "passed": false
+          },
+          "warm": {
+            "projection": 1.334596884655815,
+            "response_mae": 9.072843822843822,
+            "off_matches_original_mae": 6.835664335664336,
+            "on_matches_authored_mae": 7.659090909090909,
+            "original_matches_authored_mae": 3.615967365967366,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 9.335664335664335,
+          "on": 7.516899766899767
+        },
+        "passed": false
+      },
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": 0.9191899374359646,
+            "response_mae": 1.5081168831168832,
+            "off_matches_original_mae": 4.3187229437229435,
+            "on_matches_authored_mae": 5.7186147186147185,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": true
+          },
+          "warm": {
+            "projection": 2.507270071719748,
+            "response_mae": 8.0995670995671,
+            "off_matches_original_mae": 6.257034632034632,
+            "on_matches_authored_mae": 8.8262987012987,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 10.546536796536797,
+          "on": 7.9853896103896105
+        },
+        "passed": false
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": 0.4687033879180148,
+            "response_mae": 6.014166666666667,
+            "off_matches_original_mae": 1.4925925925925927,
+            "on_matches_authored_mae": 5.974537037037037,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.7779158381928968,
+            "response_mae": 2.5678703703703705,
+            "off_matches_original_mae": 3.9365740740740742,
+            "on_matches_authored_mae": 3.6592592592592594,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": true
+          }
+        },
+        "lamp_spill": {
+          "off": 2.4926851851851852,
+          "on": 4.431759259259259
+        },
+        "passed": false
+      },
+      "screen_right": {
+        "response": {
+          "cold": {
+            "projection": 0.4556893078785108,
+            "response_mae": 6.168981481481482,
+            "off_matches_original_mae": 1.2515740740740742,
+            "on_matches_authored_mae": 6.703703703703703,
+            "original_matches_authored_mae": 11.642777777777777,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.7354444101375528,
+            "response_mae": 2.987962962962963,
+            "off_matches_original_mae": 3.8355555555555556,
+            "on_matches_authored_mae": 4.128888888888889,
+            "original_matches_authored_mae": 11.642777777777777,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 2.6410185185185187,
+          "on": 4.076851851851852
+        },
+        "passed": false
+      }
+    },
+    "DINOLight": {
+      "whole": {
+        "response": {
+          "cold": {
+            "projection": -0.03226176339264439,
+            "response_mae": 10.445608350965712,
+            "off_matches_original_mae": 7.225864834255642,
+            "on_matches_authored_mae": 7.138334486219618,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.001917398653533642,
+            "response_mae": 10.052601284450954,
+            "off_matches_original_mae": 7.020559522840712,
+            "on_matches_authored_mae": 6.669793023003472,
+            "original_matches_authored_mae": 9.90887705485026,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 0.5047641330295138,
+          "on": 0.5280863444010416
+        },
+        "passed": false
+      },
+      "cheek_left": {
+        "response": {
+          "cold": {
+            "projection": -0.17704583824419456,
+            "response_mae": 6.271561771561772,
+            "off_matches_original_mae": 10.777972027972028,
+            "on_matches_authored_mae": 8.077505827505828,
+            "original_matches_authored_mae": 3.615967365967366,
+            "passed": false
+          },
+          "warm": {
+            "projection": -0.20679769375338453,
+            "response_mae": 5.456876456876457,
+            "off_matches_original_mae": 10.501748251748252,
+            "on_matches_authored_mae": 7.948135198135198,
+            "original_matches_authored_mae": 3.615967365967366,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.148018648018648,
+          "on": 0.3344988344988345
+        },
+        "passed": false
+      },
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": -0.8452466592548994,
+            "response_mae": 9.073051948051948,
+            "off_matches_original_mae": 13.101190476190476,
+            "on_matches_authored_mae": 11.464285714285714,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": false
+          },
+          "warm": {
+            "projection": -0.49453927146687593,
+            "response_mae": 7.358225108225108,
+            "off_matches_original_mae": 13.011904761904763,
+            "on_matches_authored_mae": 11.322510822510823,
+            "original_matches_authored_mae": 4.8685064935064934,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.3630952380952381,
+          "on": 0.4069264069264069
+        },
+        "passed": false
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": -0.06804145462411884,
+            "response_mae": 12.585092592592593,
+            "off_matches_original_mae": 7.219814814814815,
+            "on_matches_authored_mae": 5.365277777777778,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": false
+          },
+          "warm": {
+            "projection": -0.015176927278141513,
+            "response_mae": 11.936018518518518,
+            "off_matches_original_mae": 7.338888888888889,
+            "on_matches_authored_mae": 4.59712962962963,
+            "original_matches_authored_mae": 11.649814814814814,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 0.14203703703703704,
+          "on": 0.7681481481481481
+        },
+        "passed": false
+      },
+      "screen_right": {
+        "response": {
+          "cold": {
+            "projection": -0.05873495787603806,
+            "response_mae": 12.448333333333334,
+            "off_matches_original_mae": 6.076944444444444,
+            "on_matches_authored_mae": 6.371388888888889,
+            "original_matches_authored_mae": 11.642777777777777,
+            "passed": false
+          },
+          "warm": {
+            "projection": -0.022341806244478037,
+            "response_mae": 11.995277777777778,
+            "off_matches_original_mae": 6.361666666666666,
+            "on_matches_authored_mae": 5.633611111111111,
+            "original_matches_authored_mae": 11.642777777777777,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 0.2847222222222222,
+          "on": 0.7377777777777778
+        },
+        "passed": false
+      }
+    }
+  },
+  "outputs": {
+    "resize": {
+      "cold-off": "7913d26e7ef02119fad28cb84b48928af7664d1ab0469293232545464c9b5f32",
+      "cold-on": "029f6542cb68bd16b3ba7a1b0b919d6102f416e64f9d3bb5a7e2febb9197d161",
+      "warm-off": "40e47cf1c8ba28099f6aa22477e100f5e21dbf8ec49aee9d3a7c46b18793e047",
+      "warm-on": "54ef209d46c79c87f28682ad1292625648f0a6ceb13087d673de0ffddedd72bd"
+    },
+    "DINOLight": {
+      "cold-off": "385d48f3cb3569879abf3cb2c1c0ecb7ffcdaf69407283d80ac2a3addd015e7d",
+      "cold-on": "dc00d59d6221162e779c003d74a2e2c2ebfe55d31c86f673f31e33558acc392f",
+      "warm-off": "0a430a2ecbe68afcc2533e53044f59129f5f9be237934aeb1082f3c3968ce299",
+      "warm-on": "7bd45e8e7c422fa3111c6e98fa508b40d4fa8a4382dce217726f920e2aa55009"
+    }
+  },
+  "panels": {
+    "cold": "1e71caa7c2e0f254f4a6611713233b5a42807fee1b558bb8fedd9800f2733fc2",
+    "warm": "54f2844c402a28c8b85724051ea017ce336163624fe491e78bb86af89143cbcb"
+  },
+  "peak_cuda_bytes": 1103826432
+}
