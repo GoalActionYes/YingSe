@@ -1,0 +1,319 @@
+{
+  "parent": "aa61abe70f5b12fa5fb9eb52f595a56cfef19299ef71fbaf6fe828fac67e2332",
+  "inputs": "7ef5465396069bf7d4ba342d58cd713495d088c5fe81bdff09320f2fc0cf8503",
+  "regions": "690db0ca2940354c985f99fa61be0485146eea08c2bcd005fce13d2d4340c0fc",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "protocol": "4951ffa48bd14d599cc8b5875ec7070dc59b0f8cc2adb23137505949bcaedf7e",
+  "references": {
+    "wall": {
+      "surface": "vertical_azimuth_average",
+      "gains": [
+        2.6061416294336635,
+        1.820203843492451,
+        1.4818853322375711
+      ],
+      "reference_mae": {
+        "base": {
+          "whole": 35.01238987166146,
+          "neutral": 23.618181818181817,
+          "held": 23.557336182336183
+        },
+        "sphere": {
+          "whole": 9.680316191102104,
+          "neutral": 1.8669786096256684,
+          "held": 1.8672542735042734
+        },
+        "surface": {
+          "whole": 11.210737353268708,
+          "neutral": 2.4845811051693403,
+          "held": 2.4938568376068377
+        },
+        "paired_reference_only": {
+          "held": 1.2742165242165242
+        }
+      },
+      "pixels": [
+        3736,
+        3744
+      ],
+      "paired_fit": [
+        2.7557728752696002,
+        2.1193102180816483,
+        1.5462246173176684
+      ],
+      "hashes": {
+        "off": "53d9a93e8388f4b67605987fad8d15d3162bac50473b365bb4f7b45e31ac90be",
+        "on": "5829452c30b651cf2cafd8ac1606d95db19313dad748aa231be269f602c0e2c6"
+      },
+      "board": "7d8250a0f6cdc74e30ff4a84b9e6281a8d0771a1816386640a09f33ee56b1fa5"
+    },
+    "pillar": {
+      "surface": "upward",
+      "gains": [
+        1.8577001308896441,
+        1.6754778415285076,
+        1.7370478941667307
+      ],
+      "reference_mae": {
+        "base": {
+          "whole": 39.13804663558596,
+          "neutral": 29.622994652406415,
+          "held": 29.594959176428826
+        },
+        "sphere": {
+          "whole": 17.319739517522837,
+          "neutral": 3.844777183600713,
+          "held": 3.8536031238906636
+        },
+        "surface": {
+          "whole": 18.660101956341773,
+          "neutral": 4.011229946524064,
+          "held": 3.977138800141995
+        },
+        "paired_reference_only": {
+          "held": 1.1653532126375576
+        }
+      },
+      "pixels": [
+        4655,
+        4695
+      ],
+      "paired_fit": [
+        2.015135259886418,
+        1.8372535935289698,
+        1.8968139541992506
+      ],
+      "hashes": {
+        "off": "1a04c84c350949cdf1aa2c11cf604451c11c76fd71a2aa065192fc6ec49a9a0e",
+        "on": "0c286c4203af3420f7d4c76f339ed81a28d748e8abfc3da8e306d445138dda61"
+      },
+      "board": "a524e94d8f798ed539a1635bb73e831e9a40eaa2f441cf88ef7b1aea54e43d10"
+    }
+  },
+  "cases": {
+    "wall": {
+      "sphere": {
+        "whole": {
+          "response": {
+            "cold": {
+              "projection": 0.025157055063034513,
+              "response_mae": 8.95000419884258,
+              "off_matches_original_mae": 10.123401427606478,
+              "on_matches_authored_mae": 15.218959417273673,
+              "original_matches_authored_mae": 9.52712744400022,
+              "passed": false
+            },
+            "warm": {
+              "projection": 0.23618259078071432,
+              "response_mae": 7.006900341384157,
+              "off_matches_original_mae": 13.686023330960074,
+              "on_matches_authored_mae": 18.446633441042774,
+              "original_matches_authored_mae": 9.52712744400022,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 11.21375285247458,
+            "on": 9.172572064917757
+          },
+          "passed": false
+        },
+        "neutral": {
+          "response": {
+            "cold": {
+              "projection": 0.22989417860229808,
+              "response_mae": 6.160472370766488,
+              "off_matches_original_mae": 6.296390374331551,
+              "on_matches_authored_mae": 9.927450980392157,
+              "original_matches_authored_mae": 8.336541889483065,
+              "passed": false
+            },
+            "warm": {
+              "projection": 0.531129290601087,
+              "response_mae": 3.5843582887700536,
+              "off_matches_original_mae": 10.071791443850268,
+              "on_matches_authored_mae": 12.27156862745098,
+              "original_matches_authored_mae": 8.336541889483065,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 9.850802139037434,
+            "on": 7.274688057040998
+          },
+          "passed": false
+        }
+      },
+      "surface": {
+        "whole": {
+          "response": {
+            "cold": {
+              "projection": 0.025157055063034513,
+              "response_mae": 8.95000419884258,
+              "off_matches_original_mae": 10.123401427606478,
+              "on_matches_authored_mae": 15.218959417273673,
+              "original_matches_authored_mae": 9.52712744400022,
+              "passed": false
+            },
+            "warm": {
+              "projection": -0.007932806780910266,
+              "response_mae": 9.292163499278894,
+              "off_matches_original_mae": 15.705123683297735,
+              "on_matches_authored_mae": 22.819605308797488,
+              "original_matches_authored_mae": 9.52712744400022,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 13.960576884458806,
+            "on": 13.966478266425689
+          },
+          "passed": false
+        },
+        "neutral": {
+          "response": {
+            "cold": {
+              "projection": 0.22989417860229808,
+              "response_mae": 6.160472370766488,
+              "off_matches_original_mae": 6.296390374331551,
+              "on_matches_authored_mae": 9.927450980392157,
+              "original_matches_authored_mae": 8.336541889483065,
+              "passed": false
+            },
+            "warm": {
+              "projection": 0.4256979475434493,
+              "response_mae": 4.583868092691622,
+              "off_matches_original_mae": 11.520454545454545,
+              "on_matches_authored_mae": 15.64950980392157,
+              "original_matches_authored_mae": 8.336541889483065,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 12.597415329768271,
+            "on": 10.702718360071302
+          },
+          "passed": false
+        }
+      },
+      "hashes": {
+        "off": "1a35054376d2d27daedb1e5d8c5ad4b53972b48c6aac62af5300119f4fc49e22",
+        "on": "674f5a5e2f6fd4182345ecac9c595e866e7189dc6bef9806b1a5cd5c256de1ad"
+      },
+      "board": "f8d7cd680d6d2e0563aa2fe55f491ad3bc526092f0de5120a4a0617985333c8c"
+    },
+    "pillar": {
+      "sphere": {
+        "whole": {
+          "response": {
+            "cold": {
+              "projection": 0.3956318029229549,
+              "response_mae": 5.577777656746982,
+              "off_matches_original_mae": 33.23234644823029,
+              "on_matches_authored_mae": 37.2477854995425,
+              "original_matches_authored_mae": 7.765113357442668,
+              "passed": false
+            },
+            "warm": {
+              "projection": 0.24678187851792283,
+              "response_mae": 5.464368291868183,
+              "off_matches_original_mae": 34.96752211232626,
+              "on_matches_authored_mae": 34.73218741376556,
+              "original_matches_authored_mae": 7.765113357442668,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 2.476575457859498,
+            "on": 3.301198567963633
+          },
+          "passed": false
+        },
+        "neutral": {
+          "response": {
+            "cold": {
+              "projection": 0.9052636329244135,
+              "response_mae": 0.9124420677361854,
+              "off_matches_original_mae": 34.002994652406414,
+              "on_matches_authored_mae": 33.21946524064171,
+              "original_matches_authored_mae": 8.965953654188949,
+              "passed": true
+            },
+            "warm": {
+              "projection": 0.4856512513691232,
+              "response_mae": 4.428983957219251,
+              "off_matches_original_mae": 34.17832442067736,
+              "on_matches_authored_mae": 29.74934046345811,
+              "original_matches_authored_mae": 8.965953654188949,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 1.1437433155080214,
+            "on": 3.470124777183601
+          },
+          "passed": false
+        }
+      },
+      "surface": {
+        "whole": {
+          "response": {
+            "cold": {
+              "projection": 0.3956318029229549,
+              "response_mae": 5.577777656746982,
+              "off_matches_original_mae": 33.23234644823029,
+              "on_matches_authored_mae": 37.2477854995425,
+              "original_matches_authored_mae": 7.765113357442668,
+              "passed": false
+            },
+            "warm": {
+              "projection": 0.33912187304250513,
+              "response_mae": 4.933609646638491,
+              "off_matches_original_mae": 32.81099044340842,
+              "on_matches_authored_mae": 33.99124584259219,
+              "original_matches_authored_mae": 7.765113357442668,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 2.7829589850841647,
+            "on": 3.9323990966261455
+          },
+          "passed": false
+        },
+        "neutral": {
+          "response": {
+            "cold": {
+              "projection": 0.9052636329244135,
+              "response_mae": 0.9124420677361854,
+              "off_matches_original_mae": 34.002994652406414,
+              "on_matches_authored_mae": 33.21946524064171,
+              "original_matches_authored_mae": 8.965953654188949,
+              "passed": true
+            },
+            "warm": {
+              "projection": 0.6808332872917109,
+              "response_mae": 2.7136185383244205,
+              "off_matches_original_mae": 31.82969696969697,
+              "on_matches_authored_mae": 29.116720142602496,
+              "original_matches_authored_mae": 8.965953654188949,
+              "passed": false
+            }
+          },
+          "lamp_spill": {
+            "off": 2.173440285204991,
+            "on": 4.1027450980392155
+          },
+          "passed": false
+        }
+      },
+      "hashes": {
+        "off": "b66cf6e6feb2cf3b6b808ac2b574a886486df0fab5230951b0adab589b6dafd2",
+        "on": "d3a62ad37102837b5c8fbfeb6c9e1cf2d1fa3a3149494c98c7b92657fc5f2bfa"
+      },
+      "board": "ec96e8869a1122e672ed79c356de06e2d85005fa03ba904eb3eb82d40dbf3ed1"
+    }
+  },
+  "report_sha256": "ec06f76b9ae613bd698215e277d0566be0cad986393b2bf08b3900930b34e176"
+}
