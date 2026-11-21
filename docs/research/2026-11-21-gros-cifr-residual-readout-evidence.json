@@ -1,0 +1,438 @@
+{
+  "inputs": "4413ee3468586d3ab5e715013c5e86d9c24412781e8385e75d5664b6e50df260",
+  "assets": {
+    "cifr.pth": "7445bef23789f3eb8cff4d18b5d5872c24ac312376601e350e78e5cce94ec491",
+    "vgg-head.bin": "5f5f67ed9fcae04f75dfa0cbc8caa5e83312b3e4e00f26344933edfd2475f41a",
+    "vgg-features.bin": "d649de3c8126095cbd4ddf98051ee4c6eb54127548e4623473d5a202c46418fe",
+    "modeling/arch.py": "9f2a5ef3848f1b58b132fed15d915b7671ce281458c37b793759a68078f571e8",
+    "modeling/base.py": "738bf2c317747a96c0e148352eafc2099e1e33214bdadc6f2c112a6eecb9eba6",
+    "modules/blocks.py": "d48c1a37b8f1f2c436f0fc0439d792476083c4863244e6d2ef78d476b8f12b33",
+    "modules/normalization.py": "cedca4270cd0d535e0a0597275a03cefb7b098515cd2cc7f845298c95622c3e2"
+  },
+  "tensor_counts": {
+    "cifr": 107,
+    "vgg": 26
+  },
+  "training_examples": 72,
+  "capture_pairs": 54,
+  "features": 33,
+  "total_votes": {
+    "observed": {
+      "off": 6,
+      "film_a": 0,
+      "film_b": 0
+    },
+    "residual": {
+      "off": 6,
+      "film_a": 0,
+      "film_b": 0
+    }
+  },
+  "decisions": {
+    "01": {
+      "cold": {
+        "off": {
+          "observed": [
+            "off",
+            [
+              0.19986288591901413,
+              0.36167912619506676,
+              0.438457987885919
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.18601129552527984,
+              0.39409271922966105,
+              0.4198959852450591
+            ]
+          ]
+        },
+        "film_a": {
+          "observed": [
+            "off",
+            [
+              0.17942279555150348,
+              0.34941592406941113,
+              0.47116128037908533
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.19048844480922628,
+              0.38743038556223597,
+              0.4220811696285377
+            ]
+          ]
+        },
+        "film_b": {
+          "observed": [
+            "off",
+            [
+              0.1702365956860401,
+              0.335743532396947,
+              0.49401987191701285
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.20949626189230647,
+              0.36884094753616053,
+              0.4216627905715329
+            ]
+          ]
+        }
+      },
+      "warm": {
+        "off": {
+          "observed": [
+            "off",
+            [
+              0.23537909823403486,
+              0.3524731600205966,
+              0.4121477417453685
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.1983990718069091,
+              0.3996748915475218,
+              0.4019260366455691
+            ]
+          ]
+        },
+        "film_a": {
+          "observed": [
+            "off",
+            [
+              0.18523345503520053,
+              0.35292934051255587,
+              0.4618372044522435
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.22746454714492687,
+              0.38012438348520033,
+              0.39241106936987274
+            ]
+          ]
+        },
+        "film_b": {
+          "observed": [
+            "off",
+            [
+              0.18268403823837076,
+              0.3416137723565135,
+              0.47570218940511566
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.24964928456286978,
+              0.3633664402000743,
+              0.3869842752370558
+            ]
+          ]
+        }
+      }
+    },
+    "02": {
+      "cold": {
+        "off": {
+          "observed": [
+            "off",
+            [
+              0.2922161371810058,
+              0.35810567577521846,
+              0.34967818704377573
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.17267784213606296,
+              0.4229806493906152,
+              0.40434150847332173
+            ]
+          ]
+        },
+        "film_a": {
+          "observed": [
+            "off",
+            [
+              0.2633115949662372,
+              0.35726288368258763,
+              0.3794255213511752
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.1708099417266829,
+              0.41516366523862513,
+              0.41402639303469196
+            ]
+          ]
+        },
+        "film_b": {
+          "observed": [
+            "off",
+            [
+              0.25628647299833385,
+              0.35145207990837035,
+              0.39226144709329575
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.1815787699936018,
+              0.4003388568059052,
+              0.4180823732004929
+            ]
+          ]
+        }
+      },
+      "warm": {
+        "off": {
+          "observed": [
+            "off",
+            [
+              0.2802736081101148,
+              0.3609493492941521,
+              0.358777042595733
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.19685982812315037,
+              0.4123839541749227,
+              0.39075621770192687
+            ]
+          ]
+        },
+        "film_a": {
+          "observed": [
+            "off",
+            [
+              0.2552468686337519,
+              0.3628655196652456,
+              0.38188761170100244
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.19468251998551228,
+              0.4064872379643766,
+              0.3988302420501111
+            ]
+          ]
+        },
+        "film_b": {
+          "observed": [
+            "off",
+            [
+              0.25256445532109156,
+              0.3584770960074548,
+              0.38895844867145357
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.2122990494643502,
+              0.3961571878709175,
+              0.39154376266473223
+            ]
+          ]
+        }
+      }
+    },
+    "03": {
+      "cold": {
+        "off": {
+          "observed": [
+            "off",
+            [
+              0.337610313084982,
+              0.34561020631217987,
+              0.31677948060283806
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.23847098283786583,
+              0.39820390695720675,
+              0.3633251102049274
+            ]
+          ]
+        },
+        "film_a": {
+          "observed": [
+            "off",
+            [
+              0.3245417537023239,
+              0.3492665563782566,
+              0.3261916899194195
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.2170359713062293,
+              0.40698145080920095,
+              0.3759825778845697
+            ]
+          ]
+        },
+        "film_b": {
+          "observed": [
+            "off",
+            [
+              0.318240943985793,
+              0.3454411994265184,
+              0.33631785658768854
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.21338588205692455,
+              0.41029362299450023,
+              0.3763204949485752
+            ]
+          ]
+        }
+      },
+      "warm": {
+        "off": {
+          "observed": [
+            "off",
+            [
+              0.3433520138287477,
+              0.34661550915137324,
+              0.310032477019879
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.2676107860635856,
+              0.3929043786607845,
+              0.33948483527562984
+            ]
+          ]
+        },
+        "film_a": {
+          "observed": [
+            "off",
+            [
+              0.3301079925617932,
+              0.35425773988352816,
+              0.3156342675546786
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.2503019959580625,
+              0.3991124641471152,
+              0.3505855398948222
+            ]
+          ]
+        },
+        "film_b": {
+          "observed": [
+            "off",
+            [
+              0.3235799076920009,
+              0.34808679037165996,
+              0.3283333019363391
+            ]
+          ],
+          "residual": [
+            "off",
+            [
+              0.25075701592598587,
+              0.40221838669316,
+              0.347024597380854
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "closed_set_argmax_diagnostic": {
+    "observed": {
+      "off": 0,
+      "film_a": 2,
+      "film_b": 4
+    },
+    "residual": {
+      "off": 0,
+      "film_a": 4,
+      "film_b": 3
+    }
+  },
+  "file_sha256": {
+    "01-from-02-observed-cold-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-observed-cold-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-observed-warm-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-observed-warm-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-residual-cold-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-residual-cold-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-residual-warm-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-02-residual-warm-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-observed-cold-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-observed-cold-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-observed-warm-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-observed-warm-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-residual-cold-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-residual-cold-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-residual-warm-off.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "01-from-03-residual-warm-on.png": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+    "02-from-01-observed-cold-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-observed-cold-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-observed-warm-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-observed-warm-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-residual-cold-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-residual-cold-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-residual-warm-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-01-residual-warm-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-observed-cold-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-observed-cold-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-observed-warm-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-observed-warm-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-residual-cold-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-residual-cold-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-residual-warm-off.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "02-from-03-residual-warm-on.png": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+    "03-from-01-observed-cold-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-observed-cold-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-observed-warm-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-observed-warm-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-residual-cold-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-residual-cold-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-residual-warm-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-01-residual-warm-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-observed-cold-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-observed-cold-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-observed-warm-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-observed-warm-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-residual-cold-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-residual-cold-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-residual-warm-off.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "03-from-02-residual-warm-on.png": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+    "results.json": "7f7c9f24679dc5bf4db9be15bd390f3a21b6c9380dfb9afda60da6bf6199f8a7"
+  }
+}
