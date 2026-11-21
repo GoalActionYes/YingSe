@@ -66,30 +66,30 @@ def check_parser():
         raise ValueError('Missing tagged positive control')
 
 
-def verified(path, receipt):
+def verified(path, receipt, read):
     if digest(path) != receipt['sha256']:
         raise ValueError(f'Changed frozen JPEG: {path.name}')
-    return read_image(path)
+    return read(path)
 
 
-def pairs():
+def pairs(*, read=read_image):
     evidence = ROOT / 'docs/research'
     facd = json.loads((evidence / '2026-11-18-facd-range-pilot-evidence.json').read_bytes())['cases']
     for group, records in facd.items():
         directory = BASE / 'facd-range-media-v1' / group
-        yield 'facd', group, {label: verified(directory / f'{label}.jpg', record)
+        yield 'facd', group, {label: verified(directory / f'{label}.jpg', record, read)
                               for label, record in records.items()}
     directory = BASE / 'psbench-background-desaturation-assets-v1'
     archived = BASE / 'psbench-background-desaturation-v1/results.json'
     receipts = json.loads(archived.read_bytes())['input_files']
     for group in ('145', '248'):
-        yield 'psbench', group, {role: verified(directory / f'{group}_{role}.jpg', receipts[f'{group}_{role}.jpg'])
+        yield 'psbench', group, {role: verified(directory / f'{group}_{role}.jpg', receipts[f'{group}_{role}.jpg'], read)
                                  for role in ('start', 'end')}
     directory = BASE / 'psbench-local-intent-pair-v1'
     known = evidence / '2026-11-19-psbench-local-intent-pair-evidence.json'
     for record in json.loads(known.read_bytes())['source_checks']:
         group = str(record['task'])
-        yield 'psbench', group, {role: verified(directory / f'{group}_{role}.jpg', item)
+        yield 'psbench', group, {role: verified(directory / f'{group}_{role}.jpg', item, read)
                                  for role, item in zip(('start', 'end'), record['files'], strict=True)}
 
 
