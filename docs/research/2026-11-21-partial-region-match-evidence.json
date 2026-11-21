@@ -1,0 +1,427 @@
+{
+  "bg_source": "11b72e0865bad7f3d20a4b3b9a8120c5e8df0de8fd2bbc78549625d67fa1d94d",
+  "gros_source": "4413ee3468586d3ab5e715013c5e86d9c24412781e8385e75d5664b6e50df260",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "descriptor": {
+    "repository": "facebook/dinov2-small",
+    "revision": "ed25f3a31f01632728cabb09d1542f84ab7b0056",
+    "weight_sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+    "preprocessing": "Whole RGB, long edge <=448, nearest multiple14 (min14), bilinear; ImageNet mean/std",
+    "limitation": "Correspondence descriptor, not trained grading model; semantic similarity not material or lighting identity"
+  },
+  "protocol": "b371df424168fa4ac03c98eae562e84ea5f7076651bb81b6f1337680f61a7c22",
+  "strength": 0.8,
+  "examples": {
+    "equal": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "flexible": [
+      0.647697829780196,
+      0.3466876656167975,
+      0.004364153648481642,
+      0.00125035095452489
+    ]
+  },
+  "report_sha256": "f3316347a2c6c445b599fd8dabd4383eae8e261a709ca3eb1c834e5f82f94035",
+  "metrics_independently_checked": {
+    "bg": 68,
+    "gros": 120
+  },
+  "bg": {
+    "785-3553": {
+      "arms": {
+        "frozen13": {
+          "passed": false,
+          "max_protected_swap": 8.24108110898859,
+          "projection": {
+            "C1": {
+              "luma": 0.1556356355986747,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.2594250617020253,
+              "chroma": null
+            }
+          }
+        },
+        "equal_reference": {
+          "passed": false,
+          "max_protected_swap": 8.809773349166193,
+          "projection": {
+            "C1": {
+              "luma": 0.1559798733881602,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.2740674309342826,
+              "chroma": null
+            }
+          }
+        },
+        "flexible_reference": {
+          "passed": false,
+          "max_protected_swap": 8.827525083036468,
+          "projection": {
+            "C1": {
+              "luma": 0.15614500118544092,
+              "chroma": null
+            },
+            "F1": {
+              "luma": -0.27474469730825757,
+              "chroma": null
+            }
+          }
+        }
+      },
+      "hashes": {
+        "equal_reference-C1-off": "3dbeb35bdda00a233bb24080d927988d41c3ae004b0c2d682aad48415ad1df58",
+        "flexible_reference-C1-off": "41184bfa6f1972658ad79c76bc5a67aa951bdbc07c3ac7530818bdd7d7c1f11a",
+        "equal_reference-C1-on": "5800d5c48265c0619b422da076732331a5fd6998f4aea37427436761f37ddf4b",
+        "flexible_reference-C1-on": "6205f7ac0bd36e5edc7e5954997fcd40e2b3c8a154386cb368a001a358dcda5a",
+        "equal_reference-F1-off": "a5d77b40e380ec069a33c5d06bbd9eb8ff3ac2f16dc2d30afe904e52e3427839",
+        "flexible_reference-F1-off": "22e166945dcef9a8a839e184c1d3ee218be2fc54c9a38fc457dd3db82f85ecdf",
+        "equal_reference-F1-on": "d0bd020c906fa02aa1617225c13f1d9dfb76331a3011bdfcb637d074332f2dcb",
+        "flexible_reference-F1-on": "299ef48c8461c3af39a514b6a2fcf2ad217a1ff3277621eede1e5bcae591388a"
+      },
+      "board": "aa4b14fc0db41fbfca4ae01dac112f3fcd12aab35f895770abef0f374048f08c"
+    },
+    "9483-19432": {
+      "arms": {
+        "frozen13": {
+          "passed": false,
+          "max_protected_swap": 3.8997668997668997,
+          "projection": {
+            "C1": {
+              "luma": 0.3044341444639756,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.10416273674869242,
+              "chroma": null
+            }
+          }
+        },
+        "equal_reference": {
+          "passed": false,
+          "max_protected_swap": 4.804528804528805,
+          "projection": {
+            "C1": {
+              "luma": 0.30440994009502775,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.10500128359657308,
+              "chroma": null
+            }
+          }
+        },
+        "flexible_reference": {
+          "passed": false,
+          "max_protected_swap": 4.776848151848152,
+          "projection": {
+            "C1": {
+              "luma": 0.3052121722370222,
+              "chroma": null
+            },
+            "F1": {
+              "luma": 0.10544577478825701,
+              "chroma": null
+            }
+          }
+        }
+      },
+      "hashes": {
+        "equal_reference-C1-off": "82ec2a1774fef132a90b3c55aeade43789047448123b0a2bb64a6d0ba52153ef",
+        "flexible_reference-C1-off": "6a55b23dd7a19afc536ec7c555b5bf9f824d6bea43ea68de701b2129eaacc8be",
+        "equal_reference-C1-on": "7eb30b272cbf551f3f152a504a592a44b1e01ce4af17642d36d109bb2d463701",
+        "flexible_reference-C1-on": "85f9a949185c09c13b69595af41af1fc0a2bfe4f8d82756d9374f1e97f524fcc",
+        "equal_reference-F1-off": "c1e37598739c4813a6f3675d96be86e0a7ecf9f860d275677d269436ddcc9980",
+        "flexible_reference-F1-off": "8109a08eedf69730d762232af5fb0f26b71280043d69a5380cd84b3fdb20d544",
+        "equal_reference-F1-on": "b2442fc89db6558e3692f00624d9b55d4ee60abed2c96ee8a1e2c70a2a354118",
+        "flexible_reference-F1-on": "bd51b61e14d9b34ad32fb9777d0d0265368d3114fbcf47ed0a87b69ea707c564"
+      },
+      "board": "a61e814a87fa65ff65523050556f6c374e26a13118164e7bbe1bc6c213136708"
+    },
+    "872-1268": {
+      "arms": {
+        "frozen13": {
+          "passed": false,
+          "max_protected_swap": 7.679535558780842,
+          "projection": {
+            "C1": {
+              "luma": 0.22093199638862257,
+              "chroma": 0.1586716745429196
+            },
+            "F1": {
+              "luma": 0.2545125485280661,
+              "chroma": 0.08970502743969601
+            }
+          }
+        },
+        "equal_reference": {
+          "passed": false,
+          "max_protected_swap": 7.796677955168521,
+          "projection": {
+            "C1": {
+              "luma": 0.2031914685094951,
+              "chroma": -0.011535727248151705
+            },
+            "F1": {
+              "luma": 0.25068875676124414,
+              "chroma": -0.04887906471366982
+            }
+          }
+        },
+        "flexible_reference": {
+          "passed": false,
+          "max_protected_swap": 7.597226253830027,
+          "projection": {
+            "C1": {
+              "luma": 0.2014674240416821,
+              "chroma": -0.019480197077505063
+            },
+            "F1": {
+              "luma": 0.2509836129773034,
+              "chroma": -0.05279078553295564
+            }
+          }
+        }
+      },
+      "hashes": {
+        "equal_reference-C1-off": "072139f436db8dd445596f146610500b50853eed83ff980e934894630e20dd37",
+        "flexible_reference-C1-off": "99b5625db0bc21e1e84f7b1838f653a61fc9ea77b24237baf04252e3996cf11f",
+        "equal_reference-C1-on": "c6d5c4bc6f5526b806d8c949033a7f0183651e8fc684b7326e65329b94535f72",
+        "flexible_reference-C1-on": "c41cffc9c83ac44d53cc41d02d62c075d967910ea7e8e097635e35c8874cd40f",
+        "equal_reference-F1-off": "ebf463389997490266cc9afaa922e6568a162244b1c60201bbbf0b463f8c6e85",
+        "flexible_reference-F1-off": "7fd3fa94f8d45f84f51df21d84b4fba335a58656cf2f25921598dc80966a4042",
+        "equal_reference-F1-on": "6af4b29935f2fe3b3c48ad4df1cfbfd8ed6e52df7a838cf2a02390f39e048c07",
+        "flexible_reference-F1-on": "933a5e00fea85f1cf27d9d7dcd8ca0fcd09ad23d386a5bac6dbbdf336df36c52"
+      },
+      "board": "2cb5ae4a74f80154895290f75fc840547789fec0a6d8b0a14e902e13f1c50bd1"
+    },
+    "8021-8690": {
+      "arms": {
+        "frozen13": {
+          "passed": false,
+          "max_protected_swap": 32.20406141654284,
+          "projection": {
+            "C1": {
+              "luma": 0.24308525797741656,
+              "chroma": 0.16298575234525906
+            },
+            "F1": {
+              "luma": 0.5264374158071898,
+              "chroma": 0.570133122831698
+            }
+          }
+        },
+        "equal_reference": {
+          "passed": false,
+          "max_protected_swap": 37.339276869737496,
+          "projection": {
+            "C1": {
+              "luma": 0.27152405192577544,
+              "chroma": -0.04427651884982383
+            },
+            "F1": {
+              "luma": 0.5897958322227249,
+              "chroma": 0.06869941059122182
+            }
+          }
+        },
+        "flexible_reference": {
+          "passed": false,
+          "max_protected_swap": 35.95889053987122,
+          "projection": {
+            "C1": {
+              "luma": 0.26905615565302615,
+              "chroma": -0.01710885958081561
+            },
+            "F1": {
+              "luma": 0.5842616650275035,
+              "chroma": 0.06884017878597926
+            }
+          }
+        }
+      },
+      "hashes": {
+        "equal_reference-C1-off": "af1cddaf88eb7863e9d2ebbe7712c765862ce37278156e899bbe370b7414dc0a",
+        "flexible_reference-C1-off": "788b607945b6cb33c444f85e102260460010e55cda02c762dd22236cb471b1ca",
+        "equal_reference-C1-on": "e3afd023d4baab0a1fde65b40783df11fa88ffc290cb7775e9787c3350b37e3b",
+        "flexible_reference-C1-on": "254100c589c38e2f113a9c4bd0a858942d2cb8e0d8bde1ccc3eb8585fdfe8a1b",
+        "equal_reference-F1-off": "8c97125e35213611d8ec23de7522a1db94f539ae75c5adb0a215dce015cb8c56",
+        "flexible_reference-F1-off": "193c00993773d1583e79d07e101a2c99e8d4e1b95cf5e1c56c68afe938fc7b83",
+        "equal_reference-F1-on": "50ec3249feeb3f01dd8884c3a14912368b41d3fb55873288bf9945dabdcada27",
+        "flexible_reference-F1-on": "ae5d4c7f4059efdf10a2e5bb8e8c9acb4a8d285f0ca1dc35a7ff2caea900c2f6"
+      },
+      "board": "6ca48382a19577771a52b2dda43af3e2a08e1ec029847fb32faf8de883a78979"
+    }
+  },
+  "gros": {
+    "01-from-02": {
+      "arms": {
+        "frozen13": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 8.005411255411255
+        },
+        "equal_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 9.018939393939394
+        },
+        "flexible_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 9.553571428571429
+        }
+      },
+      "hashes": {
+        "equal_reference-cold-off": "7e69fe11da1553d8e2f8b431fe9b2527a38ba563303e5653fc2867a3c0b353ab",
+        "flexible_reference-cold-off": "120835c9e61ee3a3872d11ab5ee6d126b20c8ae6dcfb54b876b8bcf949a0504b",
+        "equal_reference-cold-on": "951e79d733c923cfc2d87e7f29cf70628dd12d71117122b904ec5d95c8e82378",
+        "flexible_reference-cold-on": "87378c70ac6c6c49a41c64d650812b28d98e8a8afdd4504c3ce59862e5796963",
+        "equal_reference-warm-off": "3ea997c1850545e85bac1fe879b997a75919c7a844144eefdac3e1796e18c142",
+        "flexible_reference-warm-off": "f98a266f640be2b58879f79dc842a0c3a2ede20d33dc3648ab57d4ff36c566e3",
+        "equal_reference-warm-on": "8d977a8ebc003ee33da9fad996d96bf098ec7c4a5b6f8f440f86e4b39d160641",
+        "flexible_reference-warm-on": "4960f415a72b40f40690c01d7ca8e1f33625937a686c6328776e5a667c5b7097"
+      },
+      "board": "81cabcc11858e44d67e9534d74029ca3ecc2f4afa3c51d97085caf268efb2e7b"
+    },
+    "01-from-03": {
+      "arms": {
+        "frozen13": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 8.216450216450216
+        },
+        "equal_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 9.981601731601732
+        },
+        "flexible_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 10.098484848484848
+        }
+      },
+      "hashes": {
+        "equal_reference-cold-off": "de4c7d38ab6139588c8209c67296d2d95b73b714201eca3f456f69fc251ac6bd",
+        "flexible_reference-cold-off": "06f7a8b1411022fd2251e1ed23d434d206718c8627e4f593565586629989063e",
+        "equal_reference-cold-on": "4adeead41df1f4248b6765c1f03d527e255e086b85e19166090646bac4c30ced",
+        "flexible_reference-cold-on": "342a98026a158a0dd1d86c1ce04ccbb852782cc3843114e93e545ab5328b1169",
+        "equal_reference-warm-off": "53a8236ed6adbd177f5053a6d75276af0ef6214f69b4e5452eca01ad67ee95b9",
+        "flexible_reference-warm-off": "a584707c8b83d40549ea9a4e0708b060dbcf79bf3531a1afc3f8d9e761470a79",
+        "equal_reference-warm-on": "2679a70730334845c131d73e05da97b185a4cf8e54e3f74c0417b10793a775ae",
+        "flexible_reference-warm-on": "e7de6767fa48af5a9058dedea2f35d30ddb702cdbdfdefdbf03ee875a3ad064e"
+      },
+      "board": "08b2351562b9e5897cbf83816df0e3d656e8175cfe29b5692d8fa73d7555445e"
+    },
+    "02-from-01": {
+      "arms": {
+        "frozen13": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 4.484307359307359
+        },
+        "equal_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 7.119047619047619
+        },
+        "flexible_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 7.068181818181818
+        }
+      },
+      "hashes": {
+        "equal_reference-cold-off": "3bc4cc33932b0bbe257c86457f01a605fb7fae8abaeaee45275082e80dd850ed",
+        "flexible_reference-cold-off": "6f2162fd11158e3e750f19b8bad722e0e443d872a27c17906b50cf02f7cf2f65",
+        "equal_reference-cold-on": "226c47229a1f3249a747535bba82744d4976ec12e3a8d066720f42a0bc9feea7",
+        "flexible_reference-cold-on": "0fbc2c670629df479772012a250f733165a27644b7498d43f6f7d8fcf11efb28",
+        "equal_reference-warm-off": "d42e5ff4c27ef2a28e5638c15c5e530eaacc1bc967df49cb66237fcc05fe8e3b",
+        "flexible_reference-warm-off": "249f2054f0443dd128060740022f370ce42fc7a8599123fa157e64dabda1cbab",
+        "equal_reference-warm-on": "15b4c1278658536438915f4b11366bcef2b25a8ecab1e9c0af716634c67ef354",
+        "flexible_reference-warm-on": "9f1eb388b0effdf9b0326557eb6a5f8c8072157c553ea3ef4955bbfa2bdfe9ab"
+      },
+      "board": "d15f018d4518d2611802e2c6750f756c0f1f6412f4f544172c1310e8ffea3fcf"
+    },
+    "02-from-03": {
+      "arms": {
+        "frozen13": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 9.871753246753247
+        },
+        "equal_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 10.588203463203463
+        },
+        "flexible_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 10.125
+        }
+      },
+      "hashes": {
+        "equal_reference-cold-off": "bfb013ff4fb956473f13662cf3b0e4e875891ec255626a8a3771f7b29998455a",
+        "flexible_reference-cold-off": "602923722d57e720fde21c668eb3e481305be66a29f8d8ae701ba8181db407b6",
+        "equal_reference-cold-on": "70d381bd066aaf841dcfe7a32ca247abb4ce51e936fa14f904878009cd3b58ad",
+        "flexible_reference-cold-on": "bd34a57bfb5ace361186233f12b3171475ee6a60929ffcfc3826338961a78582",
+        "equal_reference-warm-off": "e5f336a7d350869bd6c4d24675f9080ac8ebc93a3b0d98739b3f225911a26cfb",
+        "flexible_reference-warm-off": "1862153197cdf9f9bb45c75f4e9b2bc76e4e05f0678d436a665455d3f3b68648",
+        "equal_reference-warm-on": "f894b2f7ecab46841bd3e4cf87506e191b242b824427670254bdd7ba888c285f",
+        "flexible_reference-warm-on": "abe6dad9c0c115f57bc52e3e1324cd47bdc8c61e1073226b4b50ae3d14987e99"
+      },
+      "board": "f710c2d71f10c6400b0b922fb2eb47db0b93cb3e2e48fe3c21a1ae74a475830b"
+    },
+    "03-from-01": {
+      "arms": {
+        "frozen13": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 5.033333333333333
+        },
+        "equal_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 6.531687242798354
+        },
+        "flexible_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 6.45925925925926
+        }
+      },
+      "hashes": {
+        "equal_reference-cold-off": "e1efc7da073a7617755ef1aa8bda8b5027391bac92d116c4d6d9a84f70902399",
+        "flexible_reference-cold-off": "40fc50e74b9e75e0220cd52228e02448468ccd877ab19280fdccfb508e8573c9",
+        "equal_reference-cold-on": "f726b619ecff7e5c343f90b587a1d11591b35661c5e7f2bde4e25eb0911519ae",
+        "flexible_reference-cold-on": "ce693a996012404743c1fd520ea5ce2251ccb19a7a4302dd087f9dc3ed51d490",
+        "equal_reference-warm-off": "1c29ea73f0d36eb791bbb9a057ed54136b170b74bcf5fd8731f7134955d6b376",
+        "flexible_reference-warm-off": "7e76b8e906718bb3bfc9b6ec9054f5edef52497e50e59b7c321b4e8103a344d9",
+        "equal_reference-warm-on": "72e4bc6b10b9e776905e12f04071b5e5c97192fd4df727eb85f5ac7f1b99e1ce",
+        "flexible_reference-warm-on": "14d2db93b31c1179d0837b65601fa649f108656a6d6380b92fb095213ede31bd"
+      },
+      "board": "6b4b6f7cbc8ea996163267298a1af33683ccfd4818805ddbac4078f8e2519f80"
+    },
+    "03-from-02": {
+      "arms": {
+        "frozen13": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 8.423456790123456
+        },
+        "equal_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 7.434979423868313
+        },
+        "flexible_reference": {
+          "passed_areas": 0,
+          "right_cheek_lamp_difference": 7.98477366255144
+        }
+      },
+      "hashes": {
+        "equal_reference-cold-off": "119ccf1a497ef2b396a334068296b88cb3f9301e019a898bb539798a990496b4",
+        "flexible_reference-cold-off": "a65710b71c1a65db4478306b08441391ad751f89c51413092fc1f62468051531",
+        "equal_reference-cold-on": "87bb890b376cb7683533713e73c1350d4c78648699708fa32687097c68b542db",
+        "flexible_reference-cold-on": "92c0d0fc9ec6fe610e8ed4ca39a0373657d942482b859f80acf71622bf6263c1",
+        "equal_reference-warm-off": "8a576f73dd71a9e7ff350510f79b93be2b5bff7270184ce7e811fc2da730a65d",
+        "flexible_reference-warm-off": "a9596657211e878f06332d0e20cd0f8b28ad46255a1b7b3ddcfb3d0927de300a",
+        "equal_reference-warm-on": "96009a7976fcf3f091dc4e65ce5adeb1ea14c94f382c2da7d85de7ba4f590113",
+        "flexible_reference-warm-on": "ac29951c4a8fcedf8edfed14d2294cdf012c5f6eca8999b1658f9930383b5929"
+      },
+      "board": "7a72a8c2dfde147d898d424c21ca8c5e5d1219d0c460d2e7e39917e890d65b10"
+    }
+  }
+}
