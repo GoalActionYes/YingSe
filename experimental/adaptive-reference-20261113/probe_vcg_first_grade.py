@@ -114,7 +114,7 @@ def rendered(weights, models, aliases, processor, scheduler, hook, preprocess, t
     return finish_spatial(target, grade, STRENGTH), lut
 
 
-def run(source, author, checkpoint, out):
+def prepare_models(source, author, checkpoint):
     torch.set_num_threads(4)
     if checkpoint.stat().st_size != FILE_SIZE:
         raise ValueError('Incomplete checkpoint')
@@ -137,6 +137,11 @@ def run(source, author, checkpoint, out):
     scheduler = DDIMScheduler(beta_start=.00085, beta_end=.012, beta_schedule='linear',
                              steps_offset=1, clip_sample=False)
     official = upstream_preprocess(source / 'util.py')
+    return models, aliases, processor, scheduler, hook, official
+
+
+def run(source, author, checkpoint, out):
+    models, aliases, processor, scheduler, hook, official = prepare_models(source, author, checkpoint)
 
     prior = BASE / 'gros-film-b-cross-v2'
     manifest = checked_json(prior / 'results.json', BASELINE_SHA)
