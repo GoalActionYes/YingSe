@@ -42,17 +42,27 @@ def rendering_features(engine, target, edited):
     return affine, weights, inverse
 
 
-def fit_and_render(engine, target, affine, weights, inverse, train):
+def solve_grid(affine, weights, inverse, train):
     design = (weights[..., None] * affine[..., None, :]).reshape(*train.shape, -1)
     coefficients, _, rank, _ = np.linalg.lstsq(design[train], inverse[train], rcond=1e-5)
     if rank < 4 or not np.isfinite(coefficients).all():
         raise ValueError("Degenerate fit")
+    return coefficients, rank
+
+
+def render_grid(engine, target, coefficients):
     matrices = coefficients.reshape(-1, 4, 3)
     weights_rgb = matrices[:, :3, :].transpose(0, 2, 1).reshape(-1, 9)
     nodes = np.column_stack((weights_rgb, matrices[:, 3, :], np.ones(len(matrices))))
     tensor = torch.as_tensor(nodes.T.copy(), dtype=torch.float32, device=engine.device)
     grid = tensor.reshape(1, 13, -1, 1, 1).expand(1, 13, 8, 16, 16).contiguous()
-    prepared = PreparedSpatial(engine, grid, {})
+    return PreparedSpatial(engine, grid, {})
+
+
+def fit_and_render(engine, target, affine, weights, inverse, train):
+    coefficients, rank = solve_grid(affine, weights, inverse, train)
+    prepared = render_grid(engine, target, coefficients)
+    design = (weights[..., None] * affine[..., None, :]).reshape(*train.shape, -1)
     prediction = design @ coefficients
     with torch.inference_mode():
         values = torch.as_tensor(prediction, device=engine.device, dtype=torch.float32)
