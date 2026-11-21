@@ -1,0 +1,931 @@
+{
+  "parent": "6b9f2c7af57709c4f04b236a3a798217777f17a85724121fd9bb32beefdf0d02",
+  "inputs": "ac336c1757901c9a1f77a14eb656bf94800fb4bd5fb65b7d69d693f0b5653f3f",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "protocol": "0f1d23ad7056ccd15e67a3f9db46fc27db9ce5f8135c636d19cdd0aeb4bfbbff",
+  "mask": {
+    "pixels": 17143,
+    "fraction": 0.043596903483072914,
+    "common_core": 12141,
+    "excluded": 417,
+    "sha": "72165186278b99bd3d801bd8bd6e18e97daa550757b8ec1cc5e73ef2546fa058"
+  },
+  "references": {
+    "obj_02_egg": {
+      "add_emitters-off": "a470ee7adcef25a67a7bbc514c83e99531fdda7d93c9a653226f31f7f2506087",
+      "add_emitters-on": "f226839a156a88b158d0a8273a64a39deac2ad50433d9a9340fbd81c7288584a",
+      "remove_emitters-off": "c1679acca0195502945d48e9ccb671a054d66caa3970c10ecfeb31aa03eea289",
+      "remove_emitters-on": "ab62909ee636bba789e7892c4184a6500d13f370db70c8fb1e076c94df5ce2ce"
+    },
+    "obj_21_cube": {
+      "add_emitters-off": "e3c07e5edb52a4db221023fe7ca931396a1f3282d9b65a9086d6f57a9bf1152c",
+      "add_emitters-on": "f0d4468cdf4cdfce5d7799032f4ff9723a3449a554bdd1a9a0a467caa83d2817",
+      "remove_emitters-off": "99692d9882c703a6423b79401051d86b546b6eaf1717066c9526788ff27f7a47",
+      "remove_emitters-on": "b736385196f37833658e4c2383017e8c837ab4fdafdab8263e82b9b679115d97"
+    },
+    "obj_43_paper_ball": {
+      "add_emitters-off": "ad550714b0142bb607fbe11c6b2cb69b6cc8d74205cb86fa5226c35552be77f5",
+      "add_emitters-on": "b10c3b7ddef2f8d97cd74d6014d581971a6cdfc797ebb6bc923a39c7ec299205",
+      "remove_emitters-off": "ea7ed5bcc3cd393bee03d92ded481f31e56102dbc1be74dda497d5aada747cb0",
+      "remove_emitters-on": "5d9e015ac290291d1f77d10ba50c0bd1e3b79b849a0055f0757128f646086fb0"
+    }
+  },
+  "cases": {
+    "obj_02_egg-from-obj_21_cube": {
+      "scores": {
+        "add_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.1425321631257658,
+                "response_mae": 0.6625256008572049,
+                "off_matches_original_mae": 1.8146141899956598,
+                "on_matches_authored_mae": 1.8558256361219618,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2053123103333475,
+                "response_mae": 0.6279407077365451,
+                "off_matches_original_mae": 1.245650397406684,
+                "on_matches_authored_mae": 1.2505747477213542,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.02248043484158,
+              "on": 2.0789616902669272
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.16324722451084017,
+                "response_mae": 5.111467273291283,
+                "off_matches_original_mae": 8.056089798825814,
+                "on_matches_authored_mae": 8.708682314824388,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.23237395615853354,
+                "response_mae": 4.515102425349556,
+                "off_matches_original_mae": 7.8665425843587355,
+                "on_matches_authored_mae": 8.434954445708247,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 15.447466078424615,
+              "on": 15.977929433931916
+            },
+            "passed": false
+          }
+        },
+        "remove_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.1425321631257658,
+                "response_mae": 0.6625256008572049,
+                "off_matches_original_mae": 1.8146141899956598,
+                "on_matches_authored_mae": 1.8558256361219618,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.3586511056095889,
+                "response_mae": 1.025038825141059,
+                "off_matches_original_mae": 2.912711249457465,
+                "on_matches_authored_mae": 2.7057757907443576,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.8588714599609375,
+              "on": 3.114534166124132
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.16324722451084017,
+                "response_mae": 5.111467273291283,
+                "off_matches_original_mae": 8.056089798825814,
+                "on_matches_authored_mae": 8.708682314824388,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.32840379178258433,
+                "response_mae": 4.30666712623077,
+                "off_matches_original_mae": 9.49019405094268,
+                "on_matches_authored_mae": 11.704281988533875,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 17.162570801594686,
+              "on": 18.542722227966774
+            },
+            "passed": false
+          }
+        }
+      },
+      "contributions": {
+        "off": {
+          "whole": {
+            "full": 3.231719970703125,
+            "emitter_only": 2.02248043484158,
+            "after_removal": 2.8588714599609375,
+            "interaction": 1.4920442369249132,
+            "emitter_projection": 0.4272113131751222
+          },
+          "object": {
+            "full": 21.857730442675123,
+            "emitter_only": 15.447466078424615,
+            "after_removal": 17.162570801594686,
+            "interaction": 10.743230046301083,
+            "emitter_projection": 0.44127291614435094
+          }
+        },
+        "on": {
+          "whole": {
+            "full": 3.3804423014322915,
+            "emitter_only": 2.0789616902669272,
+            "after_removal": 3.114534166124132,
+            "interaction": 1.785567389594184,
+            "emitter_projection": 0.4025357489565067
+          },
+          "object": {
+            "full": 21.767747791220028,
+            "emitter_only": 15.977929433931916,
+            "after_removal": 18.542722227966774,
+            "interaction": 12.753524282218317,
+            "emitter_projection": 0.41656865186442
+          }
+        }
+      },
+      "hashes": {
+        "add_emitters-off": "fe7a50e3b31cd6580ee68aa9f46f8a901e566dc3fdf11c3b3aa4274bebe001c9",
+        "add_emitters-on": "f4904fa56818c04bf3684a13545c50b2fdec147b393bd2d4ce3241283926d2bc",
+        "remove_emitters-off": "377bd39af20519091bb2bf128f2e08664022bf99b30c978d6153e0a2506396d3",
+        "remove_emitters-on": "bf473263d5544b6b233be9d5c85bc5cc19433516d9f9c21a99a68fbd20300191"
+      },
+      "board": "18233a6db05951041bc58aa6825c63ee902e90ff1884ea6f40433b193a1c841e"
+    },
+    "obj_02_egg-from-obj_43_paper_ball": {
+      "scores": {
+        "add_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.23980475380840363,
+                "response_mae": 0.6500489976671007,
+                "off_matches_original_mae": 1.1474473741319444,
+                "on_matches_authored_mae": 1.2097820705837674,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.25911210546482,
+                "response_mae": 0.6257917616102431,
+                "off_matches_original_mae": 1.7910800509982638,
+                "on_matches_authored_mae": 1.8599039713541667,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.3435516357421875,
+              "on": 1.2527118259006076
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.27825029021377345,
+                "response_mae": 4.617033743494296,
+                "off_matches_original_mae": 6.138053056675743,
+                "on_matches_authored_mae": 6.407610381553097,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.30254001354136717,
+                "response_mae": 4.485035443881478,
+                "off_matches_original_mae": 14.183929043302427,
+                "on_matches_authored_mae": 14.365146658394513,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 11.11105366559818,
+              "on": 10.623077011454635
+            },
+            "passed": false
+          }
+        },
+        "remove_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.23980475380840363,
+                "response_mae": 0.6500489976671007,
+                "off_matches_original_mae": 1.1474473741319444,
+                "on_matches_authored_mae": 1.2097820705837674,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.4168775405912325,
+                "response_mae": 1.5029517279730902,
+                "off_matches_original_mae": 4.255394829644097,
+                "on_matches_authored_mae": 4.04740736219618,
+                "original_matches_authored_mae": 0.6764153374565972,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 3.4273783365885415,
+              "on": 3.1709467569986978
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.27825029021377345,
+                "response_mae": 4.617033743494296,
+                "off_matches_original_mae": 6.138053056675743,
+                "on_matches_authored_mae": 6.407610381553097,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.39327499813127803,
+                "response_mae": 4.9547788922207285,
+                "off_matches_original_mae": 19.316145635864384,
+                "on_matches_authored_mae": 22.402635600133273,
+                "original_matches_authored_mae": 5.76239386941486,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 16.22461195556015,
+              "on": 18.623226369788256
+            },
+            "passed": false
+          }
+        }
+      },
+      "contributions": {
+        "off": {
+          "whole": {
+            "full": 3.5036858452690973,
+            "emitter_only": 1.3435516357421875,
+            "after_removal": 3.4273783365885415,
+            "interaction": 0.9833289252387153,
+            "emitter_projection": 0.3725760249021806
+          },
+          "object": {
+            "full": 20.703615620583875,
+            "emitter_only": 11.11105366559818,
+            "after_removal": 16.22461195556015,
+            "interaction": 6.616700559519296,
+            "emitter_projection": 0.39592635189543623
+          }
+        },
+        "on": {
+          "whole": {
+            "full": 3.3504791259765625,
+            "emitter_only": 1.2527118259006076,
+            "after_removal": 3.1709467569986978,
+            "interaction": 1.0734185112847223,
+            "emitter_projection": 0.31481131441467386
+          },
+          "object": {
+            "full": 21.365744091728995,
+            "emitter_only": 10.623077011454635,
+            "after_removal": 18.623226369788256,
+            "interaction": 7.869024230517354,
+            "emitter_projection": 0.32829881982521625
+          }
+        }
+      },
+      "hashes": {
+        "add_emitters-off": "b6c4907c3cfb2006a54fa06c8baebace81491efa172b0e7252a71045faaaccea",
+        "add_emitters-on": "ebb568f9febd421e10ffa768f97def4f2e88ddc16c102209f089a2567624ea82",
+        "remove_emitters-off": "fac74d03b6e216ed96539f59cec85683bae51aeae297f5c9b1af5163d7c3c32f",
+        "remove_emitters-on": "7fe943aaf596413c4f0ee9311a71dd78f667ba7edd70c59e5c85380f982e5c7c"
+      },
+      "board": "1065123781ca1b1342eba81f3e7af8420c8ff7e8d3d7a4a4d4615c77344702fa"
+    },
+    "obj_21_cube-from-obj_02_egg": {
+      "scores": {
+        "add_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.4097140364927282,
+                "response_mae": 0.5312728881835938,
+                "off_matches_original_mae": 0.9300638834635416,
+                "on_matches_authored_mae": 1.0412606133355036,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.41135382377936497,
+                "response_mae": 0.42091115315755206,
+                "off_matches_original_mae": 1.4600897894965277,
+                "on_matches_authored_mae": 1.390032450358073,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 1.2286936442057292,
+              "on": 1.3294711642795138
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.5926692208187302,
+                "response_mae": 1.3820843340031694,
+                "off_matches_original_mae": 1.9331743153239993,
+                "on_matches_authored_mae": 1.7448142157743687,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.6083515331095771,
+                "response_mae": 1.3469805638604344,
+                "off_matches_original_mae": 5.977688466293083,
+                "on_matches_authored_mae": 5.525521845915906,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 4.514020269350368,
+              "on": 4.689332178819019
+            },
+            "passed": false
+          }
+        },
+        "remove_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.4097140364927282,
+                "response_mae": 0.5312728881835938,
+                "off_matches_original_mae": 0.9300638834635416,
+                "on_matches_authored_mae": 1.0412606133355036,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.39202071726234766,
+                "response_mae": 1.122817145453559,
+                "off_matches_original_mae": 3.3058319091796875,
+                "on_matches_authored_mae": 2.8590401543511286,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.497105916341146,
+              "on": 2.080869886610243
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.5926692208187302,
+                "response_mae": 1.3820843340031694,
+                "off_matches_original_mae": 1.9331743153239993,
+                "on_matches_authored_mae": 1.7448142157743687,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.45483940913179444,
+                "response_mae": 1.992533777712428,
+                "off_matches_original_mae": 8.084470148725405,
+                "on_matches_authored_mae": 8.793826615911604,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 6.565603097583689,
+              "on": 7.607786436635135
+            },
+            "passed": false
+          }
+        }
+      },
+      "contributions": {
+        "off": {
+          "whole": {
+            "full": 2.6538738674587674,
+            "emitter_only": 1.2286936442057292,
+            "after_removal": 2.497105916341146,
+            "interaction": 0.7893736097547743,
+            "emitter_projection": 0.3985003843870065
+          },
+          "object": {
+            "full": 8.721271926241783,
+            "emitter_only": 4.514020269350368,
+            "after_removal": 6.565603097583689,
+            "interaction": 2.001573842626629,
+            "emitter_projection": 0.42155219644981
+          }
+        },
+        "on": {
+          "whole": {
+            "full": 2.1773283216688366,
+            "emitter_only": 1.3294711642795138,
+            "after_removal": 2.080869886610243,
+            "interaction": 0.9620437622070312,
+            "emitter_projection": 0.3479638388426847
+          },
+          "object": {
+            "full": 9.308255321929781,
+            "emitter_only": 4.689332178819019,
+            "after_removal": 7.607786436635135,
+            "interaction": 2.7615328900434033,
+            "emitter_projection": 0.3563823469563922
+          }
+        }
+      },
+      "hashes": {
+        "add_emitters-off": "59e83f3caed3b8a5fba5add1d3a087af2b7b4d9ae5028dce3816bdfd11f6c96c",
+        "add_emitters-on": "fa73ceb960761aaa9279bd281020c293ce06cf48165028d98e73fd354431c8ee",
+        "remove_emitters-off": "68ca03cd495a72b8c9beb7fefaa8b1e5ed8de9bd7d5b4aadf4d133531e3aad99",
+        "remove_emitters-on": "dcb50ce9e6df94024b48de78c9604a790b2459e57a97252d7f374672984f8207"
+      },
+      "board": "437ac987db839cc9d38e852647f19dec93319de3b679e0c81c20a8a794bb9c2b"
+    },
+    "obj_21_cube-from-obj_43_paper_ball": {
+      "scores": {
+        "add_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.3526596477102152,
+                "response_mae": 0.44768185085720485,
+                "off_matches_original_mae": 1.0085093180338542,
+                "on_matches_authored_mae": 0.9224522908528646,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.3580025921276626,
+                "response_mae": 0.3948652479383681,
+                "off_matches_original_mae": 1.7946497599283855,
+                "on_matches_authored_mae": 1.7644627888997395,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 0.9811715020073785,
+              "on": 0.9312252468532987
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.5026827665638575,
+                "response_mae": 1.3414748375783518,
+                "off_matches_original_mae": 3.6946309638560777,
+                "on_matches_authored_mae": 2.7192678636583945,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.4840200605642384,
+                "response_mae": 1.2095770229868157,
+                "off_matches_original_mae": 7.555108998132083,
+                "on_matches_authored_mae": 7.06275765546461,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 4.632456011370877,
+              "on": 4.435829153664766
+            },
+            "passed": false
+          }
+        },
+        "remove_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.3526596477102152,
+                "response_mae": 0.44768185085720485,
+                "off_matches_original_mae": 1.0085093180338542,
+                "on_matches_authored_mae": 0.9224522908528646,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.5829004373109135,
+                "response_mae": 1.1737764146592882,
+                "off_matches_original_mae": 3.943839179144965,
+                "on_matches_authored_mae": 3.4820175170898438,
+                "original_matches_authored_mae": 0.45669640435112846,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 3.135550604926215,
+              "on": 2.6380513509114585
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.5026827665638575,
+                "response_mae": 1.3414748375783518,
+                "off_matches_original_mae": 3.6946309638560777,
+                "on_matches_authored_mae": 2.7192678636583945,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.6175598366595846,
+                "response_mae": 2.1711894220348857,
+                "off_matches_original_mae": 10.645221018695509,
+                "on_matches_authored_mae": 10.805769304078376,
+                "original_matches_authored_mae": 1.487657043898773,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 7.718995572546521,
+              "on": 8.167807566425417
+            },
+            "passed": false
+          }
+        }
+      },
+      "contributions": {
+        "off": {
+          "whole": {
+            "full": 3.288545396592882,
+            "emitter_only": 0.9811715020073785,
+            "after_removal": 3.135550604926215,
+            "interaction": 0.7904095119900174,
+            "emitter_projection": 0.3738480653607794
+          },
+          "object": {
+            "full": 9.506450576440283,
+            "emitter_only": 4.632456011370877,
+            "after_removal": 7.718995572546521,
+            "interaction": 2.7780282856007013,
+            "emitter_projection": 0.4016507214425673
+          }
+        },
+        "on": {
+          "whole": {
+            "full": 2.5557242499457464,
+            "emitter_only": 0.9312252468532987,
+            "after_removal": 2.6380513509114585,
+            "interaction": 1.0083711412217882,
+            "emitter_projection": 0.33520910548971333
+          },
+          "object": {
+            "full": 9.049714911205868,
+            "emitter_only": 4.435829153664766,
+            "after_removal": 8.167807566425417,
+            "interaction": 3.552320737146498,
+            "emitter_projection": 0.35303192091776703
+          }
+        }
+      },
+      "hashes": {
+        "add_emitters-off": "396c1b3683c7cf39ed0b2652867a9074c5be7e141b19a68c57101773b45ee58f",
+        "add_emitters-on": "c39d984b5214166e27f5cc411299dd9e699e3973f2b6ea9b620c7ddb3840dfd2",
+        "remove_emitters-off": "10a0b237049e4f1d5964922f6fa427291d352cc25f03ef7086bb838bb1a6ea73",
+        "remove_emitters-on": "bdf89f2df4b238636f4f43101b620a172300ae0ab7fc01beb47ed000ca0529ea"
+      },
+      "board": "86d97bb36bf967878a75ccac5340d59279c30554f542aa38be59b90317f58bb1"
+    },
+    "obj_43_paper_ball-from-obj_02_egg": {
+      "scores": {
+        "add_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.1599963518559656,
+                "response_mae": 0.9610790676540799,
+                "off_matches_original_mae": 2.2336942884657116,
+                "on_matches_authored_mae": 2.517827351888021,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.1972790335428913,
+                "response_mae": 0.9381137424045138,
+                "off_matches_original_mae": 1.4110361735026042,
+                "on_matches_authored_mae": 1.217649671766493,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.5486356947157116,
+              "on": 2.402103000217014
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.21191445676626036,
+                "response_mae": 5.560104967103611,
+                "off_matches_original_mae": 16.470832705539653,
+                "on_matches_authored_mae": 18.794058560594646,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.2455698107199361,
+                "response_mae": 5.781490131083321,
+                "off_matches_original_mae": 7.786010245592888,
+                "on_matches_authored_mae": 5.136281452463463,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 23.053186680729244,
+              "on": 22.263723569885993
+            },
+            "passed": false
+          }
+        },
+        "remove_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.1599963518559656,
+                "response_mae": 0.9610790676540799,
+                "off_matches_original_mae": 2.2336942884657116,
+                "on_matches_authored_mae": 2.517827351888021,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.40129108437207484,
+                "response_mae": 1.4886754353841145,
+                "off_matches_original_mae": 4.127777099609375,
+                "on_matches_authored_mae": 4.2359118991427955,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 5.411554124620226,
+              "on": 5.638040330674913
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.21191445676626036,
+                "response_mae": 5.560104967103611,
+                "off_matches_original_mae": 16.470832705539653,
+                "on_matches_authored_mae": 18.794058560594646,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.32986467872953634,
+                "response_mae": 4.574971121490633,
+                "off_matches_original_mae": 16.700605193109336,
+                "on_matches_authored_mae": 20.322836622972225,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 33.16910250615238,
+              "on": 39.11541359047762
+            },
+            "passed": false
+          }
+        }
+      },
+      "contributions": {
+        "off": {
+          "whole": {
+            "full": 5.99147711859809,
+            "emitter_only": 2.5486356947157116,
+            "after_removal": 5.411554124620226,
+            "interaction": 1.8358612060546875,
+            "emitter_projection": 0.3676955346782288
+          },
+          "object": {
+            "full": 43.70266435638592,
+            "emitter_only": 23.053186680729244,
+            "after_removal": 33.16910250615238,
+            "interaction": 12.519624830495706,
+            "emitter_projection": 0.3756678964891516
+          }
+        },
+        "on": {
+          "whole": {
+            "full": 6.30564710828993,
+            "emitter_only": 2.402103000217014,
+            "after_removal": 5.638040330674913,
+            "interaction": 1.7639083862304688,
+            "emitter_projection": 0.3206274421043561
+          },
+          "object": {
+            "full": 49.862312289689115,
+            "emitter_only": 22.263723569885993,
+            "after_removal": 39.11541359047762,
+            "interaction": 11.516824870674501,
+            "emitter_projection": 0.32593844900623503
+          }
+        }
+      },
+      "hashes": {
+        "add_emitters-off": "f8c5a6a4cceb3785d89439289dd7f45168251af2b049c9ca7fc8079ff2f47e71",
+        "add_emitters-on": "cf466866d16f0826d78acb05769d8c5dd6923e699b3fcd744734faab25c501dc",
+        "remove_emitters-off": "30e390bae3938c2a8bc5d8a7bf693435d99beb621cbcb4fd6629dc3001795fe6",
+        "remove_emitters-on": "f7da56979e436611db7c9937868da642e183fef065fb7158faede5b4a02b0711"
+      },
+      "board": "92079b357028f1870d03093b412cefcb3a6dbb850ca222db9acfda1ed7547d10"
+    },
+    "obj_43_paper_ball-from-obj_21_cube": {
+      "scores": {
+        "add_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.1411458736292204,
+                "response_mae": 0.8889227973090278,
+                "off_matches_original_mae": 3.6743867662217884,
+                "on_matches_authored_mae": 3.7764968872070312,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.17662617735934805,
+                "response_mae": 0.854752434624566,
+                "off_matches_original_mae": 1.6617219712999132,
+                "on_matches_authored_mae": 1.6117604573567708,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 2.4737074110243054,
+              "on": 2.4084091186523438
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.203577656965369,
+                "response_mae": 5.557192004419668,
+                "off_matches_original_mae": 24.831713625634073,
+                "on_matches_authored_mae": 27.062653809452062,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.23506061834782688,
+                "response_mae": 5.411041635276983,
+                "off_matches_original_mae": 6.061297775099192,
+                "on_matches_authored_mae": 6.430001004469891,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 21.49273014916378,
+              "on": 21.54762442870775
+            },
+            "passed": false
+          }
+        },
+        "remove_emitters": {
+          "whole": {
+            "response": {
+              "cold": {
+                "projection": 0.1411458736292204,
+                "response_mae": 0.8889227973090278,
+                "off_matches_original_mae": 3.6743867662217884,
+                "on_matches_authored_mae": 3.7764968872070312,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.28295950371959055,
+                "response_mae": 1.2928721110026042,
+                "off_matches_original_mae": 3.7674747043185763,
+                "on_matches_authored_mae": 3.3777906629774304,
+                "original_matches_authored_mae": 0.8223597208658854,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 5.151995340983073,
+              "on": 5.526981777615017
+            },
+            "passed": false
+          },
+          "object": {
+            "response": {
+              "cold": {
+                "projection": 0.203577656965369,
+                "response_mae": 5.557192004419668,
+                "off_matches_original_mae": 24.831713625634073,
+                "on_matches_authored_mae": 27.062653809452062,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              },
+              "warm": {
+                "projection": 0.1667502118153836,
+                "response_mae": 4.802219878459143,
+                "off_matches_original_mae": 13.657400431922053,
+                "on_matches_authored_mae": 16.99972377077997,
+                "original_matches_authored_mae": 6.074782783386068,
+                "passed": false
+              }
+            },
+            "lamp_spill": {
+              "off": 35.29798854904324,
+              "on": 39.441816081562955
+            },
+            "passed": false
+          }
+        }
+      },
+      "contributions": {
+        "off": {
+          "whole": {
+            "full": 5.702796936035156,
+            "emitter_only": 2.4737074110243054,
+            "after_removal": 5.151995340983073,
+            "interaction": 1.8445383707682292,
+            "emitter_projection": 0.2838341348850873
+          },
+          "object": {
+            "full": 42.4932700517302,
+            "emitter_only": 21.49273014916378,
+            "after_removal": 35.29798854904324,
+            "interaction": 14.297448646476822,
+            "emitter_projection": 0.2942260863047985
+          }
+        },
+        "on": {
+          "whole": {
+            "full": 5.774234347873264,
+            "emitter_only": 2.4084091186523438,
+            "after_removal": 5.526981777615017,
+            "interaction": 2.1761305067274304,
+            "emitter_projection": 0.24225280470281613
+          },
+          "object": {
+            "full": 43.188727336648085,
+            "emitter_only": 21.54762442870775,
+            "after_removal": 39.441816081562955,
+            "interaction": 17.800713173622622,
+            "emitter_projection": 0.250264044586611
+          }
+        }
+      },
+      "hashes": {
+        "add_emitters-off": "7a5e2177738020859e0d7273e1c5fbc357e424ffadbc6fba040536ee09b2acb2",
+        "add_emitters-on": "e7f8f2f1e040782eceb5814a5ec720b9cf8756fb16ac8299f62c9d43b58faace",
+        "remove_emitters-off": "9e945873a6428590fe58873b3471e56aab6d65f932cab747810f0550fba93b0e",
+        "remove_emitters-on": "1f4e9ab9a4752fc0040247b0844d292b8f1a9b16e70a2605c093a65561972ff3"
+      },
+      "board": "8dcd543b69dc5ac257b72238c5414560b851b6b4d9838be5633838962fe528a7"
+    }
+  },
+  "report_sha256": "debe3657014a2597d174b2fe511953b19a183c458febff3925a023f24781abfd"
+}
