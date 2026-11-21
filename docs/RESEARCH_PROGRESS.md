@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+SPLiT 第一阶段的真人表面色参考在 10／12 项减少换灯差，但只在 7／12 项保留 Film B 幅度。暖灯右颊底色改善，冷灯退化且过调基本不变，五区 0／5，结束固定表面色替换。[成片与复现](research/2026-11-21-gros-split-face-albedo.md)
+
 只采用 DINOLight 校正中无法被全图二次颜色拟合解释的局部变化后，真人参考的 Film B 差恢复至约 12 RGB8，但两场强色灯只改善约 5%，真人五区仍 0／5。结束固定二次分离。[成片与复现](research/2026-11-21-gros-dinolight-spatial-residual.md)
 
 DINOLight 实际修正两场强色灯，环境光误差降约 80%／71%。真人参考 Film B 开关差也降约四分之三，13 号换灯更稳但整图风格投影近零。五区联合 0／5，结束直接用恢复图作为参考。[实拍和成片](research/2026-11-21-gros-dinolight-reference.md)
