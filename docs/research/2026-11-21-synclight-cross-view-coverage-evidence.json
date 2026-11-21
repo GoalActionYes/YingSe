@@ -1,0 +1,153 @@
+{
+  "opencv": "4.11.0",
+  "input_sha256": {
+    "scene35": {
+      "target": "9e14f896f8a65350ff24c8f2b75b62d2f4347adf08f0487428acf7d603cbd217",
+      "off": "351aa21564666eb9f999d1bb4eed512b7e41004c8c23e75148c4b4bf44f3358e",
+      "on": "b9c3afb8ae1ea6b6641d602785094cf22bc91eb818bac92426876001908833f1"
+    },
+    "scene25": {
+      "target": "9f7e9c75a2f584a1500ae3942647927115067a2a0864e69df7cd54b84ccd188c",
+      "off": "ce441dd0375b243171e8db966258a3f9128e4c8ef8ef85f19c24be43f79ffaf5",
+      "on": "2ea96f44adb9042e67342f973dd7263a7f95af929ce6dfc7116b0a0925b55786"
+    }
+  },
+  "cross_view": {
+    "scene35": {
+      "off": {
+        "mutual": 15,
+        "distinct_locations": [
+          13,
+          13
+        ],
+        "coverage_upper_bound": [
+          0.045360018485925524,
+          0.08466833535229619
+        ],
+        "could_pass_before_geometry": false,
+        "geometry": null,
+        "accepted": false
+      },
+      "on": {
+        "mutual": 11,
+        "distinct_locations": [
+          10,
+          10
+        ],
+        "coverage_upper_bound": [
+          0.0167301734919126,
+          0.019426946805593204
+        ],
+        "could_pass_before_geometry": false,
+        "geometry": null,
+        "accepted": false
+      }
+    },
+    "scene25": {
+      "off": {
+        "mutual": 6,
+        "distinct_locations": [
+          6,
+          6
+        ],
+        "coverage_upper_bound": [
+          0.04973866731516097,
+          0.04594470608339544
+        ],
+        "could_pass_before_geometry": false,
+        "geometry": null,
+        "accepted": false
+      },
+      "on": {
+        "mutual": 8,
+        "distinct_locations": [
+          8,
+          8
+        ],
+        "coverage_upper_bound": [
+          0.07915014382742906,
+          0.12051566803975906
+        ],
+        "could_pass_before_geometry": false,
+        "geometry": null,
+        "accepted": false
+      }
+    }
+  },
+  "same_view_controls": {
+    "scene35": {
+      "mutual": 36,
+      "distinct_locations": [
+        28,
+        28
+      ],
+      "coverage_upper_bound": [
+        0.4984673589139163,
+        0.4976309696877809
+      ],
+      "could_pass_before_geometry": true,
+      "geometry": {
+        "inliers": 36,
+        "fraction": 1.0,
+        "coverage": [
+          0.4984673589139163,
+          0.4976309696877809
+        ]
+      },
+      "accepted": true
+    },
+    "scene25": {
+      "mutual": 88,
+      "distinct_locations": [
+        82,
+        82
+      ],
+      "coverage_upper_bound": [
+        0.40735835298020656,
+        0.4067174803258104
+      ],
+      "could_pass_before_geometry": true,
+      "geometry": {
+        "inliers": 88,
+        "fraction": 1.0,
+        "coverage": [
+          0.40735835298020656,
+          0.4067174803258104
+        ]
+      },
+      "accepted": true
+    }
+  },
+  "different_room_controls": {
+    "scene35": {
+      "mutual": 2,
+      "distinct_locations": [
+        2,
+        2
+      ],
+      "coverage_upper_bound": [
+        0.0,
+        0.0
+      ],
+      "could_pass_before_geometry": false,
+      "geometry": null,
+      "accepted": false
+    },
+    "scene25": {
+      "mutual": 0,
+      "distinct_locations": [
+        0,
+        0
+      ],
+      "coverage_upper_bound": [
+        0.0,
+        0.0
+      ],
+      "could_pass_before_geometry": false,
+      "geometry": null,
+      "accepted": false
+    }
+  },
+  "controls_pass": true,
+  "advance_to_colour_fit": false
+}
