@@ -1,0 +1,746 @@
+{
+  "parent": "4413ee3468586d3ab5e715013c5e86d9c24412781e8385e75d5664b6e50df260",
+  "regions": "d69083602c80e65a859dd90531861cd283dffe99de90fb878c981d58315235c5",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "protocol": "85741fb3ce735e4a6e7d2fbec7e8c1cad8935c461aa735c7eb86f8fbee1f4399",
+  "training": {
+    "dast": 45,
+    "mls": 12,
+    "middlebury": 6
+  },
+  "comparisons": {
+    "direct_fit": 54,
+    "paired_fit": 54
+  },
+  "report_sha256": "405c2bc1765dade28313d595e75151671d47fe33b5b69c621aa0306d57d75714",
+  "counts": {
+    "direct_fit": {
+      "same_as_target": 36,
+      "references": 36
+    },
+    "paired_fit": {
+      "same_as_target": 36,
+      "references": 36
+    }
+  },
+  "argmax_without_rendering": {
+    "direct_fit": {
+      "off": {
+        "off": 3,
+        "film_a": 1,
+        "film_b": 8
+      },
+      "film_a": {
+        "film_b": 12
+      },
+      "film_b": {
+        "film_b": 12
+      }
+    },
+    "paired_fit": {
+      "off": {
+        "off": 2,
+        "film_b": 10
+      },
+      "film_a": {
+        "film_b": 12
+      },
+      "film_b": {
+        "film_b": 12
+      }
+    }
+  },
+  "cases": {
+    "01-from-02": {
+      "decisions": {
+        "01-from-02-direct_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.3958988303036671,
+            0.3183801955237903,
+            0.2857209741725425
+          ]
+        },
+        "01-from-02-paired_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.3425384545879211,
+            0.3277318998877136,
+            0.32972964552436523
+          ]
+        },
+        "01-from-02-direct_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.3181486733812537,
+            0.34042323750210757,
+            0.3414280891166387
+          ]
+        },
+        "01-from-02-paired_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.28753693806661823,
+            0.34460494497160876,
+            0.36785811696177295
+          ]
+        },
+        "01-from-02-direct_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.31045587659764823,
+            0.34204510203041805,
+            0.34749902137193367
+          ]
+        },
+        "01-from-02-paired_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.28228094709394613,
+            0.3457094972439884,
+            0.37200955566206545
+          ]
+        },
+        "01-from-02-direct_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.33356883075725785,
+            0.3393897015699555,
+            0.3270414676727866
+          ]
+        },
+        "01-from-02-paired_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.29425516165709564,
+            0.3445742671422568,
+            0.3611705712006475
+          ]
+        },
+        "01-from-02-direct_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.25262761177251225,
+            0.3608565053980323,
+            0.38651588282945537
+          ]
+        },
+        "01-from-02-paired_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.23707097838176872,
+            0.3608647034409726,
+            0.40206431817725863
+          ]
+        },
+        "01-from-02-direct_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.18524666616694083,
+            0.3801699712288417,
+            0.4345833626042174
+          ]
+        },
+        "01-from-02-paired_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.18760941695599723,
+            0.37579196729738146,
+            0.4365986157466213
+          ]
+        }
+      },
+      "hashes": {
+        "01-from-02-direct_fit-cold-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-paired_fit-cold-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-direct_fit-cold-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-paired_fit-cold-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-direct_fit-cold-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-paired_fit-cold-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-direct_fit-warm-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-paired_fit-warm-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-direct_fit-warm-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-paired_fit-warm-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-direct_fit-warm-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-02-paired_fit-warm-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2"
+      },
+      "board": "c9f75db1876cbb022c3316067b5f285f5e5c0b86272d45e3618ba0c326674f66"
+    },
+    "01-from-03": {
+      "decisions": {
+        "01-from-03-direct_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.3944737136883989,
+            0.3149197050621312,
+            0.29060658124946986
+          ]
+        },
+        "01-from-03-paired_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.33772537189374635,
+            0.3249475941822652,
+            0.3373270339239884
+          ]
+        },
+        "01-from-03-direct_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.3082287078296863,
+            0.34073073231938134,
+            0.35104055985093235
+          ]
+        },
+        "01-from-03-paired_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.2752642503721431,
+            0.3448731857495058,
+            0.37986256387835104
+          ]
+        },
+        "01-from-03-direct_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.2928544958899437,
+            0.3445357195568041,
+            0.36260978455325216
+          ]
+        },
+        "01-from-03-paired_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.2653718080877652,
+            0.3476099360251468,
+            0.38701825588708794
+          ]
+        },
+        "01-from-03-direct_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.27570421365319847,
+            0.3534764783485311,
+            0.37081930799827045
+          ]
+        },
+        "01-from-03-paired_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.24614545646040809,
+            0.35572493548197504,
+            0.3981296080576168
+          ]
+        },
+        "01-from-03-direct_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.19826845887372854,
+            0.37579458490647716,
+            0.42593695621979427
+          ]
+        },
+        "01-from-03-paired_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.19031961512310477,
+            0.3728647527152916,
+            0.4368156321616036
+          ]
+        },
+        "01-from-03-direct_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.1659645451585801,
+            0.38375420789690146,
+            0.45028124694451843
+          ]
+        },
+        "01-from-03-paired_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.16750745897681488,
+            0.37880742185730354,
+            0.4536851191658815
+          ]
+        }
+      },
+      "hashes": {
+        "01-from-03-direct_fit-cold-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-paired_fit-cold-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-direct_fit-cold-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-paired_fit-cold-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-direct_fit-cold-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-paired_fit-cold-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-direct_fit-warm-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-paired_fit-warm-off": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-direct_fit-warm-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-paired_fit-warm-film_a": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-direct_fit-warm-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2",
+        "01-from-03-paired_fit-warm-film_b": "5833ffa5e8ab7b00e5360e341d29fd51239e5f55aa20f7cbfcdedd45c24b6ba2"
+      },
+      "board": "00417796008f1e532b61969d3b8ef2e66f6cdb74e10c7b55151bd6982511ee2d"
+    },
+    "02-from-01": {
+      "decisions": {
+        "02-from-01-direct_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.3340095876187414,
+            0.3322605617400832,
+            0.3337298506411754
+          ]
+        },
+        "02-from-01-paired_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.3022005931070803,
+            0.33770571773233,
+            0.3600936891605897
+          ]
+        },
+        "02-from-01-direct_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.24611617394167162,
+            0.35716360444090933,
+            0.39672022161741904
+          ]
+        },
+        "02-from-01-paired_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.2406253258583832,
+            0.3566581416364359,
+            0.4027165325051809
+          ]
+        },
+        "02-from-01-direct_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.21206322436553296,
+            0.367792329062782,
+            0.42014444657168504
+          ]
+        },
+        "02-from-01-paired_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.21577358854906034,
+            0.3649380977713105,
+            0.41928831367962915
+          ]
+        },
+        "02-from-01-direct_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.1905680405896946,
+            0.37609533674390994,
+            0.43333662266639544
+          ]
+        },
+        "02-from-01-paired_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.1949949136571587,
+            0.37198840571926306,
+            0.43301668062357823
+          ]
+        },
+        "02-from-01-direct_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.1527798242422245,
+            0.3858521436788929,
+            0.46136803207888255
+          ]
+        },
+        "02-from-01-paired_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.17006514297312533,
+            0.3791446433234912,
+            0.45079021370338346
+          ]
+        },
+        "02-from-01-direct_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.08750694755857871,
+            0.40488805033601216,
+            0.5076050021054092
+          ]
+        },
+        "02-from-01-paired_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.1231996026032868,
+            0.39379223011119985,
+            0.4830081672855133
+          ]
+        }
+      },
+      "hashes": {
+        "02-from-01-direct_fit-cold-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-paired_fit-cold-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-direct_fit-cold-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-paired_fit-cold-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-direct_fit-cold-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-paired_fit-cold-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-direct_fit-warm-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-paired_fit-warm-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-direct_fit-warm-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-paired_fit-warm-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-direct_fit-warm-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-01-paired_fit-warm-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d"
+      },
+      "board": "589999c3eca843b7afaa8b696c1b89a972700c99f0d3c3f33e52331f07203999"
+    },
+    "02-from-03": {
+      "decisions": {
+        "02-from-03-direct_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.3165060917842427,
+            0.33824726922677284,
+            0.34524663898898444
+          ]
+        },
+        "02-from-03-paired_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.28416496219994136,
+            0.3428521864265233,
+            0.37298285137353526
+          ]
+        },
+        "02-from-03-direct_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.22206104013897482,
+            0.3662621184244357,
+            0.41167684143658945
+          ]
+        },
+        "02-from-03-paired_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.21662789601502078,
+            0.3644041757878309,
+            0.4189679281971483
+          ]
+        },
+        "02-from-03-direct_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.20018326840378814,
+            0.3725867190357439,
+            0.42723001256046794
+          ]
+        },
+        "02-from-03-paired_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.20124095866187333,
+            0.36922955544639147,
+            0.4295294858917351
+          ]
+        },
+        "02-from-03-direct_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.21320925886657152,
+            0.3710440674213619,
+            0.41574667371206653
+          ]
+        },
+        "02-from-03-paired_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.20465664654579865,
+            0.3688280019949114,
+            0.4265153514592899
+          ]
+        },
+        "02-from-03-direct_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.1271490112301734,
+            0.3951105612773185,
+            0.4777404274925081
+          ]
+        },
+        "02-from-03-paired_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.14437148313644255,
+            0.3870908898451648,
+            0.46853762701839263
+          ]
+        },
+        "02-from-03-direct_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.09797302089317045,
+            0.40359941873725774,
+            0.4984275603695718
+          ]
+        },
+        "02-from-03-paired_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.12397265626895446,
+            0.39365348662367966,
+            0.4823738571073659
+          ]
+        }
+      },
+      "hashes": {
+        "02-from-03-direct_fit-cold-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-paired_fit-cold-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-direct_fit-cold-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-paired_fit-cold-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-direct_fit-cold-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-paired_fit-cold-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-direct_fit-warm-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-paired_fit-warm-off": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-direct_fit-warm-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-paired_fit-warm-film_a": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-direct_fit-warm-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d",
+        "02-from-03-paired_fit-warm-film_b": "98a7dad504d33cb96e9e11361f306957e653685bd8e539288f5d49af50ea782d"
+      },
+      "board": "683a19a75246c5a9793c1b187428fd89c5f66eb60e9efc33cf1b4ff061844c81"
+    },
+    "03-from-01": {
+      "decisions": {
+        "03-from-01-direct_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.30749972795197944,
+            0.33783350475456875,
+            0.3546667672934518
+          ]
+        },
+        "03-from-01-paired_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.28626150356264657,
+            0.34152501443687766,
+            0.37221348200047577
+          ]
+        },
+        "03-from-01-direct_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.2358650152398085,
+            0.3572562835672728,
+            0.4068787011929187
+          ]
+        },
+        "03-from-01-paired_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.23557804702445978,
+            0.35625968308579825,
+            0.4081622698897419
+          ]
+        },
+        "03-from-01-direct_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.20611913003255816,
+            0.3670382926361703,
+            0.42684257733127146
+          ]
+        },
+        "03-from-01-paired_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.21338839284310385,
+            0.36397662820894555,
+            0.4226349789479506
+          ]
+        },
+        "03-from-01-direct_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.17400141216766743,
+            0.37910724554740666,
+            0.4468913422849259
+          ]
+        },
+        "03-from-01-paired_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.18474252362833088,
+            0.37401260725785646,
+            0.4412448691138126
+          ]
+        },
+        "03-from-01-direct_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.10812220453265634,
+            0.39698396779958556,
+            0.49489382766775813
+          ]
+        },
+        "03-from-01-paired_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.13835879269934412,
+            0.38755558294449266,
+            0.47408562435616325
+          ]
+        },
+        "03-from-01-direct_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.06745454206733409,
+            0.4087665835827647,
+            0.5237788743499012
+          ]
+        },
+        "03-from-01-paired_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.10936843040307526,
+            0.39654367637643445,
+            0.4940878932204903
+          ]
+        }
+      },
+      "hashes": {
+        "03-from-01-direct_fit-cold-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-paired_fit-cold-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-direct_fit-cold-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-paired_fit-cold-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-direct_fit-cold-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-paired_fit-cold-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-direct_fit-warm-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-paired_fit-warm-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-direct_fit-warm-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-paired_fit-warm-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-direct_fit-warm-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-01-paired_fit-warm-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee"
+      },
+      "board": "25fecf9f299fea61b3ffba4b3b58716f1329e1edbe0ff61b3262ff402630f196"
+    },
+    "03-from-02": {
+      "decisions": {
+        "03-from-02-direct_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.2864733442813863,
+            0.34677796877601486,
+            0.3667486869425988
+          ]
+        },
+        "03-from-02-paired_fit-cold-off": {
+          "label": "off",
+          "scores": [
+            0.2674906578306736,
+            0.3489662058290802,
+            0.38354313634024617
+          ]
+        },
+        "03-from-02-direct_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.1962658214343858,
+            0.3716137039316579,
+            0.4321204746339563
+          ]
+        },
+        "03-from-02-paired_fit-cold-film_a": {
+          "label": "off",
+          "scores": [
+            0.20324641669144825,
+            0.3679435718206039,
+            0.42881001148794784
+          ]
+        },
+        "03-from-02-direct_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.15532139818132204,
+            0.38398187408849194,
+            0.460696727730186
+          ]
+        },
+        "03-from-02-paired_fit-cold-film_b": {
+          "label": "off",
+          "scores": [
+            0.17344360165884784,
+            0.37755465014532913,
+            0.44900174819582306
+          ]
+        },
+        "03-from-02-direct_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.236167957770067,
+            0.3621084541730555,
+            0.4017235880568775
+          ]
+        },
+        "03-from-02-paired_fit-warm-off": {
+          "label": "off",
+          "scores": [
+            0.22769726234314938,
+            0.361140520985726,
+            0.41116221667112457
+          ]
+        },
+        "03-from-02-direct_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.1304389948965529,
+            0.3912473593913366,
+            0.4783136457121105
+          ]
+        },
+        "03-from-02-paired_fit-warm-film_a": {
+          "label": "off",
+          "scores": [
+            0.15229145058705762,
+            0.38340451557790844,
+            0.46430403383503394
+          ]
+        },
+        "03-from-02-direct_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.08910678540669151,
+            0.40348097284273876,
+            0.5074122417505698
+          ]
+        },
+        "03-from-02-paired_fit-warm-film_b": {
+          "label": "off",
+          "scores": [
+            0.1221621181265069,
+            0.39284254189874884,
+            0.4849953399747442
+          ]
+        }
+      },
+      "hashes": {
+        "03-from-02-direct_fit-cold-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-paired_fit-cold-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-direct_fit-cold-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-paired_fit-cold-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-direct_fit-cold-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-paired_fit-cold-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-direct_fit-warm-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-paired_fit-warm-off": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-direct_fit-warm-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-paired_fit-warm-film_a": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-direct_fit-warm-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee",
+        "03-from-02-paired_fit-warm-film_b": "7ab06a5014d84a6974ea1a15a28d81741da2714dc05e27f8b9ef8385532c6bee"
+      },
+      "board": "4f1249f3ad0f482defc0423caf6d8bc2a82907b252ad2713352d0fd35c9e16fd"
+    }
+  }
+}
