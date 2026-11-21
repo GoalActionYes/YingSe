@@ -1,0 +1,347 @@
+{
+  "report_sha256": "f8174f15633023e4e7295c88d0bc892adebe44949865d4a37a930b8659081654",
+  "protocol": "fd9311d15dc74dc02b189f772c459c8b5ef4d41ab12cef2b067fab5ad42ea92c",
+  "reproduced": 193,
+  "outputs": 164,
+  "maximum_luma_error": 0.4998,
+  "passes": {
+    "shared": {
+      "portrait": [],
+      "background": [],
+      "facd": []
+    },
+    "equal": {
+      "portrait": [],
+      "background": [],
+      "facd": []
+    }
+  },
+  "suites": {
+    "shared": {
+      "background": {
+        "passing_cases": 0,
+        "worst_protected_swap": 31.449727587914808,
+        "passed": false
+      },
+      "facd": {
+        "passing_cases": 0,
+        "max_neutral_degradation": 1.288521290096714,
+        "passed": false
+      },
+      "jersey": {
+        "baseline": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.22093199638862257,
+              "chroma": 0.1586716745429196
+            },
+            "F1": {
+              "luma": 0.2545125485280661,
+              "chroma": 0.08970502743969601
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.677670271295769,
+              "neutral": 6.102564102564102,
+              "neutral_person": 4.843995223473217
+            },
+            "on": {
+              "person": 6.2547361574111715,
+              "neutral": 7.679535558780842,
+              "neutral_person": 6.304674172637325
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 7.679535558780842
+        },
+        "candidate": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.21231129095104542,
+              "chroma": 0.1909501762810658
+            },
+            "F1": {
+              "luma": 0.2507285673287829,
+              "chroma": 0.1071970379384384
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.797029568799632,
+              "neutral": 6.507853572004516,
+              "neutral_person": 4.87043671102013
+            },
+            "on": {
+              "person": 6.2493698674689,
+              "neutral": 8.170424125141107,
+              "neutral_person": 6.306209484817469
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 8.170424125141107
+        }
+      }
+    },
+    "equal": {
+      "background": {
+        "passing_cases": 0,
+        "worst_protected_swap": 30.56859831599802,
+        "passed": false
+      },
+      "facd": {
+        "passing_cases": 0,
+        "max_neutral_degradation": 1.1555206907678794,
+        "passed": false
+      },
+      "jersey": {
+        "baseline": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.22093199638862257,
+              "chroma": 0.1586716745429196
+            },
+            "F1": {
+              "luma": 0.2545125485280661,
+              "chroma": 0.08970502743969601
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.677670271295769,
+              "neutral": 6.102564102564102,
+              "neutral_person": 4.843995223473217
+            },
+            "on": {
+              "person": 6.2547361574111715,
+              "neutral": 7.679535558780842,
+              "neutral_person": 6.304674172637325
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 7.679535558780842
+        },
+        "candidate": {
+          "expected_mean_abs_delta": {
+            "luma": 5.606616241455077,
+            "chroma": 1.3955142843034358
+          },
+          "projection": {
+            "C1": {
+              "luma": 0.21327197488952818,
+              "chroma": 0.06775564336596913
+            },
+            "F1": {
+              "luma": 0.2537952051984935,
+              "chroma": 0.07821454667816297
+            }
+          },
+          "swap_mae": {
+            "off": {
+              "person": 4.652790199745237,
+              "neutral": 6.123560716013547,
+              "neutral_person": 4.755032412146026
+            },
+            "on": {
+              "person": 6.209502127544245,
+              "neutral": 7.711756168359942,
+              "neutral_person": 6.181166837256909
+            }
+          },
+          "region_pixels": {
+            "person": 12299,
+            "neutral": 10335,
+            "neutral_person": 3908
+          },
+          "passed": false,
+          "max_protected_swap": 7.711756168359942
+        }
+      }
+    }
+  },
+  "portrait_02_from_03": {
+    "baseline": {
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": 0.7286108903772657,
+            "response_mae": 4.69426406926407,
+            "off_matches_original_mae": 12.096320346320347,
+            "on_matches_authored_mae": 7.425865800865801,
+            "original_matches_authored_mae": 3.478896103896104,
+            "passed": false
+          },
+          "warm": {
+            "projection": 1.3686381352404737,
+            "response_mae": 4.1769480519480515,
+            "off_matches_original_mae": 21.108766233766232,
+            "on_matches_authored_mae": 16.941558441558442,
+            "original_matches_authored_mae": 3.478896103896104,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 11.389069264069263,
+          "on": 9.871753246753247
+        },
+        "passed": false
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": 0.51176889303412,
+            "response_mae": 5.670740740740741,
+            "off_matches_original_mae": 6.16574074074074,
+            "on_matches_authored_mae": 1.9737037037037037,
+            "original_matches_authored_mae": 11.53675925925926,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.6662411270895486,
+            "response_mae": 3.660833333333333,
+            "off_matches_original_mae": 8.385277777777778,
+            "on_matches_authored_mae": 4.7811111111111115,
+            "original_matches_authored_mae": 11.53675925925926,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 4.0099074074074075,
+          "on": 4.229259259259259
+        },
+        "passed": false
+      }
+    },
+    "shared": {
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": 1.392666590986491,
+            "response_mae": 2.7234848484848486,
+            "off_matches_original_mae": 1.7153679653679654,
+            "on_matches_authored_mae": 2.746212121212121,
+            "original_matches_authored_mae": 3.478896103896104,
+            "passed": false
+          },
+          "warm": {
+            "projection": 1.7871116660990654,
+            "response_mae": 4.535714285714286,
+            "off_matches_original_mae": 2.7218614718614718,
+            "on_matches_authored_mae": 4.845238095238095,
+            "original_matches_authored_mae": 3.478896103896104,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 1.7218614718614718,
+          "on": 2.4475108225108224
+        },
+        "passed": false
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": 0.44569173657755407,
+            "response_mae": 6.417777777777777,
+            "off_matches_original_mae": 6.272592592592592,
+            "on_matches_authored_mae": 0.21092592592592593,
+            "original_matches_authored_mae": 11.53675925925926,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.6095105702253126,
+            "response_mae": 4.477037037037037,
+            "off_matches_original_mae": 9.180185185185184,
+            "on_matches_authored_mae": 4.7064814814814815,
+            "original_matches_authored_mae": 11.53675925925926,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 3.6774074074074075,
+          "on": 4.899444444444445
+        },
+        "passed": false
+      }
+    },
+    "equal": {
+      "cheek_right": {
+        "response": {
+          "cold": {
+            "projection": 1.225375562871306,
+            "response_mae": 2.2364718614718613,
+            "off_matches_original_mae": 3.832792207792208,
+            "on_matches_authored_mae": 3.563852813852814,
+            "original_matches_authored_mae": 3.478896103896104,
+            "passed": true
+          },
+          "warm": {
+            "projection": 1.56816891815189,
+            "response_mae": 3.3354978354978355,
+            "off_matches_original_mae": 13.89935064935065,
+            "on_matches_authored_mae": 13.154761904761905,
+            "original_matches_authored_mae": 3.478896103896104,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 10.499458874458874,
+          "on": 10.493506493506494
+        },
+        "passed": false
+      },
+      "screen_left": {
+        "response": {
+          "cold": {
+            "projection": 0.5054213559783296,
+            "response_mae": 5.665462962962963,
+            "off_matches_original_mae": 6.004074074074074,
+            "on_matches_authored_mae": 0.4708333333333333,
+            "original_matches_authored_mae": 11.53675925925926,
+            "passed": false
+          },
+          "warm": {
+            "projection": 0.66447697265629,
+            "response_mae": 3.8426851851851853,
+            "off_matches_original_mae": 8.538796296296296,
+            "on_matches_authored_mae": 4.696111111111111,
+            "original_matches_authored_mae": 11.53675925925926,
+            "passed": false
+          }
+        },
+        "lamp_spill": {
+          "off": 3.3419444444444446,
+          "on": 4.357685185185185
+        },
+        "passed": false
+      }
+    }
+  }
+}
