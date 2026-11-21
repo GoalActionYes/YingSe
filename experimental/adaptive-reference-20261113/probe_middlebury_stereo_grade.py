@@ -70,7 +70,7 @@ def mean_error(a, b, mask):
 
 
 @torch.inference_mode()
-def run(source, out):
+def run(source, out, *, fit_grade=fitted):
     torch.set_num_threads(4)
     cv2.setNumThreads(1)
     cube = BASE / 'arri-second-film-assets-v1/second-film.cube'
@@ -102,7 +102,7 @@ def run(source, out):
         }
         outputs, coefficients = {}, {}
         for arm, (samples, states) in arms.items():
-            grades, fits = zip(*(fitted(target, samples, state.astype(np.float64))
+            grades, fits = zip(*(fit_grade(target, samples, state.astype(np.float64))
                                  for state in states), strict=True)
             outputs[arm] = grades
             coefficients[arm] = fits

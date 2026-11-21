@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+Middlebury 保持相同对应点，允许 RGB 跨通道仿射后，两场整图误差下降，Dolls 近中性色在视差和同机位两种对照中仍失败。停止线性扩展，保留实拍成片和逐通道回归复核。[结果与复现](research/2026-11-21-middlebury-stereo-affine.md)
+
 Middlebury 两组同灯实拍用发布视差配对后，Art 三个范围均过诊断门槛，Dolls 两项通过，近中性色仍失败。同机位前后图在 Dolls 的同一区域也失败。保留正确对齐带来的实拍成片收益，暂不接入自动匹配。[结果与复现](research/2026-11-21-middlebury-stereo-grade.md)
 
 SyncLight 在原片上标出共同表面后实测两图调色，走廊风格响应增强但关闭态偏色更严重，床头结果随 2 像素偏移而改变。额外拥有参考原片的同机位对照在两房间通过。结束该跨视角取样和固定仿射拟合，保留全部成片。[结果与边界](research/2026-11-21-synclight-surface-anchors.md)
