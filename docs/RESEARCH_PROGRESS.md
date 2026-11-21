@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+两间实拍室内各十对镜像灯位，固定左右明暗差原图最多判对 5／10，Film B 后也最多 5／10，停止该线索。人像侧灯公开入口未返回范围，六个原始成员已登记，未取图。[新实拍结果](research/2026-11-21-multilum-lateral-cue.md)
+
 独立 ICC 便携候选补做可见窗口回归。图片和视频示例、同帧对比、微调撤销重做、项目恢复及 PNG／MP4 实际下载均核对。本项验证覆盖文件色彩配置修复及交互，跨场景画质仍待改进。[候选复核](https://github.com/GoalActionYes/YingSe/blob/434f1b9b100d6df8ada2f988d522951d5d744d4d/docs/research/2026-11-20-image-icc-portable.md#本机可见窗口复核)
 
 AceTone 公开 BF16 真实两图首组已完成。严格色表解析 0／4，作者容错后出图五个区域联合 0／5，暖参考白幕关闭态差约 11.2 RGB8。结束此固定配置的扩大筛查，保留权重和反例。[实际成片与边界](research/2026-11-21-acetone-bf16-first-portrait.md)
