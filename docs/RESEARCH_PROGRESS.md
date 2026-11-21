@@ -6,6 +6,8 @@
 
 ## 先看当前状态
 
+VeraRetouch 参考从作者 BGR 改为 RGB 后，同图误差 2.978 → 1.427。已知前图的双白幕通过，普通两图仍 0／5 且右颊过调加重，结束此通道配置。[通道对照与复算](research/2026-11-21-gros-vera-reference-rgb.md)
+
 VeraRetouch 作者两图模式整图关闭误差 23.76／30.28 RGB8，同权重提供真实参考前图后降至 1.94／1.50，暖灯双颊风格仍反向。两臂 0／5，结束固定配置。[两图与三图成片](research/2026-11-21-gros-vera-reference-pair.md)
 
 四来源拟合后，CIFR 反演差和直接参考均把三位真人的 18 张状态回退为未编辑，Film A／B 均 0／6，六组目标成片无风格。结束固定读出，不调门槛。[成片和置信读数](research/2026-11-21-gros-cifr-residual-readout.md)
