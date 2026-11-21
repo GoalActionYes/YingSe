@@ -79,7 +79,21 @@ def solve(rows, bounds):
     ]
 
 
-def run(out):
+def render_whole(frames, target, truth, zones):
+    rows, bounds = inequality_system(frames, target, truth, zones)
+    weights, lower, certificate = solve(rows, bounds)
+    predictions = {
+        light: {
+            state: np.rint(np.tensordot(weights, images, axes=1)).astype(np.uint8)
+            for state, images in states.items()
+        }
+        for light, states in frames.items()
+    }
+    return predictions, {'weights': weights.tolist(), 'lower_bound': lower,
+                         'constraints': len(bounds), 'certificate': certificate}
+
+
+def run(out, *, render=render_whole):
     prior = BASE / 'gros-film-b-cross-v2'
     new = BASE / 'gros-two-image-edit-regression-v1'
     baseline = checked_json(prior / 'results.json', BASELINE_SHA)
@@ -107,22 +121,19 @@ def run(out):
                     ledger = record if frozen else regression['cases'][case]
                     editions.append(checked_rgb(path, ledger['hashes'][key]))
                 frames[light][state] = np.stack([*editions, target])
-        rows, bounds = inequality_system(frames, target, truth, zones)
-        weights, lower, certificate = solve(rows, bounds)
-        predictions, output_hashes = {}, {}
-        for light, states in frames.items():
-            predictions[light] = {}
-            for state, bank in states.items():
-                image = np.rint(np.tensordot(weights, bank, axes=1)).astype(np.uint8)
-                predictions[light][state] = image
+        predictions, details = render(frames, target, truth, zones)
+        output_hashes = {}
+        for light, states in predictions.items():
+            for state, image in states.items():
                 name = f'{case}-{light}-{state}.png'
                 output_hashes[name] = save(out / name, image)
         scores = score(target, truth, predictions, zones)
-        if lower > 1e-6 and all(row['passed'] for row in scores.values()):
+        if details.get('lower_bound', 0.) > 1e-6 and all(row['passed'] for row in scores.values()):
             raise ValueError('Rounded rendering contradicts the necessary constraints')
-        records[case] = {'weights': weights.tolist(), 'lower_bound': lower,
-                         'constraints': len(bounds), 'certificate': certificate,
-                         'scores': scores, 'hashes': output_hashes}
+        for name, detail in details.get('regions', {}).items():
+            if name in scores and detail['lower_bound'] > 1e-6 and scores[name]['passed']:
+                raise ValueError(f'Rounded rendering contradicts the constraints in {name}')
+        records[case] = details | {'scores': scores, 'hashes': output_hashes}
     report = {'sources': [BASELINE_SHA, REGRESSION_SHA, REGIONS_SHA],
               'candidate_order': CANDIDATES, 'records': records}
     (out / 'results.json').write_bytes((json.dumps(report, indent=2, allow_nan=False) + '\n').encode())
