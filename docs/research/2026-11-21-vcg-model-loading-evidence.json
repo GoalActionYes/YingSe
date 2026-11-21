@@ -1,0 +1,95 @@
+{
+  "header_sha256": "ae5f5dba740c72909745d34ae464d5f69d50f8b46b1092a3d93b43067bd6d5b8",
+  "diffusers_sha256": "00d63135ac78a670cdacfe2a1c921d3cf75fe4f248202f3fe947121b254ad440",
+  "author_blobs": {
+    "LICENSE": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+    "models/ReferenceNet.py": "2bca8c0106f238d6e3f9c47001d444b1e30e2b76",
+    "models/ReferenceNet_attention.py": "6465ad97b998a39c61bb1258e2eb65389766432b",
+    "models/ReferenceNet_attention_diff.py": "30ae357ec0153831496334396aabe1ad3ad777db",
+    "models/attention.py": "b17416e5068562b7ad74eb5ce5ebeb71b3ef1ca9",
+    "models/ImageEncoder.py": "83ab8c9769e99574df165fd52e3401ae187b328a",
+    "pipeline.py": "6fbe3168e8275379433aa6ff14b00056a4a150de",
+    "configs/inference/inference.yaml": "9fbb99e44c56174942c57f8ead0180d695465bd9"
+  },
+  "components": {
+    "clip_vision": {
+      "checkpoint_tensors": 200,
+      "model_tensors": 200,
+      "aliases": {},
+      "missing": [],
+      "unexpected": [],
+      "wrong_shape": {}
+    },
+    "vae": {
+      "checkpoint_tensors": 248,
+      "model_tensors": 248,
+      "aliases": {
+        "decoder.mid_block.attentions.0.key.bias": "decoder.mid_block.attentions.0.to_k.bias",
+        "decoder.mid_block.attentions.0.key.weight": "decoder.mid_block.attentions.0.to_k.weight",
+        "decoder.mid_block.attentions.0.proj_attn.bias": "decoder.mid_block.attentions.0.to_out.0.bias",
+        "decoder.mid_block.attentions.0.proj_attn.weight": "decoder.mid_block.attentions.0.to_out.0.weight",
+        "decoder.mid_block.attentions.0.query.bias": "decoder.mid_block.attentions.0.to_q.bias",
+        "decoder.mid_block.attentions.0.query.weight": "decoder.mid_block.attentions.0.to_q.weight",
+        "decoder.mid_block.attentions.0.value.bias": "decoder.mid_block.attentions.0.to_v.bias",
+        "decoder.mid_block.attentions.0.value.weight": "decoder.mid_block.attentions.0.to_v.weight",
+        "encoder.mid_block.attentions.0.key.bias": "encoder.mid_block.attentions.0.to_k.bias",
+        "encoder.mid_block.attentions.0.key.weight": "encoder.mid_block.attentions.0.to_k.weight",
+        "encoder.mid_block.attentions.0.proj_attn.bias": "encoder.mid_block.attentions.0.to_out.0.bias",
+        "encoder.mid_block.attentions.0.proj_attn.weight": "encoder.mid_block.attentions.0.to_out.0.weight",
+        "encoder.mid_block.attentions.0.query.bias": "encoder.mid_block.attentions.0.to_q.bias",
+        "encoder.mid_block.attentions.0.query.weight": "encoder.mid_block.attentions.0.to_q.weight",
+        "encoder.mid_block.attentions.0.value.bias": "encoder.mid_block.attentions.0.to_v.bias",
+        "encoder.mid_block.attentions.0.value.weight": "encoder.mid_block.attentions.0.to_v.weight"
+      },
+      "missing": [],
+      "unexpected": [],
+      "wrong_shape": {}
+    },
+    "referencenet": {
+      "checkpoint_tensors": 662,
+      "model_tensors": 662,
+      "aliases": {},
+      "missing": [],
+      "unexpected": [],
+      "wrong_shape": {}
+    },
+    "l_diffuser": {
+      "checkpoint_tensors": 686,
+      "model_tensors": 686,
+      "aliases": {},
+      "missing": [],
+      "unexpected": [],
+      "wrong_shape": {}
+    }
+  },
+  "shape_match": true,
+  "cuda_samples": {
+    "clip": {
+      "key": "clip_vision.vision_model.embeddings.class_embedding",
+      "shape": [
+        768
+      ],
+      "dtype": "F32",
+      "sha256": "e1faf3ae0a580864507394b2220d3d9032f21e954ef2045f53f388023cece0b2",
+      "bytes": 3072
+    },
+    "reference": {
+      "key": "referencenet.conv_in.bias",
+      "shape": [
+        320
+      ],
+      "dtype": "F16",
+      "sha256": "10eedd6c2fd3b214bfccca6fe49143c39965ab139f7591c6946b30eb65b6cfcb",
+      "bytes": 640
+    },
+    "diffuser": {
+      "key": "l_diffuser.conv_in.bias",
+      "shape": [
+        320
+      ],
+      "dtype": "F16",
+      "sha256": "66d71c9a9d6f010fe5ebb95ff01ebc0de9b8bb7c9bf4f926962f423e27000a8d",
+      "bytes": 640
+    }
+  }
+}
