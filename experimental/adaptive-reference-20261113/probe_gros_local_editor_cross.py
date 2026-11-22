@@ -29,7 +29,11 @@ LIGHTS = ("cold", "warm")
 STATES = ("off", "on")
 
 
-def export_states(cli, source, settings, folder):
+def export_states(cli, source, settings, folder, *, floating=False):
+    profile, extension, format_conf = (
+        ("lin_rec709", "exr", "plugins/imageio/format/exr/bpp=32") if floating
+        else ("srgb", "tif", "plugins/imageio/format/tiff/bpp=8")
+    )
     editor_env = {key: value for key, value in os.environ.items() if key != "OMP_NUM_THREADS"}
     exports = {}
     for state, xmp in zip(STATES, settings, strict=True):
@@ -38,17 +42,17 @@ def export_states(cli, source, settings, folder):
         config, cache = folder / f"config-{state}", folder / f"cache-{state}"
         config.mkdir()
         cache.mkdir()
-        dest = folder / f"editor-{state}.tif"
+        dest = folder / f"editor-{state}.{extension}"
         args = [path.as_posix() for path in (cli, source, sidecar, dest)] + [
             "--width", "1024", "--height", "1024", "--hq", "true", "--apply-custom-presets", "false",
-            "--icc-type", "srgb", "--export_masks", "false", "--core", "--configdir", config.as_posix(),
+            "--icc-type", profile, "--export_masks", "false", "--core", "--configdir", config.as_posix(),
             "--cachedir", cache.as_posix(), "--disable-opencl", "-t", "2", "--conf", "write_sidecar_files=never",
-            "--conf", "plugins/imageio/format/tiff/bpp=8", "--conf", "plugins/darkroom/sharpen/auto_apply=false",
+            "--conf", format_conf, "--conf", "plugins/darkroom/sharpen/auto_apply=false",
         ]
         with (folder / f"{state}.log").open("wb") as log:
             subprocess.run(args, stdout=log, stderr=subprocess.STDOUT, timeout=180, check=True,
                            cwd=cli.parent, env=editor_env)
-        exports[state] = read(dest, False)[0]
+        exports[state] = dest
     return exports
 
 
@@ -74,7 +78,8 @@ def prepare_frame(original, identity, settings, cli, folder, regions, alpha):
         sized = rgb.resize(SIZE, Image.Resampling.LANCZOS)
         sized.save(folder / "input.tif", icc_profile=rgb.info["icc_profile"])
         before = np.array(sized)
-    edited = export_states(cli, folder / "input.tif", settings, folder)
+    exports = export_states(cli, folder / "input.tif", settings, folder)
+    edited = {state: read(path, False)[0] for state, path in exports.items()}
     if any(image.shape != before.shape for image in edited.values()):
         raise ValueError("Editor changed image dimensions")
     disabled_max = int(np.abs(edited["off"].astype(np.int16) - before).max())
