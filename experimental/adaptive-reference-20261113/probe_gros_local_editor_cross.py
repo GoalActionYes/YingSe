@@ -103,6 +103,16 @@ def prepare_frame(original, identity, settings, cli, folder, regions, alpha):
     return frames, receipt
 
 
+def score_outputs(target, wanted, frames, regions):
+    scores = {name: score(target, wanted, results, regions) for name, results in frames.items()}
+    for results in scores.values():
+        for name in ("screen_left", "screen_right"):
+            measure = results[name]
+            measure["passed"] = (max(measure["lamp_spill"].values()) <= 3 and all(max(
+                row["off_matches_original_mae"], row["on_matches_authored_mae"]) <= 3 for row in measure["response"].values()))
+    return scores
+
+
 def compare(out, subject, donor, photos, regions, engine):
     target = photos[subject]["cold"]["off"]
     wanted = finish_spatial(target, photos[subject]["cold"]["on"], STRENGTH)
@@ -115,12 +125,7 @@ def compare(out, subject, donor, photos, regions, engine):
             ref_path = out / donor / light / f"{state}.png"
             frames["stable"][light][state] = apply_mapping(target, analyze(target_path, ref_path), STRENGTH)
             frames["spatial13"][light][state] = finish_spatial(target, engine.prepare(target, reference).apply(target), STRENGTH)
-    scores = {name: score(target, wanted, results, regions) for name, results in frames.items()}
-    for results in scores.values():
-        for name in ("screen_left", "screen_right"):
-            measure = results[name]
-            measure["passed"] = (max(measure["lamp_spill"].values()) <= 3 and all(max(
-                row["off_matches_original_mae"], row["on_matches_authored_mae"]) <= 3 for row in measure["response"].values()))
+    scores = score_outputs(target, wanted, frames, regions)
     flat = {name: {f"{light}-{state}": image for light, pair in results.items() for state, image in pair.items()}
             for name, results in ({"reference": photos[donor]} | frames).items()}
     slug = f"{subject}-from-{donor}"
