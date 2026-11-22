@@ -1,0 +1,283 @@
+{
+  "source": "0198b52a85999a5f04a7939742712dec26c1e29d31cdca96db32d08425beb0c7",
+  "report_sha256": "461858fe907abf9e8016d9abb1c488387b3aadc4d70ea1b812de44b2b0da4ffa",
+  "controls": {
+    "identity": "exact_identity",
+    "global_edits": {
+      "2": {
+        "route": "face_or_context_missing",
+        "existing_alignment": false,
+        "preserved": true,
+        "baseline": "0f97c3c4bcad7dbad6e04088711df1fc4395a27cbc063a45f441bb2e60c2ddfa",
+        "trial": "0f97c3c4bcad7dbad6e04088711df1fc4395a27cbc063a45f441bb2e60c2ddfa"
+      },
+      "3": {
+        "route": "capture_gain_only",
+        "existing_alignment": false,
+        "preserved": false,
+        "baseline": "5ee572f89dc1241375da817ececc3ff105f559c6efe85b92e455c66f360904a3",
+        "trial": "aaaf60dcdfab6a08de22f29f3394d8d6d08f3f318d41e700995aec068536b2c2"
+      },
+      "4": {
+        "route": "aligned",
+        "existing_alignment": true,
+        "preserved": true,
+        "baseline": "9f5c988c6652aa2d3ee21f38f796eadf09f447072a922ad364e7adc577ed74a0",
+        "trial": "9f5c988c6652aa2d3ee21f38f796eadf09f447072a922ad364e7adc577ed74a0"
+      }
+    },
+    "no_face": "face_or_context_missing",
+    "files": {
+      "same": "d50f4d5b767d0f3ad5200cd3054852a4a926632f63856ce5ffd74f9b007f8e83",
+      "no-face": "08dd1bef65ea79793befa115ef819b4b2dca5498b390013ee353748b28c7a8ad"
+    }
+  },
+  "audit": {
+    "2": {
+      "matched_cheek_models": {
+        "capture_only": {
+          "gain": [
+            1.372111407865845,
+            0.6728992413107494,
+            0.3730109064095799
+          ],
+          "slope": [
+            1.3162108523960772,
+            0.6417042471517052,
+            0.3033380346812709
+          ],
+          "offset": [
+            0.019528323457641772,
+            0.0031557916510750114,
+            0.005530821709356242
+          ],
+          "gain_mae": 1.6296296296296295,
+          "affine_mae": 0.8148148148148148,
+          "needs_offset": false
+        },
+        "edit_cold": {
+          "gain": [
+            1.1579600153291187,
+            0.8716184414589714,
+            0.26535906057978814
+          ],
+          "slope": [
+            1.0948831784251494,
+            0.9564964611405743,
+            0.39801969526013414
+          ],
+          "offset": [
+            0.022035288619123072,
+            -0.00858654899902661,
+            -0.010530961334968392
+          ],
+          "gain_mae": 2.740740740740741,
+          "affine_mae": 0.8518518518518519,
+          "needs_offset": false
+        },
+        "edit_warm": null
+      },
+      "automatic_face_counts": {
+        "cold-off": 0,
+        "cold-on": 0,
+        "warm-off": 1,
+        "warm-on": 0
+      }
+    },
+    "3": {
+      "matched_cheek_models": {
+        "capture_only": {
+          "gain": [
+            1.4656068622243597,
+            0.8365504494970311,
+            0.444521096598191
+          ],
+          "slope": [
+            1.4261408490625274,
+            0.8533466701730194,
+            0.3747268718791836
+          ],
+          "offset": [
+            0.021689402466063545,
+            -0.003571435098007947,
+            0.010049248218201468
+          ],
+          "gain_mae": 2.037037037037037,
+          "affine_mae": 1.7407407407407407,
+          "needs_offset": false
+        },
+        "edit_cold": {
+          "gain": [
+            1.1248448544913394,
+            0.93480225653881,
+            0.377087292935558
+          ],
+          "slope": [
+            1.0458354969264487,
+            1.0115841561062535,
+            0.563358346847685
+          ],
+          "offset": [
+            0.0434213039909318,
+            -0.016326385339704125,
+            -0.026820042262310176
+          ],
+          "gain_mae": 2.7037037037037037,
+          "affine_mae": 0.6666666666666666,
+          "needs_offset": false
+        },
+        "edit_warm": null
+      },
+      "automatic_face_counts": {
+        "cold-off": 1,
+        "cold-on": 1,
+        "warm-off": 1,
+        "warm-on": 1
+      }
+    },
+    "4": {
+      "matched_cheek_models": {
+        "capture_only": {
+          "gain": [
+            1.462023737136234,
+            0.7408407720264427,
+            0.3891807323276931
+          ],
+          "slope": [
+            1.2575448258838822,
+            0.6693670664196008,
+            0.3127106820630102
+          ],
+          "offset": [
+            0.07432483412312929,
+            0.008285270606529775,
+            0.0067195167565705476
+          ],
+          "gain_mae": 6.444444444444445,
+          "affine_mae": 2.2222222222222223,
+          "needs_offset": true
+        },
+        "edit_cold": {
+          "gain": [
+            1.155715630553014,
+            0.8852334245202617,
+            0.297006232585436
+          ],
+          "slope": [
+            1.105178782794237,
+            0.9248269846368913,
+            0.3738462471483005
+          ],
+          "offset": [
+            0.018369340895704522,
+            -0.004589706900698043,
+            -0.006752025971516262
+          ],
+          "gain_mae": 3.4814814814814814,
+          "affine_mae": 1.7037037037037037,
+          "needs_offset": true
+        },
+        "edit_warm": null
+      },
+      "automatic_face_counts": {
+        "cold-off": 1,
+        "cold-on": 1,
+        "warm-off": 1,
+        "warm-on": 1
+      }
+    }
+  },
+  "complete_pass": 0,
+  "cases": {
+    "2-from-3": {
+      "routes": {
+        "cold-off": "face_or_context_missing",
+        "cold-on": "face_or_context_missing",
+        "warm-off": "face_or_context_missing",
+        "warm-on": "face_or_context_missing"
+      },
+      "hashes": {
+        "cold-off": "8a8b25c7138c1016e91d2ab8bb74b500b96088f622bfb477b6d4b39bced3c34b",
+        "cold-on": "961cca9fdd50bf103a07dc2939bec65821cf35237d7f593c0095d320758e68ac",
+        "warm-off": "58291bb78c4a8d5bdf554cb8beb58851d0a82473e11481920a0aa3d022a705bc",
+        "warm-on": "81ad70322b17f6599515148af4e6aee7f410e196897709f9433dac39e2e5ecc4"
+      },
+      "panel": "258249a0188f4980526a2e03e0278636ebc314dcd1e14fe16b780bd285ed52fe"
+    },
+    "2-from-4": {
+      "routes": {
+        "cold-off": "face_or_context_missing",
+        "cold-on": "face_or_context_missing",
+        "warm-off": "face_or_context_missing",
+        "warm-on": "face_or_context_missing"
+      },
+      "hashes": {
+        "cold-off": "6e5b64bdc08b2c14ce787db77ea0996c17cfffdfb9fa300e8f3628391631d74d",
+        "cold-on": "f25531d22105ac71ceb7d7465f8f5efad8e5b03d70279ac32a9d36c8d8fe9a29",
+        "warm-off": "dbd99011addcfa72cd1b16751a59186327d3612d264dfbe1504ecab60dbf61f9",
+        "warm-on": "53bf77e2eb3d043ba665584eb04b889edbde5ce7d8534b83308c5a834703c445"
+      },
+      "panel": "7b8895eee12a3b40e2060e8704ee9fbf6e7f262bc914ec595f7b4d76e7ead054"
+    },
+    "3-from-2": {
+      "routes": {
+        "cold-off": "face_or_context_missing",
+        "cold-on": "face_or_context_missing",
+        "warm-off": "unsupported_context",
+        "warm-on": "face_or_context_missing"
+      },
+      "hashes": {
+        "cold-off": "8f9d2a4964ff9a49fb29b78cd4de38cafc082d8097057b23ef8ab81c98fca41e",
+        "cold-on": "8b466a7ef677ba2289c0a2672de5ad76199dd17ef00a5474c789c2510fcce886",
+        "warm-off": "12dcd2b7c96609693bfdf5738d55a8b72d420754a2335ffef105fd58cdf38c39",
+        "warm-on": "0e79fd56453676ebebf77e72a9094905b95a206f5e412392a257d9d5726e464e"
+      },
+      "panel": "65bb04a32f1eba703a57dc39806d38ccece2894cde33183054597eeaca37414a"
+    },
+    "3-from-4": {
+      "routes": {
+        "cold-off": "unsupported_context",
+        "cold-on": "unsupported_context",
+        "warm-off": "unsupported_context",
+        "warm-on": "unsupported_context"
+      },
+      "hashes": {
+        "cold-off": "c5e5176f214b515aa47e0f760f8b49e67fcf71dff98ed449e87f4e8094b5a1a0",
+        "cold-on": "58f2314dcca95402d3b8f54205bc09305480eb9a714324c3d069afd9b5e9e52f",
+        "warm-off": "8e85dd21187fb3ae14dd7d8a59052ac8e1c795aba46e1e25e16b3d59209e1cac",
+        "warm-on": "2a6bb842f36691430e422ff5b6da6ac15a4b0417ad4e88d85c5a3ba07ef648db"
+      },
+      "panel": "1089c32b2c584a97bf7a0cb04389b52d546259e7c2bb6e570065a647b380c7b3"
+    },
+    "4-from-2": {
+      "routes": {
+        "cold-off": "face_or_context_missing",
+        "cold-on": "face_or_context_missing",
+        "warm-off": "unsupported_context",
+        "warm-on": "face_or_context_missing"
+      },
+      "hashes": {
+        "cold-off": "0cd7dbb8093427f28ef6e328c88740d01e9853b42d0075ef207cf9a5d450fc29",
+        "cold-on": "5ec87441dd812a94fac283f396334ad15928636988da7c0caadd3021ff7f6e13",
+        "warm-off": "79c38e8d692452be0e1076952d7118cb5fafbe5387a5adf6296971c599dc10d9",
+        "warm-on": "26c2b9a07e7e3e21bed5117fc0f04eb93df274dae3956c894357478b9211205c"
+      },
+      "panel": "493e235e6e3e1003181864a64e16d4ceb27db0433b409b0ae6760c552124b4bd"
+    },
+    "4-from-3": {
+      "routes": {
+        "cold-off": "unsupported_context",
+        "cold-on": "unsupported_context",
+        "warm-off": "unsupported_context",
+        "warm-on": "unsupported_context"
+      },
+      "hashes": {
+        "cold-off": "eb2968236715fd9e8456ff7cefcbc92505955b458698b71d37a5b0cc0f9a3479",
+        "cold-on": "94a23ea01a1fe59e25ba4e4992d8be4e0f5617b950213945ea635bf9a135f300",
+        "warm-off": "b524085d0496ee30cd29f3b071c6a183710ada5d0117f6b4e0cbd88c7edcb77d",
+        "warm-on": "83e13391e2b278694ce824718d9366aaef3efad435fe32fe2bd60f999d456a15"
+      },
+      "panel": "ad8f7b58127c7aef26a8351bfea3317eabc31a73b1fd68ef61fb9aef7c4cc8cc"
+    }
+  }
+}
