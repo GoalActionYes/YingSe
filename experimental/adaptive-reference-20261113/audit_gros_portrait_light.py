@@ -22,12 +22,15 @@ SEGMENT = 512 * 1024
 
 
 class PublicRange(io.RawIOBase):
-    def __init__(self, limit, proxy):
+    def __init__(self, limit, proxy, *, url=URL, archive_size=ARCHIVE_SIZE, archive_tag=ARCHIVE_TAG):
         super().__init__()
         self.position = 0
         self.transferred = 0
         self.limit = limit
         self.proxy = proxy
+        self.url = url
+        self.archive_size = archive_size
+        self.archive_tag = archive_tag
 
     def seekable(self):
         return True
@@ -36,13 +39,13 @@ class PublicRange(io.RawIOBase):
         return self.position
 
     def seek(self, offset, whence=0):
-        self.position = (0, self.position, ARCHIVE_SIZE)[whence] + offset
-        if not 0 <= self.position <= ARCHIVE_SIZE:
+        self.position = (0, self.position, self.archive_size)[whence] + offset
+        if not 0 <= self.position <= self.archive_size:
             raise ValueError('ZIP offset outside archive')
         return self.position
 
     def read(self, size=-1):
-        rest = ARCHIVE_SIZE - self.position
+        rest = self.archive_size - self.position
         size = rest if size < 0 else min(size, rest)
         if not size:
             return b''
@@ -70,13 +73,13 @@ class PublicRange(io.RawIOBase):
                          '--dump-header', str(headers)]
             if self.proxy:
                 arguments.extend(['--proxy', self.proxy])
-            result = subprocess.run([*arguments, URL], capture_output=True, check=True)
+            result = subprocess.run([*arguments, self.url], capture_output=True, check=True)
             message = headers.read_text(encoding='iso-8859-1').strip().split('\n\n')[-1].splitlines()
             fields = dict(line.lower().split(': ', 1) for line in message[1:] if ': ' in line)
-            expected = f'bytes {start}-{end}/{ARCHIVE_SIZE}'
+            expected = f'bytes {start}-{end}/{self.archive_size}'
             if message[0].split()[1] != '206' or fields.get('content-range') != expected:
                 raise ValueError('Unexpected archive range')
-            if fields.get('etag') != ARCHIVE_TAG:
+            if fields.get('etag') != self.archive_tag:
                 raise ValueError('Unexpected archive version')
             data = result.stdout
         if len(data) != size:
