@@ -7,11 +7,11 @@
 | [FFmpeg](https://github.com/FFmpeg/FFmpeg) | 视频解码、编码、音轨和已知切点的辅助回归。现有便携包已带 FFmpeg，实际验证了 `scdet`。 | 用现有构建做本机测试。正式分发前，以将要打包的具体构建核对许可、对应源码与构建信息。[官方分发说明](https://ffmpeg.org/legal.html) |
 | [Playwright](https://github.com/microsoft/playwright-python) | 浏览器自动化。统一检查导入、同帧预览、手动微调、撤销重做、点导出与下载。 | 复用现有浏览器回归脚本，优先补实际出现的操作回归。项目许可为 Apache 2.0。[许可](https://github.com/microsoft/playwright-python/blob/main/LICENSE) |
 | [OpenColorIO](https://github.com/AcademySoftwareFoundation/OpenColorIO) | 标准色彩空间转换和 LUT 应用，科研对照已有相关用法。 | 保留作工具和参考结果。BSD 3-Clause。项目仍自行定义何时调哪里、如何估计风格。 |
-| [Colour Science](https://github.com/colour-science/colour) | 复用标准 CIEDE2000 色差。可补充比较脸颊与白墙的误差。 | 保留为下一次有具体图像验收需求时的离线候选，BSD 3-Clause。原门槛照常，色差数值不代替人类自然度评价。[许可](https://github.com/colour-science/colour/blob/develop/LICENSE) |
+| [Colour Science](https://github.com/colour-science/colour) | 复用标准 CIEDE2000 色差。可补充比较脸颊与白墙的误差。 | 已用 0.4.7 复核冻结真人成片，BSD 3-Clause。原门槛照常，色差数值不代替人类自然度评价。[实际对照](2026-11-22-gros-endpoint-colour.md)[许可](https://github.com/colour-science/colour/blob/develop/LICENSE) |
 | [PySceneDetect](https://github.com/Breakthrough/PySceneDetect) | 独立的自然视频切点对照，候选算法包括自适应检测。 | BSD 3-Clause。已有 FFmpeg 可以先覆盖合成硬切。只在有真实快速运动、闪光和人工标好的切点时扩大验证。 |
 | [ExifTool](https://github.com/exiftool/exiftool) | 只读提取 EXIF、XMP、ICC 等信息。用于查拍摄和导出条件。 | 保留为需要 RAW／XMP 核验时的本机工具。许可随 Perl，可选 Artistic 或 GPL 条款，若打包需核对具体发行包。 |
 
-PySceneDetect、Colour Science、ExifTool 这次未安装。代码、训练数据、权重和文档是不同发布物，若借外部模型作为离线比较，分别核对其来源和使用范围，再议是否参加产品操作。仓库公开本身不能证明可重新分发其模型或数据。
+PySceneDetect 和 ExifTool 未安装。Colour Science 的固定发行包仅由本机离线复测读取。代码、训练数据、权重和文档是不同发布物，若借外部模型作为离线比较，分别核对其来源和使用范围，再议是否参加产品操作。仓库公开本身不能证明可重新分发其模型或数据。
 
 ## 已用本机便携构建验证的切镜检查
 
