@@ -12,7 +12,7 @@
 | [ExifTool](https://github.com/exiftool/exiftool) | 只读提取 EXIF、XMP、ICC 等信息。用于查拍摄和导出条件。 | 保留为需要 RAW／XMP 核验时的本机工具。许可随 Perl，可选 Artistic 或 GPL 条款，若打包需核对具体发行包。 |
 | [jsPsych](https://github.com/jspsych/jsPsych) | 可在浏览器中展示图像、安排试题顺序并导出评分，采用 MIT 许可证。 | 暂不接入。现有离线页已支持当前的对照评分与保存。需要跨多场次分配不同题目或采用更复杂的呈现顺序时，再用少量试题验证接入收益。[数据接口](https://www.jspsych.org/latest/reference/jspsych-data/) |
 
-PySceneDetect 和 ExifTool 未安装。Colour Science 的固定发行包仅由本机离线复测读取。代码、训练数据、权重和文档是不同发布物，若借外部模型作为离线比较，分别核对其来源和使用范围，再议是否参加产品操作。仓库公开本身不能证明可重新分发其模型或数据。
+PySceneDetect 尚未试用。ExifTool 已作本机便携复测。Colour Science 的固定发行包仅由本机离线复测读取。代码、训练数据、权重和文档是不同发布物，若借外部模型作为离线比较，分别核对其来源和使用范围，再议是否参加产品操作。仓库公开本身不能证明可重新分发其模型或数据。
 
 ## 已用本机便携构建验证的切镜检查
 
@@ -37,3 +37,24 @@ $graph = 'color=black:s=160x90:r=24:d=2[a];color=white:s=160x90:r=24:d=2[b];colo
 复测本机目录为 `outputs/adaptive-reference-20261113/open-source-review-check-20261124-v1`。`browser-checks.json` 的 SHA-256 为 `72ab924d817bfc23885f74453f893a7a49323efa8ec14058af9526bef724f2f3`。用新的本机输出目录复现，分别放入 `part-1`、`part-2` 的原 HTML 与清单。运行上述脚本时依次传入新目录、Playwright Core 的 `index.js` 路径和 Edge 可执行文件路径。完整报告、截图和图片保留本机。
 
 后续正式对照使用同一目标原图、同一参考图下稳定版与合格候选的实际成片。页面隐去版本名称，评审分别判断贴近参考、画面自然度及人物与环境的协调性。素材确认后，第一份小批量材料生成和核验估计用 1–2 小时，评审组织和结果回收另计。以后有标好切点、闪光和快速运动的素材时，预计用 1–2 小时试用 PySceneDetect，对照已知标注与现有 FFmpeg 结果，计入离线视频测试，无需训练。
+
+## 依据原计划书安排开源复用
+
+原《创新联合作业计划书》已经列出 FFmpeg 视频压制和音轨混流，并写明用 ResNet18 预测基础 LUT 的混合权重。通用组件与团队要解决的产品问题可以分别说明。现行研究版借鉴公开 Hist2Style 方法，团队负责素材配对、训练和验证、参考风格与局部调色的策略，以及产品集成。汇报时分别说明原方案、当前已实现的部分及仍待验收的功能。[技术路线与原件核对](../ROUTE_DECISIONS.md)
+
+- **立即继续复用的测试工具。** 用 Playwright 检查导入、微调、撤销重做和导出；用 Colour Science 复算色差；用 FFmpeg 跑编解码与已知切点回归。已有脚本能承担这些工作，采用现有环境，无需新增训练。
+- **候选准备好后复用现有离线评审页。** 每组给评审看同一目标原图、同一参考图、稳定版与候选版的两张结果，隐藏版本名。询问哪张更接近参考、哪张看起来更自然、人物和背景哪张更协调，允许平局或无法判断。先完成软件画质筛选才能生成正式独立对照。材料制作和核验估计 1–2 小时，组织评审和收回真实结果另计。
+- **需要切点辅助时再试 PySceneDetect。** 先准备含闪光、快速运动及真实切镜的短片与人工切点。与现有 FFmpeg 比较误报和漏报，预计 1–2 小时，先做本机离线试用。人工标注仍是切点对照，工具读数可减少逐帧查找。
+
+引入任何包之前记录它替代的工时、固定版本、运行位置、许可和验证方法。随产品分发的构建和研究时本地使用的工具分别核对授权。外部模型若用于对照，按代码、权重和数据逐项核对授权，记录实际用途与版本。
+
+## ExifTool 的只读素材核查
+
+用官方 Windows 64 位便携包 ExifTool 13.64，在本机读取混光 RAW 与两张导出结果，未向素材执行写操作。RAW 读取到 Fujifilm X-S10、1/200 秒、f/5.6、ISO 800，闪光状态为 `Fired`。EXIF 白平衡字段为手动，富士字段为日光，所请求的色温数值未返回。它可以复核拍摄设置，光源的布置、相对亮度和实际编辑区域仍须从备忘和成片核实。[ExifTool 源码及许可](https://github.com/exiftool/exiftool) · [便携包来源](https://sourceforge.net/projects/exiftool/files/exiftool-13.64_64.zip/download) · [实拍与作者编辑重放](2026-11-24-playraw-flash-room.md)
+
+两张实际成片均读为 1870 × 1247、RGB、`RTv4_sRGB`，与原重放记录一致。运行前后，三份输入的 SHA-256 均未变化。两条读取命令合计 0.77 秒，从取包到复测另计。便携包 SHA-256 为 `72c29c44d1e860eebcaefa71692d979af9858fe9a6d7d791a5e7f1dac77804af`。设置 `LC_ALL=C` 后可用以下命令复现。便携包与完整元数据记录保留本机。
+
+~~~powershell
+& $exiftool -G1 -s -j -FileType -Model -ExposureTime -FNumber -ISO -Flash -WhiteBalance -ColorTemperature $raw
+& $exiftool -G1 -s -j -FileType -ImageWidth -ImageHeight -ColorType -ProfileDescription -ProfileVersion $off $on
+~~~
