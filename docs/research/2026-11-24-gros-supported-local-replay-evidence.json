@@ -1,0 +1,1635 @@
+{
+  "scope": "Offline development comparison using known reference edit pairs and registered geometry. No product, training, or independent evaluation.",
+  "scene_count": 6,
+  "scipy": "1.18.1",
+  "source_sha256": "0198b52a85999a5f04a7939742712dec26c1e29d31cdca96db32d08425beb0c7",
+  "prior_sha256": "e673eb578249c7b6a73d085c82dfb5c2dedbe1057f69ea2c482793567ec3de67",
+  "script_sha256": "82f8c521f0cab260d56c3ec577c35bf0c5a728fcb9e31054e7ab68a4c21e7c81",
+  "protocol_sha256": "d6e7741ed9402a765271fedb36bbbf7b85404356e6e630c1019e62c0fc8a7789",
+  "regions_sha256": "0f8508e2b6d195d5c42a5e145590435d3c9f4247883170cf52bf3679ccdad88a",
+  "report_sha256": "6e2d92eb1c8eb11631ee82d15fcd32defec398b0d878a8597026e4c54923f7fb",
+  "repeat_identical_artifacts": 31,
+  "verified_region_light_rows": 216,
+  "controls": {
+    "tetrahedron": true,
+    "same_geometry": true,
+    "zero_effect": true,
+    "zero_support": true
+  },
+  "reference_support": {
+    "2-cold": {
+      "edited_pixels": 56781,
+      "hull_planes": 174
+    },
+    "2-warm": {
+      "edited_pixels": 56626,
+      "hull_planes": 174
+    },
+    "3-cold": {
+      "edited_pixels": 66966,
+      "hull_planes": 134
+    },
+    "3-warm": {
+      "edited_pixels": 66452,
+      "hull_planes": 134
+    },
+    "4-cold": {
+      "edited_pixels": 64412,
+      "hull_planes": 204
+    },
+    "4-warm": {
+      "edited_pixels": 64560,
+      "hull_planes": 166
+    }
+  },
+  "method_totals": {
+    "face_alignment": {
+      "passed_directions": [
+        "2-from-4"
+      ],
+      "passed_zones": 19,
+      "worst_mae": {
+        "whole": {
+          "value": 20.191144594161788,
+          "case": "3-from-4",
+          "light": "warm"
+        },
+        "outside": {
+          "value": 21.772826062638032,
+          "case": "3-from-4",
+          "light": "warm"
+        },
+        "screen_left": {
+          "value": 11.320443567978508,
+          "case": "3-from-4",
+          "light": "warm"
+        },
+        "screen_right": {
+          "value": 16.89493061455678,
+          "case": "3-from-4",
+          "light": "cold"
+        },
+        "cheek_left": {
+          "value": 6.37,
+          "case": "3-from-2",
+          "light": "warm"
+        },
+        "cheek_right": {
+          "value": 7.358412698412699,
+          "case": "3-from-2",
+          "light": "warm"
+        }
+      },
+      "worst_lamp_spill": {
+        "whole": {
+          "value": 17.454148269735235,
+          "case": "3-from-4"
+        },
+        "outside": {
+          "value": 18.644800246316176,
+          "case": "3-from-4"
+        },
+        "screen_left": {
+          "value": 6.676298265169053,
+          "case": "3-from-4"
+        },
+        "screen_right": {
+          "value": 5.938742565845369,
+          "case": "3-from-2"
+        },
+        "cheek_left": {
+          "value": 6.0311111111111115,
+          "case": "3-from-2"
+        },
+        "cheek_right": {
+          "value": 7.8526984126984125,
+          "case": "3-from-2"
+        }
+      }
+    },
+    "position": {
+      "passed_directions": [
+        "2-from-4"
+      ],
+      "passed_zones": 29,
+      "worst_mae": {
+        "whole": {
+          "value": 0.9969068371766715,
+          "case": "3-from-2",
+          "light": "warm"
+        },
+        "outside": {
+          "value": 0.08596722247613812,
+          "case": "3-from-2",
+          "light": "warm"
+        },
+        "screen_left": {
+          "value": 0.0,
+          "case": "2-from-3",
+          "light": "cold"
+        },
+        "screen_right": {
+          "value": 0.0,
+          "case": "2-from-3",
+          "light": "cold"
+        },
+        "cheek_left": {
+          "value": 6.37,
+          "case": "3-from-2",
+          "light": "warm"
+        },
+        "cheek_right": {
+          "value": 7.358412698412699,
+          "case": "3-from-2",
+          "light": "warm"
+        }
+      },
+      "worst_lamp_spill": {
+        "whole": {
+          "value": 1.0057936035871156,
+          "case": "3-from-2"
+        },
+        "outside": {
+          "value": 0.09717876353966574,
+          "case": "3-from-2"
+        },
+        "screen_left": {
+          "value": 0.0,
+          "case": "2-from-3"
+        },
+        "screen_right": {
+          "value": 0.0,
+          "case": "2-from-3"
+        },
+        "cheek_left": {
+          "value": 6.0311111111111115,
+          "case": "3-from-2"
+        },
+        "cheek_right": {
+          "value": 7.8526984126984125,
+          "case": "3-from-2"
+        }
+      }
+    },
+    "position_and_color": {
+      "passed_directions": [
+        "2-from-4"
+      ],
+      "passed_zones": 27,
+      "worst_mae": {
+        "whole": {
+          "value": 0.6227504270375793,
+          "case": "3-from-4",
+          "light": "cold"
+        },
+        "outside": {
+          "value": 0.012544135298368944,
+          "case": "4-from-2",
+          "light": "warm"
+        },
+        "screen_left": {
+          "value": 0.0,
+          "case": "2-from-3",
+          "light": "cold"
+        },
+        "screen_right": {
+          "value": 0.0,
+          "case": "2-from-3",
+          "light": "cold"
+        },
+        "cheek_left": {
+          "value": 7.59968253968254,
+          "case": "3-from-4",
+          "light": "cold"
+        },
+        "cheek_right": {
+          "value": 12.59,
+          "case": "3-from-2",
+          "light": "cold"
+        }
+      },
+      "worst_lamp_spill": {
+        "whole": {
+          "value": 0.7123320445949244,
+          "case": "3-from-2"
+        },
+        "outside": {
+          "value": 0.016007038299940674,
+          "case": "4-from-2"
+        },
+        "screen_left": {
+          "value": 0.0,
+          "case": "2-from-3"
+        },
+        "screen_right": {
+          "value": 0.0,
+          "case": "2-from-3"
+        },
+        "cheek_left": {
+          "value": 5.8480952380952385,
+          "case": "3-from-2"
+        },
+        "cheek_right": {
+          "value": 10.536666666666667,
+          "case": "3-from-2"
+        }
+      }
+    }
+  },
+  "cases": {
+    "2-from-3": {
+      "coverage": {
+        "cold": {
+          "whole": {
+            "position": 0.07789235562086105,
+            "position_and_color": 0.07157477736473083
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 0.0001145361820817925,
+            "position_and_color": 3.126732190139592e-05
+          }
+        },
+        "warm": {
+          "whole": {
+            "position": 0.07729452103376389,
+            "position_and_color": 0.06834962964057922
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 6.578423199243844e-05,
+            "position_and_color": 2.772899961200892e-06
+          }
+        }
+      },
+      "grades": {
+        "face_alignment": {
+          "zones": {
+            "whole": [
+              1.717729,
+              2.460875,
+              0.908534,
+              0.951067,
+              2.755163,
+              true
+            ],
+            "outside": [
+              1.671028,
+              2.298323,
+              null,
+              null,
+              2.601842,
+              true
+            ],
+            "screen_left": [
+              1.48944,
+              1.072566,
+              null,
+              null,
+              0.783675,
+              true
+            ],
+            "screen_right": [
+              1.153044,
+              1.209119,
+              null,
+              null,
+              2.114868,
+              true
+            ],
+            "cheek_left": [
+              1.531131,
+              1.283884,
+              0.904421,
+              0.93069,
+              1.211411,
+              true
+            ],
+            "cheek_right": [
+              0.78065,
+              4.745006,
+              0.946938,
+              0.710128,
+              4.265178,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "bb21f63c198318098dc5df06a5dd48d872c4768d8d0b18f8c29c5d722f1a6567",
+            "warm": "0361ff2511ed11c9065beafaa8e671af61f6e3de7bbe32a3e8fc8bc11b3974de"
+          }
+        },
+        "position": {
+          "zones": {
+            "whole": [
+              0.196605,
+              0.340844,
+              0.90607,
+              0.946578,
+              0.354204,
+              true
+            ],
+            "outside": [
+              0.000505,
+              0.000154,
+              null,
+              null,
+              0.000635,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              1.531131,
+              1.283884,
+              0.904421,
+              0.93069,
+              1.211411,
+              true
+            ],
+            "cheek_right": [
+              0.78065,
+              4.745006,
+              0.946938,
+              0.710128,
+              4.265178,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "ac2c74b32280e8fcbc034fcf24c29fa071f44667e976c540a72e7c514ad02a4f",
+            "warm": "209b3e10ea11fa0bd392b7b448bfd37c94b2d11d9ee477ecf184ee8bc40a158c"
+          }
+        },
+        "position_and_color": {
+          "zones": {
+            "whole": [
+              0.196459,
+              0.330203,
+              0.903094,
+              0.934269,
+              0.333697,
+              true
+            ],
+            "outside": [
+              0.000122,
+              4e-06,
+              null,
+              null,
+              0.000124,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              1.531131,
+              1.283884,
+              0.904421,
+              0.93069,
+              1.211411,
+              true
+            ],
+            "cheek_right": [
+              0.78065,
+              4.745006,
+              0.946938,
+              0.710128,
+              4.265178,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "5f8bfe377448497299a84cf10333e0b1866b440ba4979a56defa598f49e6d406",
+            "warm": "79de744369c44767431b2e4882a059375e6e64051bb444dfb81f752020875dc2"
+          }
+        }
+      },
+      "comparison_sha256": "52c97bf20c5b50952c6f42e3b60535212155700ded4319653e4e43deff238002"
+    },
+    "2-from-4": {
+      "coverage": {
+        "cold": {
+          "whole": {
+            "position": 0.07206916809082031,
+            "position_and_color": 0.0714162141084671
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          }
+        },
+        "warm": {
+          "whole": {
+            "position": 0.07223469763994217,
+            "position_and_color": 0.06925585865974426
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          }
+        }
+      },
+      "grades": {
+        "face_alignment": {
+          "zones": {
+            "whole": [
+              0.812572,
+              1.037257,
+              0.939712,
+              0.997928,
+              0.765167,
+              true
+            ],
+            "outside": [
+              0.668651,
+              0.859487,
+              null,
+              null,
+              0.605526,
+              true
+            ],
+            "screen_left": [
+              0.501186,
+              0.642116,
+              null,
+              null,
+              0.811369,
+              true
+            ],
+            "screen_right": [
+              0.159615,
+              0.818125,
+              null,
+              null,
+              0.663948,
+              true
+            ],
+            "cheek_left": [
+              2.312513,
+              2.172172,
+              0.856745,
+              0.958199,
+              1.42042,
+              true
+            ],
+            "cheek_right": [
+              0.245006,
+              1.58539,
+              1.00894,
+              1.073777,
+              1.479436,
+              true
+            ]
+          },
+          "complete": true,
+          "frames": {
+            "cold": "e8e7367b6fd202ef0d583d34ab41ce1c6597baac9c0d0815e178389a073059a9",
+            "warm": "2d3baf4751fbf15830156adeabc58d48198e22ed1b36b0e8e2f62ad79fa7c8d3"
+          }
+        },
+        "position": {
+          "zones": {
+            "whole": [
+              0.184395,
+              0.248812,
+              0.930939,
+              0.992117,
+              0.18985,
+              true
+            ],
+            "outside": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              2.312513,
+              2.172172,
+              0.856745,
+              0.958199,
+              1.42042,
+              true
+            ],
+            "cheek_right": [
+              0.245006,
+              1.58539,
+              1.00894,
+              1.073777,
+              1.479436,
+              true
+            ]
+          },
+          "complete": true,
+          "frames": {
+            "cold": "ddb2b35268af038df9326a9143e90a4104cce77a6ca7ffe5fd5bcc5fc579ec6d",
+            "warm": "63c95d918470916a2a33c18ce9c5b494aa2c9fa4284e3e9c16ffdc1fb4c63276"
+          }
+        },
+        "position_and_color": {
+          "zones": {
+            "whole": [
+              0.186649,
+              0.253484,
+              0.927889,
+              0.98849,
+              0.19859,
+              true
+            ],
+            "outside": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              2.312513,
+              2.172172,
+              0.856745,
+              0.958199,
+              1.42042,
+              true
+            ],
+            "cheek_right": [
+              0.245006,
+              1.58539,
+              1.00894,
+              1.073777,
+              1.479436,
+              true
+            ]
+          },
+          "complete": true,
+          "frames": {
+            "cold": "30e6b0871c9812a71c10edf1327052c965736c965baf610d1c34b29d81982b04",
+            "warm": "13eb9009aab0c3cfaae00a90763c133715e8663349f2f082ceb7369318113ef0"
+          }
+        }
+      },
+      "comparison_sha256": "e8d14545b040b21e60fb5721352c2e82eb1fc83af01036a3da2641b5bbe08676"
+    },
+    "3-from-2": {
+      "coverage": {
+        "cold": {
+          "whole": {
+            "position": 0.09979458153247833,
+            "position_and_color": 0.04789550229907036
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 0.538095235824585
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 0.17142857611179352
+          },
+          "outside": {
+            "position": 0.0034378732088953257,
+            "position_and_color": 7.24972153420822e-08
+          }
+        },
+        "warm": {
+          "whole": {
+            "position": 0.09952318668365479,
+            "position_and_color": 0.08277691900730133
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 0.996666669845581
+          },
+          "outside": {
+            "position": 0.0034110986161977053,
+            "position_and_color": 4.451639199487545e-07
+          }
+        }
+      },
+      "grades": {
+        "face_alignment": {
+          "zones": {
+            "whole": [
+              4.43843,
+              17.359866,
+              1.014705,
+              0.981877,
+              14.513926,
+              false
+            ],
+            "outside": [
+              4.677656,
+              18.298875,
+              null,
+              null,
+              15.113452,
+              false
+            ],
+            "screen_left": [
+              0.925319,
+              2.933208,
+              null,
+              null,
+              2.245449,
+              true
+            ],
+            "screen_right": [
+              0.737921,
+              5.533022,
+              null,
+              null,
+              5.938743,
+              false
+            ],
+            "cheek_left": [
+              1.268095,
+              6.37,
+              0.926605,
+              0.611508,
+              6.031111,
+              false
+            ],
+            "cheek_right": [
+              1.364127,
+              7.358413,
+              0.945825,
+              0.57594,
+              7.852698,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "91ecfa055a997349d1ba4b5e160ec0e610deb40928ab686f4d1175e92d16f202",
+            "warm": "cada235ecb6aac75f9912f2f3cfd5a35cb9c00296bdf0e08adde54547e333f26"
+          }
+        },
+        "position": {
+          "zones": {
+            "whole": [
+              0.272092,
+              0.996907,
+              1.012883,
+              0.976705,
+              1.005794,
+              true
+            ],
+            "outside": [
+              0.043366,
+              0.085967,
+              null,
+              null,
+              0.097179,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              1.268095,
+              6.37,
+              0.926605,
+              0.611508,
+              6.031111,
+              false
+            ],
+            "cheek_right": [
+              1.364127,
+              7.358413,
+              0.945825,
+              0.57594,
+              7.852698,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "96e4b7ace55267fd1a569bcc0f1b2917492fb40103da825dbee73a29f696cd4d",
+            "warm": "c9e40d74db238819fce1d196c25cc771501e5a3a6c6907aecbef7300273cf324"
+          }
+        },
+        "position_and_color": {
+          "zones": {
+            "whole": [
+              0.60392,
+              0.544955,
+              0.482541,
+              0.856002,
+              0.712332,
+              false
+            ],
+            "outside": [
+              0.0,
+              1e-06,
+              null,
+              null,
+              1e-06,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              7.212063,
+              6.37,
+              0.522246,
+              0.611508,
+              5.848095,
+              false
+            ],
+            "cheek_right": [
+              12.59,
+              7.345397,
+              0.158122,
+              0.577207,
+              10.536667,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "df7845509e60e68ce7decea86fcb19eaa33bf48ac39a2ec585df9fdbee2b0687",
+            "warm": "4c98cf5ca85199c7f1db291ee0fa8656fb8345faa28774a3c60b59f20d940ad6"
+          }
+        }
+      },
+      "comparison_sha256": "60fc4104ae4f99ea3580850f9e236fd9c9ed969a7185f7121fa665930d48dc5c"
+    },
+    "3-from-4": {
+      "coverage": {
+        "cold": {
+          "whole": {
+            "position": 0.08858846127986908,
+            "position_and_color": 0.04498128965497017
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 0.5719047784805298
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 0.17000000178813934
+          },
+          "outside": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          }
+        },
+        "warm": {
+          "whole": {
+            "position": 0.08879195153713226,
+            "position_and_color": 0.08026277273893356
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          }
+        }
+      },
+      "grades": {
+        "face_alignment": {
+          "zones": {
+            "whole": [
+              12.260934,
+              20.191145,
+              1.072326,
+              0.873494,
+              17.454148,
+              false
+            ],
+            "outside": [
+              13.027822,
+              21.772826,
+              null,
+              null,
+              18.6448,
+              false
+            ],
+            "screen_left": [
+              6.788476,
+              11.320444,
+              null,
+              null,
+              6.676298,
+              false
+            ],
+            "screen_right": [
+              16.894931,
+              12.137327,
+              null,
+              null,
+              5.091334,
+              false
+            ],
+            "cheek_left": [
+              1.971587,
+              3.419048,
+              0.885787,
+              0.784776,
+              2.802381,
+              false
+            ],
+            "cheek_right": [
+              1.553016,
+              4.659841,
+              1.054048,
+              0.724239,
+              5.488095,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "f3c0be0ba8bca5067d5d5eb8a4fe210efc1e4b787ee9abade406cfd0cace4cd4",
+            "warm": "018382c149f6b6c2116c206225d694a28e0537eedb47d625707d1d13ecb52501"
+          }
+        },
+        "position": {
+          "zones": {
+            "whole": [
+              0.387611,
+              0.551987,
+              1.059845,
+              0.868902,
+              0.592398,
+              true
+            ],
+            "outside": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              1.971587,
+              3.419048,
+              0.885787,
+              0.784776,
+              2.802381,
+              false
+            ],
+            "cheek_right": [
+              1.553016,
+              4.659841,
+              1.054048,
+              0.724239,
+              5.488095,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "d2c3962c992f1b6645c418205e909fdeb57e55768cd57b21b4ce17b412cd4d36",
+            "warm": "c8dc593447ab385140466238158868d7ff0e9c5829bf9bcbd85753c1554590b1"
+          }
+        },
+        "position_and_color": {
+          "zones": {
+            "whole": [
+              0.62275,
+              0.460912,
+              0.456956,
+              0.816119,
+              0.617383,
+              false
+            ],
+            "outside": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              7.599683,
+              3.419048,
+              0.496901,
+              0.784776,
+              5.518413,
+              false
+            ],
+            "cheek_right": [
+              12.503968,
+              4.659841,
+              0.16424,
+              0.724239,
+              9.817143,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "1b9c05cebd0640c0ea4b5cf13f0a3342181bcf239c25f27febed3e93e78ec17e",
+            "warm": "8756977166935b83cd5b24efed5cb481fdacf576ba4b8075b30c3ff1cb22442b"
+          }
+        }
+      },
+      "comparison_sha256": "bf0c67d671f170bb6678817011a816a11c593c8c3d4f16fd2f40273209bffa46"
+    },
+    "4-from-2": {
+      "coverage": {
+        "cold": {
+          "whole": {
+            "position": 0.10374448448419571,
+            "position_and_color": 0.10312457382678986
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 0.9457364082336426
+          },
+          "outside": {
+            "position": 0.006292749661952257,
+            "position_and_color": 0.00627362122759223
+          }
+        },
+        "warm": {
+          "whole": {
+            "position": 0.10346236079931259,
+            "position_and_color": 0.09887178987264633
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 0.006262109614908695,
+            "position_and_color": 0.0051071071065962315
+          }
+        }
+      },
+      "grades": {
+        "face_alignment": {
+          "zones": {
+            "whole": [
+              1.596907,
+              2.590024,
+              0.998887,
+              1.178362,
+              1.91115,
+              true
+            ],
+            "outside": [
+              1.618301,
+              2.43854,
+              null,
+              null,
+              1.690846,
+              true
+            ],
+            "screen_left": [
+              0.011518,
+              0.207837,
+              null,
+              null,
+              0.19649,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.168706,
+              null,
+              null,
+              0.168706,
+              true
+            ],
+            "cheek_left": [
+              0.210518,
+              1.977808,
+              0.99807,
+              1.185771,
+              2.00532,
+              true
+            ],
+            "cheek_right": [
+              0.676243,
+              3.861073,
+              0.965816,
+              1.218312,
+              4.259766,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "2f50b0862b8c144a34c4ce100dc44916ababd264eabbefd268079bd28211a6e2",
+            "warm": "d56d4906034666bea96a0ab395de0ee036a38065ab12dd0445cf0634039c20bd"
+          }
+        },
+        "position": {
+          "zones": {
+            "whole": [
+              0.140994,
+              0.399948,
+              0.99856,
+              1.177889,
+              0.401942,
+              true
+            ],
+            "outside": [
+              0.010488,
+              0.015634,
+              null,
+              null,
+              0.017734,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              0.210518,
+              1.977808,
+              0.99807,
+              1.185771,
+              2.00532,
+              true
+            ],
+            "cheek_right": [
+              0.676243,
+              3.861073,
+              0.965816,
+              1.218312,
+              4.259766,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "8652ac175216efd18e00cedd3ea3cf6e29be2d87c2ee8e7e30a0c6ea9ec57e20",
+            "warm": "c5abff532ef3b32ae22d2a7b9fc266cf10025148ee3f83ab8d09c7a97ddcb343"
+          }
+        },
+        "position_and_color": {
+          "zones": {
+            "whole": [
+              0.147426,
+              0.37648,
+              0.990898,
+              1.179573,
+              0.388639,
+              true
+            ],
+            "outside": [
+              0.010468,
+              0.012544,
+              null,
+              null,
+              0.016007,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              0.210518,
+              1.977808,
+              0.99807,
+              1.185771,
+              2.00532,
+              true
+            ],
+            "cheek_right": [
+              1.446876,
+              3.861073,
+              0.914653,
+              1.218312,
+              4.917313,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "d6d4b7761494262fd54a449de26c23a5b50fa90004935a0209f17f67257426e4",
+            "warm": "bcf6672b00915f53fa65d4af545157ddcd5f9d495c9fd4149eac63e1ce8eeca1"
+          }
+        }
+      },
+      "comparison_sha256": "a70dd27d957428f5fe72cd2128e3d0f748184f8cfe7a020a447b9f544d79932a"
+    },
+    "4-from-3": {
+      "coverage": {
+        "cold": {
+          "whole": {
+            "position": 0.09953976422548294,
+            "position_and_color": 0.09673511236906052
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 0.9949840307235718
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 1.0
+          },
+          "outside": {
+            "position": 0.0012971856631338596,
+            "position_and_color": 0.0012653963640332222
+          }
+        },
+        "warm": {
+          "whole": {
+            "position": 0.09877589344978333,
+            "position_and_color": 0.08319754153490067
+          },
+          "screen_left": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "screen_right": {
+            "position": 0.0,
+            "position_and_color": 0.0
+          },
+          "cheek_left": {
+            "position": 1.0,
+            "position_and_color": 0.99726402759552
+          },
+          "cheek_right": {
+            "position": 1.0,
+            "position_and_color": 0.9995440244674683
+          },
+          "outside": {
+            "position": 0.0009990172693505883,
+            "position_and_color": 0.0009364706347696483
+          }
+        }
+      },
+      "grades": {
+        "face_alignment": {
+          "zones": {
+            "whole": [
+              2.172479,
+              3.465876,
+              0.980134,
+              0.951494,
+              3.526041,
+              false
+            ],
+            "outside": [
+              2.216196,
+              3.442864,
+              null,
+              null,
+              3.476127,
+              false
+            ],
+            "screen_left": [
+              1.100203,
+              0.89874,
+              null,
+              null,
+              1.600131,
+              true
+            ],
+            "screen_right": [
+              1.899688,
+              1.332569,
+              null,
+              null,
+              3.176975,
+              false
+            ],
+            "cheek_left": [
+              0.320261,
+              0.883721,
+              1.007636,
+              1.009276,
+              0.79541,
+              true
+            ],
+            "cheek_right": [
+              0.678523,
+              5.140751,
+              0.963451,
+              0.690556,
+              4.885089,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "7c662a597ed0cc19989b7ded0b9bbee4254ada1773032fe6b7c1064a28ac4917",
+            "warm": "c68af0727ae0b6743bed62505d3473742123291f92735b1481c3d08e757fe2a3"
+          }
+        },
+        "position": {
+          "zones": {
+            "whole": [
+              0.179646,
+              0.363998,
+              0.980025,
+              0.951222,
+              0.400229,
+              true
+            ],
+            "outside": [
+              0.002549,
+              0.006779,
+              null,
+              null,
+              0.008201,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              0.320261,
+              0.883721,
+              1.007636,
+              1.009276,
+              0.79541,
+              true
+            ],
+            "cheek_right": [
+              0.678523,
+              5.140751,
+              0.963451,
+              0.690556,
+              4.885089,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "a763b8f535d37619d6f701ee6d290a8503927933305ebad14e393d6302b9e4b5",
+            "warm": "ac2b7150e9fa3b9d3c7b393f694c54a1b7d7e36b95533adf44dff347bfa83281"
+          }
+        },
+        "position_and_color": {
+          "zones": {
+            "whole": [
+              0.181734,
+              0.383987,
+              0.978672,
+              0.916073,
+              0.431968,
+              true
+            ],
+            "outside": [
+              0.002494,
+              0.006523,
+              null,
+              null,
+              0.008138,
+              true
+            ],
+            "screen_left": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "screen_right": [
+              0.0,
+              0.0,
+              null,
+              null,
+              0.0,
+              true
+            ],
+            "cheek_left": [
+              0.340629,
+              0.893753,
+              1.007009,
+              1.008739,
+              0.825201,
+              true
+            ],
+            "cheek_right": [
+              0.678523,
+              5.142727,
+              0.963451,
+              0.690474,
+              4.887369,
+              false
+            ]
+          },
+          "complete": false,
+          "frames": {
+            "cold": "921371b54eae023c7e43d7d0e37d54b029ec32ba75da443b8afb5a2ea011e521",
+            "warm": "f03c9de5e46141cab6550fb37b137e8dcccd19ca480c2ac610abcc653c5dad4a"
+          }
+        }
+      },
+      "comparison_sha256": "2d1ac6e136ece543ff99486389c9a700e375c55601621856e85e2b322777ee47"
+    }
+  },
+  "zone_columns": [
+    "cold_rgb8_mae",
+    "warm_rgb8_mae",
+    "cold_style_projection",
+    "warm_style_projection",
+    "on_cold_warm_rgb8_mae",
+    "passes_both_lights"
+  ],
+  "version_anchor": "74ba01c2c47b18a065c7175554ba36aba5c776b7",
+  "strength_percent": 80,
+  "frame_size": [
+    1024,
+    683
+  ]
+}
