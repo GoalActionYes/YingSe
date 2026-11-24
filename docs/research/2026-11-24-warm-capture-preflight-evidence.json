@@ -1,0 +1,246 @@
+{
+  "use": "CLI integration and frozen development replay",
+  "elapsed_seconds_through_cli": {
+    "mit": [
+      8.6345719,
+      8.0097446
+    ],
+    "lsmi": [
+      4.9730519,
+      5.4869672
+    ],
+    "clipped": [
+      4.7647145,
+      4.7513674
+    ]
+  },
+  "script_sha256": "1e207d5ba1972dd47886883f7fa774c40ed076ce79c7f421cfd31b98726821b6",
+  "distinct_directions_independently_rechecked": 6,
+  "local_visible_displacement_can_pass_global_registration": true,
+  "cases": {
+    "mit": {
+      "legacy_result_sha256": "0e040a54c3de7b6f3124664748cf592e7d3913705cc7c5610e074c081354c02c",
+      "source_hashes": [
+        "830730cd8fbf12fea7f4b79df4a6843abf3400ab50d7a2f103f6cc623e063be5",
+        "ad7a7ab9be75689948a7a70e3ce606505a472c3dce330367f05b5067d9f8506e"
+      ],
+      "registered": {
+        "passed": true,
+        "zero": 0.9075293573841441,
+        "peak": 0.9075293573841441,
+        "dy": 0,
+        "dx": 0,
+        "peak_gain": 0.0
+      },
+      "matches": [
+        "light-a-to-light-b"
+      ],
+      "directions": {
+        "light-a-to-light-b": {
+          "coverage": 1.0,
+          "capture": [
+            15.0,
+            -1.0,
+            -9.0
+          ],
+          "edit": [
+            10.0,
+            -3.0,
+            -13.0
+          ],
+          "cosine": 0.9242132243850102,
+          "ratio": 0.9515973199223438,
+          "checks": {
+            "valid_coverage": true,
+            "both_material_states": true,
+            "physical_signal": true,
+            "edited_signal": true,
+            "same_direction": true,
+            "comparable_amplitude": true
+          },
+          "passed": true
+        },
+        "light-b-to-light-a": {
+          "coverage": 0.9998389694041868,
+          "capture": [
+            -15.0,
+            1.0,
+            9.0
+          ],
+          "edit": [
+            9.0,
+            -3.0,
+            -15.0
+          ],
+          "cosine": -0.8778861196578677,
+          "ratio": 1.012945522682155,
+          "checks": {
+            "valid_coverage": true,
+            "both_material_states": true,
+            "physical_signal": true,
+            "edited_signal": true,
+            "same_direction": false,
+            "comparable_amplitude": true
+          },
+          "passed": false
+        }
+      },
+      "inventory_complete": true,
+      "all_four_exports_equal_to_prior_sha256": true,
+      "identical_per_repeat": {
+        ".json": 1,
+        ".png": 11,
+        ".pp3": 2
+      },
+      "new_report_sha256": "1acccdd3a85c4b97fcda327a182a06b607a4cbdea37a97a03eb7e3ea75971751"
+    },
+    "lsmi": {
+      "legacy_result_sha256": "a296dfc8fcba9a9210cfd8b046a27522d85766d633d9deb953dc2a9ff24e475e",
+      "source_hashes": [
+        "bc5e67b6e9232baa82cec22aed5dbb98966521bbf0e847aecc670e3d83b00e00",
+        "81ef610e4c17805152977a85299ca20b60488bf52c5d5859955714d7c91c33ed"
+      ],
+      "registered": {
+        "passed": true,
+        "zero": 0.7822518824170251,
+        "peak": 0.7822518824170251,
+        "dy": 0,
+        "dx": 0,
+        "peak_gain": 0.0
+      },
+      "matches": [],
+      "directions": {
+        "light-a-to-light-b": {
+          "coverage": 1.0,
+          "capture": [
+            39.0,
+            0.0,
+            -21.0
+          ],
+          "edit": [
+            13.0,
+            -3.0,
+            -14.0
+          ],
+          "cosine": 0.9350766525642851,
+          "ratio": 0.4366025818464951,
+          "checks": {
+            "valid_coverage": true,
+            "both_material_states": true,
+            "physical_signal": true,
+            "edited_signal": true,
+            "same_direction": true,
+            "comparable_amplitude": false
+          },
+          "passed": false
+        },
+        "light-b-to-light-a": {
+          "coverage": 1.0,
+          "capture": [
+            -39.0,
+            0.0,
+            21.0
+          ],
+          "edit": [
+            10.0,
+            -3.0,
+            -13.0
+          ],
+          "cosine": -0.8977215051075835,
+          "ratio": 0.3764201786122295,
+          "checks": {
+            "valid_coverage": true,
+            "both_material_states": true,
+            "physical_signal": true,
+            "edited_signal": true,
+            "same_direction": false,
+            "comparable_amplitude": false
+          },
+          "passed": false
+        }
+      },
+      "inventory_complete": true,
+      "all_four_exports_equal_to_prior_sha256": true,
+      "identical_per_repeat": {
+        ".json": 1,
+        ".png": 11,
+        ".pp3": 2
+      },
+      "new_report_sha256": "b74781fbcaa6023649b6b11a67c18df76286d39cbad77c769c4a00ef2a0bf172"
+    },
+    "clipped": {
+      "legacy_result_sha256": "a296dfc8fcba9a9210cfd8b046a27522d85766d633d9deb953dc2a9ff24e475e",
+      "source_hashes": [
+        "a969a916e951073df64788ea4af1e35f79676a0e40e3240ee3a4c176e60a8ed4",
+        "cf4d791aca4aac00e3b1c4d90f81f9c12e7aa229102fa11c4ad6ea7c6285165c"
+      ],
+      "registered": {
+        "passed": true,
+        "zero": 0.8357138135066462,
+        "peak": 0.8357138135066462,
+        "dy": 0,
+        "dx": 0,
+        "peak_gain": 0.0
+      },
+      "matches": [],
+      "directions": {
+        "light-a-to-light-b": {
+          "coverage": 0.0,
+          "capture": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "edit": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cosine": null,
+          "ratio": null,
+          "checks": {
+            "valid_coverage": false,
+            "both_material_states": false,
+            "physical_signal": false,
+            "edited_signal": false,
+            "same_direction": false,
+            "comparable_amplitude": false
+          },
+          "passed": false
+        },
+        "light-b-to-light-a": {
+          "coverage": 0.0,
+          "capture": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "edit": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cosine": null,
+          "ratio": null,
+          "checks": {
+            "valid_coverage": false,
+            "both_material_states": false,
+            "physical_signal": false,
+            "edited_signal": false,
+            "same_direction": false,
+            "comparable_amplitude": false
+          },
+          "passed": false
+        }
+      },
+      "inventory_complete": true,
+      "all_four_exports_equal_to_prior_sha256": true,
+      "identical_per_repeat": {
+        ".json": 1,
+        ".png": 11,
+        ".pp3": 2
+      },
+      "new_report_sha256": "f6fbe158ef3ed38e3de2d832ee3da5e0a1971c28c8fb86ccd4c15e6a089edd46"
+    }
+  }
+}
