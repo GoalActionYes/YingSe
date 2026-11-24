@@ -1,0 +1,1752 @@
+{
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "protocol": "107ae4d15e87921dc4add5f288b1fc16a5427d887fbf0574e48b415b26d7baee",
+  "script": "6fdedf099923d9ff49ace9038341ab22370f5efca8d69d29cd8851d17f253656",
+  "training": "32a034d2c6bd7f52a50699368a795c0c9bc44890e1a93ad5a20464dabdbb4893",
+  "image_rows": [
+    [
+      "14n_copyroom1",
+      "12-off"
+    ],
+    [
+      "14n_copyroom1",
+      "12-on"
+    ],
+    [
+      "14n_copyroom1",
+      "14-off"
+    ],
+    [
+      "14n_copyroom1",
+      "14-on"
+    ],
+    [
+      "14n_copyroom1",
+      "16-off"
+    ],
+    [
+      "14n_copyroom1",
+      "16-on"
+    ],
+    [
+      "14n_copyroom1",
+      "20-off"
+    ],
+    [
+      "14n_copyroom1",
+      "4-off"
+    ],
+    [
+      "14n_copyroom1",
+      "4-on"
+    ],
+    [
+      "14n_copyroom1",
+      "8-off"
+    ],
+    [
+      "everett_living2",
+      "0-off"
+    ],
+    [
+      "everett_living2",
+      "12-off"
+    ],
+    [
+      "everett_living2",
+      "12-on"
+    ],
+    [
+      "everett_living2",
+      "14-off"
+    ],
+    [
+      "everett_living2",
+      "14-on"
+    ],
+    [
+      "everett_living2",
+      "16-off"
+    ],
+    [
+      "everett_living2",
+      "16-on"
+    ],
+    [
+      "everett_living2",
+      "20-off"
+    ],
+    [
+      "everett_living2",
+      "20-on"
+    ],
+    [
+      "everett_living2",
+      "4-off"
+    ],
+    [
+      "everett_living2",
+      "4-on"
+    ],
+    [
+      "everett_living2",
+      "8-off"
+    ],
+    [
+      "everett_living2",
+      "8-on"
+    ],
+    [
+      "pillar",
+      "time0-off"
+    ],
+    [
+      "pillar",
+      "time1-off"
+    ],
+    [
+      "pillar",
+      "time1-on"
+    ],
+    [
+      "pillar",
+      "time2-off"
+    ],
+    [
+      "pillar",
+      "time5-off"
+    ],
+    [
+      "pillar",
+      "time5-on"
+    ],
+    [
+      "wall",
+      "time0-off"
+    ],
+    [
+      "wall",
+      "time1-off"
+    ],
+    [
+      "wall",
+      "time2-off"
+    ],
+    [
+      "wall",
+      "time2-on"
+    ],
+    [
+      "wall",
+      "time5-off"
+    ],
+    [
+      "wall",
+      "time5-on"
+    ]
+  ],
+  "features": {
+    "mit": {
+      "sha256": "abf94b892dd2d0d5e4de55709dd562df52e835328b3cbcf74e10155787f4d777",
+      "weight": "608874e332c03e97384f3933fee9ead921c04468453b39b10b90655f1cc7e300",
+      "arrays": {
+        "rgb4": "c7a669e333374398d5f36eeb58549edc48c66ab5c1148dcf4f803ede04ddd3ba",
+        "histogram": "a779a7a5aef1a626698f29d33b0fe8e26a181f8173b80ed3a6abe2d638590baf",
+        "projected4": "955efb45e31799bfb27f6bf673e1b9b7dc888ccecf6a1d1893e2cae35f90d7f5",
+        "grid13": "314b263eb5b462b0554d952fa7834439fde6649036759326580a4037ec1e2ebc",
+        "grid_local": "4697934a72985c119847eb0f0e5b2c0aa7cd799f0c5f37b36119a1e9cd465b15"
+      }
+    },
+    "wildrelight": {
+      "sha256": "fdf729c3034a31a442fe2296aa7df2cd8ce5e64c4f5da93c309e0430d7d31871",
+      "weight": "250f21db4297a586c9f24665a707f5ce7f9bf11f5f584e72a283ef7f57d4175c",
+      "arrays": {
+        "rgb4": "c7a669e333374398d5f36eeb58549edc48c66ab5c1148dcf4f803ede04ddd3ba",
+        "histogram": "a779a7a5aef1a626698f29d33b0fe8e26a181f8173b80ed3a6abe2d638590baf",
+        "projected4": "955efb45e31799bfb27f6bf673e1b9b7dc888ccecf6a1d1893e2cae35f90d7f5",
+        "grid13": "314b263eb5b462b0554d952fa7834439fde6649036759326580a4037ec1e2ebc",
+        "grid_local": "aafbfe38cb6eb5f48ea8a2fe2502414070f1a6227b7dfdcfc5abf43eb1e705fe"
+      }
+    }
+  },
+  "results": {
+    "wildrelight": {
+      "trained_on": "mit",
+      "modes": {
+        "rgb4": {
+          "reference": {
+            "unique_train": 16,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 6
+              },
+              "editor": {
+                "total": 4,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": 0.053753831533935315,
+                "physical": -0.13634741221493735,
+                "editor": -0.08259358068100203,
+                "outcome": "win"
+              },
+              "wall/time5-to-time2": {
+                "margin": 0.07309543476328634,
+                "physical": -0.15568901544428837,
+                "editor": -0.08259358068100203,
+                "outcome": "win"
+              },
+              "wall/time2-to-time0": {
+                "margin": 0.013499840233071686,
+                "physical": -0.17083007178058013,
+                "editor": -0.15733023154750844,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time0": {
+                "margin": 0.22198971442704124,
+                "physical": -0.3290615334943305,
+                "editor": -0.10707181906728926,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time1": {
+                "margin": 0.08620468613372197,
+                "physical": -0.19327650520101122,
+                "editor": -0.10707181906728926,
+                "outcome": "win"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.04800361678190526,
+                "physical": -0.2519417752567104,
+                "editor": -0.20393815847480515,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 6,
+              "loss": 0,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 22,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 6
+              },
+              "editor": {
+                "total": 4,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": -0.15802621591196797,
+                "physical": -0.8771257846137989,
+                "editor": -1.0351520005257668,
+                "outcome": "loss"
+              },
+              "wall/time5-to-time2": {
+                "margin": -0.1627853963471111,
+                "physical": -0.8723666041786557,
+                "editor": -1.0351520005257668,
+                "outcome": "loss"
+              },
+              "wall/time2-to-time0": {
+                "margin": 0.1102330144638608,
+                "physical": -1.1453263635872357,
+                "editor": -1.035093349123375,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time0": {
+                "margin": 0.0788578293523493,
+                "physical": -1.0437500826296275,
+                "editor": -0.9648922532772782,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time1": {
+                "margin": 0.09536983982261849,
+                "physical": -1.0602620930998967,
+                "editor": -0.9648922532772782,
+                "outcome": "win"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.05517025250376428,
+                "physical": -1.019457803822408,
+                "editor": -0.9642875513186437,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 4,
+              "loss": 2,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "histogram": {
+          "reference": {
+            "unique_train": 16,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 6
+              },
+              "editor": {
+                "total": 4,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": 0.007453001211152693,
+                "physical": -0.15877046640759393,
+                "editor": -0.15131746519644124,
+                "outcome": "win"
+              },
+              "wall/time5-to-time2": {
+                "margin": 0.022539092911914582,
+                "physical": -0.17385655810835582,
+                "editor": -0.15131746519644124,
+                "outcome": "win"
+              },
+              "wall/time2-to-time0": {
+                "margin": -0.04553460328362394,
+                "physical": -0.1274969113222866,
+                "editor": -0.17303151460591054,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time0": {
+                "margin": 0.03732706534098176,
+                "physical": -0.14104487872096452,
+                "editor": -0.10371781337998276,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time1": {
+                "margin": -0.008484551168202986,
+                "physical": -0.09523326221177977,
+                "editor": -0.10371781337998276,
+                "outcome": "loss"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.009512258133387033,
+                "physical": -0.10955523059892913,
+                "editor": -0.1000429724655421,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 4,
+              "loss": 2,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 22,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 6
+              },
+              "editor": {
+                "total": 4,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": -0.5533791829857436,
+                "physical": -0.10750943558356171,
+                "editor": -0.6608886185693054,
+                "outcome": "loss"
+              },
+              "wall/time5-to-time2": {
+                "margin": -0.5457387433259687,
+                "physical": -0.11514987524333663,
+                "editor": -0.6608886185693054,
+                "outcome": "loss"
+              },
+              "wall/time2-to-time0": {
+                "margin": 0.02384356292706638,
+                "physical": -0.2551212701196333,
+                "editor": -0.23127770719256693,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time0": {
+                "margin": -0.04952440195766433,
+                "physical": -0.23608958966246174,
+                "editor": -0.2856139916201261,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time1": {
+                "margin": -0.04876376535854357,
+                "physical": -0.2368502262615825,
+                "editor": -0.2856139916201261,
+                "outcome": "loss"
+              },
+              "pillar/time1-to-time2": {
+                "margin": -0.27060062654805267,
+                "physical": -0.29798841884363286,
+                "editor": -0.5685890453916855,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 1,
+              "loss": 5,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "projected4": {
+          "reference": {
+            "unique_train": 16,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 4
+              },
+              "editor": {
+                "total": 4,
+                "correct": 2
+              }
+            },
+            "balanced_accuracy": 0.5833333333333333,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": 0.044386182148924334,
+                "physical": -0.08901772868804957,
+                "editor": -0.04463154653912523,
+                "outcome": "win"
+              },
+              "wall/time5-to-time2": {
+                "margin": 0.061231320079904915,
+                "physical": -0.10586286661903015,
+                "editor": -0.04463154653912523,
+                "outcome": "win"
+              },
+              "wall/time2-to-time0": {
+                "margin": 0.048477262543083946,
+                "physical": -0.1568380547137135,
+                "editor": -0.10836079217062956,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time0": {
+                "margin": 0.23800344723733263,
+                "physical": -0.030884247761852543,
+                "editor": 0.2071191994754801,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time1": {
+                "margin": 0.05251493925603745,
+                "physical": 0.15460426021944265,
+                "editor": 0.2071191994754801,
+                "outcome": "win"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.06106084219531922,
+                "physical": 0.08633065229530583,
+                "editor": 0.14739149449062505,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 6,
+              "loss": 0,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 22,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 6
+              },
+              "editor": {
+                "total": 4,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": -0.029295501030344007,
+                "physical": -0.4187071724666718,
+                "editor": -0.4480026734970158,
+                "outcome": "loss"
+              },
+              "wall/time5-to-time2": {
+                "margin": -0.04837955892562967,
+                "physical": -0.3996231145713861,
+                "editor": -0.4480026734970158,
+                "outcome": "loss"
+              },
+              "wall/time2-to-time0": {
+                "margin": 0.03779570919999148,
+                "physical": -0.46684518442315404,
+                "editor": -0.42904947522316256,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time0": {
+                "margin": 0.06455747538306938,
+                "physical": -0.5428078610913839,
+                "editor": -0.4782503857083145,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time1": {
+                "margin": -0.019908190962107553,
+                "physical": -0.45834219474620697,
+                "editor": -0.4782503857083145,
+                "outcome": "loss"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.0010264729726893185,
+                "physical": -0.4389467526814879,
+                "editor": -0.4379202797087986,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 3,
+              "loss": 3,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "grid13": {
+          "reference": {
+            "unique_train": 16,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 3
+              },
+              "editor": {
+                "total": 4,
+                "correct": 2
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": 0.38036299764479464,
+                "physical": -0.48350873102759434,
+                "editor": -0.10314573338279968,
+                "outcome": "win"
+              },
+              "wall/time5-to-time2": {
+                "margin": 0.4423143946638853,
+                "physical": -0.545460128046685,
+                "editor": -0.10314573338279968,
+                "outcome": "win"
+              },
+              "wall/time2-to-time0": {
+                "margin": 0.06757413263995948,
+                "physical": -0.6214375820679474,
+                "editor": -0.5538634494279879,
+                "outcome": "win"
+              },
+              "pillar/time5-to-time0": {
+                "margin": -0.08875201916579778,
+                "physical": 0.40752844378131803,
+                "editor": 0.31877642461552025,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time1": {
+                "margin": -0.027394792779279642,
+                "physical": 0.3461712173947999,
+                "editor": 0.31877642461552025,
+                "outcome": "loss"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.045557195503109715,
+                "physical": 0.3092573717640581,
+                "editor": 0.3548145672671678,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 4,
+              "loss": 2,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 22,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 5
+              },
+              "editor": {
+                "total": 4,
+                "correct": 1
+              }
+            },
+            "balanced_accuracy": 0.5416666666666667,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": 0.06805188453822486,
+                "physical": -0.3340982695222344,
+                "editor": -0.26604638498400957,
+                "outcome": "win"
+              },
+              "wall/time5-to-time2": {
+                "margin": 0.07791355878710682,
+                "physical": -0.3439599437711164,
+                "editor": -0.26604638498400957,
+                "outcome": "win"
+              },
+              "wall/time2-to-time0": {
+                "margin": -0.0020080033778343553,
+                "physical": -0.1350865234792191,
+                "editor": -0.13709452685705345,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time0": {
+                "margin": -0.31754722515447503,
+                "physical": -0.013432573074300704,
+                "editor": -0.3309797982287757,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time1": {
+                "margin": -0.10218021826924645,
+                "physical": -0.22879957995952926,
+                "editor": -0.3309797982287757,
+                "outcome": "loss"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.014555527955198419,
+                "physical": 0.12088371412904429,
+                "editor": 0.1354392420842427,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 3,
+              "loss": 3,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "grid_local": {
+          "reference": {
+            "unique_train": 16,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 3
+              },
+              "editor": {
+                "total": 4,
+                "correct": 2
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": 0.20714937584338206,
+                "physical": -0.2145176699893291,
+                "editor": -0.007368294145947063,
+                "outcome": "win"
+              },
+              "wall/time5-to-time2": {
+                "margin": 0.2973748794325284,
+                "physical": -0.30474317357847547,
+                "editor": -0.007368294145947063,
+                "outcome": "win"
+              },
+              "wall/time2-to-time0": {
+                "margin": -0.1651547126419022,
+                "physical": -0.14104791686543247,
+                "editor": -0.3062026295073347,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time0": {
+                "margin": -0.022270441361361165,
+                "physical": 0.27068619172807634,
+                "editor": 0.24841575036671518,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time1": {
+                "margin": 9.198247754862998e-05,
+                "physical": 0.24832376788916655,
+                "editor": 0.24841575036671518,
+                "outcome": "win"
+              },
+              "pillar/time1-to-time2": {
+                "margin": -0.023737101722303144,
+                "physical": 0.2868215662320947,
+                "editor": 0.26308446450979156,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 3,
+              "loss": 3,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 22,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 3
+              },
+              "editor": {
+                "total": 4,
+                "correct": 2
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "wall/time5-to-time1": {
+                "margin": -0.39255643779430444,
+                "physical": 0.02434665595462661,
+                "editor": -0.36820978183967784,
+                "outcome": "loss"
+              },
+              "wall/time5-to-time2": {
+                "margin": -0.34874482743111346,
+                "physical": -0.01946495440856436,
+                "editor": -0.36820978183967784,
+                "outcome": "loss"
+              },
+              "wall/time2-to-time0": {
+                "margin": -0.29655519286384724,
+                "physical": 0.3567673327831874,
+                "editor": 0.06021213991934015,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time0": {
+                "margin": -0.3333849085539933,
+                "physical": -0.0396042618353628,
+                "editor": -0.3729891703893561,
+                "outcome": "loss"
+              },
+              "pillar/time5-to-time1": {
+                "margin": -0.17574287706081101,
+                "physical": -0.19724629332854507,
+                "editor": -0.3729891703893561,
+                "outcome": "loss"
+              },
+              "pillar/time1-to-time2": {
+                "margin": 0.013066503249874573,
+                "physical": 0.28224082851826837,
+                "editor": 0.29530733176814294,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 1,
+              "loss": 5,
+              "tie": 0
+            },
+            "passed": false
+          }
+        }
+      }
+    },
+    "mit": {
+      "trained_on": "wildrelight",
+      "modes": {
+        "rgb4": {
+          "reference": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 1
+              },
+              "editor": {
+                "total": 10,
+                "correct": 9
+              }
+            },
+            "balanced_accuracy": 0.5333333333333333,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": 1.0569037861658521,
+                "physical": -0.6401463217979969,
+                "editor": 0.4167574643678553,
+                "outcome": "win"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": 0.23783469408088334,
+                "physical": 0.013188150630520276,
+                "editor": 0.2510228447114036,
+                "outcome": "win"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 1.2928190612356343,
+                "physical": -0.6401463217979969,
+                "editor": 0.6526727394376374,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 1.2900685300810704,
+                "physical": -0.6401463217979969,
+                "editor": 0.6499222082830733,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": 0.02925584399662995,
+                "physical": 1.1222517819218822,
+                "editor": 1.1515076259185122,
+                "outcome": "win"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.24593222595456365,
+                "physical": 0.8791068907415281,
+                "editor": 1.1250391166960918,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.234703891053741,
+                "physical": 0.8791068907415281,
+                "editor": 1.1138107817952692,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": 0.005707744334855214,
+                "physical": 1.1222517819218822,
+                "editor": 1.1279595262567375,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.06321659366421994,
+                "physical": 1.1482666963501447,
+                "editor": 1.2114832900143646,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.08666878204725159,
+                "physical": 1.124814507967113,
+                "editor": 1.2114832900143646,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -1.6974589214575535,
+                "physical": 1.1482666963501447,
+                "editor": -0.5491922251074088,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -1.6740067330745219,
+                "physical": 1.124814507967113,
+                "editor": -0.5491922251074088,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 10,
+              "loss": 2,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 12,
+                "correct": 10
+              },
+              "editor": {
+                "total": 10,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.4166666666666667,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": -0.13863044762710303,
+                "physical": -0.07582850537617532,
+                "editor": -0.21445895300327833,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": 0.8458684891986573,
+                "physical": -1.0597745451858043,
+                "editor": -0.21390605598714693,
+                "outcome": "win"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.009454626025232615,
+                "physical": -0.22275950363982308,
+                "editor": -0.21330487761459047,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": -0.04747057831725851,
+                "physical": -0.16304778259836938,
+                "editor": -0.2105183609156279,
+                "outcome": "loss"
+              },
+              "everett_living2/4-to-8": {
+                "margin": 0.24508406748042985,
+                "physical": -0.39989936657449626,
+                "editor": -0.1548152990940664,
+                "outcome": "win"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.22659924514006138,
+                "physical": -0.3656516712312656,
+                "editor": -0.1390524260912042,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.10547153797953654,
+                "physical": -0.2512760298031763,
+                "editor": -0.14580449182363978,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": 0.06818373449364301,
+                "physical": -0.21837491310168172,
+                "editor": -0.1501911786080387,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.6027957356105609,
+                "physical": -0.7650069673323104,
+                "editor": -0.1622112317217495,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.6333116357168278,
+                "physical": -0.7955228674385774,
+                "editor": -0.1622112317217495,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -1.0897543487378616,
+                "physical": 0.9399950138594549,
+                "editor": -0.14975933487840662,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -1.0852554105066639,
+                "physical": 0.9354960756282573,
+                "editor": -0.14975933487840662,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 8,
+              "loss": 4,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "histogram": {
+          "reference": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 2
+              },
+              "editor": {
+                "total": 10,
+                "correct": 6
+              }
+            },
+            "balanced_accuracy": 0.4666666666666667,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": 0.07219708256097215,
+                "physical": -0.128651430919523,
+                "editor": -0.05645434835855084,
+                "outcome": "win"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": -0.01754459521446332,
+                "physical": -0.058265205893830774,
+                "editor": -0.07580980110829409,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.13405027542199033,
+                "physical": -0.128651430919523,
+                "editor": 0.005398844502467331,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.096357850405199,
+                "physical": -0.128651430919523,
+                "editor": -0.032293580514324,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": 0.013210375296151683,
+                "physical": 0.06596264500203225,
+                "editor": 0.07917302029818393,
+                "outcome": "win"
+              },
+              "everett_living2/8-to-0": {
+                "margin": -0.023473088206337367,
+                "physical": 0.09057192916410725,
+                "editor": 0.06709884095776988,
+                "outcome": "loss"
+              },
+              "everett_living2/12-to-0": {
+                "margin": -0.009603035064255111,
+                "physical": 0.09057192916410725,
+                "editor": 0.08096889409985214,
+                "outcome": "loss"
+              },
+              "everett_living2/14-to-8": {
+                "margin": 0.006481605655947922,
+                "physical": 0.06596264500203225,
+                "editor": 0.07244425065798017,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-4": {
+                "margin": -0.010449431979300233,
+                "physical": 0.08368445362861326,
+                "editor": 0.07323502164931303,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-14": {
+                "margin": -0.003638678030321821,
+                "physical": 0.07687369967963485,
+                "editor": 0.07323502164931303,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.13679045101588458,
+                "physical": 0.08368445362861326,
+                "editor": -0.053105997387271314,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.12997969706690615,
+                "physical": 0.07687369967963485,
+                "editor": -0.053105997387271314,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 5,
+              "loss": 7,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 12,
+                "correct": 6
+              },
+              "editor": {
+                "total": 10,
+                "correct": 2
+              }
+            },
+            "balanced_accuracy": 0.35,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": -0.42045647336789965,
+                "physical": -0.031728670490989375,
+                "editor": -0.452185143858889,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": -0.1600529428704327,
+                "physical": -0.014050770866472318,
+                "editor": -0.17410371373690503,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": -0.43144192535138726,
+                "physical": -0.044626148677765064,
+                "editor": -0.4760680740291523,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": -0.4614544775229043,
+                "physical": -0.006819359699839888,
+                "editor": -0.4682738372227442,
+                "outcome": "loss"
+              },
+              "everett_living2/4-to-8": {
+                "margin": -0.2965656981104183,
+                "physical": 0.0004876525114678063,
+                "editor": -0.29607804559895046,
+                "outcome": "loss"
+              },
+              "everett_living2/8-to-0": {
+                "margin": -0.286292551214986,
+                "physical": -0.03963156904886536,
+                "editor": -0.32592412026385137,
+                "outcome": "loss"
+              },
+              "everett_living2/12-to-0": {
+                "margin": -0.23603490352285256,
+                "physical": -0.02500709458127799,
+                "editor": -0.26104199810413053,
+                "outcome": "loss"
+              },
+              "everett_living2/14-to-8": {
+                "margin": -0.35341845844625597,
+                "physical": 0.007979302733517983,
+                "editor": -0.345439155712738,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.09001567243533334,
+                "physical": 0.14763555544973725,
+                "editor": 0.2376512278850706,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.12100977336804979,
+                "physical": 0.1166414545170208,
+                "editor": 0.2376512278850706,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": 0.09716613157781301,
+                "physical": 0.18504415137827496,
+                "editor": 0.28221028295608797,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-14": {
+                "margin": 0.11058059890907149,
+                "physical": 0.17162968404701648,
+                "editor": 0.28221028295608797,
+                "outcome": "win"
+              }
+            },
+            "rankings": {
+              "win": 4,
+              "loss": 8,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "projected4": {
+          "reference": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 2
+              },
+              "editor": {
+                "total": 10,
+                "correct": 9
+              }
+            },
+            "balanced_accuracy": 0.6166666666666667,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": 0.5778917241282633,
+                "physical": -0.4935470496248447,
+                "editor": 0.08434467450341857,
+                "outcome": "win"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": 0.1267498163319536,
+                "physical": -0.09575540590896804,
+                "editor": 0.030994410422985542,
+                "outcome": "win"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.6455539053676922,
+                "physical": -0.4935470496248447,
+                "editor": 0.15200685574284753,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.6225831413735246,
+                "physical": -0.4935470496248447,
+                "editor": 0.12903609174867986,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": -0.008577392916329862,
+                "physical": 0.39738481371417683,
+                "editor": 0.38880742079784697,
+                "outcome": "loss"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.1029784329569417,
+                "physical": 0.2935793855281907,
+                "editor": 0.3965578184851324,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.07993124632352216,
+                "physical": 0.2935793855281907,
+                "editor": 0.37351063185171285,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": -0.004618652602110529,
+                "physical": 0.39738481371417683,
+                "editor": 0.3927661611120663,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.044316761652167136,
+                "physical": 0.3893274223237224,
+                "editor": 0.43364418397588955,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.039765757072504626,
+                "physical": 0.3938784269033849,
+                "editor": 0.43364418397588955,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.7522372327891234,
+                "physical": 0.3893274223237224,
+                "editor": -0.362909810465401,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.756788237368786,
+                "physical": 0.3938784269033849,
+                "editor": -0.362909810465401,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 8,
+              "loss": 4,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 12,
+                "correct": 10
+              },
+              "editor": {
+                "total": 10,
+                "correct": 0
+              }
+            },
+            "balanced_accuracy": 0.4166666666666667,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": 0.14525676747098767,
+                "physical": -0.3553089677440264,
+                "editor": -0.21005220027303875,
+                "outcome": "win"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": 0.40648088730565696,
+                "physical": -0.6149554420470127,
+                "editor": -0.20847455474135573,
+                "outcome": "win"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.17210556792389692,
+                "physical": -0.40850333727533983,
+                "editor": -0.2363977693514429,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.1230524305500234,
+                "physical": -0.3787199803526523,
+                "editor": -0.2556675498026289,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": -0.07258393498637378,
+                "physical": -0.159334814058986,
+                "editor": -0.23191874904535978,
+                "outcome": "loss"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.14767311895791954,
+                "physical": -0.37720244605869296,
+                "editor": -0.22952932710077342,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.029415122340652966,
+                "physical": -0.27108623026312834,
+                "editor": -0.24167110792247537,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": -0.10674742434416129,
+                "physical": -0.13156253758081488,
+                "editor": -0.23830996192497617,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.23551663640291964,
+                "physical": -0.4650925756396115,
+                "editor": -0.22957593923669184,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.18906165744163195,
+                "physical": -0.4186375966783238,
+                "editor": -0.22957593923669184,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.48652610840765065,
+                "physical": 0.1898195488416922,
+                "editor": -0.2967065595659584,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.476752551385486,
+                "physical": 0.1800459918195276,
+                "editor": -0.2967065595659584,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 8,
+              "loss": 4,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "grid13": {
+          "reference": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 2
+              },
+              "editor": {
+                "total": 10,
+                "correct": 5
+              }
+            },
+            "balanced_accuracy": 0.41666666666666663,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": 0.4051990915588332,
+                "physical": -0.613140797594302,
+                "editor": -0.20794170603546874,
+                "outcome": "win"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": 0.0922020719477876,
+                "physical": -0.22779756625796754,
+                "editor": -0.13559549431017995,
+                "outcome": "win"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.42570340157082764,
+                "physical": -0.613140797594302,
+                "editor": -0.18743739602347434,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.3963759778104001,
+                "physical": -0.613140797594302,
+                "editor": -0.21676481978390183,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": -0.013366572936495152,
+                "physical": 0.07816673023941192,
+                "editor": 0.06480015730291677,
+                "outcome": "loss"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.0053121682225723,
+                "physical": 0.07870890543175207,
+                "editor": 0.08402107365432437,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.014825854800366134,
+                "physical": 0.07870890543175207,
+                "editor": 0.09353476023211821,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": -0.017856660275261796,
+                "physical": 0.07816673023941192,
+                "editor": 0.06031006996415013,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.05031337601688262,
+                "physical": 0.05828721781633537,
+                "editor": 0.10860059383321799,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.053551580255563454,
+                "physical": 0.055049013577654536,
+                "editor": 0.10860059383321799,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.12699387896104053,
+                "physical": 0.05828721781633537,
+                "editor": -0.06870666114470517,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.12375567472235971,
+                "physical": 0.055049013577654536,
+                "editor": -0.06870666114470517,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 8,
+              "loss": 4,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 12,
+                "correct": 7
+              },
+              "editor": {
+                "total": 10,
+                "correct": 5
+              }
+            },
+            "balanced_accuracy": 0.5416666666666667,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": -0.013655622924728106,
+                "physical": -0.4337327138627922,
+                "editor": -0.4473883367875203,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": 0.23708904121386568,
+                "physical": -0.3787286164513138,
+                "editor": -0.1416395752374481,
+                "outcome": "win"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.3168135049526613,
+                "physical": -0.40559111448447205,
+                "editor": -0.08877760953181074,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.18948495963267992,
+                "physical": -0.4509355871971163,
+                "editor": -0.2614506275644364,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": -0.07227604260032583,
+                "physical": 0.5391999264693406,
+                "editor": 0.46692388386901473,
+                "outcome": "loss"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.08128767403192652,
+                "physical": 0.012959030568751499,
+                "editor": 0.09424670460067802,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.15335445294370592,
+                "physical": -0.031933101762441886,
+                "editor": 0.12142135118126403,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": -0.14017005560380041,
+                "physical": 0.4968069374019611,
+                "editor": 0.35663688179816067,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-4": {
+                "margin": 0.9559458898379928,
+                "physical": -0.5062560955027824,
+                "editor": 0.4496897943352104,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-14": {
+                "margin": 0.7152057632970349,
+                "physical": -0.2655159689618245,
+                "editor": 0.4496897943352104,
+                "outcome": "win"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.8977463472546616,
+                "physical": 0.3640824689134346,
+                "editor": -0.533663878341227,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.9643510410430075,
+                "physical": 0.43068716270178053,
+                "editor": -0.533663878341227,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 7,
+              "loss": 5,
+              "tie": 0
+            },
+            "passed": false
+          }
+        },
+        "grid_local": {
+          "reference": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 6,
+                "correct": 0
+              },
+              "editor": {
+                "total": 10,
+                "correct": 10
+              }
+            },
+            "balanced_accuracy": 0.5,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": 0.02837462595979312,
+                "physical": 0.34203327133515393,
+                "editor": 0.37040789729494705,
+                "outcome": "win"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": -0.14402786851102573,
+                "physical": 0.4059322786493813,
+                "editor": 0.2619044101383556,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.06370013913094796,
+                "physical": 0.34203327133515393,
+                "editor": 0.4057334104661019,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.14881907872757666,
+                "physical": 0.34203327133515393,
+                "editor": 0.4908523500627306,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": 0.04849296689248439,
+                "physical": 0.6444308273029409,
+                "editor": 0.6929237941954253,
+                "outcome": "win"
+              },
+              "everett_living2/8-to-0": {
+                "margin": 0.15159414471478666,
+                "physical": 0.4314021665032483,
+                "editor": 0.582996311218035,
+                "outcome": "win"
+              },
+              "everett_living2/12-to-0": {
+                "margin": 0.13562682978115942,
+                "physical": 0.4314021665032483,
+                "editor": 0.5670289962844077,
+                "outcome": "win"
+              },
+              "everett_living2/14-to-8": {
+                "margin": 0.05036257529168309,
+                "physical": 0.6444308273029409,
+                "editor": 0.694793402594624,
+                "outcome": "win"
+              },
+              "everett_living2/16-to-4": {
+                "margin": -0.09258342391823937,
+                "physical": 0.731139253146901,
+                "editor": 0.6385558292286616,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-14": {
+                "margin": -0.09696690105432437,
+                "physical": 0.735522730282986,
+                "editor": 0.6385558292286616,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.3288054992207386,
+                "physical": 0.731139253146901,
+                "editor": 0.4023337539261624,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.3331889763568236,
+                "physical": 0.735522730282986,
+                "editor": 0.4023337539261624,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 7,
+              "loss": 5,
+              "tie": 0
+            },
+            "passed": false
+          },
+          "known_anchor": {
+            "unique_train": 10,
+            "class_counts": {
+              "physical": {
+                "total": 12,
+                "correct": 8
+              },
+              "editor": {
+                "total": 10,
+                "correct": 1
+              }
+            },
+            "balanced_accuracy": 0.3833333333333333,
+            "directions": {
+              "14n_copyroom1/4-to-20": {
+                "margin": -0.13257416219466966,
+                "physical": -0.1720642701743898,
+                "editor": -0.30463843236905946,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/12-to-8": {
+                "margin": -0.6933379513904556,
+                "physical": 0.34600523155073715,
+                "editor": -0.3473327198397185,
+                "outcome": "loss"
+              },
+              "14n_copyroom1/14-to-20": {
+                "margin": 0.33760859524832576,
+                "physical": -0.12440861648876315,
+                "editor": 0.21319997875956262,
+                "outcome": "win"
+              },
+              "14n_copyroom1/16-to-20": {
+                "margin": 0.049261896145679496,
+                "physical": -0.1795916938665144,
+                "editor": -0.13032979772083492,
+                "outcome": "win"
+              },
+              "everett_living2/4-to-8": {
+                "margin": -0.14610139659756474,
+                "physical": 0.017268249333403173,
+                "editor": -0.12883314726416156,
+                "outcome": "loss"
+              },
+              "everett_living2/8-to-0": {
+                "margin": -0.16868662369952592,
+                "physical": -0.08875687285070362,
+                "editor": -0.2574434965502295,
+                "outcome": "loss"
+              },
+              "everett_living2/12-to-0": {
+                "margin": -0.20172033269055162,
+                "physical": -0.09351254984751783,
+                "editor": -0.29523288253806945,
+                "outcome": "loss"
+              },
+              "everett_living2/14-to-8": {
+                "margin": -0.1815257957288751,
+                "physical": -0.0046589817434615245,
+                "editor": -0.1861847774723366,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-4": {
+                "margin": -0.28849195191809196,
+                "physical": 0.2681481805209424,
+                "editor": -0.02034377139714955,
+                "outcome": "loss"
+              },
+              "everett_living2/16-to-14": {
+                "margin": -0.3369736826291527,
+                "physical": 0.3166299112320032,
+                "editor": -0.02034377139714955,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-4": {
+                "margin": -0.29880405015615064,
+                "physical": -0.12181279165686706,
+                "editor": -0.42061684181301773,
+                "outcome": "loss"
+              },
+              "everett_living2/20-to-14": {
+                "margin": -0.30704127053174113,
+                "physical": -0.11357557128127657,
+                "editor": -0.42061684181301773,
+                "outcome": "loss"
+              }
+            },
+            "rankings": {
+              "win": 2,
+              "loss": 10,
+              "tie": 0
+            },
+            "passed": false
+          }
+        }
+      }
+    }
+  },
+  "both_folds": {
+    "rgb4": {
+      "reference": false,
+      "known_anchor": false
+    },
+    "histogram": {
+      "reference": false,
+      "known_anchor": false
+    },
+    "projected4": {
+      "reference": false,
+      "known_anchor": false
+    },
+    "grid13": {
+      "reference": false,
+      "known_anchor": false
+    },
+    "grid_local": {
+      "reference": false,
+      "known_anchor": false
+    }
+  },
+  "full_result_sha256": "68aa3544be384b539b3c808e0e8e5c462f7b5fceeaae9b0deedc36c78efe29ee",
+  "verification": {
+    "arrays": 20,
+    "rankings": 360,
+    "readouts": 40
+  }
+}
