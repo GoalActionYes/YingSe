@@ -33,9 +33,9 @@ def check(path, expected):
     return value
 
 
-def render(cli, original, profile, output, env):
+def render(cli, original, profile, output, env, depth=8):
     process = subprocess.run(
-        [str(cli), "-o", str(output), "-q", "-p", str(profile), "-n", "-b8", "-c", str(original)],
+        [str(cli), "-o", str(output), "-q", "-p", str(profile), "-n", f"-b{depth}", "-c", str(original)],
         cwd=cli.parent, env=env, capture_output=True, timeout=120,
     )
     output.with_suffix(".log").write_bytes(process.stdout + b"\n" + process.stderr)

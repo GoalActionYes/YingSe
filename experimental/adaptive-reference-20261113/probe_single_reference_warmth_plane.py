@@ -118,7 +118,7 @@ def make_exports(out, original, target_weight, anonymous, mask, region):
     return outputs
 
 
-def score_exports(base, out, family, spec, saved):
+def score_exports(base, out, family, spec, saved, arms=ARMS):
     prepared, areas, roles, anonymous_predictions = saved
     original, _, anonymous, mask, region = prepared
     sources = {role: anonymous[roles[role]] for role in ROLES}
@@ -126,7 +126,7 @@ def score_exports(base, out, family, spec, saved):
     expected = finish_spatial(original, read_photo(base, spec["photos"]["on"], family), STRENGTH)
     ring = nearby_region(original.shape, spec["extent"])
     images, scores = {}, {}
-    for arm in ARMS:
+    for arm in arms:
         images[arm] = {}
         for role in ROLES:
             entry = outputs[role]["arms"].get(arm)
