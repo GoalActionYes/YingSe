@@ -1,5 +1,7 @@
 # Beyond RGB 相近灯档取件前筛查
 
+后续已补齐三份测光，完成筛查及唯一合格配对的取件、出片和双向比较。[续查结果](2026-11-24-beyond-rgb-near-white-match.md)
+
 现有调色工作台在匹配暖墙对照中漏掉局部暖色，并把部分现场光色带到肤色。以前在 Beyond RGB 的灯光实验有意选择较大的色度差。为补一个变化较小的实拍对照，这轮先用仪器记录筛光色和照度，再看相机标签，只对都过线的配对取原片。场景固定为四个白背景静物，灯档固定为 1、7、9。测光和相机标签均来自作者发布。[事前协议](../../experimental/adaptive-reference-20261113/beyond-rgb-near-white-protocol.md) · [原曝光实验](2026-11-20-beyond-rgb-batch-intake.md) · [作者论文](https://openaccess.thecvf.com/content/WACV2024/html/Glatt_Beyond_RGB_A_Real_World_Dataset_for_Multispectral_Imaging_in_Mobile_Devices_WACV_2024_paper.html) · [正式数据发布](https://zenodo.org/records/16848482)
 
 完整 ZIP 目录确认 12 档都有测光和 Oppo 标签。WHITE_red 的灯 7 缺 Oppo 色卡定位记录。成功校验了 9 份测光记录，均通过 HTTP 区间、成员名、长度及 CRC。6 份沿用本机缓存，新取 3 份共 6,144 字节。官方文件和 API 的区间尝试、直接连接及最后低并发重试后，仍缺 WHITE_blue 的灯 7、9 和 WHITE_red 的灯 9。流量统计只含成功区间。
