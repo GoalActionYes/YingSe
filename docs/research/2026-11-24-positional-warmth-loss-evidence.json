@@ -1,0 +1,364 @@
+{
+  "primary": {
+    "scope": "frozen training-family objective audit",
+    "formal_sha256": "4645a0a72445224930e2e4d9a9e768f4c3d65d49f1e5d4a2c609c6c7349b8d8d",
+    "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "families": {
+      "mit": {
+        "pooled": {
+          "parameters": {
+            "losses": {
+              "whole": 0.007637294940650463,
+              "region": 0.011440720409154892,
+              "edit_response": 0.010896739549934864,
+              "lighting": 0.0030852765776216984,
+              "total": 0.03306003147736192
+            },
+            "norms": {
+              "whole": 0.01610368724666806,
+              "region": 0.0077284852084559316,
+              "edit_response": 0.0020672677824363083,
+              "lighting": 0.0050510575905385125
+            },
+            "edit_gradient_zero": false,
+            "rms_change": 0.0001,
+            "derivative": {
+              "whole": 2.4234680670172217,
+              "region": -0.22720395506530075,
+              "edit_response": -0.5297371171434169,
+              "lighting": 0.1397766556997919,
+              "total": 1.8063036505082959
+            },
+            "forward_difference": {
+              "whole": 3.3262651413679123,
+              "region": 0.651869922876358,
+              "edit_response": -0.5405675619840622,
+              "lighting": 0.15062745660543442,
+              "total": 3.5881949588656425
+            },
+            "central_difference": {
+              "whole": 2.4128472432494164,
+              "region": -0.804639421403408,
+              "edit_response": -0.531771220266819,
+              "lighting": 0.13961689546704292,
+              "total": 1.2160534970462322
+            }
+          },
+          "output": {
+            "start": {
+              "whole": 0.007637295254350343,
+              "region": 0.011440720932002652,
+              "edit_response": 0.010896739533595871,
+              "lighting": 0.0030852763608587943,
+              "total": 0.03306003208080766
+            },
+            "corrected": {
+              "whole": 0.00760524512096102,
+              "region": 0.004531386912914745,
+              "edit_response": 0.0,
+              "lighting": 0.00308401702750416,
+              "total": 0.015220649061379925
+            },
+            "projection_start": [
+              0.08257612216602772,
+              0.07350638981969379
+            ],
+            "projection_corrected": [
+              1.0,
+              1.0
+            ],
+            "clipped_channels": 0,
+            "edited_channels": 456,
+            "right_derivative": {
+              "whole": -4.924052791466238e-05,
+              "region": -0.010615221175708268,
+              "edit_response": -0.010896739533595871,
+              "lighting": -1.6605144992354326e-06,
+              "total": -0.021562861751718038
+            }
+          }
+        },
+        "local": {
+          "parameters": {
+            "losses": {
+              "whole": 0.005861563142389059,
+              "region": 0.009847570210695267,
+              "edit_response": 0.009232287295162678,
+              "lighting": 0.0009230565628968179,
+              "total": 0.02586447721114382
+            },
+            "norms": {
+              "whole": 0.019005497854134655,
+              "region": 0.06602561200808006,
+              "edit_response": 0.011583237004239827,
+              "lighting": 0.006106112561702609
+            },
+            "edit_gradient_zero": false,
+            "rms_change": 0.0001,
+            "derivative": {
+              "whole": 0.235773230531972,
+              "region": -3.5462762086317037,
+              "edit_response": -2.968203069746241,
+              "lighting": 0.13025828685691684,
+              "total": -6.148447760989056
+            },
+            "forward_difference": {
+              "whole": 0.29162969440221786,
+              "region": -2.910839393734932,
+              "edit_response": -2.6585999876260757,
+              "lighting": 0.14509016182273626,
+              "total": -5.132719525136054
+            },
+            "central_difference": {
+              "whole": 0.22973399609327316,
+              "region": -3.3983727917075157,
+              "edit_response": -2.9050465673208237,
+              "lighting": 0.12636010069400072,
+              "total": -5.9473252622410655
+            }
+          },
+          "output": {
+            "start": {
+              "whole": 0.005861562999029957,
+              "region": 0.009847569818559445,
+              "edit_response": 0.009232286886687863,
+              "lighting": 0.000923056544593237,
+              "total": 0.0258644762488705
+            },
+            "corrected": {
+              "whole": 0.005826329696030067,
+              "region": 0.002252011445530674,
+              "edit_response": 0.0,
+              "lighting": 0.0009205588080855401,
+              "total": 0.008998899949646281
+            },
+            "projection_start": [
+              0.20552935503678618,
+              0.22952514583282976
+            ],
+            "projection_corrected": [
+              1.0,
+              1.0
+            ],
+            "clipped_channels": 0,
+            "edited_channels": 456,
+            "right_derivative": {
+              "whole": -4.211561190459179e-05,
+              "region": -0.00907923928216884,
+              "edit_response": -0.009232286886687863,
+              "lighting": -3.3056934019744704e-06,
+              "total": -0.01835694747416327
+            }
+          }
+        }
+      },
+      "beyond_rgb": {
+        "pooled": {
+          "parameters": {
+            "losses": {
+              "whole": 0.0072819082997739315,
+              "region": 0.012963371351361275,
+              "edit_response": 0.012866727076470852,
+              "lighting": 0.002648910041898489,
+              "total": 0.03576091676950455
+            },
+            "norms": {
+              "whole": 0.036114894791960644,
+              "region": 0.013232091926917678,
+              "edit_response": 0.00015377167024109995,
+              "lighting": 0.006769260909111409
+            },
+            "edit_gradient_zero": false,
+            "rms_change": 0.0001,
+            "derivative": {
+              "whole": -3.6387566669073426,
+              "region": -1.2994295569740715,
+              "edit_response": -0.039403971746634694,
+              "lighting": 0.7316600584248854,
+              "total": -4.245930137203163
+            },
+            "forward_difference": {
+              "whole": -0.9245937690138817,
+              "region": -0.16362406313419342,
+              "edit_response": -0.0402890145778656,
+              "lighting": 0.7816869765520096,
+              "total": -0.3468198701739311
+            },
+            "central_difference": {
+              "whole": -3.489051014184952,
+              "region": -1.7572799697518349,
+              "edit_response": -0.040424056351184845,
+              "lighting": 0.7318228017538786,
+              "total": -4.554932238534093
+            }
+          },
+          "output": {
+            "start": {
+              "whole": 0.007281908615840921,
+              "region": 0.0129633719837408,
+              "edit_response": 0.012866726685545326,
+              "lighting": 0.0026489098895202305,
+              "total": 0.03576091717464728
+            },
+            "corrected": {
+              "whole": 0.0072331378473209015,
+              "region": 0.005564665766777816,
+              "edit_response": 0.0,
+              "lighting": 0.0026489430964602434,
+              "total": 0.01544674671055896
+            },
+            "projection_start": [
+              0.0013114546817519794,
+              0.002170953054079657
+            ],
+            "projection_corrected": [
+              1.0,
+              1.0
+            ],
+            "clipped_channels": 0,
+            "edited_channels": 648,
+            "right_derivative": {
+              "whole": -8.323193355863623e-05,
+              "region": -0.012626592587265702,
+              "edit_response": -0.012866726685545326,
+              "lighting": 3.30529322430569e-08,
+              "total": -0.025576518153437422
+            }
+          }
+        },
+        "local": {
+          "parameters": {
+            "losses": {
+              "whole": 0.004558855202049017,
+              "region": 0.012874258682131767,
+              "edit_response": 0.012862582691013813,
+              "lighting": 0.0012969020754098892,
+              "total": 0.031592598650604486
+            },
+            "norms": {
+              "whole": 0.018078031511148965,
+              "region": 0.003048295741394631,
+              "edit_response": 0.00017854081201631748,
+              "lighting": 0.009187487293405449
+            },
+            "edit_gradient_zero": false,
+            "rms_change": 0.0001,
+            "derivative": {
+              "whole": -0.06403836251646611,
+              "region": -0.41097216932802,
+              "edit_response": -0.045751061305906414,
+              "lighting": 0.08537737968935612,
+              "total": -0.4353842134610364
+            },
+            "forward_difference": {
+              "whole": 6.4757512882351875,
+              "region": 1.6825925558805466,
+              "edit_response": -0.047069042921066284,
+              "lighting": 0.2455094363540411,
+              "total": 8.356784237548709
+            },
+            "central_difference": {
+              "whole": -0.23384112864732742,
+              "region": 0.1636054366827011,
+              "edit_response": -0.04719942808151245,
+              "lighting": 0.09622890502214432,
+              "total": -0.021206215023994446
+            }
+          },
+          "output": {
+            "start": {
+              "whole": 0.004558855185771484,
+              "region": 0.012874259337506912,
+              "edit_response": 0.01286258326590429,
+              "lighting": 0.0012969020855517024,
+              "total": 0.03159259987473439
+            },
+            "corrected": {
+              "whole": 0.0045163771900230704,
+              "region": 0.006430190056562424,
+              "edit_response": 0.0,
+              "lighting": 0.0012969535190687034,
+              "total": 0.012243520765654197
+            },
+            "projection_start": [
+              0.002510265791379295,
+              0.0013832760434055599
+            ],
+            "projection_corrected": [
+              1.0,
+              1.0
+            ],
+            "clipped_channels": 0,
+            "edited_channels": 648,
+            "right_derivative": {
+              "whole": -8.458263187094417e-05,
+              "region": -0.012831498523829159,
+              "edit_response": -0.01286258326590429,
+              "lighting": 5.1433517000987194e-08,
+              "total": -0.025778612988087393
+            }
+          }
+        }
+      }
+    }
+  },
+  "repeated_sign_check": {
+    "mit": {
+      "pooled": {
+        "derivative": 5.667764204186909e-06,
+        "forward_difference": 0.00013969838619232178,
+        "central_difference": 0.00016298145055770874
+      },
+      "local": {
+        "derivative": 6.7316017231533465e-06,
+        "forward_difference": 7.799826562404633e-05,
+        "central_difference": 3.434251993894577e-05
+      }
+    },
+    "beyond_rgb": {
+      "pooled": {
+        "derivative": 0.00012837253477826494,
+        "forward_difference": 0.00014901161193847656,
+        "central_difference": 0.00013969838619232178
+      },
+      "local": {
+        "derivative": 2.7003197606012552e-05,
+        "forward_difference": 0.0008987262845039368,
+        "central_difference": 0.000208965502679348
+      }
+    }
+  },
+  "maximum_derivative_repeat_abs_difference": 0.0008987262845039368,
+  "exact_output_space_repeats": 4,
+  "numpy_output_space_recomputations": 4,
+  "measured_seconds": [
+    4.14,
+    3.42
+  ],
+  "goal_and_blend_interval": {
+    "mit": {
+      "pooled": {
+        "zero_loss_at_goal": true,
+        "blend_interval_violations": 0,
+        "checked_channels": 456
+      },
+      "local": {
+        "zero_loss_at_goal": true,
+        "blend_interval_violations": 0,
+        "checked_channels": 456
+      }
+    },
+    "beyond_rgb": {
+      "pooled": {
+        "zero_loss_at_goal": true,
+        "blend_interval_violations": 0,
+        "checked_channels": 648
+      },
+      "local": {
+        "zero_loss_at_goal": true,
+        "blend_interval_violations": 0,
+        "checked_channels": 648
+      }
+    }
+  }
+}
