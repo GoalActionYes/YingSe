@@ -1,0 +1,1085 @@
+{
+  "report_sha256": "d9caefeff6a92f7bbde83347aa687dc8959e4f51f75421792a6f0bbc6e33da3a",
+  "indoor": "51dfe0f5e9e13517b6f43b3e0c11678ef5d8b970c47940e4d386cd8be8e79aef",
+  "outdoor": "915122b02c31e69b79f070130b7b9ce11ebe268d81d7fd6d0d0062077e1a730b",
+  "indoor_bounds": "766c8e5df51edfc4c11d4d1b1e4cce2b20ea2fbadb226057b69ba7eeecf9408d",
+  "stable": "c1d65198cfa49ea4655d4eceb03421f6cb6c688131576cee4ce9c36f77aa2ee1",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "strength": 0.8,
+  "script_sha": "2fbd94d9941f8b460090ddcfc3e92e564171d050c0bce7c3827f8e26902cf9e7",
+  "protocol_sha": "b885352ce191daa71cf7d45fcb74ad5f8d694e277dba877d5ba1f70e57443238",
+  "verification": {
+    "png": 156,
+    "panels": 16,
+    "directions": 72,
+    "regions": 240
+  },
+  "reports": {
+    "stable": {
+      "14n_copyroom1": {
+        "donor": "wall",
+        "target_input": "0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "eb86ade32f0082c71f1826fbd3312cb20dafed26deb76e0854d0e1e1de6f2258"
+        },
+        "comparison_sha256": "f2cf56c8f54ec66f1d1ef1924b33aa6833ebdf3cbebea688d99ae98ea1ed9c79",
+        "output_sha256": {
+          "time5-off": "4b9ca42a18a5652738f025384e4fdfff2ab429192609d1d98eaafe64feb1a450",
+          "time1-off": "53ff81870226b70e200c26bb8104c70cd9cb384fa6174d3baa65656b6276cdd2",
+          "time5-on": "a4197f02f293cdd0e2db6b7ba73098e24dc2cee548e3799220b7c22964937d1b",
+          "time2-off": "948eb4811bff858e96c19ff3cdf1dc572f3c452ed3f6243c3916c9197e937716",
+          "time0-off": "6f46ad6ade9e28dedac364f433622674b31e1cb808ef7da0484c8e9812b907de",
+          "time2-on": "b74df83919bfd667bdf8b8f48d7c26dfd9eca6f2bd4dd3ae7c95ac6ba39cd313"
+        },
+        "cases": {
+          "time5-to-time1": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time1-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.0,
+              "captured_spread_rgb8": 25.39691,
+              "off_matches_original_mae": 19.02397,
+              "on_matches_authored_mae": 16.88594,
+              "response_mae": 12.13975,
+              "original_matches_authored_mae": 12.13975
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 26.06229,
+              "gray_probe": 18.69848,
+              "outside": 18.84839
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time5-to-time2": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time2-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.0,
+              "captured_spread_rgb8": 30.9416,
+              "off_matches_original_mae": 19.02397,
+              "on_matches_authored_mae": 16.88594,
+              "response_mae": 12.13975,
+              "original_matches_authored_mae": 12.13975
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 30.15844,
+              "gray_probe": 22.17783,
+              "outside": 21.71553
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time2-to-time0": {
+            "passed": false,
+            "reference_states": {
+              "base": "time2-off",
+              "captured": "time0-off",
+              "edited": "time2-on"
+            },
+            "edit_area": {
+              "projection": -0.95493,
+              "captured_spread_rgb8": 12.76865,
+              "off_matches_original_mae": 38.15644,
+              "on_matches_authored_mae": 19.59544,
+              "response_mae": 23.9595,
+              "original_matches_authored_mae": 12.13975
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 10.65594,
+              "gray_probe": 8.26662,
+              "outside": 7.96686
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          }
+        }
+      },
+      "everett_living2": {
+        "donor": "pillar",
+        "target_input": "0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4"
+        },
+        "comparison_sha256": "9cf34fb55fad8372504e9ab95dff0dac5972ced83c8520af8d24cd0cebc27c0e",
+        "output_sha256": {
+          "time5-off": "e82d053c85c53f2e51e55a782e014ce26f6cb4b0fbd788053d79f3506ceaf2dd",
+          "time0-off": "66f87287c4356a88bb79c93e3152664264c58e1dfca30239a72b64fdc0503406",
+          "time5-on": "efeace6c58ed1b5f78e98f2695b05b38647547e828cd1c0288046d6c09ea05fc",
+          "time1-off": "3accfd93206dd8ddd98efb8c24341bd96c06aed26425d63d0723808bdcee5161",
+          "time2-off": "b9f4b289599e27c6221e8dd41cc083c6f27e5386f22829844eb3ef65c459c619",
+          "time1-on": "d895ba2df9192c596e33c7f9956a8c9dbbe3c40dcb4a779c4fec24b730b9e358"
+        },
+        "cases": {
+          "time5-to-time0": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time0-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.00032,
+              "captured_spread_rgb8": 33.33987,
+              "off_matches_original_mae": 15.31374,
+              "on_matches_authored_mae": 18.24204,
+              "response_mae": 8.46917,
+              "original_matches_authored_mae": 8.47203
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 32.62875,
+              "gray_probe": 20.91347,
+              "outside": 14.09293
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time5-to-time1": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time1-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.00032,
+              "captured_spread_rgb8": 3.01496,
+              "off_matches_original_mae": 15.31374,
+              "on_matches_authored_mae": 18.24204,
+              "response_mae": 8.46917,
+              "original_matches_authored_mae": 8.47203
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 3.02748,
+              "gray_probe": 7.84411,
+              "outside": 13.55986
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time1-to-time2": {
+            "passed": false,
+            "reference_states": {
+              "base": "time1-off",
+              "captured": "time2-off",
+              "edited": "time1-on"
+            },
+            "edit_area": {
+              "projection": -0.03415,
+              "captured_spread_rgb8": 30.1191,
+              "off_matches_original_mae": 14.99849,
+              "on_matches_authored_mae": 18.09238,
+              "response_mae": 9.14302,
+              "original_matches_authored_mae": 8.47203
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 29.04277,
+              "gray_probe": 12.51515,
+              "outside": 11.60228
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          }
+        }
+      },
+      "wall": {
+        "donor": "14n_copyroom1",
+        "target_input": "time0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "b5614d0fb376ec135065ab259d2f4dcec119213dc1ba825afd7658c3ee1b4d4c"
+        },
+        "comparison_sha256": "203bf9e0019202eebf212547e9a8665fddafa8e2daae44924429c10751a0fc92",
+        "output_sha256": {
+          "4-off": "c5ac5ce3d830f4cc7b73066e249684005cdc06b015733f2da539d279022bc2f6",
+          "20-off": "3d5596ab7b992b9ef897524949ca3adcdd922f023d88d929d0c28b2eb2959524",
+          "4-on": "c9b0bd0d2ee695d83b33885025dc1165f7f97549830fbe82905939040ff3ea6d",
+          "12-off": "f5290afdc487d8f98889261b7140449d8d0eb3f382313fa9f1653ff2ea1b1e91",
+          "8-off": "b4f7182cd4b3d9529db151dbf43796eeb0b8ca10479166d32b653dc31c0a60cc",
+          "12-on": "79b2ffa7465c06af12679634e7ce79802a350442b22694f0029a0910177839a0",
+          "14-off": "2fbce115111b0c31ee1284db9901324f73b48bd46008561cabaff22c97208a75",
+          "14-on": "9a080915e27505ca5c199f75ac1005c2d74bf87e0a47dff8cd0e30894f560a03",
+          "16-off": "ccdbe4ba69a09a8d29f57135331bb6c6c487dd0e78490071ee256adbf6792794",
+          "16-on": "2d689738825a961093ef0ded5d7907db0faf51230095902d1efa8660b376c595"
+        },
+        "cases": {
+          "4-to-20": {
+            "passed": false,
+            "reference_states": {
+              "base": "4-off",
+              "captured": "20-off",
+              "edited": "4-on"
+            },
+            "edit_area": {
+              "projection": -0.00658,
+              "captured_spread_rgb8": 31.50829,
+              "off_matches_original_mae": 20.3328,
+              "on_matches_authored_mae": 25.1533,
+              "response_mae": 5.7262,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 32.46438,
+              "outside": 26.66543
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "12-to-8": {
+            "passed": false,
+            "reference_states": {
+              "base": "12-off",
+              "captured": "8-off",
+              "edited": "12-on"
+            },
+            "edit_area": {
+              "projection": 0.1624,
+              "captured_spread_rgb8": 19.1193,
+              "off_matches_original_mae": 20.30668,
+              "on_matches_authored_mae": 24.12665,
+              "response_mae": 4.73378,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 19.87033,
+              "outside": 13.05303
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "14-to-20": {
+            "passed": false,
+            "reference_states": {
+              "base": "14-off",
+              "captured": "20-off",
+              "edited": "14-on"
+            },
+            "edit_area": {
+              "projection": -0.0083,
+              "captured_spread_rgb8": 30.75816,
+              "off_matches_original_mae": 18.68079,
+              "on_matches_authored_mae": 24.40749,
+              "response_mae": 5.73133,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 31.62837,
+              "outside": 26.17684
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "16-to-20": {
+            "passed": false,
+            "reference_states": {
+              "base": "16-off",
+              "captured": "20-off",
+              "edited": "16-on"
+            },
+            "edit_area": {
+              "projection": 0.00223,
+              "captured_spread_rgb8": 51.62179,
+              "off_matches_original_mae": 39.5398,
+              "on_matches_authored_mae": 45.20873,
+              "response_mae": 5.66894,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 52.60242,
+              "outside": 42.27264
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          }
+        }
+      },
+      "pillar": {
+        "donor": "everett_living2",
+        "target_input": "time0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "13e87fc5b739303b1955323c1f8f843faebbabcaa8176b557ef6f1f482ee39e3"
+        },
+        "comparison_sha256": "c601695aa8216cbc5bb8ec7c36d2a08297c6b768e9beec20d5af1be2c3cd108e",
+        "output_sha256": {
+          "4-off": "8987f33c811530668ea43f631f3310eeac8083228249360750df810e9149b5fd",
+          "8-off": "dbbba9e55ca0c2cae0672b89492fd535c2ed0ffcf35bc65b415aa0d6c3612526",
+          "4-on": "110bc4334518c0df51f1d6b7e626b8d42fc16f748a196c40b238e52c22a6e7f9",
+          "0-off": "487de88ab73813dfbd9481f6d1d7e0fb95bafb03a245492875bce8b101a1df29",
+          "8-on": "0ef7e1221f1168d980148949c4ae50cdb7ed6932dba95158a2992d852b2bd5ab",
+          "12-off": "3ea85269f37125184f1dc3809a32fe9eed4375539d8256ce598fc8015087ac6e",
+          "12-on": "d286b987ef2d62c74dd5d6d5dd6ef2e0d697a26d099fc9f139e77cebcedbcc43",
+          "14-off": "8309f85193aa077c8732cd20ee7b815c1e51a42a26cdb31bc9733fa498356d1e",
+          "14-on": "eb9f6ee3cb69893e64e4c7688182edcaf987bdf762d657e14c6965dadf575738",
+          "16-off": "70f59b87cf1acbe47a7a7c7d6d75c3b5e2a30c37ad62e9fe07a4d46fba28aee2",
+          "16-on": "2b156f834c67ab2dd20d998eb34c846b85e2edc4835e8c0dd42eb0161f9def4e",
+          "20-off": "d4fbcdaa71bf4061cd54d3c9aa6fa9244ee09bfd352a91805d34276919a2f225",
+          "20-on": "132ae269638f1ce4ed742df05387aa241fdbb59c2fe2ea07138b10af08ebd0da"
+        },
+        "cases": {
+          "4-to-8": {
+            "passed": false,
+            "reference_states": {
+              "base": "4-off",
+              "captured": "8-off",
+              "edited": "4-on"
+            },
+            "edit_area": {
+              "projection": -0.00026,
+              "captured_spread_rgb8": 0.83305,
+              "off_matches_original_mae": 59.3585,
+              "on_matches_authored_mae": 75.43052,
+              "response_mae": 16.07201,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 0.86576,
+              "outside": 0.82637
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "8-to-0": {
+            "passed": false,
+            "reference_states": {
+              "base": "8-off",
+              "captured": "0-off",
+              "edited": "8-on"
+            },
+            "edit_area": {
+              "projection": -0.0,
+              "captured_spread_rgb8": 1.08424,
+              "off_matches_original_mae": 59.27184,
+              "on_matches_authored_mae": 75.33993,
+              "response_mae": 16.06809,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 0.86343,
+              "outside": 0.84416
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "12-to-0": {
+            "passed": false,
+            "reference_states": {
+              "base": "12-off",
+              "captured": "0-off",
+              "edited": "12-on"
+            },
+            "edit_area": {
+              "projection": -0.00045,
+              "captured_spread_rgb8": 1.41034,
+              "off_matches_original_mae": 59.78816,
+              "on_matches_authored_mae": 75.86367,
+              "response_mae": 16.07551,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 1.42384,
+              "outside": 1.42447
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "14-to-8": {
+            "passed": false,
+            "reference_states": {
+              "base": "14-off",
+              "captured": "8-off",
+              "edited": "14-on"
+            },
+            "edit_area": {
+              "projection": 0.0,
+              "captured_spread_rgb8": 1.63729,
+              "off_matches_original_mae": 59.57052,
+              "on_matches_authored_mae": 75.63854,
+              "response_mae": 16.06802,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 1.50157,
+              "outside": 1.42581
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "16-to-4": {
+            "passed": false,
+            "reference_states": {
+              "base": "16-off",
+              "captured": "4-off",
+              "edited": "16-on"
+            },
+            "edit_area": {
+              "projection": -0.00061,
+              "captured_spread_rgb8": 1.03929,
+              "off_matches_original_mae": 59.07572,
+              "on_matches_authored_mae": 75.15316,
+              "response_mae": 16.07743,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 1.04631,
+              "outside": 1.23268
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "16-to-14": {
+            "passed": false,
+            "reference_states": {
+              "base": "16-off",
+              "captured": "14-off",
+              "edited": "16-on"
+            },
+            "edit_area": {
+              "projection": -0.00061,
+              "captured_spread_rgb8": 1.84353,
+              "off_matches_original_mae": 59.07572,
+              "on_matches_authored_mae": 75.15316,
+              "response_mae": 16.07743,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 1.68212,
+              "outside": 1.83093
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "20-to-4": {
+            "passed": false,
+            "reference_states": {
+              "base": "20-off",
+              "captured": "4-off",
+              "edited": "20-on"
+            },
+            "edit_area": {
+              "projection": -0.00056,
+              "captured_spread_rgb8": 62.88374,
+              "off_matches_original_mae": 17.1005,
+              "on_matches_authored_mae": 20.61326,
+              "response_mae": 16.07661,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 51.03965,
+              "outside": 42.66269
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "20-to-14": {
+            "passed": false,
+            "reference_states": {
+              "base": "20-off",
+              "captured": "14-off",
+              "edited": "20-on"
+            },
+            "edit_area": {
+              "projection": -0.00056,
+              "captured_spread_rgb8": 63.09576,
+              "off_matches_original_mae": 17.1005,
+              "on_matches_authored_mae": 20.61326,
+              "response_mae": 16.07661,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 51.22182,
+              "outside": 42.82192
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          }
+        }
+      }
+    },
+    "spatial13": {
+      "14n_copyroom1": {
+        "donor": "wall",
+        "target_input": "0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "eb86ade32f0082c71f1826fbd3312cb20dafed26deb76e0854d0e1e1de6f2258"
+        },
+        "comparison_sha256": "137683646f3d8e63f13f3799931060eeb7bf39d186c9ccd4e287794fc11097c9",
+        "output_sha256": {
+          "time5-off": "bd4f61a27e56d8be086691efd845222d5af63d7d1af3aef9d6ac0b6f149d108f",
+          "time1-off": "abc7719391690d2c30b6dd0a07b1be4e7f7201baa1f64f514e83ae766c383fe8",
+          "time5-on": "b2a3fb8488ec4617d73512015ed7816cab0999c86b468deff2e98bf94f557b6c",
+          "time2-off": "6e883d3f0ecf984958dda2d7ac9bbdab2e534173676a5e765dda0af13f20f303",
+          "time0-off": "10518a1bd90563cba72adccfd83e66a3285000fa082ad9c598675b402c44ec38",
+          "time2-on": "8701b9a3c72d7aa70e09b9ee604f63bda1118e4d7f4c4346fe494be654ba4ab7"
+        },
+        "cases": {
+          "time5-to-time1": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time1-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.0126,
+              "captured_spread_rgb8": 9.44141,
+              "off_matches_original_mae": 27.97249,
+              "on_matches_authored_mae": 24.23559,
+              "response_mae": 11.99316,
+              "original_matches_authored_mae": 12.13975
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 9.67618,
+              "gray_probe": 12.61301,
+              "outside": 11.07812
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time5-to-time2": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time2-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.0126,
+              "captured_spread_rgb8": 13.4033,
+              "off_matches_original_mae": 27.97249,
+              "on_matches_authored_mae": 24.23559,
+              "response_mae": 11.99316,
+              "original_matches_authored_mae": 12.13975
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 13.45834,
+              "gray_probe": 16.07265,
+              "outside": 14.59004
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time2-to-time0": {
+            "passed": false,
+            "reference_states": {
+              "base": "time2-off",
+              "captured": "time0-off",
+              "edited": "time2-on"
+            },
+            "edit_area": {
+              "projection": 0.01386,
+              "captured_spread_rgb8": 4.3606,
+              "off_matches_original_mae": 29.1978,
+              "on_matches_authored_mae": 25.60437,
+              "response_mae": 11.97265,
+              "original_matches_authored_mae": 12.13975
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 2.77414,
+              "gray_probe": 5.71415,
+              "outside": 4.88951
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          }
+        }
+      },
+      "everett_living2": {
+        "donor": "pillar",
+        "target_input": "0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4"
+        },
+        "comparison_sha256": "0b3665f9662cfd155e004f996651e7c73495a67671797149ffa52b88810119b9",
+        "output_sha256": {
+          "time5-off": "6d19f8670bb5f0ab7f8e4e23fe676c7567ddce30b3eca92802e5773a9f18bfd8",
+          "time0-off": "5dabfe1f71516330939d221133f31c7b083551f99b690591816eccad9b77f53a",
+          "time5-on": "3122303e02650ebce222b94853794e7dc559570b573f75ff536e44a6abfd3e5a",
+          "time1-off": "fcb0f2b23e314db4302bf3a97a067d93b37e9a1e8f34c9a0a6931e9b467b53c5",
+          "time2-off": "462ea802a502a3bf280223bae828aedd8cc9742c16cf86727d0f70c6e84eaed9",
+          "time1-on": "d7bcd858076230fa246c1da5bd085696636c441a0afa9657e9634ab702d78b31"
+        },
+        "cases": {
+          "time5-to-time0": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time0-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.00592,
+              "captured_spread_rgb8": 16.27394,
+              "off_matches_original_mae": 15.48569,
+              "on_matches_authored_mae": 17.98504,
+              "response_mae": 8.46858,
+              "original_matches_authored_mae": 8.47203
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 20.29145,
+              "gray_probe": 12.26734,
+              "outside": 9.50538
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time5-to-time1": {
+            "passed": false,
+            "reference_states": {
+              "base": "time5-off",
+              "captured": "time1-off",
+              "edited": "time5-on"
+            },
+            "edit_area": {
+              "projection": 0.00592,
+              "captured_spread_rgb8": 2.636,
+              "off_matches_original_mae": 15.48569,
+              "on_matches_authored_mae": 17.98504,
+              "response_mae": 8.46858,
+              "original_matches_authored_mae": 8.47203
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 5.39727,
+              "gray_probe": 1.58721,
+              "outside": 2.86013
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          },
+          "time1-to-time2": {
+            "passed": false,
+            "reference_states": {
+              "base": "time1-off",
+              "captured": "time2-off",
+              "edited": "time1-on"
+            },
+            "edit_area": {
+              "projection": 0.2171,
+              "captured_spread_rgb8": 13.85315,
+              "off_matches_original_mae": 16.42188,
+              "on_matches_authored_mae": 18.2937,
+              "response_mae": 6.63093,
+              "original_matches_authored_mae": 8.47203
+            },
+            "guard_capture_spread_rgb8": {
+              "wall_right": 14.33715,
+              "gray_probe": 13.7633,
+              "outside": 9.9407
+            },
+            "guard_joint_passed": {
+              "wall_right": false,
+              "gray_probe": false,
+              "outside": false
+            }
+          }
+        }
+      },
+      "wall": {
+        "donor": "14n_copyroom1",
+        "target_input": "time0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "b5614d0fb376ec135065ab259d2f4dcec119213dc1ba825afd7658c3ee1b4d4c"
+        },
+        "comparison_sha256": "4fc0ce7fb3c7c583a43945a951d60e668973a7650f889faa335d2fc4d689eb64",
+        "output_sha256": {
+          "4-off": "5429167f899e62329e809be05413b4a8e7d5dcd25e1918d1334f1a9a8b21777a",
+          "20-off": "dd5efbe4031dce81b5ce1846f2819a669c78924212de7b0032e02843728a9342",
+          "4-on": "ed2fd4eaf0be23adf26a0d41a4cda8a3ab7ec4b9b1ddc51502d05e7abb926e64",
+          "12-off": "3ca6cfd79850a36c470641c0edfc56fac97e8ae326985f62d8090119c04afe49",
+          "8-off": "77e8d378ee1c3544cb3550d70535a348a8a6424249cf380fbef0285e4c6d4e4d",
+          "12-on": "4060b28bdc3f61854f86e7c64317e8d74f7dc51c7d4db36b934c7fc6915f9da9",
+          "14-off": "8e2134697bd758db17394155cb98fb22b510f47d77b7a06b7efe6b6bc31b0830",
+          "14-on": "36a381e3d2244c5631522eadf07bcc3aa29c1fc9b592e8f9066273bcaef9d5cb",
+          "16-off": "51e54822076376f777ca7075169ed96bcd2703dbbae7a5e0e74bb09ec2e5ddd6",
+          "16-on": "a7020bf6ab2e76299e9b7032bbc065af4983a3b11a8adde87f0f7c2a3819630c"
+        },
+        "cases": {
+          "4-to-20": {
+            "passed": false,
+            "reference_states": {
+              "base": "4-off",
+              "captured": "20-off",
+              "edited": "4-on"
+            },
+            "edit_area": {
+              "projection": 0.04188,
+              "captured_spread_rgb8": 24.85147,
+              "off_matches_original_mae": 9.32045,
+              "on_matches_authored_mae": 14.76074,
+              "response_mae": 5.44029,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 25.9402,
+              "outside": 27.44316
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "12-to-8": {
+            "passed": false,
+            "reference_states": {
+              "base": "12-off",
+              "captured": "8-off",
+              "edited": "12-on"
+            },
+            "edit_area": {
+              "projection": 0.01812,
+              "captured_spread_rgb8": 2.72585,
+              "off_matches_original_mae": 7.68164,
+              "on_matches_authored_mae": 12.92522,
+              "response_mae": 5.57914,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 2.75105,
+              "outside": 5.05675
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "14-to-20": {
+            "passed": false,
+            "reference_states": {
+              "base": "14-off",
+              "captured": "20-off",
+              "edited": "14-on"
+            },
+            "edit_area": {
+              "projection": 0.20184,
+              "captured_spread_rgb8": 27.56827,
+              "off_matches_original_mae": 12.03725,
+              "on_matches_authored_mae": 16.53725,
+              "response_mae": 4.5,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 28.62621,
+              "outside": 30.91304
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "16-to-20": {
+            "passed": false,
+            "reference_states": {
+              "base": "16-off",
+              "captured": "20-off",
+              "edited": "16-on"
+            },
+            "edit_area": {
+              "projection": 0.0545,
+              "captured_spread_rgb8": 27.00566,
+              "off_matches_original_mae": 11.47464,
+              "on_matches_authored_mae": 16.83409,
+              "response_mae": 5.35945,
+              "original_matches_authored_mae": 5.68119
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 28.02464,
+              "outside": 31.04944
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          }
+        }
+      },
+      "pillar": {
+        "donor": "everett_living2",
+        "target_input": "time0-off",
+        "same_image": {
+          "exact": true,
+          "sha256": "13e87fc5b739303b1955323c1f8f843faebbabcaa8176b557ef6f1f482ee39e3"
+        },
+        "comparison_sha256": "a4120f0a2ba07f9a58741f91b7beb8c6516e15cdc62b6a0a22f9ea875a48e9e4",
+        "output_sha256": {
+          "4-off": "37c9aac8404167fc1791fe512bc1af47c4a093fd4a137a16a6e1f28ab1a432fc",
+          "8-off": "4982bd96cc7056880bba917d94c54e59e8eba0db4ca1e3fdf5e2896e5a53b33a",
+          "4-on": "ef30505ca67ace73dad885933d44ca1c49fca44963c570d45a1ea858d6ce4cb8",
+          "0-off": "99a880b47f69edf3ae02730a851dc81b3ba58ca51c85006b18261db76ab9be0e",
+          "8-on": "b99d7bc92a5291ea656aa59e221521cc59ee74cffbf5789367a165965b43ceac",
+          "12-off": "e06b66334adeda870faff84ce60b20cad27a17c86e10102bd7435b2560ea1d61",
+          "12-on": "b9bf742d5541d68eaf94f410d83ce7c3402594a80a442e92575891178da6120f",
+          "14-off": "2587d335a7de8afe7d77ffebe124460d9ab6c0ebecae090069f3c24e4680ae8f",
+          "14-on": "9fe02035a84fceacde374fb69f63a232403603ee6dbd536b2396d2811a1b1a90",
+          "16-off": "84bf7a1e3683b1420983696375c2c87ed82400a64a6f85a8ac65de46454eb2dc",
+          "16-on": "a12e51dc8dd11491ad3fcac5d064ad0883e6ba8aad36946c2a02d4f71d125ee2",
+          "20-off": "7edbbc3aaeb7991a30e37a1790d6059bd515d18c2b807af974a189e2e1e0f135",
+          "20-on": "5f4341869ef70bce86e8b41736095793d5bdbc7e2387aa2a7df968d48adea9cc"
+        },
+        "cases": {
+          "4-to-8": {
+            "passed": false,
+            "reference_states": {
+              "base": "4-off",
+              "captured": "8-off",
+              "edited": "4-on"
+            },
+            "edit_area": {
+              "projection": 0.06435,
+              "captured_spread_rgb8": 1.70364,
+              "off_matches_original_mae": 21.34271,
+              "on_matches_authored_mae": 35.95583,
+              "response_mae": 15.0184,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 0.7198,
+              "outside": 1.5507
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "8-to-0": {
+            "passed": false,
+            "reference_states": {
+              "base": "8-off",
+              "captured": "0-off",
+              "edited": "8-on"
+            },
+            "edit_area": {
+              "projection": 0.01146,
+              "captured_spread_rgb8": 11.54118,
+              "off_matches_original_mae": 20.94788,
+              "on_matches_authored_mae": 35.11269,
+              "response_mae": 15.87889,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 11.75202,
+              "outside": 9.0142
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "12-to-0": {
+            "passed": false,
+            "reference_states": {
+              "base": "12-off",
+              "captured": "0-off",
+              "edited": "12-on"
+            },
+            "edit_area": {
+              "projection": 0.07192,
+              "captured_spread_rgb8": 12.14289,
+              "off_matches_original_mae": 22.48592,
+              "on_matches_authored_mae": 34.73683,
+              "response_mae": 14.90132,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 10.44874,
+              "outside": 8.02176
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "14-to-8": {
+            "passed": false,
+            "reference_states": {
+              "base": "14-off",
+              "captured": "8-off",
+              "edited": "14-on"
+            },
+            "edit_area": {
+              "projection": 0.06376,
+              "captured_spread_rgb8": 1.41319,
+              "off_matches_original_mae": 21.75964,
+              "on_matches_authored_mae": 35.68071,
+              "response_mae": 15.03373,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 1.10672,
+              "outside": 1.88801
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "16-to-4": {
+            "passed": false,
+            "reference_states": {
+              "base": "16-off",
+              "captured": "4-off",
+              "edited": "16-on"
+            },
+            "edit_area": {
+              "projection": 0.00579,
+              "captured_spread_rgb8": 3.85982,
+              "off_matches_original_mae": 24.79725,
+              "on_matches_authored_mae": 40.77148,
+              "response_mae": 15.97422,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 3.2102,
+              "outside": 2.7234
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "16-to-14": {
+            "passed": false,
+            "reference_states": {
+              "base": "16-off",
+              "captured": "14-off",
+              "edited": "16-on"
+            },
+            "edit_area": {
+              "projection": 0.00579,
+              "captured_spread_rgb8": 4.15027,
+              "off_matches_original_mae": 24.79725,
+              "on_matches_authored_mae": 40.77148,
+              "response_mae": 15.97422,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 3.85944,
+              "outside": 3.64074
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "20-to-4": {
+            "passed": false,
+            "reference_states": {
+              "base": "20-off",
+              "captured": "4-off",
+              "edited": "20-on"
+            },
+            "edit_area": {
+              "projection": -0.00261,
+              "captured_spread_rgb8": 46.89337,
+              "off_matches_original_mae": 25.95594,
+              "on_matches_authored_mae": 16.84061,
+              "response_mae": 16.11169,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 35.58369,
+              "outside": 30.53175
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          },
+          "20-to-14": {
+            "passed": false,
+            "reference_states": {
+              "base": "20-off",
+              "captured": "14-off",
+              "edited": "20-on"
+            },
+            "edit_area": {
+              "projection": -0.00261,
+              "captured_spread_rgb8": 46.60292,
+              "off_matches_original_mae": 25.95594,
+              "on_matches_authored_mae": 16.84061,
+              "response_mae": 16.11169,
+              "original_matches_authored_mae": 16.06802
+            },
+            "guard_capture_spread_rgb8": {
+              "protect": 34.93444,
+              "outside": 29.61694
+            },
+            "guard_joint_passed": {
+              "protect": false,
+              "outside": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
