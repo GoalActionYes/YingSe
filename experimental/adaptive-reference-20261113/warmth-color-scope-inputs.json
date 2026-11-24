@@ -1,0 +1,278 @@
+{
+  "source_gray": {
+    "sources": {
+      "lion": {
+        "calibration": {
+          "samples": {
+            "gray128": {
+              "delta": [
+                12.0,
+                -3.0,
+                -13.0
+              ],
+              "outside_max": 0.0,
+              "orthogonal_residual_p95_rgb8": 0.12008281573498973,
+              "clipped_weight_fraction": 0.0,
+              "core_weight_p05": 0.8354037267080745,
+              "files": {
+                "off": "7661156de6fb75069927e3644180e6ee1464d57303dffb3e7cb23f1651be9c4c",
+                "on": "376ed08e9c0223fc6fd6f0069b358be8b0f3e358ed60d62cbbcee1d1f719f68a"
+              }
+            }
+          }
+        }
+      },
+      "bmug": {
+        "calibration": {
+          "samples": {
+            "gray128": {
+              "delta": [
+                12.0,
+                -3.0,
+                -13.0
+              ],
+              "outside_max": 0.0,
+              "orthogonal_residual_p95_rgb8": 0.1718426501035197,
+              "clipped_weight_fraction": 0.0,
+              "core_weight_p05": 0.8354037267080745,
+              "files": {
+                "off": "7661156de6fb75069927e3644180e6ee1464d57303dffb3e7cb23f1651be9c4c",
+                "on": "71ce156ba5fcb39f6415f2b1c881e576cf73f48fcb5657f4a0a25b38c609b447"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "target_gray": {
+    "cases": {
+      "mit": {
+        "calibration": {
+          "target": {
+            "samples": {
+              "gray128": {
+                "delta": [
+                  12.0,
+                  -3.0,
+                  -13.0
+                ],
+                "outside_max": 0.0,
+                "orthogonal_residual_p95_rgb8": 0.19668737060041405,
+                "clipped_weight_fraction": 0.0,
+                "core_weight_p05": 0.8354037267080745,
+                "files": {
+                  "off": "2d730fc759cb9f88574d26025dc5d5234d6a132ce0801d92ad77099fa7775714",
+                  "on": "88c3efadcf44c02cf657cd2d26beacec385551da03fc68a285381ae33a8da3fa"
+                }
+              }
+            }
+          }
+        }
+      },
+      "beyond_rgb": {
+        "calibration": {
+          "target": {
+            "samples": {
+              "gray128": {
+                "delta": [
+                  12.0,
+                  -3.0,
+                  -13.0
+                ],
+                "outside_max": 0.0,
+                "orthogonal_residual_p95_rgb8": 0.1718426501035196,
+                "clipped_weight_fraction": 0.0,
+                "core_weight_p05": 0.8354037267080745,
+                "files": {
+                  "off": "e17bbb435f32f47492e1beb15d178b3f07a5a6f0cd079ae395824f4714995088",
+                  "on": "78259329787ebbc5db98d83e0925d97c6e60afccdb54498ad281a146666be70c"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "reference_context": {
+    "lion-base": {
+      "passed": true,
+      "arms": {
+        "original": {
+          "files": {
+            "input": "295f586003b4458419efd87ae5e987a6f4ab04fc5708c5c0d5343bac9316fcd3",
+            "off": "bac822691bb744ef72430ea1c42c3de29cc91d9fb1a78622c086a43d560d40c1",
+            "on": "e8540fdc348fb3b3967f6280f8ca647b450743fd96d830e085b8e9b9ef815c4d"
+          }
+        },
+        "far_flat": {
+          "files": {
+            "input": "0b6846d92885c588f8b713df20d10bd976830238b626f95369c4625ea9705e98",
+            "off": "d2ad6e67e1cea8920eb6a98608ed45eacb1d4bac39493432bed0cfb097928cb6",
+            "on": "dff5dd9dfe5fdf5c88cde9147a6b5161a9ebb5c59c3df1b5b5b5bc3335a72789"
+          }
+        },
+        "near_flat": {
+          "files": {
+            "input": "cf63420c19d856bb6c1ba988b841b5103c1d4b90ac2d458f80b297dc81f26684",
+            "off": "4aa6a64e9a7052a87bd299dc4268fc643ceeef1d45b851686ab33e920cc467b2",
+            "on": "b6ea4231469a89e4373fd87c87e15bc383c400da1f6607fa354d0cf49798e466"
+          }
+        }
+      }
+    },
+    "lion-captured": {
+      "passed": true,
+      "arms": {
+        "original": {
+          "files": {
+            "input": "e3a606051dc46d8611b9e82cbe77e9d27234a6ab989cda221bb6b48c8c95434c",
+            "off": "0a3cbfbf4d2c3c924ba07c62426860c8db41c3091adfe1b59f197a456b01eb9f",
+            "on": "f5d5aab098ff17ee9be40753d2def02f93c5d971e818bef2298c00eafefc36c8"
+          }
+        },
+        "far_flat": {
+          "files": {
+            "input": "ba8c916091c2c3cd0282ed5fb4d26ba0e03b6b9b23bbf290006cdc438ad744d0",
+            "off": "2a0076ae43583847bbfe20c090729911a7020a1d11704b74239252f2069d84bf",
+            "on": "a4adb5015dd496aca662225fd4e3f4eb34e5184f84ec32afec92fdfb4282d507"
+          }
+        },
+        "near_flat": {
+          "files": {
+            "input": "5900bd0dd4b01bf8c07cf9180616d55bb93326c64381c5a3430633f656b2f3e0",
+            "off": "7eabc460eec273fc5031c3504db3571a4c59065414c4b5cc8d9613324de324ef",
+            "on": "65390473806327808e3e0419ac4228559af86ac46a92d249e93734d2d1912a46"
+          }
+        }
+      }
+    },
+    "bmug-base": {
+      "passed": true,
+      "arms": {
+        "original": {
+          "files": {
+            "input": "7d520643c7c7382175e4afe04de6827de5357da5273c598cff90123e501979cc",
+            "off": "cc152883ee5e2608a03bfafd94de17263f7e85bee8476dba9a46838b117c6369",
+            "on": "479c81936392380a39c25b1df2e1d3ce905d3262a869049298a0e269ff643623"
+          }
+        },
+        "far_flat": {
+          "files": {
+            "input": "a653783d20d6b4d188cbac08e039c8a4d696ba76654b101d652ea20692faeec3",
+            "off": "84ef87cd7137fe14b8d61e63fd8860732f5f196f42b010e5434c599c5b83c28c",
+            "on": "4f88db17b2cf0a0e91baa70b14ea65c21832a8cbfc1c54ddb402b11bcfb47756"
+          }
+        },
+        "near_flat": {
+          "files": {
+            "input": "28b6c90432c157c1f86130d9ac797778404ca7037b11a0514f8fee5af33e99a2",
+            "off": "8b390cebb318e7333af937d934da3b63d97eeab2a516df28ce0a37fdfc4aa82d",
+            "on": "8c0aa243269bd68fe7b446d91f045ac8cb1d2e3b6fc7b79255925590592f399b"
+          }
+        }
+      }
+    },
+    "bmug-captured": {
+      "passed": true,
+      "arms": {
+        "original": {
+          "files": {
+            "input": "77e94224f35d7694bc978507653b0f0e852a839b792fdefd57b7afe089ad709a",
+            "off": "1a313cd48dc6c7a84c8fac3ed6feb15dd2f5b834d84e5024173f9d64f6d17f6f",
+            "on": "272e945f07fa4a8722686e179a674f53016dac50fa00e14e7d13ba3e9a741561"
+          }
+        },
+        "far_flat": {
+          "files": {
+            "input": "6b2caf598b23a66a316fed28c5a6b0981125460fa4da7e979d7c8a220105f48d",
+            "off": "7f57eb7518bb49553e1311fca23c3db27744f110549a51bb59aeac076bd218bf",
+            "on": "4c49bf150ae7f32cb7f65443968181ff1ae95ec935804503b30f7169fad2e2d1"
+          }
+        },
+        "near_flat": {
+          "files": {
+            "input": "a5a7ddf54c230b6cb5972b242fbeba4129937741b45a3943c42bf1abb5cd8818",
+            "off": "b2ff156353fe5d7fa364f415c5992529c95a1473203fbdee0eb84120d10b187a",
+            "on": "efb57f87532e581a6320193258f1e874b8875dcfadceee3b4e738a4e514fa00b"
+          }
+        }
+      }
+    }
+  },
+  "known_offsets": {
+    "lion/mit": {
+      "base": {
+        "sha256": "75ecea7e189e1e705b9740fdc8fdd48e8393b5295a94ec73f21dd64671dd1db5",
+        "offset": [
+          0.0,
+          2.9408693892380438,
+          5.165146946105127
+        ]
+      },
+      "captured": {
+        "sha256": "6dd7c253eea804290683b06c7246db3891a7fedf4908c5e91a72c7452ac3dac2",
+        "offset": [
+          0.0,
+          2.8500803945405435,
+          5.026624959093384
+        ]
+      }
+    },
+    "lion/beyond_rgb": {
+      "base": {
+        "sha256": "9a1c7e217d4fbce0f7c69e8207e86056626d4ba384c0ffbae699ae07a91ed6b8",
+        "offset": [
+          0.0,
+          2.9408693892380438,
+          5.165146946105127
+        ]
+      },
+      "captured": {
+        "sha256": "61ccaa8611d5757266aab42c2e08ed308c9e48695361fffef82e7093eb38fd2c",
+        "offset": [
+          0.0,
+          2.8500803945405435,
+          5.026624959093384
+        ]
+      }
+    },
+    "bmug/mit": {
+      "base": {
+        "sha256": "9aa9027c9911949d92bea284b49d384aad6e026313fb34ac2c968120c9ff77c2",
+        "offset": [
+          0.0,
+          2.835343659468248,
+          4.681692995830477
+        ]
+      },
+      "captured": {
+        "sha256": "3351905415fb5d075f1e4ae8efb7af04c8cf2a79e557744fc10647ae422d0c3f",
+        "offset": [
+          0.0,
+          2.3607123053547285,
+          4.649969164036506
+        ]
+      }
+    },
+    "bmug/beyond_rgb": {
+      "base": {
+        "sha256": "efef696b57ff5a0966ff7a120243cf64a5bae105f85c2c47dbeed803aef49324",
+        "offset": [
+          0.0,
+          2.835343659468248,
+          4.681692995830477
+        ]
+      },
+      "captured": {
+        "sha256": "420107617504a22ac3cb0f9221c6bb27b68dfd82e24f30cfdc12c9802633f98f",
+        "offset": [
+          0.0,
+          2.3607123053547285,
+          4.649969164036506
+        ]
+      }
+    }
+  }
+}
