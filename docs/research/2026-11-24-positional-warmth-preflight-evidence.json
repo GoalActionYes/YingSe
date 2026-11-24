@@ -1,0 +1,147 @@
+{
+  "runs": [
+    {
+      "training_manifest": "bbdb9b4bce5f1f06afc2c06deed59f29c21e1ccf1da64a1c9c5a17159d3b794e",
+      "preflight": true,
+      "script_sha256": "c8060737c5f1cc93a161f49727c2c17fd43b8ef2cef9229a38e1bcbe3b1220cc",
+      "protocol_sha256": "5b961ec9256d8f4431771823633b053ccaf9fe0978351f0230d4282f31b6f0f4",
+      "total_wall_seconds": 9.094000000040978,
+      "folds": {
+        "mit": {
+          "held_out": "beyond_rgb",
+          "arms": {
+            "pooled": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.1131550744175911,
+              "final_loss": 0.10989327728748322,
+              "order_effect": 0.0,
+              "optimizer_seconds": 1.187000000034459,
+              "wall_seconds": 7.625,
+              "peak_cuda_bytes": 65091072,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            },
+            "local": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.1131550744175911,
+              "final_loss": 0.1098487451672554,
+              "order_effect": 0.000102996826171875,
+              "optimizer_seconds": 0.0779999999795109,
+              "wall_seconds": 0.2970000000204891,
+              "peak_cuda_bytes": 74746368,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            }
+          }
+        },
+        "beyond_rgb": {
+          "held_out": "mit",
+          "arms": {
+            "pooled": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.16578252613544464,
+              "final_loss": 0.16127261519432068,
+              "order_effect": 0.0,
+              "optimizer_seconds": 0.06300000002374873,
+              "wall_seconds": 0.28100000001722947,
+              "peak_cuda_bytes": 79980032,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            },
+            "local": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.16578252613544464,
+              "final_loss": 0.16110394895076752,
+              "order_effect": 9.441375732421875e-05,
+              "optimizer_seconds": 0.06300000002374873,
+              "wall_seconds": 0.25,
+              "peak_cuda_bytes": 79980032,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "training_manifest": "bbdb9b4bce5f1f06afc2c06deed59f29c21e1ccf1da64a1c9c5a17159d3b794e",
+      "preflight": true,
+      "script_sha256": "c8060737c5f1cc93a161f49727c2c17fd43b8ef2cef9229a38e1bcbe3b1220cc",
+      "protocol_sha256": "a64a7406fd073ff8cc51bcf25a6105328f318f1ce84bb92244ecdce04a775d16",
+      "total_wall_seconds": 6.110000000044238,
+      "folds": {
+        "mit": {
+          "held_out": "beyond_rgb",
+          "arms": {
+            "pooled": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.1131550744175911,
+              "final_loss": 0.10989327728748322,
+              "order_effect": 0.0,
+              "optimizer_seconds": 0.6719999999622814,
+              "wall_seconds": 4.219000000040978,
+              "peak_cuda_bytes": 65091072,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            },
+            "local": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.1131550744175911,
+              "final_loss": 0.1098487451672554,
+              "order_effect": 0.00010204315185546875,
+              "optimizer_seconds": 0.10999999998603016,
+              "wall_seconds": 0.42199999996228144,
+              "peak_cuda_bytes": 74746368,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            }
+          }
+        },
+        "beyond_rgb": {
+          "held_out": "mit",
+          "arms": {
+            "pooled": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.16578252613544464,
+              "final_loss": 0.16127261519432068,
+              "order_effect": 0.0,
+              "optimizer_seconds": 0.125,
+              "wall_seconds": 0.43700000003445894,
+              "peak_cuda_bytes": 79980032,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            },
+            "local": {
+              "steps": 2,
+              "sample_order_sha256": "49293309d25cafc914c11063c2d1cd286a4500d519b11b4fc98500efb85f6d9c",
+              "initial_grid_exact": true,
+              "first_loss": 0.16578252613544464,
+              "final_loss": 0.1611039638519287,
+              "order_effect": 9.5367431640625e-05,
+              "optimizer_seconds": 0.09399999998277053,
+              "wall_seconds": 0.375,
+              "peak_cuda_bytes": 79980032,
+              "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "local_order_effect_range": [
+    9.441375732421875e-05,
+    0.000102996826171875
+  ],
+  "peak_cuda_bytes": 79980032,
+  "tst100k_parent_cohort_sha256": "124d8c670536719fc6f243b2d273849b70a89a164d8f84dbedc924b1d258862d",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "consumed_product_candidate": false,
+  "processed_heldout_exports": 0
+}
