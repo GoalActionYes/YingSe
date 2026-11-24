@@ -1,0 +1,860 @@
+{
+  "two_source_summaries": {
+    "mit_copyroom": {
+      "stable": {
+        "wall_passed": 0,
+        "portrait_passed": 0,
+        "identity_passed": 5,
+        "wall_projection": [
+          0.044856371121683176,
+          0.08030198165332987
+        ],
+        "max_wall_capture_spread_rgb8": 14.063680926916222,
+        "max_cheek_base_mae_rgb8": 22.296507936507936,
+        "max_cheek_capture_absolute_mae_rgb8": 14.398412698412699
+      },
+      "spatial13": {
+        "wall_passed": 0,
+        "portrait_passed": 0,
+        "identity_passed": 5,
+        "wall_projection": [
+          0.06658084470720103,
+          0.055037116938610645
+        ],
+        "max_wall_capture_spread_rgb8": 4.394071914480078,
+        "max_cheek_base_mae_rgb8": 22.844104974539757,
+        "max_cheek_capture_absolute_mae_rgb8": 24.43223223223223
+      }
+    },
+    "beyond_rgb_white_blue": {
+      "stable": {
+        "wall_passed": 0,
+        "portrait_passed": 0,
+        "identity_passed": 5,
+        "wall_projection": [
+          0.010933872143540387,
+          0.011703351519514458
+        ],
+        "max_wall_capture_spread_rgb8": 22.237501349746246,
+        "max_cheek_base_mae_rgb8": 32.80380952380953,
+        "max_cheek_capture_absolute_mae_rgb8": 49.92476190476191
+      },
+      "spatial13": {
+        "wall_passed": 0,
+        "portrait_passed": 0,
+        "identity_passed": 5,
+        "wall_projection": [
+          0.0036333871300771553,
+          0.0008796031600900899
+        ],
+        "max_wall_capture_spread_rgb8": 7.1358288770053475,
+        "max_cheek_base_mae_rgb8": 20.16842929886408,
+        "max_cheek_capture_absolute_mae_rgb8": 23.664708186447317
+      }
+    }
+  },
+  "baseline_mit_results_sha256": "381c588e7918b30be335eea44089816bd98567d0cc52b79fa38ab0848da0adbe",
+  "repeat_files_sha256": {
+    "results.json": "ae0358d7661e868edf0f0a93abed6f13454b4b36cf73972db4ba40d423ac0987",
+    "stable/mit-everett_living2/base.png": "201271bcf72f86d9b71209a2dfb32b47a7b2d9e643109ca3a59806fc362cf8d0",
+    "stable/mit-everett_living2/captured.png": "805973ee48d971c0dabd3debb4fc12ff6ba9344877e419f4b221111c2c46a908",
+    "stable/mit-everett_living2/edited.png": "07637ee196ffd243ddd5575e2ee006a7a38d8a53e35183ff422f6d74a892000e",
+    "stable/mit-everett_living2/identical.png": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4",
+    "stable/mit-everett_living2/comparison.png": "a6d25303d7b6fb3475d806fb339360e39a826a3066a76f507bbc0aceebd0fcee",
+    "stable/wildrelight-wall/base.png": "fcd8abef54dd843c5ce6da5902fa9c985b413bbb4b4c5d4eb33fccf6dd384f89",
+    "stable/wildrelight-wall/captured.png": "e368d5280bff88fae8a080a520712d866567d0aae67f22fe7aa882c615cd2aa8",
+    "stable/wildrelight-wall/edited.png": "5b3422bb34f029ad1355dd5ed2b29148a238bdc1be55dead24d6e52d9d53fe97",
+    "stable/wildrelight-wall/identical.png": "b5614d0fb376ec135065ab259d2f4dcec119213dc1ba825afd7658c3ee1b4d4c",
+    "stable/wildrelight-wall/comparison.png": "1b962f937441d9f8db16cb0c08c3e49303d6604d1db22fed0cf17b703913be45",
+    "stable/gros-2/base.png": "85853c3dcf08311194eaf86896e40b1b928cfa8014fb79d6e3d069ccf2a1a541",
+    "stable/gros-2/captured.png": "205a97995a82cba2d053fa90cf1429f9204450390387b561e65b7b96b617e105",
+    "stable/gros-2/edited.png": "19682b4f6611ed34ea688f5d905ea32766d60e0d47516b6c4ddd8f8a3b530d17",
+    "stable/gros-2/identical.png": "d50f4d5b767d0f3ad5200cd3054852a4a926632f63856ce5ffd74f9b007f8e83",
+    "stable/gros-2/comparison.png": "2140d151a5df82334d20b970095f96215fc88db7dca01115fa061d6c105284a3",
+    "stable/gros-3/base.png": "338e52ffddf9d82bd60d3ed7af275ac0e0148d18ab600c6a9c1e5ad4f7b8ccf5",
+    "stable/gros-3/captured.png": "fcf9654a607264ca023a8151da66af96b7196c3aaba081d42edbfac63036dbaf",
+    "stable/gros-3/edited.png": "a899488288ebcff207ee99d2c9fa5fc57fb7f92a12816eeb2942f6cc7315c9a3",
+    "stable/gros-3/identical.png": "aaaf60dcdfab6a08de22f29f3394d8d6d08f3f318d41e700995aec068536b2c2",
+    "stable/gros-3/comparison.png": "ea84cc4ef4383d4e84afd55862cf20256fb3b0410df08499656b76995658effd",
+    "stable/gros-4/base.png": "a0cf16ad21c75654dad4865ce4aa123e4f65ac6f8113c16e95df134971a9bae2",
+    "stable/gros-4/captured.png": "29ffa7da24956c5217d902a799b5162c91d052c7361e5f13597f5897a91b1061",
+    "stable/gros-4/edited.png": "5507527b162546112019c49127d95bc652434de6c1daaf62620bc56a177af9dd",
+    "stable/gros-4/identical.png": "cc7bf0494ff3776fbd3cba3ccbb48bb42f28518d34aac14c0cd93a3b45529d3e",
+    "stable/gros-4/comparison.png": "063f21dfbd5b96566247458a23cdc16ed99265037204b8cb19060dfaad703934",
+    "spatial13/mit-everett_living2/base.png": "39d26953b4f178fb4551c4fe6bc80c4f62a9b98a973be7026ea3f192b011b52d",
+    "spatial13/mit-everett_living2/captured.png": "196293c2188f2ae9299b54dc38e9053dd6ae0ad37c11f4662919e15495e6869a",
+    "spatial13/mit-everett_living2/edited.png": "07073a55f34f4b63c5c1cc1096bba0e4d3f967f6cbaf52cf911ad76dbb3cde8e",
+    "spatial13/mit-everett_living2/identical.png": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4",
+    "spatial13/mit-everett_living2/comparison.png": "f2c54775f82aee4827a1f9636edb238eb8009bfa6895b75883d262de3112ff59",
+    "spatial13/wildrelight-wall/base.png": "e1f2e956669618982a205eeb853af7997e9da686bb59cfcf249bdb2aea080849",
+    "spatial13/wildrelight-wall/captured.png": "758e9e23e074d92f300a95ffdc1b1334ad84a170052795b7ed92f352390e85d0",
+    "spatial13/wildrelight-wall/edited.png": "5727593caae3638d0c9a8300c50a8faf37ada4318e1689f68c86e4c31c440af6",
+    "spatial13/wildrelight-wall/identical.png": "b5614d0fb376ec135065ab259d2f4dcec119213dc1ba825afd7658c3ee1b4d4c",
+    "spatial13/wildrelight-wall/comparison.png": "491930455c68d7b6200827cb9c3778f3219bf502e8f77c4416dcf68921c62252",
+    "spatial13/gros-2/base.png": "dc84bc1e0082078b299792535beb837bb88ec7845a8073e2cee7400c9a45d695",
+    "spatial13/gros-2/captured.png": "e645b8f86539665a77d878de67de97bd1da99f2dfc2fa2ef244c592d8b126d39",
+    "spatial13/gros-2/edited.png": "a93e4d50e3ef3c8f512637fa37969f426579785bfa5a6f70679eca2ca10a9561",
+    "spatial13/gros-2/identical.png": "d50f4d5b767d0f3ad5200cd3054852a4a926632f63856ce5ffd74f9b007f8e83",
+    "spatial13/gros-2/comparison.png": "9c62214fa3916bea42f2fd570ffd0d9c69fd133df2f1eb9183f3dfb03a63badf",
+    "spatial13/gros-3/base.png": "0d715725eae0774c07e2701566929d38437059affa4b9e6a5292c6759b0169fc",
+    "spatial13/gros-3/captured.png": "0dfb5814e1e8657a218369966f4410716bf84f634e0f4409d2e46d2d38d3e155",
+    "spatial13/gros-3/edited.png": "623bd3a67fce36fd2af43232b7d6bc35dba87c2d4df0d6c6cf54026add616511",
+    "spatial13/gros-3/identical.png": "aaaf60dcdfab6a08de22f29f3394d8d6d08f3f318d41e700995aec068536b2c2",
+    "spatial13/gros-3/comparison.png": "140a6fd9aba28ee82c5ab15cbc3604a4934db5809f863d3c0d2c0b5c6c77ba84",
+    "spatial13/gros-4/base.png": "93a417fbdd8e2cb4fb7e6a554ca7f1a1127d1e973cfdb4de1e9c5078de22c9e9",
+    "spatial13/gros-4/captured.png": "230cfdef301fd636c602897f5818379a5bc4e14149a62a0884c9d8d487e42d10",
+    "spatial13/gros-4/edited.png": "7fa80353c2d2f4b3c133e821a639eb9a7c0dedcc64df387895325aad500eedd5",
+    "spatial13/gros-4/identical.png": "cc7bf0494ff3776fbd3cba3ccbb48bb42f28518d34aac14c0cd93a3b45529d3e",
+    "spatial13/gros-4/comparison.png": "a8655fc1c1c3696c30460a507b5adb492719fba853d00dff95b0e80e93247b0d"
+  },
+  "independently_checked_regions": [
+    44,
+    44
+  ],
+  "targets_source": "0e040a54c3de7b6f3124664748cf592e7d3913705cc7c5610e074c081354c02c",
+  "donor_receipt": "4811df036d89f4457e7f8d5779c0b2335a7dbdda151b2b882fb7fe8c8c1814ef",
+  "donor": "beyond-rgb-near-white-v2/warm-verified-first",
+  "direction": {
+    "coverage": 0.9972170686456401,
+    "capture": [
+      14.0,
+      0.0,
+      -15.0
+    ],
+    "edit": [
+      8.0,
+      -3.0,
+      -15.0
+    ],
+    "cosine": 0.9514384994105816,
+    "ratio": 0.8413313733660335,
+    "checks": {
+      "valid_coverage": true,
+      "both_material_states": true,
+      "physical_signal": true,
+      "edited_signal": true,
+      "same_direction": true,
+      "comparable_amplitude": true
+    },
+    "passed": true
+  },
+  "reference": {
+    "base": [
+      "light-b",
+      "off"
+    ],
+    "captured": [
+      "light-a",
+      "off"
+    ],
+    "edited": [
+      "light-b",
+      "on"
+    ]
+  },
+  "script": "b646d998b35c559261b4a17be43badf9a5cbd45270305ffd3e76dbabcce44afa",
+  "protocol": "c2afa8839a62fa937b08cba9709cebdb6312bd3569413c9ec06600f6736e54d1",
+  "strength": 0.8,
+  "stable": "c1d65198cfa49ea4655d4eceb03421f6cb6c688131576cee4ce9c36f77aa2ee1",
+  "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+  "workbenches": {
+    "stable": {
+      "mit-everett_living2": {
+        "family": "mit",
+        "target": "everett_living2/0-off",
+        "wall_target": true,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4"
+        },
+        "outputs": {
+          "base": "201271bcf72f86d9b71209a2dfb32b47a7b2d9e643109ca3a59806fc362cf8d0",
+          "captured": "805973ee48d971c0dabd3debb4fc12ff6ba9344877e419f4b221111c2c46a908",
+          "edited": "07637ee196ffd243ddd5575e2ee006a7a38d8a53e35183ff422f6d74a892000e"
+        },
+        "measured": {
+          "wall_left": {
+            "projection": 0.010933872143540387,
+            "response_mae": 5.855145232696253,
+            "off_matches_original_mae": 22.091350826044703,
+            "on_matches_authored_mae": 20.660025915127957,
+            "original_matches_authored_mae": 5.910160889752727,
+            "passed": false,
+            "captured_spread_rgb8": 22.237501349746246,
+            "captured_edited_rgb8": 22.238203217795053,
+            "joint_passed": false
+          },
+          "wall_right": {
+            "projection": null,
+            "response_mae": 0.08664021164021164,
+            "off_matches_original_mae": 23.78960905349794,
+            "on_matches_authored_mae": 23.873162845385067,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 22.367210464432688,
+            "captured_edited_rgb8": 22.40049970605526,
+            "joint_passed": false
+          },
+          "gray_probe": {
+            "projection": null,
+            "response_mae": 0.06498316498316499,
+            "off_matches_original_mae": 24.554208754208755,
+            "on_matches_authored_mae": 24.618518518518517,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 16.583164983164984,
+            "captured_edited_rgb8": 16.615151515151513,
+            "joint_passed": false
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.02432537849627919,
+            "off_matches_original_mae": 14.451228380805748,
+            "on_matches_authored_mae": 14.471206825763408,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 10.872650243777265,
+            "captured_edited_rgb8": 10.872291506286887,
+            "joint_passed": false
+          }
+        },
+        "board_sha256": "a6d25303d7b6fb3475d806fb339360e39a826a3066a76f507bbc0aceebd0fcee"
+      },
+      "wildrelight-wall": {
+        "family": "wildrelight",
+        "target": "wall/time0-off",
+        "wall_target": true,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "b5614d0fb376ec135065ab259d2f4dcec119213dc1ba825afd7658c3ee1b4d4c"
+        },
+        "outputs": {
+          "base": "fcd8abef54dd843c5ce6da5902fa9c985b413bbb4b4c5d4eb33fccf6dd384f89",
+          "captured": "e368d5280bff88fae8a080a520712d866567d0aae67f22fe7aa882c615cd2aa8",
+          "edited": "5b3422bb34f029ad1355dd5ed2b29148a238bdc1be55dead24d6e52d9d53fe97"
+        },
+        "measured": {
+          "wall_left": {
+            "projection": 0.011703351519514458,
+            "response_mae": 7.628520499108735,
+            "off_matches_original_mae": 34.45909090909091,
+            "on_matches_authored_mae": 26.830570409982176,
+            "original_matches_authored_mae": 7.7174688057041,
+            "passed": false,
+            "captured_spread_rgb8": 6.395855614973262,
+            "captured_edited_rgb8": 6.435249554367202,
+            "joint_passed": false
+          },
+          "protect": {
+            "projection": null,
+            "response_mae": 0.05640522875816993,
+            "off_matches_original_mae": 34.53124183006536,
+            "on_matches_authored_mae": 34.58764705882353,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 6.205294117647059,
+            "captured_edited_rgb8": 6.221437908496732,
+            "joint_passed": false
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.04153179395612741,
+            "off_matches_original_mae": 31.068405638607516,
+            "on_matches_authored_mae": 31.108317272370307,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 7.655887538380357,
+            "captured_edited_rgb8": 7.647885184647632,
+            "joint_passed": false
+          }
+        },
+        "board_sha256": "1b962f937441d9f8db16cb0c08c3e49303d6604d1db22fed0cf17b703913be45"
+      },
+      "gros-2": {
+        "family": "gros",
+        "target": "2/cold-off",
+        "wall_target": false,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "d50f4d5b767d0f3ad5200cd3054852a4a926632f63856ce5ffd74f9b007f8e83"
+        },
+        "outputs": {
+          "base": "85853c3dcf08311194eaf86896e40b1b928cfa8014fb79d6e3d069ccf2a1a541",
+          "captured": "205a97995a82cba2d053fa90cf1429f9204450390387b561e65b7b96b617e105",
+          "edited": "19682b4f6611ed34ea688f5d905ea32766d60e0d47516b6c4ddd8f8a3b530d17"
+        },
+        "measured": {
+          "screen_left": {
+            "projection": null,
+            "response_mae": 0.01849152590814256,
+            "off_matches_original_mae": 17.429534996713254,
+            "on_matches_authored_mae": 17.434250764525995,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 28.37094515419132,
+            "captured_edited_rgb8": 28.352682271571066,
+            "joint_passed": false,
+            "captured_matches_original_mae": 37.068821629655034
+          },
+          "screen_right": {
+            "projection": null,
+            "response_mae": 0.019711129991503824,
+            "off_matches_original_mae": 18.40127442650807,
+            "on_matches_authored_mae": 18.417190597564428,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 26.635514018691588,
+            "captured_edited_rgb8": 26.63936561880487,
+            "joint_passed": false,
+            "captured_matches_original_mae": 39.76411781365052
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.033092042248051984,
+            "off_matches_original_mae": 17.6802251331038,
+            "on_matches_authored_mae": 17.699225862262377,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 22.2211766634739,
+            "captured_edited_rgb8": 22.197851678790546,
+            "joint_passed": false,
+            "captured_matches_original_mae": 35.15374891057668
+          },
+          "cheek_right": {
+            "projection": null,
+            "response_mae": 0.028593811202506855,
+            "off_matches_original_mae": 23.096161378770073,
+            "on_matches_authored_mae": 23.116921269095183,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 12.977673325499412,
+            "captured_edited_rgb8": 12.956913435174306,
+            "joint_passed": false,
+            "captured_matches_original_mae": 36.07383470426949
+          },
+          "cheek_left": {
+            "projection": null,
+            "response_mae": 0.02142142142142142,
+            "off_matches_original_mae": 19.816416416416416,
+            "on_matches_authored_mae": 19.834234234234234,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 9.544144144144145,
+            "captured_edited_rgb8": 9.531131131131131,
+            "joint_passed": false,
+            "captured_matches_original_mae": 28.821221221221222
+          }
+        },
+        "board_sha256": "2140d151a5df82334d20b970095f96215fc88db7dca01115fa061d6c105284a3"
+      },
+      "gros-3": {
+        "family": "gros",
+        "target": "3/cold-off",
+        "wall_target": false,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "aaaf60dcdfab6a08de22f29f3394d8d6d08f3f318d41e700995aec068536b2c2"
+        },
+        "outputs": {
+          "base": "338e52ffddf9d82bd60d3ed7af275ac0e0148d18ab600c6a9c1e5ad4f7b8ccf5",
+          "captured": "fcf9654a607264ca023a8151da66af96b7196c3aaba081d42edbfac63036dbaf",
+          "edited": "a899488288ebcff207ee99d2c9fa5fc57fb7f92a12816eeb2942f6cc7315c9a3"
+        },
+        "measured": {
+          "screen_left": {
+            "projection": null,
+            "response_mae": 0.0403555403126697,
+            "off_matches_original_mae": 18.4997856469176,
+            "on_matches_authored_mae": 18.516819571865444,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 34.34873817485495,
+            "captured_edited_rgb8": 34.36177084226471,
+            "joint_passed": false,
+            "captured_matches_original_mae": 46.148303752607966
+          },
+          "screen_right": {
+            "projection": null,
+            "response_mae": 0.0324553950722175,
+            "off_matches_original_mae": 15.604899461908808,
+            "on_matches_authored_mae": 15.637354856981025,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 36.33545737751345,
+            "captured_edited_rgb8": 36.36213537241574,
+            "joint_passed": false,
+            "captured_matches_original_mae": 44.68898329085245
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.02521396517439673,
+            "off_matches_original_mae": 21.815079114490963,
+            "on_matches_authored_mae": 21.824147722183408,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 26.466567801544223,
+            "captured_edited_rgb8": 26.465194550438007,
+            "joint_passed": false,
+            "captured_matches_original_mae": 42.10714381684312
+          },
+          "cheek_right": {
+            "projection": null,
+            "response_mae": 0.024444444444444446,
+            "off_matches_original_mae": 32.80380952380953,
+            "on_matches_authored_mae": 32.813968253968255,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 17.121269841269843,
+            "captured_edited_rgb8": 17.11111111111111,
+            "joint_passed": false,
+            "captured_matches_original_mae": 49.92476190476191
+          },
+          "cheek_left": {
+            "projection": null,
+            "response_mae": 0.025238095238095237,
+            "off_matches_original_mae": 30.665079365079364,
+            "on_matches_authored_mae": 30.67952380952381,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 14.215396825396825,
+            "captured_edited_rgb8": 14.200952380952382,
+            "joint_passed": false,
+            "captured_matches_original_mae": 44.88047619047619
+          }
+        },
+        "board_sha256": "ea84cc4ef4383d4e84afd55862cf20256fb3b0410df08499656b76995658effd"
+      },
+      "gros-4": {
+        "family": "gros",
+        "target": "4/cold-off",
+        "wall_target": false,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "cc7bf0494ff3776fbd3cba3ccbb48bb42f28518d34aac14c0cd93a3b45529d3e"
+        },
+        "outputs": {
+          "base": "a0cf16ad21c75654dad4865ce4aa123e4f65ac6f8113c16e95df134971a9bae2",
+          "captured": "29ffa7da24956c5217d902a799b5162c91d052c7361e5f13597f5897a91b1061",
+          "edited": "5507527b162546112019c49127d95bc652434de6c1daaf62620bc56a177af9dd"
+        },
+        "measured": {
+          "screen_left": {
+            "projection": null,
+            "response_mae": 0.001743405070164909,
+            "off_matches_original_mae": 16.37005916145074,
+            "on_matches_authored_mae": 16.371802566520905,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 26.466946754694334,
+            "captured_edited_rgb8": 26.4686901597645,
+            "joint_passed": false,
+            "captured_matches_original_mae": 37.8918517248278
+          },
+          "screen_right": {
+            "projection": null,
+            "response_mae": 0.00019824412347776833,
+            "off_matches_original_mae": 17.835598980458794,
+            "on_matches_authored_mae": 17.835797224582272,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 25.980288870008497,
+            "captured_edited_rgb8": 25.980487114131975,
+            "joint_passed": false,
+            "captured_matches_original_mae": 39.519201359388276
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.0027858630884897836,
+            "off_matches_original_mae": 19.466347098609813,
+            "on_matches_authored_mae": 19.468303249259165,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 22.07058434262085,
+            "captured_edited_rgb8": 22.07012077858603,
+            "joint_passed": false,
+            "captured_matches_original_mae": 38.216368513252725
+          },
+          "cheek_right": {
+            "projection": null,
+            "response_mae": 0.04286365709074327,
+            "off_matches_original_mae": 22.099559203526372,
+            "on_matches_authored_mae": 22.121447028423773,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 13.191366469068248,
+            "captured_edited_rgb8": 13.169478644170846,
+            "joint_passed": false,
+            "captured_matches_original_mae": 35.28210974312206
+          },
+          "cheek_left": {
+            "projection": null,
+            "response_mae": 0.03070375436996504,
+            "off_matches_original_mae": 16.85484116127071,
+            "on_matches_authored_mae": 16.870649034807723,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 6.285605715154278,
+            "captured_edited_rgb8": 6.2749658002735975,
+            "joint_passed": false,
+            "captured_matches_original_mae": 22.95652834777322
+          }
+        },
+        "board_sha256": "063f21dfbd5b96566247458a23cdc16ed99265037204b8cb19060dfaad703934"
+      }
+    },
+    "spatial13": {
+      "mit-everett_living2": {
+        "family": "mit",
+        "target": "everett_living2/0-off",
+        "wall_target": true,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4"
+        },
+        "outputs": {
+          "base": "39d26953b4f178fb4551c4fe6bc80c4f62a9b98a973be7026ea3f192b011b52d",
+          "captured": "196293c2188f2ae9299b54dc38e9053dd6ae0ad37c11f4662919e15495e6869a",
+          "edited": "07073a55f34f4b63c5c1cc1096bba0e4d3f967f6cbaf52cf911ad76dbb3cde8e"
+        },
+        "measured": {
+          "wall_left": {
+            "projection": 0.0036333871300771553,
+            "response_mae": 5.889212827988338,
+            "off_matches_original_mae": 11.39337004643127,
+            "on_matches_authored_mae": 12.192959723571969,
+            "original_matches_authored_mae": 5.910160889752727,
+            "passed": false,
+            "captured_spread_rgb8": 4.513821401576504,
+            "captured_edited_rgb8": 4.505075045891372,
+            "joint_passed": false
+          },
+          "wall_right": {
+            "projection": null,
+            "response_mae": 0.03115814226925338,
+            "off_matches_original_mae": 13.149470899470899,
+            "on_matches_authored_mae": 13.118312757201647,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 5.232583774250441,
+            "captured_edited_rgb8": 5.201425631981188,
+            "joint_passed": false
+          },
+          "gray_probe": {
+            "projection": null,
+            "response_mae": 0.02457912457912458,
+            "off_matches_original_mae": 17.661279461279463,
+            "on_matches_authored_mae": 17.661616161616163,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.578114478114478,
+            "captured_edited_rgb8": 3.5824915824915826,
+            "joint_passed": false
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.02773133179368745,
+            "off_matches_original_mae": 8.962933025404157,
+            "on_matches_authored_mae": 8.943783679753656,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.2772040030792917,
+            "captured_edited_rgb8": 3.2970107775211703,
+            "joint_passed": false
+          }
+        },
+        "board_sha256": "f2c54775f82aee4827a1f9636edb238eb8009bfa6895b75883d262de3112ff59"
+      },
+      "wildrelight-wall": {
+        "family": "wildrelight",
+        "target": "wall/time0-off",
+        "wall_target": true,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "b5614d0fb376ec135065ab259d2f4dcec119213dc1ba825afd7658c3ee1b4d4c"
+        },
+        "outputs": {
+          "base": "e1f2e956669618982a205eeb853af7997e9da686bb59cfcf249bdb2aea080849",
+          "captured": "758e9e23e074d92f300a95ffdc1b1334ad84a170052795b7ed92f352390e85d0",
+          "edited": "5727593caae3638d0c9a8300c50a8faf37ada4318e1689f68c86e4c31c440af6"
+        },
+        "measured": {
+          "wall_left": {
+            "projection": 0.0008796031600900899,
+            "response_mae": 7.708199643493761,
+            "off_matches_original_mae": 16.03101604278075,
+            "on_matches_authored_mae": 10.424242424242424,
+            "original_matches_authored_mae": 7.7174688057041,
+            "passed": false,
+            "captured_spread_rgb8": 7.1358288770053475,
+            "captured_edited_rgb8": 7.134402852049911,
+            "joint_passed": false
+          },
+          "protect": {
+            "projection": null,
+            "response_mae": 0.018300653594771243,
+            "off_matches_original_mae": 15.76954248366013,
+            "on_matches_authored_mae": 15.787843137254901,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 7.111307189542484,
+            "captured_edited_rgb8": 7.10843137254902,
+            "joint_passed": false
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.03956172416547686,
+            "off_matches_original_mae": 17.359326778435218,
+            "on_matches_authored_mae": 17.38009464435796,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 7.531589748436376,
+            "captured_edited_rgb8": 7.5322608772942425,
+            "joint_passed": false
+          }
+        },
+        "board_sha256": "491930455c68d7b6200827cb9c3778f3219bf502e8f77c4416dcf68921c62252"
+      },
+      "gros-2": {
+        "family": "gros",
+        "target": "2/cold-off",
+        "wall_target": false,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "d50f4d5b767d0f3ad5200cd3054852a4a926632f63856ce5ffd74f9b007f8e83"
+        },
+        "outputs": {
+          "base": "dc84bc1e0082078b299792535beb837bb88ec7845a8073e2cee7400c9a45d695",
+          "captured": "e645b8f86539665a77d878de67de97bd1da99f2dfc2fa2ef244c592d8b126d39",
+          "edited": "a93e4d50e3ef3c8f512637fa37969f426579785bfa5a6f70679eca2ca10a9561"
+        },
+        "measured": {
+          "screen_left": {
+            "projection": null,
+            "response_mae": 0.03561119208894224,
+            "off_matches_original_mae": 15.50267226842722,
+            "on_matches_authored_mae": 15.530852553659722,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.8450941724542,
+            "captured_edited_rgb8": 3.813198433793478,
+            "joint_passed": false,
+            "captured_matches_original_mae": 19.28271742547658
+          },
+          "screen_right": {
+            "projection": null,
+            "response_mae": 0.04307561597281223,
+            "off_matches_original_mae": 15.217870291702068,
+            "on_matches_authored_mae": 15.253186066270178,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 4.325913338997451,
+            "captured_edited_rgb8": 4.282837723024639,
+            "joint_passed": false,
+            "captured_matches_original_mae": 18.88363069951855
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.03597469949174627,
+            "off_matches_original_mae": 13.578022664319553,
+            "on_matches_authored_mae": 13.600310539577347,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.885002200419374,
+            "captured_edited_rgb8": 3.8522321313003185,
+            "joint_passed": false,
+            "captured_matches_original_mae": 16.896059847092427
+          },
+          "cheek_right": {
+            "projection": null,
+            "response_mae": 0.03760282021151586,
+            "off_matches_original_mae": 20.16842929886408,
+            "on_matches_authored_mae": 20.137093615354484,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.5628672150411282,
+            "captured_edited_rgb8": 3.571484528006267,
+            "joint_passed": false,
+            "captured_matches_original_mae": 23.664708186447317
+          },
+          "cheek_left": {
+            "projection": null,
+            "response_mae": 0.038238238238238235,
+            "off_matches_original_mae": 17.394594594594594,
+            "on_matches_authored_mae": 17.360760760760762,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.152952952952953,
+            "captured_edited_rgb8": 3.177977977977978,
+            "joint_passed": false,
+            "captured_matches_original_mae": 20.507907907907907
+          }
+        },
+        "board_sha256": "9c62214fa3916bea42f2fd570ffd0d9c69fd133df2f1eb9183f3dfb03a63badf"
+      },
+      "gros-3": {
+        "family": "gros",
+        "target": "3/cold-off",
+        "wall_target": false,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "aaaf60dcdfab6a08de22f29f3394d8d6d08f3f318d41e700995aec068536b2c2"
+        },
+        "outputs": {
+          "base": "0d715725eae0774c07e2701566929d38437059affa4b9e6a5292c6759b0169fc",
+          "captured": "0dfb5814e1e8657a218369966f4410716bf84f634e0f4409d2e46d2d38d3e155",
+          "edited": "623bd3a67fce36fd2af43232b7d6bc35dba87c2d4df0d6c6cf54026add616511"
+        },
+        "measured": {
+          "screen_left": {
+            "projection": null,
+            "response_mae": 0.022006916459458688,
+            "off_matches_original_mae": 16.044271056617795,
+            "on_matches_authored_mae": 16.022264140158335,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 5.109262911200663,
+            "captured_edited_rgb8": 5.109777358598417,
+            "joint_passed": false,
+            "captured_matches_original_mae": 19.931206950755953
+          },
+          "screen_right": {
+            "projection": null,
+            "response_mae": 0.021551968280940244,
+            "off_matches_original_mae": 21.038799207023505,
+            "on_matches_authored_mae": 21.027159444916453,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 7.207759841404701,
+            "captured_edited_rgb8": 7.219399603511753,
+            "joint_passed": false,
+            "captured_matches_original_mae": 28.246559048428207
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.02545468999122194,
+            "off_matches_original_mae": 14.66558396481611,
+            "on_matches_authored_mae": 14.657191625911395,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 5.62056170616793,
+            "captured_edited_rgb8": 5.620607052005518,
+            "joint_passed": false,
+            "captured_matches_original_mae": 19.426310214793716
+          },
+          "cheek_right": {
+            "projection": null,
+            "response_mae": 0.026825396825396825,
+            "off_matches_original_mae": 11.887936507936509,
+            "on_matches_authored_mae": 11.865873015873015,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 4.780952380952381,
+            "captured_edited_rgb8": 4.787142857142857,
+            "joint_passed": false,
+            "captured_matches_original_mae": 16.263174603174605
+          },
+          "cheek_left": {
+            "projection": null,
+            "response_mae": 0.025873015873015874,
+            "off_matches_original_mae": 10.50095238095238,
+            "on_matches_authored_mae": 10.479206349206349,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 4.001587301587302,
+            "captured_edited_rgb8": 4.01,
+            "joint_passed": false,
+            "captured_matches_original_mae": 14.168253968253968
+          }
+        },
+        "board_sha256": "140a6fd9aba28ee82c5ab15cbc3604a4934db5809f863d3c0d2c0b5c6c77ba84"
+      },
+      "gros-4": {
+        "family": "gros",
+        "target": "4/cold-off",
+        "wall_target": false,
+        "passed": false,
+        "identical": {
+          "exact": true,
+          "sha256": "cc7bf0494ff3776fbd3cba3ccbb48bb42f28518d34aac14c0cd93a3b45529d3e"
+        },
+        "outputs": {
+          "base": "93a417fbdd8e2cb4fb7e6a554ca7f1a1127d1e973cfdb4de1e9c5078de22c9e9",
+          "captured": "230cfdef301fd636c602897f5818379a5bc4e14149a62a0884c9d8d487e42d10",
+          "edited": "7fa80353c2d2f4b3c133e821a639eb9a7c0dedcc64df387895325aad500eedd5"
+        },
+        "measured": {
+          "screen_left": {
+            "projection": null,
+            "response_mae": 0.04707193689445254,
+            "off_matches_original_mae": 14.323644574008974,
+            "on_matches_authored_mae": 14.345965874989282,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 5.522021206664951,
+            "captured_edited_rgb8": 5.474949269770499,
+            "joint_passed": false,
+            "captured_matches_original_mae": 18.974477692989225
+          },
+          "screen_right": {
+            "projection": null,
+            "response_mae": 0.037892948173322005,
+            "off_matches_original_mae": 14.115321438685925,
+            "on_matches_authored_mae": 14.14052676295667,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 5.692466723307845,
+            "captured_edited_rgb8": 5.654573775134523,
+            "joint_passed": false,
+            "captured_matches_original_mae": 18.497337864627585
+          },
+          "outside": {
+            "projection": null,
+            "response_mae": 0.037524052982905794,
+            "off_matches_original_mae": 13.712813122669234,
+            "on_matches_authored_mae": 13.725055020236137,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 5.3440725668066875,
+            "captured_edited_rgb8": 5.3119354862187675,
+            "joint_passed": false,
+            "captured_matches_original_mae": 18.11661882663433
+          },
+          "cheek_right": {
+            "projection": null,
+            "response_mae": 0.04377564979480164,
+            "off_matches_original_mae": 18.582307341541267,
+            "on_matches_authored_mae": 18.55221158230734,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 3.4125246998024017,
+            "captured_edited_rgb8": 3.4192126462988295,
+            "joint_passed": false,
+            "captured_matches_original_mae": 21.87110503115975
+          },
+          "cheek_left": {
+            "projection": null,
+            "response_mae": 0.020823833409332724,
+            "off_matches_original_mae": 10.740690074479405,
+            "on_matches_authored_mae": 10.728074175406597,
+            "original_matches_authored_mae": 0.0,
+            "passed": false,
+            "captured_spread_rgb8": 2.8040735674114607,
+            "captured_edited_rgb8": 2.8160814713482294,
+            "joint_passed": false,
+            "captured_matches_original_mae": 13.51922784617723
+          }
+        },
+        "board_sha256": "a8655fc1c1c3696c30460a507b5adb492719fba853d00dff95b0e80e93247b0d"
+      }
+    }
+  }
+}
