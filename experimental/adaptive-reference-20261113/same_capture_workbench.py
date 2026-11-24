@@ -13,7 +13,7 @@ from PIL import Image
 
 from canonical_model import ROOT
 from launch_workbench import startup_lock
-from probe_playraw_mixed_light_geometric_replay import align
+from probe_playraw_mixed_light_geometric_replay import align, texture_similarity
 from probe_same_capture_detail_replay import shared_detail
 from reference_color_app.storage import _json
 from spatial_jobs import SpatialJobs
@@ -25,9 +25,7 @@ from spatial_workbench import make_spatial_workbench
 LIMIT_PIXELS = 8_000_000
 
 
-def certified_basis(target, reference):
-    if max(target.shape[0] * target.shape[1], reference.shape[0] * reference.shape[1]) > LIMIT_PIXELS:
-        return None, {"accepted": False, "reason": "image exceeds research resource limit"}
+def integer_basis(target, reference):
     placed, support, trace = align(cv2.SIFT_create(), target, reference)
     if placed is None:
         return None, {"accepted": False, "reason": "geometry or texture unsupported", "alignment": trace}
@@ -41,7 +39,58 @@ def certified_basis(target, reference):
         return None, decision
     basis = target.copy()
     basis[support] = placed[support]
-    basis.setflags(write=False)
+    return basis, decision
+
+
+def reduced_basis(target, reference):
+    height, width = target.shape[:2]
+    small_height, small_width = reference.shape[:2]
+    if not (height // 2 <= small_height <= 3 * height // 4
+            and width // 2 <= small_width <= 3 * width // 4
+            and abs(width * small_height - height * small_width) <= max(width, height)):
+        return None, None
+
+    size = (small_width, small_height)
+    support = np.ones(reference.shape[:2], dtype=bool)
+    resized = {
+        "area": cv2.resize(target, size, interpolation=cv2.INTER_AREA),
+        "lanczos": np.asarray(Image.fromarray(target).resize(size, Image.Resampling.LANCZOS)),
+    }
+    attempts = {}
+    reductions = []
+    for kernel, small in resized.items():
+        detail = shared_detail(small, reference, support)
+        similarity = texture_similarity(small, reference, support) if detail["accepted"] else None
+        attempts[kernel] = dict(detail=detail, gradient_correlation=similarity)
+        if similarity is not None and similarity >= .98:
+            reductions.append(small)
+    decision = {"accepted": False, "resized": attempts}
+    if not reductions:
+        decision["reason"] = "insufficient shared detail after downsampling"
+        return None, decision
+    if len(reductions) == 2 and not np.array_equal(*reductions):
+        decision["reason"] = "ambiguous resampling residual"
+        return None, decision
+
+    delta = reference.astype(np.float32) - reductions[0]
+    basis = cv2.resize(delta, (width, height), interpolation=cv2.INTER_LINEAR)
+    basis += target
+    np.clip(basis, 0, 255, out=basis)
+    np.rint(basis, out=basis)
+    decision["accepted"] = True
+    return basis.astype(np.uint8), decision
+
+
+def certified_basis(target, reference):
+    if max(target.shape[0] * target.shape[1], reference.shape[0] * reference.shape[1]) > LIMIT_PIXELS:
+        return None, {"accepted": False, "reason": "image exceeds research resource limit"}
+    basis, decision = integer_basis(target, reference)
+    if basis is None:
+        basis, reduced = reduced_basis(target, reference)
+        if reduced is not None:
+            decision = dict(reduced, alignment=decision["alignment"])
+    if basis is not None:
+        basis.setflags(write=False)
     return basis, decision
 
 
