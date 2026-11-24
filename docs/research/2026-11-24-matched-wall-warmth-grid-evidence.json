@@ -1,0 +1,957 @@
+{
+  "report": {
+    "scope": "offline known-answer grid capacity",
+    "manifest": "bbdb9b4bce5f1f06afc2c06deed59f29c21e1ccf1da64a1c9c5a17159d3b794e",
+    "checkpoint": "d8d8e6727a44100e6fedb11b605a17e33afc675de7448d4ebcf6d24d492ad4c9",
+    "strength": 0.8,
+    "scipy": "1.18.1",
+    "cases": {
+      "mit": {
+        "target": "everett_living2",
+        "shape": [
+          1000,
+          1500,
+          3
+        ],
+        "scores": {
+          "shared": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 5.322481373501781,
+                  "a_response_mae": 5.322481373501781,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 5.322481373501781,
+                  "b_response_mae": 5.322481373501781,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  0.1089004816423879,
+                  0.1089004816423879
+                ],
+                "passed": false
+              },
+              "wall_right": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5587889476778366,
+                  "a_response_mae": 0.5587889476778366,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5587889476778366,
+                  "b_response_mae": 0.5587889476778366,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "gray_probe": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.7282828282828283,
+                  "a_response_mae": 0.7282828282828283,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.7282828282828283,
+                  "b_response_mae": 0.7282828282828283,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.09064357197844496,
+                  "a_response_mae": 0.09064357197844496,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.09064357197844496,
+                  "b_response_mae": 0.09064357197844496,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.08950354609929077,
+            "complete": false
+          },
+          "spatial": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 1.143882950005399,
+                  "a_response_mae": 1.143882950005399,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 1.143882950005399,
+                  "b_response_mae": 1.143882950005399,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  0.8730969226296074,
+                  0.8730969226296074
+                ],
+                "passed": true
+              },
+              "wall_right": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.0,
+                  "a_response_mae": 0.0,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.0,
+                  "b_response_mae": 0.0,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "gray_probe": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.003367003367003367,
+                  "a_response_mae": 0.003367003367003367,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.003367003367003367,
+                  "b_response_mae": 0.003367003367003367,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.005052091352322299,
+                  "a_response_mae": 0.005052091352322299,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.005052091352322299,
+                  "b_response_mae": 0.005052091352322299,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.0100354609929078,
+            "complete": true
+          }
+        },
+        "single_grid": {
+          "shared-fold0": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 5.301803260986935,
+                  "a_response_mae": 5.301803260986935,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 5.301803260986935,
+                  "b_response_mae": 5.301803260986935,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  0.11325022228027963,
+                  0.11325022228027963
+                ],
+                "passed": false
+              },
+              "wall_right": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5605526161081716,
+                  "a_response_mae": 0.5605526161081716,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5605526161081716,
+                  "b_response_mae": 0.5605526161081716,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "gray_probe": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.7276094276094276,
+                  "a_response_mae": 0.7276094276094276,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.7276094276094276,
+                  "b_response_mae": 0.7276094276094276,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.08979420066717989,
+                  "a_response_mae": 0.08979420066717989,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.08979420066717989,
+                  "b_response_mae": 0.08979420066717989,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.08994326241134752,
+            "complete": false
+          },
+          "spatial-fold0": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 1.0865457294028722,
+                  "a_response_mae": 1.0865457294028722,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 1.0865457294028722,
+                  "b_response_mae": 1.0865457294028722,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  0.8732349260259658,
+                  0.8732349260259658
+                ],
+                "passed": true
+              },
+              "wall_right": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.0,
+                  "a_response_mae": 0.0,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.0,
+                  "b_response_mae": 0.0,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "gray_probe": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.0,
+                  "a_response_mae": 0.0,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.0,
+                  "b_response_mae": 0.0,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.0047995894277649475,
+                  "a_response_mae": 0.0047995894277649475,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.0047995894277649475,
+                  "b_response_mae": 0.0047995894277649475,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.012652482269503546,
+            "complete": true
+          },
+          "shared-fold1": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 5.336302775078285,
+                  "a_response_mae": 5.336302775078285,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 5.336302775078285,
+                  "b_response_mae": 5.336302775078285,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  0.10601505185135243,
+                  0.10601505185135243
+                ],
+                "passed": false
+              },
+              "wall_right": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5569517930629042,
+                  "a_response_mae": 0.5569517930629042,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5569517930629042,
+                  "b_response_mae": 0.5569517930629042,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "gray_probe": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.7080808080808081,
+                  "a_response_mae": 0.7080808080808081,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.7080808080808081,
+                  "b_response_mae": 0.7080808080808081,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.09134719014626635,
+                  "a_response_mae": 0.09134719014626635,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.09134719014626635,
+                  "b_response_mae": 0.09134719014626635,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.08934397163120568,
+            "complete": false
+          },
+          "spatial-fold1": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 1.1694741388618939,
+                  "a_response_mae": 1.1694741388618939,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 1.1694741388618939,
+                  "b_response_mae": 1.1694741388618939,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  0.8744716892879868,
+                  0.8744716892879868
+                ],
+                "passed": true
+              },
+              "wall_right": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.0,
+                  "a_response_mae": 0.0,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.0,
+                  "b_response_mae": 0.0,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "gray_probe": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.003367003367003367,
+                  "a_response_mae": 0.003367003367003367,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.003367003367003367,
+                  "b_response_mae": 0.003367003367003367,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.004575057736720554,
+                  "a_response_mae": 0.004575057736720554,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.004575057736720554,
+                  "b_response_mae": 0.004575057736720554,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.005436170212765957,
+            "complete": true
+          }
+        },
+        "folds": [
+          {
+            "shared_rank": 17,
+            "active_terms": 3428,
+            "train_pixels": 83504,
+            "stop": [
+              7,
+              7,
+              7
+            ],
+            "iterations": [
+              240,
+              240,
+              240
+            ],
+            "residual": [
+              0.9798883841567003,
+              0.2614448520252115,
+              0.859504487904769
+            ],
+            "max_coefficient": 20.410615680134892,
+            "bridge_max_error": {
+              "shared": 3.5762786865234375e-07,
+              "spatial": 3.5762786865234375e-07
+            }
+          },
+          {
+            "shared_rank": 17,
+            "active_terms": 3356,
+            "train_pixels": 83496,
+            "stop": [
+              7,
+              7,
+              7
+            ],
+            "iterations": [
+              240,
+              240,
+              240
+            ],
+            "residual": [
+              0.9461268227448392,
+              0.2543895961509971,
+              0.8387076803881773
+            ],
+            "max_coefficient": 7.121364524669515,
+            "bridge_max_error": {
+              "shared": 3.5762786865234375e-07,
+              "spatial": 3.5762786865234375e-07
+            }
+          }
+        ],
+        "controls": {
+          "random_grid_max_error": 1.7881393432617188e-07
+        },
+        "nearby_pixels": 94000,
+        "sha256": {
+          "original": "540b06eb81d9aa336a849689bac5e69bcc4385afd855b1f98e78e039c1d549f4",
+          "expected": "61b2f13ab6c31b4058847856487646e85250700d6ff11db930f436121b204646",
+          "shared": "fb48678c7b1c685d6e0831b80980b700636c9bdc428e21892c0805b47363a811",
+          "spatial": "80a66b17ebe683820de0a87d483a56faf9a3591d3af4728c9ff10f5ee3239e57",
+          "shared-fold0": "a5734c1e3df6ac04be0e7a93c395c94854314eaf8eaea4e0a91cf956bebecd79",
+          "spatial-fold0": "b360790b87bc0fc24063385a3bd5d1f1f6056a6ed388ea59e0c2cdc0280493cc",
+          "shared-fold1": "96263b62c169e6dad5b0e5caffc1384b01ea0107cd3b792e2e47ace9d3a5a90e",
+          "spatial-fold1": "4df9b00c52e47ea615560199a999114d077e027eb76dd450ab0beec13204d899"
+        },
+        "panel": "255f3bb4c8088809e246d1aa165c2d0d042e7d5880898c6e66f55c1a60010178"
+      },
+      "beyond_rgb": {
+        "target": "WHITE_green",
+        "shape": [
+          768,
+          1024,
+          3
+        ],
+        "scores": {
+          "shared": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 6.324935897435897,
+                  "a_response_mae": 6.324935897435897,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 6.324935897435897,
+                  "b_response_mae": 6.324935897435897,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  -0.026410153342858393,
+                  -0.026410153342858393
+                ],
+                "passed": false
+              },
+              "guard_1": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5814307458143074,
+                  "a_response_mae": 0.5814307458143074,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5814307458143074,
+                  "b_response_mae": 0.5814307458143074,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5050665791013611,
+                  "a_response_mae": 0.5050665791013611,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5050665791013611,
+                  "b_response_mae": 0.5050665791013611,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.5610696811868687,
+            "complete": false
+          },
+          "spatial": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.4025641025641026,
+                  "a_response_mae": 0.4025641025641026,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.4025641025641026,
+                  "b_response_mae": 0.4025641025641026,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  1.0107604659585223,
+                  1.0107604659585223
+                ],
+                "passed": true
+              },
+              "guard_1": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.2015791476407915,
+                  "a_response_mae": 0.2015791476407915,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.2015791476407915,
+                  "b_response_mae": 0.2015791476407915,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.1013878890446541,
+                  "a_response_mae": 0.1013878890446541,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.1013878890446541,
+                  "b_response_mae": 0.1013878890446541,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.08003373579545454,
+            "complete": true
+          }
+        },
+        "single_grid": {
+          "shared-fold0": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 6.344358974358975,
+                  "a_response_mae": 6.344358974358975,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 6.344358974358975,
+                  "b_response_mae": 6.344358974358975,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  -0.027911544293520437,
+                  -0.027911544293520437
+                ],
+                "passed": false
+              },
+              "guard_1": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5721080669710806,
+                  "a_response_mae": 0.5721080669710806,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5721080669710806,
+                  "b_response_mae": 0.5721080669710806,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5073783242189638,
+                  "a_response_mae": 0.5073783242189638,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5073783242189638,
+                  "b_response_mae": 0.5073783242189638,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.5628304529671717,
+            "complete": false
+          },
+          "spatial-fold0": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.40192307692307694,
+                  "a_response_mae": 0.40192307692307694,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.40192307692307694,
+                  "b_response_mae": 0.40192307692307694,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  1.0123364787258176,
+                  1.0123364787258176
+                ],
+                "passed": true
+              },
+              "guard_1": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.1933028919330289,
+                  "a_response_mae": 0.1933028919330289,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.1933028919330289,
+                  "b_response_mae": 0.1933028919330289,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.09836572828654062,
+                  "a_response_mae": 0.09836572828654062,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.09836572828654062,
+                  "b_response_mae": 0.09836572828654062,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.08233211016414141,
+            "complete": true
+          },
+          "shared-fold1": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 6.311025641025641,
+                  "a_response_mae": 6.311025641025641,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 6.311025641025641,
+                  "b_response_mae": 6.311025641025641,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  -0.025263962239370868,
+                  -0.025263962239370868
+                ],
+                "passed": false
+              },
+              "guard_1": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.589041095890411,
+                  "a_response_mae": 0.589041095890411,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.589041095890411,
+                  "b_response_mae": 0.589041095890411,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.5022317575788193,
+                  "a_response_mae": 0.5022317575788193,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.5022317575788193,
+                  "b_response_mae": 0.5022317575788193,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.5595259232954546,
+            "complete": false
+          },
+          "spatial-fold1": {
+            "measured": {
+              "wall_left": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.3960897435897436,
+                  "a_response_mae": 0.3960897435897436,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.3960897435897436,
+                  "b_response_mae": 0.3960897435897436,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  1.010139612444133,
+                  1.010139612444133
+                ],
+                "passed": true
+              },
+              "guard_1": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.1965372907153729,
+                  "a_response_mae": 0.1965372907153729,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.1965372907153729,
+                  "b_response_mae": 0.1965372907153729,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              },
+              "outside": {
+                "errors": {
+                  "a_off_matches_original_mae": 0.0,
+                  "a_on_matches_authored_mae": 0.09853885920930212,
+                  "a_response_mae": 0.09853885920930212,
+                  "b_off_matches_original_mae": 0.0,
+                  "b_on_matches_authored_mae": 0.09853885920930212,
+                  "b_response_mae": 0.09853885920930212,
+                  "off_across_lights": 0.0,
+                  "on_across_lights": 0.0
+                },
+                "projection": [
+                  null,
+                  null
+                ],
+                "passed": true
+              }
+            },
+            "nearby_guard_mae": 0.0739474826388889,
+            "complete": true
+          }
+        },
+        "folds": [
+          {
+            "shared_rank": 14,
+            "active_terms": 3024,
+            "train_pixels": 43776,
+            "stop": [
+              7,
+              7,
+              7
+            ],
+            "iterations": [
+              240,
+              240,
+              240
+            ],
+            "residual": [
+              0.32088260357477505,
+              0.1410419537245893,
+              1.2075565770193422
+            ],
+            "max_coefficient": 13.738447446398347,
+            "bridge_max_error": {
+              "shared": 3.8743019104003906e-07,
+              "spatial": 4.76837158203125e-07
+            }
+          },
+          {
+            "shared_rank": 14,
+            "active_terms": 3040,
+            "train_pixels": 43776,
+            "stop": [
+              7,
+              7,
+              7
+            ],
+            "iterations": [
+              240,
+              240,
+              240
+            ],
+            "residual": [
+              0.32867858363784497,
+              0.14942979203513093,
+              1.2245254373163004
+            ],
+            "max_coefficient": 12.925994525486495,
+            "bridge_max_error": {
+              "shared": 4.023313522338867e-07,
+              "spatial": 3.8743019104003906e-07
+            }
+          }
+        ],
+        "controls": {},
+        "nearby_pixels": 67584,
+        "sha256": {
+          "original": "f6a8cf04f4e3d275eef4a07be919f2a721da61de6d499c01b2874f84030981a4",
+          "expected": "55d6a17f5f51731362ebf7773f420f80b36c3e276023d689c6f2db5deeb9b8ce",
+          "shared": "717d3877328782ebb57379eab84eee10e5ad1d3f091879dd0e0f4d44a0c67187",
+          "spatial": "f0e480b796093fa2228669164affb80a2ad652f1e6786036b926fa359b0852e0",
+          "shared-fold0": "cd9deea8fd0b290f2eeacfc5c4983fe3b172f90e603932c23762652450ce1efe",
+          "spatial-fold0": "61d5e0307a3b7cbe9c0444273dd1c7eb99f706f06cb9f79ff615270a7e29dd49",
+          "shared-fold1": "a6f17c6bd4d2ba90d892a12127447af8a2b22662c5836c6b98557239a88c650c",
+          "spatial-fold1": "a42ae0ead5cfa750d1c29197ea3cc27cb3cb8e7eae649300d7bfd391f7926e4f"
+        },
+        "panel": "f12ca2071ce0ea467d94883077e0763a8ddca8a0761599937a64815a851cc43d"
+      }
+    }
+  },
+  "repeat_identical_files": 19,
+  "recomputed_region_scores": 42,
+  "independently_restitched_frames": 4,
+  "result_sha256": "47315a38e51ff3938c1bddf590336f2dc7e20e0ddbcc9e5e0f65d05932d6290d"
+}

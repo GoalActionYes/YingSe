@@ -114,7 +114,7 @@ def evaluate(original, expected, grade, regions):
     return results
 
 
-def render_case(engine, original, edit, regions, control):
+def render_case(engine, original, edit, regions, control, *, full_frames=None):
     h, w = original.shape[:2]
     affine, depth, inverse = rendering_features(engine, original, edit)
     x_axis, y_axis = support(axis_weights(w, engine.device)), support(axis_weights(h, engine.device))
@@ -132,7 +132,7 @@ def render_case(engine, original, edit, regions, control):
         np.testing.assert_array_equal(base.apply(original, strength=0), original)
     both = {arm: original.copy() for arm in ("shared", "spatial")}
     audits = []
-    for train in (even, ~even):
+    for fold, train in enumerate((even, ~even)):
         rows = np.flatnonzero(train & sampled)
         design = spatial_features(affine, depth, x_axis, y_axis, rows)
         fitted, audit = fit(affine, depth, inverse, rows, design)
@@ -142,6 +142,8 @@ def render_case(engine, original, edit, regions, control):
             audit["bridge_max_error"][arm] = compare_renderer(engine, original, native, bridge, coefficients, verification)
             grade = finish_spatial(original, native.apply(original), STRENGTH)
             both[arm][~train] = grade[~train]
+            if full_frames is not None:
+                full_frames[f"{arm}-fold{fold}"] = grade
         audits.append(audit)
     expected = finish_spatial(original, edit, STRENGTH)
     return both, expected, audits, checks
