@@ -1,0 +1,267 @@
+{
+  "geometry": {
+    "source_hashes": {
+      "3500": "0986dbfcc418f0e2c206f98e09f47912b85db0dcf2ccde95f2f4ea42372f313f",
+      "4100": "f2653d39b2f9ce3d7b4213bdfdd4a205455bd6712bd0c0cd33bd4f32389b9845",
+      "4700": "b1856111bb9b08ed6c6e6e2e2e17af2211fe65bc693b6dbebb664ac5984c9cc3"
+    },
+    "crop_hashes": {
+      "3500": "d8500b7b4ee0cc2b20c9fca08cec3a2be1c2c2984923df60c4ff6282f00f0203",
+      "4100": "e362b7f44cab397a81fc5f8ce1f46abc0258acdaf69a5786ba0b95c4e8d4a74e",
+      "4700": "6279b40e55405f47148c997cdd596613056a206db57cc620a53354b98645d0f5"
+    },
+    "source_offsets": {
+      "3500": 2,
+      "4100": 1,
+      "4700": 0
+    },
+    "original_anchor_regions": {
+      "near_left_label": [
+        355,
+        327,
+        525,
+        365
+      ],
+      "near_wall_material": [
+        373,
+        351,
+        486,
+        399
+      ],
+      "held_left_label": [
+        120,
+        168,
+        229,
+        235
+      ],
+      "held_right_handle": [
+        486,
+        47,
+        569,
+        153
+      ]
+    },
+    "pairs": {
+      "4100-3500": {
+        "passed": false,
+        "scores": {
+          "whole": {
+            "zero": 0.8484978355085272,
+            "peak": 0.8484978355085272,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "near_left_label": {
+            "zero": 0.909403034687591,
+            "peak": 0.909403034687591,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "near_wall_material": {
+            "zero": 0.7557185345404058,
+            "peak": 0.7557185345404058,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "held_left_label": {
+            "zero": 0.7203370510138369,
+            "peak": 0.7203370510138369,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "held_right_handle": {
+            "zero": 0.4859512966422085,
+            "peak": 0.5347441846331731,
+            "dy": -1,
+            "dx": 0,
+            "peak_gain": 0.048792887990964595,
+            "passed": false
+          }
+        }
+      },
+      "4700-4100": {
+        "passed": true,
+        "scores": {
+          "whole": {
+            "zero": 0.8940320553901797,
+            "peak": 0.8940320553901797,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "near_left_label": {
+            "zero": 0.9216659443934032,
+            "peak": 0.9216659443934032,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "near_wall_material": {
+            "zero": 0.7643674636166897,
+            "peak": 0.7643674636166897,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "held_left_label": {
+            "zero": 0.9459608767807243,
+            "peak": 0.9459608767807243,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          },
+          "held_right_handle": {
+            "zero": 0.8429011808106865,
+            "peak": 0.8429011808106865,
+            "dy": 0,
+            "dx": 0,
+            "peak_gain": 0.0,
+            "passed": true
+          }
+        }
+      }
+    }
+  },
+  "preflight_frames": {
+    "light-a": {
+      "admitted": true,
+      "off_mae": 0.0,
+      "off_max": 0,
+      "coverage": 1.0,
+      "warmth": 24.0,
+      "luma": -1.0303999999999998,
+      "protected_p95": {
+        "guard_1": 0.0,
+        "guard_2": 0.0,
+        "outside": 0.0
+      },
+      "endpoints": 3.364963994885255e-06,
+      "edited_rgb_medians": [
+        10.0,
+        -3.0,
+        -14.0
+      ]
+    },
+    "light-b": {
+      "admitted": true,
+      "off_mae": 0.0,
+      "off_max": 0,
+      "coverage": 0.9880952380952381,
+      "warmth": 25.0,
+      "luma": -1.1025999999999998,
+      "protected_p95": {
+        "guard_1": 0.0,
+        "guard_2": 0.0,
+        "outside": 0.0
+      },
+      "endpoints": 0.002338649976445252,
+      "edited_rgb_medians": [
+        10.0,
+        -3.0,
+        -15.0
+      ]
+    }
+  },
+  "directions": {
+    "light-a-to-light-b": {
+      "coverage": 0.9880952380952381,
+      "capture": [
+        17.0,
+        4.0,
+        -7.0
+      ],
+      "edit": [
+        10.0,
+        -3.0,
+        -14.0
+      ],
+      "cosine": 0.7790914075516026,
+      "ratio": 0.9282143722782764,
+      "checks": {
+        "valid_coverage": true,
+        "both_material_states": true,
+        "physical_signal": true,
+        "edited_signal": true,
+        "same_direction": false,
+        "comparable_amplitude": true
+      },
+      "passed": false
+    },
+    "light-b-to-light-a": {
+      "coverage": 0.8111111111111111,
+      "capture": [
+        -17.0,
+        -4.0,
+        7.0
+      ],
+      "edit": [
+        10.0,
+        -3.0,
+        -14.0
+      ],
+      "cosine": -0.7790914075516026,
+      "ratio": 0.9282143722782764,
+      "checks": {
+        "valid_coverage": true,
+        "both_material_states": true,
+        "physical_signal": true,
+        "edited_signal": true,
+        "same_direction": false,
+        "comparable_amplitude": true
+      },
+      "passed": false
+    }
+  },
+  "verified_directions": 4,
+  "linear": {
+    "4700": {
+      "y_median": 0.01106955723549249,
+      "xy_median": [
+        0.3693641778753439,
+        0.370292375715661
+      ],
+      "clipped_fraction": 0.0
+    },
+    "4100": {
+      "y_median": 0.011975222785062455,
+      "xy_median": [
+        0.38872951776225495,
+        0.37964951769457594
+      ],
+      "clipped_fraction": 0.0
+    }
+  },
+  "duplicate_file_counts": {
+    ".png": 11,
+    ".pp3": 2,
+    ".json": 1
+  },
+  "preflight_hashes": {
+    "results.json": "2ea13918768d21ffcb371d7ba98509a54692903de3913d5322786e9f64559db2",
+    "render/comparison.png": "9e1c9d0ad7115ffc8d9fb2cf67b0d69a327625ab3745a95b180faddec2dae873",
+    "render/light-a-input.png": "d5e3d57c71171311ddbbb289fe46aece3c7b28c7d9ff9b69e8f1de191e54f614",
+    "render/light-a-off.png": "392011505e0810ce09289c95be875c58b803eb924322e0d224f601b42d42e1e7",
+    "render/light-a-on.png": "4a2bc78405495fae852979caffc26ef4dcb9ebbd2d6d76085a06379a8aeefb67",
+    "render/light-b-input.png": "4eeb79f63affe0712d23fa2b98026bc9271ca3f9a0f2f3fa2c0d3d4ff667dd2d",
+    "render/light-b-off.png": "7657f508e40eb4920c79062a89f9684d8047530a6baccc3814a73b5d4c3ad1a3",
+    "render/light-b-on.png": "fc103c7c7f3a2e77e8ef94cd39ccd1a786a6a40f1907d1ba2b569bc5e1427274",
+    "render/off.pp3": "1a05e517d912b7e0ea2ba5cc45f2f00ce686f62ce10a842907597e5f7db940f5",
+    "render/on.pp3": "6e4273d7d4ffbc04365f625303d9bcf6d61e6ffb1739014ab5ae33a3b9f4f249",
+    "materials/first-pair/light-a-after.png": "4a2bc78405495fae852979caffc26ef4dcb9ebbd2d6d76085a06379a8aeefb67",
+    "materials/first-pair/light-a-before.png": "392011505e0810ce09289c95be875c58b803eb924322e0d224f601b42d42e1e7",
+    "materials/first-pair/light-b-after.png": "fc103c7c7f3a2e77e8ef94cd39ccd1a786a6a40f1907d1ba2b569bc5e1427274",
+    "materials/first-pair/light-b-before.png": "7657f508e40eb4920c79062a89f9684d8047530a6baccc3814a73b5d4c3ad1a3"
+  }
+}
